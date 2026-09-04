@@ -37,6 +37,7 @@
 | **roadsideAssistance** | [**RecordingRoadsideAssistance**](RecordingRoadsideAssistance) | Roadside Assistance content. |  [optional] |
 | **richLink** | [**RichLink**](RichLink) | Rich Link content. |  [optional] |
 | **messageReceipts** | [**List&lt;RecordingMessageReceipt&gt;**](RecordingMessageReceipt) | List of message receipts |  [optional] |
+| **notificationResponse** | [**RecordingNotificationResponse**](RecordingNotificationResponse) | Notification Response content. |  [optional] |
 
 
 ## Enum: ContentTypeEnum
@@ -79,4 +80,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_

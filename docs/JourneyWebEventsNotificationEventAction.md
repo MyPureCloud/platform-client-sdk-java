@@ -38,7 +38,6 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| WEBCHAT | &quot;webchat&quot; | 
 | WEBMESSAGINGOFFER | &quot;webMessagingOffer&quot; | 
 | CONTENTOFFER | &quot;contentOffer&quot; | 
 | ARCHITECTFLOW | &quot;architectFlow&quot; | 
@@ -46,4 +45,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_

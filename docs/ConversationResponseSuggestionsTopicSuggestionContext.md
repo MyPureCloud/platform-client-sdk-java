@@ -15,6 +15,7 @@
 | **queryStatement** | **String** |  |  [optional] |
 | **language** | **String** |  |  [optional] |
 | **queryReformulationContext** | [**ConversationResponseSuggestionsTopicQueryReformulationContext**](ConversationResponseSuggestionsTopicQueryReformulationContext) |  |  [optional] |
+| **participantType** | [**ParticipantTypeEnum**](#Enum--ParticipantTypeEnum) |  |  [optional] |
 
 
 ## Enum: MediaTypeEnum
@@ -28,6 +29,16 @@
 | EMAIL | &quot;EMAIL&quot; | 
 
 
+## Enum: ParticipantTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| AGENT | &quot;AGENT&quot; | 
+| CUSTOMER | &quot;CUSTOMER&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_

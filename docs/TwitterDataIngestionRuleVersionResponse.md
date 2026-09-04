@@ -14,8 +14,8 @@
 | **dateModified** | [**Date**](Date) | Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **platform** | **String** | The platform of the data ingestion rule. |  [optional] |
 | **ingestionRuleInfo** | [**MessageInfo**](MessageInfo) | The Info about ingestion rule. |  [optional] |
-| **countries** | **List&lt;String&gt;** | ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide. |  [optional] |
 | **searchTerms** | **String** | Search terms for X (formally Twitter). |  [optional] |
+| **countries** | **List&lt;String&gt;** | ISO 3166-1 alpha-2 country codes where Data Ingestion Rules should apply. Defaults to worldwide. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -34,4 +34,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_

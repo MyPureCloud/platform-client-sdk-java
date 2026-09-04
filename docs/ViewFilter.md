@@ -241,6 +241,10 @@
 | **socialSourceTypes** | [**List<SocialSourceTypesEnum>**](#Enum--SocialSourceTypesEnum) | A set of Source Types for social filtering |  [optional] |
 | **socialFollowerRange** | [**SocialNumericRange**](SocialNumericRange) | The follower range used to filter the view |  [optional] |
 | **socialVerificationStatus** | **Boolean** | Filter to indicate if the posts from verified user |  [optional] |
+| **socialEngagementLikes** | [**NumericRange**](NumericRange) | The likes range used to filter the view |  [optional] |
+| **socialEngagementShares** | [**NumericRange**](NumericRange) | The shares range used to filter the view |  [optional] |
+| **socialEngagementComments** | [**NumericRange**](NumericRange) | The comments range used to filter the view |  [optional] |
+| **socialEngagementViews** | [**NumericRange**](NumericRange) | The views range used to filter the view |  [optional] |
 | **sessionExpired** | **Boolean** | Filter to indicate for if session is expired |  [optional] |
 | **screenMonitored** | **Boolean** | Filter to indicate if the interaction was screen monitored |  [optional] |
 | **engagementSources** | [**List<EngagementSourcesEnum>**](#Enum--EngagementSourcesEnum) | The engagement sources used to filter the view |  [optional] |
@@ -1120,4 +1124,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_

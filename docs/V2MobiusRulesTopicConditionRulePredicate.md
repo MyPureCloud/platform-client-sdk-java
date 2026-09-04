@@ -14,6 +14,7 @@
 | **status** | **String** |  |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
 | **topic** | **String** |  |  [optional] |
+| **characteristic** | [**CharacteristicEnum**](#Enum--CharacteristicEnum) |  |  [optional] |
 | **comparisonOperator** | [**ComparisonOperatorEnum**](#Enum--ComparisonOperatorEnum) |  |  [optional] |
 
 
@@ -57,6 +58,16 @@
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
+## Enum: CharacteristicEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| DEVIATION | &quot;Deviation&quot; | 
+| SCORE | &quot;Score&quot; | 
+
+
 ## Enum: ComparisonOperatorEnum
 
 | Name | Value |
@@ -73,4 +84,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:261.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
