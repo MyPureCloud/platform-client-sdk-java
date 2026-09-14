@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ColumnDataTypeSpecification;
 import com.mypurecloud.sdk.v2.model.ContactPhoneNumberColumn;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
@@ -46,6 +47,57 @@ public class ContactListTemplate  implements Serializable {
   private String zipCodeColumnName = null;
   private List<ColumnDataTypeSpecification> columnDataTypeSpecifications = null;
   private Boolean trimWhitespace = null;
+
+  private static class RetentionTypeEnumDeserializer extends StdDeserializer<RetentionTypeEnum> {
+    public RetentionTypeEnumDeserializer() {
+      super(RetentionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public RetentionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RetentionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of retention for this ContactListTemplate. Valid values: Never, Today, RetentionDays
+   */
+ @JsonDeserialize(using = RetentionTypeEnumDeserializer.class)
+  public enum RetentionTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NEVER("Never"),
+    TODAY("Today"),
+    RETENTIONDAYS("RetentionDays");
+
+    private String value;
+
+    RetentionTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RetentionTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RetentionTypeEnum value : RetentionTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RetentionTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private RetentionTypeEnum retentionType = null;
+  private Integer retentionDays = null;
+  private String timeZone = null;
   private String selfUri = null;
 
   public ContactListTemplate() {
@@ -325,6 +377,60 @@ public class ContactListTemplate  implements Serializable {
   }
 
 
+  /**
+   * The type of retention for this ContactListTemplate. Valid values: Never, Today, RetentionDays
+   **/
+  public ContactListTemplate retentionType(RetentionTypeEnum retentionType) {
+    this.retentionType = retentionType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of retention for this ContactListTemplate. Valid values: Never, Today, RetentionDays")
+  @JsonProperty("retentionType")
+  public RetentionTypeEnum getRetentionType() {
+    return retentionType;
+  }
+  public void setRetentionType(RetentionTypeEnum retentionType) {
+    this.retentionType = retentionType;
+  }
+
+
+  /**
+   * The number of days to retain contact lists created from this template. Required when retentionType is RetentionDays.
+   **/
+  public ContactListTemplate retentionDays(Integer retentionDays) {
+    this.retentionDays = retentionDays;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of days to retain contact lists created from this template. Required when retentionType is RetentionDays.")
+  @JsonProperty("retentionDays")
+  public Integer getRetentionDays() {
+    return retentionDays;
+  }
+  public void setRetentionDays(Integer retentionDays) {
+    this.retentionDays = retentionDays;
+  }
+
+
+  /**
+   * The time zone for this contact list template; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+   **/
+  public ContactListTemplate timeZone(String timeZone) {
+    this.timeZone = timeZone;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time zone for this contact list template; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London")
+  @JsonProperty("timeZone")
+  public String getTimeZone() {
+    return timeZone;
+  }
+  public void setTimeZone(String timeZone) {
+    this.timeZone = timeZone;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -358,12 +464,15 @@ public class ContactListTemplate  implements Serializable {
             Objects.equals(this.zipCodeColumnName, contactListTemplate.zipCodeColumnName) &&
             Objects.equals(this.columnDataTypeSpecifications, contactListTemplate.columnDataTypeSpecifications) &&
             Objects.equals(this.trimWhitespace, contactListTemplate.trimWhitespace) &&
+            Objects.equals(this.retentionType, contactListTemplate.retentionType) &&
+            Objects.equals(this.retentionDays, contactListTemplate.retentionDays) &&
+            Objects.equals(this.timeZone, contactListTemplate.timeZone) &&
             Objects.equals(this.selfUri, contactListTemplate.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, columnNames, phoneColumns, emailColumns, whatsAppColumns, previewModeColumnName, previewModeAcceptedValues, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, columnDataTypeSpecifications, trimWhitespace, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, columnNames, phoneColumns, emailColumns, whatsAppColumns, previewModeColumnName, previewModeAcceptedValues, attemptLimits, automaticTimeZoneMapping, zipCodeColumnName, columnDataTypeSpecifications, trimWhitespace, retentionType, retentionDays, timeZone, selfUri);
   }
 
   @Override
@@ -387,6 +496,9 @@ public class ContactListTemplate  implements Serializable {
     sb.append("    zipCodeColumnName: ").append(toIndentedString(zipCodeColumnName)).append("\n");
     sb.append("    columnDataTypeSpecifications: ").append(toIndentedString(columnDataTypeSpecifications)).append("\n");
     sb.append("    trimWhitespace: ").append(toIndentedString(trimWhitespace)).append("\n");
+    sb.append("    retentionType: ").append(toIndentedString(retentionType)).append("\n");
+    sb.append("    retentionDays: ").append(toIndentedString(retentionDays)).append("\n");
+    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

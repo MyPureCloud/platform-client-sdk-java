@@ -29,6 +29,7 @@ public class SurveyAssignment  implements Serializable {
   private String inviteTimeInterval = null;
   private String sendingUser = null;
   private String sendingDomain = null;
+  private Boolean useThreadingTimelineForSendTime = null;
 
   public SurveyAssignment() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -131,6 +132,24 @@ public class SurveyAssignment  implements Serializable {
   }
 
 
+  /**
+   * If true, the survey invitation send time will be calculated using the threading timeline. If false or unspecified, a fixed 72-hour delay will be used. Default is false for new policies.
+   **/
+  public SurveyAssignment useThreadingTimelineForSendTime(Boolean useThreadingTimelineForSendTime) {
+    this.useThreadingTimelineForSendTime = useThreadingTimelineForSendTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, the survey invitation send time will be calculated using the threading timeline. If false or unspecified, a fixed 72-hour delay will be used. Default is false for new policies.")
+  @JsonProperty("useThreadingTimelineForSendTime")
+  public Boolean getUseThreadingTimelineForSendTime() {
+    return useThreadingTimelineForSendTime;
+  }
+  public void setUseThreadingTimelineForSendTime(Boolean useThreadingTimelineForSendTime) {
+    this.useThreadingTimelineForSendTime = useThreadingTimelineForSendTime;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -145,12 +164,13 @@ public class SurveyAssignment  implements Serializable {
             Objects.equals(this.flow, surveyAssignment.flow) &&
             Objects.equals(this.inviteTimeInterval, surveyAssignment.inviteTimeInterval) &&
             Objects.equals(this.sendingUser, surveyAssignment.sendingUser) &&
-            Objects.equals(this.sendingDomain, surveyAssignment.sendingDomain);
+            Objects.equals(this.sendingDomain, surveyAssignment.sendingDomain) &&
+            Objects.equals(this.useThreadingTimelineForSendTime, surveyAssignment.useThreadingTimelineForSendTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(surveyForm, flow, inviteTimeInterval, sendingUser, sendingDomain);
+    return Objects.hash(surveyForm, flow, inviteTimeInterval, sendingUser, sendingDomain, useThreadingTimelineForSendTime);
   }
 
   @Override
@@ -163,6 +183,7 @@ public class SurveyAssignment  implements Serializable {
     sb.append("    inviteTimeInterval: ").append(toIndentedString(inviteTimeInterval)).append("\n");
     sb.append("    sendingUser: ").append(toIndentedString(sendingUser)).append("\n");
     sb.append("    sendingDomain: ").append(toIndentedString(sendingDomain)).append("\n");
+    sb.append("    useThreadingTimelineForSendTime: ").append(toIndentedString(useThreadingTimelineForSendTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

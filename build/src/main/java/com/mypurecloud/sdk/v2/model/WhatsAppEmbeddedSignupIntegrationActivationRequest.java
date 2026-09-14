@@ -54,14 +54,14 @@ public class WhatsAppEmbeddedSignupIntegrationActivationRequest  implements Seri
 
 
   /**
-   * Phone number to associate with the WhatsApp integration
+   * E.164 phone number to associate with the WhatsApp integration. Not required for embedded signup v4 or later.
    **/
   public WhatsAppEmbeddedSignupIntegrationActivationRequest phoneNumber(String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Phone number to associate with the WhatsApp integration")
+  @ApiModelProperty(example = "null", value = "E.164 phone number to associate with the WhatsApp integration. Not required for embedded signup v4 or later.")
   @JsonProperty("phoneNumber")
   public String getPhoneNumber() {
     return phoneNumber;

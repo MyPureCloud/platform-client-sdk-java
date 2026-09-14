@@ -51,6 +51,8 @@ import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingResponse;
+import com.mypurecloud.sdk.v2.model.ContactListsBulkEditRequest;
+import com.mypurecloud.sdk.v2.model.ContactListsBulkEditResponse;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJob;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJobListing;
 import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
@@ -235,6 +237,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersBulkRetrieveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesBulkAddRequest;
@@ -5374,14 +5377,16 @@ public class OutboundApi {
    * @param name Name (optional)
    * @param id id (optional)
    * @param divisionId Division ID(s) (optional)
+   * @param timeZone Filter by time zone (optional)
+   * @param dateExpiration Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ContactListEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ContactListEntityListing getOutboundContactlists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder));
+  public ContactListEntityListing getOutboundContactlists(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, List<String> id, List<String> divisionId, String timeZone, List<String> dateExpiration, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, timeZone, dateExpiration, sortBy, sortOrder));
   }
 
   /**
@@ -5396,16 +5401,18 @@ public class OutboundApi {
    * @param name Name (optional)
    * @param id id (optional)
    * @param divisionId Division ID(s) (optional)
+   * @param timeZone Filter by time zone (optional)
+   * @param dateExpiration Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ContactListEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) throws IOException {
-    return getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<ContactListEntityListing> getOutboundContactlistsWithHttpInfo(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, List<String> id, List<String> divisionId, String timeZone, List<String> dateExpiration, String sortBy, String sortOrder) throws IOException {
+    return getOutboundContactlists(createGetOutboundContactlistsRequest(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, timeZone, dateExpiration, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundContactlistsRequest createGetOutboundContactlistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, List<String> id, List<String> divisionId, String sortBy, String sortOrder) {
+  private GetOutboundContactlistsRequest createGetOutboundContactlistsRequest(Boolean includeImportStatus, Boolean includeSize, Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, List<String> id, List<String> divisionId, String timeZone, List<String> dateExpiration, String sortBy, String sortOrder) {
     return GetOutboundContactlistsRequest.builder()
             .withIncludeImportStatus(includeImportStatus)
 
@@ -5424,6 +5431,10 @@ public class OutboundApi {
             .withId(id)
 
             .withDivisionId(divisionId)
+
+            .withTimeZone(timeZone)
+
+            .withDateExpiration(dateExpiration)
 
             .withSortBy(sortBy)
 
@@ -5762,14 +5773,15 @@ public class OutboundApi {
    * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param timeZone Filter by time zone (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ContactListTemplateEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ContactListTemplateEntityListing getOutboundContactlisttemplates(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException, ApiException {
-    return  getOutboundContactlisttemplates(createGetOutboundContactlisttemplatesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder));
+  public ContactListTemplateEntityListing getOutboundContactlisttemplates(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String timeZone, String sortBy, String sortOrder) throws IOException, ApiException {
+    return  getOutboundContactlisttemplates(createGetOutboundContactlisttemplatesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, timeZone, sortBy, sortOrder));
   }
 
   /**
@@ -5780,16 +5792,17 @@ public class OutboundApi {
    * @param allowEmptyResult Whether to return an empty page when there are no results for that page (optional, default to false)
    * @param filterType Filter type (optional, default to Prefix)
    * @param name Name (optional)
+   * @param timeZone Filter by time zone (optional)
    * @param sortBy Sort by (optional)
    * @param sortOrder Sort order (optional, default to a)
    * @return ContactListTemplateEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ContactListTemplateEntityListing> getOutboundContactlisttemplatesWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) throws IOException {
-    return getOutboundContactlisttemplates(createGetOutboundContactlisttemplatesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder).withHttpInfo());
+  public ApiResponse<ContactListTemplateEntityListing> getOutboundContactlisttemplatesWithHttpInfo(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String timeZone, String sortBy, String sortOrder) throws IOException {
+    return getOutboundContactlisttemplates(createGetOutboundContactlisttemplatesRequest(pageSize, pageNumber, allowEmptyResult, filterType, name, timeZone, sortBy, sortOrder).withHttpInfo());
   }
 
-  private GetOutboundContactlisttemplatesRequest createGetOutboundContactlisttemplatesRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String sortBy, String sortOrder) {
+  private GetOutboundContactlisttemplatesRequest createGetOutboundContactlisttemplatesRequest(Integer pageSize, Integer pageNumber, Boolean allowEmptyResult, String filterType, String name, String timeZone, String sortBy, String sortOrder) {
     return GetOutboundContactlisttemplatesRequest.builder()
             .withPageSize(pageSize)
 
@@ -5800,6 +5813,8 @@ public class OutboundApi {
             .withFilterType(filterType)
 
             .withName(name)
+
+            .withTimeZone(timeZone)
 
             .withSortBy(sortBy)
 
@@ -11357,6 +11372,84 @@ public class OutboundApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ContactList> response = (ApiResponse<ContactList>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Bulk update contact lists.
+   * A maximum of 100 contact lists can be updated per request.
+   * @param body Contact lists bulk edit request. (required)
+   * @return ContactListsBulkEditResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListsBulkEditResponse postOutboundContactlistsBulkUpdate(ContactListsBulkEditRequest body) throws IOException, ApiException {
+    return  postOutboundContactlistsBulkUpdate(createPostOutboundContactlistsBulkUpdateRequest(body));
+  }
+
+  /**
+   * Bulk update contact lists.
+   * A maximum of 100 contact lists can be updated per request.
+   * @param body Contact lists bulk edit request. (required)
+   * @return ContactListsBulkEditResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListsBulkEditResponse> postOutboundContactlistsBulkUpdateWithHttpInfo(ContactListsBulkEditRequest body) throws IOException {
+    return postOutboundContactlistsBulkUpdate(createPostOutboundContactlistsBulkUpdateRequest(body).withHttpInfo());
+  }
+
+  private PostOutboundContactlistsBulkUpdateRequest createPostOutboundContactlistsBulkUpdateRequest(ContactListsBulkEditRequest body) {
+    return PostOutboundContactlistsBulkUpdateRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Bulk update contact lists.
+   * A maximum of 100 contact lists can be updated per request.
+   * @param request The request object
+   * @return ContactListsBulkEditResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContactListsBulkEditResponse postOutboundContactlistsBulkUpdate(PostOutboundContactlistsBulkUpdateRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContactListsBulkEditResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContactListsBulkEditResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Bulk update contact lists.
+   * A maximum of 100 contact lists can be updated per request.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContactListsBulkEditResponse> postOutboundContactlistsBulkUpdate(ApiRequest<ContactListsBulkEditRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContactListsBulkEditResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListsBulkEditResponse> response = (ApiResponse<ContactListsBulkEditResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContactListsBulkEditResponse> response = (ApiResponse<ContactListsBulkEditResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

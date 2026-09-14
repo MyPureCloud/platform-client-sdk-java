@@ -61,6 +61,8 @@ import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingResponse;
+import com.mypurecloud.sdk.v2.model.ContactListsBulkEditRequest;
+import com.mypurecloud.sdk.v2.model.ContactListsBulkEditResponse;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJob;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJobListing;
 import com.mypurecloud.sdk.v2.model.ContactsExportRequest;

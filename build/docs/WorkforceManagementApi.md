@@ -79,6 +79,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRun) | Get a scheduling run |
 | [**getWorkforcemanagementBusinessunitSchedulingRunResult**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRunResult) | Get the result of a rescheduling operation |
 | [**getWorkforcemanagementBusinessunitSchedulingRuns**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingRuns) | Get the list of scheduling runs |
+| [**getWorkforcemanagementBusinessunitSchedulingpreferencesSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingpreferencesSettings) | Get business unit scheduling preferences settings |
 | [**getWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#getWorkforcemanagementBusinessunitServicegoaltemplate) | Get a service goal template |
 | [**getWorkforcemanagementBusinessunitServicegoaltemplates**](WorkforceManagementApi#getWorkforcemanagementBusinessunitServicegoaltemplates) | Gets list of service goal templates |
 | [**getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitShifttradingTradesEvaluateJob) | View results of the evaluate shift trades in a management unit per week operation. Only the user who started the operation can query the status |
@@ -154,6 +155,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementSchedulebidSchedulesets**](WorkforceManagementApi#getWorkforcemanagementSchedulebidSchedulesets) | Gets an agent's schedule sets for a bid |
 | [**getWorkforcemanagementSchedulebids**](WorkforceManagementApi#getWorkforcemanagementSchedulebids) | Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently |
 | [**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi#getWorkforcemanagementSchedulingjob) | Get status of the scheduling job |
+| [**getWorkforcemanagementSchedulingpreferencesSettings**](WorkforceManagementApi#getWorkforcemanagementSchedulingpreferencesSettings) | Get scheduling preferences settings for the agent's business unit |
 | [**getWorkforcemanagementShifttrades**](WorkforceManagementApi#getWorkforcemanagementShifttrades) | Gets all of my shift trades |
 | [**getWorkforcemanagementShifttradingTradeJob**](WorkforceManagementApi#getWorkforcemanagementShifttradingTradeJob) | View result of update trade operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementShifttradingTradeMatchJob**](WorkforceManagementApi#getWorkforcemanagementShifttradingTradeMatchJob) | View result of match shift trade operation. Only the receiving user who started the operation can query the status. |
@@ -189,6 +191,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulebidGroupPreferences) | Overrides the assigned schedule bid for the specified agents |
 | [**patchWorkforcemanagementBusinessunitSchedulerSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulerSettings) | Update scheduler settings for a business unit |
 | [**patchWorkforcemanagementBusinessunitSchedulingRun**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulingRun) | Mark a schedule run as applied |
+| [**patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings) | Update business unit scheduling preferences settings |
 | [**patchWorkforcemanagementBusinessunitServicegoaltemplate**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitServicegoaltemplate) | Updates a service goal template |
 | [**patchWorkforcemanagementBusinessunitStaffinggroup**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitStaffinggroup) | Updates a staffing group |
 | [**patchWorkforcemanagementBusinessunitTimeoffplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitTimeoffplan) | Updates a time-off plan |
@@ -206,6 +209,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementManagementunitWeekShifttrade**](WorkforceManagementApi#patchWorkforcemanagementManagementunitWeekShifttrade) | Updates a shift trade. This route can only be called by the initiating agent |
 | [**patchWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi#patchWorkforcemanagementManagementunitWorkplan) | Update a work plan |
 | [**patchWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi#patchWorkforcemanagementManagementunitWorkplanrotation) | Update a work plan rotation |
+| [**patchWorkforcemanagementSchedulingpreferences**](WorkforceManagementApi#patchWorkforcemanagementSchedulingpreferences) | Update agent scheduling preferences |
 | [**patchWorkforcemanagementTimeoffrequest**](WorkforceManagementApi#patchWorkforcemanagementTimeoffrequest) | Update a time off request for the current user |
 | [**patchWorkforcemanagementUnavailabletimes**](WorkforceManagementApi#patchWorkforcemanagementUnavailabletimes) | Update agent unavailable times |
 | [**patchWorkforcemanagementUserWorkplanbidranks**](WorkforceManagementApi#patchWorkforcemanagementUserWorkplanbidranks) | Update work plan bid ranks for a user |
@@ -216,6 +220,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementAdherenceHistoricalBulk**](WorkforceManagementApi#postWorkforcemanagementAdherenceHistoricalBulk) | Request a historical adherence report in bulk |
 | [**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanations) | Add an adherence explanation for the requested user |
 | [**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanationsQuery) | Query adherence explanations for the given agent across a specified range |
+| [**postWorkforcemanagementAgentSchedulingpreferencesQuery**](WorkforceManagementApi#postWorkforcemanagementAgentSchedulingpreferencesQuery) | Get agent scheduling preferences |
 | [**postWorkforcemanagementAgentUnavailabletimesQuery**](WorkforceManagementApi#postWorkforcemanagementAgentUnavailabletimesQuery) | Get agent unavailable times |
 | [**postWorkforcemanagementAgents**](WorkforceManagementApi#postWorkforcemanagementAgents) | Move agents in and out of management unit |
 | [**postWorkforcemanagementAgentsIntegrationsHrisQuery**](WorkforceManagementApi#postWorkforcemanagementAgentsIntegrationsHrisQuery) | Query integrations for agents |
@@ -330,6 +335,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementManagementunits**](WorkforceManagementApi#postWorkforcemanagementManagementunits) | Add a management unit |
 | [**postWorkforcemanagementNotificationsUpdate**](WorkforceManagementApi#postWorkforcemanagementNotificationsUpdate) | Mark a list of notifications as read or unread |
 | [**postWorkforcemanagementSchedules**](WorkforceManagementApi#postWorkforcemanagementSchedules) | Get published schedule for the current user |
+| [**postWorkforcemanagementSchedulingpreferencesQuery**](WorkforceManagementApi#postWorkforcemanagementSchedulingpreferencesQuery) | Get agent scheduling preferences |
 | [**postWorkforcemanagementShifttradingTradeJobs**](WorkforceManagementApi#postWorkforcemanagementShifttradingTradeJobs) | Updates a shift trade. This route can only be called by the initiating user |
 | [**postWorkforcemanagementShifttradingTradeMatchJobs**](WorkforceManagementApi#postWorkforcemanagementShifttradingTradeMatchJobs) | Matches a shift trade. This route can only be called by the receiving user |
 | [**postWorkforcemanagementShifttradingTradeStateJobs**](WorkforceManagementApi#postWorkforcemanagementShifttradingTradeStateJobs) | Update trade state by a user |
@@ -344,6 +350,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery**](WorkforceManagementApi#postWorkforcemanagementTimeoffrequestsIntegrationstatusQuery) | Retrieves integration statuses for a list of current user time off requests |
 | [**postWorkforcemanagementUnavailabletimesQuery**](WorkforceManagementApi#postWorkforcemanagementUnavailabletimesQuery) | Get agent unavailable times |
 | [**postWorkforcemanagementUnavailabletimesValidationJobs**](WorkforceManagementApi#postWorkforcemanagementUnavailabletimesValidationJobs) | Validates proposed changes to an agent's unavailable time spans against scheduling rules and constraints for a specific week |
+| [**postWorkforcemanagementUsersActivity**](WorkforceManagementApi#postWorkforcemanagementUsersActivity) | Get a list of UserScheduleAdherence records for the requested users |
 | [**putWorkforcemanagementAgentIntegrationsHris**](WorkforceManagementApi#putWorkforcemanagementAgentIntegrationsHris) | Update integrations for agent |
 | [**putWorkforcemanagementBusinessunitTimeofflimitValues**](WorkforceManagementApi#putWorkforcemanagementBusinessunitTimeofflimitValues) | Sets daily values for a date range of time-off limit object |
 | [**putWorkforcemanagementManagementunitTimeofflimitValues**](WorkforceManagementApi#putWorkforcemanagementManagementunitTimeofflimitValues) | Sets daily values for a date range of time off limit object |
@@ -5127,6 +5134,67 @@ try {
 ### Return type
 
 [**BuScheduleRunListing**](BuScheduleRunListing)
+
+
+# **getWorkforcemanagementBusinessunitSchedulingpreferencesSettings**
+
+
+> [BusinessUnitSchedulingPreferencesSettingsResponse](BusinessUnitSchedulingPreferencesSettingsResponse) getWorkforcemanagementBusinessunitSchedulingpreferencesSettings(businessUnitId)
+
+Get business unit scheduling preferences settings
+
+getWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences/settings  
+
+Requires ANY permissions: 
+
+* wfm:schedulingPreferencesSettings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+try {
+    BusinessUnitSchedulingPreferencesSettingsResponse result = apiInstance.getWorkforcemanagementBusinessunitSchedulingpreferencesSettings(businessUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitSchedulingpreferencesSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BusinessUnitSchedulingPreferencesSettingsResponse**](BusinessUnitSchedulingPreferencesSettingsResponse)
 
 
 # **getWorkforcemanagementBusinessunitServicegoaltemplate**
@@ -9940,6 +10008,63 @@ try {
 [**SchedulingStatusResponse**](SchedulingStatusResponse)
 
 
+# **getWorkforcemanagementSchedulingpreferencesSettings**
+
+
+> [BusinessUnitSchedulingPreferencesSettingsResponse](BusinessUnitSchedulingPreferencesSettingsResponse) getWorkforcemanagementSchedulingpreferencesSettings()
+
+Get scheduling preferences settings for the agent's business unit
+
+getWorkforcemanagementSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/workforcemanagement/schedulingpreferences/settings  
+
+Requires ANY permissions: 
+
+* wfm:agentSchedulingPreferencesSettings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+try {
+    BusinessUnitSchedulingPreferencesSettingsResponse result = apiInstance.getWorkforcemanagementSchedulingpreferencesSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementSchedulingpreferencesSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**BusinessUnitSchedulingPreferencesSettingsResponse**](BusinessUnitSchedulingPreferencesSettingsResponse)
+
+
 # **getWorkforcemanagementShifttrades**
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
@@ -12076,6 +12201,69 @@ try {
 null (empty response body)
 
 
+# **patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings**
+
+
+> [BusinessUnitSchedulingPreferencesSettingsResponse](BusinessUnitSchedulingPreferencesSettingsResponse) patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings(businessUnitId, body)
+
+Update business unit scheduling preferences settings
+
+patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/schedulingpreferences/settings  
+
+Requires ANY permissions: 
+
+* wfm:schedulingPreferencesSettings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+UpdateBusinessUnitSchedulingPreferencesSettingsRequest body = new UpdateBusinessUnitSchedulingPreferencesSettingsRequest(); // UpdateBusinessUnitSchedulingPreferencesSettingsRequest | body
+try {
+    BusinessUnitSchedulingPreferencesSettingsResponse result = apiInstance.patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**UpdateBusinessUnitSchedulingPreferencesSettingsRequest**](UpdateBusinessUnitSchedulingPreferencesSettingsRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BusinessUnitSchedulingPreferencesSettingsResponse**](BusinessUnitSchedulingPreferencesSettingsResponse)
+
+
 # **patchWorkforcemanagementBusinessunitServicegoaltemplate**
 
 
@@ -13163,6 +13351,67 @@ try {
 [**WorkPlanRotationResponse**](WorkPlanRotationResponse)
 
 
+# **patchWorkforcemanagementSchedulingpreferences**
+
+
+> [AgentSchedulingPreferenceListing](AgentSchedulingPreferenceListing) patchWorkforcemanagementSchedulingpreferences(body)
+
+Update agent scheduling preferences
+
+patchWorkforcemanagementSchedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/workforcemanagement/schedulingpreferences  
+
+Requires ANY permissions: 
+
+* wfm:agentSchedulingPreferences:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+UpdateAgentSchedulingPreferencesRequest body = new UpdateAgentSchedulingPreferencesRequest(); // UpdateAgentSchedulingPreferencesRequest | body
+try {
+    AgentSchedulingPreferenceListing result = apiInstance.patchWorkforcemanagementSchedulingpreferences(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementSchedulingpreferences");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UpdateAgentSchedulingPreferencesRequest**](UpdateAgentSchedulingPreferencesRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentSchedulingPreferenceListing**](AgentSchedulingPreferenceListing)
+
+
 # **patchWorkforcemanagementTimeoffrequest**
 
 
@@ -13769,6 +14018,69 @@ try {
 ### Return type
 
 [**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse)
+
+
+# **postWorkforcemanagementAgentSchedulingpreferencesQuery**
+
+
+> [AgentSchedulingPreferenceListing](AgentSchedulingPreferenceListing) postWorkforcemanagementAgentSchedulingpreferencesQuery(agentId, body)
+
+Get agent scheduling preferences
+
+postWorkforcemanagementAgentSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/workforcemanagement/agents/{agentId}/schedulingpreferences/query  
+
+Requires ANY permissions: 
+
+* wfm:schedulingPreferencesQuery:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String agentId = "agentId_example"; // String | The ID of the agent
+QueryAgentSchedulingPreferencesRequest body = new QueryAgentSchedulingPreferencesRequest(); // QueryAgentSchedulingPreferencesRequest | body
+try {
+    AgentSchedulingPreferenceListing result = apiInstance.postWorkforcemanagementAgentSchedulingpreferencesQuery(agentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentSchedulingpreferencesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The ID of the agent | 
+| **body** | [**QueryAgentSchedulingPreferencesRequest**](QueryAgentSchedulingPreferencesRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentSchedulingPreferenceListing**](AgentSchedulingPreferenceListing)
 
 
 # **postWorkforcemanagementAgentUnavailabletimesQuery**
@@ -20953,6 +21265,67 @@ try {
 [**UserScheduleContainer**](UserScheduleContainer)
 
 
+# **postWorkforcemanagementSchedulingpreferencesQuery**
+
+
+> [AgentSchedulingPreferenceListing](AgentSchedulingPreferenceListing) postWorkforcemanagementSchedulingpreferencesQuery(body)
+
+Get agent scheduling preferences
+
+postWorkforcemanagementSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/workforcemanagement/schedulingpreferences/query  
+
+Requires ANY permissions: 
+
+* wfm:agentSchedulingPreferencesQuery:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+QueryAgentSchedulingPreferencesRequest body = new QueryAgentSchedulingPreferencesRequest(); // QueryAgentSchedulingPreferencesRequest | body
+try {
+    AgentSchedulingPreferenceListing result = apiInstance.postWorkforcemanagementSchedulingpreferencesQuery(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementSchedulingpreferencesQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**QueryAgentSchedulingPreferencesRequest**](QueryAgentSchedulingPreferencesRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AgentSchedulingPreferenceListing**](AgentSchedulingPreferenceListing)
+
+
 # **postWorkforcemanagementShifttradingTradeJobs**
 
 
@@ -21807,6 +22180,65 @@ try {
 [**ValidateAgentUnavailableTimesResponse**](ValidateAgentUnavailableTimesResponse)
 
 
+# **postWorkforcemanagementUsersActivity**
+
+
+> [UserActivityListing](UserActivityListing) postWorkforcemanagementUsersActivity(body)
+
+Get a list of UserScheduleAdherence records for the requested users
+
+Wraps POST /api/v2/workforcemanagement/users/activity  
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+UsersActivityRequest body = new UsersActivityRequest(); // UsersActivityRequest | Request body
+try {
+    UserActivityListing result = apiInstance.postWorkforcemanagementUsersActivity(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementUsersActivity");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UsersActivityRequest**](UsersActivityRequest)| Request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**UserActivityListing**](UserActivityListing)
+
+
 # **putWorkforcemanagementAgentIntegrationsHris**
 
 
@@ -22062,4 +22494,4 @@ try {
 [**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

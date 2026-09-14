@@ -15,8 +15,22 @@
 | **phoneNumberStatus** | [**Map&lt;String, PhoneNumberStatus&gt;**](PhoneNumberStatus) | A map of phone number columns to PhoneNumberStatuses, which indicate if the phone number is callable or not. |  [optional] |
 | **contactableStatus** | [**Map&lt;String, ContactableStatus&gt;**](ContactableStatus) | A map of media types (Voice, SMS and Email) to ContactableStatus, which indicates if the contact can be contacted using the specified media type. |  [optional] |
 | **dateCreated** | [**Date**](Date) | Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **retentionType** | [**RetentionTypeEnum**](#Enum--RetentionTypeEnum) | The type of retention for this contact. Valid values: Never, Today, RetentionDays, DateExpiration |  [optional] |
+| **retentionDays** | **Integer** | The number of days to retain this contact. Required when retentionType is RetentionDays. |  [optional] |
+| **dateExpiration** | [**Date**](Date) | The expiration date of the contact. Required when retentionType is DateExpiration. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+
+
+## Enum: RetentionTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NEVER | &quot;Never&quot; | 
+| TODAY | &quot;Today&quot; | 
+| RETENTIONDAYS | &quot;RetentionDays&quot; | 
+| DATEEXPIRATION | &quot;DateExpiration&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

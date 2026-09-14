@@ -11,6 +11,9 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
@@ -19,6 +22,7 @@ import java.io.Serializable;
 
 public class RegisterArchitectJobRequest  implements Serializable {
   
+  private Boolean createStubs = null;
 
   public RegisterArchitectJobRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -31,6 +35,24 @@ public class RegisterArchitectJobRequest  implements Serializable {
   }
 
   
+  /**
+   * If true, flow stubs will be created for any dependencies during the job.
+   **/
+  public RegisterArchitectJobRequest createStubs(Boolean createStubs) {
+    this.createStubs = createStubs;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "If true, flow stubs will be created for any dependencies during the job.")
+  @JsonProperty("createStubs")
+  public Boolean getCreateStubs() {
+    return createStubs;
+  }
+  public void setCreateStubs(Boolean createStubs) {
+    this.createStubs = createStubs;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -39,13 +61,14 @@ public class RegisterArchitectJobRequest  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
+    RegisterArchitectJobRequest registerArchitectJobRequest = (RegisterArchitectJobRequest) o;
 
-    return true;
+    return Objects.equals(this.createStubs, registerArchitectJobRequest.createStubs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(createStubs);
   }
 
   @Override
@@ -53,6 +76,7 @@ public class RegisterArchitectJobRequest  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class RegisterArchitectJobRequest {\n");
     
+    sb.append("    createStubs: ").append(toIndentedString(createStubs)).append("\n");
     sb.append("}");
     return sb.toString();
   }

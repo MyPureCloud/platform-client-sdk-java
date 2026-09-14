@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationAttribute;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -132,16 +133,19 @@ public class Variable  implements Serializable {
   private Object validation = null;
   private Object listValues = null;
   private List<Variable> listVariables = null;
+  private List<ConversationAttribute> customConversationAttributes = null;
 
   public Variable() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       listVariables = new ArrayList<Variable>();
+      customConversationAttributes = new ArrayList<ConversationAttribute>();
     }
   }
 
   public Variable(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
       listVariables = new ArrayList<Variable>();
+      customConversationAttributes = new ArrayList<ConversationAttribute>();
     }
   }
 
@@ -272,6 +276,24 @@ public class Variable  implements Serializable {
   }
 
 
+  /**
+   * The Conversation Custom Attributes (CCA) for this variable. When present, the variable value is bound to the specified conversation attributes.
+   **/
+  public Variable customConversationAttributes(List<ConversationAttribute> customConversationAttributes) {
+    this.customConversationAttributes = customConversationAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The Conversation Custom Attributes (CCA) for this variable. When present, the variable value is bound to the specified conversation attributes.")
+  @JsonProperty("customConversationAttributes")
+  public List<ConversationAttribute> getCustomConversationAttributes() {
+    return customConversationAttributes;
+  }
+  public void setCustomConversationAttributes(List<ConversationAttribute> customConversationAttributes) {
+    this.customConversationAttributes = customConversationAttributes;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -288,12 +310,13 @@ public class Variable  implements Serializable {
             Objects.equals(this.description, variable.description) &&
             Objects.equals(this.validation, variable.validation) &&
             Objects.equals(this.listValues, variable.listValues) &&
-            Objects.equals(this.listVariables, variable.listVariables);
+            Objects.equals(this.listVariables, variable.listVariables) &&
+            Objects.equals(this.customConversationAttributes, variable.customConversationAttributes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, type, scope, description, validation, listValues, listVariables);
+    return Objects.hash(name, type, scope, description, validation, listValues, listVariables, customConversationAttributes);
   }
 
   @Override
@@ -308,6 +331,7 @@ public class Variable  implements Serializable {
     sb.append("    validation: ").append(toIndentedString(validation)).append("\n");
     sb.append("    listValues: ").append(toIndentedString(listValues)).append("\n");
     sb.append("    listVariables: ").append(toIndentedString(listVariables)).append("\n");
+    sb.append("    customConversationAttributes: ").append(toIndentedString(customConversationAttributes)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -185,6 +185,7 @@ public class AgentChecklistResponse  implements Serializable {
     }
   }
   private DirectionEnum direction = null;
+  private Boolean preview = null;
   private Date evaluationStartDate = null;
   private Date evaluationLastModifiedDate = null;
   private Date evaluationFinalizedDate = null;
@@ -444,6 +445,24 @@ public class AgentChecklistResponse  implements Serializable {
 
 
   /**
+   * Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+   **/
+  public AgentChecklistResponse preview(Boolean preview) {
+    this.preview = preview;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "false", value = "Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.")
+  @JsonProperty("preview")
+  public Boolean getPreview() {
+    return preview;
+  }
+  public void setPreview(Boolean preview) {
+    this.preview = preview;
+  }
+
+
+  /**
    * Date when the checklist evaluation began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public AgentChecklistResponse evaluationStartDate(Date evaluationStartDate) {
@@ -599,6 +618,7 @@ public class AgentChecklistResponse  implements Serializable {
             Objects.equals(this.assistantId, agentChecklistResponse.assistantId) &&
             Objects.equals(this.mediaType, agentChecklistResponse.mediaType) &&
             Objects.equals(this.direction, agentChecklistResponse.direction) &&
+            Objects.equals(this.preview, agentChecklistResponse.preview) &&
             Objects.equals(this.evaluationStartDate, agentChecklistResponse.evaluationStartDate) &&
             Objects.equals(this.evaluationLastModifiedDate, agentChecklistResponse.evaluationLastModifiedDate) &&
             Objects.equals(this.evaluationFinalizedDate, agentChecklistResponse.evaluationFinalizedDate) &&
@@ -611,7 +631,7 @@ public class AgentChecklistResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, checklistItems, activationTriggers, status, exitReason, language, agentId, participantId, queueId, assistantId, mediaType, direction, evaluationStartDate, evaluationLastModifiedDate, evaluationFinalizedDate, evaluationFinalizedWithAcwDate, success, errorCode, errorMessage, selfUri);
+    return Objects.hash(id, name, checklistItems, activationTriggers, status, exitReason, language, agentId, participantId, queueId, assistantId, mediaType, direction, preview, evaluationStartDate, evaluationLastModifiedDate, evaluationFinalizedDate, evaluationFinalizedWithAcwDate, success, errorCode, errorMessage, selfUri);
   }
 
   @Override
@@ -632,6 +652,7 @@ public class AgentChecklistResponse  implements Serializable {
     sb.append("    assistantId: ").append(toIndentedString(assistantId)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+    sb.append("    preview: ").append(toIndentedString(preview)).append("\n");
     sb.append("    evaluationStartDate: ").append(toIndentedString(evaluationStartDate)).append("\n");
     sb.append("    evaluationLastModifiedDate: ").append(toIndentedString(evaluationLastModifiedDate)).append("\n");
     sb.append("    evaluationFinalizedDate: ").append(toIndentedString(evaluationFinalizedDate)).append("\n");

@@ -80,6 +80,7 @@ import com.mypurecloud.sdk.v2.model.PromptAssetUpload;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobRequest;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJobResponse;
@@ -10215,7 +10216,7 @@ public class ArchitectApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<RegisterArchitectJobResponse>> postFlowsJobsAsync(ApiRequest<Object> request, final AsyncApiCallback<ApiResponse<RegisterArchitectJobResponse>> callback) {
+  public Future<ApiResponse<RegisterArchitectJobResponse>> postFlowsJobsAsync(ApiRequest<RegisterArchitectJobRequest> request, final AsyncApiCallback<ApiResponse<RegisterArchitectJobResponse>> callback) {
     try {
       final SettableFuture<ApiResponse<RegisterArchitectJobResponse>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

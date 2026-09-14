@@ -12,9 +12,12 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.QueueEmailAddress;
 import com.mypurecloud.sdk.v2.model.ServiceLevel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -28,14 +31,17 @@ public class EmailMediaSettings  implements Serializable {
   private ServiceLevel serviceLevel = null;
   private Double autoAnswerAlertToneSeconds = null;
   private Double manualAnswerAlertToneSeconds = null;
+  private List<QueueEmailAddress> allOutboundEmailAddresses = null;
 
   public EmailMediaSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      allOutboundEmailAddresses = new ArrayList<QueueEmailAddress>();
     }
   }
 
   public EmailMediaSettings(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      allOutboundEmailAddresses = new ArrayList<QueueEmailAddress>();
     }
   }
 
@@ -130,6 +136,24 @@ public class EmailMediaSettings  implements Serializable {
   }
 
 
+  /**
+   * The list of email addresses that are assigned to the queue and can be used by agents as an outbound email address.
+   **/
+  public EmailMediaSettings allOutboundEmailAddresses(List<QueueEmailAddress> allOutboundEmailAddresses) {
+    this.allOutboundEmailAddresses = allOutboundEmailAddresses;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The list of email addresses that are assigned to the queue and can be used by agents as an outbound email address.")
+  @JsonProperty("allOutboundEmailAddresses")
+  public List<QueueEmailAddress> getAllOutboundEmailAddresses() {
+    return allOutboundEmailAddresses;
+  }
+  public void setAllOutboundEmailAddresses(List<QueueEmailAddress> allOutboundEmailAddresses) {
+    this.allOutboundEmailAddresses = allOutboundEmailAddresses;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -144,12 +168,13 @@ public class EmailMediaSettings  implements Serializable {
             Objects.equals(this.alertingTimeoutSeconds, emailMediaSettings.alertingTimeoutSeconds) &&
             Objects.equals(this.serviceLevel, emailMediaSettings.serviceLevel) &&
             Objects.equals(this.autoAnswerAlertToneSeconds, emailMediaSettings.autoAnswerAlertToneSeconds) &&
-            Objects.equals(this.manualAnswerAlertToneSeconds, emailMediaSettings.manualAnswerAlertToneSeconds);
+            Objects.equals(this.manualAnswerAlertToneSeconds, emailMediaSettings.manualAnswerAlertToneSeconds) &&
+            Objects.equals(this.allOutboundEmailAddresses, emailMediaSettings.allOutboundEmailAddresses);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds);
+    return Objects.hash(enableAutoAnswer, alertingTimeoutSeconds, serviceLevel, autoAnswerAlertToneSeconds, manualAnswerAlertToneSeconds, allOutboundEmailAddresses);
   }
 
   @Override
@@ -162,6 +187,7 @@ public class EmailMediaSettings  implements Serializable {
     sb.append("    serviceLevel: ").append(toIndentedString(serviceLevel)).append("\n");
     sb.append("    autoAnswerAlertToneSeconds: ").append(toIndentedString(autoAnswerAlertToneSeconds)).append("\n");
     sb.append("    manualAnswerAlertToneSeconds: ").append(toIndentedString(manualAnswerAlertToneSeconds)).append("\n");
+    sb.append("    allOutboundEmailAddresses: ").append(toIndentedString(allOutboundEmailAddresses)).append("\n");
     sb.append("}");
     return sb.toString();
   }

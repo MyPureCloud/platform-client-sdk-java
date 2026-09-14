@@ -75,6 +75,7 @@ public class CreateVerifierResponse  implements Serializable {
   private TypeEnum type = null;
   private Boolean enabled = null;
   private String keyUri = null;
+  private String encodedQuickResponseCode = null;
   private Boolean _default = null;
 
   public CreateVerifierResponse() {
@@ -179,6 +180,24 @@ public class CreateVerifierResponse  implements Serializable {
 
 
   /**
+   * Base64-encoded PNG of the TOTP registration QR code.
+   **/
+  public CreateVerifierResponse encodedQuickResponseCode(String encodedQuickResponseCode) {
+    this.encodedQuickResponseCode = encodedQuickResponseCode;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Base64-encoded PNG of the TOTP registration QR code.")
+  @JsonProperty("encodedQuickResponseCode")
+  public String getEncodedQuickResponseCode() {
+    return encodedQuickResponseCode;
+  }
+  public void setEncodedQuickResponseCode(String encodedQuickResponseCode) {
+    this.encodedQuickResponseCode = encodedQuickResponseCode;
+  }
+
+
+  /**
    * Indicates whether this is the default verifier.
    **/
   public CreateVerifierResponse _default(Boolean _default) {
@@ -211,12 +230,13 @@ public class CreateVerifierResponse  implements Serializable {
             Objects.equals(this.type, createVerifierResponse.type) &&
             Objects.equals(this.enabled, createVerifierResponse.enabled) &&
             Objects.equals(this.keyUri, createVerifierResponse.keyUri) &&
+            Objects.equals(this.encodedQuickResponseCode, createVerifierResponse.encodedQuickResponseCode) &&
             Objects.equals(this._default, createVerifierResponse._default);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type, enabled, keyUri, _default);
+    return Objects.hash(id, name, type, enabled, keyUri, encodedQuickResponseCode, _default);
   }
 
   @Override
@@ -229,6 +249,7 @@ public class CreateVerifierResponse  implements Serializable {
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("    keyUri: ").append(toIndentedString(keyUri)).append("\n");
+    sb.append("    encodedQuickResponseCode: ").append(toIndentedString(encodedQuickResponseCode)).append("\n");
     sb.append("    _default: ").append(toIndentedString(_default)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -212,6 +212,7 @@ public class QueueFullReference  implements Serializable {
   private DomainEntityRef messageInQueueFlow = null;
   private DomainEntityRef whisperPrompt = null;
   private DomainEntityRef onHoldPrompt = null;
+  private String defaultMediaLanguage = null;
   private Boolean autoAnswerOnly = null;
   private CannedResponseLibraries cannedResponseLibraries = null;
   private Boolean enableTranscription = null;
@@ -678,6 +679,24 @@ public class QueueFullReference  implements Serializable {
 
 
   /**
+   * The canonical language code (e.g. en-US) used for the default media language on the queue.
+   **/
+  public QueueFullReference defaultMediaLanguage(String defaultMediaLanguage) {
+    this.defaultMediaLanguage = defaultMediaLanguage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The canonical language code (e.g. en-US) used for the default media language on the queue.")
+  @JsonProperty("defaultMediaLanguage")
+  public String getDefaultMediaLanguage() {
+    return defaultMediaLanguage;
+  }
+  public void setDefaultMediaLanguage(String defaultMediaLanguage) {
+    this.defaultMediaLanguage = defaultMediaLanguage;
+  }
+
+
+  /**
    * Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered.
    **/
   public QueueFullReference autoAnswerOnly(Boolean autoAnswerOnly) {
@@ -972,6 +991,7 @@ public class QueueFullReference  implements Serializable {
             Objects.equals(this.messageInQueueFlow, queueFullReference.messageInQueueFlow) &&
             Objects.equals(this.whisperPrompt, queueFullReference.whisperPrompt) &&
             Objects.equals(this.onHoldPrompt, queueFullReference.onHoldPrompt) &&
+            Objects.equals(this.defaultMediaLanguage, queueFullReference.defaultMediaLanguage) &&
             Objects.equals(this.autoAnswerOnly, queueFullReference.autoAnswerOnly) &&
             Objects.equals(this.cannedResponseLibraries, queueFullReference.cannedResponseLibraries) &&
             Objects.equals(this.enableTranscription, queueFullReference.enableTranscription) &&
@@ -991,7 +1011,7 @@ public class QueueFullReference  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, conditionalGroupActivation, bullseye, scoringMethod, lastAgentRoutingMode, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, autoAnswerOnly, cannedResponseLibraries, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, conditionalGroupActivation, bullseye, scoringMethod, lastAgentRoutingMode, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, defaultMediaLanguage, autoAnswerOnly, cannedResponseLibraries, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, selfUri);
   }
 
   @Override
@@ -1025,6 +1045,7 @@ public class QueueFullReference  implements Serializable {
     sb.append("    messageInQueueFlow: ").append(toIndentedString(messageInQueueFlow)).append("\n");
     sb.append("    whisperPrompt: ").append(toIndentedString(whisperPrompt)).append("\n");
     sb.append("    onHoldPrompt: ").append(toIndentedString(onHoldPrompt)).append("\n");
+    sb.append("    defaultMediaLanguage: ").append(toIndentedString(defaultMediaLanguage)).append("\n");
     sb.append("    autoAnswerOnly: ").append(toIndentedString(autoAnswerOnly)).append("\n");
     sb.append("    cannedResponseLibraries: ").append(toIndentedString(cannedResponseLibraries)).append("\n");
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");

@@ -61,6 +61,8 @@ import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingResponse;
+import com.mypurecloud.sdk.v2.model.ContactListsBulkEditRequest;
+import com.mypurecloud.sdk.v2.model.ContactListsBulkEditResponse;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJob;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJobListing;
 import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
@@ -278,6 +280,34 @@ public class GetOutboundContactlistsRequest {
 	    return this;
 	} 
 
+	private String timeZone;
+	public String getTimeZone() {
+		return this.timeZone;
+	}
+
+	public void setTimeZone(String timeZone) {
+		this.timeZone = timeZone;
+	}
+
+	public GetOutboundContactlistsRequest withTimeZone(String timeZone) {
+	    this.setTimeZone(timeZone);
+	    return this;
+	} 
+
+	private List<String> dateExpiration;
+	public List<String> getDateExpiration() {
+		return this.dateExpiration;
+	}
+
+	public void setDateExpiration(List<String> dateExpiration) {
+		this.dateExpiration = dateExpiration;
+	}
+
+	public GetOutboundContactlistsRequest withDateExpiration(List<String> dateExpiration) {
+	    this.setDateExpiration(dateExpiration);
+	    return this;
+	} 
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -388,6 +418,12 @@ public class GetOutboundContactlistsRequest {
                 .withQueryParameters("divisionId", "multi", divisionId)
         
 
+                .withQueryParameters("timeZone", "", timeZone)
+        
+
+                .withQueryParameters("dateExpiration", "multi", dateExpiration)
+        
+
                 .withQueryParameters("sortBy", "", sortBy)
         
 
@@ -465,6 +501,16 @@ public class GetOutboundContactlistsRequest {
 
 		public Builder withDivisionId(List<String> divisionId) {
 			request.setDivisionId(divisionId);
+			return this;
+		}
+
+		public Builder withTimeZone(String timeZone) {
+			request.setTimeZone(timeZone);
+			return this;
+		}
+
+		public Builder withDateExpiration(List<String> dateExpiration) {
+			request.setDateExpiration(dateExpiration);
 			return this;
 		}
 

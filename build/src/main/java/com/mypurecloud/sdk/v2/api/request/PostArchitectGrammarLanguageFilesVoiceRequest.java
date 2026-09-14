@@ -87,6 +87,7 @@ import com.mypurecloud.sdk.v2.model.PromptAssetUpload;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobRequest;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJobResponse;

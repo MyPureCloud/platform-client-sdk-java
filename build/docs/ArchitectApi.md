@@ -2878,7 +2878,7 @@ try {
 # **getArchitectPrompts**
 
 
-> [PromptEntityListing](PromptEntityListing) getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language)
+> [PromptEntityListing](PromptEntityListing) getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language, divisionId)
 
 Get a pageable list of user prompts
 
@@ -2922,8 +2922,9 @@ String sortOrder = "asc"; // String | Sort order
 Boolean includeMediaUris = true; // Boolean | Include the media URIs for each resource
 Boolean includeResources = true; // Boolean | Include the resources for each system prompt
 List<String> language = Arrays.asList(null); // List<String> | Filter the resources down to the provided languages
+List<String> divisionId = Arrays.asList(null); // List<String> | division ID(s)
 try {
-    PromptEntityListing result = apiInstance.getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language);
+    PromptEntityListing result = apiInstance.getArchitectPrompts(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language, divisionId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ArchitectApi#getArchitectPrompts");
@@ -2946,6 +2947,7 @@ try {
 | **includeMediaUris** | **Boolean**| Include the media URIs for each resource | [optional] [default to true] 
 | **includeResources** | **Boolean**| Include the resources for each system prompt | [optional] [default to true] 
 | **language** | [**List&lt;String&gt;**](String)| Filter the resources down to the provided languages | [optional] 
+| **divisionId** | [**List&lt;String&gt;**](String)| division ID(s) | [optional] 
 {: class="table-striped"}
 
 
@@ -8646,7 +8648,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 ArchitectApi apiInstance = new ArchitectApi();
-Object body = null; // Object | 
+RegisterArchitectJobRequest body = new RegisterArchitectJobRequest(); // RegisterArchitectJobRequest | 
 try {
     RegisterArchitectJobResponse result = apiInstance.postFlowsJobs(body);
     System.out.println(result);
@@ -8661,7 +8663,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body** | **Object**|  | [optional] 
+| **body** | [**RegisterArchitectJobRequest**](RegisterArchitectJobRequest)|  | [optional] 
 {: class="table-striped"}
 
 
@@ -9788,4 +9790,4 @@ try {
 [**Operation**](Operation)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

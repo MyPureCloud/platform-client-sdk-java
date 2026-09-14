@@ -34,6 +34,8 @@ public class OperationalEvent  implements Serializable {
   private String parentEntityId = null;
   private AddressableEntityRef conversation = null;
   private Date dateCreated = null;
+  private Date dateModified = null;
+  private String entityModifiedBy = null;
   private String entityVersion = null;
   private String phoneNumber = null;
   private String externalContactId = null;
@@ -230,6 +232,42 @@ public class OperationalEvent  implements Serializable {
 
 
   /**
+   * The date and time the entity affected by the event was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public OperationalEvent dateModified(Date dateModified) {
+    this.dateModified = dateModified;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The date and time the entity affected by the event was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateModified")
+  public Date getDateModified() {
+    return dateModified;
+  }
+  public void setDateModified(Date dateModified) {
+    this.dateModified = dateModified;
+  }
+
+
+  /**
+   * The unique identifier of the user who last modified the entity affected by the event.
+   **/
+  public OperationalEvent entityModifiedBy(String entityModifiedBy) {
+    this.entityModifiedBy = entityModifiedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The unique identifier of the user who last modified the entity affected by the event.")
+  @JsonProperty("entityModifiedBy")
+  public String getEntityModifiedBy() {
+    return entityModifiedBy;
+  }
+  public void setEntityModifiedBy(String entityModifiedBy) {
+    this.entityModifiedBy = entityModifiedBy;
+  }
+
+
+  /**
    * The version of the entity in the providing service
    **/
   public OperationalEvent entityVersion(String entityVersion) {
@@ -303,6 +341,8 @@ public class OperationalEvent  implements Serializable {
             Objects.equals(this.parentEntityId, operationalEvent.parentEntityId) &&
             Objects.equals(this.conversation, operationalEvent.conversation) &&
             Objects.equals(this.dateCreated, operationalEvent.dateCreated) &&
+            Objects.equals(this.dateModified, operationalEvent.dateModified) &&
+            Objects.equals(this.entityModifiedBy, operationalEvent.entityModifiedBy) &&
             Objects.equals(this.entityVersion, operationalEvent.entityVersion) &&
             Objects.equals(this.phoneNumber, operationalEvent.phoneNumber) &&
             Objects.equals(this.externalContactId, operationalEvent.externalContactId);
@@ -310,7 +350,7 @@ public class OperationalEvent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventDefinition, entityId, entityToken, entityName, previousValue, currentValue, errorCode, parentEntityId, conversation, dateCreated, entityVersion, phoneNumber, externalContactId);
+    return Objects.hash(eventDefinition, entityId, entityToken, entityName, previousValue, currentValue, errorCode, parentEntityId, conversation, dateCreated, dateModified, entityModifiedBy, entityVersion, phoneNumber, externalContactId);
   }
 
   @Override
@@ -328,6 +368,8 @@ public class OperationalEvent  implements Serializable {
     sb.append("    parentEntityId: ").append(toIndentedString(parentEntityId)).append("\n");
     sb.append("    conversation: ").append(toIndentedString(conversation)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    entityModifiedBy: ").append(toIndentedString(entityModifiedBy)).append("\n");
     sb.append("    entityVersion: ").append(toIndentedString(entityVersion)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");

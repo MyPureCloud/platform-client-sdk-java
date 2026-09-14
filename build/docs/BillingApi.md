@@ -184,7 +184,7 @@ Configuration.setDefaultApiClient(apiClient);
 BillingApi apiInstance = new BillingApi();
 String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
 String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 10.
 LocalDate dateStart = new LocalDate(); // LocalDate | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 LocalDate dateEnd = new LocalDate(); // LocalDate | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String status = "status_example"; // String | Filter by the status of contracts
@@ -205,7 +205,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
 | **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **pageSize** | **String**| Number of entities to return. Maximum of 10. | [optional] 
 | **dateStart** | **LocalDate**| Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
 | **dateEnd** | **LocalDate**| End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
 | **status** | **String**| Filter by the status of contracts | [optional]<br />**Values**: Active, Inactive 
@@ -550,4 +550,4 @@ try {
 [**TrusteeBillingOverview**](TrusteeBillingOverview)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

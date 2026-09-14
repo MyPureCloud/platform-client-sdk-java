@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Operation;
 import com.mypurecloud.sdk.v2.model.PromptAsset;
+import com.mypurecloud.sdk.v2.model.WritableStarrableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class Prompt  implements Serializable {
   
   private String id = null;
   private String name = null;
+  private WritableStarrableDivision division = null;
   private String description = null;
   private List<PromptAsset> resources = null;
   private Operation currentOperation = null;
@@ -83,6 +85,24 @@ public class Prompt  implements Serializable {
 
 
   /**
+   * The division to which this entity belongs.
+   **/
+  public Prompt division(WritableStarrableDivision division) {
+    this.division = division;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
+  @JsonProperty("division")
+  public WritableStarrableDivision getDivision() {
+    return division;
+  }
+  public void setDivision(WritableStarrableDivision division) {
+    this.division = division;
+  }
+
+
+  /**
    **/
   public Prompt description(String description) {
     this.description = description;
@@ -132,6 +152,7 @@ public class Prompt  implements Serializable {
 
     return Objects.equals(this.id, prompt.id) &&
             Objects.equals(this.name, prompt.name) &&
+            Objects.equals(this.division, prompt.division) &&
             Objects.equals(this.description, prompt.description) &&
             Objects.equals(this.resources, prompt.resources) &&
             Objects.equals(this.currentOperation, prompt.currentOperation) &&
@@ -140,7 +161,7 @@ public class Prompt  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, resources, currentOperation, selfUri);
+    return Objects.hash(id, name, division, description, resources, currentOperation, selfUri);
   }
 
   @Override
@@ -150,6 +171,7 @@ public class Prompt  implements Serializable {
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    resources: ").append(toIndentedString(resources)).append("\n");
     sb.append("    currentOperation: ").append(toIndentedString(currentOperation)).append("\n");

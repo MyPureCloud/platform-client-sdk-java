@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ContactableStatus;
 import com.mypurecloud.sdk.v2.model.MessageEvaluation;
 import com.mypurecloud.sdk.v2.model.PhoneNumberStatus;
@@ -39,6 +40,58 @@ public class WritableDialerContact  implements Serializable {
   private Map<String, PhoneNumberStatus> phoneNumberStatus = null;
   private Map<String, ContactableStatus> contactableStatus = null;
   private Date dateCreated = null;
+
+  private static class RetentionTypeEnumDeserializer extends StdDeserializer<RetentionTypeEnum> {
+    public RetentionTypeEnumDeserializer() {
+      super(RetentionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public RetentionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return RetentionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of retention for this contact. Valid values: Never, Today, RetentionDays, DateExpiration
+   */
+ @JsonDeserialize(using = RetentionTypeEnumDeserializer.class)
+  public enum RetentionTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NEVER("Never"),
+    TODAY("Today"),
+    RETENTIONDAYS("RetentionDays"),
+    DATEEXPIRATION("DateExpiration");
+
+    private String value;
+
+    RetentionTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static RetentionTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (RetentionTypeEnum value : RetentionTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return RetentionTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private RetentionTypeEnum retentionType = null;
+  private Integer retentionDays = null;
+  private Date dateExpiration = null;
 
   public WritableDialerContact() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -198,6 +251,60 @@ public class WritableDialerContact  implements Serializable {
   }
 
 
+  /**
+   * The type of retention for this contact. Valid values: Never, Today, RetentionDays, DateExpiration
+   **/
+  public WritableDialerContact retentionType(RetentionTypeEnum retentionType) {
+    this.retentionType = retentionType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of retention for this contact. Valid values: Never, Today, RetentionDays, DateExpiration")
+  @JsonProperty("retentionType")
+  public RetentionTypeEnum getRetentionType() {
+    return retentionType;
+  }
+  public void setRetentionType(RetentionTypeEnum retentionType) {
+    this.retentionType = retentionType;
+  }
+
+
+  /**
+   * The number of days to retain this contact. Required when retentionType is RetentionDays.
+   **/
+  public WritableDialerContact retentionDays(Integer retentionDays) {
+    this.retentionDays = retentionDays;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The number of days to retain this contact. Required when retentionType is RetentionDays.")
+  @JsonProperty("retentionDays")
+  public Integer getRetentionDays() {
+    return retentionDays;
+  }
+  public void setRetentionDays(Integer retentionDays) {
+    this.retentionDays = retentionDays;
+  }
+
+
+  /**
+   * The expiration date of the contact. Required when retentionType is DateExpiration. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public WritableDialerContact dateExpiration(Date dateExpiration) {
+    this.dateExpiration = dateExpiration;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The expiration date of the contact. Required when retentionType is DateExpiration. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateExpiration")
+  public Date getDateExpiration() {
+    return dateExpiration;
+  }
+  public void setDateExpiration(Date dateExpiration) {
+    this.dateExpiration = dateExpiration;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -217,12 +324,15 @@ public class WritableDialerContact  implements Serializable {
             Objects.equals(this.callable, writableDialerContact.callable) &&
             Objects.equals(this.phoneNumberStatus, writableDialerContact.phoneNumberStatus) &&
             Objects.equals(this.contactableStatus, writableDialerContact.contactableStatus) &&
-            Objects.equals(this.dateCreated, writableDialerContact.dateCreated);
+            Objects.equals(this.dateCreated, writableDialerContact.dateCreated) &&
+            Objects.equals(this.retentionType, writableDialerContact.retentionType) &&
+            Objects.equals(this.retentionDays, writableDialerContact.retentionDays) &&
+            Objects.equals(this.dateExpiration, writableDialerContact.dateExpiration);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, contactListId, data, latestSmsEvaluations, latestEmailEvaluations, latestWhatsAppEvaluations, callable, phoneNumberStatus, contactableStatus, dateCreated);
+    return Objects.hash(id, contactListId, data, latestSmsEvaluations, latestEmailEvaluations, latestWhatsAppEvaluations, callable, phoneNumberStatus, contactableStatus, dateCreated, retentionType, retentionDays, dateExpiration);
   }
 
   @Override
@@ -240,6 +350,9 @@ public class WritableDialerContact  implements Serializable {
     sb.append("    phoneNumberStatus: ").append(toIndentedString(phoneNumberStatus)).append("\n");
     sb.append("    contactableStatus: ").append(toIndentedString(contactableStatus)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    retentionType: ").append(toIndentedString(retentionType)).append("\n");
+    sb.append("    retentionDays: ").append(toIndentedString(retentionDays)).append("\n");
+    sb.append("    dateExpiration: ").append(toIndentedString(dateExpiration)).append("\n");
     sb.append("}");
     return sb.toString();
   }

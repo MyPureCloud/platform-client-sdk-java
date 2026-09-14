@@ -1011,8 +1011,6 @@ try {
 
 Get customer intents by IDs
 
-postIntentsCustomerintentsBulkRetrieve is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/intents/customerintents/bulk/retrieve  
 
 Requires ANY permissions: 
@@ -1065,4 +1063,4 @@ try {
 [**List&lt;CustomerIntentResponse&gt;**](CustomerIntentResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

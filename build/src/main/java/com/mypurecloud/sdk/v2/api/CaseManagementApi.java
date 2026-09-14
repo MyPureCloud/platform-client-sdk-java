@@ -2285,7 +2285,6 @@ public class CaseManagementApi {
   /**
    * Get a case query job by id
    * 
-   * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId Job ID (required)
    * @return CaseQueryJobResponse
    * @throws ApiException if the request fails on the server
@@ -2298,7 +2297,6 @@ public class CaseManagementApi {
   /**
    * Get a case query job by id
    * 
-   * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId Job ID (required)
    * @return CaseQueryJobResponse
    * @throws IOException if the request fails to be processed
@@ -2317,7 +2315,6 @@ public class CaseManagementApi {
   /**
    * Get a case query job by id
    * 
-   * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseQueryJobResponse
    * @throws ApiException if the request fails on the server
@@ -2337,7 +2334,6 @@ public class CaseManagementApi {
   /**
    * Get a case query job by id
    * 
-   * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2367,7 +2363,6 @@ public class CaseManagementApi {
   /**
    * Get results for a case query job
    * 
-   * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId Job ID (required)
    * @return CaseQueryJobResultsResponse
    * @throws ApiException if the request fails on the server
@@ -2380,7 +2375,6 @@ public class CaseManagementApi {
   /**
    * Get results for a case query job
    * 
-   * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId Job ID (required)
    * @return CaseQueryJobResultsResponse
    * @throws IOException if the request fails to be processed
@@ -2399,7 +2393,6 @@ public class CaseManagementApi {
   /**
    * Get results for a case query job
    * 
-   * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseQueryJobResultsResponse
    * @throws ApiException if the request fails on the server
@@ -2419,7 +2412,6 @@ public class CaseManagementApi {
   /**
    * Get results for a case query job
    * 
-   * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2613,7 +2605,6 @@ public class CaseManagementApi {
   /**
    * Update the ownerId of a Case
    * 
-   * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param caseId Case identifier. (required)
    * @param body OwnerId (required)
    * @return ModelCase
@@ -2627,7 +2618,6 @@ public class CaseManagementApi {
   /**
    * Update the ownerId of a Case
    * 
-   * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param caseId Case identifier. (required)
    * @param body OwnerId (required)
    * @return ModelCase
@@ -2649,7 +2639,6 @@ public class CaseManagementApi {
   /**
    * Update the ownerId of a Case
    * 
-   * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ModelCase
    * @throws ApiException if the request fails on the server
@@ -2669,7 +2658,6 @@ public class CaseManagementApi {
   /**
    * Update the ownerId of a Case
    * 
-   * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -4089,7 +4077,6 @@ public class CaseManagementApi {
   /**
    * Create a Case query job.
    * 
-   * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Case query job create request. (required)
    * @return CaseQueryJobResponse
    * @throws ApiException if the request fails on the server
@@ -4102,7 +4089,6 @@ public class CaseManagementApi {
   /**
    * Create a Case query job.
    * 
-   * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body Case query job create request. (required)
    * @return CaseQueryJobResponse
    * @throws IOException if the request fails to be processed
@@ -4121,7 +4107,6 @@ public class CaseManagementApi {
   /**
    * Create a Case query job.
    * 
-   * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return CaseQueryJobResponse
    * @throws ApiException if the request fails on the server
@@ -4141,7 +4126,6 @@ public class CaseManagementApi {
   /**
    * Create a Case query job.
    * 
-   * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

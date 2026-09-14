@@ -212,6 +212,7 @@ public class UserQueue  implements Serializable {
   private DomainEntityRef messageInQueueFlow = null;
   private DomainEntityRef whisperPrompt = null;
   private DomainEntityRef onHoldPrompt = null;
+  private String defaultMediaLanguage = null;
   private CannedResponseLibraries cannedResponseLibraries = null;
   private Boolean enableTranscription = null;
   private Boolean enableAudioMonitoring = null;
@@ -678,6 +679,24 @@ public class UserQueue  implements Serializable {
 
 
   /**
+   * The canonical language code (e.g. en-US) used for the default media language on the queue.
+   **/
+  public UserQueue defaultMediaLanguage(String defaultMediaLanguage) {
+    this.defaultMediaLanguage = defaultMediaLanguage;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The canonical language code (e.g. en-US) used for the default media language on the queue.")
+  @JsonProperty("defaultMediaLanguage")
+  public String getDefaultMediaLanguage() {
+    return defaultMediaLanguage;
+  }
+  public void setDefaultMediaLanguage(String defaultMediaLanguage) {
+    this.defaultMediaLanguage = defaultMediaLanguage;
+  }
+
+
+  /**
    * Canned response library IDs and mode with which they are associated with the queue
    **/
   public UserQueue cannedResponseLibraries(CannedResponseLibraries cannedResponseLibraries) {
@@ -971,6 +990,7 @@ public class UserQueue  implements Serializable {
             Objects.equals(this.messageInQueueFlow, userQueue.messageInQueueFlow) &&
             Objects.equals(this.whisperPrompt, userQueue.whisperPrompt) &&
             Objects.equals(this.onHoldPrompt, userQueue.onHoldPrompt) &&
+            Objects.equals(this.defaultMediaLanguage, userQueue.defaultMediaLanguage) &&
             Objects.equals(this.cannedResponseLibraries, userQueue.cannedResponseLibraries) &&
             Objects.equals(this.enableTranscription, userQueue.enableTranscription) &&
             Objects.equals(this.enableAudioMonitoring, userQueue.enableAudioMonitoring) &&
@@ -990,7 +1010,7 @@ public class UserQueue  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, conditionalGroupActivation, bullseye, scoringMethod, lastAgentRoutingMode, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, cannedResponseLibraries, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, joined, selfUri);
+    return Objects.hash(id, name, division, description, dateCreated, dateModified, modifiedBy, createdBy, memberCount, userMemberCount, joinedMemberCount, mediaSettings, routingRules, conditionalGroupRouting, conditionalGroupActivation, bullseye, scoringMethod, lastAgentRoutingMode, acwSettings, skillEvaluationMethod, memberGroups, queueFlow, emailInQueueFlow, messageInQueueFlow, whisperPrompt, onHoldPrompt, defaultMediaLanguage, cannedResponseLibraries, enableTranscription, enableAudioMonitoring, enableManualAssignment, agentOwnedRouting, directRouting, callingPartyName, callingPartyNumber, defaultScripts, outboundMessagingAddresses, outboundEmailAddress, peerId, suppressInQueueCallRecording, joined, selfUri);
   }
 
   @Override
@@ -1024,6 +1044,7 @@ public class UserQueue  implements Serializable {
     sb.append("    messageInQueueFlow: ").append(toIndentedString(messageInQueueFlow)).append("\n");
     sb.append("    whisperPrompt: ").append(toIndentedString(whisperPrompt)).append("\n");
     sb.append("    onHoldPrompt: ").append(toIndentedString(onHoldPrompt)).append("\n");
+    sb.append("    defaultMediaLanguage: ").append(toIndentedString(defaultMediaLanguage)).append("\n");
     sb.append("    cannedResponseLibraries: ").append(toIndentedString(cannedResponseLibraries)).append("\n");
     sb.append("    enableTranscription: ").append(toIndentedString(enableTranscription)).append("\n");
     sb.append("    enableAudioMonitoring: ").append(toIndentedString(enableAudioMonitoring)).append("\n");

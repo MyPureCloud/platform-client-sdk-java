@@ -45,6 +45,7 @@ import com.mypurecloud.sdk.v2.model.AgentQueryOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.AgentScheduleBidScheduleSetResponse;
 import com.mypurecloud.sdk.v2.model.AgentScheduleBiddingPreferenceResponse;
 import com.mypurecloud.sdk.v2.model.AgentScheduleBids;
+import com.mypurecloud.sdk.v2.model.AgentSchedulingPreferenceListing;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentUpdateAlternativeShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanBiddingPreferenceResponse;
@@ -139,6 +140,7 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
+import com.mypurecloud.sdk.v2.model.BusinessUnitSchedulingPreferencesSettingsResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
 import com.mypurecloud.sdk.v2.model.CapacityPlanForecastInputsResponse;
@@ -231,6 +233,7 @@ import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
 import com.mypurecloud.sdk.v2.model.QueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesResponse;
+import com.mypurecloud.sdk.v2.model.QueryAgentSchedulingPreferencesRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesValidationJobResponse;
@@ -302,9 +305,11 @@ import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAgentScheduleBiddingPreference;
+import com.mypurecloud.sdk.v2.model.UpdateAgentSchedulingPreferencesRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAgentWorkPlanBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitSchedulingPreferencesSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateCapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitsSettingsRequest;
@@ -326,6 +331,7 @@ import com.mypurecloud.sdk.v2.model.UpdateUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequestBody;
+import com.mypurecloud.sdk.v2.model.UserActivityListing;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
@@ -333,6 +339,7 @@ import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserStaffingGroupListing;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponse;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponseListing;
+import com.mypurecloud.sdk.v2.model.UsersActivityRequest;
 import com.mypurecloud.sdk.v2.model.ValidateAgentUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.ValidateAgentUnavailableTimesResponse;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
@@ -446,6 +453,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSche
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunResultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobRequest;
@@ -521,6 +529,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidPrefe
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidSchedulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingpreferencesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeMatchJobRequest;
@@ -556,6 +565,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSc
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitStaffinggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitTimeoffplanRequest;
@@ -573,6 +583,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunit
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWeekShifttradeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanrotationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementSchedulingpreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUnavailabletimesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUserWorkplanbidranksRequest;
@@ -583,6 +594,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplan
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentSchedulingpreferencesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentUnavailabletimesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
@@ -697,6 +709,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulingpreferencesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeMatchJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeStateJobsRequest;
@@ -711,6 +724,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequests
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUnavailabletimesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUnavailabletimesValidationJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUsersActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementAgentIntegrationsHrisRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementManagementunitTimeofflimitValuesRequest;
@@ -6799,6 +6813,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BuScheduleRunListing> response = (ApiResponse<BuScheduleRunListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get business unit scheduling preferences settings
+   * 
+   * getWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param businessUnitId The ID of the business unit (required)
+   * @return BusinessUnitSchedulingPreferencesSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitSchedulingPreferencesSettingsResponse getWorkforcemanagementBusinessunitSchedulingpreferencesSettings(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitSchedulingpreferencesSettings(createGetWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest(businessUnitId));
+  }
+
+  /**
+   * Get business unit scheduling preferences settings
+   * 
+   * getWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param businessUnitId The ID of the business unit (required)
+   * @return BusinessUnitSchedulingPreferencesSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> getWorkforcemanagementBusinessunitSchedulingpreferencesSettingsWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitSchedulingpreferencesSettings(createGetWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest createGetWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get business unit scheduling preferences settings
+   * 
+   * getWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return BusinessUnitSchedulingPreferencesSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitSchedulingPreferencesSettingsResponse getWorkforcemanagementBusinessunitSchedulingpreferencesSettings(GetWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get business unit scheduling preferences settings
+   * 
+   * getWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> getWorkforcemanagementBusinessunitSchedulingpreferencesSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -13086,6 +13182,84 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get scheduling preferences settings for the agent's business unit
+   * 
+   * getWorkforcemanagementSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return BusinessUnitSchedulingPreferencesSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitSchedulingPreferencesSettingsResponse getWorkforcemanagementSchedulingpreferencesSettings() throws IOException, ApiException {
+    return  getWorkforcemanagementSchedulingpreferencesSettings(createGetWorkforcemanagementSchedulingpreferencesSettingsRequest());
+  }
+
+  /**
+   * Get scheduling preferences settings for the agent's business unit
+   * 
+   * getWorkforcemanagementSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return BusinessUnitSchedulingPreferencesSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> getWorkforcemanagementSchedulingpreferencesSettingsWithHttpInfo() throws IOException {
+    return getWorkforcemanagementSchedulingpreferencesSettings(createGetWorkforcemanagementSchedulingpreferencesSettingsRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementSchedulingpreferencesSettingsRequest createGetWorkforcemanagementSchedulingpreferencesSettingsRequest() {
+    return GetWorkforcemanagementSchedulingpreferencesSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get scheduling preferences settings for the agent's business unit
+   * 
+   * getWorkforcemanagementSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return BusinessUnitSchedulingPreferencesSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitSchedulingPreferencesSettingsResponse getWorkforcemanagementSchedulingpreferencesSettings(GetWorkforcemanagementSchedulingpreferencesSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get scheduling preferences settings for the agent's business unit
+   * 
+   * getWorkforcemanagementSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> getWorkforcemanagementSchedulingpreferencesSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Gets all of my shift trades
    * Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
    * @return ShiftTradeListResponse
@@ -15929,6 +16103,92 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Update business unit scheduling preferences settings
+   * 
+   * patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BusinessUnitSchedulingPreferencesSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitSchedulingPreferencesSettingsResponse patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings(String businessUnitId, UpdateBusinessUnitSchedulingPreferencesSettingsRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings(createPatchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Update business unit scheduling preferences settings
+   * 
+   * patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BusinessUnitSchedulingPreferencesSettingsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> patchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsWithHttpInfo(String businessUnitId, UpdateBusinessUnitSchedulingPreferencesSettingsRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings(createPatchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest createPatchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest(String businessUnitId, UpdateBusinessUnitSchedulingPreferencesSettingsRequest body) {
+    return PatchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update business unit scheduling preferences settings
+   * 
+   * patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return BusinessUnitSchedulingPreferencesSettingsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BusinessUnitSchedulingPreferencesSettingsResponse patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings(PatchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update business unit scheduling preferences settings
+   * 
+   * patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings(ApiRequest<UpdateBusinessUnitSchedulingPreferencesSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Updates a service goal template
    * 
    * @param businessUnitId The ID of the business unit. (required)
@@ -17408,6 +17668,88 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Update agent scheduling preferences
+   * 
+   * patchWorkforcemanagementSchedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body body (required)
+   * @return AgentSchedulingPreferenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentSchedulingPreferenceListing patchWorkforcemanagementSchedulingpreferences(UpdateAgentSchedulingPreferencesRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementSchedulingpreferences(createPatchWorkforcemanagementSchedulingpreferencesRequest(body));
+  }
+
+  /**
+   * Update agent scheduling preferences
+   * 
+   * patchWorkforcemanagementSchedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body body (required)
+   * @return AgentSchedulingPreferenceListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentSchedulingPreferenceListing> patchWorkforcemanagementSchedulingpreferencesWithHttpInfo(UpdateAgentSchedulingPreferencesRequest body) throws IOException {
+    return patchWorkforcemanagementSchedulingpreferences(createPatchWorkforcemanagementSchedulingpreferencesRequest(body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementSchedulingpreferencesRequest createPatchWorkforcemanagementSchedulingpreferencesRequest(UpdateAgentSchedulingPreferencesRequest body) {
+    return PatchWorkforcemanagementSchedulingpreferencesRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update agent scheduling preferences
+   * 
+   * patchWorkforcemanagementSchedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AgentSchedulingPreferenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentSchedulingPreferenceListing patchWorkforcemanagementSchedulingpreferences(PatchWorkforcemanagementSchedulingpreferencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentSchedulingPreferenceListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentSchedulingPreferenceListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update agent scheduling preferences
+   * 
+   * patchWorkforcemanagementSchedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentSchedulingPreferenceListing> patchWorkforcemanagementSchedulingpreferences(ApiRequest<UpdateAgentSchedulingPreferencesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentSchedulingPreferenceListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update a time off request for the current user
    * 
    * @param timeOffRequestId The ID of the time off request (required)
@@ -18219,6 +18561,92 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentQueryAdherenceExplanationsResponse> response = (ApiResponse<AgentQueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementAgentSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param agentId The ID of the agent (required)
+   * @param body body (required)
+   * @return AgentSchedulingPreferenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentSchedulingPreferenceListing postWorkforcemanagementAgentSchedulingpreferencesQuery(String agentId, QueryAgentSchedulingPreferencesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentSchedulingpreferencesQuery(createPostWorkforcemanagementAgentSchedulingpreferencesQueryRequest(agentId, body));
+  }
+
+  /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementAgentSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param agentId The ID of the agent (required)
+   * @param body body (required)
+   * @return AgentSchedulingPreferenceListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentSchedulingPreferenceListing> postWorkforcemanagementAgentSchedulingpreferencesQueryWithHttpInfo(String agentId, QueryAgentSchedulingPreferencesRequest body) throws IOException {
+    return postWorkforcemanagementAgentSchedulingpreferencesQuery(createPostWorkforcemanagementAgentSchedulingpreferencesQueryRequest(agentId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentSchedulingpreferencesQueryRequest createPostWorkforcemanagementAgentSchedulingpreferencesQueryRequest(String agentId, QueryAgentSchedulingPreferencesRequest body) {
+    return PostWorkforcemanagementAgentSchedulingpreferencesQueryRequest.builder()
+            .withAgentId(agentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementAgentSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AgentSchedulingPreferenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentSchedulingPreferenceListing postWorkforcemanagementAgentSchedulingpreferencesQuery(PostWorkforcemanagementAgentSchedulingpreferencesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentSchedulingPreferenceListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentSchedulingPreferenceListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementAgentSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentSchedulingPreferenceListing> postWorkforcemanagementAgentSchedulingpreferencesQuery(ApiRequest<QueryAgentSchedulingPreferencesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentSchedulingPreferenceListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -27865,6 +28293,88 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body body (required)
+   * @return AgentSchedulingPreferenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentSchedulingPreferenceListing postWorkforcemanagementSchedulingpreferencesQuery(QueryAgentSchedulingPreferencesRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementSchedulingpreferencesQuery(createPostWorkforcemanagementSchedulingpreferencesQueryRequest(body));
+  }
+
+  /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body body (required)
+   * @return AgentSchedulingPreferenceListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentSchedulingPreferenceListing> postWorkforcemanagementSchedulingpreferencesQueryWithHttpInfo(QueryAgentSchedulingPreferencesRequest body) throws IOException {
+    return postWorkforcemanagementSchedulingpreferencesQuery(createPostWorkforcemanagementSchedulingpreferencesQueryRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementSchedulingpreferencesQueryRequest createPostWorkforcemanagementSchedulingpreferencesQueryRequest(QueryAgentSchedulingPreferencesRequest body) {
+    return PostWorkforcemanagementSchedulingpreferencesQueryRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return AgentSchedulingPreferenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AgentSchedulingPreferenceListing postWorkforcemanagementSchedulingpreferencesQuery(PostWorkforcemanagementSchedulingpreferencesQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AgentSchedulingPreferenceListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AgentSchedulingPreferenceListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AgentSchedulingPreferenceListing> postWorkforcemanagementSchedulingpreferencesQuery(ApiRequest<QueryAgentSchedulingPreferencesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AgentSchedulingPreferenceListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Updates a shift trade. This route can only be called by the initiating user
    * 
    * @param tradeId The ID of the shift trade to update (required)
@@ -29000,6 +29510,84 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ValidateAgentUnavailableTimesResponse> response = (ApiResponse<ValidateAgentUnavailableTimesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a list of UserScheduleAdherence records for the requested users
+   * 
+   * @param body Request body (required)
+   * @return UserActivityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserActivityListing postWorkforcemanagementUsersActivity(UsersActivityRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementUsersActivity(createPostWorkforcemanagementUsersActivityRequest(body));
+  }
+
+  /**
+   * Get a list of UserScheduleAdherence records for the requested users
+   * 
+   * @param body Request body (required)
+   * @return UserActivityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserActivityListing> postWorkforcemanagementUsersActivityWithHttpInfo(UsersActivityRequest body) throws IOException {
+    return postWorkforcemanagementUsersActivity(createPostWorkforcemanagementUsersActivityRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementUsersActivityRequest createPostWorkforcemanagementUsersActivityRequest(UsersActivityRequest body) {
+    return PostWorkforcemanagementUsersActivityRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get a list of UserScheduleAdherence records for the requested users
+   * 
+   * @param request The request object
+   * @return UserActivityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public UserActivityListing postWorkforcemanagementUsersActivity(PostWorkforcemanagementUsersActivityRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<UserActivityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<UserActivityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a list of UserScheduleAdherence records for the requested users
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<UserActivityListing> postWorkforcemanagementUsersActivity(ApiRequest<UsersActivityRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<UserActivityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserActivityListing> response = (ApiResponse<UserActivityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<UserActivityListing> response = (ApiResponse<UserActivityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -27,6 +27,7 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
   
   private List<Program> entities = null;
   private Integer pageSize = null;
+  private Integer total = null;
   private String selfUri = null;
   private Integer pageCount = null;
   private String nextUri = null;
@@ -75,6 +76,23 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
   }
   public void setPageSize(Integer pageSize) {
     this.pageSize = pageSize;
+  }
+
+
+  /**
+   **/
+  public UnpublishedProgramsEntityListing total(Integer total) {
+    this.total = total;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("total")
+  public Integer getTotal() {
+    return total;
+  }
+  public void setTotal(Integer total) {
+    this.total = total;
   }
 
 
@@ -141,6 +159,7 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
 
     return Objects.equals(this.entities, unpublishedProgramsEntityListing.entities) &&
             Objects.equals(this.pageSize, unpublishedProgramsEntityListing.pageSize) &&
+            Objects.equals(this.total, unpublishedProgramsEntityListing.total) &&
             Objects.equals(this.selfUri, unpublishedProgramsEntityListing.selfUri) &&
             Objects.equals(this.pageCount, unpublishedProgramsEntityListing.pageCount) &&
             Objects.equals(this.nextUri, unpublishedProgramsEntityListing.nextUri);
@@ -148,7 +167,7 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, selfUri, pageCount, nextUri);
+    return Objects.hash(entities, pageSize, total, selfUri, pageCount, nextUri);
   }
 
   @Override
@@ -158,6 +177,7 @@ public class UnpublishedProgramsEntityListing  implements Serializable {
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");

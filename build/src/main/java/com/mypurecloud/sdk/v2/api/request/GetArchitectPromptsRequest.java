@@ -87,6 +87,7 @@ import com.mypurecloud.sdk.v2.model.PromptAssetUpload;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobRequest;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJobResponse;
@@ -244,6 +245,20 @@ public class GetArchitectPromptsRequest {
 	    return this;
 	} 
 
+	private List<String> divisionId;
+	public List<String> getDivisionId() {
+		return this.divisionId;
+	}
+
+	public void setDivisionId(List<String> divisionId) {
+		this.divisionId = divisionId;
+	}
+
+	public GetArchitectPromptsRequest withDivisionId(List<String> divisionId) {
+	    this.setDivisionId(divisionId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -296,6 +311,9 @@ public class GetArchitectPromptsRequest {
         
 
                 .withQueryParameters("language", "multi", language)
+        
+
+                .withQueryParameters("divisionId", "multi", divisionId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -365,6 +383,11 @@ public class GetArchitectPromptsRequest {
 
 		public Builder withLanguage(List<String> language) {
 			request.setLanguage(language);
+			return this;
+		}
+
+		public Builder withDivisionId(List<String> divisionId) {
+			request.setDivisionId(divisionId);
 			return this;
 		}
 

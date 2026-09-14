@@ -23,6 +23,7 @@ import java.io.Serializable;
 public class CreateRoutingSkill  implements Serializable {
   
   private String name = null;
+  private String divisionId = null;
 
   public CreateRoutingSkill() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -53,6 +54,24 @@ public class CreateRoutingSkill  implements Serializable {
   }
 
 
+  /**
+   * The division to which this skill will belong
+   **/
+  public CreateRoutingSkill divisionId(String divisionId) {
+    this.divisionId = divisionId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The division to which this skill will belong")
+  @JsonProperty("divisionId")
+  public String getDivisionId() {
+    return divisionId;
+  }
+  public void setDivisionId(String divisionId) {
+    this.divisionId = divisionId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -63,12 +82,13 @@ public class CreateRoutingSkill  implements Serializable {
     }
     CreateRoutingSkill createRoutingSkill = (CreateRoutingSkill) o;
 
-    return Objects.equals(this.name, createRoutingSkill.name);
+    return Objects.equals(this.name, createRoutingSkill.name) &&
+            Objects.equals(this.divisionId, createRoutingSkill.divisionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name);
+    return Objects.hash(name, divisionId);
   }
 
   @Override
@@ -77,6 +97,7 @@ public class CreateRoutingSkill  implements Serializable {
     sb.append("class CreateRoutingSkill {\n");
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

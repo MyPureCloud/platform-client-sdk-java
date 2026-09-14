@@ -18,6 +18,9 @@
 | **complianceAbandonRateDenominator** | [**ComplianceAbandonRateDenominatorEnum**](#Enum--ComplianceAbandonRateDenominatorEnum) | The denominator to be used in determining the compliance abandon rate |  [optional] |
 | **automaticTimeZoneMapping** | [**AutomaticTimeZoneMappingSettings**](AutomaticTimeZoneMappingSettings) | The settings for automatic time zone mapping. Note that changing these settings will change them for both voice and messaging campaigns. |  [optional] |
 | **rescheduleTimeZoneSkippedContacts** | **Boolean** | Whether or not to reschedule time-zone blocked contacts |  [optional] |
+| **contactListDefaultRetentionType** | [**ContactListDefaultRetentionTypeEnum**](#Enum--ContactListDefaultRetentionTypeEnum) | The default type of retention for newly created contact lists and contact list templates. Valid values: Never, Today, RetentionDays. |  [optional] |
+| **contactListDefaultRetentionDays** | **Integer** | The default number of days to retain newly created contact lists and contact list templates. Only applicable when retentionType is RetentionDays. |  [optional] |
+| **timeZone** | **String** | The time zone for newly created lists' retention when option Today is used; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
@@ -30,6 +33,16 @@
 | CALLS_THAT_REACHED_QUEUE | &quot;CALLS_THAT_REACHED_QUEUE&quot; | 
 
 
+## Enum: ContactListDefaultRetentionTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NEVER | &quot;Never&quot; | 
+| TODAY | &quot;Today&quot; | 
+| RETENTIONDAYS | &quot;RetentionDays&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

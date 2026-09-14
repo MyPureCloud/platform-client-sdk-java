@@ -85,6 +85,57 @@ public class OutboundSettings  implements Serializable {
   private ComplianceAbandonRateDenominatorEnum complianceAbandonRateDenominator = null;
   private AutomaticTimeZoneMappingSettings automaticTimeZoneMapping = null;
   private Boolean rescheduleTimeZoneSkippedContacts = null;
+
+  private static class ContactListDefaultRetentionTypeEnumDeserializer extends StdDeserializer<ContactListDefaultRetentionTypeEnum> {
+    public ContactListDefaultRetentionTypeEnumDeserializer() {
+      super(ContactListDefaultRetentionTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ContactListDefaultRetentionTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ContactListDefaultRetentionTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The default type of retention for newly created contact lists and contact list templates. Valid values: Never, Today, RetentionDays.
+   */
+ @JsonDeserialize(using = ContactListDefaultRetentionTypeEnumDeserializer.class)
+  public enum ContactListDefaultRetentionTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    NEVER("Never"),
+    TODAY("Today"),
+    RETENTIONDAYS("RetentionDays");
+
+    private String value;
+
+    ContactListDefaultRetentionTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ContactListDefaultRetentionTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ContactListDefaultRetentionTypeEnum value : ContactListDefaultRetentionTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ContactListDefaultRetentionTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ContactListDefaultRetentionTypeEnum contactListDefaultRetentionType = null;
+  private Integer contactListDefaultRetentionDays = null;
+  private String timeZone = null;
   private String selfUri = null;
 
   public OutboundSettings() {
@@ -287,6 +338,60 @@ public class OutboundSettings  implements Serializable {
   }
 
 
+  /**
+   * The default type of retention for newly created contact lists and contact list templates. Valid values: Never, Today, RetentionDays.
+   **/
+  public OutboundSettings contactListDefaultRetentionType(ContactListDefaultRetentionTypeEnum contactListDefaultRetentionType) {
+    this.contactListDefaultRetentionType = contactListDefaultRetentionType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The default type of retention for newly created contact lists and contact list templates. Valid values: Never, Today, RetentionDays.")
+  @JsonProperty("contactListDefaultRetentionType")
+  public ContactListDefaultRetentionTypeEnum getContactListDefaultRetentionType() {
+    return contactListDefaultRetentionType;
+  }
+  public void setContactListDefaultRetentionType(ContactListDefaultRetentionTypeEnum contactListDefaultRetentionType) {
+    this.contactListDefaultRetentionType = contactListDefaultRetentionType;
+  }
+
+
+  /**
+   * The default number of days to retain newly created contact lists and contact list templates. Only applicable when retentionType is RetentionDays.
+   **/
+  public OutboundSettings contactListDefaultRetentionDays(Integer contactListDefaultRetentionDays) {
+    this.contactListDefaultRetentionDays = contactListDefaultRetentionDays;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The default number of days to retain newly created contact lists and contact list templates. Only applicable when retentionType is RetentionDays.")
+  @JsonProperty("contactListDefaultRetentionDays")
+  public Integer getContactListDefaultRetentionDays() {
+    return contactListDefaultRetentionDays;
+  }
+  public void setContactListDefaultRetentionDays(Integer contactListDefaultRetentionDays) {
+    this.contactListDefaultRetentionDays = contactListDefaultRetentionDays;
+  }
+
+
+  /**
+   * The time zone for newly created lists' retention when option Today is used; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+   **/
+  public OutboundSettings timeZone(String timeZone) {
+    this.timeZone = timeZone;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time zone for newly created lists' retention when option Today is used; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London")
+  @JsonProperty("timeZone")
+  public String getTimeZone() {
+    return timeZone;
+  }
+  public void setTimeZone(String timeZone) {
+    this.timeZone = timeZone;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -317,12 +422,15 @@ public class OutboundSettings  implements Serializable {
             Objects.equals(this.complianceAbandonRateDenominator, outboundSettings.complianceAbandonRateDenominator) &&
             Objects.equals(this.automaticTimeZoneMapping, outboundSettings.automaticTimeZoneMapping) &&
             Objects.equals(this.rescheduleTimeZoneSkippedContacts, outboundSettings.rescheduleTimeZoneSkippedContacts) &&
+            Objects.equals(this.contactListDefaultRetentionType, outboundSettings.contactListDefaultRetentionType) &&
+            Objects.equals(this.contactListDefaultRetentionDays, outboundSettings.contactListDefaultRetentionDays) &&
+            Objects.equals(this.timeZone, outboundSettings.timeZone) &&
             Objects.equals(this.selfUri, outboundSettings.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxCallsPerAgentDecimal, maxConfigurableCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, automaticTimeZoneMapping, rescheduleTimeZoneSkippedContacts, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, maxCallsPerAgent, maxCallsPerAgentDecimal, maxConfigurableCallsPerAgent, maxLineUtilization, abandonSeconds, complianceAbandonRateDenominator, automaticTimeZoneMapping, rescheduleTimeZoneSkippedContacts, contactListDefaultRetentionType, contactListDefaultRetentionDays, timeZone, selfUri);
   }
 
   @Override
@@ -343,6 +451,9 @@ public class OutboundSettings  implements Serializable {
     sb.append("    complianceAbandonRateDenominator: ").append(toIndentedString(complianceAbandonRateDenominator)).append("\n");
     sb.append("    automaticTimeZoneMapping: ").append(toIndentedString(automaticTimeZoneMapping)).append("\n");
     sb.append("    rescheduleTimeZoneSkippedContacts: ").append(toIndentedString(rescheduleTimeZoneSkippedContacts)).append("\n");
+    sb.append("    contactListDefaultRetentionType: ").append(toIndentedString(contactListDefaultRetentionType)).append("\n");
+    sb.append("    contactListDefaultRetentionDays: ").append(toIndentedString(contactListDefaultRetentionDays)).append("\n");
+    sb.append("    timeZone: ").append(toIndentedString(timeZone)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

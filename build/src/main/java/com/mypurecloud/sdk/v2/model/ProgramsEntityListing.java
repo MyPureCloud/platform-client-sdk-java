@@ -27,6 +27,7 @@ public class ProgramsEntityListing  implements Serializable {
   
   private List<ListedProgram> entities = null;
   private Integer pageSize = null;
+  private Integer total = null;
   private String selfUri = null;
   private String nextUri = null;
   private Integer pageCount = null;
@@ -75,6 +76,23 @@ public class ProgramsEntityListing  implements Serializable {
   }
   public void setPageSize(Integer pageSize) {
     this.pageSize = pageSize;
+  }
+
+
+  /**
+   **/
+  public ProgramsEntityListing total(Integer total) {
+    this.total = total;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("total")
+  public Integer getTotal() {
+    return total;
+  }
+  public void setTotal(Integer total) {
+    this.total = total;
   }
 
 
@@ -141,6 +159,7 @@ public class ProgramsEntityListing  implements Serializable {
 
     return Objects.equals(this.entities, programsEntityListing.entities) &&
             Objects.equals(this.pageSize, programsEntityListing.pageSize) &&
+            Objects.equals(this.total, programsEntityListing.total) &&
             Objects.equals(this.selfUri, programsEntityListing.selfUri) &&
             Objects.equals(this.nextUri, programsEntityListing.nextUri) &&
             Objects.equals(this.pageCount, programsEntityListing.pageCount);
@@ -148,7 +167,7 @@ public class ProgramsEntityListing  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, selfUri, nextUri, pageCount);
+    return Objects.hash(entities, pageSize, total, selfUri, nextUri, pageCount);
   }
 
   @Override
@@ -158,6 +177,7 @@ public class ProgramsEntityListing  implements Serializable {
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
+    sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");

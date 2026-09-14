@@ -134,6 +134,7 @@ public class TimeOffRequestQueryBody  implements Serializable {
   }
   private List<SubstatusesEnum> substatuses = null;
   private DateRange dateRange = null;
+  private List<String> teamIds = null;
 
   public TimeOffRequestQueryBody() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -141,6 +142,7 @@ public class TimeOffRequestQueryBody  implements Serializable {
       userIds = new ArrayList<String>();
       statuses = new ArrayList<StatusesEnum>();
       substatuses = new ArrayList<SubstatusesEnum>();
+      teamIds = new ArrayList<String>();
     }
   }
 
@@ -150,6 +152,7 @@ public class TimeOffRequestQueryBody  implements Serializable {
       userIds = new ArrayList<String>();
       statuses = new ArrayList<StatusesEnum>();
       substatuses = new ArrayList<SubstatusesEnum>();
+      teamIds = new ArrayList<String>();
     }
   }
 
@@ -173,14 +176,14 @@ public class TimeOffRequestQueryBody  implements Serializable {
 
 
   /**
-   * The set of user ids to filter time off requests
+   * The set of user ids to filter time off requests. Omit to query all users in the management unit. Note: If teamIds is also specified, only time off requests for users in the requested teams will be returned
    **/
   public TimeOffRequestQueryBody userIds(List<String> userIds) {
     this.userIds = userIds;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The set of user ids to filter time off requests")
+  @ApiModelProperty(example = "null", value = "The set of user ids to filter time off requests. Omit to query all users in the management unit. Note: If teamIds is also specified, only time off requests for users in the requested teams will be returned")
   @JsonProperty("userIds")
   public List<String> getUserIds() {
     return userIds;
@@ -244,6 +247,24 @@ public class TimeOffRequestQueryBody  implements Serializable {
   }
 
 
+  /**
+   * The IDs of work teams to query. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit
+   **/
+  public TimeOffRequestQueryBody teamIds(List<String> teamIds) {
+    this.teamIds = teamIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The IDs of work teams to query. If null or not set, results will be queried for requested users if applicable or otherwise all users in the management unit")
+  @JsonProperty("teamIds")
+  public List<String> getTeamIds() {
+    return teamIds;
+  }
+  public void setTeamIds(List<String> teamIds) {
+    this.teamIds = teamIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -258,12 +279,13 @@ public class TimeOffRequestQueryBody  implements Serializable {
             Objects.equals(this.userIds, timeOffRequestQueryBody.userIds) &&
             Objects.equals(this.statuses, timeOffRequestQueryBody.statuses) &&
             Objects.equals(this.substatuses, timeOffRequestQueryBody.substatuses) &&
-            Objects.equals(this.dateRange, timeOffRequestQueryBody.dateRange);
+            Objects.equals(this.dateRange, timeOffRequestQueryBody.dateRange) &&
+            Objects.equals(this.teamIds, timeOffRequestQueryBody.teamIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(ids, userIds, statuses, substatuses, dateRange);
+    return Objects.hash(ids, userIds, statuses, substatuses, dateRange, teamIds);
   }
 
   @Override
@@ -276,6 +298,7 @@ public class TimeOffRequestQueryBody  implements Serializable {
     sb.append("    statuses: ").append(toIndentedString(statuses)).append("\n");
     sb.append("    substatuses: ").append(toIndentedString(substatuses)).append("\n");
     sb.append("    dateRange: ").append(toIndentedString(dateRange)).append("\n");
+    sb.append("    teamIds: ").append(toIndentedString(teamIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

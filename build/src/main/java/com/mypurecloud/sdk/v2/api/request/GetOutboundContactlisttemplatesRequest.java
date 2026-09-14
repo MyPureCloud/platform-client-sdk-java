@@ -61,6 +61,8 @@ import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingResponse;
+import com.mypurecloud.sdk.v2.model.ContactListsBulkEditRequest;
+import com.mypurecloud.sdk.v2.model.ContactListsBulkEditResponse;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJob;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJobListing;
 import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
@@ -222,6 +224,20 @@ public class GetOutboundContactlisttemplatesRequest {
 	    return this;
 	} 
 
+	private String timeZone;
+	public String getTimeZone() {
+		return this.timeZone;
+	}
+
+	public void setTimeZone(String timeZone) {
+		this.timeZone = timeZone;
+	}
+
+	public GetOutboundContactlisttemplatesRequest withTimeZone(String timeZone) {
+	    this.setTimeZone(timeZone);
+	    return this;
+	} 
+
 	private String sortBy;
 	public String getSortBy() {
 		return this.sortBy;
@@ -320,6 +336,9 @@ public class GetOutboundContactlisttemplatesRequest {
                 .withQueryParameters("name", "", name)
         
 
+                .withQueryParameters("timeZone", "", timeZone)
+        
+
                 .withQueryParameters("sortBy", "", sortBy)
         
 
@@ -377,6 +396,11 @@ public class GetOutboundContactlisttemplatesRequest {
 
 		public Builder withName(String name) {
 			request.setName(name);
+			return this;
+		}
+
+		public Builder withTimeZone(String timeZone) {
+			request.setTimeZone(timeZone);
 			return this;
 		}
 

@@ -48,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.AgentQueryOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.AgentScheduleBidScheduleSetResponse;
 import com.mypurecloud.sdk.v2.model.AgentScheduleBiddingPreferenceResponse;
 import com.mypurecloud.sdk.v2.model.AgentScheduleBids;
+import com.mypurecloud.sdk.v2.model.AgentSchedulingPreferenceListing;
 import com.mypurecloud.sdk.v2.model.AgentTimeOffRequestPatch;
 import com.mypurecloud.sdk.v2.model.AgentUpdateAlternativeShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AgentWorkPlanBiddingPreferenceResponse;
@@ -142,6 +143,7 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCode;
 import com.mypurecloud.sdk.v2.model.BusinessUnitActivityCodeListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitListing;
 import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
+import com.mypurecloud.sdk.v2.model.BusinessUnitSchedulingPreferencesSettingsResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
 import com.mypurecloud.sdk.v2.model.CapacityPlanForecastInputsResponse;
@@ -234,6 +236,7 @@ import com.mypurecloud.sdk.v2.model.ProcessScheduleUpdateUploadRequest;
 import com.mypurecloud.sdk.v2.model.QueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentScheduleUnavailableTimesResponse;
+import com.mypurecloud.sdk.v2.model.QueryAgentSchedulingPreferencesRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.QueryAgentUnavailableTimesValidationJobResponse;
@@ -305,9 +308,11 @@ import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAgentScheduleBiddingPreference;
+import com.mypurecloud.sdk.v2.model.UpdateAgentSchedulingPreferencesRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAgentWorkPlanBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
+import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitSchedulingPreferencesSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateCapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateManagementUnitsSettingsRequest;
@@ -329,6 +334,7 @@ import com.mypurecloud.sdk.v2.model.UpdateUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.UpdateWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.UploadUrlRequestBody;
+import com.mypurecloud.sdk.v2.model.UserActivityListing;
 import com.mypurecloud.sdk.v2.model.UserListScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherence;
 import com.mypurecloud.sdk.v2.model.UserScheduleAdherenceListing;
@@ -336,6 +342,7 @@ import com.mypurecloud.sdk.v2.model.UserScheduleContainer;
 import com.mypurecloud.sdk.v2.model.UserStaffingGroupListing;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponse;
 import com.mypurecloud.sdk.v2.model.UserTimeOffIntegrationStatusResponseListing;
+import com.mypurecloud.sdk.v2.model.UsersActivityRequest;
 import com.mypurecloud.sdk.v2.model.ValidateAgentUnavailableTimesRequest;
 import com.mypurecloud.sdk.v2.model.ValidateAgentUnavailableTimesResponse;
 import com.mypurecloud.sdk.v2.model.ValidateWorkPlanResponse;
@@ -449,6 +456,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSche
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunResultRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingRunsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitServicegoaltemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitShifttradingTradesEvaluateJobRequest;
@@ -524,6 +532,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidPrefe
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidSchedulesetsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingpreferencesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeMatchJobRequest;
@@ -559,6 +568,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSc
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulebidGroupPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulerSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingRunRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitServicegoaltemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitStaffinggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitTimeoffplanRequest;
@@ -576,6 +586,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunit
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWeekShifttradeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitWorkplanrotationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementSchedulingpreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementTimeoffrequestRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUnavailabletimesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUserWorkplanbidranksRequest;
@@ -586,6 +597,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplan
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentSchedulingpreferencesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentUnavailabletimesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentsIntegrationsHrisQueryRequest;
@@ -700,6 +712,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitW
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunitsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulingpreferencesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeMatchJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeStateJobsRequest;
@@ -714,6 +727,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequests
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementTimeoffrequestsIntegrationstatusQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUnavailabletimesQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUnavailabletimesValidationJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementUsersActivityRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementAgentIntegrationsHrisRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementBusinessunitTimeofflimitValuesRequest;
 import com.mypurecloud.sdk.v2.api.request.PutWorkforcemanagementManagementunitTimeofflimitValuesRequest;
@@ -6373,6 +6387,83 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Get business unit scheduling preferences settings
+   * 
+   * getWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BusinessUnitSchedulingPreferencesSettingsResponse> getWorkforcemanagementBusinessunitSchedulingpreferencesSettingsAsync(GetWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest request, final AsyncApiCallback<BusinessUnitSchedulingPreferencesSettingsResponse> callback) {
+    try {
+      final SettableFuture<BusinessUnitSchedulingPreferencesSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get business unit scheduling preferences settings
+   * 
+   * getWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>> getWorkforcemanagementBusinessunitSchedulingpreferencesSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get a service goal template
    * 
    * @param request the request object
@@ -12018,6 +12109,83 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Get scheduling preferences settings for the agent's business unit
+   * 
+   * getWorkforcemanagementSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BusinessUnitSchedulingPreferencesSettingsResponse> getWorkforcemanagementSchedulingpreferencesSettingsAsync(GetWorkforcemanagementSchedulingpreferencesSettingsRequest request, final AsyncApiCallback<BusinessUnitSchedulingPreferencesSettingsResponse> callback) {
+    try {
+      final SettableFuture<BusinessUnitSchedulingPreferencesSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get scheduling preferences settings for the agent's business unit
+   * 
+   * getWorkforcemanagementSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>> getWorkforcemanagementSchedulingpreferencesSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Gets all of my shift trades
    * Deprecated. Use new route instead (/shifttrading/trades/mine/query/jobs)
    * @param request the request object
@@ -14645,6 +14813,83 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Update business unit scheduling preferences settings
+   * 
+   * patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BusinessUnitSchedulingPreferencesSettingsResponse> patchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsAsync(PatchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsRequest request, final AsyncApiCallback<BusinessUnitSchedulingPreferencesSettingsResponse> callback) {
+    try {
+      final SettableFuture<BusinessUnitSchedulingPreferencesSettingsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update business unit scheduling preferences settings
+   * 
+   * patchWorkforcemanagementBusinessunitSchedulingpreferencesSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>> patchWorkforcemanagementBusinessunitSchedulingpreferencesSettingsAsync(ApiRequest<UpdateBusinessUnitSchedulingPreferencesSettingsRequest> request, final AsyncApiCallback<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BusinessUnitSchedulingPreferencesSettingsResponse>() {}, new AsyncApiCallback<ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Updates a service goal template
    * 
    * @param request the request object
@@ -15926,6 +16171,83 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Update agent scheduling preferences
+   * 
+   * patchWorkforcemanagementSchedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentSchedulingPreferenceListing> patchWorkforcemanagementSchedulingpreferencesAsync(PatchWorkforcemanagementSchedulingpreferencesRequest request, final AsyncApiCallback<AgentSchedulingPreferenceListing> callback) {
+    try {
+      final SettableFuture<AgentSchedulingPreferenceListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentSchedulingPreferenceListing>() {}, new AsyncApiCallback<ApiResponse<AgentSchedulingPreferenceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentSchedulingPreferenceListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update agent scheduling preferences
+   * 
+   * patchWorkforcemanagementSchedulingpreferences is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentSchedulingPreferenceListing>> patchWorkforcemanagementSchedulingpreferencesAsync(ApiRequest<UpdateAgentSchedulingPreferencesRequest> request, final AsyncApiCallback<ApiResponse<AgentSchedulingPreferenceListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentSchedulingPreferenceListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentSchedulingPreferenceListing>() {}, new AsyncApiCallback<ApiResponse<AgentSchedulingPreferenceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentSchedulingPreferenceListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update a time off request for the current user
    * 
    * @param request the request object
@@ -16664,6 +16986,83 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AgentQueryAdherenceExplanationsResponse> response = (ApiResponse<AgentQueryAdherenceExplanationsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementAgentSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentSchedulingPreferenceListing> postWorkforcemanagementAgentSchedulingpreferencesQueryAsync(PostWorkforcemanagementAgentSchedulingpreferencesQueryRequest request, final AsyncApiCallback<AgentSchedulingPreferenceListing> callback) {
+    try {
+      final SettableFuture<AgentSchedulingPreferenceListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentSchedulingPreferenceListing>() {}, new AsyncApiCallback<ApiResponse<AgentSchedulingPreferenceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentSchedulingPreferenceListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementAgentSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentSchedulingPreferenceListing>> postWorkforcemanagementAgentSchedulingpreferencesQueryAsync(ApiRequest<QueryAgentSchedulingPreferencesRequest> request, final AsyncApiCallback<ApiResponse<AgentSchedulingPreferenceListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentSchedulingPreferenceListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentSchedulingPreferenceListing>() {}, new AsyncApiCallback<ApiResponse<AgentSchedulingPreferenceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentSchedulingPreferenceListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -25246,6 +25645,83 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AgentSchedulingPreferenceListing> postWorkforcemanagementSchedulingpreferencesQueryAsync(PostWorkforcemanagementSchedulingpreferencesQueryRequest request, final AsyncApiCallback<AgentSchedulingPreferenceListing> callback) {
+    try {
+      final SettableFuture<AgentSchedulingPreferenceListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AgentSchedulingPreferenceListing>() {}, new AsyncApiCallback<ApiResponse<AgentSchedulingPreferenceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentSchedulingPreferenceListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get agent scheduling preferences
+   * 
+   * postWorkforcemanagementSchedulingpreferencesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AgentSchedulingPreferenceListing>> postWorkforcemanagementSchedulingpreferencesQueryAsync(ApiRequest<QueryAgentSchedulingPreferencesRequest> request, final AsyncApiCallback<ApiResponse<AgentSchedulingPreferenceListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AgentSchedulingPreferenceListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AgentSchedulingPreferenceListing>() {}, new AsyncApiCallback<ApiResponse<AgentSchedulingPreferenceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AgentSchedulingPreferenceListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Updates a shift trade. This route can only be called by the initiating user
    * 
    * @param request the request object
@@ -26284,6 +26760,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ValidateAgentUnavailableTimesResponse> response = (ApiResponse<ValidateAgentUnavailableTimesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of UserScheduleAdherence records for the requested users
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<UserActivityListing> postWorkforcemanagementUsersActivityAsync(PostWorkforcemanagementUsersActivityRequest request, final AsyncApiCallback<UserActivityListing> callback) {
+    try {
+      final SettableFuture<UserActivityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<UserActivityListing>() {}, new AsyncApiCallback<ApiResponse<UserActivityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserActivityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a list of UserScheduleAdherence records for the requested users
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<UserActivityListing>> postWorkforcemanagementUsersActivityAsync(ApiRequest<UsersActivityRequest> request, final AsyncApiCallback<ApiResponse<UserActivityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<UserActivityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<UserActivityListing>() {}, new AsyncApiCallback<ApiResponse<UserActivityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<UserActivityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserActivityListing> response = (ApiResponse<UserActivityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<UserActivityListing> response = (ApiResponse<UserActivityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

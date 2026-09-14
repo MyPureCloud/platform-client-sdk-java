@@ -54,6 +54,8 @@ import com.mypurecloud.sdk.v2.model.ContactListTemplateEntityListing;
 import com.mypurecloud.sdk.v2.model.ContactListUploadUrlRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingRequest;
 import com.mypurecloud.sdk.v2.model.ContactListingResponse;
+import com.mypurecloud.sdk.v2.model.ContactListsBulkEditRequest;
+import com.mypurecloud.sdk.v2.model.ContactListsBulkEditResponse;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJob;
 import com.mypurecloud.sdk.v2.model.ContactsBulkOperationJobListing;
 import com.mypurecloud.sdk.v2.model.ContactsExportRequest;
@@ -238,6 +240,7 @@ import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersBulkRetrieveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistfiltersPreviewRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsBulkUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlistsUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostOutboundContactlisttemplatesBulkAddRequest;
@@ -10266,6 +10269,81 @@ public class OutboundApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ContactList> response = (ApiResponse<ContactList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update contact lists.
+   * A maximum of 100 contact lists can be updated per request.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContactListsBulkEditResponse> postOutboundContactlistsBulkUpdateAsync(PostOutboundContactlistsBulkUpdateRequest request, final AsyncApiCallback<ContactListsBulkEditResponse> callback) {
+    try {
+      final SettableFuture<ContactListsBulkEditResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContactListsBulkEditResponse>() {}, new AsyncApiCallback<ApiResponse<ContactListsBulkEditResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListsBulkEditResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Bulk update contact lists.
+   * A maximum of 100 contact lists can be updated per request.
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContactListsBulkEditResponse>> postOutboundContactlistsBulkUpdateAsync(ApiRequest<ContactListsBulkEditRequest> request, final AsyncApiCallback<ApiResponse<ContactListsBulkEditResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContactListsBulkEditResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContactListsBulkEditResponse>() {}, new AsyncApiCallback<ApiResponse<ContactListsBulkEditResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContactListsBulkEditResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListsBulkEditResponse> response = (ApiResponse<ContactListsBulkEditResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContactListsBulkEditResponse> response = (ApiResponse<ContactListsBulkEditResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

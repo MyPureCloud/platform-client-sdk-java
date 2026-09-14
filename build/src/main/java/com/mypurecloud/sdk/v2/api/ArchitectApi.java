@@ -77,6 +77,7 @@ import com.mypurecloud.sdk.v2.model.PromptAssetUpload;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobRequest;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJobResponse;
@@ -3937,12 +3938,13 @@ public class ArchitectApi {
    * @param includeMediaUris Include the media URIs for each resource (optional, default to true)
    * @param includeResources Include the resources for each system prompt (optional, default to true)
    * @param language Filter the resources down to the provided languages (optional)
+   * @param divisionId division ID(s) (optional)
    * @return PromptEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public PromptEntityListing getArchitectPrompts(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder, Boolean includeMediaUris, Boolean includeResources, List<String> language) throws IOException, ApiException {
-    return  getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language));
+  public PromptEntityListing getArchitectPrompts(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder, Boolean includeMediaUris, Boolean includeResources, List<String> language, List<String> divisionId) throws IOException, ApiException {
+    return  getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language, divisionId));
   }
 
   /**
@@ -3958,14 +3960,15 @@ public class ArchitectApi {
    * @param includeMediaUris Include the media URIs for each resource (optional, default to true)
    * @param includeResources Include the resources for each system prompt (optional, default to true)
    * @param language Filter the resources down to the provided languages (optional)
+   * @param divisionId division ID(s) (optional)
    * @return PromptEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder, Boolean includeMediaUris, Boolean includeResources, List<String> language) throws IOException {
-    return getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language).withHttpInfo());
+  public ApiResponse<PromptEntityListing> getArchitectPromptsWithHttpInfo(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder, Boolean includeMediaUris, Boolean includeResources, List<String> language, List<String> divisionId) throws IOException {
+    return getArchitectPrompts(createGetArchitectPromptsRequest(pageNumber, pageSize, name, description, nameOrDescription, sortBy, sortOrder, includeMediaUris, includeResources, language, divisionId).withHttpInfo());
   }
 
-  private GetArchitectPromptsRequest createGetArchitectPromptsRequest(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder, Boolean includeMediaUris, Boolean includeResources, List<String> language) {
+  private GetArchitectPromptsRequest createGetArchitectPromptsRequest(Integer pageNumber, Integer pageSize, List<String> name, String description, String nameOrDescription, String sortBy, String sortOrder, Boolean includeMediaUris, Boolean includeResources, List<String> language, List<String> divisionId) {
     return GetArchitectPromptsRequest.builder()
             .withPageNumber(pageNumber)
 
@@ -3986,6 +3989,8 @@ public class ArchitectApi {
             .withIncludeResources(includeResources)
 
             .withLanguage(language)
+
+            .withDivisionId(divisionId)
 
             .build();
   }
@@ -11655,7 +11660,7 @@ public class ArchitectApi {
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public RegisterArchitectJobResponse postFlowsJobs(Object body) throws IOException, ApiException {
+  public RegisterArchitectJobResponse postFlowsJobs(RegisterArchitectJobRequest body) throws IOException, ApiException {
     return  postFlowsJobs(createPostFlowsJobsRequest(body));
   }
 
@@ -11666,11 +11671,11 @@ public class ArchitectApi {
    * @return RegisterArchitectJobResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RegisterArchitectJobResponse> postFlowsJobsWithHttpInfo(Object body) throws IOException {
+  public ApiResponse<RegisterArchitectJobResponse> postFlowsJobsWithHttpInfo(RegisterArchitectJobRequest body) throws IOException {
     return postFlowsJobs(createPostFlowsJobsRequest(body).withHttpInfo());
   }
 
-  private PostFlowsJobsRequest createPostFlowsJobsRequest(Object body) {
+  private PostFlowsJobsRequest createPostFlowsJobsRequest(RegisterArchitectJobRequest body) {
     return PostFlowsJobsRequest.builder()
             .withBody(body)
 
@@ -11703,7 +11708,7 @@ public class ArchitectApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<RegisterArchitectJobResponse> postFlowsJobs(ApiRequest<Object> request) throws IOException {
+  public ApiResponse<RegisterArchitectJobResponse> postFlowsJobs(ApiRequest<RegisterArchitectJobRequest> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<RegisterArchitectJobResponse>() {});
     }

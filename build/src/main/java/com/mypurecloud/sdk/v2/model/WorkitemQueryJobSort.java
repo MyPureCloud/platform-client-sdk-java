@@ -37,14 +37,15 @@ public class WorkitemQueryJobSort  implements Serializable {
     }
   }
   /**
-   * Specify an attribute for sorting.
+   * Specify an attribute for sorting. Use 'customFields' to sort by a custom field, in which case the customField property is required.
    */
  @JsonDeserialize(using = NameEnumDeserializer.class)
   public enum NameEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     DATEDUE("dateDue"),
     DATECREATED("dateCreated"),
-    PRIORITY("priority");
+    PRIORITY("priority"),
+    CUSTOMFIELDS("customFields");
 
     private String value;
 
@@ -73,6 +74,7 @@ public class WorkitemQueryJobSort  implements Serializable {
   }
   private NameEnum name = null;
   private Boolean ascending = null;
+  private String customField = null;
 
   public WorkitemQueryJobSort() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -86,14 +88,14 @@ public class WorkitemQueryJobSort  implements Serializable {
 
   
   /**
-   * Specify an attribute for sorting.
+   * Specify an attribute for sorting. Use 'customFields' to sort by a custom field, in which case the customField property is required.
    **/
   public WorkitemQueryJobSort name(NameEnum name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Specify an attribute for sorting.")
+  @ApiModelProperty(example = "null", value = "Specify an attribute for sorting. Use 'customFields' to sort by a custom field, in which case the customField property is required.")
   @JsonProperty("name")
   public NameEnum getName() {
     return name;
@@ -121,6 +123,24 @@ public class WorkitemQueryJobSort  implements Serializable {
   }
 
 
+  /**
+   * The key of the custom field to sort by. Required when name is 'customFields' and must not be set otherwise.
+   **/
+  public WorkitemQueryJobSort customField(String customField) {
+    this.customField = customField;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The key of the custom field to sort by. Required when name is 'customFields' and must not be set otherwise.")
+  @JsonProperty("customField")
+  public String getCustomField() {
+    return customField;
+  }
+  public void setCustomField(String customField) {
+    this.customField = customField;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -132,12 +152,13 @@ public class WorkitemQueryJobSort  implements Serializable {
     WorkitemQueryJobSort workitemQueryJobSort = (WorkitemQueryJobSort) o;
 
     return Objects.equals(this.name, workitemQueryJobSort.name) &&
-            Objects.equals(this.ascending, workitemQueryJobSort.ascending);
+            Objects.equals(this.ascending, workitemQueryJobSort.ascending) &&
+            Objects.equals(this.customField, workitemQueryJobSort.customField);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, ascending);
+    return Objects.hash(name, ascending, customField);
   }
 
   @Override
@@ -147,6 +168,7 @@ public class WorkitemQueryJobSort  implements Serializable {
     
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    ascending: ").append(toIndentedString(ascending)).append("\n");
+    sb.append("    customField: ").append(toIndentedString(customField)).append("\n");
     sb.append("}");
     return sb.toString();
   }

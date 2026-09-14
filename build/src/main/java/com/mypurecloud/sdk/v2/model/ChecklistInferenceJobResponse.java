@@ -182,6 +182,7 @@ public class ChecklistInferenceJobResponse  implements Serializable {
     }
   }
   private DirectionEnum direction = null;
+  private Boolean preview = null;
   private String selfUri = null;
 
   public ChecklistInferenceJobResponse() {
@@ -429,6 +430,24 @@ public class ChecklistInferenceJobResponse  implements Serializable {
   }
 
 
+  /**
+   * Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+   **/
+  public ChecklistInferenceJobResponse preview(Boolean preview) {
+    this.preview = preview;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "false", value = "Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.")
+  @JsonProperty("preview")
+  public Boolean getPreview() {
+    return preview;
+  }
+  public void setPreview(Boolean preview) {
+    this.preview = preview;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -459,12 +478,13 @@ public class ChecklistInferenceJobResponse  implements Serializable {
             Objects.equals(this.assistantId, checklistInferenceJobResponse.assistantId) &&
             Objects.equals(this.mediaType, checklistInferenceJobResponse.mediaType) &&
             Objects.equals(this.direction, checklistInferenceJobResponse.direction) &&
+            Objects.equals(this.preview, checklistInferenceJobResponse.preview) &&
             Objects.equals(this.selfUri, checklistInferenceJobResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, status, error, agentChecklistInfo, jobStartTime, jobEndTime, language, agentId, participantId, queueId, assistantId, mediaType, direction, selfUri);
+    return Objects.hash(id, status, error, agentChecklistInfo, jobStartTime, jobEndTime, language, agentId, participantId, queueId, assistantId, mediaType, direction, preview, selfUri);
   }
 
   @Override
@@ -485,6 +505,7 @@ public class ChecklistInferenceJobResponse  implements Serializable {
     sb.append("    assistantId: ").append(toIndentedString(assistantId)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+    sb.append("    preview: ").append(toIndentedString(preview)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

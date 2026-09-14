@@ -31,6 +31,9 @@ public class ContactListUploadUrlRequest  implements Serializable {
   private Boolean clearSystemData = null;
   private String divisionIdForTargetContactLists = null;
   private String fileSpecificationTemplateId = null;
+  private String retentionTypeColumn = null;
+  private String retentionDaysColumn = null;
+  private String retentionDateExpirationColumn = null;
 
   public ContactListUploadUrlRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -205,6 +208,60 @@ public class ContactListUploadUrlRequest  implements Serializable {
   }
 
 
+  /**
+   * The column name from your file to get retention type values from.
+   **/
+  public ContactListUploadUrlRequest retentionTypeColumn(String retentionTypeColumn) {
+    this.retentionTypeColumn = retentionTypeColumn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The column name from your file to get retention type values from.")
+  @JsonProperty("retentionTypeColumn")
+  public String getRetentionTypeColumn() {
+    return retentionTypeColumn;
+  }
+  public void setRetentionTypeColumn(String retentionTypeColumn) {
+    this.retentionTypeColumn = retentionTypeColumn;
+  }
+
+
+  /**
+   * The column name from your file to get retention day values from.
+   **/
+  public ContactListUploadUrlRequest retentionDaysColumn(String retentionDaysColumn) {
+    this.retentionDaysColumn = retentionDaysColumn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The column name from your file to get retention day values from.")
+  @JsonProperty("retentionDaysColumn")
+  public String getRetentionDaysColumn() {
+    return retentionDaysColumn;
+  }
+  public void setRetentionDaysColumn(String retentionDaysColumn) {
+    this.retentionDaysColumn = retentionDaysColumn;
+  }
+
+
+  /**
+   * The column name from your file to get date expiration values from.
+   **/
+  public ContactListUploadUrlRequest retentionDateExpirationColumn(String retentionDateExpirationColumn) {
+    this.retentionDateExpirationColumn = retentionDateExpirationColumn;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The column name from your file to get date expiration values from.")
+  @JsonProperty("retentionDateExpirationColumn")
+  public String getRetentionDateExpirationColumn() {
+    return retentionDateExpirationColumn;
+  }
+  public void setRetentionDateExpirationColumn(String retentionDateExpirationColumn) {
+    this.retentionDateExpirationColumn = retentionDateExpirationColumn;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -223,12 +280,15 @@ public class ContactListUploadUrlRequest  implements Serializable {
             Objects.equals(this.listNamePrefix, contactListUploadUrlRequest.listNamePrefix) &&
             Objects.equals(this.clearSystemData, contactListUploadUrlRequest.clearSystemData) &&
             Objects.equals(this.divisionIdForTargetContactLists, contactListUploadUrlRequest.divisionIdForTargetContactLists) &&
-            Objects.equals(this.fileSpecificationTemplateId, contactListUploadUrlRequest.fileSpecificationTemplateId);
+            Objects.equals(this.fileSpecificationTemplateId, contactListUploadUrlRequest.fileSpecificationTemplateId) &&
+            Objects.equals(this.retentionTypeColumn, contactListUploadUrlRequest.retentionTypeColumn) &&
+            Objects.equals(this.retentionDaysColumn, contactListUploadUrlRequest.retentionDaysColumn) &&
+            Objects.equals(this.retentionDateExpirationColumn, contactListUploadUrlRequest.retentionDateExpirationColumn);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(signedUrlTimeoutSeconds, contentType, id, contactIdName, importTemplateId, listNamePrefix, clearSystemData, divisionIdForTargetContactLists, fileSpecificationTemplateId);
+    return Objects.hash(signedUrlTimeoutSeconds, contentType, id, contactIdName, importTemplateId, listNamePrefix, clearSystemData, divisionIdForTargetContactLists, fileSpecificationTemplateId, retentionTypeColumn, retentionDaysColumn, retentionDateExpirationColumn);
   }
 
   @Override
@@ -245,6 +305,9 @@ public class ContactListUploadUrlRequest  implements Serializable {
     sb.append("    clearSystemData: ").append(toIndentedString(clearSystemData)).append("\n");
     sb.append("    divisionIdForTargetContactLists: ").append(toIndentedString(divisionIdForTargetContactLists)).append("\n");
     sb.append("    fileSpecificationTemplateId: ").append(toIndentedString(fileSpecificationTemplateId)).append("\n");
+    sb.append("    retentionTypeColumn: ").append(toIndentedString(retentionTypeColumn)).append("\n");
+    sb.append("    retentionDaysColumn: ").append(toIndentedString(retentionDaysColumn)).append("\n");
+    sb.append("    retentionDateExpirationColumn: ").append(toIndentedString(retentionDateExpirationColumn)).append("\n");
     sb.append("}");
     return sb.toString();
   }

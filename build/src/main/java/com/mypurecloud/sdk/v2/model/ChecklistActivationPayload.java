@@ -175,6 +175,7 @@ public class ChecklistActivationPayload  implements Serializable {
     }
   }
   private DirectionEnum direction = null;
+  private Boolean preview = null;
 
   public ChecklistActivationPayload() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -367,6 +368,24 @@ public class ChecklistActivationPayload  implements Serializable {
   }
 
 
+  /**
+   * Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+   **/
+  public ChecklistActivationPayload preview(Boolean preview) {
+    this.preview = preview;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "false", value = "Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.")
+  @JsonProperty("preview")
+  public Boolean getPreview() {
+    return preview;
+  }
+  public void setPreview(Boolean preview) {
+    this.preview = preview;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -386,12 +405,13 @@ public class ChecklistActivationPayload  implements Serializable {
             Objects.equals(this.queueId, checklistActivationPayload.queueId) &&
             Objects.equals(this.assistantId, checklistActivationPayload.assistantId) &&
             Objects.equals(this.mediaType, checklistActivationPayload.mediaType) &&
-            Objects.equals(this.direction, checklistActivationPayload.direction);
+            Objects.equals(this.direction, checklistActivationPayload.direction) &&
+            Objects.equals(this.preview, checklistActivationPayload.preview);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(activationTriggerType, intentId, intentName, language, agentId, participantId, queueId, assistantId, mediaType, direction);
+    return Objects.hash(activationTriggerType, intentId, intentName, language, agentId, participantId, queueId, assistantId, mediaType, direction, preview);
   }
 
   @Override
@@ -409,6 +429,7 @@ public class ChecklistActivationPayload  implements Serializable {
     sb.append("    assistantId: ").append(toIndentedString(assistantId)).append("\n");
     sb.append("    mediaType: ").append(toIndentedString(mediaType)).append("\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
+    sb.append("    preview: ").append(toIndentedString(preview)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -223,7 +223,7 @@ public class BillingApi {
    * getBillingContracts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param pageSize Number of entities to return. Maximum of 10. (optional)
    * @param dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param status Filter by the status of contracts (optional)
@@ -242,7 +242,7 @@ public class BillingApi {
    * getBillingContracts is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param pageSize Number of entities to return. Maximum of 10. (optional)
    * @param dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param status Filter by the status of contracts (optional)

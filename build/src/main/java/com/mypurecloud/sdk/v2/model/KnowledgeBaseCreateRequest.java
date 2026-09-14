@@ -94,7 +94,8 @@ public class KnowledgeBaseCreateRequest  implements Serializable {
     FIL_PH("fil-PH"),
     MS_MY("ms-MY"),
     HE_IL("he-IL"),
-    EL_GR("el-GR");
+    EL_GR("el-GR"),
+    AR_SA("ar-SA");
 
     private String value;
 

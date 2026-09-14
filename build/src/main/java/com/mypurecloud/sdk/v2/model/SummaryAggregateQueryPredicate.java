@@ -107,6 +107,7 @@ public class SummaryAggregateQueryPredicate  implements Serializable {
     TRIGGERSOURCEID("triggerSourceId"),
     TRIGGERSOURCEOUTCOME("triggerSourceOutcome"),
     TRIGGERSOURCETYPE("triggerSourceType"),
+    TRIGGERTYPE("triggerType"),
     USERID("userId"),
     WRAPUPCODERATING("wrapUpCodeRating"),
     WRAPUPCODESUGGESTIONSELECTED("wrapUpCodeSuggestionSelected"),

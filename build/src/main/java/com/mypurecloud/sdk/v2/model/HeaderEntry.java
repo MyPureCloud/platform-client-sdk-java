@@ -37,14 +37,14 @@ public class HeaderEntry  implements Serializable {
 
   
   /**
-   * The key of the header (e.g., 'Subject', 'From', 'X-Custom-Header').
+   * The key of the custom header (e.g., 'X-Custom-Header', 'X-Ticket-ID'). Restricted headers such as 'Subject', 'From', and 'Message-ID' are not allowed and will result in a 400 Bad Request.
    **/
   public HeaderEntry key(String key) {
     this.key = key;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The key of the header (e.g., 'Subject', 'From', 'X-Custom-Header').")
+  @ApiModelProperty(example = "null", value = "The key of the custom header (e.g., 'X-Custom-Header', 'X-Ticket-ID'). Restricted headers such as 'Subject', 'From', and 'Message-ID' are not allowed and will result in a 400 Bad Request.")
   @JsonProperty("key")
   public String getKey() {
     return key;

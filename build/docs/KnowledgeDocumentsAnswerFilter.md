@@ -71,6 +71,7 @@
 | MS_MY | &quot;ms-MY&quot; | 
 | HE_IL | &quot;he-IL&quot; | 
 | EL_GR | &quot;el-GR&quot; | 
+| AR_SA | &quot;ar-SA&quot; | 
 
 
 ## Enum: AppTypeEnum
@@ -111,4 +112,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

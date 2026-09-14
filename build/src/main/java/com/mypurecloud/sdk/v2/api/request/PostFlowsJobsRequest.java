@@ -87,6 +87,7 @@ import com.mypurecloud.sdk.v2.model.PromptAssetUpload;
 import com.mypurecloud.sdk.v2.model.PromptEntityListing;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectExportJobResponse;
+import com.mypurecloud.sdk.v2.model.RegisterArchitectJobRequest;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectJobResponse;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJob;
 import com.mypurecloud.sdk.v2.model.RegisterArchitectValidateJobResponse;
@@ -104,16 +105,16 @@ import com.mypurecloud.sdk.v2.model.UploadUrlResponse;
 
 public class PostFlowsJobsRequest {
 
-	private Object body;
-	public Object getBody() {
+	private RegisterArchitectJobRequest body;
+	public RegisterArchitectJobRequest getBody() {
 		return this.body;
 	}
 
-	public void setBody(Object body) {
+	public void setBody(RegisterArchitectJobRequest body) {
 		this.body = body;
 	}
 
-	public PostFlowsJobsRequest withBody(Object body) {
+	public PostFlowsJobsRequest withBody(RegisterArchitectJobRequest body) {
 	    this.setBody(body);
 	    return this;
 	} 
@@ -137,7 +138,7 @@ public class PostFlowsJobsRequest {
         return this;
     }
 
-    public ApiRequest<Object> withHttpInfo() {
+    public ApiRequest<RegisterArchitectJobRequest> withHttpInfo() {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/flows/jobs")
@@ -164,7 +165,7 @@ public class PostFlowsJobsRequest {
 		}
 
 
-		public Builder withBody(Object body) {
+		public Builder withBody(RegisterArchitectJobRequest body) {
 			request.setBody(body);
 			return this;
 		}

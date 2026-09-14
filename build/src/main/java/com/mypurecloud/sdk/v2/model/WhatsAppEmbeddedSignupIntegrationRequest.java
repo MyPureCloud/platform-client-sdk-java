@@ -50,14 +50,14 @@ public class WhatsAppEmbeddedSignupIntegrationRequest  implements Serializable {
 
 
   /**
-   * The name of the WhatsApp Integration
+   * The name of the WhatsApp Integration. Required for Embedded Signup v2; optional for v4 (set later via PATCH).
    **/
   public WhatsAppEmbeddedSignupIntegrationRequest name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The name of the WhatsApp Integration")
+  @ApiModelProperty(example = "null", value = "The name of the WhatsApp Integration. Required for Embedded Signup v2; optional for v4 (set later via PATCH).")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -104,14 +104,14 @@ public class WhatsAppEmbeddedSignupIntegrationRequest  implements Serializable {
 
 
   /**
-   * The access token returned from the embedded signup flow
+   * The access token returned from the embedded signup flow. Not required for versions v4 or later.
    **/
   public WhatsAppEmbeddedSignupIntegrationRequest embeddedSignupAccessToken(String embeddedSignupAccessToken) {
     this.embeddedSignupAccessToken = embeddedSignupAccessToken;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The access token returned from the embedded signup flow")
+  @ApiModelProperty(example = "null", value = "The access token returned from the embedded signup flow. Not required for versions v4 or later.")
   @JsonProperty("embeddedSignupAccessToken")
   public String getEmbeddedSignupAccessToken() {
     return embeddedSignupAccessToken;

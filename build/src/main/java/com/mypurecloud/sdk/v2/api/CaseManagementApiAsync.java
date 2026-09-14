@@ -2008,7 +2008,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a case query job by id
    * 
-   * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2043,7 +2042,6 @@ public class CaseManagementApiAsync {
   /**
    * Get a case query job by id
    * 
-   * getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2085,7 +2083,6 @@ public class CaseManagementApiAsync {
   /**
    * Get results for a case query job
    * 
-   * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2120,7 +2117,6 @@ public class CaseManagementApiAsync {
   /**
    * Get results for a case query job
    * 
-   * getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2312,7 +2308,6 @@ public class CaseManagementApiAsync {
   /**
    * Update the ownerId of a Case
    * 
-   * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2347,7 +2342,6 @@ public class CaseManagementApiAsync {
   /**
    * Update the ownerId of a Case
    * 
-   * patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3668,7 +3662,6 @@ public class CaseManagementApiAsync {
   /**
    * Create a Case query job.
    * 
-   * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3703,7 +3696,6 @@ public class CaseManagementApiAsync {
   /**
    * Create a Case query job.
    * 
-   * postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

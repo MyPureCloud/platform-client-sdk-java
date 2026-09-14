@@ -26,6 +26,7 @@ import java.io.Serializable;
 public class ChecklistInferenceJobPayload  implements Serializable {
   
   private List<ConversationContext> conversationContext = null;
+  private Boolean preview = null;
 
   public ChecklistInferenceJobPayload() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -58,6 +59,24 @@ public class ChecklistInferenceJobPayload  implements Serializable {
   }
 
 
+  /**
+   * Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+   **/
+  public ChecklistInferenceJobPayload preview(Boolean preview) {
+    this.preview = preview;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "false", value = "Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.")
+  @JsonProperty("preview")
+  public Boolean getPreview() {
+    return preview;
+  }
+  public void setPreview(Boolean preview) {
+    this.preview = preview;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -68,12 +87,13 @@ public class ChecklistInferenceJobPayload  implements Serializable {
     }
     ChecklistInferenceJobPayload checklistInferenceJobPayload = (ChecklistInferenceJobPayload) o;
 
-    return Objects.equals(this.conversationContext, checklistInferenceJobPayload.conversationContext);
+    return Objects.equals(this.conversationContext, checklistInferenceJobPayload.conversationContext) &&
+            Objects.equals(this.preview, checklistInferenceJobPayload.preview);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationContext);
+    return Objects.hash(conversationContext, preview);
   }
 
   @Override
@@ -82,6 +102,7 @@ public class ChecklistInferenceJobPayload  implements Serializable {
     sb.append("class ChecklistInferenceJobPayload {\n");
     
     sb.append("    conversationContext: ").append(toIndentedString(conversationContext)).append("\n");
+    sb.append("    preview: ").append(toIndentedString(preview)).append("\n");
     sb.append("}");
     return sb.toString();
   }

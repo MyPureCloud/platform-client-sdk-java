@@ -31,6 +31,7 @@
 | **messageInQueueFlow** | [**DomainEntityRef**](DomainEntityRef) | The in-queue flow to use for message conversations waiting in queue. |  [optional] |
 | **whisperPrompt** | [**DomainEntityRef**](DomainEntityRef) | The prompt used for whisper on the queue, if configured. |  [optional] |
 | **onHoldPrompt** | [**DomainEntityRef**](DomainEntityRef) | The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play. |  [optional] |
+| **defaultMediaLanguage** | **String** | The canonical language code (e.g. en-US) used for the default media language on the queue. |  [optional] |
 | **autoAnswerOnly** | **Boolean** | Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered. |  [optional] |
 | **cannedResponseLibraries** | [**CannedResponseLibraries**](CannedResponseLibraries) | Canned response library IDs and mode with which they are associated with the queue |  [optional] |
 | **enableTranscription** | **Boolean** | Indicates whether voice transcription is enabled for this queue. |  [optional] |
@@ -80,4 +81,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

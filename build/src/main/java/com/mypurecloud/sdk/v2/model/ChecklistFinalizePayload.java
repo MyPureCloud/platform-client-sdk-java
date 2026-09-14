@@ -23,6 +23,7 @@ import java.io.Serializable;
 public class ChecklistFinalizePayload  implements Serializable {
   
   private String exitReason = null;
+  private Boolean preview = null;
 
   public ChecklistFinalizePayload() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -53,6 +54,24 @@ public class ChecklistFinalizePayload  implements Serializable {
   }
 
 
+  /**
+   * Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.
+   **/
+  public ChecklistFinalizePayload preview(Boolean preview) {
+    this.preview = preview;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "false", value = "Whether this checklist session is a preview. Preview sessions use shorter TTL and do not publish runtime events.")
+  @JsonProperty("preview")
+  public Boolean getPreview() {
+    return preview;
+  }
+  public void setPreview(Boolean preview) {
+    this.preview = preview;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -63,12 +82,13 @@ public class ChecklistFinalizePayload  implements Serializable {
     }
     ChecklistFinalizePayload checklistFinalizePayload = (ChecklistFinalizePayload) o;
 
-    return Objects.equals(this.exitReason, checklistFinalizePayload.exitReason);
+    return Objects.equals(this.exitReason, checklistFinalizePayload.exitReason) &&
+            Objects.equals(this.preview, checklistFinalizePayload.preview);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exitReason);
+    return Objects.hash(exitReason, preview);
   }
 
   @Override
@@ -77,6 +97,7 @@ public class ChecklistFinalizePayload  implements Serializable {
     sb.append("class ChecklistFinalizePayload {\n");
     
     sb.append("    exitReason: ").append(toIndentedString(exitReason)).append("\n");
+    sb.append("    preview: ").append(toIndentedString(preview)).append("\n");
     sb.append("}");
     return sb.toString();
   }
