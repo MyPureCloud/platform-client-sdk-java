@@ -12,6 +12,7 @@
 | **validation** | **Object** | The validation configuration for the variable. Optional - if not present, no validation is applied. |  [optional] |
 | **listValues** | **Object** | The values configuration for List variables. Only applicable when type is 'List'. |  [optional] |
 | **listVariables** | [**List&lt;Variable&gt;**](Variable) | The variables that the list result will be stored in. Only applicable when type is 'List'. |  [optional] |
+| **customConversationAttributes** | [**List&lt;ConversationAttribute&gt;**](ConversationAttribute) | The Conversation Custom Attributes (CCA) for this variable. When present, the variable value is bound to the specified conversation attributes. |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -40,4 +41,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

@@ -790,7 +790,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 PresenceApi apiInstance = new PresenceApi();
-String userId = "userId_example"; // String | user Id
+String userId = "userId_example"; // String | User ID (UUID)
 String sourceId = "sourceId_example"; // String | Presence source ID
 try {
     UserPresence result = apiInstance.getUserPresence(userId, sourceId);
@@ -806,7 +806,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| user Id | 
+| **userId** | **String**| User ID (UUID) | 
 | **sourceId** | **String**| Presence source ID | 
 {: class="table-striped"}
 
@@ -852,7 +852,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 PresenceApi apiInstance = new PresenceApi();
-String userId = "userId_example"; // String | user Id
+String userId = "userId_example"; // String | User ID (UUID)
 try {
     UserPresence result = apiInstance.getUserPresencesPurecloud(userId);
     System.out.println(result);
@@ -867,7 +867,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| user Id | 
+| **userId** | **String**| User ID (UUID) | 
 {: class="table-striped"}
 
 
@@ -1030,7 +1030,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 PresenceApi apiInstance = new PresenceApi();
-String userId = "userId_example"; // String | user Id
+String userId = "userId_example"; // String | User ID (UUID)
 String sourceId = "sourceId_example"; // String | Presence source ID
 UserPresence body = new UserPresence(); // UserPresence | User presence
 try {
@@ -1047,7 +1047,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| user Id | 
+| **userId** | **String**| User ID (UUID) | 
 | **sourceId** | **String**| Presence source ID | 
 | **body** | [**UserPresence**](UserPresence)| User presence | 
 {: class="table-striped"}
@@ -1094,7 +1094,7 @@ ApiClient apiClient = ApiClient.Builder.standard()
 Configuration.setDefaultApiClient(apiClient);
 
 PresenceApi apiInstance = new PresenceApi();
-String userId = "userId_example"; // String | user Id
+String userId = "userId_example"; // String | User ID (UUID)
 UserPresence body = new UserPresence(); // UserPresence | User presence
 try {
     UserPresence result = apiInstance.patchUserPresencesPurecloud(userId, body);
@@ -1110,7 +1110,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **userId** | **String**| user Id | 
+| **userId** | **String**| User ID (UUID) | 
 | **body** | [**UserPresence**](UserPresence)| User presence | 
 {: class="table-striped"}
 
@@ -1665,4 +1665,4 @@ try {
 [**List&lt;UserPresence&gt;**](UserPresence)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

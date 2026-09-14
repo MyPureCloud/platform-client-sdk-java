@@ -21,9 +21,22 @@
 | **zipCodeColumnName** | **String** | The name of ContactListTemplate column containing the zip code for use with automatic time zone mapping. Only allowed if 'automaticTimeZoneMapping' is set to true. |  [optional] |
 | **columnDataTypeSpecifications** | [**List&lt;ColumnDataTypeSpecification&gt;**](ColumnDataTypeSpecification) | The settings of the columns selected for dynamic queueing |  [optional] |
 | **trimWhitespace** | **Boolean** | Whether to trim white space when importing a ContactListTemplate csv file, default value = true |  [optional] |
+| **retentionType** | [**RetentionTypeEnum**](#Enum--RetentionTypeEnum) | The type of retention for this ContactListTemplate. Valid values: Never, Today, RetentionDays |  [optional] |
+| **retentionDays** | **Integer** | The number of days to retain contact lists created from this template. Required when retentionType is RetentionDays. |  [optional] |
+| **timeZone** | **String** | The time zone for this contact list template; for example, Africa/Abidjan. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
+## Enum: RetentionTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| NEVER | &quot;Never&quot; | 
+| TODAY | &quot;Today&quot; | 
+| RETENTIONDAYS | &quot;RetentionDays&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

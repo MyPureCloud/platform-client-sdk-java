@@ -1643,8 +1643,6 @@ try {
 
 Get a case query job by id
 
-getCasemanagementCasesQueryJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/casemanagement/cases/query/jobs/{jobId}  
 
 Requires ALL permissions: 
@@ -1703,8 +1701,6 @@ try {
 > [CaseQueryJobResultsResponse](CaseQueryJobResultsResponse) getCasemanagementCasesQueryJobResults(jobId)
 
 Get results for a case query job
-
-getCasemanagementCasesQueryJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/casemanagement/cases/query/jobs/{jobId}/results  
 
@@ -1886,8 +1882,6 @@ try {
 > [ModelCase](Case) patchCasemanagementCaseOwner(caseId, body)
 
 Update the ownerId of a Case
-
-patchCasemanagementCaseOwner is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/casemanagement/cases/{caseId}/owner  
 
@@ -2987,8 +2981,6 @@ try {
 
 Create a Case query job.
 
-postCasemanagementCasesQueryJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/casemanagement/cases/query/jobs  
 
 Requires ANY permissions: 
@@ -3165,4 +3157,4 @@ try {
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

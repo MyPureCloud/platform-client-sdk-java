@@ -40,6 +40,7 @@
 | TRIGGERSOURCEID | &quot;triggerSourceId&quot; |
 | TRIGGERSOURCEOUTCOME | &quot;triggerSourceOutcome&quot; |
 | TRIGGERSOURCETYPE | &quot;triggerSourceType&quot; |
+| TRIGGERTYPE | &quot;triggerType&quot; |
 | USERID | &quot;userId&quot; |
 | WRAPUPCODERATING | &quot;wrapUpCodeRating&quot; |
 | WRAPUPCODESUGGESTIONSELECTED | &quot;wrapUpCodeSuggestionSelected&quot; |
@@ -76,4 +77,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

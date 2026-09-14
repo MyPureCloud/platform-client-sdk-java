@@ -137,6 +137,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postOutboundContactlistfiltersBulkRetrieve**](OutboundApi#postOutboundContactlistfiltersBulkRetrieve) | Retrieve multiple contact list filters |
 | [**postOutboundContactlistfiltersPreview**](OutboundApi#postOutboundContactlistfiltersPreview) | Get a preview of the output of a contact list filter |
 | [**postOutboundContactlists**](OutboundApi#postOutboundContactlists) | Create a contact List. |
+| [**postOutboundContactlistsBulkUpdate**](OutboundApi#postOutboundContactlistsBulkUpdate) | Bulk update contact lists. |
 | [**postOutboundContactlistsUploads**](OutboundApi#postOutboundContactlistsUploads) | Generate presigned upload URL for contact list. |
 | [**postOutboundContactlisttemplates**](OutboundApi#postOutboundContactlisttemplates) | Create Contact List Template |
 | [**postOutboundContactlisttemplatesBulkAdd**](OutboundApi#postOutboundContactlisttemplatesBulkAdd) | Add multiple contact list templates |
@@ -4010,7 +4011,7 @@ try {
 # **getOutboundContactlists**
 
 
-> [ContactListEntityListing](ContactListEntityListing) getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder)
+> [ContactListEntityListing](ContactListEntityListing) getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, timeZone, dateExpiration, sortBy, sortOrder)
 
 Query a list of contact lists.
 
@@ -4053,10 +4054,12 @@ String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
 List<String> id = Arrays.asList(null); // List<String> | id
 List<String> divisionId = Arrays.asList(null); // List<String> | Division ID(s)
+String timeZone = "timeZone_example"; // String | Filter by time zone
+List<String> dateExpiration = Arrays.asList(null); // List<String> | Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    ContactListEntityListing result = apiInstance.getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, sortBy, sortOrder);
+    ContactListEntityListing result = apiInstance.getOutboundContactlists(includeImportStatus, includeSize, pageSize, pageNumber, allowEmptyResult, filterType, name, id, divisionId, timeZone, dateExpiration, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlists");
@@ -4078,6 +4081,8 @@ try {
 | **name** | **String**| Name | [optional] 
 | **id** | [**List&lt;String&gt;**](String)| id | [optional] 
 | **divisionId** | [**List&lt;String&gt;**](String)| Division ID(s) | [optional] 
+| **timeZone** | **String**| Filter by time zone | [optional] 
+| **dateExpiration** | [**List&lt;String&gt;**](String)| Filter by expiration date. Supports filter type prefixes, e.g. greaterthan:2025-01-01T00:00:00Z. Multiple values narrow the range. See https://developer.genesys.cloud/routing/outbound/filter-type | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
 {: class="table-striped"}
@@ -4292,7 +4297,7 @@ try {
 # **getOutboundContactlisttemplates**
 
 
-> [ContactListTemplateEntityListing](ContactListTemplateEntityListing) getOutboundContactlisttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder)
+> [ContactListTemplateEntityListing](ContactListTemplateEntityListing) getOutboundContactlisttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, timeZone, sortBy, sortOrder)
 
 Query a list of contact list templates
 
@@ -4329,10 +4334,11 @@ Integer pageNumber = 1; // Integer | Page number
 Boolean allowEmptyResult = false; // Boolean | Whether to return an empty page when there are no results for that page
 String filterType = "Prefix"; // String | Filter type
 String name = "name_example"; // String | Name
+String timeZone = "timeZone_example"; // String | Filter by time zone
 String sortBy = "sortBy_example"; // String | Sort by
 String sortOrder = "a"; // String | Sort order
 try {
-    ContactListTemplateEntityListing result = apiInstance.getOutboundContactlisttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, sortBy, sortOrder);
+    ContactListTemplateEntityListing result = apiInstance.getOutboundContactlisttemplates(pageSize, pageNumber, allowEmptyResult, filterType, name, timeZone, sortBy, sortOrder);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling OutboundApi#getOutboundContactlisttemplates");
@@ -4350,6 +4356,7 @@ try {
 | **allowEmptyResult** | **Boolean**| Whether to return an empty page when there are no results for that page | [optional] [default to false] 
 | **filterType** | **String**| Filter type | [optional] [default to Prefix]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith 
 | **name** | **String**| Name | [optional] 
+| **timeZone** | **String**| Filter by time zone | [optional] 
 | **sortBy** | **String**| Sort by | [optional] 
 | **sortOrder** | **String**| Sort order | [optional] [default to a]<br />**Values**: ascending, descending 
 {: class="table-striped"}
@@ -8470,6 +8477,67 @@ try {
 [**ContactList**](ContactList)
 
 
+# **postOutboundContactlistsBulkUpdate**
+
+
+> [ContactListsBulkEditResponse](ContactListsBulkEditResponse) postOutboundContactlistsBulkUpdate(body)
+
+Bulk update contact lists.
+
+A maximum of 100 contact lists can be updated per request.
+
+Wraps POST /api/v2/outbound/contactlists/bulk/update  
+
+Requires ANY permissions: 
+
+* outbound:contactList:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.OutboundApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+OutboundApi apiInstance = new OutboundApi();
+ContactListsBulkEditRequest body = new ContactListsBulkEditRequest(); // ContactListsBulkEditRequest | Contact lists bulk edit request.
+try {
+    ContactListsBulkEditResponse result = apiInstance.postOutboundContactlistsBulkUpdate(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling OutboundApi#postOutboundContactlistsBulkUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContactListsBulkEditRequest**](ContactListsBulkEditRequest)| Contact lists bulk edit request. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContactListsBulkEditResponse**](ContactListsBulkEditResponse)
+
+
 # **postOutboundContactlistsUploads**
 
 
@@ -11085,4 +11153,4 @@ try {
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_

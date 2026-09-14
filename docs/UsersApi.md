@@ -498,6 +498,7 @@ Requires ANY permissions:
 
 * admin
 * directory:user:delete
+* directory:user:hardDelete
 * directory:organization:admin
 
 ### Example
@@ -8088,4 +8089,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:262.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
