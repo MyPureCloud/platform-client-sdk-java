@@ -11,16 +11,25 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
+import com.mypurecloud.sdk.v2.model.ActivityPlanDeletionOccurrenceIds;
+import com.mypurecloud.sdk.v2.model.ActivityPlanDeletionSessionIds;
+import com.mypurecloud.sdk.v2.model.ActivityPlanDeletionSessionUserIds;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobListing;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrencesDeletionJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanRunJobResponse;
+import com.mypurecloud.sdk.v2.model.AddAdherenceAdjustmentAgentRequest;
 import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAdminRequest;
 import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAgentRequest;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeJobRequest;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
+import com.mypurecloud.sdk.v2.model.AdherenceAdjustment;
+import com.mypurecloud.sdk.v2.model.AdherenceAdjustmentsListing;
+import com.mypurecloud.sdk.v2.model.AdherenceAdjustmentsReasonCode;
+import com.mypurecloud.sdk.v2.model.AdherenceAdjustmentsReasonCodesListing;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationAsyncResponse;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationJob;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
@@ -39,6 +48,7 @@ import com.mypurecloud.sdk.v2.model.AgentMuQueryResponse;
 import com.mypurecloud.sdk.v2.model.AgentMuScheduleQuery;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsRequest;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
+import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceAdjustmentsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryOpportunitiesResponse;
@@ -74,6 +84,9 @@ import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
 import com.mypurecloud.sdk.v2.model.AsyncIntradayResponse;
 import com.mypurecloud.sdk.v2.model.AvailableTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.AvailableTimeOffResponse;
+import com.mypurecloud.sdk.v2.model.BuAdherenceAdjustmentsQueryJob;
+import com.mypurecloud.sdk.v2.model.BuAdherenceAdjustmentsQueryJobsReferenceListing;
+import com.mypurecloud.sdk.v2.model.BuAdherenceAdjustmentsSettings;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryResponse;
 import com.mypurecloud.sdk.v2.model.BuAlternativeShiftJobResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesQueryResponse;
@@ -97,6 +110,7 @@ import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
 import com.mypurecloud.sdk.v2.model.BuImportTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.BuImportTimeOffLimitValuesUploadResponse;
 import com.mypurecloud.sdk.v2.model.BuListAlternativeShiftTradesResponse;
+import com.mypurecloud.sdk.v2.model.BuQueryAdherenceAdjustmentsRequest;
 import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
@@ -133,6 +147,7 @@ import com.mypurecloud.sdk.v2.model.BulkRemoveOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateActivityCodeResponse;
+import com.mypurecloud.sdk.v2.model.BulkUpdateAgentUnavailableTimesResponse;
 import com.mypurecloud.sdk.v2.model.BulkUpdateOpportunityEnrollmentsStatusResponse;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
@@ -162,6 +177,8 @@ import com.mypurecloud.sdk.v2.model.CopyWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.CreateActivityPlanRequest;
+import com.mypurecloud.sdk.v2.model.CreateAdherenceAdjustmentsReasonCodeRequest;
+import com.mypurecloud.sdk.v2.model.CreateAdherenceAdjustmentsReasonCodesBulkRequest;
 import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.CreateAlternativeShiftTradeRequest;
@@ -176,8 +193,11 @@ import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlanBid;
+import com.mypurecloud.sdk.v2.model.CurrentAgentAdherenceAdjustment;
+import com.mypurecloud.sdk.v2.model.CurrentAgentCursorAdherenceAdjustmentsListing;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserTimeOffIntegrationStatusRequest;
+import com.mypurecloud.sdk.v2.model.CursorAdherenceAdjustmentsListing;
 import com.mypurecloud.sdk.v2.model.DecisionMetricsResponse;
 import com.mypurecloud.sdk.v2.model.DecisionMetricsUpdateJobRequest;
 import com.mypurecloud.sdk.v2.model.DecisionMetricsUpdateJobResponse;
@@ -303,11 +323,17 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import com.mypurecloud.sdk.v2.model.UnavailableTimeListing;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityPlanRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceAdjustmentAdminRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceAdjustmentAgentRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceAdjustmentsBulkRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceAdjustmentsReasonCodeRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceAdjustmentsReasonCodesBulkRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAgentScheduleBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAgentSchedulingPreferencesRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAgentWorkPlanBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
+import com.mypurecloud.sdk.v2.model.UpdateBuAdherenceAdjustmentsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitSchedulingPreferencesSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateCapacityPlanRequest;
@@ -378,8 +404,11 @@ import com.mypurecloud.sdk.v2.model.WorkPlanRotationResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlanValidationRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementAdherenceAdjustmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitSchedulebidRequest;
@@ -400,10 +429,12 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementuni
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceAdjustmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplanationsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalBulkJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentAdherenceAdjustmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest;
@@ -419,9 +450,21 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitRequ
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanDeletionsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplansJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest;
@@ -548,13 +591,20 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementUserWorkplanbidr
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidWorkplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAdherenceAdjustmentRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAgentAdherenceAdjustmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAgentAdherenceExplanationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAgentUnavailabletimesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAlternativeshiftsTradeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAlternativeshiftsTradesStateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivityplanRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitCapacityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
@@ -589,9 +639,12 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUnavailabletim
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUserWorkplanbidranksRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUsersWorkplanbidranksBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementWorkplanbidPreferencesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceAdjustmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceAdjustmentsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceAdjustmentsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentSchedulingpreferencesQueryRequest;
@@ -609,8 +662,16 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshif
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsTradesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivitycodesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanDeletionsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplansRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchRequest;
@@ -748,6 +809,81 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Delete an adherence adjustment for the current user
+   * 
+   * @param adjustmentId The ID of the adherence adjustment to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementAdherenceAdjustment(String adjustmentId) throws IOException, ApiException {
+     deleteWorkforcemanagementAdherenceAdjustment(createDeleteWorkforcemanagementAdherenceAdjustmentRequest(adjustmentId));
+  }
+
+  /**
+   * Delete an adherence adjustment for the current user
+   * 
+   * @param adjustmentId The ID of the adherence adjustment to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementAdherenceAdjustmentWithHttpInfo(String adjustmentId) throws IOException {
+    return deleteWorkforcemanagementAdherenceAdjustment(createDeleteWorkforcemanagementAdherenceAdjustmentRequest(adjustmentId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementAdherenceAdjustmentRequest createDeleteWorkforcemanagementAdherenceAdjustmentRequest(String adjustmentId) {
+    return DeleteWorkforcemanagementAdherenceAdjustmentRequest.builder()
+            .withAdjustmentId(adjustmentId)
+
+            .build();
+  }
+
+  /**
+   * Delete an adherence adjustment for the current user
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementAdherenceAdjustment(DeleteWorkforcemanagementAdherenceAdjustmentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an adherence adjustment for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementAdherenceAdjustment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Delete business unit
    * A business unit cannot be deleted if it contains one or more management units
    * @param businessUnitId The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
@@ -880,6 +1016,164 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> deleteWorkforcemanagementBusinessunitActivitycode(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an adherence adjustment reason code for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param reasonCodeId The ID of the reason code to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(String businessUnitId, String reasonCodeId) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(createDeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest(businessUnitId, reasonCodeId));
+  }
+
+  /**
+   * Delete an adherence adjustment reason code for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param reasonCodeId The ID of the reason code to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeWithHttpInfo(String businessUnitId, String reasonCodeId) throws IOException {
+    return deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(createDeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest(businessUnitId, reasonCodeId).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest createDeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest(String businessUnitId, String reasonCodeId) {
+    return DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withReasonCodeId(reasonCodeId)
+
+            .build();
+  }
+
+  /**
+   * Delete an adherence adjustment reason code for a business unit
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete an adherence adjustment reason code for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param ids The IDs of the reason codes to delete (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(String businessUnitId, List<String> ids) throws IOException, ApiException {
+     deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(createDeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(businessUnitId, ids));
+  }
+
+  /**
+   * Delete adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param ids The IDs of the reason codes to delete (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkWithHttpInfo(String businessUnitId, List<String> ids) throws IOException {
+    return deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(createDeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(businessUnitId, ids).withHttpInfo());
+  }
+
+  private DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest createDeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(String businessUnitId, List<String> ids) {
+    return DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withIds(ids)
+
+            .build();
+  }
+
+  /**
+   * Delete adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * Delete adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }
@@ -2500,6 +2794,84 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get an adherence adjustment for the current user
+   * 
+   * @param adjustmentId The ID of the adherence adjustment (required)
+   * @return CurrentAgentAdherenceAdjustment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CurrentAgentAdherenceAdjustment getWorkforcemanagementAdherenceAdjustment(String adjustmentId) throws IOException, ApiException {
+    return  getWorkforcemanagementAdherenceAdjustment(createGetWorkforcemanagementAdherenceAdjustmentRequest(adjustmentId));
+  }
+
+  /**
+   * Get an adherence adjustment for the current user
+   * 
+   * @param adjustmentId The ID of the adherence adjustment (required)
+   * @return CurrentAgentAdherenceAdjustment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CurrentAgentAdherenceAdjustment> getWorkforcemanagementAdherenceAdjustmentWithHttpInfo(String adjustmentId) throws IOException {
+    return getWorkforcemanagementAdherenceAdjustment(createGetWorkforcemanagementAdherenceAdjustmentRequest(adjustmentId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAdherenceAdjustmentRequest createGetWorkforcemanagementAdherenceAdjustmentRequest(String adjustmentId) {
+    return GetWorkforcemanagementAdherenceAdjustmentRequest.builder()
+            .withAdjustmentId(adjustmentId)
+
+            .build();
+  }
+
+  /**
+   * Get an adherence adjustment for the current user
+   * 
+   * @param request The request object
+   * @return CurrentAgentAdherenceAdjustment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CurrentAgentAdherenceAdjustment getWorkforcemanagementAdherenceAdjustment(GetWorkforcemanagementAdherenceAdjustmentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CurrentAgentAdherenceAdjustment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CurrentAgentAdherenceAdjustment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an adherence adjustment for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CurrentAgentAdherenceAdjustment> getWorkforcemanagementAdherenceAdjustment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CurrentAgentAdherenceAdjustment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get an adherence explanation for the current user
    * 
    * @param explanationId The ID of the explanation to update (required)
@@ -2807,6 +3179,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an adherence adjustment for the requested agent
+   * 
+   * @param agentId The ID of the agent (required)
+   * @param adjustmentId The ID of the adherence adjustment (required)
+   * @return AdherenceAdjustment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustment getWorkforcemanagementAgentAdherenceAdjustment(String agentId, String adjustmentId) throws IOException, ApiException {
+    return  getWorkforcemanagementAgentAdherenceAdjustment(createGetWorkforcemanagementAgentAdherenceAdjustmentRequest(agentId, adjustmentId));
+  }
+
+  /**
+   * Get an adherence adjustment for the requested agent
+   * 
+   * @param agentId The ID of the agent (required)
+   * @param adjustmentId The ID of the adherence adjustment (required)
+   * @return AdherenceAdjustment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustment> getWorkforcemanagementAgentAdherenceAdjustmentWithHttpInfo(String agentId, String adjustmentId) throws IOException {
+    return getWorkforcemanagementAgentAdherenceAdjustment(createGetWorkforcemanagementAgentAdherenceAdjustmentRequest(agentId, adjustmentId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementAgentAdherenceAdjustmentRequest createGetWorkforcemanagementAgentAdherenceAdjustmentRequest(String agentId, String adjustmentId) {
+    return GetWorkforcemanagementAgentAdherenceAdjustmentRequest.builder()
+            .withAgentId(agentId)
+
+            .withAdjustmentId(adjustmentId)
+
+            .build();
+  }
+
+  /**
+   * Get an adherence adjustment for the requested agent
+   * 
+   * @param request The request object
+   * @return AdherenceAdjustment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustment getWorkforcemanagementAgentAdherenceAdjustment(GetWorkforcemanagementAgentAdherenceAdjustmentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceAdjustment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceAdjustment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an adherence adjustment for the requested agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustment> getWorkforcemanagementAgentAdherenceAdjustment(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceAdjustment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustment> response = (ApiResponse<AdherenceAdjustment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustment> response = (ApiResponse<AdherenceAdjustment>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3998,6 +4452,444 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Gets an activity plan deletion job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan associated with the deletion job (required)
+   * @param jobId The ID of the activity plan deletion job (required)
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanDeletionsJob(String businessUnitId, String activityPlanId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplanDeletionsJob(createGetWorkforcemanagementBusinessunitActivityplanDeletionsJobRequest(businessUnitId, activityPlanId, jobId));
+  }
+
+  /**
+   * Gets an activity plan deletion job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan associated with the deletion job (required)
+   * @param jobId The ID of the activity plan deletion job (required)
+   * @return ActivityPlanJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanDeletionsJobWithHttpInfo(String businessUnitId, String activityPlanId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplanDeletionsJob(createGetWorkforcemanagementBusinessunitActivityplanDeletionsJobRequest(businessUnitId, activityPlanId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplanDeletionsJobRequest createGetWorkforcemanagementBusinessunitActivityplanDeletionsJobRequest(String businessUnitId, String activityPlanId, String jobId) {
+    return GetWorkforcemanagementBusinessunitActivityplanDeletionsJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Gets an activity plan deletion job
+   * 
+   * @param request The request object
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanDeletionsJob(GetWorkforcemanagementBusinessunitActivityplanDeletionsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets an activity plan deletion job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanDeletionsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets the latest job for an activity plan in the business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan associated with the run job (required)
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanJobs(String businessUnitId, String activityPlanId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplanJobs(createGetWorkforcemanagementBusinessunitActivityplanJobsRequest(businessUnitId, activityPlanId));
+  }
+
+  /**
+   * Gets the latest job for an activity plan in the business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan associated with the run job (required)
+   * @return ActivityPlanJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanJobsWithHttpInfo(String businessUnitId, String activityPlanId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplanJobs(createGetWorkforcemanagementBusinessunitActivityplanJobsRequest(businessUnitId, activityPlanId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplanJobsRequest createGetWorkforcemanagementBusinessunitActivityplanJobsRequest(String businessUnitId, String activityPlanId) {
+    return GetWorkforcemanagementBusinessunitActivityplanJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .build();
+  }
+
+  /**
+   * Gets the latest job for an activity plan in the business unit
+   * 
+   * @param request The request object
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanJobs(GetWorkforcemanagementBusinessunitActivityplanJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets the latest job for an activity plan in the business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets a session users deletion job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @param sessionId The ID of the activity plan occurrence session (required)
+   * @param jobId The ID of the activity plan occurrence session users deletion job (required)
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(String businessUnitId, String activityPlanId, String occurrenceId, String sessionId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(createGetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobRequest(businessUnitId, activityPlanId, occurrenceId, sessionId, jobId));
+  }
+
+  /**
+   * Gets a session users deletion job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @param sessionId The ID of the activity plan occurrence session (required)
+   * @param jobId The ID of the activity plan occurrence session users deletion job (required)
+   * @return ActivityPlanJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobWithHttpInfo(String businessUnitId, String activityPlanId, String occurrenceId, String sessionId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(createGetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobRequest(businessUnitId, activityPlanId, occurrenceId, sessionId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobRequest createGetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobRequest(String businessUnitId, String activityPlanId, String occurrenceId, String sessionId, String jobId) {
+    return GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withOccurrenceId(occurrenceId)
+
+            .withSessionId(sessionId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Gets a session users deletion job
+   * 
+   * @param request The request object
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets a session users deletion job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets an activity plan sessions deletion job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @param jobId The ID of the activity plan sessions deletion job (required)
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob(String businessUnitId, String activityPlanId, String occurrenceId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob(createGetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobRequest(businessUnitId, activityPlanId, occurrenceId, jobId));
+  }
+
+  /**
+   * Gets an activity plan sessions deletion job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @param jobId The ID of the activity plan sessions deletion job (required)
+   * @return ActivityPlanJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobWithHttpInfo(String businessUnitId, String activityPlanId, String occurrenceId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob(createGetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobRequest(businessUnitId, activityPlanId, occurrenceId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobRequest createGetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobRequest(String businessUnitId, String activityPlanId, String occurrenceId, String jobId) {
+    return GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withOccurrenceId(occurrenceId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Gets an activity plan sessions deletion job
+   * 
+   * @param request The request object
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob(GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets an activity plan sessions deletion job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets an occurrences deletion job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param jobId The ID of the activity plan occurrences deletion job (required)
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob(String businessUnitId, String activityPlanId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob(createGetWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobRequest(businessUnitId, activityPlanId, jobId));
+  }
+
+  /**
+   * Gets an occurrences deletion job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param jobId The ID of the activity plan occurrences deletion job (required)
+   * @return ActivityPlanJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobWithHttpInfo(String businessUnitId, String activityPlanId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob(createGetWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobRequest(businessUnitId, activityPlanId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobRequest createGetWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobRequest(String businessUnitId, String activityPlanId, String jobId) {
+    return GetWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Gets an occurrences deletion job
+   * 
+   * @param request The request object
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob(GetWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets an occurrences deletion job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Gets an activity plan run job
    * 
    * @param businessUnitId The ID of the business unit (required)
@@ -4239,6 +5131,568 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActivityPlanJobListing> response = (ApiResponse<ActivityPlanJobListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get adherence adjustments in bulk by ID for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param adjustmentIds The IDs of the adherence adjustments to fetch (required)
+   * @return AdherenceAdjustmentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(String businessUnitId, List<String> adjustmentIds) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest(businessUnitId, adjustmentIds));
+  }
+
+  /**
+   * Get adherence adjustments in bulk by ID for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param adjustmentIds The IDs of the adherence adjustments to fetch (required)
+   * @return AdherenceAdjustmentsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkWithHttpInfo(String businessUnitId, List<String> adjustmentIds) throws IOException {
+    return getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest(businessUnitId, adjustmentIds).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest(String businessUnitId, List<String> adjustmentIds) {
+    return GetWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withAdjustmentIds(adjustmentIds)
+
+            .build();
+  }
+
+  /**
+   * Get adherence adjustments in bulk by ID for a business unit
+   * 
+   * @param request The request object
+   * @return AdherenceAdjustmentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceAdjustmentsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get adherence adjustments in bulk by ID for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceAdjustmentsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsListing> response = (ApiResponse<AdherenceAdjustmentsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsListing> response = (ApiResponse<AdherenceAdjustmentsListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the query job (required)
+   * @return BuAdherenceAdjustmentsQueryJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAdherenceAdjustmentsQueryJob getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob(String businessUnitId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobRequest(businessUnitId, jobId));
+  }
+
+  /**
+   * Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param businessUnitId The ID of the business unit (required)
+   * @param jobId The ID of the query job (required)
+   * @return BuAdherenceAdjustmentsQueryJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAdherenceAdjustmentsQueryJob> getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobWithHttpInfo(String businessUnitId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobRequest(businessUnitId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobRequest createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobRequest(String businessUnitId, String jobId) {
+    return GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return BuAdherenceAdjustmentsQueryJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAdherenceAdjustmentsQueryJob getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAdherenceAdjustmentsQueryJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAdherenceAdjustmentsQueryJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAdherenceAdjustmentsQueryJob> getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAdherenceAdjustmentsQueryJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAdherenceAdjustmentsQueryJob> response = (ApiResponse<BuAdherenceAdjustmentsQueryJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAdherenceAdjustmentsQueryJob> response = (ApiResponse<BuAdherenceAdjustmentsQueryJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get query job history for the logged in user.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return BuAdherenceAdjustmentsQueryJobsReferenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAdherenceAdjustmentsQueryJobsReferenceListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest(businessUnitId));
+  }
+
+  /**
+   * Get query job history for the logged in user.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return BuAdherenceAdjustmentsQueryJobsReferenceListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get query job history for the logged in user.
+   * 
+   * @param request The request object
+   * @return BuAdherenceAdjustmentsQueryJobsReferenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAdherenceAdjustmentsQueryJobsReferenceListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAdherenceAdjustmentsQueryJobsReferenceListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get query job history for the logged in user.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAdherenceAdjustmentsQueryJobsReferenceListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing> response = (ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing> response = (ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get an adherence adjustment reason code for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param reasonCodeId The ID of the reason code to fetch (required)
+   * @return AdherenceAdjustmentsReasonCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCode getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(String businessUnitId, String reasonCodeId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest(businessUnitId, reasonCodeId));
+  }
+
+  /**
+   * Get an adherence adjustment reason code for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param reasonCodeId The ID of the reason code to fetch (required)
+   * @return AdherenceAdjustmentsReasonCode
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCode> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeWithHttpInfo(String businessUnitId, String reasonCodeId) throws IOException {
+    return getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest(businessUnitId, reasonCodeId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest(String businessUnitId, String reasonCodeId) {
+    return GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withReasonCodeId(reasonCodeId)
+
+            .build();
+  }
+
+  /**
+   * Get an adherence adjustment reason code for a business unit
+   * 
+   * @param request The request object
+   * @return AdherenceAdjustmentsReasonCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCode getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceAdjustmentsReasonCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCode>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get an adherence adjustment reason code for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCode> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceAdjustmentsReasonCode>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get adherence adjustment reason codes for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCodesListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest(businessUnitId));
+  }
+
+  /**
+   * Get adherence adjustment reason codes for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCodesListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get adherence adjustment reason codes for a business unit
+   * 
+   * @param request The request object
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCodesListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get adherence adjustment reason codes for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCodesListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param ids The IDs of the reason codes to fetch (required)
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCodesListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(String businessUnitId, List<String> ids) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(businessUnitId, ids));
+  }
+
+  /**
+   * Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param ids The IDs of the reason codes to fetch (required)
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCodesListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkWithHttpInfo(String businessUnitId, List<String> ids) throws IOException {
+    return getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(businessUnitId, ids).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(String businessUnitId, List<String> ids) {
+    return GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withIds(ids)
+
+            .build();
+  }
+
+  /**
+   * Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+   * 
+   * @param request The request object
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCodesListing getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCodesListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get adherence adjustments settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return BuAdherenceAdjustmentsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAdherenceAdjustmentsSettings getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(String businessUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest(businessUnitId));
+  }
+
+  /**
+   * Get adherence adjustments settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @return BuAdherenceAdjustmentsSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAdherenceAdjustmentsSettings> getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsWithHttpInfo(String businessUnitId) throws IOException {
+    return getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest(businessUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest createGetWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest(String businessUnitId) {
+    return GetWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get adherence adjustments settings for a business unit
+   * 
+   * @param request The request object
+   * @return BuAdherenceAdjustmentsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAdherenceAdjustmentsSettings getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAdherenceAdjustmentsSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAdherenceAdjustmentsSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get adherence adjustments settings for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAdherenceAdjustmentsSettings> getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAdherenceAdjustmentsSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAdherenceAdjustmentsSettings> response = (ApiResponse<BuAdherenceAdjustmentsSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAdherenceAdjustmentsSettings> response = (ApiResponse<BuAdherenceAdjustmentsSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -14664,6 +16118,174 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Update an adherence adjustment for the current user
+   * 
+   * @param adjustmentId The ID of the adherence adjustment to update (required)
+   * @param body body (required)
+   * @return CurrentAgentAdherenceAdjustment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CurrentAgentAdherenceAdjustment patchWorkforcemanagementAdherenceAdjustment(String adjustmentId, UpdateAdherenceAdjustmentAgentRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementAdherenceAdjustment(createPatchWorkforcemanagementAdherenceAdjustmentRequest(adjustmentId, body));
+  }
+
+  /**
+   * Update an adherence adjustment for the current user
+   * 
+   * @param adjustmentId The ID of the adherence adjustment to update (required)
+   * @param body body (required)
+   * @return CurrentAgentAdherenceAdjustment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CurrentAgentAdherenceAdjustment> patchWorkforcemanagementAdherenceAdjustmentWithHttpInfo(String adjustmentId, UpdateAdherenceAdjustmentAgentRequest body) throws IOException {
+    return patchWorkforcemanagementAdherenceAdjustment(createPatchWorkforcemanagementAdherenceAdjustmentRequest(adjustmentId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementAdherenceAdjustmentRequest createPatchWorkforcemanagementAdherenceAdjustmentRequest(String adjustmentId, UpdateAdherenceAdjustmentAgentRequest body) {
+    return PatchWorkforcemanagementAdherenceAdjustmentRequest.builder()
+            .withAdjustmentId(adjustmentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an adherence adjustment for the current user
+   * 
+   * @param request The request object
+   * @return CurrentAgentAdherenceAdjustment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CurrentAgentAdherenceAdjustment patchWorkforcemanagementAdherenceAdjustment(PatchWorkforcemanagementAdherenceAdjustmentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CurrentAgentAdherenceAdjustment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CurrentAgentAdherenceAdjustment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an adherence adjustment for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CurrentAgentAdherenceAdjustment> patchWorkforcemanagementAdherenceAdjustment(ApiRequest<UpdateAdherenceAdjustmentAgentRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CurrentAgentAdherenceAdjustment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an adherence adjustment for the requested agent
+   * 
+   * @param agentId The ID of the agent (required)
+   * @param adjustmentId The ID of the adherence adjustment (required)
+   * @param body body (required)
+   * @return AdherenceAdjustment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustment patchWorkforcemanagementAgentAdherenceAdjustment(String agentId, String adjustmentId, UpdateAdherenceAdjustmentAdminRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementAgentAdherenceAdjustment(createPatchWorkforcemanagementAgentAdherenceAdjustmentRequest(agentId, adjustmentId, body));
+  }
+
+  /**
+   * Update an adherence adjustment for the requested agent
+   * 
+   * @param agentId The ID of the agent (required)
+   * @param adjustmentId The ID of the adherence adjustment (required)
+   * @param body body (required)
+   * @return AdherenceAdjustment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustment> patchWorkforcemanagementAgentAdherenceAdjustmentWithHttpInfo(String agentId, String adjustmentId, UpdateAdherenceAdjustmentAdminRequest body) throws IOException {
+    return patchWorkforcemanagementAgentAdherenceAdjustment(createPatchWorkforcemanagementAgentAdherenceAdjustmentRequest(agentId, adjustmentId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementAgentAdherenceAdjustmentRequest createPatchWorkforcemanagementAgentAdherenceAdjustmentRequest(String agentId, String adjustmentId, UpdateAdherenceAdjustmentAdminRequest body) {
+    return PatchWorkforcemanagementAgentAdherenceAdjustmentRequest.builder()
+            .withAgentId(agentId)
+
+            .withAdjustmentId(adjustmentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an adherence adjustment for the requested agent
+   * 
+   * @param request The request object
+   * @return AdherenceAdjustment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustment patchWorkforcemanagementAgentAdherenceAdjustment(PatchWorkforcemanagementAgentAdherenceAdjustmentRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceAdjustment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceAdjustment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an adherence adjustment for the requested agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustment> patchWorkforcemanagementAgentAdherenceAdjustment(ApiRequest<UpdateAdherenceAdjustmentAdminRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceAdjustment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustment> response = (ApiResponse<AdherenceAdjustment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustment> response = (ApiResponse<AdherenceAdjustment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update an adherence explanation
    * 
    * @param agentId The ID of the agent to query (required)
@@ -14745,6 +16367,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update unavailable times for the requested agent
+   * Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+   * @param agentId The ID of the agent (required)
+   * @param body body (required)
+   * @return BulkUpdateAgentUnavailableTimesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkUpdateAgentUnavailableTimesResponse patchWorkforcemanagementAgentUnavailabletimes(String agentId, UpdateUnavailableTimesRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementAgentUnavailabletimes(createPatchWorkforcemanagementAgentUnavailabletimesRequest(agentId, body));
+  }
+
+  /**
+   * Update unavailable times for the requested agent
+   * Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+   * @param agentId The ID of the agent (required)
+   * @param body body (required)
+   * @return BulkUpdateAgentUnavailableTimesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkUpdateAgentUnavailableTimesResponse> patchWorkforcemanagementAgentUnavailabletimesWithHttpInfo(String agentId, UpdateUnavailableTimesRequest body) throws IOException {
+    return patchWorkforcemanagementAgentUnavailabletimes(createPatchWorkforcemanagementAgentUnavailabletimesRequest(agentId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementAgentUnavailabletimesRequest createPatchWorkforcemanagementAgentUnavailabletimesRequest(String agentId, UpdateUnavailableTimesRequest body) {
+    return PatchWorkforcemanagementAgentUnavailabletimesRequest.builder()
+            .withAgentId(agentId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update unavailable times for the requested agent
+   * Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+   * @param request The request object
+   * @return BulkUpdateAgentUnavailableTimesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BulkUpdateAgentUnavailableTimesResponse patchWorkforcemanagementAgentUnavailabletimes(PatchWorkforcemanagementAgentUnavailabletimesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BulkUpdateAgentUnavailableTimesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BulkUpdateAgentUnavailableTimesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update unavailable times for the requested agent
+   * Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BulkUpdateAgentUnavailableTimesResponse> patchWorkforcemanagementAgentUnavailabletimes(ApiRequest<UpdateUnavailableTimesRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BulkUpdateAgentUnavailableTimesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkUpdateAgentUnavailableTimesResponse> response = (ApiResponse<BulkUpdateAgentUnavailableTimesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BulkUpdateAgentUnavailableTimesResponse> response = (ApiResponse<BulkUpdateAgentUnavailableTimesResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -15245,6 +16949,338 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActivityPlanResponse> response = (ApiResponse<ActivityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update adherence adjustments in bulk for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return AdherenceAdjustmentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsListing patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(String businessUnitId, UpdateAdherenceAdjustmentsBulkRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest(businessUnitId, body));
+  }
+
+  /**
+   * Update adherence adjustments in bulk for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return AdherenceAdjustmentsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsListing> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkWithHttpInfo(String businessUnitId, UpdateAdherenceAdjustmentsBulkRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest(String businessUnitId, UpdateAdherenceAdjustmentsBulkRequest body) {
+    return PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update adherence adjustments in bulk for a business unit
+   * 
+   * @param request The request object
+   * @return AdherenceAdjustmentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsListing patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceAdjustmentsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update adherence adjustments in bulk for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsListing> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(ApiRequest<UpdateAdherenceAdjustmentsBulkRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceAdjustmentsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsListing> response = (ApiResponse<AdherenceAdjustmentsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsListing> response = (ApiResponse<AdherenceAdjustmentsListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update an adherence adjustment reason code for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param reasonCodeId The ID of the reason code to update (required)
+   * @param body body (required)
+   * @return AdherenceAdjustmentsReasonCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCode patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(String businessUnitId, String reasonCodeId, UpdateAdherenceAdjustmentsReasonCodeRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest(businessUnitId, reasonCodeId, body));
+  }
+
+  /**
+   * Update an adherence adjustment reason code for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param reasonCodeId The ID of the reason code to update (required)
+   * @param body body (required)
+   * @return AdherenceAdjustmentsReasonCode
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCode> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeWithHttpInfo(String businessUnitId, String reasonCodeId, UpdateAdherenceAdjustmentsReasonCodeRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest(businessUnitId, reasonCodeId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest(String businessUnitId, String reasonCodeId, UpdateAdherenceAdjustmentsReasonCodeRequest body) {
+    return PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withReasonCodeId(reasonCodeId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update an adherence adjustment reason code for a business unit
+   * 
+   * @param request The request object
+   * @return AdherenceAdjustmentsReasonCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCode patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceAdjustmentsReasonCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCode>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update an adherence adjustment reason code for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCode> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(ApiRequest<UpdateAdherenceAdjustmentsReasonCodeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceAdjustmentsReasonCode>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCodesListing patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(String businessUnitId, UpdateAdherenceAdjustmentsReasonCodesBulkRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(businessUnitId, body));
+  }
+
+  /**
+   * Update adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCodesListing> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkWithHttpInfo(String businessUnitId, UpdateAdherenceAdjustmentsReasonCodesBulkRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(String businessUnitId, UpdateAdherenceAdjustmentsReasonCodesBulkRequest body) {
+    return PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request The request object
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCodesListing patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCodesListing> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(ApiRequest<UpdateAdherenceAdjustmentsReasonCodesBulkRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update adherence adjustments settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BuAdherenceAdjustmentsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAdherenceAdjustmentsSettings patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(String businessUnitId, UpdateBuAdherenceAdjustmentsSettingsRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Update adherence adjustments settings for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BuAdherenceAdjustmentsSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAdherenceAdjustmentsSettings> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsWithHttpInfo(String businessUnitId, UpdateBuAdherenceAdjustmentsSettingsRequest body) throws IOException {
+    return patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest createPatchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest(String businessUnitId, UpdateBuAdherenceAdjustmentsSettingsRequest body) {
+    return PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update adherence adjustments settings for a business unit
+   * 
+   * @param request The request object
+   * @return BuAdherenceAdjustmentsSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAdherenceAdjustmentsSettings patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAdherenceAdjustmentsSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAdherenceAdjustmentsSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update adherence adjustments settings for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAdherenceAdjustmentsSettings> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(ApiRequest<UpdateBuAdherenceAdjustmentsSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAdherenceAdjustmentsSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAdherenceAdjustmentsSettings> response = (ApiResponse<BuAdherenceAdjustmentsSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAdherenceAdjustmentsSettings> response = (ApiResponse<BuAdherenceAdjustmentsSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -18152,6 +20188,174 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Submit an adherence adjustment for the current user
+   * 
+   * @param body body (required)
+   * @return CurrentAgentAdherenceAdjustment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CurrentAgentAdherenceAdjustment postWorkforcemanagementAdherenceAdjustments(AddAdherenceAdjustmentAgentRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementAdherenceAdjustments(createPostWorkforcemanagementAdherenceAdjustmentsRequest(body));
+  }
+
+  /**
+   * Submit an adherence adjustment for the current user
+   * 
+   * @param body body (required)
+   * @return CurrentAgentAdherenceAdjustment
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CurrentAgentAdherenceAdjustment> postWorkforcemanagementAdherenceAdjustmentsWithHttpInfo(AddAdherenceAdjustmentAgentRequest body) throws IOException {
+    return postWorkforcemanagementAdherenceAdjustments(createPostWorkforcemanagementAdherenceAdjustmentsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAdherenceAdjustmentsRequest createPostWorkforcemanagementAdherenceAdjustmentsRequest(AddAdherenceAdjustmentAgentRequest body) {
+    return PostWorkforcemanagementAdherenceAdjustmentsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Submit an adherence adjustment for the current user
+   * 
+   * @param request The request object
+   * @return CurrentAgentAdherenceAdjustment
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CurrentAgentAdherenceAdjustment postWorkforcemanagementAdherenceAdjustments(PostWorkforcemanagementAdherenceAdjustmentsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CurrentAgentAdherenceAdjustment> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CurrentAgentAdherenceAdjustment>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Submit an adherence adjustment for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CurrentAgentAdherenceAdjustment> postWorkforcemanagementAdherenceAdjustments(ApiRequest<AddAdherenceAdjustmentAgentRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CurrentAgentAdherenceAdjustment>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query adherence adjustments for the current user
+   * 
+   * @param body body (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize The page size for the listing. The maximum page size is 500. (optional, default to 25)
+   * @return CurrentAgentCursorAdherenceAdjustmentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CurrentAgentCursorAdherenceAdjustmentsListing postWorkforcemanagementAdherenceAdjustmentsQuery(AgentQueryAdherenceAdjustmentsRequest body, String before, String after, String pageSize) throws IOException, ApiException {
+    return  postWorkforcemanagementAdherenceAdjustmentsQuery(createPostWorkforcemanagementAdherenceAdjustmentsQueryRequest(body, before, after, pageSize));
+  }
+
+  /**
+   * Query adherence adjustments for the current user
+   * 
+   * @param body body (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize The page size for the listing. The maximum page size is 500. (optional, default to 25)
+   * @return CurrentAgentCursorAdherenceAdjustmentsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing> postWorkforcemanagementAdherenceAdjustmentsQueryWithHttpInfo(AgentQueryAdherenceAdjustmentsRequest body, String before, String after, String pageSize) throws IOException {
+    return postWorkforcemanagementAdherenceAdjustmentsQuery(createPostWorkforcemanagementAdherenceAdjustmentsQueryRequest(body, before, after, pageSize).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAdherenceAdjustmentsQueryRequest createPostWorkforcemanagementAdherenceAdjustmentsQueryRequest(AgentQueryAdherenceAdjustmentsRequest body, String before, String after, String pageSize) {
+    return PostWorkforcemanagementAdherenceAdjustmentsQueryRequest.builder()
+            .withBody(body)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Query adherence adjustments for the current user
+   * 
+   * @param request The request object
+   * @return CurrentAgentCursorAdherenceAdjustmentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CurrentAgentCursorAdherenceAdjustmentsListing postWorkforcemanagementAdherenceAdjustmentsQuery(PostWorkforcemanagementAdherenceAdjustmentsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CurrentAgentCursorAdherenceAdjustmentsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query adherence adjustments for the current user
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing> postWorkforcemanagementAdherenceAdjustmentsQuery(ApiRequest<AgentQueryAdherenceAdjustmentsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CurrentAgentCursorAdherenceAdjustmentsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing> response = (ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing> response = (ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Submit an adherence explanation for the current user
    * 
    * @param body The request body (required)
@@ -18389,6 +20593,100 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<WfmHistoricalAdherenceBulkResponse> response = (ApiResponse<WfmHistoricalAdherenceBulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query adherence adjustments for the requested agent
+   * 
+   * @param agentId The ID of the agent (required)
+   * @param body body (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize The page size for the listing. The maximum page size is 500. (optional, default to 25)
+   * @return CursorAdherenceAdjustmentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorAdherenceAdjustmentsListing postWorkforcemanagementAgentAdherenceAdjustmentsQuery(String agentId, AgentQueryAdherenceAdjustmentsRequest body, String before, String after, String pageSize) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentAdherenceAdjustmentsQuery(createPostWorkforcemanagementAgentAdherenceAdjustmentsQueryRequest(agentId, body, before, after, pageSize));
+  }
+
+  /**
+   * Query adherence adjustments for the requested agent
+   * 
+   * @param agentId The ID of the agent (required)
+   * @param body body (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize The page size for the listing. The maximum page size is 500. (optional, default to 25)
+   * @return CursorAdherenceAdjustmentsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorAdherenceAdjustmentsListing> postWorkforcemanagementAgentAdherenceAdjustmentsQueryWithHttpInfo(String agentId, AgentQueryAdherenceAdjustmentsRequest body, String before, String after, String pageSize) throws IOException {
+    return postWorkforcemanagementAgentAdherenceAdjustmentsQuery(createPostWorkforcemanagementAgentAdherenceAdjustmentsQueryRequest(agentId, body, before, after, pageSize).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementAgentAdherenceAdjustmentsQueryRequest createPostWorkforcemanagementAgentAdherenceAdjustmentsQueryRequest(String agentId, AgentQueryAdherenceAdjustmentsRequest body, String before, String after, String pageSize) {
+    return PostWorkforcemanagementAgentAdherenceAdjustmentsQueryRequest.builder()
+            .withAgentId(agentId)
+
+            .withBody(body)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Query adherence adjustments for the requested agent
+   * 
+   * @param request The request object
+   * @return CursorAdherenceAdjustmentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorAdherenceAdjustmentsListing postWorkforcemanagementAgentAdherenceAdjustmentsQuery(PostWorkforcemanagementAgentAdherenceAdjustmentsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CursorAdherenceAdjustmentsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CursorAdherenceAdjustmentsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query adherence adjustments for the requested agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorAdherenceAdjustmentsListing> postWorkforcemanagementAgentAdherenceAdjustmentsQuery(ApiRequest<AgentQueryAdherenceAdjustmentsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CursorAdherenceAdjustmentsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorAdherenceAdjustmentsListing> response = (ApiResponse<CursorAdherenceAdjustmentsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorAdherenceAdjustmentsListing> response = (ApiResponse<CursorAdherenceAdjustmentsListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -19772,6 +22070,358 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Delete an activity plan
+   * Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan to delete (required)
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(String businessUnitId, String activityPlanId) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(createPostWorkforcemanagementBusinessunitActivityplanDeletionsJobsRequest(businessUnitId, activityPlanId));
+  }
+
+  /**
+   * Delete an activity plan
+   * Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan to delete (required)
+   * @return ActivityPlanJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanDeletionsJobsWithHttpInfo(String businessUnitId, String activityPlanId) throws IOException {
+    return postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(createPostWorkforcemanagementBusinessunitActivityplanDeletionsJobsRequest(businessUnitId, activityPlanId).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitActivityplanDeletionsJobsRequest createPostWorkforcemanagementBusinessunitActivityplanDeletionsJobsRequest(String businessUnitId, String activityPlanId) {
+    return PostWorkforcemanagementBusinessunitActivityplanDeletionsJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .build();
+  }
+
+  /**
+   * Delete an activity plan
+   * Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+   * @param request The request object
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(PostWorkforcemanagementBusinessunitActivityplanDeletionsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete an activity plan
+   * Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Triggers a job to delete users from a session in the activity plan occurrence
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @param sessionId The ID of the activity plan occurrence session (required)
+   * @param body body (required)
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs(String businessUnitId, String activityPlanId, String occurrenceId, String sessionId, ActivityPlanDeletionSessionUserIds body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs(createPostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsRequest(businessUnitId, activityPlanId, occurrenceId, sessionId, body));
+  }
+
+  /**
+   * Triggers a job to delete users from a session in the activity plan occurrence
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @param sessionId The ID of the activity plan occurrence session (required)
+   * @param body body (required)
+   * @return ActivityPlanJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsWithHttpInfo(String businessUnitId, String activityPlanId, String occurrenceId, String sessionId, ActivityPlanDeletionSessionUserIds body) throws IOException {
+    return postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs(createPostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsRequest(businessUnitId, activityPlanId, occurrenceId, sessionId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsRequest createPostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsRequest(String businessUnitId, String activityPlanId, String occurrenceId, String sessionId, ActivityPlanDeletionSessionUserIds body) {
+    return PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withOccurrenceId(occurrenceId)
+
+            .withSessionId(sessionId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Triggers a job to delete users from a session in the activity plan occurrence
+   * 
+   * @param request The request object
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs(PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Triggers a job to delete users from a session in the activity plan occurrence
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs(ApiRequest<ActivityPlanDeletionSessionUserIds> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Triggers a job to delete sessions for the activity plan occurrence
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @param body body (required)
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs(String businessUnitId, String activityPlanId, String occurrenceId, ActivityPlanDeletionSessionIds body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs(createPostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsRequest(businessUnitId, activityPlanId, occurrenceId, body));
+  }
+
+  /**
+   * Triggers a job to delete sessions for the activity plan occurrence
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @param body body (required)
+   * @return ActivityPlanJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsWithHttpInfo(String businessUnitId, String activityPlanId, String occurrenceId, ActivityPlanDeletionSessionIds body) throws IOException {
+    return postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs(createPostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsRequest(businessUnitId, activityPlanId, occurrenceId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsRequest createPostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsRequest(String businessUnitId, String activityPlanId, String occurrenceId, ActivityPlanDeletionSessionIds body) {
+    return PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withOccurrenceId(occurrenceId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Triggers a job to delete sessions for the activity plan occurrence
+   * 
+   * @param request The request object
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs(PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Triggers a job to delete sessions for the activity plan occurrence
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs(ApiRequest<ActivityPlanDeletionSessionIds> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete occurrences for the activity plan
+   * Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param body body (required)
+   * @return ActivityPlanOccurrencesDeletionJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanOccurrencesDeletionJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs(String businessUnitId, String activityPlanId, ActivityPlanDeletionOccurrenceIds body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs(createPostWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsRequest(businessUnitId, activityPlanId, body));
+  }
+
+  /**
+   * Delete occurrences for the activity plan
+   * Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param body body (required)
+   * @return ActivityPlanOccurrencesDeletionJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanOccurrencesDeletionJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsWithHttpInfo(String businessUnitId, String activityPlanId, ActivityPlanDeletionOccurrenceIds body) throws IOException {
+    return postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs(createPostWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsRequest(businessUnitId, activityPlanId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsRequest createPostWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsRequest(String businessUnitId, String activityPlanId, ActivityPlanDeletionOccurrenceIds body) {
+    return PostWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Delete occurrences for the activity plan
+   * Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+   * @param request The request object
+   * @return ActivityPlanOccurrencesDeletionJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanOccurrencesDeletionJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs(PostWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanOccurrencesDeletionJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanOccurrencesDeletionJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete occurrences for the activity plan
+   * Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanOccurrencesDeletionJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs(ApiRequest<ActivityPlanDeletionOccurrenceIds> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanOccurrencesDeletionJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanOccurrencesDeletionJobResponse> response = (ApiResponse<ActivityPlanOccurrencesDeletionJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanOccurrencesDeletionJobResponse> response = (ApiResponse<ActivityPlanOccurrencesDeletionJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Run an activity plan manually
    * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
    * @param businessUnitId The ID of the business unit (required)
@@ -19931,6 +22581,346 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActivityPlanResponse> response = (ApiResponse<ActivityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize The page size for the listing. The maximum page size is 500. (optional, default to 25)
+   * @return CursorAdherenceAdjustmentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorAdherenceAdjustmentsListing postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery(String businessUnitId, BuQueryAdherenceAdjustmentsRequest body, String before, String after, String pageSize) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery(createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryRequest(businessUnitId, body, before, after, pageSize));
+  }
+
+  /**
+   * Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
+   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
+   * @param pageSize The page size for the listing. The maximum page size is 500. (optional, default to 25)
+   * @return CursorAdherenceAdjustmentsListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorAdherenceAdjustmentsListing> postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryWithHttpInfo(String businessUnitId, BuQueryAdherenceAdjustmentsRequest body, String before, String after, String pageSize) throws IOException {
+    return postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery(createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryRequest(businessUnitId, body, before, after, pageSize).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryRequest createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryRequest(String businessUnitId, BuQueryAdherenceAdjustmentsRequest body, String before, String after, String pageSize) {
+    return PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .withBefore(before)
+
+            .withAfter(after)
+
+            .withPageSize(pageSize)
+
+            .build();
+  }
+
+  /**
+   * Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+   * 
+   * @param request The request object
+   * @return CursorAdherenceAdjustmentsListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CursorAdherenceAdjustmentsListing postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery(PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CursorAdherenceAdjustmentsListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CursorAdherenceAdjustmentsListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CursorAdherenceAdjustmentsListing> postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery(ApiRequest<BuQueryAdherenceAdjustmentsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CursorAdherenceAdjustmentsListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorAdherenceAdjustmentsListing> response = (ApiResponse<CursorAdherenceAdjustmentsListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CursorAdherenceAdjustmentsListing> response = (ApiResponse<CursorAdherenceAdjustmentsListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates an async query job for adherence adjustments in a business unit.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BuAdherenceAdjustmentsQueryJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAdherenceAdjustmentsQueryJob postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(String businessUnitId, BuQueryAdherenceAdjustmentsRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Creates an async query job for adherence adjustments in a business unit.
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return BuAdherenceAdjustmentsQueryJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAdherenceAdjustmentsQueryJob> postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsWithHttpInfo(String businessUnitId, BuQueryAdherenceAdjustmentsRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest(String businessUnitId, BuQueryAdherenceAdjustmentsRequest body) {
+    return PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates an async query job for adherence adjustments in a business unit.
+   * 
+   * @param request The request object
+   * @return BuAdherenceAdjustmentsQueryJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public BuAdherenceAdjustmentsQueryJob postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<BuAdherenceAdjustmentsQueryJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<BuAdherenceAdjustmentsQueryJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates an async query job for adherence adjustments in a business unit.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<BuAdherenceAdjustmentsQueryJob> postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(ApiRequest<BuQueryAdherenceAdjustmentsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<BuAdherenceAdjustmentsQueryJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAdherenceAdjustmentsQueryJob> response = (ApiResponse<BuAdherenceAdjustmentsQueryJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<BuAdherenceAdjustmentsQueryJob> response = (ApiResponse<BuAdherenceAdjustmentsQueryJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create an adherence adjustment reason code for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return AdherenceAdjustmentsReasonCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCode postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(String businessUnitId, CreateAdherenceAdjustmentsReasonCodeRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest(businessUnitId, body));
+  }
+
+  /**
+   * Create an adherence adjustment reason code for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return AdherenceAdjustmentsReasonCode
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCode> postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesWithHttpInfo(String businessUnitId, CreateAdherenceAdjustmentsReasonCodeRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest(String businessUnitId, CreateAdherenceAdjustmentsReasonCodeRequest body) {
+    return PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create an adherence adjustment reason code for a business unit
+   * 
+   * @param request The request object
+   * @return AdherenceAdjustmentsReasonCode
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCode postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceAdjustmentsReasonCode> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCode>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create an adherence adjustment reason code for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCode> postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(ApiRequest<CreateAdherenceAdjustmentsReasonCodeRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceAdjustmentsReasonCode>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Create adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCodesListing postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(String businessUnitId, CreateAdherenceAdjustmentsReasonCodesBulkRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(businessUnitId, body));
+  }
+
+  /**
+   * Create adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCodesListing> postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkWithHttpInfo(String businessUnitId, CreateAdherenceAdjustmentsReasonCodesBulkRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest createPostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest(String businessUnitId, CreateAdherenceAdjustmentsReasonCodesBulkRequest body) {
+    return PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Create adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request The request object
+   * @return AdherenceAdjustmentsReasonCodesListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public AdherenceAdjustmentsReasonCodesListing postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Create adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<AdherenceAdjustmentsReasonCodesListing> postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(ApiRequest<CreateAdherenceAdjustmentsReasonCodesBulkRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

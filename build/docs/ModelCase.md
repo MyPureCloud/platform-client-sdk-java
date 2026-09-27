@@ -10,8 +10,10 @@
 | **division** | [**StarrableDivision**](StarrableDivision) | The division to which this entity belongs. |  [optional] |
 | **version** | **Integer** | The version of the Case. |  [optional] |
 | **reference** | **String** | The reference identifier of the Case. |  [optional] |
+| **externalId** | **String** | The identifier of the Case in an external system. |  [optional] |
 | **caseplan** | [**CaseplanReference**](CaseplanReference) | The Caseplan the Case was created from. |  [optional] |
 | **summary** | **String** | Overview information for the Case. |  [optional] |
+| **description** | **String** | The description of the Case. |  [optional] |
 | **owner** | [**CaseUserReference**](CaseUserReference) | The owner of the Case. |  [optional] |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the Case. |  [optional] |
 | **priority** | [**PriorityEnum**](#Enum--PriorityEnum) | The priority of the Case. |  [optional] |
@@ -68,4 +70,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

@@ -32,6 +32,7 @@
 | BOTCONNECTORINTEGRATION | &quot;BOTCONNECTORINTEGRATION&quot; | 
 | BOTFLOW | &quot;BOTFLOW&quot; | 
 | BRIDGEACTION | &quot;BRIDGEACTION&quot; | 
+| BUSINESSPROCESSFLOW | &quot;BUSINESSPROCESSFLOW&quot; | 
 | COMMONMODULEFLOW | &quot;COMMONMODULEFLOW&quot; | 
 | COMPOSERSCRIPT | &quot;COMPOSERSCRIPT&quot; | 
 | CONTACTLIST | &quot;CONTACTLIST&quot; | 
@@ -114,4 +115,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

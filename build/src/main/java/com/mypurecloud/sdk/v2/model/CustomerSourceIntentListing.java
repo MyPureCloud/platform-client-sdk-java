@@ -30,9 +30,9 @@ public class CustomerSourceIntentListing  implements Serializable, PagedResource
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String lastUri = null;
   private String firstUri = null;
   private String selfUri = null;
+  private String lastUri = null;
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
@@ -120,23 +120,6 @@ public class CustomerSourceIntentListing  implements Serializable, PagedResource
 
   /**
    **/
-  public CustomerSourceIntentListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public CustomerSourceIntentListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -166,6 +149,23 @@ public class CustomerSourceIntentListing  implements Serializable, PagedResource
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public CustomerSourceIntentListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -234,9 +234,9 @@ public class CustomerSourceIntentListing  implements Serializable, PagedResource
             Objects.equals(this.pageSize, customerSourceIntentListing.pageSize) &&
             Objects.equals(this.pageNumber, customerSourceIntentListing.pageNumber) &&
             Objects.equals(this.total, customerSourceIntentListing.total) &&
-            Objects.equals(this.lastUri, customerSourceIntentListing.lastUri) &&
             Objects.equals(this.firstUri, customerSourceIntentListing.firstUri) &&
             Objects.equals(this.selfUri, customerSourceIntentListing.selfUri) &&
+            Objects.equals(this.lastUri, customerSourceIntentListing.lastUri) &&
             Objects.equals(this.nextUri, customerSourceIntentListing.nextUri) &&
             Objects.equals(this.previousUri, customerSourceIntentListing.previousUri) &&
             Objects.equals(this.pageCount, customerSourceIntentListing.pageCount);
@@ -244,7 +244,7 @@ public class CustomerSourceIntentListing  implements Serializable, PagedResource
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, lastUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -256,9 +256,9 @@ public class CustomerSourceIntentListing  implements Serializable, PagedResource
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");

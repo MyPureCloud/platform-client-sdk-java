@@ -79,7 +79,6 @@ import com.mypurecloud.sdk.v2.model.OutcomePredictorRequest;
 import com.mypurecloud.sdk.v2.model.OutcomeRequest;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
-import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
@@ -159,7 +158,6 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyExternaleventsConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyOutcomeRequest;
@@ -4880,83 +4878,6 @@ public class JourneyApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ActionMap> response = (ApiResponse<ActionMap>)(ApiResponse<?>)(new ApiException(exception));
-            notifySuccess(future, callback, response);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Deprecated. Update a single action target.
-   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ActionTarget> patchJourneyActiontargetAsync(PatchJourneyActiontargetRequest request, final AsyncApiCallback<ActionTarget> callback) {
-    try {
-      final SettableFuture<ActionTarget> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActionTarget>() {}, new AsyncApiCallback<ApiResponse<ActionTarget>>() {
-        @Override
-        public void onCompleted(ApiResponse<ActionTarget> response) {
-          notifySuccess(future, callback, response.getBody());
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            notifySuccess(future, callback, null);
-          }
-        }
-      });
-      return future;
-    }
-    catch (Throwable exception) {
-      return Futures.immediateFailedFuture(exception);
-    }
-  }
-
-  /**
-   * Deprecated. Update a single action target.
-   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
-   * @param request the request object
-   * @param callback the action to perform when the request is completed
-   * @return the future indication when the request has completed
-   * @deprecated
-   */
-  public Future<ApiResponse<ActionTarget>> patchJourneyActiontargetAsync(ApiRequest<PatchActionTarget> request, final AsyncApiCallback<ApiResponse<ActionTarget>> callback) {
-    try {
-      final SettableFuture<ApiResponse<ActionTarget>> future = SettableFuture.create();
-      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ActionTarget>() {}, new AsyncApiCallback<ApiResponse<ActionTarget>>() {
-        @Override
-        public void onCompleted(ApiResponse<ActionTarget> response) {
-          notifySuccess(future, callback, response);
-        }
-
-        @Override
-        public void onFailed(Throwable exception) {
-          if (exception instanceof ApiException) {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ActionTarget> response = (ApiResponse<ActionTarget>)(ApiResponse<?>)exception;
-            notifySuccess(future, callback, response);
-          }
-          if (shouldThrowErrors) {
-            notifyFailure(future, callback, exception);
-          }
-          else {
-            @SuppressWarnings("unchecked")
-            ApiResponse<ActionTarget> response = (ApiResponse<ActionTarget>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

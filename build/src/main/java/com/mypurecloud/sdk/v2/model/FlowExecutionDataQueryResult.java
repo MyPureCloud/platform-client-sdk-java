@@ -53,6 +53,7 @@ public class FlowExecutionDataQueryResult  implements Serializable {
   public enum FlowTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("bot"),
+    BUSINESSPROCESS("businessprocess"),
     COMMONMODULE("commonmodule"),
     DIGITALBOT("digitalbot"),
     EMAILSEND("emailsend"),

@@ -30,9 +30,9 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
-  private String lastUri = null;
   private String firstUri = null;
   private String selfUri = null;
+  private String lastUri = null;
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
@@ -120,23 +120,6 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
 
   /**
    **/
-  public TwitterDataIngestionRuleVersionResponseEntityListing lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
-  }
-
-
-  /**
-   **/
   public TwitterDataIngestionRuleVersionResponseEntityListing firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -166,6 +149,23 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
+  }
+
+
+  /**
+   **/
+  public TwitterDataIngestionRuleVersionResponseEntityListing lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
   }
 
 
@@ -234,9 +234,9 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
             Objects.equals(this.pageSize, twitterDataIngestionRuleVersionResponseEntityListing.pageSize) &&
             Objects.equals(this.pageNumber, twitterDataIngestionRuleVersionResponseEntityListing.pageNumber) &&
             Objects.equals(this.total, twitterDataIngestionRuleVersionResponseEntityListing.total) &&
-            Objects.equals(this.lastUri, twitterDataIngestionRuleVersionResponseEntityListing.lastUri) &&
             Objects.equals(this.firstUri, twitterDataIngestionRuleVersionResponseEntityListing.firstUri) &&
             Objects.equals(this.selfUri, twitterDataIngestionRuleVersionResponseEntityListing.selfUri) &&
+            Objects.equals(this.lastUri, twitterDataIngestionRuleVersionResponseEntityListing.lastUri) &&
             Objects.equals(this.nextUri, twitterDataIngestionRuleVersionResponseEntityListing.nextUri) &&
             Objects.equals(this.previousUri, twitterDataIngestionRuleVersionResponseEntityListing.previousUri) &&
             Objects.equals(this.pageCount, twitterDataIngestionRuleVersionResponseEntityListing.pageCount);
@@ -244,7 +244,7 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, lastUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -256,9 +256,9 @@ public class TwitterDataIngestionRuleVersionResponseEntityListing  implements Se
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");

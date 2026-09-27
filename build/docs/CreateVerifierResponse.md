@@ -19,10 +19,10 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| TOTP | &quot;TOTP&quot; | 
-| WEBAUTHN | &quot;WEBAUTHN&quot; | 
+| TOTP | &quot;totp&quot; | 
+| WEBAUTHN | &quot;webauthn&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

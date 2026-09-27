@@ -35,8 +35,10 @@ public class ModelCase  implements Serializable {
   private StarrableDivision division = null;
   private Integer version = null;
   private String reference = null;
+  private String externalId = null;
   private CaseplanReference caseplan = null;
   private String summary = null;
+  private String description = null;
   private CaseUserReference owner = null;
 
   private static class StatusEnumDeserializer extends StdDeserializer<StatusEnum> {
@@ -295,6 +297,24 @@ public class ModelCase  implements Serializable {
 
 
   /**
+   * The identifier of the Case in an external system.
+   **/
+  public ModelCase externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The identifier of the Case in an external system.")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
+  }
+
+
+  /**
    * The Caseplan the Case was created from.
    **/
   public ModelCase caseplan(CaseplanReference caseplan) {
@@ -327,6 +347,24 @@ public class ModelCase  implements Serializable {
   }
   public void setSummary(String summary) {
     this.summary = summary;
+  }
+
+
+  /**
+   * The description of the Case.
+   **/
+  public ModelCase description(String description) {
+    this.description = description;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The description of the Case.")
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 
@@ -604,8 +642,10 @@ public class ModelCase  implements Serializable {
             Objects.equals(this.division, _case.division) &&
             Objects.equals(this.version, _case.version) &&
             Objects.equals(this.reference, _case.reference) &&
+            Objects.equals(this.externalId, _case.externalId) &&
             Objects.equals(this.caseplan, _case.caseplan) &&
             Objects.equals(this.summary, _case.summary) &&
+            Objects.equals(this.description, _case.description) &&
             Objects.equals(this.owner, _case.owner) &&
             Objects.equals(this.status, _case.status) &&
             Objects.equals(this.priority, _case.priority) &&
@@ -625,7 +665,7 @@ public class ModelCase  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, version, reference, caseplan, summary, owner, status, priority, dateDue, dateStarted, dateClosed, dateCreated, dateModified, modifiedBy, externalContact, customerIntent, creationStatus, ttlSeconds, failureReason, selfUri);
+    return Objects.hash(id, name, division, version, reference, externalId, caseplan, summary, description, owner, status, priority, dateDue, dateStarted, dateClosed, dateCreated, dateModified, modifiedBy, externalContact, customerIntent, creationStatus, ttlSeconds, failureReason, selfUri);
   }
 
   @Override
@@ -638,8 +678,10 @@ public class ModelCase  implements Serializable {
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    caseplan: ").append(toIndentedString(caseplan)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    owner: ").append(toIndentedString(owner)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    priority: ").append(toIndentedString(priority)).append("\n");

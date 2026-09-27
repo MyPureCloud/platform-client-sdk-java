@@ -42,6 +42,7 @@ import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
 import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
+import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicatorEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicatorType;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
@@ -4762,11 +4763,11 @@ public class RoutingApi {
    * 
    * @param kpiGroup The Group of Key Performance Indicators to return (optional)
    * @param expand Parameter to request additional data to return in KPI payload (optional)
-   * @return List<KeyPerformanceIndicator>
+   * @return KeyPerformanceIndicatorEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<KeyPerformanceIndicator> getRoutingPredictorsKeyperformanceindicators(String kpiGroup, List<String> expand) throws IOException, ApiException {
+  public KeyPerformanceIndicatorEntityListing getRoutingPredictorsKeyperformanceindicators(String kpiGroup, List<String> expand) throws IOException, ApiException {
     return  getRoutingPredictorsKeyperformanceindicators(createGetRoutingPredictorsKeyperformanceindicatorsRequest(kpiGroup, expand));
   }
 
@@ -4775,10 +4776,10 @@ public class RoutingApi {
    * 
    * @param kpiGroup The Group of Key Performance Indicators to return (optional)
    * @param expand Parameter to request additional data to return in KPI payload (optional)
-   * @return List<KeyPerformanceIndicator>
+   * @return KeyPerformanceIndicatorEntityListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<KeyPerformanceIndicator>> getRoutingPredictorsKeyperformanceindicatorsWithHttpInfo(String kpiGroup, List<String> expand) throws IOException {
+  public ApiResponse<KeyPerformanceIndicatorEntityListing> getRoutingPredictorsKeyperformanceindicatorsWithHttpInfo(String kpiGroup, List<String> expand) throws IOException {
     return getRoutingPredictorsKeyperformanceindicators(createGetRoutingPredictorsKeyperformanceindicatorsRequest(kpiGroup, expand).withHttpInfo());
   }
 
@@ -4795,13 +4796,13 @@ public class RoutingApi {
    * Get a list of Key Performance Indicators
    * 
    * @param request The request object
-   * @return List<KeyPerformanceIndicator>
+   * @return KeyPerformanceIndicatorEntityListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public List<KeyPerformanceIndicator> getRoutingPredictorsKeyperformanceindicators(GetRoutingPredictorsKeyperformanceindicatorsRequest request) throws IOException, ApiException {
+  public KeyPerformanceIndicatorEntityListing getRoutingPredictorsKeyperformanceindicators(GetRoutingPredictorsKeyperformanceindicatorsRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<List<KeyPerformanceIndicator>> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<List<KeyPerformanceIndicator>>() {});
+      ApiResponse<KeyPerformanceIndicatorEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<KeyPerformanceIndicatorEntityListing>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -4817,13 +4818,13 @@ public class RoutingApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<List<KeyPerformanceIndicator>> getRoutingPredictorsKeyperformanceindicators(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<KeyPerformanceIndicatorEntityListing> getRoutingPredictorsKeyperformanceindicators(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<List<KeyPerformanceIndicator>>() {});
+      return pcapiClient.invoke(request, new TypeReference<KeyPerformanceIndicatorEntityListing>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<List<KeyPerformanceIndicator>> response = (ApiResponse<List<KeyPerformanceIndicator>>)(ApiResponse<?>)exception;
+      ApiResponse<KeyPerformanceIndicatorEntityListing> response = (ApiResponse<KeyPerformanceIndicatorEntityListing>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -4834,7 +4835,7 @@ public class RoutingApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<List<KeyPerformanceIndicator>> response = (ApiResponse<List<KeyPerformanceIndicator>>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<KeyPerformanceIndicatorEntityListing> response = (ApiResponse<KeyPerformanceIndicatorEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -10934,7 +10935,7 @@ public class RoutingApi {
 
   /**
    * Create a benefit assessment job.
-   * 
+   * Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
    * @param body  (optional)
    * @return BenefitAssessmentJob
    * @throws ApiException if the request fails on the server
@@ -10946,7 +10947,7 @@ public class RoutingApi {
 
   /**
    * Create a benefit assessment job.
-   * 
+   * Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
    * @param body  (optional)
    * @return BenefitAssessmentJob
    * @throws IOException if the request fails to be processed
@@ -10964,7 +10965,7 @@ public class RoutingApi {
 
   /**
    * Create a benefit assessment job.
-   * 
+   * Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
    * @param request The request object
    * @return BenefitAssessmentJob
    * @throws ApiException if the request fails on the server
@@ -10983,7 +10984,7 @@ public class RoutingApi {
 
   /**
    * Create a benefit assessment job.
-   * 
+   * Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

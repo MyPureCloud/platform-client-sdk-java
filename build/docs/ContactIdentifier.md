@@ -28,8 +28,9 @@
 | PHONE | &quot;Phone&quot; | 
 | COOKIE | &quot;Cookie&quot; | 
 | EXTERNALID | &quot;ExternalId&quot; | 
+| SOCIALINSTAGRAMHANDLE | &quot;SocialInstagramHandle&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

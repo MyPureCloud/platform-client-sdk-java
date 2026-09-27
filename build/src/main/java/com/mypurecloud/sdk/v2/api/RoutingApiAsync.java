@@ -45,6 +45,7 @@ import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
 import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
+import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicatorEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicatorType;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;
@@ -4527,13 +4528,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<List<KeyPerformanceIndicator>> getRoutingPredictorsKeyperformanceindicatorsAsync(GetRoutingPredictorsKeyperformanceindicatorsRequest request, final AsyncApiCallback<List<KeyPerformanceIndicator>> callback) {
+  public Future<KeyPerformanceIndicatorEntityListing> getRoutingPredictorsKeyperformanceindicatorsAsync(GetRoutingPredictorsKeyperformanceindicatorsRequest request, final AsyncApiCallback<KeyPerformanceIndicatorEntityListing> callback) {
     try {
-      final SettableFuture<List<KeyPerformanceIndicator>> future = SettableFuture.create();
+      final SettableFuture<KeyPerformanceIndicatorEntityListing> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<List<KeyPerformanceIndicator>>() {}, new AsyncApiCallback<ApiResponse<List<KeyPerformanceIndicator>>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<KeyPerformanceIndicatorEntityListing>() {}, new AsyncApiCallback<ApiResponse<KeyPerformanceIndicatorEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<List<KeyPerformanceIndicator>> response) {
+        public void onCompleted(ApiResponse<KeyPerformanceIndicatorEntityListing> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -4561,13 +4562,13 @@ public class RoutingApiAsync {
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<List<KeyPerformanceIndicator>>> getRoutingPredictorsKeyperformanceindicatorsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<List<KeyPerformanceIndicator>>> callback) {
+  public Future<ApiResponse<KeyPerformanceIndicatorEntityListing>> getRoutingPredictorsKeyperformanceindicatorsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<KeyPerformanceIndicatorEntityListing>> callback) {
     try {
-      final SettableFuture<ApiResponse<List<KeyPerformanceIndicator>>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<KeyPerformanceIndicatorEntityListing>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<List<KeyPerformanceIndicator>>() {}, new AsyncApiCallback<ApiResponse<List<KeyPerformanceIndicator>>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<KeyPerformanceIndicatorEntityListing>() {}, new AsyncApiCallback<ApiResponse<KeyPerformanceIndicatorEntityListing>>() {
         @Override
-        public void onCompleted(ApiResponse<List<KeyPerformanceIndicator>> response) {
+        public void onCompleted(ApiResponse<KeyPerformanceIndicatorEntityListing> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -4575,7 +4576,7 @@ public class RoutingApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<KeyPerformanceIndicator>> response = (ApiResponse<List<KeyPerformanceIndicator>>)(ApiResponse<?>)exception;
+            ApiResponse<KeyPerformanceIndicatorEntityListing> response = (ApiResponse<KeyPerformanceIndicatorEntityListing>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -4583,7 +4584,7 @@ public class RoutingApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<List<KeyPerformanceIndicator>> response = (ApiResponse<List<KeyPerformanceIndicator>>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<KeyPerformanceIndicatorEntityListing> response = (ApiResponse<KeyPerformanceIndicatorEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -9928,7 +9929,7 @@ public class RoutingApiAsync {
 
   /**
    * Create a benefit assessment job.
-   * 
+   * Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -9962,7 +9963,7 @@ public class RoutingApiAsync {
 
   /**
    * Create a benefit assessment job.
-   * 
+   * Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

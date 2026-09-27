@@ -51,7 +51,10 @@ public class CoachingNotification  implements Serializable {
     CREATE("Create"),
     UPDATE("Update"),
     DELETE("Delete"),
-    STATUSCHANGE("StatusChange");
+    STATUSCHANGE("StatusChange"),
+    ANNOTATIONADDED("AnnotationAdded"),
+    ANNOTATIONEDITED("AnnotationEdited"),
+    ANNOTATIONDELETED("AnnotationDeleted");
 
     private String value;
 

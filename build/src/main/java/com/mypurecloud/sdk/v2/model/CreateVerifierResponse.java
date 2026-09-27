@@ -44,8 +44,8 @@ public class CreateVerifierResponse  implements Serializable {
  @JsonDeserialize(using = TypeEnumDeserializer.class)
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    TOTP("TOTP"),
-    WEBAUTHN("WEBAUTHN");
+    TOTP("totp"),
+    WEBAUTHN("webauthn");
 
     private String value;
 

@@ -45,6 +45,7 @@ public class ArchitectFlowReference  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("BOT"),
+    BUSINESSPROCESS("BUSINESSPROCESS"),
     COMMONMODULE("COMMONMODULE"),
     DIGITALBOT("DIGITALBOT"),
     EMAILSEND("EMAILSEND"),

@@ -50,6 +50,7 @@ public class FlowSettingsResponse  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("bot"),
+    BUSINESSPROCESS("businessprocess"),
     COMMONMODULE("commonmodule"),
     DIGITALBOT("digitalbot"),
     EMAILSEND("emailsend"),

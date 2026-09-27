@@ -86,7 +86,6 @@ import com.mypurecloud.sdk.v2.model.OutcomePredictorRequest;
 import com.mypurecloud.sdk.v2.model.OutcomeRequest;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
-import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;

@@ -13,7 +13,6 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ActionEventActionMap;
-import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.Browser;
 import com.mypurecloud.sdk.v2.model.Device;
 import com.mypurecloud.sdk.v2.model.EventAction;
@@ -32,7 +31,6 @@ public class WebActionEvent  implements Serializable {
   
   private EventAction action = null;
   private ActionEventActionMap actionMap = null;
-  private AddressableEntityRef actionTarget = null;
   private Long timeToDisposition = null;
   private String errorCode = null;
   private String errorMessage = null;
@@ -89,24 +87,6 @@ public class WebActionEvent  implements Serializable {
   }
   public void setActionMap(ActionEventActionMap actionMap) {
     this.actionMap = actionMap;
-  }
-
-
-  /**
-   * Deprecated. The target for engagement actions.
-   **/
-  public WebActionEvent actionTarget(AddressableEntityRef actionTarget) {
-    this.actionTarget = actionTarget;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", required = true, value = "Deprecated. The target for engagement actions.")
-  @JsonProperty("actionTarget")
-  public AddressableEntityRef getActionTarget() {
-    return actionTarget;
-  }
-  public void setActionTarget(AddressableEntityRef actionTarget) {
-    this.actionTarget = actionTarget;
   }
 
 
@@ -320,7 +300,6 @@ public class WebActionEvent  implements Serializable {
 
     return Objects.equals(this.action, webActionEvent.action) &&
             Objects.equals(this.actionMap, webActionEvent.actionMap) &&
-            Objects.equals(this.actionTarget, webActionEvent.actionTarget) &&
             Objects.equals(this.timeToDisposition, webActionEvent.timeToDisposition) &&
             Objects.equals(this.errorCode, webActionEvent.errorCode) &&
             Objects.equals(this.errorMessage, webActionEvent.errorMessage) &&
@@ -336,7 +315,7 @@ public class WebActionEvent  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(action, actionMap, actionTarget, timeToDisposition, errorCode, errorMessage, userAgentString, browser, device, geolocation, ipAddress, ipOrganization, mktCampaign, visitReferrer);
+    return Objects.hash(action, actionMap, timeToDisposition, errorCode, errorMessage, userAgentString, browser, device, geolocation, ipAddress, ipOrganization, mktCampaign, visitReferrer);
   }
 
   @Override
@@ -346,7 +325,6 @@ public class WebActionEvent  implements Serializable {
     
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    actionMap: ").append(toIndentedString(actionMap)).append("\n");
-    sb.append("    actionTarget: ").append(toIndentedString(actionTarget)).append("\n");
     sb.append("    timeToDisposition: ").append(toIndentedString(timeToDisposition)).append("\n");
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");

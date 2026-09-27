@@ -501,6 +501,7 @@ import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantCom
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantCommunicationWrapupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantMonitorRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantReplaceRequest;
+import com.mypurecloud.sdk.v2.api.request.PostConversationsMessageParticipantTakeoverRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesAgentlessRequest;
 import com.mypurecloud.sdk.v2.api.request.PostConversationsMessagesInboundOpenRequest;
@@ -22425,6 +22426,85 @@ public class ConversationsApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<Void> postConversationsMessageParticipantReplace(ApiRequest<TransferRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, null);
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * The User performing this action will takeover the conversation from the participant specified.
+   * This operation allows a user performing the action to take over a conversation from the participant specified. The user must be monitoring the participant and must have the necessary permissions to perform the takeover action.
+   * @param conversationId The id of the conversation being taken over (required)
+   * @param participantId The id of the participant being taken over. (required)
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsMessageParticipantTakeover(String conversationId, String participantId) throws IOException, ApiException {
+     postConversationsMessageParticipantTakeover(createPostConversationsMessageParticipantTakeoverRequest(conversationId, participantId));
+  }
+
+  /**
+   * The User performing this action will takeover the conversation from the participant specified.
+   * This operation allows a user performing the action to take over a conversation from the participant specified. The user must be monitoring the participant and must have the necessary permissions to perform the takeover action.
+   * @param conversationId The id of the conversation being taken over (required)
+   * @param participantId The id of the participant being taken over. (required)
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsMessageParticipantTakeoverWithHttpInfo(String conversationId, String participantId) throws IOException {
+    return postConversationsMessageParticipantTakeover(createPostConversationsMessageParticipantTakeoverRequest(conversationId, participantId).withHttpInfo());
+  }
+
+  private PostConversationsMessageParticipantTakeoverRequest createPostConversationsMessageParticipantTakeoverRequest(String conversationId, String participantId) {
+    return PostConversationsMessageParticipantTakeoverRequest.builder()
+            .withConversationId(conversationId)
+
+            .withParticipantId(participantId)
+
+            .build();
+  }
+
+  /**
+   * The User performing this action will takeover the conversation from the participant specified.
+   * This operation allows a user performing the action to take over a conversation from the participant specified. The user must be monitoring the participant and must have the necessary permissions to perform the takeover action.
+   * @param request The request object
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public void postConversationsMessageParticipantTakeover(PostConversationsMessageParticipantTakeoverRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
+      
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      
+    }
+  }
+
+  /**
+   * The User performing this action will takeover the conversation from the participant specified.
+   * This operation allows a user performing the action to take over a conversation from the participant specified. The user must be monitoring the participant and must have the necessary permissions to perform the takeover action.
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Void> postConversationsMessageParticipantTakeover(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, null);
     }

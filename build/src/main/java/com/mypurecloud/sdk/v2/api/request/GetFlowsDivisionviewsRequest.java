@@ -121,6 +121,7 @@ public class GetFlowsDivisionviewsRequest {
 
 	public enum typeValues { 
 		BOT("bot"),
+		BUSINESSPROCESS("businessprocess"),
 		COMMONMODULE("commonmodule"),
 		DIGITALBOT("digitalbot"),
 		EMAILSEND("emailsend"),

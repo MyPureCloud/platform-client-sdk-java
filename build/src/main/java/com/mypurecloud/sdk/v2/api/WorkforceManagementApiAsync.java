@@ -14,16 +14,25 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.ActivityCodeContainer;
+import com.mypurecloud.sdk.v2.model.ActivityPlanDeletionOccurrenceIds;
+import com.mypurecloud.sdk.v2.model.ActivityPlanDeletionSessionIds;
+import com.mypurecloud.sdk.v2.model.ActivityPlanDeletionSessionUserIds;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobListing;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrencesDeletionJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanRunJobResponse;
+import com.mypurecloud.sdk.v2.model.AddAdherenceAdjustmentAgentRequest;
 import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAdminRequest;
 import com.mypurecloud.sdk.v2.model.AddAdherenceExplanationAgentRequest;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeJobRequest;
 import com.mypurecloud.sdk.v2.model.AddShiftTradeRequest;
 import com.mypurecloud.sdk.v2.model.AddWorkPlanRotationRequest;
+import com.mypurecloud.sdk.v2.model.AdherenceAdjustment;
+import com.mypurecloud.sdk.v2.model.AdherenceAdjustmentsListing;
+import com.mypurecloud.sdk.v2.model.AdherenceAdjustmentsReasonCode;
+import com.mypurecloud.sdk.v2.model.AdherenceAdjustmentsReasonCodesListing;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationAsyncResponse;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationJob;
 import com.mypurecloud.sdk.v2.model.AdherenceExplanationResponse;
@@ -42,6 +51,7 @@ import com.mypurecloud.sdk.v2.model.AgentMuQueryResponse;
 import com.mypurecloud.sdk.v2.model.AgentMuScheduleQuery;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsRequest;
 import com.mypurecloud.sdk.v2.model.AgentPossibleWorkShiftsResponse;
+import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceAdjustmentsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.AgentQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.AgentQueryOpportunitiesResponse;
@@ -77,6 +87,9 @@ import com.mypurecloud.sdk.v2.model.AsyncForecastOperationResult;
 import com.mypurecloud.sdk.v2.model.AsyncIntradayResponse;
 import com.mypurecloud.sdk.v2.model.AvailableTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.AvailableTimeOffResponse;
+import com.mypurecloud.sdk.v2.model.BuAdherenceAdjustmentsQueryJob;
+import com.mypurecloud.sdk.v2.model.BuAdherenceAdjustmentsQueryJobsReferenceListing;
+import com.mypurecloud.sdk.v2.model.BuAdherenceAdjustmentsSettings;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleHistoryResponse;
 import com.mypurecloud.sdk.v2.model.BuAlternativeShiftJobResponse;
 import com.mypurecloud.sdk.v2.model.BuAsyncAgentSchedulesQueryResponse;
@@ -100,6 +113,7 @@ import com.mypurecloud.sdk.v2.model.BuHeadcountForecastResponse;
 import com.mypurecloud.sdk.v2.model.BuImportTimeOffLimitValuesRequest;
 import com.mypurecloud.sdk.v2.model.BuImportTimeOffLimitValuesUploadResponse;
 import com.mypurecloud.sdk.v2.model.BuListAlternativeShiftTradesResponse;
+import com.mypurecloud.sdk.v2.model.BuQueryAdherenceAdjustmentsRequest;
 import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.model.BuQueryAdherenceExplanationsResponse;
 import com.mypurecloud.sdk.v2.model.BuQueryAgentSchedulesRequest;
@@ -136,6 +150,7 @@ import com.mypurecloud.sdk.v2.model.BulkRemoveOpportunitiesResponse;
 import com.mypurecloud.sdk.v2.model.BulkShiftTradeStateUpdateRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateActivityCodeResponse;
+import com.mypurecloud.sdk.v2.model.BulkUpdateAgentUnavailableTimesResponse;
 import com.mypurecloud.sdk.v2.model.BulkUpdateOpportunityEnrollmentsStatusResponse;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeListJobRequest;
 import com.mypurecloud.sdk.v2.model.BulkUpdateShiftTradeStateResponse;
@@ -165,6 +180,8 @@ import com.mypurecloud.sdk.v2.model.CopyWorkPlanBid;
 import com.mypurecloud.sdk.v2.model.CopyWorkPlanRotationRequest;
 import com.mypurecloud.sdk.v2.model.CreateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.CreateActivityPlanRequest;
+import com.mypurecloud.sdk.v2.model.CreateAdherenceAdjustmentsReasonCodeRequest;
+import com.mypurecloud.sdk.v2.model.CreateAdherenceAdjustmentsReasonCodesBulkRequest;
 import com.mypurecloud.sdk.v2.model.CreateAdminTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.CreateAgentTimeOffRequest;
 import com.mypurecloud.sdk.v2.model.CreateAlternativeShiftTradeRequest;
@@ -179,8 +196,11 @@ import com.mypurecloud.sdk.v2.model.CreateTimeOffLimitRequest;
 import com.mypurecloud.sdk.v2.model.CreateTimeOffPlanRequest;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlan;
 import com.mypurecloud.sdk.v2.model.CreateWorkPlanBid;
+import com.mypurecloud.sdk.v2.model.CurrentAgentAdherenceAdjustment;
+import com.mypurecloud.sdk.v2.model.CurrentAgentCursorAdherenceAdjustmentsListing;
 import com.mypurecloud.sdk.v2.model.CurrentUserScheduleRequestBody;
 import com.mypurecloud.sdk.v2.model.CurrentUserTimeOffIntegrationStatusRequest;
+import com.mypurecloud.sdk.v2.model.CursorAdherenceAdjustmentsListing;
 import com.mypurecloud.sdk.v2.model.DecisionMetricsResponse;
 import com.mypurecloud.sdk.v2.model.DecisionMetricsUpdateJobRequest;
 import com.mypurecloud.sdk.v2.model.DecisionMetricsUpdateJobResponse;
@@ -306,11 +326,17 @@ import com.mypurecloud.sdk.v2.model.TimeOffRequestResponse;
 import com.mypurecloud.sdk.v2.model.UnavailableTimeListing;
 import com.mypurecloud.sdk.v2.model.UpdateActivityCodeRequest;
 import com.mypurecloud.sdk.v2.model.UpdateActivityPlanRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceAdjustmentAdminRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceAdjustmentAgentRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceAdjustmentsBulkRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceAdjustmentsReasonCodeRequest;
+import com.mypurecloud.sdk.v2.model.UpdateAdherenceAdjustmentsReasonCodesBulkRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAdherenceExplanationStatusRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAgentScheduleBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAgentSchedulingPreferencesRequest;
 import com.mypurecloud.sdk.v2.model.UpdateAgentWorkPlanBiddingPreference;
 import com.mypurecloud.sdk.v2.model.UpdateAlternativeShiftBuSettingsRequest;
+import com.mypurecloud.sdk.v2.model.UpdateBuAdherenceAdjustmentsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitRequest;
 import com.mypurecloud.sdk.v2.model.UpdateBusinessUnitSchedulingPreferencesSettingsRequest;
 import com.mypurecloud.sdk.v2.model.UpdateCapacityPlanRequest;
@@ -381,8 +407,11 @@ import com.mypurecloud.sdk.v2.model.WorkPlanRotationResponse;
 import com.mypurecloud.sdk.v2.model.WorkPlanValidationRequest;
 
 
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementAdherenceAdjustmentRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitActivitycodeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest;
+import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistoryRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitPlanninggroupRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementBusinessunitSchedulebidRequest;
@@ -403,10 +432,12 @@ import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementuni
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanRequest;
 import com.mypurecloud.sdk.v2.api.request.DeleteWorkforcemanagementManagementunitWorkplanrotationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceAdjustmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceExplanationsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalBulkJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAdherenceHistoricalJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentAdherenceAdjustmentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentAdherenceExplanationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementAgentsMeAdherenceHistoricalJobRequest;
@@ -422,9 +453,21 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitRequ
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanDeletionsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplansJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJobRequest;
@@ -551,13 +594,20 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementUserWorkplanbidr
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidPreferencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidWorkplansRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementWorkplanbidsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAdherenceAdjustmentRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAgentAdherenceAdjustmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAgentAdherenceExplanationRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAgentUnavailabletimesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAlternativeshiftsTradeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementAlternativeshiftsTradesStateJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodeRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivitycodesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitActivityplanRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitAlternativeshiftsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitCapacityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitMinimumstaffingSettingsRequest;
@@ -592,9 +642,12 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUnavailabletim
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUserWorkplanbidranksRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementUsersWorkplanbidranksBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementWorkplanbidPreferencesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceAdjustmentsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceAdjustmentsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAdherenceHistoricalBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceAdjustmentsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAgentSchedulingpreferencesQueryRequest;
@@ -612,8 +665,16 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshif
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsOffersSearchJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsTradesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivitycodesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanDeletionsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanRunsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplansRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAdherenceExplanationsQueryRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAgentschedulesSearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchRequest;
@@ -752,6 +813,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Delete an adherence adjustment for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteWorkforcemanagementAdherenceAdjustmentAsync(DeleteWorkforcemanagementAdherenceAdjustmentRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an adherence adjustment for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteWorkforcemanagementAdherenceAdjustmentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Delete business unit
    * A business unit cannot be deleted if it contains one or more management units
    * @param request the request object
@@ -868,6 +1004,156 @@ public class WorkforceManagementApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<Void>> deleteWorkforcemanagementBusinessunitActivitycodeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an adherence adjustment reason code for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeAsync(DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an adherence adjustment reason code for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
+    try {
+      final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<Void> deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkAsync(DeleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest request, final AsyncApiCallback<Void> callback) {
+    try {
+      final SettableFuture<Void> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), null, new AsyncApiCallback<ApiResponse<Void>>() {
+        @Override
+        public void onCompleted(ApiResponse<Void> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<Void>> deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<Void>> callback) {
     try {
       final SettableFuture<ApiResponse<Void>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
@@ -2406,6 +2692,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Get an adherence adjustment for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CurrentAgentAdherenceAdjustment> getWorkforcemanagementAdherenceAdjustmentAsync(GetWorkforcemanagementAdherenceAdjustmentRequest request, final AsyncApiCallback<CurrentAgentAdherenceAdjustment> callback) {
+    try {
+      final SettableFuture<CurrentAgentAdherenceAdjustment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CurrentAgentAdherenceAdjustment>() {}, new AsyncApiCallback<ApiResponse<CurrentAgentAdherenceAdjustment>>() {
+        @Override
+        public void onCompleted(ApiResponse<CurrentAgentAdherenceAdjustment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an adherence adjustment for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CurrentAgentAdherenceAdjustment>> getWorkforcemanagementAdherenceAdjustmentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<CurrentAgentAdherenceAdjustment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CurrentAgentAdherenceAdjustment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CurrentAgentAdherenceAdjustment>() {}, new AsyncApiCallback<ApiResponse<CurrentAgentAdherenceAdjustment>>() {
+        @Override
+        public void onCompleted(ApiResponse<CurrentAgentAdherenceAdjustment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get an adherence explanation for the current user
    * 
    * @param request the request object
@@ -2694,6 +3055,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WfmHistoricalAdherenceResponse> response = (ApiResponse<WfmHistoricalAdherenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an adherence adjustment for the requested agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceAdjustment> getWorkforcemanagementAgentAdherenceAdjustmentAsync(GetWorkforcemanagementAgentAdherenceAdjustmentRequest request, final AsyncApiCallback<AdherenceAdjustment> callback) {
+    try {
+      final SettableFuture<AdherenceAdjustment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceAdjustment>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustment>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an adherence adjustment for the requested agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceAdjustment>> getWorkforcemanagementAgentAdherenceAdjustmentAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AdherenceAdjustment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceAdjustment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceAdjustment>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustment>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustment> response = (ApiResponse<AdherenceAdjustment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustment> response = (ApiResponse<AdherenceAdjustment>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3831,6 +4267,381 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Gets an activity plan deletion job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanDeletionsJobAsync(GetWorkforcemanagementBusinessunitActivityplanDeletionsJobRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets an activity plan deletion job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanJobResponse>> getWorkforcemanagementBusinessunitActivityplanDeletionsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the latest job for an activity plan in the business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanJobsAsync(GetWorkforcemanagementBusinessunitActivityplanJobsRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets the latest job for an activity plan in the business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanJobResponse>> getWorkforcemanagementBusinessunitActivityplanJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets a session users deletion job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobAsync(GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets a session users deletion job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanJobResponse>> getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets an activity plan sessions deletion job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobAsync(GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets an activity plan sessions deletion job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanJobResponse>> getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets an occurrences deletion job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobAsync(GetWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets an occurrences deletion job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanJobResponse>> getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Gets an activity plan run job
    * 
    * @param request the request object
@@ -4044,6 +4855,531 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ActivityPlanJobListing> response = (ApiResponse<ActivityPlanJobListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get adherence adjustments in bulk by ID for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceAdjustmentsListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkAsync(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest request, final AsyncApiCallback<AdherenceAdjustmentsListing> callback) {
+    try {
+      final SettableFuture<AdherenceAdjustmentsListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get adherence adjustments in bulk by ID for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceAdjustmentsListing>> getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AdherenceAdjustmentsListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceAdjustmentsListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceAdjustmentsListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsListing> response = (ApiResponse<AdherenceAdjustmentsListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsListing> response = (ApiResponse<AdherenceAdjustmentsListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuAdherenceAdjustmentsQueryJob> getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobAsync(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobRequest request, final AsyncApiCallback<BuAdherenceAdjustmentsQueryJob> callback) {
+    try {
+      final SettableFuture<BuAdherenceAdjustmentsQueryJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuAdherenceAdjustmentsQueryJob>() {}, new AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsQueryJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAdherenceAdjustmentsQueryJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuAdherenceAdjustmentsQueryJob>> getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsQueryJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuAdherenceAdjustmentsQueryJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuAdherenceAdjustmentsQueryJob>() {}, new AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsQueryJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAdherenceAdjustmentsQueryJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAdherenceAdjustmentsQueryJob> response = (ApiResponse<BuAdherenceAdjustmentsQueryJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAdherenceAdjustmentsQueryJob> response = (ApiResponse<BuAdherenceAdjustmentsQueryJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get query job history for the logged in user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuAdherenceAdjustmentsQueryJobsReferenceListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsAsync(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest request, final AsyncApiCallback<BuAdherenceAdjustmentsQueryJobsReferenceListing> callback) {
+    try {
+      final SettableFuture<BuAdherenceAdjustmentsQueryJobsReferenceListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuAdherenceAdjustmentsQueryJobsReferenceListing>() {}, new AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get query job history for the logged in user.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing>> getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuAdherenceAdjustmentsQueryJobsReferenceListing>() {}, new AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing> response = (ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing> response = (ApiResponse<BuAdherenceAdjustmentsQueryJobsReferenceListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an adherence adjustment reason code for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceAdjustmentsReasonCode> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeAsync(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest request, final AsyncApiCallback<AdherenceAdjustmentsReasonCode> callback) {
+    try {
+      final SettableFuture<AdherenceAdjustmentsReasonCode> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCode>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCode>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCode> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get an adherence adjustment reason code for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceAdjustmentsReasonCode>> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCode>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceAdjustmentsReasonCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceAdjustmentsReasonCode>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCode>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCode> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get adherence adjustment reason codes for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceAdjustmentsReasonCodesListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesAsync(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest request, final AsyncApiCallback<AdherenceAdjustmentsReasonCodesListing> callback) {
+    try {
+      final SettableFuture<AdherenceAdjustmentsReasonCodesListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCodesListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get adherence adjustment reason codes for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCodesListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceAdjustmentsReasonCodesListing> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkAsync(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest request, final AsyncApiCallback<AdherenceAdjustmentsReasonCodesListing> callback) {
+    try {
+      final SettableFuture<AdherenceAdjustmentsReasonCodesListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCodesListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCodesListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get adherence adjustments settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuAdherenceAdjustmentsSettings> getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsAsync(GetWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest request, final AsyncApiCallback<BuAdherenceAdjustmentsSettings> callback) {
+    try {
+      final SettableFuture<BuAdherenceAdjustmentsSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuAdherenceAdjustmentsSettings>() {}, new AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAdherenceAdjustmentsSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get adherence adjustments settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuAdherenceAdjustmentsSettings>> getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuAdherenceAdjustmentsSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuAdherenceAdjustmentsSettings>() {}, new AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAdherenceAdjustmentsSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAdherenceAdjustmentsSettings> response = (ApiResponse<BuAdherenceAdjustmentsSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAdherenceAdjustmentsSettings> response = (ApiResponse<BuAdherenceAdjustmentsSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -13538,6 +14874,156 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Update an adherence adjustment for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CurrentAgentAdherenceAdjustment> patchWorkforcemanagementAdherenceAdjustmentAsync(PatchWorkforcemanagementAdherenceAdjustmentRequest request, final AsyncApiCallback<CurrentAgentAdherenceAdjustment> callback) {
+    try {
+      final SettableFuture<CurrentAgentAdherenceAdjustment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CurrentAgentAdherenceAdjustment>() {}, new AsyncApiCallback<ApiResponse<CurrentAgentAdherenceAdjustment>>() {
+        @Override
+        public void onCompleted(ApiResponse<CurrentAgentAdherenceAdjustment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an adherence adjustment for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CurrentAgentAdherenceAdjustment>> patchWorkforcemanagementAdherenceAdjustmentAsync(ApiRequest<UpdateAdherenceAdjustmentAgentRequest> request, final AsyncApiCallback<ApiResponse<CurrentAgentAdherenceAdjustment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CurrentAgentAdherenceAdjustment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CurrentAgentAdherenceAdjustment>() {}, new AsyncApiCallback<ApiResponse<CurrentAgentAdherenceAdjustment>>() {
+        @Override
+        public void onCompleted(ApiResponse<CurrentAgentAdherenceAdjustment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an adherence adjustment for the requested agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceAdjustment> patchWorkforcemanagementAgentAdherenceAdjustmentAsync(PatchWorkforcemanagementAgentAdherenceAdjustmentRequest request, final AsyncApiCallback<AdherenceAdjustment> callback) {
+    try {
+      final SettableFuture<AdherenceAdjustment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceAdjustment>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustment>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an adherence adjustment for the requested agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceAdjustment>> patchWorkforcemanagementAgentAdherenceAdjustmentAsync(ApiRequest<UpdateAdherenceAdjustmentAdminRequest> request, final AsyncApiCallback<ApiResponse<AdherenceAdjustment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceAdjustment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceAdjustment>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustment>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustment> response = (ApiResponse<AdherenceAdjustment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustment> response = (ApiResponse<AdherenceAdjustment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update an adherence explanation
    * 
    * @param request the request object
@@ -13601,6 +15087,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AdherenceExplanationAsyncResponse> response = (ApiResponse<AdherenceExplanationAsyncResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update unavailable times for the requested agent
+   * Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BulkUpdateAgentUnavailableTimesResponse> patchWorkforcemanagementAgentUnavailabletimesAsync(PatchWorkforcemanagementAgentUnavailabletimesRequest request, final AsyncApiCallback<BulkUpdateAgentUnavailableTimesResponse> callback) {
+    try {
+      final SettableFuture<BulkUpdateAgentUnavailableTimesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BulkUpdateAgentUnavailableTimesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkUpdateAgentUnavailableTimesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkUpdateAgentUnavailableTimesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update unavailable times for the requested agent
+   * Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BulkUpdateAgentUnavailableTimesResponse>> patchWorkforcemanagementAgentUnavailabletimesAsync(ApiRequest<UpdateUnavailableTimesRequest> request, final AsyncApiCallback<ApiResponse<BulkUpdateAgentUnavailableTimesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BulkUpdateAgentUnavailableTimesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BulkUpdateAgentUnavailableTimesResponse>() {}, new AsyncApiCallback<ApiResponse<BulkUpdateAgentUnavailableTimesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<BulkUpdateAgentUnavailableTimesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkUpdateAgentUnavailableTimesResponse> response = (ApiResponse<BulkUpdateAgentUnavailableTimesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BulkUpdateAgentUnavailableTimesResponse> response = (ApiResponse<BulkUpdateAgentUnavailableTimesResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -14051,6 +15612,306 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ActivityPlanResponse> response = (ApiResponse<ActivityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update adherence adjustments in bulk for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceAdjustmentsListing> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkAsync(PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkRequest request, final AsyncApiCallback<AdherenceAdjustmentsListing> callback) {
+    try {
+      final SettableFuture<AdherenceAdjustmentsListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update adherence adjustments in bulk for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceAdjustmentsListing>> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulkAsync(ApiRequest<UpdateAdherenceAdjustmentsBulkRequest> request, final AsyncApiCallback<ApiResponse<AdherenceAdjustmentsListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceAdjustmentsListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceAdjustmentsListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsListing> response = (ApiResponse<AdherenceAdjustmentsListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsListing> response = (ApiResponse<AdherenceAdjustmentsListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an adherence adjustment reason code for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceAdjustmentsReasonCode> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeAsync(PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeRequest request, final AsyncApiCallback<AdherenceAdjustmentsReasonCode> callback) {
+    try {
+      final SettableFuture<AdherenceAdjustmentsReasonCode> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCode>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCode>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCode> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update an adherence adjustment reason code for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceAdjustmentsReasonCode>> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodeAsync(ApiRequest<UpdateAdherenceAdjustmentsReasonCodeRequest> request, final AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCode>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceAdjustmentsReasonCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceAdjustmentsReasonCode>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCode>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCode> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceAdjustmentsReasonCodesListing> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkAsync(PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest request, final AsyncApiCallback<AdherenceAdjustmentsReasonCodesListing> callback) {
+    try {
+      final SettableFuture<AdherenceAdjustmentsReasonCodesListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCodesListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkAsync(ApiRequest<UpdateAdherenceAdjustmentsReasonCodesBulkRequest> request, final AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCodesListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update adherence adjustments settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuAdherenceAdjustmentsSettings> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsAsync(PatchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsRequest request, final AsyncApiCallback<BuAdherenceAdjustmentsSettings> callback) {
+    try {
+      final SettableFuture<BuAdherenceAdjustmentsSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuAdherenceAdjustmentsSettings>() {}, new AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAdherenceAdjustmentsSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update adherence adjustments settings for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuAdherenceAdjustmentsSettings>> patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettingsAsync(ApiRequest<UpdateBuAdherenceAdjustmentsSettingsRequest> request, final AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuAdherenceAdjustmentsSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuAdherenceAdjustmentsSettings>() {}, new AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAdherenceAdjustmentsSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAdherenceAdjustmentsSettings> response = (ApiResponse<BuAdherenceAdjustmentsSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAdherenceAdjustmentsSettings> response = (ApiResponse<BuAdherenceAdjustmentsSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -16623,6 +18484,156 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Submit an adherence adjustment for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CurrentAgentAdherenceAdjustment> postWorkforcemanagementAdherenceAdjustmentsAsync(PostWorkforcemanagementAdherenceAdjustmentsRequest request, final AsyncApiCallback<CurrentAgentAdherenceAdjustment> callback) {
+    try {
+      final SettableFuture<CurrentAgentAdherenceAdjustment> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CurrentAgentAdherenceAdjustment>() {}, new AsyncApiCallback<ApiResponse<CurrentAgentAdherenceAdjustment>>() {
+        @Override
+        public void onCompleted(ApiResponse<CurrentAgentAdherenceAdjustment> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Submit an adherence adjustment for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CurrentAgentAdherenceAdjustment>> postWorkforcemanagementAdherenceAdjustmentsAsync(ApiRequest<AddAdherenceAdjustmentAgentRequest> request, final AsyncApiCallback<ApiResponse<CurrentAgentAdherenceAdjustment>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CurrentAgentAdherenceAdjustment>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CurrentAgentAdherenceAdjustment>() {}, new AsyncApiCallback<ApiResponse<CurrentAgentAdherenceAdjustment>>() {
+        @Override
+        public void onCompleted(ApiResponse<CurrentAgentAdherenceAdjustment> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CurrentAgentAdherenceAdjustment> response = (ApiResponse<CurrentAgentAdherenceAdjustment>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence adjustments for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CurrentAgentCursorAdherenceAdjustmentsListing> postWorkforcemanagementAdherenceAdjustmentsQueryAsync(PostWorkforcemanagementAdherenceAdjustmentsQueryRequest request, final AsyncApiCallback<CurrentAgentCursorAdherenceAdjustmentsListing> callback) {
+    try {
+      final SettableFuture<CurrentAgentCursorAdherenceAdjustmentsListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CurrentAgentCursorAdherenceAdjustmentsListing>() {}, new AsyncApiCallback<ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence adjustments for the current user
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing>> postWorkforcemanagementAdherenceAdjustmentsQueryAsync(ApiRequest<AgentQueryAdherenceAdjustmentsRequest> request, final AsyncApiCallback<ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CurrentAgentCursorAdherenceAdjustmentsListing>() {}, new AsyncApiCallback<ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing> response = (ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing> response = (ApiResponse<CurrentAgentCursorAdherenceAdjustmentsListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Submit an adherence explanation for the current user
    * 
    * @param request the request object
@@ -16836,6 +18847,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<WfmHistoricalAdherenceBulkResponse> response = (ApiResponse<WfmHistoricalAdherenceBulkResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence adjustments for the requested agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CursorAdherenceAdjustmentsListing> postWorkforcemanagementAgentAdherenceAdjustmentsQueryAsync(PostWorkforcemanagementAgentAdherenceAdjustmentsQueryRequest request, final AsyncApiCallback<CursorAdherenceAdjustmentsListing> callback) {
+    try {
+      final SettableFuture<CursorAdherenceAdjustmentsListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CursorAdherenceAdjustmentsListing>() {}, new AsyncApiCallback<ApiResponse<CursorAdherenceAdjustmentsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorAdherenceAdjustmentsListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence adjustments for the requested agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CursorAdherenceAdjustmentsListing>> postWorkforcemanagementAgentAdherenceAdjustmentsQueryAsync(ApiRequest<AgentQueryAdherenceAdjustmentsRequest> request, final AsyncApiCallback<ApiResponse<CursorAdherenceAdjustmentsListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CursorAdherenceAdjustmentsListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CursorAdherenceAdjustmentsListing>() {}, new AsyncApiCallback<ApiResponse<CursorAdherenceAdjustmentsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorAdherenceAdjustmentsListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorAdherenceAdjustmentsListing> response = (ApiResponse<CursorAdherenceAdjustmentsListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorAdherenceAdjustmentsListing> response = (ApiResponse<CursorAdherenceAdjustmentsListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -18125,6 +20211,306 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Delete an activity plan
+   * Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanDeletionsJobsAsync(PostWorkforcemanagementBusinessunitActivityplanDeletionsJobsRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an activity plan
+   * Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanJobResponse>> postWorkforcemanagementBusinessunitActivityplanDeletionsJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Triggers a job to delete users from a session in the activity plan occurrence
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsAsync(PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Triggers a job to delete users from a session in the activity plan occurrence
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanJobResponse>> postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsAsync(ApiRequest<ActivityPlanDeletionSessionUserIds> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Triggers a job to delete sessions for the activity plan occurrence
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsAsync(PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Triggers a job to delete sessions for the activity plan occurrence
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanJobResponse>> postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsAsync(ApiRequest<ActivityPlanDeletionSessionIds> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete occurrences for the activity plan
+   * Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanOccurrencesDeletionJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsAsync(PostWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsRequest request, final AsyncApiCallback<ActivityPlanOccurrencesDeletionJobResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanOccurrencesDeletionJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanOccurrencesDeletionJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanOccurrencesDeletionJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanOccurrencesDeletionJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete occurrences for the activity plan
+   * Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanOccurrencesDeletionJobResponse>> postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsAsync(ApiRequest<ActivityPlanDeletionOccurrenceIds> request, final AsyncApiCallback<ApiResponse<ActivityPlanOccurrencesDeletionJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanOccurrencesDeletionJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanOccurrencesDeletionJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanOccurrencesDeletionJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanOccurrencesDeletionJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanOccurrencesDeletionJobResponse> response = (ApiResponse<ActivityPlanOccurrencesDeletionJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanOccurrencesDeletionJobResponse> response = (ApiResponse<ActivityPlanOccurrencesDeletionJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Run an activity plan manually
    * Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
    * @param request the request object
@@ -18263,6 +20649,306 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ActivityPlanResponse> response = (ApiResponse<ActivityPlanResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CursorAdherenceAdjustmentsListing> postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryAsync(PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryRequest request, final AsyncApiCallback<CursorAdherenceAdjustmentsListing> callback) {
+    try {
+      final SettableFuture<CursorAdherenceAdjustmentsListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CursorAdherenceAdjustmentsListing>() {}, new AsyncApiCallback<ApiResponse<CursorAdherenceAdjustmentsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorAdherenceAdjustmentsListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CursorAdherenceAdjustmentsListing>> postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryAsync(ApiRequest<BuQueryAdherenceAdjustmentsRequest> request, final AsyncApiCallback<ApiResponse<CursorAdherenceAdjustmentsListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CursorAdherenceAdjustmentsListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CursorAdherenceAdjustmentsListing>() {}, new AsyncApiCallback<ApiResponse<CursorAdherenceAdjustmentsListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<CursorAdherenceAdjustmentsListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorAdherenceAdjustmentsListing> response = (ApiResponse<CursorAdherenceAdjustmentsListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CursorAdherenceAdjustmentsListing> response = (ApiResponse<CursorAdherenceAdjustmentsListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates an async query job for adherence adjustments in a business unit.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<BuAdherenceAdjustmentsQueryJob> postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsAsync(PostWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsRequest request, final AsyncApiCallback<BuAdherenceAdjustmentsQueryJob> callback) {
+    try {
+      final SettableFuture<BuAdherenceAdjustmentsQueryJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<BuAdherenceAdjustmentsQueryJob>() {}, new AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsQueryJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAdherenceAdjustmentsQueryJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates an async query job for adherence adjustments in a business unit.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<BuAdherenceAdjustmentsQueryJob>> postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobsAsync(ApiRequest<BuQueryAdherenceAdjustmentsRequest> request, final AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsQueryJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<BuAdherenceAdjustmentsQueryJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<BuAdherenceAdjustmentsQueryJob>() {}, new AsyncApiCallback<ApiResponse<BuAdherenceAdjustmentsQueryJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<BuAdherenceAdjustmentsQueryJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAdherenceAdjustmentsQueryJob> response = (ApiResponse<BuAdherenceAdjustmentsQueryJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<BuAdherenceAdjustmentsQueryJob> response = (ApiResponse<BuAdherenceAdjustmentsQueryJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an adherence adjustment reason code for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceAdjustmentsReasonCode> postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesAsync(PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesRequest request, final AsyncApiCallback<AdherenceAdjustmentsReasonCode> callback) {
+    try {
+      final SettableFuture<AdherenceAdjustmentsReasonCode> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCode>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCode>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCode> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create an adherence adjustment reason code for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceAdjustmentsReasonCode>> postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesAsync(ApiRequest<CreateAdherenceAdjustmentsReasonCodeRequest> request, final AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCode>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceAdjustmentsReasonCode>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceAdjustmentsReasonCode>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCode>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCode> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCode> response = (ApiResponse<AdherenceAdjustmentsReasonCode>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<AdherenceAdjustmentsReasonCodesListing> postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkAsync(PostWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkRequest request, final AsyncApiCallback<AdherenceAdjustmentsReasonCodesListing> callback) {
+    try {
+      final SettableFuture<AdherenceAdjustmentsReasonCodesListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCodesListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Create adherence adjustment reason codes in bulk for a business unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulkAsync(ApiRequest<CreateAdherenceAdjustmentsReasonCodesBulkRequest> request, final AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<AdherenceAdjustmentsReasonCodesListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<AdherenceAdjustmentsReasonCodesListing>() {}, new AsyncApiCallback<ApiResponse<AdherenceAdjustmentsReasonCodesListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<AdherenceAdjustmentsReasonCodesListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<AdherenceAdjustmentsReasonCodesListing> response = (ApiResponse<AdherenceAdjustmentsReasonCodesListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

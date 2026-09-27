@@ -77,6 +77,54 @@ public class TestTopicPhraseTopic  implements Serializable {
     }
   }
   private StrictnessEnum strictness = null;
+
+  private static class MatchingTypeEnumDeserializer extends StdDeserializer<MatchingTypeEnum> {
+    public MatchingTypeEnumDeserializer() {
+      super(MatchingTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MatchingTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MatchingTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The topic matching type Lexical or Semantic, default value is Semantic
+   */
+ @JsonDeserialize(using = MatchingTypeEnumDeserializer.class)
+  public enum MatchingTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    LEXICAL("Lexical"),
+    SEMANTIC("Semantic");
+
+    private String value;
+
+    MatchingTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MatchingTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MatchingTypeEnum value : MatchingTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MatchingTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MatchingTypeEnum matchingType = null;
   private String dialect = null;
 
   private static class ParticipantsEnumDeserializer extends StdDeserializer<ParticipantsEnum> {
@@ -176,6 +224,24 @@ public class TestTopicPhraseTopic  implements Serializable {
 
 
   /**
+   * The topic matching type Lexical or Semantic, default value is Semantic
+   **/
+  public TestTopicPhraseTopic matchingType(MatchingTypeEnum matchingType) {
+    this.matchingType = matchingType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The topic matching type Lexical or Semantic, default value is Semantic")
+  @JsonProperty("matchingType")
+  public MatchingTypeEnum getMatchingType() {
+    return matchingType;
+  }
+  public void setMatchingType(MatchingTypeEnum matchingType) {
+    this.matchingType = matchingType;
+  }
+
+
+  /**
    * The topic dialect, default value is en-US
    **/
   public TestTopicPhraseTopic dialect(String dialect) {
@@ -223,13 +289,14 @@ public class TestTopicPhraseTopic  implements Serializable {
 
     return Objects.equals(this.phrase, testTopicPhraseTopic.phrase) &&
             Objects.equals(this.strictness, testTopicPhraseTopic.strictness) &&
+            Objects.equals(this.matchingType, testTopicPhraseTopic.matchingType) &&
             Objects.equals(this.dialect, testTopicPhraseTopic.dialect) &&
             Objects.equals(this.participants, testTopicPhraseTopic.participants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(phrase, strictness, dialect, participants);
+    return Objects.hash(phrase, strictness, matchingType, dialect, participants);
   }
 
   @Override
@@ -239,6 +306,7 @@ public class TestTopicPhraseTopic  implements Serializable {
     
     sb.append("    phrase: ").append(toIndentedString(phrase)).append("\n");
     sb.append("    strictness: ").append(toIndentedString(strictness)).append("\n");
+    sb.append("    matchingType: ").append(toIndentedString(matchingType)).append("\n");
     sb.append("    dialect: ").append(toIndentedString(dialect)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("}");

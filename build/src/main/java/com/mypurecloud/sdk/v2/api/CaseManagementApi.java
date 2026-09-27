@@ -17,6 +17,8 @@ import com.mypurecloud.sdk.v2.model.CaseAssociationQuery;
 import com.mypurecloud.sdk.v2.model.CaseAssociationQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.CaseCreate;
 import com.mypurecloud.sdk.v2.model.CaseDateDueUpdate;
+import com.mypurecloud.sdk.v2.model.CaseDescriptionUpdate;
+import com.mypurecloud.sdk.v2.model.CaseExternalIdUpdate;
 import com.mypurecloud.sdk.v2.model.CaseListing;
 import com.mypurecloud.sdk.v2.model.CaseOwnerUpdate;
 import com.mypurecloud.sdk.v2.model.CasePriorityUpdate;
@@ -85,6 +87,8 @@ import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCasesQueryJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCasesQueryJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCasesReferenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseDatedueRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseDescriptionRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseExternalidRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseOwnerRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCasePriorityRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseSummaryRequest;
@@ -2581,6 +2585,178 @@ public class CaseManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<ModelCase> patchCasemanagementCaseDatedue(ApiRequest<CaseDateDueUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ModelCase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ModelCase> response = (ApiResponse<ModelCase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ModelCase> response = (ApiResponse<ModelCase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the description of a Case.
+   * 
+   * patchCasemanagementCaseDescription is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseId Case identifier. (required)
+   * @param body Description update. (required)
+   * @return ModelCase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ModelCase patchCasemanagementCaseDescription(String caseId, CaseDescriptionUpdate body) throws IOException, ApiException {
+    return  patchCasemanagementCaseDescription(createPatchCasemanagementCaseDescriptionRequest(caseId, body));
+  }
+
+  /**
+   * Update the description of a Case.
+   * 
+   * patchCasemanagementCaseDescription is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseId Case identifier. (required)
+   * @param body Description update. (required)
+   * @return ModelCase
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ModelCase> patchCasemanagementCaseDescriptionWithHttpInfo(String caseId, CaseDescriptionUpdate body) throws IOException {
+    return patchCasemanagementCaseDescription(createPatchCasemanagementCaseDescriptionRequest(caseId, body).withHttpInfo());
+  }
+
+  private PatchCasemanagementCaseDescriptionRequest createPatchCasemanagementCaseDescriptionRequest(String caseId, CaseDescriptionUpdate body) {
+    return PatchCasemanagementCaseDescriptionRequest.builder()
+            .withCaseId(caseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the description of a Case.
+   * 
+   * patchCasemanagementCaseDescription is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ModelCase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ModelCase patchCasemanagementCaseDescription(PatchCasemanagementCaseDescriptionRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ModelCase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ModelCase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the description of a Case.
+   * 
+   * patchCasemanagementCaseDescription is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ModelCase> patchCasemanagementCaseDescription(ApiRequest<CaseDescriptionUpdate> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ModelCase>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ModelCase> response = (ApiResponse<ModelCase>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ModelCase> response = (ApiResponse<ModelCase>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Update the external identifier of a Case.
+   * 
+   * patchCasemanagementCaseExternalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseId Case identifier. (required)
+   * @param body External identifier update. (required)
+   * @return ModelCase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ModelCase patchCasemanagementCaseExternalid(String caseId, CaseExternalIdUpdate body) throws IOException, ApiException {
+    return  patchCasemanagementCaseExternalid(createPatchCasemanagementCaseExternalidRequest(caseId, body));
+  }
+
+  /**
+   * Update the external identifier of a Case.
+   * 
+   * patchCasemanagementCaseExternalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param caseId Case identifier. (required)
+   * @param body External identifier update. (required)
+   * @return ModelCase
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ModelCase> patchCasemanagementCaseExternalidWithHttpInfo(String caseId, CaseExternalIdUpdate body) throws IOException {
+    return patchCasemanagementCaseExternalid(createPatchCasemanagementCaseExternalidRequest(caseId, body).withHttpInfo());
+  }
+
+  private PatchCasemanagementCaseExternalidRequest createPatchCasemanagementCaseExternalidRequest(String caseId, CaseExternalIdUpdate body) {
+    return PatchCasemanagementCaseExternalidRequest.builder()
+            .withCaseId(caseId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update the external identifier of a Case.
+   * 
+   * patchCasemanagementCaseExternalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ModelCase
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ModelCase patchCasemanagementCaseExternalid(PatchCasemanagementCaseExternalidRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ModelCase> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ModelCase>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update the external identifier of a Case.
+   * 
+   * patchCasemanagementCaseExternalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ModelCase> patchCasemanagementCaseExternalid(ApiRequest<CaseExternalIdUpdate> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<ModelCase>() {});
     }

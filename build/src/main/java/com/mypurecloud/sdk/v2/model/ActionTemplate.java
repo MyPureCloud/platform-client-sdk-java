@@ -48,7 +48,6 @@ public class ActionTemplate  implements Serializable {
  @JsonDeserialize(using = MediaTypeEnumDeserializer.class)
   public enum MediaTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    WEBCHAT("webchat"),
     WEBMESSAGINGOFFER("webMessagingOffer"),
     CONTENTOFFER("contentOffer"),
     INTEGRATIONACTION("integrationAction"),

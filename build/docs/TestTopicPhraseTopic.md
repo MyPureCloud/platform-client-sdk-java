@@ -7,6 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **phrase** | [**TestTopicPhrasePhrase**](TestTopicPhrasePhrase) | The topic phrase to test |  |
 | **strictness** | [**StrictnessEnum**](#Enum--StrictnessEnum) | The topic strictness, default value is 72 |  [optional] |
+| **matchingType** | [**MatchingTypeEnum**](#Enum--MatchingTypeEnum) | The topic matching type Lexical or Semantic, default value is Semantic |  [optional] |
 | **dialect** | **String** | The topic dialect, default value is en-US |  |
 | **participants** | [**ParticipantsEnum**](#Enum--ParticipantsEnum) | The topic participants, default value is both |  [optional] |
 
@@ -24,6 +25,15 @@
 | _90 | &quot;90&quot; | 
 
 
+## Enum: MatchingTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| LEXICAL | &quot;Lexical&quot; | 
+| SEMANTIC | &quot;Semantic&quot; | 
+
+
 ## Enum: ParticipantsEnum
 
 | Name | Value |
@@ -36,4 +46,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

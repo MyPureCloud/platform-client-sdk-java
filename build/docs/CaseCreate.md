@@ -8,6 +8,8 @@
 | **caseplanId** | **String** | The ID of the Caseplan used to create the Case. |  |
 | **ownerId** | **String** | The ID of the owner of the Case. |  [optional] |
 | **summary** | **String** | Overview information for the Case. Valid length between 3 and 512 characters. |  [optional] |
+| **description** | **String** | The description of the Case. Maximum length of 512 characters. |  [optional] |
+| **externalId** | **String** | The identifier of the Case in an external system. Minimum length is 1 character. Maximum length of 64 characters. |  [optional] |
 | **externalContactId** | **String** | The ID of the External Contact associated with the Case. |  |
 | **conversationId** | **String** | The ID of the Conversation associated with the Case. |  [optional] |
 | **workitemId** | **String** | The ID of the Workitem associated with the Case. |  [optional] |
@@ -17,4 +19,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

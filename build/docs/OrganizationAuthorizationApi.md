@@ -542,6 +542,7 @@ Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trust
 
 Requires ANY permissions: 
 
+* authorization:orgTrusteeClonedUser:delete
 * authorization:orgTrusteeUser:delete
 
 ### Example
@@ -1564,6 +1565,7 @@ Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeU
 
 Requires ANY permissions: 
 
+* authorization:orgTrusteeClonedUser:view
 * authorization:orgTrusteeUser:view
 
 ### Example
@@ -1625,6 +1627,7 @@ Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers
 
 Requires ANY permissions: 
 
+* authorization:orgTrusteeClonedUser:view
 * authorization:orgTrusteeUser:view
 
 ### Example
@@ -2807,8 +2810,9 @@ Creates a clone of the trustee user in the trustor org.
 
 Wraps PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId}  
 
-Requires ALL permissions: 
+Requires ANY permissions: 
 
+* authorization:orgTrusteeClonedUser:add
 * authorization:orgTrusteeUser:add
 
 ### Example
@@ -2981,4 +2985,4 @@ try {
 [**TrustUser**](TrustUser)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

@@ -52,6 +52,7 @@ import com.mypurecloud.sdk.v2.model.InboundDomainPatchRequest;
 import com.mypurecloud.sdk.v2.model.InboundRoute;
 import com.mypurecloud.sdk.v2.model.InboundRouteEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicator;
+import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicatorEntityListing;
 import com.mypurecloud.sdk.v2.model.KeyPerformanceIndicatorType;
 import com.mypurecloud.sdk.v2.model.Language;
 import com.mypurecloud.sdk.v2.model.LanguageEntityListing;

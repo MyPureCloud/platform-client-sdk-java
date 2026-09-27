@@ -81,6 +81,54 @@ public class TopicRequest  implements Serializable {
   }
   private StrictnessEnum strictness = null;
   private List<String> programIds = null;
+
+  private static class MatchingTypeEnumDeserializer extends StdDeserializer<MatchingTypeEnum> {
+    public MatchingTypeEnumDeserializer() {
+      super(MatchingTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public MatchingTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return MatchingTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The topic matching type Lexical or Semantic, default value is Semantic
+   */
+ @JsonDeserialize(using = MatchingTypeEnumDeserializer.class)
+  public enum MatchingTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    LEXICAL("Lexical"),
+    SEMANTIC("Semantic");
+
+    private String value;
+
+    MatchingTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static MatchingTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (MatchingTypeEnum value : MatchingTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return MatchingTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private MatchingTypeEnum matchingType = null;
   private List<String> tags = null;
   private String dialect = null;
 
@@ -224,6 +272,24 @@ public class TopicRequest  implements Serializable {
 
 
   /**
+   * The topic matching type Lexical or Semantic, default value is Semantic
+   **/
+  public TopicRequest matchingType(MatchingTypeEnum matchingType) {
+    this.matchingType = matchingType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The topic matching type Lexical or Semantic, default value is Semantic")
+  @JsonProperty("matchingType")
+  public MatchingTypeEnum getMatchingType() {
+    return matchingType;
+  }
+  public void setMatchingType(MatchingTypeEnum matchingType) {
+    this.matchingType = matchingType;
+  }
+
+
+  /**
    * The topic tags
    **/
   public TopicRequest tags(List<String> tags) {
@@ -309,6 +375,7 @@ public class TopicRequest  implements Serializable {
             Objects.equals(this.description, topicRequest.description) &&
             Objects.equals(this.strictness, topicRequest.strictness) &&
             Objects.equals(this.programIds, topicRequest.programIds) &&
+            Objects.equals(this.matchingType, topicRequest.matchingType) &&
             Objects.equals(this.tags, topicRequest.tags) &&
             Objects.equals(this.dialect, topicRequest.dialect) &&
             Objects.equals(this.participants, topicRequest.participants) &&
@@ -317,7 +384,7 @@ public class TopicRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, strictness, programIds, tags, dialect, participants, phrases);
+    return Objects.hash(name, description, strictness, programIds, matchingType, tags, dialect, participants, phrases);
   }
 
   @Override
@@ -329,6 +396,7 @@ public class TopicRequest  implements Serializable {
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    strictness: ").append(toIndentedString(strictness)).append("\n");
     sb.append("    programIds: ").append(toIndentedString(programIds)).append("\n");
+    sb.append("    matchingType: ").append(toIndentedString(matchingType)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    dialect: ").append(toIndentedString(dialect)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");

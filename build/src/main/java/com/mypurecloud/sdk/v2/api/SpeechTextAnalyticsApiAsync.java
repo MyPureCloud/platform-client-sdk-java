@@ -32,12 +32,16 @@ import com.mypurecloud.sdk.v2.model.GeneralProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.GeneralTopicsEntityListing;
 import com.mypurecloud.sdk.v2.model.InsightsSettingsRequest;
 import com.mypurecloud.sdk.v2.model.JsonSearchResponse;
+import com.mypurecloud.sdk.v2.model.ProcessingSettingsRequest;
 import com.mypurecloud.sdk.v2.model.Program;
 import com.mypurecloud.sdk.v2.model.ProgramInsightsSettings;
 import com.mypurecloud.sdk.v2.model.ProgramInsightsSettingsEntityListing;
 import com.mypurecloud.sdk.v2.model.ProgramJob;
 import com.mypurecloud.sdk.v2.model.ProgramJobRequest;
 import com.mypurecloud.sdk.v2.model.ProgramMappingsRequest;
+import com.mypurecloud.sdk.v2.model.ProgramProcessingSettings;
+import com.mypurecloud.sdk.v2.model.ProgramProcessingSettingsEntityListing;
+import com.mypurecloud.sdk.v2.model.ProgramProcessingSettingsPatchResponse;
 import com.mypurecloud.sdk.v2.model.ProgramRequest;
 import com.mypurecloud.sdk.v2.model.ProgramTopicLinksJob;
 import com.mypurecloud.sdk.v2.model.ProgramTranscriptionEngines;
@@ -92,12 +96,14 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsDictionaryfee
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramSettingsInsightsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramSettingsProcessingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramTranscriptionenginesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsGeneralJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsMappingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsPublishjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsSettingsInsightsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsSettingsProcessingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTopiclinksJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsTranscriptionenginesDialectsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsProgramsUnpublishedRequest;
@@ -117,6 +123,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsPublish
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTopicsTestphraseJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTranslationsLanguageConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsTranslationsLanguagesRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsProgramSettingsProcessingRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSpeechandtextanalyticsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsCategoriesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostSpeechandtextanalyticsDictionaryfeedbackRequest;
@@ -1660,6 +1667,81 @@ public class SpeechTextAnalyticsApiAsync {
   }
 
   /**
+   * Get program processing settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ProgramProcessingSettings> getSpeechandtextanalyticsProgramSettingsProcessingAsync(GetSpeechandtextanalyticsProgramSettingsProcessingRequest request, final AsyncApiCallback<ProgramProcessingSettings> callback) {
+    try {
+      final SettableFuture<ProgramProcessingSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramProcessingSettings>() {}, new AsyncApiCallback<ApiResponse<ProgramProcessingSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramProcessingSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get program processing settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ProgramProcessingSettings>> getSpeechandtextanalyticsProgramSettingsProcessingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ProgramProcessingSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ProgramProcessingSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ProgramProcessingSettings>() {}, new AsyncApiCallback<ApiResponse<ProgramProcessingSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramProcessingSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramProcessingSettings> response = (ApiResponse<ProgramProcessingSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramProcessingSettings> response = (ApiResponse<ProgramProcessingSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get transcription engine settings of a program
    * 
    * @param request the request object
@@ -2098,6 +2180,81 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ProgramInsightsSettingsEntityListing> response = (ApiResponse<ProgramInsightsSettingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of program processing settings for the organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ProgramProcessingSettingsEntityListing> getSpeechandtextanalyticsProgramsSettingsProcessingAsync(GetSpeechandtextanalyticsProgramsSettingsProcessingRequest request, final AsyncApiCallback<ProgramProcessingSettingsEntityListing> callback) {
+    try {
+      final SettableFuture<ProgramProcessingSettingsEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramProcessingSettingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<ProgramProcessingSettingsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramProcessingSettingsEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the list of program processing settings for the organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ProgramProcessingSettingsEntityListing>> getSpeechandtextanalyticsProgramsSettingsProcessingAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ProgramProcessingSettingsEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ProgramProcessingSettingsEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ProgramProcessingSettingsEntityListing>() {}, new AsyncApiCallback<ApiResponse<ProgramProcessingSettingsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramProcessingSettingsEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramProcessingSettingsEntityListing> response = (ApiResponse<ProgramProcessingSettingsEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramProcessingSettingsEntityListing> response = (ApiResponse<ProgramProcessingSettingsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -3529,6 +3686,81 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TranslateSupportedLanguageList> response = (ApiResponse<TranslateSupportedLanguageList>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update program processing settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ProgramProcessingSettingsPatchResponse> patchSpeechandtextanalyticsProgramSettingsProcessingAsync(PatchSpeechandtextanalyticsProgramSettingsProcessingRequest request, final AsyncApiCallback<ProgramProcessingSettingsPatchResponse> callback) {
+    try {
+      final SettableFuture<ProgramProcessingSettingsPatchResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ProgramProcessingSettingsPatchResponse>() {}, new AsyncApiCallback<ApiResponse<ProgramProcessingSettingsPatchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramProcessingSettingsPatchResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update program processing settings
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ProgramProcessingSettingsPatchResponse>> patchSpeechandtextanalyticsProgramSettingsProcessingAsync(ApiRequest<ProcessingSettingsRequest> request, final AsyncApiCallback<ApiResponse<ProgramProcessingSettingsPatchResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ProgramProcessingSettingsPatchResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ProgramProcessingSettingsPatchResponse>() {}, new AsyncApiCallback<ApiResponse<ProgramProcessingSettingsPatchResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ProgramProcessingSettingsPatchResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramProcessingSettingsPatchResponse> response = (ApiResponse<ProgramProcessingSettingsPatchResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ProgramProcessingSettingsPatchResponse> response = (ApiResponse<ProgramProcessingSettingsPatchResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

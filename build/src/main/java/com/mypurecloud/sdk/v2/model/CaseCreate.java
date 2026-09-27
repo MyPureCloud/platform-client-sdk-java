@@ -28,6 +28,8 @@ public class CaseCreate  implements Serializable {
   private String caseplanId = null;
   private String ownerId = null;
   private String summary = null;
+  private String description = null;
+  private String externalId = null;
   private String externalContactId = null;
   private String conversationId = null;
   private String workitemId = null;
@@ -98,6 +100,42 @@ public class CaseCreate  implements Serializable {
   }
   public void setSummary(String summary) {
     this.summary = summary;
+  }
+
+
+  /**
+   * The description of the Case. Maximum length of 512 characters.
+   **/
+  public CaseCreate description(String description) {
+    this.description = description;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The description of the Case. Maximum length of 512 characters.")
+  @JsonProperty("description")
+  public String getDescription() {
+    return description;
+  }
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+
+  /**
+   * The identifier of the Case in an external system. Minimum length is 1 character. Maximum length of 64 characters.
+   **/
+  public CaseCreate externalId(String externalId) {
+    this.externalId = externalId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The identifier of the Case in an external system. Minimum length is 1 character. Maximum length of 64 characters.")
+  @JsonProperty("externalId")
+  public String getExternalId() {
+    return externalId;
+  }
+  public void setExternalId(String externalId) {
+    this.externalId = externalId;
   }
 
 
@@ -204,6 +242,8 @@ public class CaseCreate  implements Serializable {
     return Objects.equals(this.caseplanId, caseCreate.caseplanId) &&
             Objects.equals(this.ownerId, caseCreate.ownerId) &&
             Objects.equals(this.summary, caseCreate.summary) &&
+            Objects.equals(this.description, caseCreate.description) &&
+            Objects.equals(this.externalId, caseCreate.externalId) &&
             Objects.equals(this.externalContactId, caseCreate.externalContactId) &&
             Objects.equals(this.conversationId, caseCreate.conversationId) &&
             Objects.equals(this.workitemId, caseCreate.workitemId) &&
@@ -213,7 +253,7 @@ public class CaseCreate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(caseplanId, ownerId, summary, externalContactId, conversationId, workitemId, ttlSeconds, intake);
+    return Objects.hash(caseplanId, ownerId, summary, description, externalId, externalContactId, conversationId, workitemId, ttlSeconds, intake);
   }
 
   @Override
@@ -224,6 +264,8 @@ public class CaseCreate  implements Serializable {
     sb.append("    caseplanId: ").append(toIndentedString(caseplanId)).append("\n");
     sb.append("    ownerId: ").append(toIndentedString(ownerId)).append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    externalId: ").append(toIndentedString(externalId)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    conversationId: ").append(toIndentedString(conversationId)).append("\n");
     sb.append("    workitemId: ").append(toIndentedString(workitemId)).append("\n");

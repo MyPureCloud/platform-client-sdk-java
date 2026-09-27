@@ -3731,7 +3731,6 @@ public class AnalyticsApi {
   /**
    * Get analytics data warehouse file download
    * 
-   * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param downloadId Unique file Id to download (required)
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3743,7 +3742,6 @@ public class AnalyticsApi {
   /**
    * Get analytics data warehouse file download
    * 
-   * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param downloadId Unique file Id to download (required)
    * @throws IOException if the request fails to be processed
    */
@@ -3761,7 +3759,6 @@ public class AnalyticsApi {
   /**
    * Get analytics data warehouse file download
    * 
-   * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3780,7 +3777,6 @@ public class AnalyticsApi {
   /**
    * Get analytics data warehouse file download
    * 
-   * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3810,7 +3806,6 @@ public class AnalyticsApi {
   /**
    * Get metadata on files available for extraction
    * 
-   * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
@@ -3828,7 +3823,6 @@ public class AnalyticsApi {
   /**
    * Get metadata on files available for extraction
    * 
-   * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
    * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
    * @param pageSize Number of entities to return. Maximum of 200. (optional)
@@ -3862,7 +3856,6 @@ public class AnalyticsApi {
   /**
    * Get metadata on files available for extraction
    * 
-   * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataExtractionFileSchemaListing
    * @throws ApiException if the request fails on the server
@@ -3882,7 +3875,6 @@ public class AnalyticsApi {
   /**
    * Get metadata on files available for extraction
    * 
-   * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -8268,7 +8260,6 @@ public class AnalyticsApi {
   /**
    * Get download URLs for analytics data warehouse files
    * 
-   * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body request (required)
    * @return DataExtractionFileUrlListing
    * @throws ApiException if the request fails on the server
@@ -8281,7 +8272,6 @@ public class AnalyticsApi {
   /**
    * Get download URLs for analytics data warehouse files
    * 
-   * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body request (required)
    * @return DataExtractionFileUrlListing
    * @throws IOException if the request fails to be processed
@@ -8300,7 +8290,6 @@ public class AnalyticsApi {
   /**
    * Get download URLs for analytics data warehouse files
    * 
-   * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return DataExtractionFileUrlListing
    * @throws ApiException if the request fails on the server
@@ -8320,7 +8309,6 @@ public class AnalyticsApi {
   /**
    * Get download URLs for analytics data warehouse files
    * 
-   * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -56,6 +56,7 @@ public class Flow  implements Serializable {
   public enum TypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("BOT"),
+    BUSINESSPROCESS("BUSINESSPROCESS"),
     COMMONMODULE("COMMONMODULE"),
     DIGITALBOT("DIGITALBOT"),
     EMAILSEND("EMAILSEND"),
@@ -137,6 +138,7 @@ public class Flow  implements Serializable {
   public enum CompatibleFlowTypesEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("BOT"),
+    BUSINESSPROCESS("BUSINESSPROCESS"),
     COMMONMODULE("COMMONMODULE"),
     DIGITALBOT("DIGITALBOT"),
     EMAILSEND("EMAILSEND"),

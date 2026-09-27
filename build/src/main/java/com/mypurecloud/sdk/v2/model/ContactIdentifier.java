@@ -56,7 +56,8 @@ public class ContactIdentifier  implements Serializable {
     EMAIL("Email"),
     PHONE("Phone"),
     COOKIE("Cookie"),
-    EXTERNALID("ExternalId");
+    EXTERNALID("ExternalId"),
+    SOCIALINSTAGRAMHANDLE("SocialInstagramHandle");
 
     private String value;
 

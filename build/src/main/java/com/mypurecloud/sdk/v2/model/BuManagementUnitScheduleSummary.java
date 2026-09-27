@@ -64,14 +64,14 @@ public class BuManagementUnitScheduleSummary  implements Serializable {
 
 
   /**
-   * The number of agents from this management unit that are in the schedule
+   * The number of agents from this management unit that are in the schedule. On update requests, this reflects the number of agents whose schedules were actually modified
    **/
   public BuManagementUnitScheduleSummary agentCount(Integer agentCount) {
     this.agentCount = agentCount;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The number of agents from this management unit that are in the schedule")
+  @ApiModelProperty(example = "null", value = "The number of agents from this management unit that are in the schedule. On update requests, this reflects the number of agents whose schedules were actually modified")
   @JsonProperty("agentCount")
   public Integer getAgentCount() {
     return agentCount;

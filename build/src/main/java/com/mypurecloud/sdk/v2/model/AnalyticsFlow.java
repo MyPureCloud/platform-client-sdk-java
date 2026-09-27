@@ -102,6 +102,7 @@ public class AnalyticsFlow  implements Serializable {
   public enum FlowTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("BOT"),
+    BUSINESSPROCESS("BUSINESSPROCESS"),
     COMMONMODULE("COMMONMODULE"),
     DIGITALBOT("DIGITALBOT"),
     EMAILSEND("EMAILSEND"),

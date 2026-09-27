@@ -3544,7 +3544,6 @@ public class AnalyticsApiAsync {
   /**
    * Get analytics data warehouse file download
    * 
-   * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3579,7 +3578,6 @@ public class AnalyticsApiAsync {
   /**
    * Get analytics data warehouse file download
    * 
-   * getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3621,7 +3619,6 @@ public class AnalyticsApiAsync {
   /**
    * Get metadata on files available for extraction
    * 
-   * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3656,7 +3653,6 @@ public class AnalyticsApiAsync {
   /**
    * Get metadata on files available for extraction
    * 
-   * getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7756,7 +7752,6 @@ public class AnalyticsApiAsync {
   /**
    * Get download URLs for analytics data warehouse files
    * 
-   * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -7791,7 +7786,6 @@ public class AnalyticsApiAsync {
   /**
    * Get download URLs for analytics data warehouse files
    * 
-   * postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

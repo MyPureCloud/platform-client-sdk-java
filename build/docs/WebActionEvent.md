@@ -7,7 +7,6 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **action** | [**EventAction**](EventAction) | The action that triggered the event. |  |
 | **actionMap** | [**ActionEventActionMap**](ActionEventActionMap) | The action map that triggered the action. |  |
-| **actionTarget** | [**AddressableEntityRef**](AddressableEntityRef) | Deprecated. The target for engagement actions. |  |
 | **timeToDisposition** | **Long** | Milliseconds elapsed until the action is disposed. |  [optional] |
 | **errorCode** | **String** | Code of the error returned when the action fails. |  [optional] |
 | **errorMessage** | **String** | Message of the error returned when the action fails. |  [optional] |
@@ -23,4 +22,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

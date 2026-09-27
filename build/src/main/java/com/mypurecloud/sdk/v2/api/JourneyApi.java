@@ -76,7 +76,6 @@ import com.mypurecloud.sdk.v2.model.OutcomePredictorRequest;
 import com.mypurecloud.sdk.v2.model.OutcomeRequest;
 import com.mypurecloud.sdk.v2.model.OutcomeScoresResult;
 import com.mypurecloud.sdk.v2.model.PatchActionMap;
-import com.mypurecloud.sdk.v2.model.PatchActionTarget;
 import com.mypurecloud.sdk.v2.model.PatchActionTemplate;
 import com.mypurecloud.sdk.v2.model.PatchOutcome;
 import com.mypurecloud.sdk.v2.model.PatchSegment;
@@ -156,7 +155,6 @@ import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsJobsMeRequest;
 import com.mypurecloud.sdk.v2.api.request.GetJourneyViewsSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActionmapRequest;
-import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontargetRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyActiontemplateRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyExternaleventsConfigurationRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchJourneyOutcomeRequest;
@@ -5316,92 +5314,6 @@ public class JourneyApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActionMap> response = (ApiResponse<ActionMap>)(ApiResponse<?>)(new ApiException(exception));
-      return response;
-    }
-  }
-
-  /**
-   * Deprecated. Update a single action target.
-   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
-   * @param actionTargetId ID of the action target. (required)
-   * @param body  (optional)
-   * @return ActionTarget
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ActionTarget patchJourneyActiontarget(String actionTargetId, PatchActionTarget body) throws IOException, ApiException {
-    return  patchJourneyActiontarget(createPatchJourneyActiontargetRequest(actionTargetId, body));
-  }
-
-  /**
-   * Deprecated. Update a single action target.
-   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
-   * @param actionTargetId ID of the action target. (required)
-   * @param body  (optional)
-   * @return ActionTarget
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<ActionTarget> patchJourneyActiontargetWithHttpInfo(String actionTargetId, PatchActionTarget body) throws IOException {
-    return patchJourneyActiontarget(createPatchJourneyActiontargetRequest(actionTargetId, body).withHttpInfo());
-  }
-
-  private PatchJourneyActiontargetRequest createPatchJourneyActiontargetRequest(String actionTargetId, PatchActionTarget body) {
-    return PatchJourneyActiontargetRequest.builder()
-            .withActionTargetId(actionTargetId)
-
-            .withBody(body)
-
-            .build();
-  }
-
-  /**
-   * Deprecated. Update a single action target.
-   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
-   * @param request The request object
-   * @return ActionTarget
-   * @throws ApiException if the request fails on the server
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ActionTarget patchJourneyActiontarget(PatchJourneyActiontargetRequest request) throws IOException, ApiException {
-    try {
-      ApiResponse<ActionTarget> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActionTarget>() {});
-      return response.getBody();
-    }
-    catch (ApiException | IOException exception) {
-      if (pcapiClient.getShouldThrowErrors()) throw exception;
-      return null;
-    }
-  }
-
-  /**
-   * Deprecated. Update a single action target.
-   * ACD Chat v2.0 in Genesys Predictive Engagement is deprecated and being removed. See https://community.genesys.com/discussion/deprecation-acd-chat-v20-support-in-genesys-predictive-engagement
-   * @param request The request object
-   * @return the response
-   * @throws IOException if the request fails to be processed
-   * @deprecated
-   */
-  public ApiResponse<ActionTarget> patchJourneyActiontarget(ApiRequest<PatchActionTarget> request) throws IOException {
-    try {
-      return pcapiClient.invoke(request, new TypeReference<ActionTarget>() {});
-    }
-    catch (ApiException exception) {
-      @SuppressWarnings("unchecked")
-      ApiResponse<ActionTarget> response = (ApiResponse<ActionTarget>)(ApiResponse<?>)exception;
-      return response;
-    }
-    catch (Throwable exception) {
-      if (pcapiClient.getShouldThrowErrors()) {
-        if (exception instanceof IOException) {
-          throw (IOException)exception;
-        }
-        throw new RuntimeException(exception);
-      }
-      @SuppressWarnings("unchecked")
-      ApiResponse<ActionTarget> response = (ApiResponse<ActionTarget>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

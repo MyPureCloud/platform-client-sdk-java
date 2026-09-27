@@ -20,6 +20,8 @@ import com.mypurecloud.sdk.v2.model.CaseAssociationQuery;
 import com.mypurecloud.sdk.v2.model.CaseAssociationQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.CaseCreate;
 import com.mypurecloud.sdk.v2.model.CaseDateDueUpdate;
+import com.mypurecloud.sdk.v2.model.CaseDescriptionUpdate;
+import com.mypurecloud.sdk.v2.model.CaseExternalIdUpdate;
 import com.mypurecloud.sdk.v2.model.CaseListing;
 import com.mypurecloud.sdk.v2.model.CaseOwnerUpdate;
 import com.mypurecloud.sdk.v2.model.CasePriorityUpdate;
@@ -88,6 +90,8 @@ import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCasesQueryJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCasesQueryJobResultsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetCasemanagementCasesReferenceRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseDatedueRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseDescriptionRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseExternalidRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseOwnerRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCasePriorityRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchCasemanagementCaseSummaryRequest;
@@ -2272,6 +2276,160 @@ public class CaseManagementApiAsync {
    * @return the future indication when the request has completed
    */
   public Future<ApiResponse<ModelCase>> patchCasemanagementCaseDatedueAsync(ApiRequest<CaseDateDueUpdate> request, final AsyncApiCallback<ApiResponse<ModelCase>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ModelCase>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ModelCase>() {}, new AsyncApiCallback<ApiResponse<ModelCase>>() {
+        @Override
+        public void onCompleted(ApiResponse<ModelCase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ModelCase> response = (ApiResponse<ModelCase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ModelCase> response = (ApiResponse<ModelCase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the description of a Case.
+   * 
+   * patchCasemanagementCaseDescription is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ModelCase> patchCasemanagementCaseDescriptionAsync(PatchCasemanagementCaseDescriptionRequest request, final AsyncApiCallback<ModelCase> callback) {
+    try {
+      final SettableFuture<ModelCase> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ModelCase>() {}, new AsyncApiCallback<ApiResponse<ModelCase>>() {
+        @Override
+        public void onCompleted(ApiResponse<ModelCase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the description of a Case.
+   * 
+   * patchCasemanagementCaseDescription is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ModelCase>> patchCasemanagementCaseDescriptionAsync(ApiRequest<CaseDescriptionUpdate> request, final AsyncApiCallback<ApiResponse<ModelCase>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ModelCase>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ModelCase>() {}, new AsyncApiCallback<ApiResponse<ModelCase>>() {
+        @Override
+        public void onCompleted(ApiResponse<ModelCase> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ModelCase> response = (ApiResponse<ModelCase>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ModelCase> response = (ApiResponse<ModelCase>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the external identifier of a Case.
+   * 
+   * patchCasemanagementCaseExternalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ModelCase> patchCasemanagementCaseExternalidAsync(PatchCasemanagementCaseExternalidRequest request, final AsyncApiCallback<ModelCase> callback) {
+    try {
+      final SettableFuture<ModelCase> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ModelCase>() {}, new AsyncApiCallback<ApiResponse<ModelCase>>() {
+        @Override
+        public void onCompleted(ApiResponse<ModelCase> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update the external identifier of a Case.
+   * 
+   * patchCasemanagementCaseExternalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ModelCase>> patchCasemanagementCaseExternalidAsync(ApiRequest<CaseExternalIdUpdate> request, final AsyncApiCallback<ApiResponse<ModelCase>> callback) {
     try {
       final SettableFuture<ApiResponse<ModelCase>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();

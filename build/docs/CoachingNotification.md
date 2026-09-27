@@ -27,6 +27,9 @@
 | UPDATE | &quot;Update&quot; | 
 | DELETE | &quot;Delete&quot; | 
 | STATUSCHANGE | &quot;StatusChange&quot; | 
+| ANNOTATIONADDED | &quot;AnnotationAdded&quot; | 
+| ANNOTATIONEDITED | &quot;AnnotationEdited&quot; | 
+| ANNOTATIONDELETED | &quot;AnnotationDeleted&quot; | 
 
 
 ## Enum: RelationshipEnum
@@ -52,4 +55,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

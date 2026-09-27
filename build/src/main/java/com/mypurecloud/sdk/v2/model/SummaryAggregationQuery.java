@@ -69,7 +69,8 @@ public class SummaryAggregationQuery  implements Serializable {
     USERID("userId"),
     WRAPUPCODERATING("wrapUpCodeRating"),
     WRAPUPCODESUGGESTIONSELECTED("wrapUpCodeSuggestionSelected"),
-    WRAPUPCODESGENERATED("wrapupCodesGenerated");
+    WRAPUPCODESGENERATED("wrapupCodesGenerated"),
+    WRAPUPCODESSUPPORTED("wrapupCodesSupported");
 
     private String value;
 

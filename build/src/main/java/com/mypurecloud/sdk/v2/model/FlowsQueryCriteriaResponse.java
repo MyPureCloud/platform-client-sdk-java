@@ -47,6 +47,7 @@ public class FlowsQueryCriteriaResponse  implements Serializable {
   public enum FlowTypesEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     BOT("bot"),
+    BUSINESSPROCESS("businessprocess"),
     COMMONMODULE("commonmodule"),
     DIGITALBOT("digitalbot"),
     EMAILSEND("emailsend"),

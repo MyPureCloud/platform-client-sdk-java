@@ -3538,7 +3538,7 @@ try {
 # **getRoutingPredictorsKeyperformanceindicators**
 
 
-> [List&lt;KeyPerformanceIndicator&gt;](KeyPerformanceIndicator) getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand)
+> [KeyPerformanceIndicatorEntityListing](KeyPerformanceIndicatorEntityListing) getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand)
 
 Get a list of Key Performance Indicators
 
@@ -3573,7 +3573,7 @@ RoutingApi apiInstance = new RoutingApi();
 String kpiGroup = "kpiGroup_example"; // String | The Group of Key Performance Indicators to return
 List<String> expand = Arrays.asList(null); // List<String> | Parameter to request additional data to return in KPI payload
 try {
-    List<KeyPerformanceIndicator> result = apiInstance.getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand);
+    KeyPerformanceIndicatorEntityListing result = apiInstance.getRoutingPredictorsKeyperformanceindicators(kpiGroup, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingPredictorsKeyperformanceindicators");
@@ -3593,7 +3593,7 @@ try {
 
 ### Return type
 
-[**List&lt;KeyPerformanceIndicator&gt;**](KeyPerformanceIndicator)
+[**KeyPerformanceIndicatorEntityListing**](KeyPerformanceIndicatorEntityListing)
 
 
 # **getRoutingPredictorsKeyperformanceindicatortypes**
@@ -8095,6 +8095,8 @@ try {
 
 Create a benefit assessment job.
 
+Queues with Benefit Assessment results less than 7 days old are skipped. If every queue in the requested divisions has recent results, the request is rejected.
+
 Wraps POST /api/v2/routing/assessments/jobs  
 
 Requires ANY permissions: 
@@ -10931,4 +10933,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

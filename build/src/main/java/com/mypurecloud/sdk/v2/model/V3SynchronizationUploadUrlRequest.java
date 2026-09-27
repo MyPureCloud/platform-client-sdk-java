@@ -41,14 +41,14 @@ public class V3SynchronizationUploadUrlRequest  implements Serializable {
 
   
   /**
-   * Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
+   * Path and name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
    **/
   public V3SynchronizationUploadUrlRequest fileName(String fileName) {
     this.fileName = fileName;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|")
+  @ApiModelProperty(example = "null", required = true, value = "Path and name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|")
   @JsonProperty("fileName")
   public String getFileName() {
     return fileName;

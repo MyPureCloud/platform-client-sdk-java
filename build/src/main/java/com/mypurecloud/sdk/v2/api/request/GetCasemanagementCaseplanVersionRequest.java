@@ -27,6 +27,8 @@ import com.mypurecloud.sdk.v2.model.CaseAssociationQuery;
 import com.mypurecloud.sdk.v2.model.CaseAssociationQueryEntityListing;
 import com.mypurecloud.sdk.v2.model.CaseCreate;
 import com.mypurecloud.sdk.v2.model.CaseDateDueUpdate;
+import com.mypurecloud.sdk.v2.model.CaseDescriptionUpdate;
+import com.mypurecloud.sdk.v2.model.CaseExternalIdUpdate;
 import com.mypurecloud.sdk.v2.model.CaseListing;
 import com.mypurecloud.sdk.v2.model.CaseOwnerUpdate;
 import com.mypurecloud.sdk.v2.model.CasePriorityUpdate;

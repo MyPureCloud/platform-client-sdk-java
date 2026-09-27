@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AppleInvitation;
 import com.mypurecloud.sdk.v2.model.DomainEntityRef;
 import com.mypurecloud.sdk.v2.model.FooterTemplate;
+import com.mypurecloud.sdk.v2.model.Form;
 import com.mypurecloud.sdk.v2.model.JsonSchemaDocument;
 import com.mypurecloud.sdk.v2.model.MessagingTemplate;
 import com.mypurecloud.sdk.v2.model.ResponseSubstitution;
@@ -149,6 +150,7 @@ public class Response  implements Serializable {
   private MessagingTemplate messagingTemplate = null;
   private List<RmsAssetAddressableRef> assets = null;
   private FooterTemplate footer = null;
+  private Form form = null;
   private AppleInvitation appleInvitation = null;
   private String selfUri = null;
 
@@ -390,6 +392,24 @@ public class Response  implements Serializable {
 
 
   /**
+   * Form template definition for responseType.Form.
+   **/
+  public Response form(Form form) {
+    this.form = form;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Form template definition for responseType.Form.")
+  @JsonProperty("form")
+  public Form getForm() {
+    return form;
+  }
+  public void setForm(Form form) {
+    this.form = form;
+  }
+
+
+  /**
    * Apple Messages for Business invitation template definition for responseType.AppleInvitation.
    **/
   public Response appleInvitation(AppleInvitation appleInvitation) {
@@ -438,13 +458,14 @@ public class Response  implements Serializable {
             Objects.equals(this.messagingTemplate, response.messagingTemplate) &&
             Objects.equals(this.assets, response.assets) &&
             Objects.equals(this.footer, response.footer) &&
+            Objects.equals(this.form, response.form) &&
             Objects.equals(this.appleInvitation, response.appleInvitation) &&
             Objects.equals(this.selfUri, response.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, substitutionsSchema, responseType, messagingTemplate, assets, footer, appleInvitation, selfUri);
+    return Objects.hash(id, name, version, libraries, texts, createdBy, dateCreated, interactionType, substitutions, substitutionsSchema, responseType, messagingTemplate, assets, footer, form, appleInvitation, selfUri);
   }
 
   @Override
@@ -466,6 +487,7 @@ public class Response  implements Serializable {
     sb.append("    messagingTemplate: ").append(toIndentedString(messagingTemplate)).append("\n");
     sb.append("    assets: ").append(toIndentedString(assets)).append("\n");
     sb.append("    footer: ").append(toIndentedString(footer)).append("\n");
+    sb.append("    form: ").append(toIndentedString(form)).append("\n");
     sb.append("    appleInvitation: ").append(toIndentedString(appleInvitation)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
