@@ -19,6 +19,7 @@
 | **messagingTemplate** | [**MessagingTemplate**](MessagingTemplate) | An optional messaging template definition for responseType.MessagingTemplate. |  [optional] |
 | **assets** | [**List&lt;RmsAssetAddressableRef&gt;**](RmsAssetAddressableRef) | Assets used in the response |  [optional] |
 | **footer** | [**FooterTemplate**](FooterTemplate) | Footer template definition for responseType.Footer. |  [optional] |
+| **form** | [**Form**](Form) | Form template definition for responseType.Form. |  [optional] |
 | **appleInvitation** | [**AppleInvitation**](AppleInvitation) | Apple Messages for Business invitation template definition for responseType.AppleInvitation. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
@@ -48,4 +49,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

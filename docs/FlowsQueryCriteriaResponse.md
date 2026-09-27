@@ -18,6 +18,7 @@
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | BOT | &quot;bot&quot; |
+| BUSINESSPROCESS | &quot;businessprocess&quot; |
 | COMMONMODULE | &quot;commonmodule&quot; |
 | DIGITALBOT | &quot;digitalbot&quot; |
 | EMAILSEND | &quot;emailsend&quot; |
@@ -182,4 +183,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

@@ -47,6 +47,7 @@
 | WRAPUPCODERATING | &quot;wrapUpCodeRating&quot; | 
 | WRAPUPCODESUGGESTIONSELECTED | &quot;wrapUpCodeSuggestionSelected&quot; | 
 | WRAPUPCODESGENERATED | &quot;wrapupCodesGenerated&quot; | 
+| WRAPUPCODESSUPPORTED | &quot;wrapupCodesSupported&quot; | 
 
 
 ## Enum: OperatorEnum
@@ -61,4 +62,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

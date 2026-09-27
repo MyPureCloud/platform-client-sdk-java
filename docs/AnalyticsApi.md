@@ -2750,8 +2750,6 @@ try {
 
 Get analytics data warehouse file download
 
-getAnalyticsDataextractionDownload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/dataextraction/downloads/{downloadId}  
 
 Requires ANY permissions: 
@@ -2809,8 +2807,6 @@ null (empty response body)
 > [DataExtractionFileSchemaListing](DataExtractionFileSchemaListing) getAnalyticsDataextractionDownloadsMetadata(before, after, pageSize, dataSchema, dateStart, dateEnd)
 
 Get metadata on files available for extraction
-
-getAnalyticsDataextractionDownloadsMetadata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/dataextraction/downloads/metadata  
 
@@ -6134,8 +6130,6 @@ try {
 
 Get download URLs for analytics data warehouse files
 
-postAnalyticsDataextractionDownloadsBulk is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/dataextraction/downloads/bulk  
 
 Requires ANY permissions: 
@@ -8453,4 +8447,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

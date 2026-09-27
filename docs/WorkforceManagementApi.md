@@ -4,8 +4,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 | Method | Description |
 | ------------- | ------------- |
+| [**deleteWorkforcemanagementAdherenceAdjustment**](WorkforceManagementApi#deleteWorkforcemanagementAdherenceAdjustment) | Delete an adherence adjustment for the current user |
 | [**deleteWorkforcemanagementBusinessunit**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunit) | Delete business unit |
 | [**deleteWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitActivitycode) | Deletes an activity code |
+| [**deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode) | Delete an adherence adjustment reason code for a business unit |
+| [**deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk) | Delete adherence adjustment reason codes in bulk for a business unit |
 | [**deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitCapacityplanStaffinggroupallocationshistory) | Delete staffing group allocations history created for a capacity plan before the given date |
 | [**deleteWorkforcemanagementBusinessunitPlanninggroup**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitPlanninggroup) | Deletes the planning group |
 | [**deleteWorkforcemanagementBusinessunitSchedulebid**](WorkforceManagementApi#deleteWorkforcemanagementBusinessunitSchedulebid) | Delete a schedule bid |
@@ -26,10 +29,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**deleteWorkforcemanagementManagementunitWorkplan**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitWorkplan) | Delete a work plan |
 | [**deleteWorkforcemanagementManagementunitWorkplanrotation**](WorkforceManagementApi#deleteWorkforcemanagementManagementunitWorkplanrotation) | Delete a work plan rotation |
 | [**getWorkforcemanagementAdherence**](WorkforceManagementApi#getWorkforcemanagementAdherence) | Get a list of UserScheduleAdherence records for the requested users |
+| [**getWorkforcemanagementAdherenceAdjustment**](WorkforceManagementApi#getWorkforcemanagementAdherenceAdjustment) | Get an adherence adjustment for the current user |
 | [**getWorkforcemanagementAdherenceExplanation**](WorkforceManagementApi#getWorkforcemanagementAdherenceExplanation) | Get an adherence explanation for the current user |
 | [**getWorkforcemanagementAdherenceExplanationsJob**](WorkforceManagementApi#getWorkforcemanagementAdherenceExplanationsJob) | Query the status of an adherence explanation operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAdherenceHistoricalBulkJob**](WorkforceManagementApi#getWorkforcemanagementAdherenceHistoricalBulkJob) | Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementAdherenceHistoricalJob**](WorkforceManagementApi#getWorkforcemanagementAdherenceHistoricalJob) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementAgentAdherenceAdjustment**](WorkforceManagementApi#getWorkforcemanagementAgentAdherenceAdjustment) | Get an adherence adjustment for the requested agent |
 | [**getWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi#getWorkforcemanagementAgentAdherenceExplanation) | Get an adherence explanation |
 | [**getWorkforcemanagementAgentManagementunit**](WorkforceManagementApi#getWorkforcemanagementAgentManagementunit) | Get the management unit to which the agent belongs |
 | [**getWorkforcemanagementAgentsMeAdherenceHistoricalJob**](WorkforceManagementApi#getWorkforcemanagementAgentsMeAdherenceHistoricalJob) | Request to fetch the status of the agent adherence job. Only the user who started the operation can query the status |
@@ -45,9 +50,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivitycode) | Get an activity code |
 | [**getWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivitycodes) | Get activity codes |
 | [**getWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplan) | Get an activity plan |
+| [**getWorkforcemanagementBusinessunitActivityplanDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanDeletionsJob) | Gets an activity plan deletion job |
+| [**getWorkforcemanagementBusinessunitActivityplanJobs**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanJobs) | Gets the latest job for an activity plan in the business unit |
+| [**getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob) | Gets a session users deletion job |
+| [**getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob) | Gets an activity plan sessions deletion job |
+| [**getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob) | Gets an occurrences deletion job |
 | [**getWorkforcemanagementBusinessunitActivityplanRunsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanRunsJob) | Gets an activity plan run job |
 | [**getWorkforcemanagementBusinessunitActivityplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplans) | Get activity plans |
 | [**getWorkforcemanagementBusinessunitActivityplansJobs**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplansJobs) | Gets the latest job for all activity plans in the business unit |
+| [**getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk) | Get adherence adjustments in bulk by ID for a business unit |
+| [**getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob) | Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs) | Get query job history for the logged in user. |
+| [**getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode) | Get an adherence adjustment reason code for a business unit |
+| [**getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes) | Get adherence adjustment reason codes for a business unit |
+| [**getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk) | Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes. |
+| [**getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings) | Get adherence adjustments settings for a business unit |
 | [**getWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsSettings) | Get alternative shifts settings for a business unit |
 | [**getWorkforcemanagementBusinessunitAlternativeshiftsTrade**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTrade) | Get an alternative shifts trade in a business unit for a given trade ID |
 | [**getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitAlternativeshiftsTradesSearchJob) | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status |
@@ -174,13 +191,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementWorkplanbidPreferences**](WorkforceManagementApi#getWorkforcemanagementWorkplanbidPreferences) | Gets an agent's work plan bidding preference |
 | [**getWorkforcemanagementWorkplanbidWorkplans**](WorkforceManagementApi#getWorkforcemanagementWorkplanbidWorkplans) | Gets an agent's work plans for a bid |
 | [**getWorkforcemanagementWorkplanbids**](WorkforceManagementApi#getWorkforcemanagementWorkplanbids) | Gets the list of work plan bids that belong to an agent |
+| [**patchWorkforcemanagementAdherenceAdjustment**](WorkforceManagementApi#patchWorkforcemanagementAdherenceAdjustment) | Update an adherence adjustment for the current user |
+| [**patchWorkforcemanagementAgentAdherenceAdjustment**](WorkforceManagementApi#patchWorkforcemanagementAgentAdherenceAdjustment) | Update an adherence adjustment for the requested agent |
 | [**patchWorkforcemanagementAgentAdherenceExplanation**](WorkforceManagementApi#patchWorkforcemanagementAgentAdherenceExplanation) | Update an adherence explanation |
+| [**patchWorkforcemanagementAgentUnavailabletimes**](WorkforceManagementApi#patchWorkforcemanagementAgentUnavailabletimes) | Update unavailable times for the requested agent |
 | [**patchWorkforcemanagementAlternativeshiftsTrade**](WorkforceManagementApi#patchWorkforcemanagementAlternativeshiftsTrade) | Update my alternative shifts trade by trade ID |
 | [**patchWorkforcemanagementAlternativeshiftsTradesStateJobs**](WorkforceManagementApi#patchWorkforcemanagementAlternativeshiftsTradesStateJobs) | Bulk update alternative shift trade states |
 | [**patchWorkforcemanagementBusinessunit**](WorkforceManagementApi#patchWorkforcemanagementBusinessunit) | Update business unit |
 | [**patchWorkforcemanagementBusinessunitActivitycode**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivitycode) | Update an activity code |
 | [**patchWorkforcemanagementBusinessunitActivitycodesBulk**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivitycodesBulk) | Update multiple activity codes |
 | [**patchWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitActivityplan) | Update an activity plan |
+| [**patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk) | Update adherence adjustments in bulk for a business unit |
+| [**patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode) | Update an adherence adjustment reason code for a business unit |
+| [**patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk) | Update adherence adjustment reason codes in bulk for a business unit |
+| [**patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings) | Update adherence adjustments settings for a business unit |
 | [**patchWorkforcemanagementBusinessunitAlternativeshiftsSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitAlternativeshiftsSettings) | Update alternative shifts settings for a business unit |
 | [**patchWorkforcemanagementBusinessunitCapacityplan**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitCapacityplan) | Update a capacity plan configuration |
 | [**patchWorkforcemanagementBusinessunitMinimumstaffingSettings**](WorkforceManagementApi#patchWorkforcemanagementBusinessunitMinimumstaffingSettings) | Update minimum staffing settings for a business unit |
@@ -215,9 +239,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementUserWorkplanbidranks**](WorkforceManagementApi#patchWorkforcemanagementUserWorkplanbidranks) | Update work plan bid ranks for a user |
 | [**patchWorkforcemanagementUsersWorkplanbidranksBulk**](WorkforceManagementApi#patchWorkforcemanagementUsersWorkplanbidranksBulk) | Update bulk work plan bid ranks on users. Max 50 users can be updated at a time. |
 | [**patchWorkforcemanagementWorkplanbidPreferences**](WorkforceManagementApi#patchWorkforcemanagementWorkplanbidPreferences) | Update an agent's work plan bidding preference |
+| [**postWorkforcemanagementAdherenceAdjustments**](WorkforceManagementApi#postWorkforcemanagementAdherenceAdjustments) | Submit an adherence adjustment for the current user |
+| [**postWorkforcemanagementAdherenceAdjustmentsQuery**](WorkforceManagementApi#postWorkforcemanagementAdherenceAdjustmentsQuery) | Query adherence adjustments for the current user |
 | [**postWorkforcemanagementAdherenceExplanations**](WorkforceManagementApi#postWorkforcemanagementAdherenceExplanations) | Submit an adherence explanation for the current user |
 | [**postWorkforcemanagementAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementAdherenceExplanationsQuery) | Query adherence explanations for the current user |
 | [**postWorkforcemanagementAdherenceHistoricalBulk**](WorkforceManagementApi#postWorkforcemanagementAdherenceHistoricalBulk) | Request a historical adherence report in bulk |
+| [**postWorkforcemanagementAgentAdherenceAdjustmentsQuery**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceAdjustmentsQuery) | Query adherence adjustments for the requested agent |
 | [**postWorkforcemanagementAgentAdherenceExplanations**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanations) | Add an adherence explanation for the requested user |
 | [**postWorkforcemanagementAgentAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementAgentAdherenceExplanationsQuery) | Query adherence explanations for the given agent across a specified range |
 | [**postWorkforcemanagementAgentSchedulingpreferencesQuery**](WorkforceManagementApi#postWorkforcemanagementAgentSchedulingpreferencesQuery) | Get agent scheduling preferences |
@@ -235,8 +262,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementAlternativeshiftsOffersSearchJobs**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsOffersSearchJobs) | Request a search of alternative shift offers for a given shift |
 | [**postWorkforcemanagementAlternativeshiftsTrades**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsTrades) | Create my alternative shift trade using an existing offer's jobId |
 | [**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivitycodes) | Create a new activity code |
+| [**postWorkforcemanagementBusinessunitActivityplanDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanDeletionsJobs) | Delete an activity plan |
+| [**postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs) | Triggers a job to delete users from a session in the activity plan occurrence |
+| [**postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs) | Triggers a job to delete sessions for the activity plan occurrence |
+| [**postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs) | Delete occurrences for the activity plan |
 | [**postWorkforcemanagementBusinessunitActivityplanRunsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanRunsJobs) | Run an activity plan manually |
 | [**postWorkforcemanagementBusinessunitActivityplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplans) | Create an activity plan |
+| [**postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery) | Query adherence adjustments for a business unit. Results will be returned using cursor pagination |
+| [**postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs) | Creates an async query job for adherence adjustments in a business unit. |
+| [**postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes) | Create an adherence adjustment reason code for a business unit |
+| [**postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk) | Create adherence adjustment reason codes in bulk for a business unit |
 | [**postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceExplanationsQuery) | Query adherence explanations across an entire business unit for the requested period |
 | [**postWorkforcemanagementBusinessunitAgentschedulesSearch**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAgentschedulesSearch) | Search published schedules |
 | [**postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch**](WorkforceManagementApi#postWorkforcemanagementBusinessunitAlternativeshiftsTradesSearch) | List alternative shifts trades for a given management unit or agent |
@@ -358,6 +393,64 @@ All URIs are relative to *https://api.mypurecloud.com*
 {: class="table-striped"}
 
 
+# **deleteWorkforcemanagementAdherenceAdjustment**
+
+
+> Void deleteWorkforcemanagementAdherenceAdjustment(adjustmentId)
+
+Delete an adherence adjustment for the current user
+
+Wraps DELETE /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}  
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceAdjustments:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String adjustmentId = "adjustmentId_example"; // String | The ID of the adherence adjustment to delete
+try {
+    apiInstance.deleteWorkforcemanagementAdherenceAdjustment(adjustmentId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementAdherenceAdjustment");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **adjustmentId** | **String**| The ID of the adherence adjustment to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **deleteWorkforcemanagementBusinessunit**
 
 
@@ -470,6 +563,126 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
 | **activityCodeId** | **String**| The ID of the activity code to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode**
+
+
+> Void deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId)
+
+Delete an adherence adjustment reason code for a business unit
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String reasonCodeId = "reasonCodeId_example"; // String | The ID of the reason code to delete
+try {
+    apiInstance.deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **reasonCodeId** | **String**| The ID of the reason code to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
+# **deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**
+
+
+> Void deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, ids)
+
+Delete adherence adjustment reason codes in bulk for a business unit
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:delete
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+List<String> ids = Arrays.asList(null); // List<String> | The IDs of the reason codes to delete
+try {
+    apiInstance.deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, ids);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#deleteWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **ids** | [**List&lt;String&gt;**](String)| The IDs of the reason codes to delete | 
 {: class="table-striped"}
 
 
@@ -1688,6 +1901,65 @@ try {
 [**List&lt;UserScheduleAdherence&gt;**](UserScheduleAdherence)
 
 
+# **getWorkforcemanagementAdherenceAdjustment**
+
+
+> [CurrentAgentAdherenceAdjustment](CurrentAgentAdherenceAdjustment) getWorkforcemanagementAdherenceAdjustment(adjustmentId)
+
+Get an adherence adjustment for the current user
+
+Wraps GET /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}  
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceAdjustments:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String adjustmentId = "adjustmentId_example"; // String | The ID of the adherence adjustment
+try {
+    CurrentAgentAdherenceAdjustment result = apiInstance.getWorkforcemanagementAdherenceAdjustment(adjustmentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAdherenceAdjustment");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **adjustmentId** | **String**| The ID of the adherence adjustment | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CurrentAgentAdherenceAdjustment**](CurrentAgentAdherenceAdjustment)
+
+
 # **getWorkforcemanagementAdherenceExplanation**
 
 
@@ -1926,6 +2198,67 @@ try {
 ### Return type
 
 [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse)
+
+
+# **getWorkforcemanagementAgentAdherenceAdjustment**
+
+
+> [AdherenceAdjustment](AdherenceAdjustment) getWorkforcemanagementAgentAdherenceAdjustment(agentId, adjustmentId)
+
+Get an adherence adjustment for the requested agent
+
+Wraps GET /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId}  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String agentId = "agentId_example"; // String | The ID of the agent
+String adjustmentId = "adjustmentId_example"; // String | The ID of the adherence adjustment
+try {
+    AdherenceAdjustment result = apiInstance.getWorkforcemanagementAgentAdherenceAdjustment(agentId, adjustmentId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementAgentAdherenceAdjustment");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The ID of the agent | 
+| **adjustmentId** | **String**| The ID of the adherence adjustment | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceAdjustment**](AdherenceAdjustment)
 
 
 # **getWorkforcemanagementAgentAdherenceExplanation**
@@ -3037,6 +3370,325 @@ try {
 [**ActivityPlanResponse**](ActivityPlanResponse)
 
 
+# **getWorkforcemanagementBusinessunitActivityplanDeletionsJob**
+
+
+> [ActivityPlanJobResponse](ActivityPlanJobResponse) getWorkforcemanagementBusinessunitActivityplanDeletionsJob(businessUnitId, activityPlanId, jobId)
+
+Gets an activity plan deletion job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanDeletionJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan associated with the deletion job
+String jobId = "jobId_example"; // String | The ID of the activity plan deletion job
+try {
+    ActivityPlanJobResponse result = apiInstance.getWorkforcemanagementBusinessunitActivityplanDeletionsJob(businessUnitId, activityPlanId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanDeletionsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan associated with the deletion job | 
+| **jobId** | **String**| The ID of the activity plan deletion job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+# **getWorkforcemanagementBusinessunitActivityplanJobs**
+
+
+> [ActivityPlanJobResponse](ActivityPlanJobResponse) getWorkforcemanagementBusinessunitActivityplanJobs(businessUnitId, activityPlanId)
+
+Gets the latest job for an activity plan in the business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/jobs  
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan associated with the run job
+try {
+    ActivityPlanJobResponse result = apiInstance.getWorkforcemanagementBusinessunitActivityplanJobs(businessUnitId, activityPlanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan associated with the run job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+# **getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob**
+
+
+> [ActivityPlanJobResponse](ActivityPlanJobResponse) getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(businessUnitId, activityPlanId, occurrenceId, sessionId, jobId)
+
+Gets a session users deletion job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceSessionUserDeletionJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+String occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+String sessionId = "sessionId_example"; // String | The ID of the activity plan occurrence session
+String jobId = "jobId_example"; // String | The ID of the activity plan occurrence session users deletion job
+try {
+    ActivityPlanJobResponse result = apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob(businessUnitId, activityPlanId, occurrenceId, sessionId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan | 
+| **occurrenceId** | **String**| The ID of the activity plan occurrence | 
+| **sessionId** | **String**| The ID of the activity plan occurrence session | 
+| **jobId** | **String**| The ID of the activity plan occurrence session users deletion job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+# **getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob**
+
+
+> [ActivityPlanJobResponse](ActivityPlanJobResponse) getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob(businessUnitId, activityPlanId, occurrenceId, jobId)
+
+Gets an activity plan sessions deletion job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceSessionDeletionJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+String occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+String jobId = "jobId_example"; // String | The ID of the activity plan sessions deletion job
+try {
+    ActivityPlanJobResponse result = apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob(businessUnitId, activityPlanId, occurrenceId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan | 
+| **occurrenceId** | **String**| The ID of the activity plan occurrence | 
+| **jobId** | **String**| The ID of the activity plan sessions deletion job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+# **getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob**
+
+
+> [ActivityPlanJobResponse](ActivityPlanJobResponse) getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob(businessUnitId, activityPlanId, jobId)
+
+Gets an occurrences deletion job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceDeletionJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+String jobId = "jobId_example"; // String | The ID of the activity plan occurrences deletion job
+try {
+    ActivityPlanJobResponse result = apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob(businessUnitId, activityPlanId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan | 
+| **jobId** | **String**| The ID of the activity plan occurrences deletion job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
 # **getWorkforcemanagementBusinessunitActivityplanRunsJob**
 
 
@@ -3218,6 +3870,429 @@ try {
 ### Return type
 
 [**ActivityPlanJobListing**](ActivityPlanJobListing)
+
+
+# **getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk**
+
+
+> [AdherenceAdjustmentsListing](AdherenceAdjustmentsListing) getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId, adjustmentIds)
+
+Get adherence adjustments in bulk by ID for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+List<String> adjustmentIds = Arrays.asList(null); // List<String> | The IDs of the adherence adjustments to fetch
+try {
+    AdherenceAdjustmentsListing result = apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId, adjustmentIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **adjustmentIds** | [**List&lt;String&gt;**](String)| The IDs of the adherence adjustments to fetch | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceAdjustmentsListing**](AdherenceAdjustmentsListing)
+
+
+# **getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob**
+
+
+> [BuAdherenceAdjustmentsQueryJob](BuAdherenceAdjustmentsQueryJob) getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob(businessUnitId, jobId)
+
+Query the status of an async adherence adjustments query job. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String jobId = "jobId_example"; // String | The ID of the query job
+try {
+    BuAdherenceAdjustmentsQueryJob result = apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob(businessUnitId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **jobId** | **String**| The ID of the query job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuAdherenceAdjustmentsQueryJob**](BuAdherenceAdjustmentsQueryJob)
+
+
+# **getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs**
+
+
+> [BuAdherenceAdjustmentsQueryJobsReferenceListing](BuAdherenceAdjustmentsQueryJobsReferenceListing) getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId)
+
+Get query job history for the logged in user.
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+try {
+    BuAdherenceAdjustmentsQueryJobsReferenceListing result = apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuAdherenceAdjustmentsQueryJobsReferenceListing**](BuAdherenceAdjustmentsQueryJobsReferenceListing)
+
+
+# **getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode**
+
+
+> [AdherenceAdjustmentsReasonCode](AdherenceAdjustmentsReasonCode) getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId)
+
+Get an adherence adjustment reason code for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String reasonCodeId = "reasonCodeId_example"; // String | The ID of the reason code to fetch
+try {
+    AdherenceAdjustmentsReasonCode result = apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **reasonCodeId** | **String**| The ID of the reason code to fetch | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCode**](AdherenceAdjustmentsReasonCode)
+
+
+# **getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes**
+
+
+> [AdherenceAdjustmentsReasonCodesListing](AdherenceAdjustmentsReasonCodesListing) getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId)
+
+Get adherence adjustment reason codes for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+try {
+    AdherenceAdjustmentsReasonCodesListing result = apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing)
+
+
+# **getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**
+
+
+> [AdherenceAdjustmentsReasonCodesListing](AdherenceAdjustmentsReasonCodesListing) getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, ids)
+
+Get adherence adjustment reason codes in bulk by ID for a business unit. This API can return deleted reason codes.
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+List<String> ids = Arrays.asList(null); // List<String> | The IDs of the reason codes to fetch
+try {
+    AdherenceAdjustmentsReasonCodesListing result = apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, ids);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **ids** | [**List&lt;String&gt;**](String)| The IDs of the reason codes to fetch | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing)
+
+
+# **getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings**
+
+
+> [BuAdherenceAdjustmentsSettings](BuAdherenceAdjustmentsSettings) getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId)
+
+Get adherence adjustments settings for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsSettings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+try {
+    BuAdherenceAdjustmentsSettings result = apiInstance.getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuAdherenceAdjustmentsSettings**](BuAdherenceAdjustmentsSettings)
 
 
 # **getWorkforcemanagementBusinessunitAlternativeshiftsSettings**
@@ -11134,6 +12209,130 @@ This endpoint does not require any parameters.
 [**AgentWorkPlanBids**](AgentWorkPlanBids)
 
 
+# **patchWorkforcemanagementAdherenceAdjustment**
+
+
+> [CurrentAgentAdherenceAdjustment](CurrentAgentAdherenceAdjustment) patchWorkforcemanagementAdherenceAdjustment(adjustmentId, body)
+
+Update an adherence adjustment for the current user
+
+Wraps PATCH /api/v2/workforcemanagement/adherence/adjustments/{adjustmentId}  
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceAdjustments:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String adjustmentId = "adjustmentId_example"; // String | The ID of the adherence adjustment to update
+UpdateAdherenceAdjustmentAgentRequest body = new UpdateAdherenceAdjustmentAgentRequest(); // UpdateAdherenceAdjustmentAgentRequest | body
+try {
+    CurrentAgentAdherenceAdjustment result = apiInstance.patchWorkforcemanagementAdherenceAdjustment(adjustmentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementAdherenceAdjustment");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **adjustmentId** | **String**| The ID of the adherence adjustment to update | 
+| **body** | [**UpdateAdherenceAdjustmentAgentRequest**](UpdateAdherenceAdjustmentAgentRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CurrentAgentAdherenceAdjustment**](CurrentAgentAdherenceAdjustment)
+
+
+# **patchWorkforcemanagementAgentAdherenceAdjustment**
+
+
+> [AdherenceAdjustment](AdherenceAdjustment) patchWorkforcemanagementAgentAdherenceAdjustment(agentId, adjustmentId, body)
+
+Update an adherence adjustment for the requested agent
+
+Wraps PATCH /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/{adjustmentId}  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String agentId = "agentId_example"; // String | The ID of the agent
+String adjustmentId = "adjustmentId_example"; // String | The ID of the adherence adjustment
+UpdateAdherenceAdjustmentAdminRequest body = new UpdateAdherenceAdjustmentAdminRequest(); // UpdateAdherenceAdjustmentAdminRequest | body
+try {
+    AdherenceAdjustment result = apiInstance.patchWorkforcemanagementAgentAdherenceAdjustment(agentId, adjustmentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementAgentAdherenceAdjustment");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The ID of the agent | 
+| **adjustmentId** | **String**| The ID of the adherence adjustment | 
+| **body** | [**UpdateAdherenceAdjustmentAdminRequest**](UpdateAdherenceAdjustmentAdminRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceAdjustment**](AdherenceAdjustment)
+
+
 # **patchWorkforcemanagementAgentAdherenceExplanation**
 
 
@@ -11195,6 +12394,69 @@ try {
 ### Return type
 
 [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse)
+
+
+# **patchWorkforcemanagementAgentUnavailabletimes**
+
+
+> [BulkUpdateAgentUnavailableTimesResponse](BulkUpdateAgentUnavailableTimesResponse) patchWorkforcemanagementAgentUnavailabletimes(agentId, body)
+
+Update unavailable times for the requested agent
+
+Large requests will be partitioned into multiple internal processing batches. Validation will occur against each internal batch independently rather than against the final combined state represented by the entire request
+
+Wraps PATCH /api/v2/workforcemanagement/agents/{agentId}/unavailabletimes  
+
+Requires ANY permissions: 
+
+* wfm:unavailableTimes:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String agentId = "agentId_example"; // String | The ID of the agent
+UpdateUnavailableTimesRequest body = new UpdateUnavailableTimesRequest(); // UpdateUnavailableTimesRequest | body
+try {
+    BulkUpdateAgentUnavailableTimesResponse result = apiInstance.patchWorkforcemanagementAgentUnavailabletimes(agentId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementAgentUnavailabletimes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The ID of the agent | 
+| **body** | [**UpdateUnavailableTimesRequest**](UpdateUnavailableTimesRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BulkUpdateAgentUnavailableTimesResponse**](BulkUpdateAgentUnavailableTimesResponse)
 
 
 # **patchWorkforcemanagementAlternativeshiftsTrade**
@@ -11567,6 +12829,252 @@ try {
 ### Return type
 
 [**ActivityPlanResponse**](ActivityPlanResponse)
+
+
+# **patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk**
+
+
+> [AdherenceAdjustmentsListing](AdherenceAdjustmentsListing) patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId, body)
+
+Update adherence adjustments in bulk for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/bulk  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+UpdateAdherenceAdjustmentsBulkRequest body = new UpdateAdherenceAdjustmentsBulkRequest(); // UpdateAdherenceAdjustmentsBulkRequest | body
+try {
+    AdherenceAdjustmentsListing result = apiInstance.patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**UpdateAdherenceAdjustmentsBulkRequest**](UpdateAdherenceAdjustmentsBulkRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceAdjustmentsListing**](AdherenceAdjustmentsListing)
+
+
+# **patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode**
+
+
+> [AdherenceAdjustmentsReasonCode](AdherenceAdjustmentsReasonCode) patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId, body)
+
+Update an adherence adjustment reason code for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/{reasonCodeId}  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String reasonCodeId = "reasonCodeId_example"; // String | The ID of the reason code to update
+UpdateAdherenceAdjustmentsReasonCodeRequest body = new UpdateAdherenceAdjustmentsReasonCodeRequest(); // UpdateAdherenceAdjustmentsReasonCodeRequest | body
+try {
+    AdherenceAdjustmentsReasonCode result = apiInstance.patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode(businessUnitId, reasonCodeId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncode");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **reasonCodeId** | **String**| The ID of the reason code to update | 
+| **body** | [**UpdateAdherenceAdjustmentsReasonCodeRequest**](UpdateAdherenceAdjustmentsReasonCodeRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCode**](AdherenceAdjustmentsReasonCode)
+
+
+# **patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**
+
+
+> [AdherenceAdjustmentsReasonCodesListing](AdherenceAdjustmentsReasonCodesListing) patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, body)
+
+Update adherence adjustment reason codes in bulk for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+UpdateAdherenceAdjustmentsReasonCodesBulkRequest body = new UpdateAdherenceAdjustmentsReasonCodesBulkRequest(); // UpdateAdherenceAdjustmentsReasonCodesBulkRequest | body
+try {
+    AdherenceAdjustmentsReasonCodesListing result = apiInstance.patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**UpdateAdherenceAdjustmentsReasonCodesBulkRequest**](UpdateAdherenceAdjustmentsReasonCodesBulkRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing)
+
+
+# **patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings**
+
+
+> [BuAdherenceAdjustmentsSettings](BuAdherenceAdjustmentsSettings) patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId, body)
+
+Update adherence adjustments settings for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/settings  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsSettings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+UpdateBuAdherenceAdjustmentsSettingsRequest body = new UpdateBuAdherenceAdjustmentsSettingsRequest(); // UpdateBuAdherenceAdjustmentsSettingsRequest | body
+try {
+    BuAdherenceAdjustmentsSettings result = apiInstance.patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementBusinessunitAdherenceAdjustmentsSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**UpdateBuAdherenceAdjustmentsSettingsRequest**](UpdateBuAdherenceAdjustmentsSettingsRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuAdherenceAdjustmentsSettings**](BuAdherenceAdjustmentsSettings)
 
 
 # **patchWorkforcemanagementBusinessunitAlternativeshiftsSettings**
@@ -13713,6 +15221,130 @@ try {
 [**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse)
 
 
+# **postWorkforcemanagementAdherenceAdjustments**
+
+
+> [CurrentAgentAdherenceAdjustment](CurrentAgentAdherenceAdjustment) postWorkforcemanagementAdherenceAdjustments(body)
+
+Submit an adherence adjustment for the current user
+
+Wraps POST /api/v2/workforcemanagement/adherence/adjustments  
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceAdjustments:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+AddAdherenceAdjustmentAgentRequest body = new AddAdherenceAdjustmentAgentRequest(); // AddAdherenceAdjustmentAgentRequest | body
+try {
+    CurrentAgentAdherenceAdjustment result = apiInstance.postWorkforcemanagementAdherenceAdjustments(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAdherenceAdjustments");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AddAdherenceAdjustmentAgentRequest**](AddAdherenceAdjustmentAgentRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CurrentAgentAdherenceAdjustment**](CurrentAgentAdherenceAdjustment)
+
+
+# **postWorkforcemanagementAdherenceAdjustmentsQuery**
+
+
+> [CurrentAgentCursorAdherenceAdjustmentsListing](CurrentAgentCursorAdherenceAdjustmentsListing) postWorkforcemanagementAdherenceAdjustmentsQuery(body, before, after, pageSize)
+
+Query adherence adjustments for the current user
+
+Wraps POST /api/v2/workforcemanagement/adherence/adjustments/query  
+
+Requires ANY permissions: 
+
+* wfm:agentAdherenceAdjustments:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+AgentQueryAdherenceAdjustmentsRequest body = new AgentQueryAdherenceAdjustmentsRequest(); // AgentQueryAdherenceAdjustmentsRequest | body
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "25"; // String | The page size for the listing. The maximum page size is 500.
+try {
+    CurrentAgentCursorAdherenceAdjustmentsListing result = apiInstance.postWorkforcemanagementAdherenceAdjustmentsQuery(body, before, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAdherenceAdjustmentsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**AgentQueryAdherenceAdjustmentsRequest**](AgentQueryAdherenceAdjustmentsRequest)| body | 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| The page size for the listing. The maximum page size is 500. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CurrentAgentCursorAdherenceAdjustmentsListing**](CurrentAgentCursorAdherenceAdjustmentsListing)
+
+
 # **postWorkforcemanagementAdherenceExplanations**
 
 
@@ -13892,6 +15524,73 @@ try {
 ### Return type
 
 [**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse)
+
+
+# **postWorkforcemanagementAgentAdherenceAdjustmentsQuery**
+
+
+> [CursorAdherenceAdjustmentsListing](CursorAdherenceAdjustmentsListing) postWorkforcemanagementAgentAdherenceAdjustmentsQuery(agentId, body, before, after, pageSize)
+
+Query adherence adjustments for the requested agent
+
+Wraps POST /api/v2/workforcemanagement/agents/{agentId}/adherence/adjustments/query  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String agentId = "agentId_example"; // String | The ID of the agent
+AgentQueryAdherenceAdjustmentsRequest body = new AgentQueryAdherenceAdjustmentsRequest(); // AgentQueryAdherenceAdjustmentsRequest | body
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "25"; // String | The page size for the listing. The maximum page size is 500.
+try {
+    CursorAdherenceAdjustmentsListing result = apiInstance.postWorkforcemanagementAgentAdherenceAdjustmentsQuery(agentId, body, before, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentAdherenceAdjustmentsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **agentId** | **String**| The ID of the agent | 
+| **body** | [**AgentQueryAdherenceAdjustmentsRequest**](AgentQueryAdherenceAdjustmentsRequest)| body | 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| The page size for the listing. The maximum page size is 500. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CursorAdherenceAdjustmentsListing**](CursorAdherenceAdjustmentsListing)
 
 
 # **postWorkforcemanagementAgentAdherenceExplanations**
@@ -14932,6 +16631,266 @@ try {
 [**BusinessUnitActivityCode**](BusinessUnitActivityCode)
 
 
+# **postWorkforcemanagementBusinessunitActivityplanDeletionsJobs**
+
+
+> [ActivityPlanJobResponse](ActivityPlanJobResponse) postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(businessUnitId, activityPlanId)
+
+Delete an activity plan
+
+Triggers a job to delete the activity plan. No further changes to the activity plan can be made
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/deletions/jobs  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanDeletionJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan to delete
+try {
+    ActivityPlanJobResponse result = apiInstance.postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(businessUnitId, activityPlanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanDeletionsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+# **postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs**
+
+
+> [ActivityPlanJobResponse](ActivityPlanJobResponse) postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, sessionId, body)
+
+Triggers a job to delete users from a session in the activity plan occurrence
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/{sessionId}/users/deletions/jobs  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceSessionUserDeletionJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+String occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+String sessionId = "sessionId_example"; // String | The ID of the activity plan occurrence session
+ActivityPlanDeletionSessionUserIds body = new ActivityPlanDeletionSessionUserIds(); // ActivityPlanDeletionSessionUserIds | body
+try {
+    ActivityPlanJobResponse result = apiInstance.postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, sessionId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan | 
+| **occurrenceId** | **String**| The ID of the activity plan occurrence | 
+| **sessionId** | **String**| The ID of the activity plan occurrence session | 
+| **body** | [**ActivityPlanDeletionSessionUserIds**](ActivityPlanDeletionSessionUserIds)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+# **postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs**
+
+
+> [ActivityPlanJobResponse](ActivityPlanJobResponse) postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, body)
+
+Triggers a job to delete sessions for the activity plan occurrence
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/sessions/deletions/jobs  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceSessionDeletionJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+String occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+ActivityPlanDeletionSessionIds body = new ActivityPlanDeletionSessionIds(); // ActivityPlanDeletionSessionIds | body
+try {
+    ActivityPlanJobResponse result = apiInstance.postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs(businessUnitId, activityPlanId, occurrenceId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan | 
+| **occurrenceId** | **String**| The ID of the activity plan occurrence | 
+| **body** | [**ActivityPlanDeletionSessionIds**](ActivityPlanDeletionSessionIds)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+# **postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs**
+
+
+> [ActivityPlanOccurrencesDeletionJobResponse](ActivityPlanOccurrencesDeletionJobResponse) postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs(businessUnitId, activityPlanId, body)
+
+Delete occurrences for the activity plan
+
+Triggers a job to delete occurrences of the activity plan. The activity plan cannot be updated until the job completes
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/deletions/jobs  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceDeletionJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+ActivityPlanDeletionOccurrenceIds body = new ActivityPlanDeletionOccurrenceIds(); // ActivityPlanDeletionOccurrenceIds | body
+try {
+    ActivityPlanOccurrencesDeletionJobResponse result = apiInstance.postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs(businessUnitId, activityPlanId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan | 
+| **body** | [**ActivityPlanDeletionOccurrenceIds**](ActivityPlanDeletionOccurrenceIds)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanOccurrencesDeletionJobResponse**](ActivityPlanOccurrencesDeletionJobResponse)
+
+
 # **postWorkforcemanagementBusinessunitActivityplanRunsJobs**
 
 
@@ -15054,6 +17013,256 @@ try {
 ### Return type
 
 [**ActivityPlanResponse**](ActivityPlanResponse)
+
+
+# **postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery**
+
+
+> [CursorAdherenceAdjustmentsListing](CursorAdherenceAdjustmentsListing) postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery(businessUnitId, body, before, after, pageSize)
+
+Query adherence adjustments for a business unit. Results will be returned using cursor pagination
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+BuQueryAdherenceAdjustmentsRequest body = new BuQueryAdherenceAdjustmentsRequest(); // BuQueryAdherenceAdjustmentsRequest | body
+String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
+String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
+String pageSize = "25"; // String | The page size for the listing. The maximum page size is 500.
+try {
+    CursorAdherenceAdjustmentsListing result = apiInstance.postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery(businessUnitId, body, before, after, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**BuQueryAdherenceAdjustmentsRequest**](BuQueryAdherenceAdjustmentsRequest)| body | 
+| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
+| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
+| **pageSize** | **String**| The page size for the listing. The maximum page size is 500. | [optional] [default to 25] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CursorAdherenceAdjustmentsListing**](CursorAdherenceAdjustmentsListing)
+
+
+# **postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs**
+
+
+> [BuAdherenceAdjustmentsQueryJob](BuAdherenceAdjustmentsQueryJob) postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId, body)
+
+Creates an async query job for adherence adjustments in a business unit.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/query/jobs  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustments:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+BuQueryAdherenceAdjustmentsRequest body = new BuQueryAdherenceAdjustmentsRequest(); // BuQueryAdherenceAdjustmentsRequest | body
+try {
+    BuAdherenceAdjustmentsQueryJob result = apiInstance.postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsQueryJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**BuQueryAdherenceAdjustmentsRequest**](BuQueryAdherenceAdjustmentsRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**BuAdherenceAdjustmentsQueryJob**](BuAdherenceAdjustmentsQueryJob)
+
+
+# **postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes**
+
+
+> [AdherenceAdjustmentsReasonCode](AdherenceAdjustmentsReasonCode) postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId, body)
+
+Create an adherence adjustment reason code for a business unit
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+CreateAdherenceAdjustmentsReasonCodeRequest body = new CreateAdherenceAdjustmentsReasonCodeRequest(); // CreateAdherenceAdjustmentsReasonCodeRequest | body
+try {
+    AdherenceAdjustmentsReasonCode result = apiInstance.postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodes");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**CreateAdherenceAdjustmentsReasonCodeRequest**](CreateAdherenceAdjustmentsReasonCodeRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCode**](AdherenceAdjustmentsReasonCode)
+
+
+# **postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk**
+
+
+> [AdherenceAdjustmentsReasonCodesListing](AdherenceAdjustmentsReasonCodesListing) postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, body)
+
+Create adherence adjustment reason codes in bulk for a business unit
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/adjustments/reasoncodes/bulk  
+
+Requires ANY permissions: 
+
+* wfm:adherenceAdjustmentsReasonCodes:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+CreateAdherenceAdjustmentsReasonCodesBulkRequest body = new CreateAdherenceAdjustmentsReasonCodesBulkRequest(); // CreateAdherenceAdjustmentsReasonCodesBulkRequest | body
+try {
+    AdherenceAdjustmentsReasonCodesListing result = apiInstance.postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitAdherenceAdjustmentsReasoncodesBulk");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**CreateAdherenceAdjustmentsReasonCodesBulkRequest**](CreateAdherenceAdjustmentsReasonCodesBulkRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**AdherenceAdjustmentsReasonCodesListing**](AdherenceAdjustmentsReasonCodesListing)
 
 
 # **postWorkforcemanagementBusinessunitAdherenceExplanationsQuery**
@@ -22494,4 +24703,4 @@ try {
 [**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

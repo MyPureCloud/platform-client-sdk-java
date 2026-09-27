@@ -270,6 +270,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsMessageParticipantCommunicationWrapup**](ConversationsApi#postConversationsMessageParticipantCommunicationWrapup) | Apply wrap-up for this conversation communication |
 | [**postConversationsMessageParticipantMonitor**](ConversationsApi#postConversationsMessageParticipantMonitor) | Listen in on the conversation from the point of view of a given participant. |
 | [**postConversationsMessageParticipantReplace**](ConversationsApi#postConversationsMessageParticipantReplace) | Replace this participant with the specified user and/or address |
+| [**postConversationsMessageParticipantTakeover**](ConversationsApi#postConversationsMessageParticipantTakeover) | The User performing this action will takeover the conversation from the participant specified. |
 | [**postConversationsMessages**](ConversationsApi#postConversationsMessages) | Create an outbound messaging conversation. |
 | [**postConversationsMessagesAgentless**](ConversationsApi#postConversationsMessagesAgentless) | Send an agentless outbound message |
 | [**postConversationsMessagesInboundOpen**](ConversationsApi#postConversationsMessagesInboundOpen) | Send an inbound Open Message |
@@ -16675,6 +16676,68 @@ try {
 null (empty response body)
 
 
+# **postConversationsMessageParticipantTakeover**
+
+
+> Void postConversationsMessageParticipantTakeover(conversationId, participantId)
+
+The User performing this action will takeover the conversation from the participant specified.
+
+This operation allows a user performing the action to take over a conversation from the participant specified. The user must be monitoring the participant and must have the necessary permissions to perform the takeover action.
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/takeover  
+
+Requires ANY permissions: 
+
+* conversation:message:takeover
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.ConversationsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+ConversationsApi apiInstance = new ConversationsApi();
+String conversationId = "conversationId_example"; // String | The id of the conversation being taken over
+String participantId = "participantId_example"; // String | The id of the participant being taken over.
+try {
+    apiInstance.postConversationsMessageParticipantTakeover(conversationId, participantId);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ConversationsApi#postConversationsMessageParticipantTakeover");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| The id of the conversation being taken over | 
+| **participantId** | **String**| The id of the participant being taken over. | 
+{: class="table-striped"}
+
+
+### Return type
+
+null (empty response body)
+
+
 # **postConversationsMessages**
 
 
@@ -19570,4 +19633,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_

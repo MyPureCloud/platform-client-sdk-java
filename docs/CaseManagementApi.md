@@ -33,6 +33,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getCasemanagementCasesQueryJobResults**](CaseManagementApi#getCasemanagementCasesQueryJobResults) | Get results for a case query job |
 | [**getCasemanagementCasesReference**](CaseManagementApi#getCasemanagementCasesReference) | Get a Case by reference. |
 | [**patchCasemanagementCaseDatedue**](CaseManagementApi#patchCasemanagementCaseDatedue) | Update the due date of a Case. |
+| [**patchCasemanagementCaseDescription**](CaseManagementApi#patchCasemanagementCaseDescription) | Update the description of a Case. |
+| [**patchCasemanagementCaseExternalid**](CaseManagementApi#patchCasemanagementCaseExternalid) | Update the external identifier of a Case. |
 | [**patchCasemanagementCaseOwner**](CaseManagementApi#patchCasemanagementCaseOwner) | Update the ownerId of a Case |
 | [**patchCasemanagementCasePriority**](CaseManagementApi#patchCasemanagementCasePriority) | Update priority of a Case. |
 | [**patchCasemanagementCaseSummary**](CaseManagementApi#patchCasemanagementCaseSummary) | Update summary of a Case. |
@@ -1876,6 +1878,132 @@ try {
 [**ModelCase**](Case)
 
 
+# **patchCasemanagementCaseDescription**
+
+
+> [ModelCase](Case) patchCasemanagementCaseDescription(caseId, body)
+
+Update the description of a Case.
+
+patchCasemanagementCaseDescription is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/casemanagement/cases/{caseId}/description  
+
+Requires ANY permissions: 
+
+* caseManagement:caseDescription:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String caseId = "caseId_example"; // String | Case identifier.
+CaseDescriptionUpdate body = new CaseDescriptionUpdate(); // CaseDescriptionUpdate | Description update.
+try {
+    ModelCase result = apiInstance.patchCasemanagementCaseDescription(caseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#patchCasemanagementCaseDescription");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **caseId** | **String**| Case identifier. | 
+| **body** | [**CaseDescriptionUpdate**](CaseDescriptionUpdate)| Description update. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ModelCase**](Case)
+
+
+# **patchCasemanagementCaseExternalid**
+
+
+> [ModelCase](Case) patchCasemanagementCaseExternalid(caseId, body)
+
+Update the external identifier of a Case.
+
+patchCasemanagementCaseExternalid is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/casemanagement/cases/{caseId}/externalid  
+
+Requires ANY permissions: 
+
+* caseManagement:caseExternalId:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.CaseManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+CaseManagementApi apiInstance = new CaseManagementApi();
+String caseId = "caseId_example"; // String | Case identifier.
+CaseExternalIdUpdate body = new CaseExternalIdUpdate(); // CaseExternalIdUpdate | External identifier update.
+try {
+    ModelCase result = apiInstance.patchCasemanagementCaseExternalid(caseId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CaseManagementApi#patchCasemanagementCaseExternalid");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **caseId** | **String**| Case identifier. | 
+| **body** | [**CaseExternalIdUpdate**](CaseExternalIdUpdate)| External identifier update. | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ModelCase**](Case)
+
+
 # **patchCasemanagementCaseOwner**
 
 
@@ -3157,4 +3285,4 @@ try {
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:263.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_
