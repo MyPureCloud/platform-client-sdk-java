@@ -1465,4 +1465,4 @@ try {
 [**AgentChecklist**](AgentChecklist)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.0.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
