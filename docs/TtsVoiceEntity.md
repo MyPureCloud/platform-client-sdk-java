@@ -29,8 +29,10 @@
 | GENERATIVE | &quot;Generative&quot; | 
 | CHIRP3 | &quot;Chirp3&quot; | 
 | GEMINI | &quot;Gemini&quot; | 
+| LONGFORM | &quot;LongForm&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

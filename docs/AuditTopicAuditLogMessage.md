@@ -88,6 +88,7 @@
 | ANOMALYDETECTION | &quot;AnomalyDetection&quot; | 
 | CONVERSATIONS | &quot;Conversations&quot; | 
 | GENESYSCLOUDCOPILOT | &quot;GenesysCloudCopilot&quot; | 
+| CONVERSATIONREFINEMENT | &quot;ConversationRefinement&quot; | 
 
 
 ## Enum: ActionEnum
@@ -524,8 +525,9 @@
 | SETTINGS | &quot;Settings&quot; | 
 | AGENT | &quot;Agent&quot; | 
 | GRAPHSETTINGS | &quot;GraphSettings&quot; | 
+| REFINEMENTCONFIGURATION | &quot;RefinementConfiguration&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

@@ -22,7 +22,7 @@
 | **wrapupPrompt** | **String** | The wrap-up prompt indicating the type of wrap-up to be performed. |  [optional] |
 | **mediaRoles** | **List&lt;String&gt;** | List of roles this participant's media has had on the conversation, ie monitor, coach, etc |  [optional] |
 | **user** | [**DomainEntityRef**](DomainEntityRef) | The PureCloud user for this participant. |  [optional] |
-| **queue** | [**DomainEntityRef**](DomainEntityRef) | The PureCloud queue for this participant. |  [optional] |
+| **queue** | [**DomainEntityRef**](DomainEntityRef) | The PureCloud queue for this participant. Id and selfUri will be populated, name is optional. |  [optional] |
 | **team** | [**DomainEntityRef**](DomainEntityRef) | The PureCloud team for this participant. |  [optional] |
 | **attributes** | **Map&lt;String, String&gt;** | A list of ad-hoc attributes for the participant. |  [optional] |
 | **errorInfo** | [**ErrorInfo**](ErrorInfo) | If the conversation ends in error, contains additional error details. |  [optional] |
@@ -114,4 +114,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

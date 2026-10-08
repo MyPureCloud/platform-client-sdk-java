@@ -13,7 +13,6 @@
 | **customerIdType** | **String** |  |  [optional] |
 | **session** | [**JourneyOutcomeEventsNotificationSession**](JourneyOutcomeEventsNotificationSession) |  |  [optional] |
 | **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) |  |  [optional] |
-| **outcomeAchievedEvent** | [**JourneyOutcomeEventsNotificationOutcomeAchievedMessage**](JourneyOutcomeEventsNotificationOutcomeAchievedMessage) |  |  [optional] |
 | **outcomeAttributionEventMessage** | [**JourneyOutcomeEventsNotificationOutcomeAttributionMessage**](JourneyOutcomeEventsNotificationOutcomeAttributionMessage) |  |  [optional] |
 
 
@@ -22,10 +21,9 @@
 | Name | Value |
 | ---- | ----- |
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
-| OUTCOMEACHIEVEDEVENT | &quot;OutcomeAchievedEvent&quot; | 
 | OUTCOMEATTRIBUTIONEVENT | &quot;OutcomeAttributionEvent&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

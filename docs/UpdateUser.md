@@ -11,9 +11,9 @@
 | **department** | **String** |  |  [optional] |
 | **email** | **String** |  |  [optional] |
 | **primaryContactInfo** | [**List&lt;Contact&gt;**](Contact) | The address(s) used for primary contact. Updates to the corresponding address in the addresses list will be reflected here. |  [optional] |
-| **addresses** | [**List&lt;Contact&gt;**](Contact) | Email address, phone number, and/or extension for this user. One entry is allowed per media type |  [optional] |
+| **addresses** | [**List&lt;Contact&gt;**](Contact) | Email address, phone number, and/or extension for this user. One entry is allowed per media type. The PRIMARY email address cannot be changed through this field; submitting a modified value for the PRIMARY entry returns a 400 error. |  [optional] |
 | **title** | **String** |  |  [optional] |
-| **username** | **String** |  |  [optional] |
+| **username** | **String** | This value is ignored; the username cannot be changed through this endpoint. |  [optional] |
 | **preferredName** | **String** | Preferred full name of agent |  [optional] |
 | **manager** | **String** |  |  [optional] |
 | **images** | [**List&lt;Image&gt;**](Image) |  |  [optional] |
@@ -41,4 +41,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

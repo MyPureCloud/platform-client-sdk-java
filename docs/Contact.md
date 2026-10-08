@@ -8,7 +8,7 @@
 | **address** | **String** | Email address or phone number for this contact type |  [optional] |
 | **display** | **String** | Formatted version of the address property |  [optional] |
 | **mediaType** | [**MediaTypeEnum**](#Enum--MediaTypeEnum) |  |  [optional] |
-| **type** | [**TypeEnum**](#Enum--TypeEnum) |  |  [optional] |
+| **type** | [**TypeEnum**](#Enum--TypeEnum) | The type of this contact entry. Note: the PRIMARY email address cannot be changed via PATCH /api/v2/users/{userId}; submitting a modified value for the PRIMARY entry returns a 400 error. |  [optional] |
 | **extension** | **String** | Use internal extension instead of address. Mutually exclusive with the address field. |  [optional] |
 | **countryCode** | **String** |  |  [optional] |
 | **integration** | **String** | Integration tag value if this number is associated with an external integration. |  [optional] |
@@ -42,4 +42,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

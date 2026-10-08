@@ -13,6 +13,7 @@
 | **utterance** | [**Entity**](Entity) | The utterance in the voice conversation, after which the suggestion was raised, if any. |  [optional] |
 | **message** | [**AddressableEntityRef**](AddressableEntityRef) | The message in the digital conversation, after which the suggestion was raised, if any. |  [optional] |
 | **queryStatement** | **String** | The query statement used when generating the suggestion, if any. |  [optional] |
+| **language** | **String** | The language of the conversation for which the suggestion was generated, in lower case, for example: 'en-us'. |  [optional] |
 
 
 ## Enum: MediaTypeEnum
@@ -37,4 +38,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

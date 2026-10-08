@@ -15,7 +15,6 @@
 | **eventType** | [**EventTypeEnum**](#Enum--EventTypeEnum) |  |  [optional] |
 | **webEvent** | [**JourneyWebEventsNotificationWebMessage**](JourneyWebEventsNotificationWebMessage) |  |  [optional] |
 | **webActionEvent** | [**JourneyWebEventsNotificationWebActionMessage**](JourneyWebEventsNotificationWebActionMessage) |  |  [optional] |
-| **outcomeAchievedEvent** | [**JourneyWebEventsNotificationOutcomeAchievedMessage**](JourneyWebEventsNotificationOutcomeAchievedMessage) |  |  [optional] |
 | **segmentAssignmentEvent** | [**JourneyWebEventsNotificationSegmentAssignmentMessage**](JourneyWebEventsNotificationSegmentAssignmentMessage) |  |  [optional] |
 
 
@@ -26,10 +25,9 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
 | WEBEVENT | &quot;WebEvent&quot; | 
 | WEBACTIONEVENT | &quot;WebActionEvent&quot; | 
-| OUTCOMEACHIEVEDEVENT | &quot;OutcomeAchievedEvent&quot; | 
 | SEGMENTASSIGNMENTEVENT | &quot;SegmentAssignmentEvent&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_
