@@ -1092,6 +1092,7 @@ docs/ChecklistInferenceJobCreationResponse.md
 docs/ChecklistInferenceJobPayload.md
 docs/ChecklistInferenceJobResponse.md
 docs/ChecklistItem.md
+docs/ChecklistTransferConfig.md
 docs/ChunkSearchRegisterRequest.md
 docs/ClientApp.md
 docs/ClientAppConfigurationInfo.md
@@ -1494,6 +1495,7 @@ docs/ConversationContentRichLinkHeader.md
 docs/ConversationContentRoadsideAssistance.md
 docs/ConversationContentStory.md
 docs/ConversationContentText.md
+docs/ConversationContentThumbnail.md
 docs/ConversationContentWheelPicker.md
 docs/ConversationContentWheelPickerItem.md
 docs/ConversationContext.md
@@ -1966,6 +1968,9 @@ docs/CustomAttributesIdResponse.md
 docs/CustomAttributesListing.md
 docs/CustomAttributesPatchRequest.md
 docs/CustomAttributesUpdateRequest.md
+docs/CustomConversationAttributeInput.md
+docs/CustomConversationAttributeOutput.md
+docs/CustomConversationAttributeUpdate.md
 docs/CustomEventAttribute.md
 docs/CustomEventAttributeList.md
 docs/CustomI18nLabels.md
@@ -3018,11 +3023,14 @@ docs/GuideContentGenerationJob.md
 docs/GuideEntityListing.md
 docs/GuideJob.md
 docs/GuideSessionInputEvent.md
+docs/GuideSessionMessage.md
 docs/GuideSessionTurnInvocationData.md
 docs/GuideSessionTurnInvocationParameters.md
 docs/GuideSessionTurnInvocationResponse.md
 docs/GuideSessionTurnRequest.md
+docs/GuideSessionTurnRequestContext.md
 docs/GuideSessionTurnResponse.md
+docs/GuideSessionTurnResponseContext.md
 docs/GuideSessionTurnResponseData.md
 docs/GuideSessionVariable.md
 docs/GuideVersion.md
@@ -3230,7 +3238,6 @@ docs/JourneyAppEventsNotificationActionTarget.md
 docs/JourneyAppEventsNotificationApp.md
 docs/JourneyAppEventsNotificationAppEventsNotification.md
 docs/JourneyAppEventsNotificationAppMessage.md
-docs/JourneyAppEventsNotificationAssociatedValue.md
 docs/JourneyAppEventsNotificationBrowser.md
 docs/JourneyAppEventsNotificationCustomEventAttribute.md
 docs/JourneyAppEventsNotificationDevice.md
@@ -3239,8 +3246,6 @@ docs/JourneyAppEventsNotificationExternalContact.md
 docs/JourneyAppEventsNotificationGeoLocation.md
 docs/JourneyAppEventsNotificationMktCampaign.md
 docs/JourneyAppEventsNotificationNetworkConnectivity.md
-docs/JourneyAppEventsNotificationOutcome.md
-docs/JourneyAppEventsNotificationOutcomeAchievedMessage.md
 docs/JourneyAppEventsNotificationReferrer.md
 docs/JourneyAppEventsNotificationSdkLibrary.md
 docs/JourneyAppEventsNotificationSegment.md
@@ -3264,18 +3269,12 @@ docs/JourneyJsonSchemaDocument.md
 docs/JourneyJsonSchemaRequest.md
 docs/JourneyOutcomeEventsNotificationActionMap.md
 docs/JourneyOutcomeEventsNotificationAssociatedValue.md
-docs/JourneyOutcomeEventsNotificationBrowser.md
-docs/JourneyOutcomeEventsNotificationDevice.md
 docs/JourneyOutcomeEventsNotificationExternalContact.md
-docs/JourneyOutcomeEventsNotificationGeoLocation.md
-docs/JourneyOutcomeEventsNotificationMktCampaign.md
 docs/JourneyOutcomeEventsNotificationOutcome.md
-docs/JourneyOutcomeEventsNotificationOutcomeAchievedMessage.md
 docs/JourneyOutcomeEventsNotificationOutcomeAttributionMessage.md
 docs/JourneyOutcomeEventsNotificationOutcomeEventsNotification.md
 docs/JourneyOutcomeEventsNotificationOutcomeTouchpoint.md
 docs/JourneyOutcomeEventsNotificationOutcomeTouchpointChannel.md
-docs/JourneyOutcomeEventsNotificationReferrer.md
 docs/JourneyOutcomeEventsNotificationSegment.md
 docs/JourneyOutcomeEventsNotificationSession.md
 docs/JourneyPage.md
@@ -3359,7 +3358,6 @@ docs/JourneyWebActionEventsNotificationWebActionEventsNotification.md
 docs/JourneyWebActionEventsNotificationWebActionMessage.md
 docs/JourneyWebEventsNotificationActionMap.md
 docs/JourneyWebEventsNotificationActionTarget.md
-docs/JourneyWebEventsNotificationAssociatedValue.md
 docs/JourneyWebEventsNotificationBrowser.md
 docs/JourneyWebEventsNotificationCustomEventAttribute.md
 docs/JourneyWebEventsNotificationDevice.md
@@ -3367,8 +3365,6 @@ docs/JourneyWebEventsNotificationEventAction.md
 docs/JourneyWebEventsNotificationExternalContact.md
 docs/JourneyWebEventsNotificationGeoLocation.md
 docs/JourneyWebEventsNotificationMktCampaign.md
-docs/JourneyWebEventsNotificationOutcome.md
-docs/JourneyWebEventsNotificationOutcomeAchievedMessage.md
 docs/JourneyWebEventsNotificationPage.md
 docs/JourneyWebEventsNotificationReferrer.md
 docs/JourneyWebEventsNotificationSegment.md
@@ -4017,6 +4013,7 @@ docs/OneOnOne.md
 docs/OpenActionFields.md
 docs/OpenActionProperties.md
 docs/OpenContentAttachment.md
+docs/OpenContentThumbnail.md
 docs/OpenDataIngestionRuleRequest.md
 docs/OpenDataIngestionRuleResponse.md
 docs/OpenDataIngestionRuleVersionResponse.md
@@ -5524,6 +5521,7 @@ docs/SummarySettingEntityListing.md
 docs/SummarySettingPII.md
 docs/SummarySettingParticipantLabels.md
 docs/SummarySettingWithTranscript.md
+docs/SummaryTransferConfig.md
 docs/SupportCenterCategory.md
 docs/SupportCenterCompactCategoryModuleTemplate.md
 docs/SupportCenterCustomMessage.md
@@ -6224,6 +6222,7 @@ docs/V2WemEngagementCelebrationUpdatesTopicEngagementCelebration.md
 docs/V2WemEngagementCelebrationUpdatesTopicSourceEntity.md
 docs/V2WemEngagementCelebrationUpdatesTopicUserId.md
 docs/V2WfmAgentOpportunityTopicAgentOpportunityNotification.md
+docs/V2WfmContinuousForecastSessionEventContinuousForecastSessionNotification.md
 docs/V2WfmMainForecastExportForecastEventMainForecastErrorBody.md
 docs/V2WfmMainForecastExportForecastEventMainForecastExportNotification.md
 docs/V2WfmMainForecastExportHistoricalEventMainForecastErrorBody.md
@@ -15092,6 +15091,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ChecklistInferenceJobCreationResponse
 src/main/java/com/mypurecloud/sdk/v2/model/ChecklistInferenceJobPayload.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChecklistInferenceJobResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChecklistItem.java
+src/main/java/com/mypurecloud/sdk/v2/model/ChecklistTransferConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/ChunkSearchRegisterRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/ClientApp.java
 src/main/java/com/mypurecloud/sdk/v2/model/ClientAppConfigurationInfo.java
@@ -15490,6 +15490,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentRichLinkHeader.jav
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentRoadsideAssistance.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentStory.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentText.java
+src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentThumbnail.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentWheelPicker.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContentWheelPickerItem.java
 src/main/java/com/mypurecloud/sdk/v2/model/ConversationContext.java
@@ -15960,6 +15961,9 @@ src/main/java/com/mypurecloud/sdk/v2/model/CustomAttributesIdResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomAttributesListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomAttributesPatchRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomAttributesUpdateRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomConversationAttributeInput.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomConversationAttributeOutput.java
+src/main/java/com/mypurecloud/sdk/v2/model/CustomConversationAttributeUpdate.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomEventAttribute.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomEventAttributeList.java
 src/main/java/com/mypurecloud/sdk/v2/model/CustomI18nLabels.java
@@ -16982,11 +16986,14 @@ src/main/java/com/mypurecloud/sdk/v2/model/GuideContentGenerationJob.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuideEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuideJob.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuideSessionInputEvent.java
+src/main/java/com/mypurecloud/sdk/v2/model/GuideSessionMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuideSessionTurnInvocationData.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuideSessionTurnInvocationParameters.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuideSessionTurnInvocationResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuideSessionTurnRequest.java
+src/main/java/com/mypurecloud/sdk/v2/model/GuideSessionTurnRequestContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuideSessionTurnResponse.java
+src/main/java/com/mypurecloud/sdk/v2/model/GuideSessionTurnResponseContext.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuideSessionTurnResponseData.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuideSessionVariable.java
 src/main/java/com/mypurecloud/sdk/v2/model/GuideVersion.java
@@ -17184,7 +17191,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationActionTar
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationApp.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationAppEventsNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationAppMessage.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationAssociatedValue.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationBrowser.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationCustomEventAttribute.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationDevice.java
@@ -17193,8 +17199,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationExternalC
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationGeoLocation.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationMktCampaign.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationNetworkConnectivity.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationOutcome.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationOutcomeAchievedMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationReferrer.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationSdkLibrary.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyAppEventsNotificationSegment.java
@@ -17218,18 +17222,12 @@ src/main/java/com/mypurecloud/sdk/v2/model/JourneyJsonSchemaDocument.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyJsonSchemaRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationActionMap.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationAssociatedValue.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationBrowser.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationDevice.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationExternalContact.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationGeoLocation.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationMktCampaign.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationOutcome.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationOutcomeAchievedMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationOutcomeAttributionMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationOutcomeEventsNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationOutcomeTouchpoint.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationOutcomeTouchpointChannel.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationReferrer.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationSegment.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyOutcomeEventsNotificationSession.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyPage.java
@@ -17313,7 +17311,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebActionEventsNotificationWeb
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebActionEventsNotificationWebActionMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationActionMap.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationActionTarget.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationAssociatedValue.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationBrowser.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationCustomEventAttribute.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationDevice.java
@@ -17321,8 +17318,6 @@ src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationEventActi
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationExternalContact.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationGeoLocation.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationMktCampaign.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationOutcome.java
-src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationOutcomeAchievedMessage.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationPage.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationReferrer.java
 src/main/java/com/mypurecloud/sdk/v2/model/JourneyWebEventsNotificationSegment.java
@@ -17947,6 +17942,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/OneOnOne.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenActionFields.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenActionProperties.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenContentAttachment.java
+src/main/java/com/mypurecloud/sdk/v2/model/OpenContentThumbnail.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenDataIngestionRuleRequest.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenDataIngestionRuleResponse.java
 src/main/java/com/mypurecloud/sdk/v2/model/OpenDataIngestionRuleVersionResponse.java
@@ -19416,6 +19412,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/SummarySettingEntityListing.java
 src/main/java/com/mypurecloud/sdk/v2/model/SummarySettingPII.java
 src/main/java/com/mypurecloud/sdk/v2/model/SummarySettingParticipantLabels.java
 src/main/java/com/mypurecloud/sdk/v2/model/SummarySettingWithTranscript.java
+src/main/java/com/mypurecloud/sdk/v2/model/SummaryTransferConfig.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportCenterCategory.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportCenterCompactCategoryModuleTemplate.java
 src/main/java/com/mypurecloud/sdk/v2/model/SupportCenterCustomMessage.java
@@ -20092,6 +20089,7 @@ src/main/java/com/mypurecloud/sdk/v2/model/V2WemEngagementCelebrationUpdatesTopi
 src/main/java/com/mypurecloud/sdk/v2/model/V2WemEngagementCelebrationUpdatesTopicSourceEntity.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2WemEngagementCelebrationUpdatesTopicUserId.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2WfmAgentOpportunityTopicAgentOpportunityNotification.java
+src/main/java/com/mypurecloud/sdk/v2/model/V2WfmContinuousForecastSessionEventContinuousForecastSessionNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2WfmMainForecastExportForecastEventMainForecastErrorBody.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2WfmMainForecastExportForecastEventMainForecastExportNotification.java
 src/main/java/com/mypurecloud/sdk/v2/model/V2WfmMainForecastExportHistoricalEventMainForecastErrorBody.java

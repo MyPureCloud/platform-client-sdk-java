@@ -25,6 +25,7 @@ public class RoleSettings  implements Serializable {
   private String id = null;
   private Boolean backfillEnabled = null;
   private Boolean authorizationGrantDivisionAware = null;
+  private Boolean genesysOrgPolicyBypass = null;
   private String selfUri = null;
 
   public RoleSettings() {
@@ -81,6 +82,24 @@ public class RoleSettings  implements Serializable {
   }
 
 
+  /**
+   * Boolean enabling skip of attribute-based access control policy enforcement when enabled and the organization is on the Genesys bypass list
+   **/
+  public RoleSettings genesysOrgPolicyBypass(Boolean genesysOrgPolicyBypass) {
+    this.genesysOrgPolicyBypass = genesysOrgPolicyBypass;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Boolean enabling skip of attribute-based access control policy enforcement when enabled and the organization is on the Genesys bypass list")
+  @JsonProperty("genesysOrgPolicyBypass")
+  public Boolean getGenesysOrgPolicyBypass() {
+    return genesysOrgPolicyBypass;
+  }
+  public void setGenesysOrgPolicyBypass(Boolean genesysOrgPolicyBypass) {
+    this.genesysOrgPolicyBypass = genesysOrgPolicyBypass;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -101,12 +120,13 @@ public class RoleSettings  implements Serializable {
     return Objects.equals(this.id, roleSettings.id) &&
             Objects.equals(this.backfillEnabled, roleSettings.backfillEnabled) &&
             Objects.equals(this.authorizationGrantDivisionAware, roleSettings.authorizationGrantDivisionAware) &&
+            Objects.equals(this.genesysOrgPolicyBypass, roleSettings.genesysOrgPolicyBypass) &&
             Objects.equals(this.selfUri, roleSettings.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, backfillEnabled, authorizationGrantDivisionAware, selfUri);
+    return Objects.hash(id, backfillEnabled, authorizationGrantDivisionAware, genesysOrgPolicyBypass, selfUri);
   }
 
   @Override
@@ -117,6 +137,7 @@ public class RoleSettings  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    backfillEnabled: ").append(toIndentedString(backfillEnabled)).append("\n");
     sb.append("    authorizationGrantDivisionAware: ").append(toIndentedString(authorizationGrantDivisionAware)).append("\n");
+    sb.append("    genesysOrgPolicyBypass: ").append(toIndentedString(genesysOrgPolicyBypass)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

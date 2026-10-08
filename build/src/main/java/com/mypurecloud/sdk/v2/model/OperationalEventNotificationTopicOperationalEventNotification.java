@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.OperationalEventNotificationTopicEventEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 
 import java.io.Serializable;
 /**
@@ -36,6 +37,8 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
   private String entityToken = null;
   private String phoneNumber = null;
   private String externalContactId = null;
+  private Date entityModifiedDate = null;
+  private String entityModifiedBy = null;
   private Long timestamp = null;
 
   public OperationalEventNotificationTopicOperationalEventNotification() {
@@ -272,6 +275,40 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
 
   /**
    **/
+  public OperationalEventNotificationTopicOperationalEventNotification entityModifiedDate(Date entityModifiedDate) {
+    this.entityModifiedDate = entityModifiedDate;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("entityModifiedDate")
+  public Date getEntityModifiedDate() {
+    return entityModifiedDate;
+  }
+  public void setEntityModifiedDate(Date entityModifiedDate) {
+    this.entityModifiedDate = entityModifiedDate;
+  }
+
+
+  /**
+   **/
+  public OperationalEventNotificationTopicOperationalEventNotification entityModifiedBy(String entityModifiedBy) {
+    this.entityModifiedBy = entityModifiedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("entityModifiedBy")
+  public String getEntityModifiedBy() {
+    return entityModifiedBy;
+  }
+  public void setEntityModifiedBy(String entityModifiedBy) {
+    this.entityModifiedBy = entityModifiedBy;
+  }
+
+
+  /**
+   **/
   public OperationalEventNotificationTopicOperationalEventNotification timestamp(Long timestamp) {
     this.timestamp = timestamp;
     return this;
@@ -310,12 +347,14 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
             Objects.equals(this.entityToken, operationalEventNotificationTopicOperationalEventNotification.entityToken) &&
             Objects.equals(this.phoneNumber, operationalEventNotificationTopicOperationalEventNotification.phoneNumber) &&
             Objects.equals(this.externalContactId, operationalEventNotificationTopicOperationalEventNotification.externalContactId) &&
+            Objects.equals(this.entityModifiedDate, operationalEventNotificationTopicOperationalEventNotification.entityModifiedDate) &&
+            Objects.equals(this.entityModifiedBy, operationalEventNotificationTopicOperationalEventNotification.entityModifiedBy) &&
             Objects.equals(this.timestamp, operationalEventNotificationTopicOperationalEventNotification.timestamp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventEntity, entityId, entityName, previousValue, currentValue, errorCode, version, parentEntity, entityType, conversationId, entityToken, phoneNumber, externalContactId, timestamp);
+    return Objects.hash(eventEntity, entityId, entityName, previousValue, currentValue, errorCode, version, parentEntity, entityType, conversationId, entityToken, phoneNumber, externalContactId, entityModifiedDate, entityModifiedBy, timestamp);
   }
 
   @Override
@@ -336,6 +375,8 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
     sb.append("    entityToken: ").append(toIndentedString(entityToken)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
+    sb.append("    entityModifiedDate: ").append(toIndentedString(entityModifiedDate)).append("\n");
+    sb.append("    entityModifiedBy: ").append(toIndentedString(entityModifiedBy)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("}");
     return sb.toString();

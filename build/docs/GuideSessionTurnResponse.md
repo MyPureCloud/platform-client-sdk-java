@@ -11,6 +11,7 @@
 | **outputVariables** | [**List&lt;GuideSessionVariable&gt;**](GuideSessionVariable) | The output variables for this turn. |  [optional] |
 | **invocationId** | **String** | Invocation ID for this turn. |  [optional] |
 | **invocations** | [**List&lt;GuideSessionTurnInvocationResponse&gt;**](GuideSessionTurnInvocationResponse) | The invocations for this turn. |  [optional] |
+| **context** | [**GuideSessionTurnResponseContext**](GuideSessionTurnResponseContext) | The context for this turn, including conversation custom attribute updates. |  [optional] |
 
 
 ## Enum: StatusEnum
@@ -37,4 +38,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

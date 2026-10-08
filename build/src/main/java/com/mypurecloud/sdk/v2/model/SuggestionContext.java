@@ -130,6 +130,7 @@ public class SuggestionContext  implements Serializable {
   private Entity utterance = null;
   private AddressableEntityRef message = null;
   private String queryStatement = null;
+  private String language = null;
 
   public SuggestionContext() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -198,6 +199,13 @@ public class SuggestionContext  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The language of the conversation for which the suggestion was generated, in lower case, for example: 'en-us'.")
+  @JsonProperty("language")
+  public String getLanguage() {
+    return language;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -215,12 +223,13 @@ public class SuggestionContext  implements Serializable {
             Objects.equals(this.externalContact, suggestionContext.externalContact) &&
             Objects.equals(this.utterance, suggestionContext.utterance) &&
             Objects.equals(this.message, suggestionContext.message) &&
-            Objects.equals(this.queryStatement, suggestionContext.queryStatement);
+            Objects.equals(this.queryStatement, suggestionContext.queryStatement) &&
+            Objects.equals(this.language, suggestionContext.language);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(queue, mediaType, participantType, user, externalContact, utterance, message, queryStatement);
+    return Objects.hash(queue, mediaType, participantType, user, externalContact, utterance, message, queryStatement, language);
   }
 
   @Override
@@ -236,6 +245,7 @@ public class SuggestionContext  implements Serializable {
     sb.append("    utterance: ").append(toIndentedString(utterance)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("    queryStatement: ").append(toIndentedString(queryStatement)).append("\n");
+    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("}");
     return sb.toString();
   }

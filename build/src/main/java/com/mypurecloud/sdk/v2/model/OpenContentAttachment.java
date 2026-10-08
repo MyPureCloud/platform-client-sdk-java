@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.OpenContentThumbnail;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -81,6 +82,7 @@ public class OpenContentAttachment  implements Serializable {
   private String text = null;
   private String sha256 = null;
   private String filename = null;
+  private OpenContentThumbnail thumbnail = null;
 
   public OpenContentAttachment() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -219,6 +221,24 @@ public class OpenContentAttachment  implements Serializable {
   }
 
 
+  /**
+   * Thumbnail image for the attachment content. Not always available.
+   **/
+  public OpenContentAttachment thumbnail(OpenContentThumbnail thumbnail) {
+    this.thumbnail = thumbnail;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Thumbnail image for the attachment content. Not always available.")
+  @JsonProperty("thumbnail")
+  public OpenContentThumbnail getThumbnail() {
+    return thumbnail;
+  }
+  public void setThumbnail(OpenContentThumbnail thumbnail) {
+    this.thumbnail = thumbnail;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -235,12 +255,13 @@ public class OpenContentAttachment  implements Serializable {
             Objects.equals(this.mime, openContentAttachment.mime) &&
             Objects.equals(this.text, openContentAttachment.text) &&
             Objects.equals(this.sha256, openContentAttachment.sha256) &&
-            Objects.equals(this.filename, openContentAttachment.filename);
+            Objects.equals(this.filename, openContentAttachment.filename) &&
+            Objects.equals(this.thumbnail, openContentAttachment.thumbnail);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, mediaType, url, mime, text, sha256, filename);
+    return Objects.hash(id, mediaType, url, mime, text, sha256, filename, thumbnail);
   }
 
   @Override
@@ -255,6 +276,7 @@ public class OpenContentAttachment  implements Serializable {
     sb.append("    text: ").append(toIndentedString(text)).append("\n");
     sb.append("    sha256: ").append(toIndentedString(sha256)).append("\n");
     sb.append("    filename: ").append(toIndentedString(filename)).append("\n");
+    sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
     sb.append("}");
     return sb.toString();
   }

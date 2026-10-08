@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.GuideSessionInputEvent;
+import com.mypurecloud.sdk.v2.model.GuideSessionTurnRequestContext;
 import com.mypurecloud.sdk.v2.model.GuideSessionVariable;
 import com.mypurecloud.sdk.v2.model.KnowledgeSettings;
 import io.swagger.annotations.ApiModel;
@@ -33,6 +34,7 @@ public class GuideSessionTurnRequest  implements Serializable {
   private String version = null;
   private List<GuideSessionVariable> inputVariables = null;
   private KnowledgeSettings knowledgeSettings = null;
+  private GuideSessionTurnRequestContext context = null;
 
   public GuideSessionTurnRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -137,6 +139,24 @@ public class GuideSessionTurnRequest  implements Serializable {
   }
 
 
+  /**
+   * The context for this turn, including conversation custom attributes and messages.
+   **/
+  public GuideSessionTurnRequest context(GuideSessionTurnRequestContext context) {
+    this.context = context;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The context for this turn, including conversation custom attributes and messages.")
+  @JsonProperty("context")
+  public GuideSessionTurnRequestContext getContext() {
+    return context;
+  }
+  public void setContext(GuideSessionTurnRequestContext context) {
+    this.context = context;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -151,12 +171,13 @@ public class GuideSessionTurnRequest  implements Serializable {
             Objects.equals(this.languageCode, guideSessionTurnRequest.languageCode) &&
             Objects.equals(this.version, guideSessionTurnRequest.version) &&
             Objects.equals(this.inputVariables, guideSessionTurnRequest.inputVariables) &&
-            Objects.equals(this.knowledgeSettings, guideSessionTurnRequest.knowledgeSettings);
+            Objects.equals(this.knowledgeSettings, guideSessionTurnRequest.knowledgeSettings) &&
+            Objects.equals(this.context, guideSessionTurnRequest.context);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(inputEvent, languageCode, version, inputVariables, knowledgeSettings);
+    return Objects.hash(inputEvent, languageCode, version, inputVariables, knowledgeSettings, context);
   }
 
   @Override
@@ -169,6 +190,7 @@ public class GuideSessionTurnRequest  implements Serializable {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    inputVariables: ").append(toIndentedString(inputVariables)).append("\n");
     sb.append("    knowledgeSettings: ").append(toIndentedString(knowledgeSettings)).append("\n");
+    sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("}");
     return sb.toString();
   }

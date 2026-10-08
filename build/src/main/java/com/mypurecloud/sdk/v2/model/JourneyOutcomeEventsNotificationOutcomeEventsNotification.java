@@ -14,7 +14,6 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationExternalContact;
-import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationOutcomeAchievedMessage;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationOutcomeAttributionMessage;
 import com.mypurecloud.sdk.v2.model.JourneyOutcomeEventsNotificationSession;
 import io.swagger.annotations.ApiModel;
@@ -54,7 +53,6 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
  @JsonDeserialize(using = EventTypeEnumDeserializer.class)
   public enum EventTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
-    OUTCOMEACHIEVEDEVENT("OutcomeAchievedEvent"),
     OUTCOMEATTRIBUTIONEVENT("OutcomeAttributionEvent");
 
     private String value;
@@ -83,7 +81,6 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
     }
   }
   private EventTypeEnum eventType = null;
-  private JourneyOutcomeEventsNotificationOutcomeAchievedMessage outcomeAchievedEvent = null;
   private JourneyOutcomeEventsNotificationOutcomeAttributionMessage outcomeAttributionEventMessage = null;
 
   public JourneyOutcomeEventsNotificationOutcomeEventsNotification() {
@@ -235,23 +232,6 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
 
   /**
    **/
-  public JourneyOutcomeEventsNotificationOutcomeEventsNotification outcomeAchievedEvent(JourneyOutcomeEventsNotificationOutcomeAchievedMessage outcomeAchievedEvent) {
-    this.outcomeAchievedEvent = outcomeAchievedEvent;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("outcomeAchievedEvent")
-  public JourneyOutcomeEventsNotificationOutcomeAchievedMessage getOutcomeAchievedEvent() {
-    return outcomeAchievedEvent;
-  }
-  public void setOutcomeAchievedEvent(JourneyOutcomeEventsNotificationOutcomeAchievedMessage outcomeAchievedEvent) {
-    this.outcomeAchievedEvent = outcomeAchievedEvent;
-  }
-
-
-  /**
-   **/
   public JourneyOutcomeEventsNotificationOutcomeEventsNotification outcomeAttributionEventMessage(JourneyOutcomeEventsNotificationOutcomeAttributionMessage outcomeAttributionEventMessage) {
     this.outcomeAttributionEventMessage = outcomeAttributionEventMessage;
     return this;
@@ -285,13 +265,12 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
             Objects.equals(this.customerIdType, journeyOutcomeEventsNotificationOutcomeEventsNotification.customerIdType) &&
             Objects.equals(this.session, journeyOutcomeEventsNotificationOutcomeEventsNotification.session) &&
             Objects.equals(this.eventType, journeyOutcomeEventsNotificationOutcomeEventsNotification.eventType) &&
-            Objects.equals(this.outcomeAchievedEvent, journeyOutcomeEventsNotificationOutcomeEventsNotification.outcomeAchievedEvent) &&
             Objects.equals(this.outcomeAttributionEventMessage, journeyOutcomeEventsNotificationOutcomeEventsNotification.outcomeAttributionEventMessage);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, session, eventType, outcomeAchievedEvent, outcomeAttributionEventMessage);
+    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, session, eventType, outcomeAttributionEventMessage);
   }
 
   @Override
@@ -307,7 +286,6 @@ public class JourneyOutcomeEventsNotificationOutcomeEventsNotification  implemen
     sb.append("    customerIdType: ").append(toIndentedString(customerIdType)).append("\n");
     sb.append("    session: ").append(toIndentedString(session)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
-    sb.append("    outcomeAchievedEvent: ").append(toIndentedString(outcomeAchievedEvent)).append("\n");
     sb.append("    outcomeAttributionEventMessage: ").append(toIndentedString(outcomeAttributionEventMessage)).append("\n");
     sb.append("}");
     return sb.toString();

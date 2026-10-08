@@ -46,10 +46,21 @@ public class WhatsAppEmbeddedSignupIntegrationActivationRequest  implements Seri
   }
 
 
-  @ApiModelProperty(example = "null", value = "WhatsApp Integration name")
+  /**
+   * The WhatsApp integration name. Required for Embedded Signup v4 activation; not used in v2.
+   **/
+  public WhatsAppEmbeddedSignupIntegrationActivationRequest name(String name) {
+    this.name = name;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The WhatsApp integration name. Required for Embedded Signup v4 activation; not used in v2.")
   @JsonProperty("name")
   public String getName() {
     return name;
+  }
+  public void setName(String name) {
+    this.name = name;
   }
 
 

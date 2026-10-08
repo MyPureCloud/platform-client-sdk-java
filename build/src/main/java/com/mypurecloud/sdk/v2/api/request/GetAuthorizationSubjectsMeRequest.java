@@ -113,6 +113,20 @@ public class GetAuthorizationSubjectsMeRequest {
 	    return this;
 	} 
 
+	private Boolean includeFullRoles;
+	public Boolean getIncludeFullRoles() {
+		return this.includeFullRoles;
+	}
+
+	public void setIncludeFullRoles(Boolean includeFullRoles) {
+		this.includeFullRoles = includeFullRoles;
+	}
+
+	public GetAuthorizationSubjectsMeRequest withIncludeFullRoles(Boolean includeFullRoles) {
+	    this.setIncludeFullRoles(includeFullRoles);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -139,6 +153,9 @@ public class GetAuthorizationSubjectsMeRequest {
 
                 .withQueryParameters("includeDuplicates", "", includeDuplicates)
         
+
+                .withQueryParameters("includeFullRoles", "", includeFullRoles)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -162,6 +179,11 @@ public class GetAuthorizationSubjectsMeRequest {
 
 		public Builder withIncludeDuplicates(Boolean includeDuplicates) {
 			request.setIncludeDuplicates(includeDuplicates);
+			return this;
+		}
+
+		public Builder withIncludeFullRoles(Boolean includeFullRoles) {
+			request.setIncludeFullRoles(includeFullRoles);
 			return this;
 		}
 

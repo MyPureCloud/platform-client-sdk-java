@@ -322,4 +322,4 @@ try {
 [**UserDevice**](UserDevice)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

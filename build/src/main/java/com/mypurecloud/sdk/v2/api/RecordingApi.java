@@ -1390,7 +1390,7 @@ public class RecordingApi {
   }
 
   /**
-   * Gets all orphan recordings
+   * Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
    * 
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -1398,7 +1398,7 @@ public class RecordingApi {
    * @param expand variable name requested by expand list (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional, default to false)
+   * @param hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results. (optional, default to false)
    * @param media Filter resulting orphans based on their media type (optional)
    * @return OrphanRecordingListing
    * @throws ApiException if the request fails on the server
@@ -1409,7 +1409,7 @@ public class RecordingApi {
   }
 
   /**
-   * Gets all orphan recordings
+   * Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
    * 
    * @param pageSize The total page size requested (optional, default to 25)
    * @param pageNumber The page number requested (optional, default to 1)
@@ -1417,7 +1417,7 @@ public class RecordingApi {
    * @param expand variable name requested by expand list (optional)
    * @param nextPage next page token (optional)
    * @param previousPage Previous page token (optional)
-   * @param hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. (optional, default to false)
+   * @param hasConversation Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results. (optional, default to false)
    * @param media Filter resulting orphans based on their media type (optional)
    * @return OrphanRecordingListing
    * @throws IOException if the request fails to be processed
@@ -1448,7 +1448,7 @@ public class RecordingApi {
   }
 
   /**
-   * Gets all orphan recordings
+   * Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
    * 
    * @param request The request object
    * @return OrphanRecordingListing
@@ -1467,7 +1467,7 @@ public class RecordingApi {
   }
 
   /**
-   * Gets all orphan recordings
+   * Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
    * 
    * @param request The request object
    * @return the response

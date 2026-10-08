@@ -1944,7 +1944,7 @@ This endpoint does not require any parameters.
 # **getAuthorizationSubject**
 
 
-> [AuthzSubject](AuthzSubject) getAuthorizationSubject(subjectId, includeDuplicates)
+> [AuthzSubject](AuthzSubject) getAuthorizationSubject(subjectId, includeDuplicates, includeFullRoles)
 
 Returns a listing of roles and permissions for a user.
 
@@ -1978,8 +1978,9 @@ Configuration.setDefaultApiClient(apiClient);
 AuthorizationApi apiInstance = new AuthorizationApi();
 String subjectId = "subjectId_example"; // String | Subject ID (user or group)
 Boolean includeDuplicates = false; // Boolean | Include multiple entries with the same role and division but different subjects
+Boolean includeFullRoles = true; // Boolean | Include full role data with permission policies for each grant
 try {
-    AuthzSubject result = apiInstance.getAuthorizationSubject(subjectId, includeDuplicates);
+    AuthzSubject result = apiInstance.getAuthorizationSubject(subjectId, includeDuplicates, includeFullRoles);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationSubject");
@@ -1994,6 +1995,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **subjectId** | **String**| Subject ID (user or group) | 
 | **includeDuplicates** | **Boolean**| Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false 
+| **includeFullRoles** | **Boolean**| Include full role data with permission policies for each grant | [optional] [default to true]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -2005,7 +2007,7 @@ try {
 # **getAuthorizationSubjectsMe**
 
 
-> [AuthzSubject](AuthzSubject) getAuthorizationSubjectsMe(includeDuplicates)
+> [AuthzSubject](AuthzSubject) getAuthorizationSubjectsMe(includeDuplicates, includeFullRoles)
 
 Returns a listing of roles and permissions for the currently authenticated user.
 
@@ -2037,8 +2039,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 AuthorizationApi apiInstance = new AuthorizationApi();
 Boolean includeDuplicates = false; // Boolean | Include multiple entries with the same role and division but different subjects
+Boolean includeFullRoles = true; // Boolean | Include full role data with permission policies for each grant
 try {
-    AuthzSubject result = apiInstance.getAuthorizationSubjectsMe(includeDuplicates);
+    AuthzSubject result = apiInstance.getAuthorizationSubjectsMe(includeDuplicates, includeFullRoles);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AuthorizationApi#getAuthorizationSubjectsMe");
@@ -2052,6 +2055,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **includeDuplicates** | **Boolean**| Include multiple entries with the same role and division but different subjects | [optional] [default to false]<br />**Values**: true, false 
+| **includeFullRoles** | **Boolean**| Include full role data with permission policies for each grant | [optional] [default to true]<br />**Values**: true, false 
 {: class="table-striped"}
 
 
@@ -3725,4 +3729,4 @@ try {
 [**UserAuthorization**](UserAuthorization)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

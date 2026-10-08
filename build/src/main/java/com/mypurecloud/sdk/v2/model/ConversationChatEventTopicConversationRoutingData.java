@@ -31,7 +31,7 @@ public class ConversationChatEventTopicConversationRoutingData  implements Seria
   private Long priority = null;
   private List<ConversationChatEventTopicUriReference> skills = null;
   private List<ConversationChatEventTopicScoredAgent> scoredAgents = null;
-  private ConversationChatEventTopicUriReference skillExpressionId = null;
+  private String skillExpressionId = null;
 
   public ConversationChatEventTopicConversationRoutingData() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -139,19 +139,19 @@ public class ConversationChatEventTopicConversationRoutingData  implements Seria
 
 
   /**
-   * A UriReference for a resource
+   * The skill expression to use for routing decisions. If specified, it takes priority over skills.
    **/
-  public ConversationChatEventTopicConversationRoutingData skillExpressionId(ConversationChatEventTopicUriReference skillExpressionId) {
+  public ConversationChatEventTopicConversationRoutingData skillExpressionId(String skillExpressionId) {
     this.skillExpressionId = skillExpressionId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
+  @ApiModelProperty(example = "null", value = "The skill expression to use for routing decisions. If specified, it takes priority over skills.")
   @JsonProperty("skillExpressionId")
-  public ConversationChatEventTopicUriReference getSkillExpressionId() {
+  public String getSkillExpressionId() {
     return skillExpressionId;
   }
-  public void setSkillExpressionId(ConversationChatEventTopicUriReference skillExpressionId) {
+  public void setSkillExpressionId(String skillExpressionId) {
     this.skillExpressionId = skillExpressionId;
   }
 

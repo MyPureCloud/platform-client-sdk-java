@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.GuideSessionTurnInvocationResponse;
+import com.mypurecloud.sdk.v2.model.GuideSessionTurnResponseContext;
 import com.mypurecloud.sdk.v2.model.GuideSessionTurnResponseData;
 import com.mypurecloud.sdk.v2.model.GuideSessionVariable;
 import io.swagger.annotations.ApiModel;
@@ -133,6 +134,7 @@ public class GuideSessionTurnResponse  implements Serializable {
   private List<GuideSessionVariable> outputVariables = null;
   private String invocationId = null;
   private List<GuideSessionTurnInvocationResponse> invocations = null;
+  private GuideSessionTurnResponseContext context = null;
 
   public GuideSessionTurnResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -257,6 +259,24 @@ public class GuideSessionTurnResponse  implements Serializable {
   }
 
 
+  /**
+   * The context for this turn, including conversation custom attribute updates.
+   **/
+  public GuideSessionTurnResponse context(GuideSessionTurnResponseContext context) {
+    this.context = context;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The context for this turn, including conversation custom attribute updates.")
+  @JsonProperty("context")
+  public GuideSessionTurnResponseContext getContext() {
+    return context;
+  }
+  public void setContext(GuideSessionTurnResponseContext context) {
+    this.context = context;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -272,12 +292,13 @@ public class GuideSessionTurnResponse  implements Serializable {
             Objects.equals(this.result, guideSessionTurnResponse.result) &&
             Objects.equals(this.outputVariables, guideSessionTurnResponse.outputVariables) &&
             Objects.equals(this.invocationId, guideSessionTurnResponse.invocationId) &&
-            Objects.equals(this.invocations, guideSessionTurnResponse.invocations);
+            Objects.equals(this.invocations, guideSessionTurnResponse.invocations) &&
+            Objects.equals(this.context, guideSessionTurnResponse.context);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(response, status, result, outputVariables, invocationId, invocations);
+    return Objects.hash(response, status, result, outputVariables, invocationId, invocations, context);
   }
 
   @Override
@@ -291,6 +312,7 @@ public class GuideSessionTurnResponse  implements Serializable {
     sb.append("    outputVariables: ").append(toIndentedString(outputVariables)).append("\n");
     sb.append("    invocationId: ").append(toIndentedString(invocationId)).append("\n");
     sb.append("    invocations: ").append(toIndentedString(invocations)).append("\n");
+    sb.append("    context: ").append(toIndentedString(context)).append("\n");
     sb.append("}");
     return sb.toString();
   }

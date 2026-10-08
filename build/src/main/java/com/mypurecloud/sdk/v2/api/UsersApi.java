@@ -2207,12 +2207,13 @@ public class UsersApi {
    * 
    * @param subjectId Subject ID (user or group) (required)
    * @param includeDuplicates Include multiple entries with the same role and division but different subjects (optional, default to false)
+   * @param includeFullRoles Include full role data with permission policies for each grant (optional, default to true)
    * @return AuthzSubject
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuthzSubject getAuthorizationSubject(String subjectId, Boolean includeDuplicates) throws IOException, ApiException {
-    return  getAuthorizationSubject(createGetAuthorizationSubjectRequest(subjectId, includeDuplicates));
+  public AuthzSubject getAuthorizationSubject(String subjectId, Boolean includeDuplicates, Boolean includeFullRoles) throws IOException, ApiException {
+    return  getAuthorizationSubject(createGetAuthorizationSubjectRequest(subjectId, includeDuplicates, includeFullRoles));
   }
 
   /**
@@ -2220,18 +2221,21 @@ public class UsersApi {
    * 
    * @param subjectId Subject ID (user or group) (required)
    * @param includeDuplicates Include multiple entries with the same role and division but different subjects (optional, default to false)
+   * @param includeFullRoles Include full role data with permission policies for each grant (optional, default to true)
    * @return AuthzSubject
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuthzSubject> getAuthorizationSubjectWithHttpInfo(String subjectId, Boolean includeDuplicates) throws IOException {
-    return getAuthorizationSubject(createGetAuthorizationSubjectRequest(subjectId, includeDuplicates).withHttpInfo());
+  public ApiResponse<AuthzSubject> getAuthorizationSubjectWithHttpInfo(String subjectId, Boolean includeDuplicates, Boolean includeFullRoles) throws IOException {
+    return getAuthorizationSubject(createGetAuthorizationSubjectRequest(subjectId, includeDuplicates, includeFullRoles).withHttpInfo());
   }
 
-  private GetAuthorizationSubjectRequest createGetAuthorizationSubjectRequest(String subjectId, Boolean includeDuplicates) {
+  private GetAuthorizationSubjectRequest createGetAuthorizationSubjectRequest(String subjectId, Boolean includeDuplicates, Boolean includeFullRoles) {
     return GetAuthorizationSubjectRequest.builder()
             .withSubjectId(subjectId)
 
             .withIncludeDuplicates(includeDuplicates)
+
+            .withIncludeFullRoles(includeFullRoles)
 
             .build();
   }
@@ -2288,28 +2292,32 @@ public class UsersApi {
    * Returns a listing of roles and permissions for the currently authenticated user.
    * 
    * @param includeDuplicates Include multiple entries with the same role and division but different subjects (optional, default to false)
+   * @param includeFullRoles Include full role data with permission policies for each grant (optional, default to true)
    * @return AuthzSubject
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public AuthzSubject getAuthorizationSubjectsMe(Boolean includeDuplicates) throws IOException, ApiException {
-    return  getAuthorizationSubjectsMe(createGetAuthorizationSubjectsMeRequest(includeDuplicates));
+  public AuthzSubject getAuthorizationSubjectsMe(Boolean includeDuplicates, Boolean includeFullRoles) throws IOException, ApiException {
+    return  getAuthorizationSubjectsMe(createGetAuthorizationSubjectsMeRequest(includeDuplicates, includeFullRoles));
   }
 
   /**
    * Returns a listing of roles and permissions for the currently authenticated user.
    * 
    * @param includeDuplicates Include multiple entries with the same role and division but different subjects (optional, default to false)
+   * @param includeFullRoles Include full role data with permission policies for each grant (optional, default to true)
    * @return AuthzSubject
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<AuthzSubject> getAuthorizationSubjectsMeWithHttpInfo(Boolean includeDuplicates) throws IOException {
-    return getAuthorizationSubjectsMe(createGetAuthorizationSubjectsMeRequest(includeDuplicates).withHttpInfo());
+  public ApiResponse<AuthzSubject> getAuthorizationSubjectsMeWithHttpInfo(Boolean includeDuplicates, Boolean includeFullRoles) throws IOException {
+    return getAuthorizationSubjectsMe(createGetAuthorizationSubjectsMeRequest(includeDuplicates, includeFullRoles).withHttpInfo());
   }
 
-  private GetAuthorizationSubjectsMeRequest createGetAuthorizationSubjectsMeRequest(Boolean includeDuplicates) {
+  private GetAuthorizationSubjectsMeRequest createGetAuthorizationSubjectsMeRequest(Boolean includeDuplicates, Boolean includeFullRoles) {
     return GetAuthorizationSubjectsMeRequest.builder()
             .withIncludeDuplicates(includeDuplicates)
+
+            .withIncludeFullRoles(includeFullRoles)
 
             .build();
   }

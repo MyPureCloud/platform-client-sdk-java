@@ -108,7 +108,8 @@ public class MessageData  implements Serializable {
     WEBMESSAGING("webmessaging"),
     INSTAGRAM("instagram"),
     OPEN("open"),
-    APPLE("apple");
+    APPLE("apple"),
+    LINKEDIN("linkedin");
 
     private String value;
 

@@ -562,8 +562,6 @@ null (empty response body)
 
 Delete/cancel an async request for copilot aggregates
 
-deleteAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/analytics/copilots/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -2626,8 +2624,6 @@ This endpoint does not require any parameters.
 
 Get status for async query for copilot aggregates
 
-getAnalyticsCopilotsAggregatesJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/analytics/copilots/aggregates/jobs/{jobId}  
 
 Requires ANY permissions: 
@@ -2686,8 +2682,6 @@ try {
 > [CopilotAsyncAggregateQueryResponse](CopilotAsyncAggregateQueryResponse) getAnalyticsCopilotsAggregatesJobResults(jobId, cursor)
 
 Fetch a page of results for an async aggregates query
-
-getAnalyticsCopilotsAggregatesJobResults is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/copilots/aggregates/jobs/{jobId}/results  
 
@@ -6008,8 +6002,6 @@ try {
 
 Query for copilot aggregates asynchronously
 
-postAnalyticsCopilotsAggregatesJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/copilots/aggregates/jobs  
 
 Requires ANY permissions: 
@@ -6068,8 +6060,6 @@ try {
 > [CopilotAggregateQueryResponse](CopilotAggregateQueryResponse) postAnalyticsCopilotsAggregatesQuery(body)
 
 Query for copilot aggregates
-
-postAnalyticsCopilotsAggregatesQuery is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/copilots/aggregates/query  
 
@@ -8447,4 +8437,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

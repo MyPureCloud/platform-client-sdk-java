@@ -54,7 +54,9 @@ public class TtsVoiceEntity  implements Serializable {
     WAVENET("Wavenet"),
     GENERATIVE("Generative"),
     CHIRP3("Chirp3"),
-    GEMINI("Gemini");
+    GEMINI("Gemini"),
+    LONGFORM("LongForm"),
+    UNKNOWN("Unknown");
 
     private String value;
 

@@ -110,7 +110,8 @@ public class ConversationIntentSuggestionsTopicIntentSuggestionEvent  implements
     CONVERSATIONSTART("ConversationStart"),
     CONVERSATIONTRANSFER("ConversationTransfer"),
     CONVERSATIONEND("ConversationEnd"),
-    INTENT("Intent");
+    INTENT("Intent"),
+    SENTIMENT("Sentiment");
 
     private String value;
 

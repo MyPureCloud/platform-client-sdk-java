@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ListWrapperRequiredDateRange;
 import com.mypurecloud.sdk.v2.model.ValueWrapperDate;
 import com.mypurecloud.sdk.v2.model.ValueWrapperShiftTradeTargetRequestItem;
+import com.mypurecloud.sdk.v2.model.ValueWrapperString;
 import com.mypurecloud.sdk.v2.model.WfmVersionedEntityMetadata;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,6 +32,7 @@ public class UpdateShiftTradeJobRequest  implements Serializable {
   private ValueWrapperShiftTradeTargetRequestItem target = null;
   private ValueWrapperDate expirationDate = null;
   private ListWrapperRequiredDateRange acceptableIntervals = null;
+  private ValueWrapperString reviewNote = null;
   private WfmVersionedEntityMetadata metadata = null;
 
   public UpdateShiftTradeJobRequest() {
@@ -117,6 +119,24 @@ public class UpdateShiftTradeJobRequest  implements Serializable {
 
 
   /**
+   * Optional note from the initiating user for shift trade review
+   **/
+  public UpdateShiftTradeJobRequest reviewNote(ValueWrapperString reviewNote) {
+    this.reviewNote = reviewNote;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional note from the initiating user for shift trade review")
+  @JsonProperty("reviewNote")
+  public ValueWrapperString getReviewNote() {
+    return reviewNote;
+  }
+  public void setReviewNote(ValueWrapperString reviewNote) {
+    this.reviewNote = reviewNote;
+  }
+
+
+  /**
    * Version metadata for the shift trade
    **/
   public UpdateShiftTradeJobRequest metadata(WfmVersionedEntityMetadata metadata) {
@@ -148,12 +168,13 @@ public class UpdateShiftTradeJobRequest  implements Serializable {
             Objects.equals(this.target, updateShiftTradeJobRequest.target) &&
             Objects.equals(this.expirationDate, updateShiftTradeJobRequest.expirationDate) &&
             Objects.equals(this.acceptableIntervals, updateShiftTradeJobRequest.acceptableIntervals) &&
+            Objects.equals(this.reviewNote, updateShiftTradeJobRequest.reviewNote) &&
             Objects.equals(this.metadata, updateShiftTradeJobRequest.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(weekDate, target, expirationDate, acceptableIntervals, metadata);
+    return Objects.hash(weekDate, target, expirationDate, acceptableIntervals, reviewNote, metadata);
   }
 
   @Override
@@ -165,6 +186,7 @@ public class UpdateShiftTradeJobRequest  implements Serializable {
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
     sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
     sb.append("    acceptableIntervals: ").append(toIndentedString(acceptableIntervals)).append("\n");
+    sb.append("    reviewNote: ").append(toIndentedString(reviewNote)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

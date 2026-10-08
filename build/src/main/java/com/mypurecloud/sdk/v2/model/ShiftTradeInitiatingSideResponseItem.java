@@ -30,6 +30,7 @@ public class ShiftTradeInitiatingSideResponseItem  implements Serializable {
   private ManagementUnitReference managementUnit = null;
   private ScheduleReferenceWithBusinessUnit schedule = null;
   private ShiftTradeShiftResponseItem shift = null;
+  private String reviewNote = null;
 
   public ShiftTradeInitiatingSideResponseItem() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -114,6 +115,24 @@ public class ShiftTradeInitiatingSideResponseItem  implements Serializable {
   }
 
 
+  /**
+   * Optional note from the initiating user for shift trade review
+   **/
+  public ShiftTradeInitiatingSideResponseItem reviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional note from the initiating user for shift trade review")
+  @JsonProperty("reviewNote")
+  public String getReviewNote() {
+    return reviewNote;
+  }
+  public void setReviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -127,12 +146,13 @@ public class ShiftTradeInitiatingSideResponseItem  implements Serializable {
     return Objects.equals(this.user, shiftTradeInitiatingSideResponseItem.user) &&
             Objects.equals(this.managementUnit, shiftTradeInitiatingSideResponseItem.managementUnit) &&
             Objects.equals(this.schedule, shiftTradeInitiatingSideResponseItem.schedule) &&
-            Objects.equals(this.shift, shiftTradeInitiatingSideResponseItem.shift);
+            Objects.equals(this.shift, shiftTradeInitiatingSideResponseItem.shift) &&
+            Objects.equals(this.reviewNote, shiftTradeInitiatingSideResponseItem.reviewNote);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, managementUnit, schedule, shift);
+    return Objects.hash(user, managementUnit, schedule, shift, reviewNote);
   }
 
   @Override
@@ -144,6 +164,7 @@ public class ShiftTradeInitiatingSideResponseItem  implements Serializable {
     sb.append("    managementUnit: ").append(toIndentedString(managementUnit)).append("\n");
     sb.append("    schedule: ").append(toIndentedString(schedule)).append("\n");
     sb.append("    shift: ").append(toIndentedString(shift)).append("\n");
+    sb.append("    reviewNote: ").append(toIndentedString(reviewNote)).append("\n");
     sb.append("}");
     return sb.toString();
   }

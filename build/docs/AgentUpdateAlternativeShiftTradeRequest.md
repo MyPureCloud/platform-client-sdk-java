@@ -6,6 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **state** | [**StateEnum**](#Enum--StateEnum) | The new state of this alternative shift trade |  [optional] |
+| **reviewNote** | **String** | Optional note for supervisors to review during alternative shift trade approval |  [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata) | Version metadata for this alternative shift trade |  |
 
 
@@ -19,4 +20,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

@@ -117,7 +117,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ASSISTANTS("Assistants"),
     ANOMALYDETECTION("AnomalyDetection"),
     CONVERSATIONS("Conversations"),
-    GENESYSCLOUDCOPILOT("GenesysCloudCopilot");
+    GENESYSCLOUDCOPILOT("GenesysCloudCopilot"),
+    CONVERSATIONREFINEMENT("ConversationRefinement");
 
     private String value;
 
@@ -634,7 +635,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CONVERSATIONACCESSATTRIBUTES("ConversationAccessAttributes"),
     SETTINGS("Settings"),
     AGENT("Agent"),
-    GRAPHSETTINGS("GraphSettings");
+    GRAPHSETTINGS("GraphSettings"),
+    REFINEMENTCONFIGURATION("RefinementConfiguration");
 
     private String value;
 

@@ -77,6 +77,7 @@ public class CreateAlternativeShiftTradeRequest  implements Serializable {
   }
   private AlternativeShiftTradeGranularityEnum alternativeShiftTradeGranularity = null;
   private Date expirationDate = null;
+  private String reviewNote = null;
 
   public CreateAlternativeShiftTradeRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -183,6 +184,24 @@ public class CreateAlternativeShiftTradeRequest  implements Serializable {
   }
 
 
+  /**
+   * Optional note for supervisors to review during alternative shift trade approval
+   **/
+  public CreateAlternativeShiftTradeRequest reviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional note for supervisors to review during alternative shift trade approval")
+  @JsonProperty("reviewNote")
+  public String getReviewNote() {
+    return reviewNote;
+  }
+  public void setReviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -197,12 +216,13 @@ public class CreateAlternativeShiftTradeRequest  implements Serializable {
             Objects.equals(this.dropShiftReferenceKeys, createAlternativeShiftTradeRequest.dropShiftReferenceKeys) &&
             Objects.equals(this.pickupShiftReferenceKeys, createAlternativeShiftTradeRequest.pickupShiftReferenceKeys) &&
             Objects.equals(this.alternativeShiftTradeGranularity, createAlternativeShiftTradeRequest.alternativeShiftTradeGranularity) &&
-            Objects.equals(this.expirationDate, createAlternativeShiftTradeRequest.expirationDate);
+            Objects.equals(this.expirationDate, createAlternativeShiftTradeRequest.expirationDate) &&
+            Objects.equals(this.reviewNote, createAlternativeShiftTradeRequest.reviewNote);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(jobId, dropShiftReferenceKeys, pickupShiftReferenceKeys, alternativeShiftTradeGranularity, expirationDate);
+    return Objects.hash(jobId, dropShiftReferenceKeys, pickupShiftReferenceKeys, alternativeShiftTradeGranularity, expirationDate, reviewNote);
   }
 
   @Override
@@ -215,6 +235,7 @@ public class CreateAlternativeShiftTradeRequest  implements Serializable {
     sb.append("    pickupShiftReferenceKeys: ").append(toIndentedString(pickupShiftReferenceKeys)).append("\n");
     sb.append("    alternativeShiftTradeGranularity: ").append(toIndentedString(alternativeShiftTradeGranularity)).append("\n");
     sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
+    sb.append("    reviewNote: ").append(toIndentedString(reviewNote)).append("\n");
     sb.append("}");
     return sb.toString();
   }

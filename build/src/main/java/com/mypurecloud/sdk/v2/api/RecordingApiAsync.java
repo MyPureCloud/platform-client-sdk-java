@@ -1255,7 +1255,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Gets all orphan recordings
+   * Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed
@@ -1289,7 +1289,7 @@ public class RecordingApiAsync {
   }
 
   /**
-   * Gets all orphan recordings
+   * Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
    * 
    * @param request the request object
    * @param callback the action to perform when the request is completed

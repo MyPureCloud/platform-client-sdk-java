@@ -41,6 +41,7 @@ public class AlternativeShiftTradeResponse  implements Serializable {
   private UserReference user = null;
   private LocalDate weekDate = null;
   private Date expirationDate = null;
+  private String reviewNote = null;
 
   private static class StateEnumDeserializer extends StdDeserializer<StateEnum> {
     public StateEnumDeserializer() {
@@ -366,6 +367,24 @@ public class AlternativeShiftTradeResponse  implements Serializable {
 
 
   /**
+   * Optional note from the initiating user for shift trade review
+   **/
+  public AlternativeShiftTradeResponse reviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional note from the initiating user for shift trade review")
+  @JsonProperty("reviewNote")
+  public String getReviewNote() {
+    return reviewNote;
+  }
+  public void setReviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+  }
+
+
+  /**
    * The state of this alternative shift trade
    **/
   public AlternativeShiftTradeResponse state(StateEnum state) {
@@ -517,6 +536,7 @@ public class AlternativeShiftTradeResponse  implements Serializable {
             Objects.equals(this.user, alternativeShiftTradeResponse.user) &&
             Objects.equals(this.weekDate, alternativeShiftTradeResponse.weekDate) &&
             Objects.equals(this.expirationDate, alternativeShiftTradeResponse.expirationDate) &&
+            Objects.equals(this.reviewNote, alternativeShiftTradeResponse.reviewNote) &&
             Objects.equals(this.state, alternativeShiftTradeResponse.state) &&
             Objects.equals(this.processingStatus, alternativeShiftTradeResponse.processingStatus) &&
             Objects.equals(this.systemDateReviewed, alternativeShiftTradeResponse.systemDateReviewed) &&
@@ -529,7 +549,7 @@ public class AlternativeShiftTradeResponse  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, shiftOfferJobId, existingShifts, offeredShifts, schedule, managementUnit, user, weekDate, expirationDate, state, processingStatus, systemDateReviewed, adminDateReviewed, adminReviewedBy, violations, metadata, selfUri);
+    return Objects.hash(id, shiftOfferJobId, existingShifts, offeredShifts, schedule, managementUnit, user, weekDate, expirationDate, reviewNote, state, processingStatus, systemDateReviewed, adminDateReviewed, adminReviewedBy, violations, metadata, selfUri);
   }
 
   @Override
@@ -546,6 +566,7 @@ public class AlternativeShiftTradeResponse  implements Serializable {
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    weekDate: ").append(toIndentedString(weekDate)).append("\n");
     sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
+    sb.append("    reviewNote: ").append(toIndentedString(reviewNote)).append("\n");
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
     sb.append("    processingStatus: ").append(toIndentedString(processingStatus)).append("\n");
     sb.append("    systemDateReviewed: ").append(toIndentedString(systemDateReviewed)).append("\n");

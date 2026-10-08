@@ -15,7 +15,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationAppMessage;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationExternalContact;
-import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationOutcomeAchievedMessage;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationSegmentAssignmentMessage;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationSession;
 import com.mypurecloud.sdk.v2.model.JourneyAppEventsNotificationWebActionMessage;
@@ -57,7 +56,6 @@ public class JourneyAppEventsNotificationAppEventsNotification  implements Seria
   public enum EventTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     APPEVENT("AppEvent"),
-    OUTCOMEACHIEVEDEVENT("OutcomeAchievedEvent"),
     SEGMENTASSIGNMENTEVENT("SegmentAssignmentEvent"),
     WEBACTIONEVENT("WebActionEvent");
 
@@ -88,7 +86,6 @@ public class JourneyAppEventsNotificationAppEventsNotification  implements Seria
   }
   private EventTypeEnum eventType = null;
   private JourneyAppEventsNotificationAppMessage appEvent = null;
-  private JourneyAppEventsNotificationOutcomeAchievedMessage outcomeAchievedEvent = null;
   private JourneyAppEventsNotificationSegmentAssignmentMessage segmentAssignmentEvent = null;
   private JourneyAppEventsNotificationWebActionMessage webActionEvent = null;
 
@@ -258,23 +255,6 @@ public class JourneyAppEventsNotificationAppEventsNotification  implements Seria
 
   /**
    **/
-  public JourneyAppEventsNotificationAppEventsNotification outcomeAchievedEvent(JourneyAppEventsNotificationOutcomeAchievedMessage outcomeAchievedEvent) {
-    this.outcomeAchievedEvent = outcomeAchievedEvent;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("outcomeAchievedEvent")
-  public JourneyAppEventsNotificationOutcomeAchievedMessage getOutcomeAchievedEvent() {
-    return outcomeAchievedEvent;
-  }
-  public void setOutcomeAchievedEvent(JourneyAppEventsNotificationOutcomeAchievedMessage outcomeAchievedEvent) {
-    this.outcomeAchievedEvent = outcomeAchievedEvent;
-  }
-
-
-  /**
-   **/
   public JourneyAppEventsNotificationAppEventsNotification segmentAssignmentEvent(JourneyAppEventsNotificationSegmentAssignmentMessage segmentAssignmentEvent) {
     this.segmentAssignmentEvent = segmentAssignmentEvent;
     return this;
@@ -326,14 +306,13 @@ public class JourneyAppEventsNotificationAppEventsNotification  implements Seria
             Objects.equals(this.session, journeyAppEventsNotificationAppEventsNotification.session) &&
             Objects.equals(this.eventType, journeyAppEventsNotificationAppEventsNotification.eventType) &&
             Objects.equals(this.appEvent, journeyAppEventsNotificationAppEventsNotification.appEvent) &&
-            Objects.equals(this.outcomeAchievedEvent, journeyAppEventsNotificationAppEventsNotification.outcomeAchievedEvent) &&
             Objects.equals(this.segmentAssignmentEvent, journeyAppEventsNotificationAppEventsNotification.segmentAssignmentEvent) &&
             Objects.equals(this.webActionEvent, journeyAppEventsNotificationAppEventsNotification.webActionEvent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, session, eventType, appEvent, outcomeAchievedEvent, segmentAssignmentEvent, webActionEvent);
+    return Objects.hash(id, correlationId, externalContact, createdDate, customerId, customerIdType, session, eventType, appEvent, segmentAssignmentEvent, webActionEvent);
   }
 
   @Override
@@ -350,7 +329,6 @@ public class JourneyAppEventsNotificationAppEventsNotification  implements Seria
     sb.append("    session: ").append(toIndentedString(session)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    appEvent: ").append(toIndentedString(appEvent)).append("\n");
-    sb.append("    outcomeAchievedEvent: ").append(toIndentedString(outcomeAchievedEvent)).append("\n");
     sb.append("    segmentAssignmentEvent: ").append(toIndentedString(segmentAssignmentEvent)).append("\n");
     sb.append("    webActionEvent: ").append(toIndentedString(webActionEvent)).append("\n");
     sb.append("}");

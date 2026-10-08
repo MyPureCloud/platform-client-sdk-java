@@ -211,14 +211,14 @@ public class UpdateUser  implements Serializable {
 
 
   /**
-   * Email address, phone number, and/or extension for this user. One entry is allowed per media type
+   * Email address, phone number, and/or extension for this user. One entry is allowed per media type. The PRIMARY email address cannot be changed through this field; submitting a modified value for the PRIMARY entry returns a 400 error.
    **/
   public UpdateUser addresses(List<Contact> addresses) {
     this.addresses = addresses;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Email address, phone number, and/or extension for this user. One entry is allowed per media type")
+  @ApiModelProperty(example = "null", value = "Email address, phone number, and/or extension for this user. One entry is allowed per media type. The PRIMARY email address cannot be changed through this field; submitting a modified value for the PRIMARY entry returns a 400 error.")
   @JsonProperty("addresses")
   public List<Contact> getAddresses() {
     return addresses;
@@ -246,13 +246,14 @@ public class UpdateUser  implements Serializable {
 
 
   /**
+   * This value is ignored; the username cannot be changed through this endpoint.
    **/
   public UpdateUser username(String username) {
     this.username = username;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(example = "null", value = "This value is ignored; the username cannot be changed through this endpoint.")
   @JsonProperty("username")
   public String getUsername() {
     return username;

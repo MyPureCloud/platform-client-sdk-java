@@ -32,6 +32,7 @@ public class AddShiftTradeJobRequest  implements Serializable {
   private List<RequiredDateRange> acceptableIntervals = null;
   private ShiftTradeTargetRequestItem target = null;
   private Date expirationDate = null;
+  private String reviewNote = null;
 
   public AddShiftTradeJobRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -118,6 +119,24 @@ public class AddShiftTradeJobRequest  implements Serializable {
   }
 
 
+  /**
+   * Optional note from the initiating user for shift trade review
+   **/
+  public AddShiftTradeJobRequest reviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional note from the initiating user for shift trade review")
+  @JsonProperty("reviewNote")
+  public String getReviewNote() {
+    return reviewNote;
+  }
+  public void setReviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -131,12 +150,13 @@ public class AddShiftTradeJobRequest  implements Serializable {
     return Objects.equals(this.initiatingShift, addShiftTradeJobRequest.initiatingShift) &&
             Objects.equals(this.acceptableIntervals, addShiftTradeJobRequest.acceptableIntervals) &&
             Objects.equals(this.target, addShiftTradeJobRequest.target) &&
-            Objects.equals(this.expirationDate, addShiftTradeJobRequest.expirationDate);
+            Objects.equals(this.expirationDate, addShiftTradeJobRequest.expirationDate) &&
+            Objects.equals(this.reviewNote, addShiftTradeJobRequest.reviewNote);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(initiatingShift, acceptableIntervals, target, expirationDate);
+    return Objects.hash(initiatingShift, acceptableIntervals, target, expirationDate, reviewNote);
   }
 
   @Override
@@ -148,6 +168,7 @@ public class AddShiftTradeJobRequest  implements Serializable {
     sb.append("    acceptableIntervals: ").append(toIndentedString(acceptableIntervals)).append("\n");
     sb.append("    target: ").append(toIndentedString(target)).append("\n");
     sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
+    sb.append("    reviewNote: ").append(toIndentedString(reviewNote)).append("\n");
     sb.append("}");
     return sb.toString();
   }

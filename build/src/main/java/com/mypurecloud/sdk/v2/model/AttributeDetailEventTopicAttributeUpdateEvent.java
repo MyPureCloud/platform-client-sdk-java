@@ -34,6 +34,7 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
   private List<String> conversationExternalContactIds = null;
   private List<String> conversationExternalOrganizationIds = null;
   private List<AttributeDetailEventTopicCommunication> communications = null;
+  private Long participantStartTime = null;
 
   public AttributeDetailEventTopicAttributeUpdateEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -171,6 +172,23 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
   }
 
 
+  /**
+   **/
+  public AttributeDetailEventTopicAttributeUpdateEvent participantStartTime(Long participantStartTime) {
+    this.participantStartTime = participantStartTime;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("participantStartTime")
+  public Long getParticipantStartTime() {
+    return participantStartTime;
+  }
+  public void setParticipantStartTime(Long participantStartTime) {
+    this.participantStartTime = participantStartTime;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -187,12 +205,13 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
             Objects.equals(this.attributes, attributeDetailEventTopicAttributeUpdateEvent.attributes) &&
             Objects.equals(this.conversationExternalContactIds, attributeDetailEventTopicAttributeUpdateEvent.conversationExternalContactIds) &&
             Objects.equals(this.conversationExternalOrganizationIds, attributeDetailEventTopicAttributeUpdateEvent.conversationExternalOrganizationIds) &&
-            Objects.equals(this.communications, attributeDetailEventTopicAttributeUpdateEvent.communications);
+            Objects.equals(this.communications, attributeDetailEventTopicAttributeUpdateEvent.communications) &&
+            Objects.equals(this.participantStartTime, attributeDetailEventTopicAttributeUpdateEvent.participantStartTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, attributes, conversationExternalContactIds, conversationExternalOrganizationIds, communications);
+    return Objects.hash(eventTime, conversationId, participantId, attributes, conversationExternalContactIds, conversationExternalOrganizationIds, communications, participantStartTime);
   }
 
   @Override
@@ -207,6 +226,7 @@ public class AttributeDetailEventTopicAttributeUpdateEvent  implements Serializa
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("    communications: ").append(toIndentedString(communications)).append("\n");
+    sb.append("    participantStartTime: ").append(toIndentedString(participantStartTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -32,7 +32,7 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
   private Long priority = null;
   private List<ConversationEventTopicUriReference> skills = null;
   private List<ConversationEventTopicScoredAgent> scoredAgents = null;
-  private ConversationEventTopicUriReference skillExpressionId = null;
+  private String skillExpressionId = null;
 
   public ConversationEventTopicConversationRoutingData() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -139,19 +139,19 @@ public class ConversationEventTopicConversationRoutingData  implements Serializa
 
 
   /**
-   * A UriReference for a resource
+   * The skill expression to use for routing decisions. If specified, it takes priority over skills.
    **/
-  public ConversationEventTopicConversationRoutingData skillExpressionId(ConversationEventTopicUriReference skillExpressionId) {
+  public ConversationEventTopicConversationRoutingData skillExpressionId(String skillExpressionId) {
     this.skillExpressionId = skillExpressionId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
+  @ApiModelProperty(example = "null", value = "The skill expression to use for routing decisions. If specified, it takes priority over skills.")
   @JsonProperty("skillExpressionId")
-  public ConversationEventTopicUriReference getSkillExpressionId() {
+  public String getSkillExpressionId() {
     return skillExpressionId;
   }
-  public void setSkillExpressionId(ConversationEventTopicUriReference skillExpressionId) {
+  public void setSkillExpressionId(String skillExpressionId) {
     this.skillExpressionId = skillExpressionId;
   }
 

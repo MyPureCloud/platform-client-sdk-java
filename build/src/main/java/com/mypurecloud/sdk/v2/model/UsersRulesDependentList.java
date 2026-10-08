@@ -30,9 +30,9 @@ public class UsersRulesDependentList  implements Serializable, PagedResource<Use
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private Long total = null;
+  private String lastUri = null;
   private String firstUri = null;
   private String selfUri = null;
-  private String lastUri = null;
   private String nextUri = null;
   private String previousUri = null;
   private Integer pageCount = null;
@@ -120,6 +120,23 @@ public class UsersRulesDependentList  implements Serializable, PagedResource<Use
 
   /**
    **/
+  public UsersRulesDependentList lastUri(String lastUri) {
+    this.lastUri = lastUri;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("lastUri")
+  public String getLastUri() {
+    return lastUri;
+  }
+  public void setLastUri(String lastUri) {
+    this.lastUri = lastUri;
+  }
+
+
+  /**
+   **/
   public UsersRulesDependentList firstUri(String firstUri) {
     this.firstUri = firstUri;
     return this;
@@ -149,23 +166,6 @@ public class UsersRulesDependentList  implements Serializable, PagedResource<Use
   }
   public void setSelfUri(String selfUri) {
     this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public UsersRulesDependentList lastUri(String lastUri) {
-    this.lastUri = lastUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("lastUri")
-  public String getLastUri() {
-    return lastUri;
-  }
-  public void setLastUri(String lastUri) {
-    this.lastUri = lastUri;
   }
 
 
@@ -234,9 +234,9 @@ public class UsersRulesDependentList  implements Serializable, PagedResource<Use
             Objects.equals(this.pageSize, usersRulesDependentList.pageSize) &&
             Objects.equals(this.pageNumber, usersRulesDependentList.pageNumber) &&
             Objects.equals(this.total, usersRulesDependentList.total) &&
+            Objects.equals(this.lastUri, usersRulesDependentList.lastUri) &&
             Objects.equals(this.firstUri, usersRulesDependentList.firstUri) &&
             Objects.equals(this.selfUri, usersRulesDependentList.selfUri) &&
-            Objects.equals(this.lastUri, usersRulesDependentList.lastUri) &&
             Objects.equals(this.nextUri, usersRulesDependentList.nextUri) &&
             Objects.equals(this.previousUri, usersRulesDependentList.previousUri) &&
             Objects.equals(this.pageCount, usersRulesDependentList.pageCount);
@@ -244,7 +244,7 @@ public class UsersRulesDependentList  implements Serializable, PagedResource<Use
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, pageSize, pageNumber, total, firstUri, selfUri, lastUri, nextUri, previousUri, pageCount);
+    return Objects.hash(entities, pageSize, pageNumber, total, lastUri, firstUri, selfUri, nextUri, previousUri, pageCount);
   }
 
   @Override
@@ -256,9 +256,9 @@ public class UsersRulesDependentList  implements Serializable, PagedResource<Use
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
+    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    firstUri: ").append(toIndentedString(firstUri)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    lastUri: ").append(toIndentedString(lastUri)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
     sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    pageCount: ").append(toIndentedString(pageCount)).append("\n");

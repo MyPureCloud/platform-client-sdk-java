@@ -108,7 +108,8 @@ public class ConversationKnowledgeSearchSuggestionsTopicKnowledgeSearchSuggestio
     CONVERSATIONSTART("ConversationStart"),
     CONVERSATIONTRANSFER("ConversationTransfer"),
     CONVERSATIONEND("ConversationEnd"),
-    INTENT("Intent");
+    INTENT("Intent"),
+    SENTIMENT("Sentiment");
 
     private String value;
 

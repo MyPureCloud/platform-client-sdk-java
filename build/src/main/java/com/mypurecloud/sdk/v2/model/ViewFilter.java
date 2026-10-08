@@ -1913,7 +1913,8 @@ public class ViewFilter  implements Serializable {
     FACEBOOK("Facebook"),
     INSTAGRAM("Instagram"),
     OPEN("Open"),
-    GOOGLEBUSINESSPROFILE("GoogleBusinessProfile");
+    GOOGLEBUSINESSPROFILE("GoogleBusinessProfile"),
+    LINKEDIN("LinkedIn");
 
     private String value;
 

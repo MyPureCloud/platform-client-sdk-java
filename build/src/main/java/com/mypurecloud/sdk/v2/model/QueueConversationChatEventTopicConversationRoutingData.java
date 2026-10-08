@@ -31,7 +31,7 @@ public class QueueConversationChatEventTopicConversationRoutingData  implements 
   private Long priority = null;
   private List<QueueConversationChatEventTopicUriReference> skills = null;
   private List<QueueConversationChatEventTopicScoredAgent> scoredAgents = null;
-  private QueueConversationChatEventTopicUriReference skillExpressionId = null;
+  private String skillExpressionId = null;
 
   public QueueConversationChatEventTopicConversationRoutingData() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -139,19 +139,19 @@ public class QueueConversationChatEventTopicConversationRoutingData  implements 
 
 
   /**
-   * A UriReference for a resource
+   * The skill expression to use for routing decisions. If specified, it takes priority over skills.
    **/
-  public QueueConversationChatEventTopicConversationRoutingData skillExpressionId(QueueConversationChatEventTopicUriReference skillExpressionId) {
+  public QueueConversationChatEventTopicConversationRoutingData skillExpressionId(String skillExpressionId) {
     this.skillExpressionId = skillExpressionId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "A UriReference for a resource")
+  @ApiModelProperty(example = "null", value = "The skill expression to use for routing decisions. If specified, it takes priority over skills.")
   @JsonProperty("skillExpressionId")
-  public QueueConversationChatEventTopicUriReference getSkillExpressionId() {
+  public String getSkillExpressionId() {
     return skillExpressionId;
   }
-  public void setSkillExpressionId(QueueConversationChatEventTopicUriReference skillExpressionId) {
+  public void setSkillExpressionId(String skillExpressionId) {
     this.skillExpressionId = skillExpressionId;
   }
 

@@ -24,6 +24,7 @@ public class SummarySettingParticipantLabels  implements Serializable {
   
   private String internal = null;
   private String external = null;
+  private String virtualAgent = null;
 
   public SummarySettingParticipantLabels() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -72,6 +73,24 @@ public class SummarySettingParticipantLabels  implements Serializable {
   }
 
 
+  /**
+   * Specify how to refer the virtual agent of the interaction.
+   **/
+  public SummarySettingParticipantLabels virtualAgent(String virtualAgent) {
+    this.virtualAgent = virtualAgent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Specify how to refer the virtual agent of the interaction.")
+  @JsonProperty("virtualAgent")
+  public String getVirtualAgent() {
+    return virtualAgent;
+  }
+  public void setVirtualAgent(String virtualAgent) {
+    this.virtualAgent = virtualAgent;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -83,12 +102,13 @@ public class SummarySettingParticipantLabels  implements Serializable {
     SummarySettingParticipantLabels summarySettingParticipantLabels = (SummarySettingParticipantLabels) o;
 
     return Objects.equals(this.internal, summarySettingParticipantLabels.internal) &&
-            Objects.equals(this.external, summarySettingParticipantLabels.external);
+            Objects.equals(this.external, summarySettingParticipantLabels.external) &&
+            Objects.equals(this.virtualAgent, summarySettingParticipantLabels.virtualAgent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(internal, external);
+    return Objects.hash(internal, external, virtualAgent);
   }
 
   @Override
@@ -98,6 +118,7 @@ public class SummarySettingParticipantLabels  implements Serializable {
     
     sb.append("    internal: ").append(toIndentedString(internal)).append("\n");
     sb.append("    external: ").append(toIndentedString(external)).append("\n");
+    sb.append("    virtualAgent: ").append(toIndentedString(virtualAgent)).append("\n");
     sb.append("}");
     return sb.toString();
   }

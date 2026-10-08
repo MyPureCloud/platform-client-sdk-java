@@ -677,14 +677,14 @@ public class CallMediaParticipant  implements Serializable {
 
 
   /**
-   * The PureCloud queue for this participant.
+   * The PureCloud queue for this participant. Id and selfUri will be populated, name is optional.
    **/
   public CallMediaParticipant queue(DomainEntityRef queue) {
     this.queue = queue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The PureCloud queue for this participant.")
+  @ApiModelProperty(example = "null", value = "The PureCloud queue for this participant. Id and selfUri will be populated, name is optional.")
   @JsonProperty("queue")
   public DomainEntityRef getQueue() {
     return queue;

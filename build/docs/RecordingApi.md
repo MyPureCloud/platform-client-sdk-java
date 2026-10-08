@@ -19,7 +19,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getConversationRecordings**](RecordingApi#getConversationRecordings) | Get all of a Conversation's Recordings. |
 | [**getOrphanrecording**](RecordingApi#getOrphanrecording) | Gets a single orphan recording |
 | [**getOrphanrecordingMedia**](RecordingApi#getOrphanrecordingMedia) | Gets the media of a single orphan recording |
-| [**getOrphanrecordings**](RecordingApi#getOrphanrecordings) | Gets all orphan recordings |
+| [**getOrphanrecordings**](RecordingApi#getOrphanrecordings) | Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings |
 | [**getRecordingBatchrequest**](RecordingApi#getRecordingBatchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results. |
 | [**getRecordingCrossplatformMediaretentionpolicies**](RecordingApi#getRecordingCrossplatformMediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled. |
 | [**getRecordingCrossplatformMediaretentionpolicy**](RecordingApi#getRecordingCrossplatformMediaretentionpolicy) | Get a media retention policy |
@@ -1038,7 +1038,7 @@ try {
 
 > [OrphanRecordingListing](OrphanRecordingListing) getOrphanrecordings(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media)
 
-Gets all orphan recordings
+Gets all orphan recordings. When querying without 'hasConversation = true', the results are capped at 500 orphan recordings
 
 Wraps GET /api/v2/orphanrecordings  
 
@@ -1074,7 +1074,7 @@ String sortBy = "sortBy_example"; // String | variable name requested to sort by
 List<String> expand = Arrays.asList(null); // List<String> | variable name requested by expand list
 String nextPage = "nextPage_example"; // String | next page token
 String previousPage = "previousPage_example"; // String | Previous page token
-Boolean hasConversation = false; // Boolean | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization.
+Boolean hasConversation = false; // Boolean | Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results.
 String media = "media_example"; // String | Filter resulting orphans based on their media type
 try {
     OrphanRecordingListing result = apiInstance.getOrphanrecordings(pageSize, pageNumber, sortBy, expand, nextPage, previousPage, hasConversation, media);
@@ -1096,7 +1096,7 @@ try {
 | **expand** | [**List&lt;String&gt;**](String)| variable name requested by expand list | [optional] 
 | **nextPage** | **String**| next page token | [optional] 
 | **previousPage** | **String**| Previous page token | [optional] 
-| **hasConversation** | **Boolean**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to false] 
+| **hasConversation** | **Boolean**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization, capped at 500 results. | [optional] [default to false] 
 | **media** | **String**| Filter resulting orphans based on their media type | [optional]<br />**Values**: Call, Screen 
 {: class="table-striped"}
 
@@ -3655,4 +3655,4 @@ try {
 [**ManageDeleteProtectionResult**](ManageDeleteProtectionResult)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_

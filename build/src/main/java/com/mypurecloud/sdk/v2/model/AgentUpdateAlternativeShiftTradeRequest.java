@@ -71,6 +71,7 @@ public class AgentUpdateAlternativeShiftTradeRequest  implements Serializable {
     }
   }
   private StateEnum state = null;
+  private String reviewNote = null;
   private WfmVersionedEntityMetadata metadata = null;
 
   public AgentUpdateAlternativeShiftTradeRequest() {
@@ -103,6 +104,24 @@ public class AgentUpdateAlternativeShiftTradeRequest  implements Serializable {
 
 
   /**
+   * Optional note for supervisors to review during alternative shift trade approval
+   **/
+  public AgentUpdateAlternativeShiftTradeRequest reviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Optional note for supervisors to review during alternative shift trade approval")
+  @JsonProperty("reviewNote")
+  public String getReviewNote() {
+    return reviewNote;
+  }
+  public void setReviewNote(String reviewNote) {
+    this.reviewNote = reviewNote;
+  }
+
+
+  /**
    * Version metadata for this alternative shift trade
    **/
   public AgentUpdateAlternativeShiftTradeRequest metadata(WfmVersionedEntityMetadata metadata) {
@@ -131,12 +150,13 @@ public class AgentUpdateAlternativeShiftTradeRequest  implements Serializable {
     AgentUpdateAlternativeShiftTradeRequest agentUpdateAlternativeShiftTradeRequest = (AgentUpdateAlternativeShiftTradeRequest) o;
 
     return Objects.equals(this.state, agentUpdateAlternativeShiftTradeRequest.state) &&
+            Objects.equals(this.reviewNote, agentUpdateAlternativeShiftTradeRequest.reviewNote) &&
             Objects.equals(this.metadata, agentUpdateAlternativeShiftTradeRequest.metadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, metadata);
+    return Objects.hash(state, reviewNote, metadata);
   }
 
   @Override
@@ -145,6 +165,7 @@ public class AgentUpdateAlternativeShiftTradeRequest  implements Serializable {
     sb.append("class AgentUpdateAlternativeShiftTradeRequest {\n");
     
     sb.append("    state: ").append(toIndentedString(state)).append("\n");
+    sb.append("    reviewNote: ").append(toIndentedString(reviewNote)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("}");
     return sb.toString();

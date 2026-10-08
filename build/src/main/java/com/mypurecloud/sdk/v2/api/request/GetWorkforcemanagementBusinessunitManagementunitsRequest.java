@@ -482,6 +482,7 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		CAPACITYPLANFORECASTINPUTS("CapacityPlanForecastInputs"),
 		CAPACITYPLANPERFORMANCEPREDICTION("CapacityPlanPerformancePrediction"),
 		CONTINUOUSFORECAST("ContinuousForecast"),
+		MAINFORECASTDIAGNOSTICS("MainForecastDiagnostics"),
 		PREDICTIONSFORECASTINGSCENARIOJOBS("PredictionsForecastingScenarioJobs"),
 		PREDICTIONSFORECASTINGSCENARIOS("PredictionsForecastingScenarios"),
 		HISTORICALADHERENCE("HistoricalAdherence"),

@@ -31,7 +31,6 @@ import java.io.Serializable;
 public class ModelCase  implements Serializable {
   
   private String id = null;
-  private String name = null;
   private StarrableDivision division = null;
   private Integer version = null;
   private String reference = null;
@@ -221,24 +220,6 @@ public class ModelCase  implements Serializable {
   @JsonProperty("id")
   public String getId() {
     return id;
-  }
-
-
-  /**
-   * The name of the Case.
-   **/
-  public ModelCase name(String name) {
-    this.name = name;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "The name of the Case.")
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-  public void setName(String name) {
-    this.name = name;
   }
 
 
@@ -638,7 +619,6 @@ public class ModelCase  implements Serializable {
     ModelCase _case = (ModelCase) o;
 
     return Objects.equals(this.id, _case.id) &&
-            Objects.equals(this.name, _case.name) &&
             Objects.equals(this.division, _case.division) &&
             Objects.equals(this.version, _case.version) &&
             Objects.equals(this.reference, _case.reference) &&
@@ -665,7 +645,7 @@ public class ModelCase  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, division, version, reference, externalId, caseplan, summary, description, owner, status, priority, dateDue, dateStarted, dateClosed, dateCreated, dateModified, modifiedBy, externalContact, customerIntent, creationStatus, ttlSeconds, failureReason, selfUri);
+    return Objects.hash(id, division, version, reference, externalId, caseplan, summary, description, owner, status, priority, dateDue, dateStarted, dateClosed, dateCreated, dateModified, modifiedBy, externalContact, customerIntent, creationStatus, ttlSeconds, failureReason, selfUri);
   }
 
   @Override
@@ -674,7 +654,6 @@ public class ModelCase  implements Serializable {
     sb.append("class ModelCase {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    division: ").append(toIndentedString(division)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    reference: ").append(toIndentedString(reference)).append("\n");

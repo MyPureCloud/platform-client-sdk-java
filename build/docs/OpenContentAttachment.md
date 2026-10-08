@@ -12,6 +12,7 @@
 | **text** | **String** | Text associated with attachment such as an image caption. |  [optional] |
 | **sha256** | **String** | Secure hash of the attachment content. |  [optional] |
 | **filename** | **String** | Suggested file name for attachment. |  [optional] |
+| **thumbnail** | [**OpenContentThumbnail**](OpenContentThumbnail) | Thumbnail image for the attachment content. Not always available. |  [optional] |
 
 
 ## Enum: MediaTypeEnum
@@ -28,4 +29,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:264.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:265.0.0_
