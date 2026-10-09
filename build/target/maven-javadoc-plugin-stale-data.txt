@@ -3,7 +3,7 @@
 @options
 @packages
 -classpath
-'/root/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar:/root/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/root/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar:/root/.m2/repository/org/apache/commons/commons-configuration2/2.15.1/commons-configuration2-2.15.1.jar:/root/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:/root/.m2/repository/org/apache/commons/commons-text/1.15.0/commons-text-1.15.0.jar:/root/.m2/repository/commons-logging/commons-logging/1.3.6/commons-logging-1.3.6.jar:/root/.m2/repository/commons-io/commons-io/2.22.0/commons-io-2.22.0.jar:/root/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/root/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/root/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/root/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/root/.m2/repository/org/asynchttpclient/async-http-client/3.0.13/async-http-client-3.0.13.jar:/root/.m2/repository/io/netty/netty-buffer/4.2.17.Final/netty-buffer-4.2.17.Final.jar:/root/.m2/repository/io/netty/netty-codec-base/4.2.17.Final/netty-codec-base-4.2.17.Final.jar:/root/.m2/repository/io/netty/netty-codec-socks/4.2.17.Final/netty-codec-socks-4.2.17.Final.jar:/root/.m2/repository/io/netty/netty-handler-proxy/4.2.17.Final/netty-handler-proxy-4.2.17.Final.jar:/root/.m2/repository/io/netty/netty-common/4.2.17.Final/netty-common-4.2.17.Final.jar:/root/.m2/repository/io/netty/netty-transport/4.2.17.Final/netty-transport-4.2.17.Final.jar:/root/.m2/repository/io/netty/netty-handler/4.2.17.Final/netty-handler-4.2.17.Final.jar:/root/.m2/repository/io/netty/netty-resolver-dns/4.2.17.Final/netty-resolver-dns-4.2.17.Final.jar:/root/.m2/repository/org/jetbrains/annotations/26.1.0/annotations-26.1.0.jar:/root/.m2/repository/io/netty/netty-all/4.2.18.Final/netty-all-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec/4.2.18.Final/netty-codec-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-dns/4.2.18.Final/netty-codec-dns-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-haproxy/4.2.18.Final/netty-codec-haproxy-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-http3/4.2.18.Final/netty-codec-http3-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-memcache/4.2.18.Final/netty-codec-memcache-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-mqtt/4.2.18.Final/netty-codec-mqtt-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-redis/4.2.18.Final/netty-codec-redis-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-smtp/4.2.18.Final/netty-codec-smtp-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-stomp/4.2.18.Final/netty-codec-stomp-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-xml/4.2.18.Final/netty-codec-xml-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-protobuf/4.2.18.Final/netty-codec-protobuf-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-marshalling/4.2.18.Final/netty-codec-marshalling-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.18.Final/netty-transport-native-unix-common-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.18.Final/netty-handler-ssl-ocsp-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-resolver/4.2.18.Final/netty-resolver-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-rxtx/4.2.18.Final/netty-transport-rxtx-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-sctp/4.2.18.Final/netty-transport-sctp-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-udt/4.2.18.Final/netty-transport-udt-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.18.Final/netty-transport-classes-epoll-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.18.Final/netty-transport-classes-kqueue-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.18.Final/netty-resolver-dns-classes-macos-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.18.Final/netty-transport-classes-io_uring-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-classes-quic/4.2.18.Final/netty-codec-classes-quic-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-http/4.2.18.Final/netty-codec-http-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-http2/4.2.18.Final/netty-codec-http2-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-compression/4.2.18.Final/netty-codec-compression-4.2.18.Final.jar:/root/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/root/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.22/jackson-annotations-2.22.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar:/root/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.22.3/jackson-jaxrs-json-provider-2.22.3.jar:/root/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.22.3/jackson-jaxrs-base-2.22.3.jar:/root/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.22.3/jackson-module-jaxb-annotations-2.22.3.jar:/root/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/root/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.22.3/jackson-datatype-jsr310-2.22.3.jar:/root/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar:/root/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar:/root/.m2/repository/com/google/guava/guava/33.7.1-jre/guava-33.7.1-jre.jar:/root/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/root/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/root/.m2/repository/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar:/root/.m2/repository/com/google/errorprone/error_prone_annotations/2.50.0/error_prone_annotations-2.50.0.jar:/root/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar'
+'/root/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar:/root/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar:/root/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar:/root/.m2/repository/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar:/root/.m2/repository/org/apache/commons/commons-configuration2/2.15.1/commons-configuration2-2.15.1.jar:/root/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar:/root/.m2/repository/org/apache/commons/commons-text/1.15.0/commons-text-1.15.0.jar:/root/.m2/repository/commons-logging/commons-logging/1.3.6/commons-logging-1.3.6.jar:/root/.m2/repository/commons-io/commons-io/2.22.0/commons-io-2.22.0.jar:/root/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar:/root/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar:/root/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/root/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar:/root/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar:/root/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar:/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar:/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar:/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar:/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar:/root/.m2/repository/org/asynchttpclient/async-http-client/3.0.14/async-http-client-3.0.14.jar:/root/.m2/repository/io/netty/netty-buffer/4.2.18.Final/netty-buffer-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-http/4.2.18.Final/netty-codec-http-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-http2/4.2.18.Final/netty-codec-http2-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-base/4.2.18.Final/netty-codec-base-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-compression/4.2.18.Final/netty-codec-compression-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-socks/4.2.18.Final/netty-codec-socks-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-handler-proxy/4.2.18.Final/netty-handler-proxy-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-common/4.2.18.Final/netty-common-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport/4.2.18.Final/netty-transport-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-handler/4.2.18.Final/netty-handler-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-resolver-dns/4.2.18.Final/netty-resolver-dns-4.2.18.Final.jar:/root/.m2/repository/org/jetbrains/annotations/26.1.0/annotations-26.1.0.jar:/root/.m2/repository/io/netty/netty-all/4.2.18.Final/netty-all-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec/4.2.18.Final/netty-codec-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-dns/4.2.18.Final/netty-codec-dns-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-haproxy/4.2.18.Final/netty-codec-haproxy-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-http3/4.2.18.Final/netty-codec-http3-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-memcache/4.2.18.Final/netty-codec-memcache-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-mqtt/4.2.18.Final/netty-codec-mqtt-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-redis/4.2.18.Final/netty-codec-redis-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-smtp/4.2.18.Final/netty-codec-smtp-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-stomp/4.2.18.Final/netty-codec-stomp-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-xml/4.2.18.Final/netty-codec-xml-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-protobuf/4.2.18.Final/netty-codec-protobuf-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-marshalling/4.2.18.Final/netty-codec-marshalling-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.18.Final/netty-transport-native-unix-common-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.18.Final/netty-handler-ssl-ocsp-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-resolver/4.2.18.Final/netty-resolver-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-rxtx/4.2.18.Final/netty-transport-rxtx-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-sctp/4.2.18.Final/netty-transport-sctp-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-udt/4.2.18.Final/netty-transport-udt-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.18.Final/netty-transport-classes-epoll-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.18.Final/netty-transport-classes-kqueue-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.18.Final/netty-resolver-dns-classes-macos-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.18.Final/netty-transport-classes-io_uring-4.2.18.Final.jar:/root/.m2/repository/io/netty/netty-codec-classes-quic/4.2.18.Final/netty-codec-classes-quic-4.2.18.Final.jar:/root/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar:/root/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.22/jackson-annotations-2.22.jar:/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar:/root/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.22.3/jackson-jaxrs-json-provider-2.22.3.jar:/root/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.22.3/jackson-jaxrs-base-2.22.3.jar:/root/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.22.3/jackson-module-jaxb-annotations-2.22.3.jar:/root/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/root/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.22.3/jackson-datatype-jsr310-2.22.3.jar:/root/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar:/root/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar:/root/.m2/repository/com/google/guava/guava/33.7.1-jre/guava-33.7.1-jre.jar:/root/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar:/root/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/root/.m2/repository/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar:/root/.m2/repository/com/google/errorprone/error_prone_annotations/2.50.0/error_prone_annotations-2.50.0.jar:/root/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar'
 -encoding
 'UTF-8'
 -protected
@@ -21,13 +21,13 @@
 'UTF-8'
 -Xdoclint:none
 -doctitle
-'platform-client-v2 265.0.0 API'
+'platform-client-v2 265.1.0 API'
 -linkoffline
 'https://docs.oracle.com/javase/8/docs/api' '/workspace/platform-client-sdk-common/output/purecloudjava/build/target/javadoc-bundle-options'
 -splitindex
 -use
 -windowtitle
-'platform-client-v2 265.0.0 API'
+'platform-client-v2 265.1.0 API'
 com.mypurecloud.sdk.v2.model
 com.mypurecloud.sdk.v2.api
 com.mypurecloud.sdk.v2.api.request
@@ -40,97 +40,97 @@ com.mypurecloud.sdk.v2.connector.okhttp
 com.mypurecloud.sdk.v2.extensions
 com.mypurecloud.sdk.v2.extensions.notifications
 com.mypurecloud.sdk.v2.hooksmanager
-/root/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar = 1791444009950
-/root/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar = 1791444010100
-/root/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar = 1791444009990
-/root/.m2/repository/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar = 1791444010060
-/root/.m2/repository/org/apache/commons/commons-configuration2/2.15.1/commons-configuration2-2.15.1.jar = 1791444010350
-/root/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar = 1791444010330
-/root/.m2/repository/org/apache/commons/commons-text/1.15.0/commons-text-1.15.0.jar = 1791444010200
-/root/.m2/repository/commons-logging/commons-logging/1.3.6/commons-logging-1.3.6.jar = 1791444010130
-/root/.m2/repository/commons-io/commons-io/2.22.0/commons-io-2.22.0.jar = 1791444010320
-/root/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar = 1791444001970
-/root/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar = 1791444010360
-/root/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar = 1791444010330
-/root/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar = 1791444010540
-/root/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar = 1791444010360
-/root/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar = 1791444010450
-/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar = 1791444010430
-/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar = 1791444010410
-/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar = 1791444010600
-/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar = 1791444010450
-/root/.m2/repository/org/asynchttpclient/async-http-client/3.0.13/async-http-client-3.0.13.jar = 1791444010570
-/root/.m2/repository/io/netty/netty-buffer/4.2.17.Final/netty-buffer-4.2.17.Final.jar = 1791444010600
-/root/.m2/repository/io/netty/netty-codec-base/4.2.17.Final/netty-codec-base-4.2.17.Final.jar = 1791444010530
-/root/.m2/repository/io/netty/netty-codec-socks/4.2.17.Final/netty-codec-socks-4.2.17.Final.jar = 1791444010600
-/root/.m2/repository/io/netty/netty-handler-proxy/4.2.17.Final/netty-handler-proxy-4.2.17.Final.jar = 1791444010600
-/root/.m2/repository/io/netty/netty-common/4.2.17.Final/netty-common-4.2.17.Final.jar = 1791444010660
-/root/.m2/repository/io/netty/netty-transport/4.2.17.Final/netty-transport-4.2.17.Final.jar = 1791444010690
-/root/.m2/repository/io/netty/netty-handler/4.2.17.Final/netty-handler-4.2.17.Final.jar = 1791444010710
-/root/.m2/repository/io/netty/netty-resolver-dns/4.2.17.Final/netty-resolver-dns-4.2.17.Final.jar = 1791444010670
-/root/.m2/repository/org/jetbrains/annotations/26.1.0/annotations-26.1.0.jar = 1791444010630
-/root/.m2/repository/io/netty/netty-all/4.2.18.Final/netty-all-4.2.18.Final.jar = 1791444010670
-/root/.m2/repository/io/netty/netty-codec/4.2.18.Final/netty-codec-4.2.18.Final.jar = 1791444010690
-/root/.m2/repository/io/netty/netty-codec-dns/4.2.18.Final/netty-codec-dns-4.2.18.Final.jar = 1791444010720
-/root/.m2/repository/io/netty/netty-codec-haproxy/4.2.18.Final/netty-codec-haproxy-4.2.18.Final.jar = 1791444010710
-/root/.m2/repository/io/netty/netty-codec-http3/4.2.18.Final/netty-codec-http3-4.2.18.Final.jar = 1791444010730
-/root/.m2/repository/io/netty/netty-codec-memcache/4.2.18.Final/netty-codec-memcache-4.2.18.Final.jar = 1791444010730
-/root/.m2/repository/io/netty/netty-codec-mqtt/4.2.18.Final/netty-codec-mqtt-4.2.18.Final.jar = 1791444010760
-/root/.m2/repository/io/netty/netty-codec-redis/4.2.18.Final/netty-codec-redis-4.2.18.Final.jar = 1791444010750
-/root/.m2/repository/io/netty/netty-codec-smtp/4.2.18.Final/netty-codec-smtp-4.2.18.Final.jar = 1791444010750
-/root/.m2/repository/io/netty/netty-codec-stomp/4.2.18.Final/netty-codec-stomp-4.2.18.Final.jar = 1791444010760
-/root/.m2/repository/io/netty/netty-codec-xml/4.2.18.Final/netty-codec-xml-4.2.18.Final.jar = 1791444010770
-/root/.m2/repository/io/netty/netty-codec-protobuf/4.2.18.Final/netty-codec-protobuf-4.2.18.Final.jar = 1791444010780
-/root/.m2/repository/io/netty/netty-codec-marshalling/4.2.18.Final/netty-codec-marshalling-4.2.18.Final.jar = 1791444010780
-/root/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.18.Final/netty-transport-native-unix-common-4.2.18.Final.jar = 1791444010790
-/root/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.18.Final/netty-handler-ssl-ocsp-4.2.18.Final.jar = 1791444010790
-/root/.m2/repository/io/netty/netty-resolver/4.2.18.Final/netty-resolver-4.2.18.Final.jar = 1791444010800
-/root/.m2/repository/io/netty/netty-transport-rxtx/4.2.18.Final/netty-transport-rxtx-4.2.18.Final.jar = 1791444010810
-/root/.m2/repository/io/netty/netty-transport-sctp/4.2.18.Final/netty-transport-sctp-4.2.18.Final.jar = 1791444010810
-/root/.m2/repository/io/netty/netty-transport-udt/4.2.18.Final/netty-transport-udt-4.2.18.Final.jar = 1791444010820
-/root/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.18.Final/netty-transport-classes-epoll-4.2.18.Final.jar = 1791444010830
-/root/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.18.Final/netty-transport-classes-kqueue-4.2.18.Final.jar = 1791444010840
-/root/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.18.Final/netty-resolver-dns-classes-macos-4.2.18.Final.jar = 1791444010840
-/root/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.18.Final/netty-transport-classes-io_uring-4.2.18.Final.jar = 1791444010880
-/root/.m2/repository/io/netty/netty-codec-classes-quic/4.2.18.Final/netty-codec-classes-quic-4.2.18.Final.jar = 1791444010880
-/root/.m2/repository/io/netty/netty-codec-http/4.2.18.Final/netty-codec-http-4.2.18.Final.jar = 1791444011280
-/root/.m2/repository/io/netty/netty-codec-http2/4.2.18.Final/netty-codec-http2-4.2.18.Final.jar = 1791444011340
-/root/.m2/repository/io/netty/netty-codec-compression/4.2.18.Final/netty-codec-compression-4.2.18.Final.jar = 1791444011350
-/root/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar = 1791444011490
-/root/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar = 1791444011380
-/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar = 1791444011520
-/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.22/jackson-annotations-2.22.jar = 1791444011420
-/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar = 1791444011630
-/root/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.22.3/jackson-jaxrs-json-provider-2.22.3.jar = 1791444011430
-/root/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.22.3/jackson-jaxrs-base-2.22.3.jar = 1791444011450
-/root/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.22.3/jackson-module-jaxb-annotations-2.22.3.jar = 1791444011460
-/root/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar = 1791444011500
-/root/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.22.3/jackson-datatype-jsr310-2.22.3.jar = 1791444011540
-/root/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar = 1791444011530
-/root/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar = 1791444011720
-/root/.m2/repository/com/google/guava/guava/33.7.1-jre/guava-33.7.1-jre.jar = 1791444011950
-/root/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar = 1791444011730
-/root/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1791444011740
-/root/.m2/repository/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar = 1791444011760
-/root/.m2/repository/com/google/errorprone/error_prone_annotations/2.50.0/error_prone_annotations-2.50.0.jar = 1791444011760
-/root/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar = 1791444011770
-/workspace/platform-client-sdk-common/output/purecloudjava/build/src/main/java = 1791443620970
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/generated-sources/annotations = 1791444016780
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/element-list = 1791444347390
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/serialized-form.html = 1791444351752
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/overview-tree.html = 1791444378790
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/deprecated-list.html = 1791444378820
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/index.html = 1791444378820
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/allclasses-index.html = 1791444434824
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/allpackages-index.html = 1791444434824
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/module-search-index.js = 1791444434824
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/package-search-index.js = 1791444434824
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/type-search-index.js = 1791444434844
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/member-search-index.js = 1791444435114
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/tag-search-index.js = 1791444435114
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/overview-summary.html = 1791444441754
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/help-doc.html = 1791444441754
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/stylesheet.css = 1791444441764
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/script.js = 1791444441764
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/search.js = 1791444441764
-/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/jquery-ui.overrides.css = 1791444441764
+/root/.m2/repository/io/swagger/swagger-annotations/1.6.16/swagger-annotations-1.6.16.jar = 1791543940497
+/root/.m2/repository/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar = 1791543940517
+/root/.m2/repository/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar = 1791543940507
+/root/.m2/repository/org/slf4j/slf4j-api/2.0.18/slf4j-api-2.0.18.jar = 1791543940517
+/root/.m2/repository/org/apache/commons/commons-configuration2/2.15.1/commons-configuration2-2.15.1.jar = 1791543940717
+/root/.m2/repository/org/apache/commons/commons-lang3/3.20.0/commons-lang3-3.20.0.jar = 1791543940757
+/root/.m2/repository/org/apache/commons/commons-text/1.15.0/commons-text-1.15.0.jar = 1791543940717
+/root/.m2/repository/commons-logging/commons-logging/1.3.6/commons-logging-1.3.6.jar = 1791543940597
+/root/.m2/repository/commons-io/commons-io/2.22.0/commons-io-2.22.0.jar = 1791543940797
+/root/.m2/repository/commons-codec/commons-codec/1.15/commons-codec-1.15.jar = 1791543931994
+/root/.m2/repository/org/apache/httpcomponents/httpclient/4.5.14/httpclient-4.5.14.jar = 1791543940947
+/root/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar = 1791543940827
+/root/.m2/repository/com/squareup/okhttp3/okhttp/4.12.0/okhttp-4.12.0.jar = 1791543940987
+/root/.m2/repository/com/squareup/okio/okio/3.6.0/okio-3.6.0.jar = 1791543940807
+/root/.m2/repository/com/squareup/okio/okio-jvm/3.6.0/okio-jvm-3.6.0.jar = 1791543940967
+/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.9.10/kotlin-stdlib-common-1.9.10.jar = 1791543940897
+/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.21/kotlin-stdlib-jdk8-1.8.21.jar = 1791543940867
+/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.8.21/kotlin-stdlib-1.8.21.jar = 1791543941177
+/root/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.21/kotlin-stdlib-jdk7-1.8.21.jar = 1791543940967
+/root/.m2/repository/org/asynchttpclient/async-http-client/3.0.14/async-http-client-3.0.14.jar = 1791543941127
+/root/.m2/repository/io/netty/netty-buffer/4.2.18.Final/netty-buffer-4.2.18.Final.jar = 1791543941177
+/root/.m2/repository/io/netty/netty-codec-http/4.2.18.Final/netty-codec-http-4.2.18.Final.jar = 1791543941207
+/root/.m2/repository/io/netty/netty-codec-http2/4.2.18.Final/netty-codec-http2-4.2.18.Final.jar = 1791543941187
+/root/.m2/repository/io/netty/netty-codec-base/4.2.18.Final/netty-codec-base-4.2.18.Final.jar = 1791543941197
+/root/.m2/repository/io/netty/netty-codec-compression/4.2.18.Final/netty-codec-compression-4.2.18.Final.jar = 1791543941237
+/root/.m2/repository/io/netty/netty-codec-socks/4.2.18.Final/netty-codec-socks-4.2.18.Final.jar = 1791543941217
+/root/.m2/repository/io/netty/netty-handler-proxy/4.2.18.Final/netty-handler-proxy-4.2.18.Final.jar = 1791543941227
+/root/.m2/repository/io/netty/netty-common/4.2.18.Final/netty-common-4.2.18.Final.jar = 1791543941337
+/root/.m2/repository/io/netty/netty-transport/4.2.18.Final/netty-transport-4.2.18.Final.jar = 1791543941347
+/root/.m2/repository/io/netty/netty-handler/4.2.18.Final/netty-handler-4.2.18.Final.jar = 1791543941347
+/root/.m2/repository/io/netty/netty-resolver-dns/4.2.18.Final/netty-resolver-dns-4.2.18.Final.jar = 1791543941317
+/root/.m2/repository/org/jetbrains/annotations/26.1.0/annotations-26.1.0.jar = 1791543941297
+/root/.m2/repository/io/netty/netty-all/4.2.18.Final/netty-all-4.2.18.Final.jar = 1791543941327
+/root/.m2/repository/io/netty/netty-codec/4.2.18.Final/netty-codec-4.2.18.Final.jar = 1791543941357
+/root/.m2/repository/io/netty/netty-codec-dns/4.2.18.Final/netty-codec-dns-4.2.18.Final.jar = 1791543941367
+/root/.m2/repository/io/netty/netty-codec-haproxy/4.2.18.Final/netty-codec-haproxy-4.2.18.Final.jar = 1791543941367
+/root/.m2/repository/io/netty/netty-codec-http3/4.2.18.Final/netty-codec-http3-4.2.18.Final.jar = 1791543941397
+/root/.m2/repository/io/netty/netty-codec-memcache/4.2.18.Final/netty-codec-memcache-4.2.18.Final.jar = 1791543941397
+/root/.m2/repository/io/netty/netty-codec-mqtt/4.2.18.Final/netty-codec-mqtt-4.2.18.Final.jar = 1791543941407
+/root/.m2/repository/io/netty/netty-codec-redis/4.2.18.Final/netty-codec-redis-4.2.18.Final.jar = 1791543941407
+/root/.m2/repository/io/netty/netty-codec-smtp/4.2.18.Final/netty-codec-smtp-4.2.18.Final.jar = 1791543941407
+/root/.m2/repository/io/netty/netty-codec-stomp/4.2.18.Final/netty-codec-stomp-4.2.18.Final.jar = 1791543941437
+/root/.m2/repository/io/netty/netty-codec-xml/4.2.18.Final/netty-codec-xml-4.2.18.Final.jar = 1791543941437
+/root/.m2/repository/io/netty/netty-codec-protobuf/4.2.18.Final/netty-codec-protobuf-4.2.18.Final.jar = 1791543941437
+/root/.m2/repository/io/netty/netty-codec-marshalling/4.2.18.Final/netty-codec-marshalling-4.2.18.Final.jar = 1791543941447
+/root/.m2/repository/io/netty/netty-transport-native-unix-common/4.2.18.Final/netty-transport-native-unix-common-4.2.18.Final.jar = 1791543941457
+/root/.m2/repository/io/netty/netty-handler-ssl-ocsp/4.2.18.Final/netty-handler-ssl-ocsp-4.2.18.Final.jar = 1791543941467
+/root/.m2/repository/io/netty/netty-resolver/4.2.18.Final/netty-resolver-4.2.18.Final.jar = 1791543941477
+/root/.m2/repository/io/netty/netty-transport-rxtx/4.2.18.Final/netty-transport-rxtx-4.2.18.Final.jar = 1791543941477
+/root/.m2/repository/io/netty/netty-transport-sctp/4.2.18.Final/netty-transport-sctp-4.2.18.Final.jar = 1791543941477
+/root/.m2/repository/io/netty/netty-transport-udt/4.2.18.Final/netty-transport-udt-4.2.18.Final.jar = 1791543941487
+/root/.m2/repository/io/netty/netty-transport-classes-epoll/4.2.18.Final/netty-transport-classes-epoll-4.2.18.Final.jar = 1791543941507
+/root/.m2/repository/io/netty/netty-transport-classes-kqueue/4.2.18.Final/netty-transport-classes-kqueue-4.2.18.Final.jar = 1791543941517
+/root/.m2/repository/io/netty/netty-resolver-dns-classes-macos/4.2.18.Final/netty-resolver-dns-classes-macos-4.2.18.Final.jar = 1791543941517
+/root/.m2/repository/io/netty/netty-transport-classes-io_uring/4.2.18.Final/netty-transport-classes-io_uring-4.2.18.Final.jar = 1791543941547
+/root/.m2/repository/io/netty/netty-codec-classes-quic/4.2.18.Final/netty-codec-classes-quic-4.2.18.Final.jar = 1791543941557
+/root/.m2/repository/xerces/xercesImpl/2.12.2/xercesImpl-2.12.2.jar = 1791543942107
+/root/.m2/repository/xml-apis/xml-apis/1.4.01/xml-apis-1.4.01.jar = 1791543942037
+/root/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.22.3/jackson-core-2.22.3.jar = 1791543942087
+/root/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.22/jackson-annotations-2.22.jar = 1791543942027
+/root/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.22.3/jackson-databind-2.22.3.jar = 1791543942157
+/root/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.22.3/jackson-jaxrs-json-provider-2.22.3.jar = 1791543942067
+/root/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.22.3/jackson-jaxrs-base-2.22.3.jar = 1791543942087
+/root/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.22.3/jackson-module-jaxb-annotations-2.22.3.jar = 1791543942107
+/root/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar = 1791543942127
+/root/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.22.3/jackson-datatype-jsr310-2.22.3.jar = 1791543942137
+/root/.m2/repository/com/brsanthu/migbase64/2.2/migbase64-2.2.jar = 1791543942147
+/root/.m2/repository/com/neovisionaries/nv-websocket-client/2.14/nv-websocket-client-2.14.jar = 1791543942307
+/root/.m2/repository/com/google/guava/guava/33.7.1-jre/guava-33.7.1-jre.jar = 1791543942377
+/root/.m2/repository/com/google/guava/failureaccess/1.0.3/failureaccess-1.0.3.jar = 1791543942307
+/root/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1791543942337
+/root/.m2/repository/org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar = 1791543942347
+/root/.m2/repository/com/google/errorprone/error_prone_annotations/2.50.0/error_prone_annotations-2.50.0.jar = 1791543942347
+/root/.m2/repository/com/google/j2objc/j2objc-annotations/3.1/j2objc-annotations-3.1.jar = 1791543942377
+/workspace/platform-client-sdk-common/output/purecloudjava/build/src/main/java = 1791543553004
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/generated-sources/annotations = 1791543947277
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/element-list = 1791544278326
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/serialized-form.html = 1791544282516
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/overview-tree.html = 1791544310403
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/deprecated-list.html = 1791544310423
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/index.html = 1791544310423
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/allclasses-index.html = 1791544366634
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/allpackages-index.html = 1791544366634
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/module-search-index.js = 1791544366634
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/package-search-index.js = 1791544366634
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/type-search-index.js = 1791544366654
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/member-search-index.js = 1791544367034
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/tag-search-index.js = 1791544367034
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/overview-summary.html = 1791544373594
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/help-doc.html = 1791544373604
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/stylesheet.css = 1791544373604
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/script.js = 1791544373604
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/search.js = 1791544373604
+/workspace/platform-client-sdk-common/output/purecloudjava/build/target/reports/apidocs/jquery-ui.overrides.css = 1791544373604

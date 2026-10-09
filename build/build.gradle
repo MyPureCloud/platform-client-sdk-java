@@ -2,7 +2,7 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 
 group = 'com.mypurecloud'
-version = '265.0.0'
+version = '265.1.0'
 
 buildscript {
     repositories {
