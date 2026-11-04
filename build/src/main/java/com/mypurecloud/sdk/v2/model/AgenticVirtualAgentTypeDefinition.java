@@ -105,7 +105,8 @@ public class AgenticVirtualAgentTypeDefinition  implements Serializable {
     NULL("null"),
     OBJECT("object"),
     ARRAY("array"),
-    DATAACTIONHTTPERROR("DataActionHttpError");
+    DATAACTIONHTTPERROR("DataActionHttpError"),
+    A2AERROR("A2AError");
 
     private String value;
 
@@ -321,14 +322,14 @@ public class AgenticVirtualAgentTypeDefinition  implements Serializable {
 
 
   /**
-   * Default instruction for how the virtual agent should handle this error type when a tool references it without its own error instruction. Applies when type is DataActionHttpError.
+   * Default instruction for how the virtual agent should handle this error type when a tool references it without its own error instruction. Applies when type is DataActionHttpError or A2AError.
    **/
   public AgenticVirtualAgentTypeDefinition defaultInstruction(String defaultInstruction) {
     this.defaultInstruction = defaultInstruction;
     return this;
   }
   
-  @ApiModelProperty(example = "Tell the customer &#39;Please contact customer care via email or phone.&#39;", value = "Default instruction for how the virtual agent should handle this error type when a tool references it without its own error instruction. Applies when type is DataActionHttpError.")
+  @ApiModelProperty(example = "Tell the customer &#39;Please contact customer care via email or phone.&#39;", value = "Default instruction for how the virtual agent should handle this error type when a tool references it without its own error instruction. Applies when type is DataActionHttpError or A2AError.")
   @JsonProperty("defaultInstruction")
   public String getDefaultInstruction() {
     return defaultInstruction;

@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -39,6 +40,55 @@ public class OperationalEvent  implements Serializable {
   private String entityVersion = null;
   private String phoneNumber = null;
   private String externalContactId = null;
+  private String referenceId = null;
+
+  private static class ReferenceTypeEnumDeserializer extends StdDeserializer<ReferenceTypeEnum> {
+    public ReferenceTypeEnumDeserializer() {
+      super(ReferenceTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ReferenceTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ReferenceTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The type of external record that referenceId refers to
+   */
+ @JsonDeserialize(using = ReferenceTypeEnumDeserializer.class)
+  public enum ReferenceTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("Unknown"),
+    SALESFORCE("Salesforce");
+
+    private String value;
+
+    ReferenceTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ReferenceTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ReferenceTypeEnum value : ReferenceTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ReferenceTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ReferenceTypeEnum referenceType = null;
 
   public OperationalEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -321,6 +371,42 @@ public class OperationalEvent  implements Serializable {
   }
 
 
+  /**
+   * The identifier of an external record that provides additional information or context related to the event
+   **/
+  public OperationalEvent referenceId(String referenceId) {
+    this.referenceId = referenceId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The identifier of an external record that provides additional information or context related to the event")
+  @JsonProperty("referenceId")
+  public String getReferenceId() {
+    return referenceId;
+  }
+  public void setReferenceId(String referenceId) {
+    this.referenceId = referenceId;
+  }
+
+
+  /**
+   * The type of external record that referenceId refers to
+   **/
+  public OperationalEvent referenceType(ReferenceTypeEnum referenceType) {
+    this.referenceType = referenceType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The type of external record that referenceId refers to")
+  @JsonProperty("referenceType")
+  public ReferenceTypeEnum getReferenceType() {
+    return referenceType;
+  }
+  public void setReferenceType(ReferenceTypeEnum referenceType) {
+    this.referenceType = referenceType;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -345,12 +431,14 @@ public class OperationalEvent  implements Serializable {
             Objects.equals(this.entityModifiedBy, operationalEvent.entityModifiedBy) &&
             Objects.equals(this.entityVersion, operationalEvent.entityVersion) &&
             Objects.equals(this.phoneNumber, operationalEvent.phoneNumber) &&
-            Objects.equals(this.externalContactId, operationalEvent.externalContactId);
+            Objects.equals(this.externalContactId, operationalEvent.externalContactId) &&
+            Objects.equals(this.referenceId, operationalEvent.referenceId) &&
+            Objects.equals(this.referenceType, operationalEvent.referenceType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventDefinition, entityId, entityToken, entityName, previousValue, currentValue, errorCode, parentEntityId, conversation, dateCreated, dateModified, entityModifiedBy, entityVersion, phoneNumber, externalContactId);
+    return Objects.hash(eventDefinition, entityId, entityToken, entityName, previousValue, currentValue, errorCode, parentEntityId, conversation, dateCreated, dateModified, entityModifiedBy, entityVersion, phoneNumber, externalContactId, referenceId, referenceType);
   }
 
   @Override
@@ -373,6 +461,8 @@ public class OperationalEvent  implements Serializable {
     sb.append("    entityVersion: ").append(toIndentedString(entityVersion)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
+    sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
+    sb.append("    referenceType: ").append(toIndentedString(referenceType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

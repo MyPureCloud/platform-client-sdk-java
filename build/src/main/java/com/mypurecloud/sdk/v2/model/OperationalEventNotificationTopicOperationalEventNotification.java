@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.OperationalEventNotificationTopicEventEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -37,6 +38,55 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
   private String entityToken = null;
   private String phoneNumber = null;
   private String externalContactId = null;
+  private String referenceId = null;
+
+  private static class ReferenceTypeEnumDeserializer extends StdDeserializer<ReferenceTypeEnum> {
+    public ReferenceTypeEnumDeserializer() {
+      super(ReferenceTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ReferenceTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ReferenceTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * Gets or Sets referenceType
+   */
+ @JsonDeserialize(using = ReferenceTypeEnumDeserializer.class)
+  public enum ReferenceTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    UNKNOWN("UNKNOWN"),
+    SALESFORCE("SALESFORCE");
+
+    private String value;
+
+    ReferenceTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ReferenceTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ReferenceTypeEnum value : ReferenceTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ReferenceTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ReferenceTypeEnum referenceType = null;
   private Date entityModifiedDate = null;
   private String entityModifiedBy = null;
   private Long timestamp = null;
@@ -275,6 +325,40 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
 
   /**
    **/
+  public OperationalEventNotificationTopicOperationalEventNotification referenceId(String referenceId) {
+    this.referenceId = referenceId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("referenceId")
+  public String getReferenceId() {
+    return referenceId;
+  }
+  public void setReferenceId(String referenceId) {
+    this.referenceId = referenceId;
+  }
+
+
+  /**
+   **/
+  public OperationalEventNotificationTopicOperationalEventNotification referenceType(ReferenceTypeEnum referenceType) {
+    this.referenceType = referenceType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("referenceType")
+  public ReferenceTypeEnum getReferenceType() {
+    return referenceType;
+  }
+  public void setReferenceType(ReferenceTypeEnum referenceType) {
+    this.referenceType = referenceType;
+  }
+
+
+  /**
+   **/
   public OperationalEventNotificationTopicOperationalEventNotification entityModifiedDate(Date entityModifiedDate) {
     this.entityModifiedDate = entityModifiedDate;
     return this;
@@ -347,6 +431,8 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
             Objects.equals(this.entityToken, operationalEventNotificationTopicOperationalEventNotification.entityToken) &&
             Objects.equals(this.phoneNumber, operationalEventNotificationTopicOperationalEventNotification.phoneNumber) &&
             Objects.equals(this.externalContactId, operationalEventNotificationTopicOperationalEventNotification.externalContactId) &&
+            Objects.equals(this.referenceId, operationalEventNotificationTopicOperationalEventNotification.referenceId) &&
+            Objects.equals(this.referenceType, operationalEventNotificationTopicOperationalEventNotification.referenceType) &&
             Objects.equals(this.entityModifiedDate, operationalEventNotificationTopicOperationalEventNotification.entityModifiedDate) &&
             Objects.equals(this.entityModifiedBy, operationalEventNotificationTopicOperationalEventNotification.entityModifiedBy) &&
             Objects.equals(this.timestamp, operationalEventNotificationTopicOperationalEventNotification.timestamp);
@@ -354,7 +440,7 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventEntity, entityId, entityName, previousValue, currentValue, errorCode, version, parentEntity, entityType, conversationId, entityToken, phoneNumber, externalContactId, entityModifiedDate, entityModifiedBy, timestamp);
+    return Objects.hash(eventEntity, entityId, entityName, previousValue, currentValue, errorCode, version, parentEntity, entityType, conversationId, entityToken, phoneNumber, externalContactId, referenceId, referenceType, entityModifiedDate, entityModifiedBy, timestamp);
   }
 
   @Override
@@ -375,6 +461,8 @@ public class OperationalEventNotificationTopicOperationalEventNotification  impl
     sb.append("    entityToken: ").append(toIndentedString(entityToken)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
+    sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
+    sb.append("    referenceType: ").append(toIndentedString(referenceType)).append("\n");
     sb.append("    entityModifiedDate: ").append(toIndentedString(entityModifiedDate)).append("\n");
     sb.append("    entityModifiedBy: ").append(toIndentedString(entityModifiedBy)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");

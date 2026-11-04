@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CapacityPlanMetadata;
 import com.mypurecloud.sdk.v2.model.ValueWrapperBuShortTermForecastReference;
+import com.mypurecloud.sdk.v2.model.ValueWrapperCapacityPlanImportedForecastRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
@@ -30,6 +31,7 @@ public class UpdateCapacityPlanRequest  implements Serializable {
   private LocalDate startBusinessUnitDate = null;
   private LocalDate endBusinessUnitDate = null;
   private ValueWrapperBuShortTermForecastReference forecast = null;
+  private ValueWrapperCapacityPlanImportedForecastRequest importedForecast = null;
   private Double fullTimeEquivalentWeeklyHours = null;
   private Boolean useLatestPlanningGroupStaffingGroupAssociation = null;
   private CapacityPlanMetadata metadata = null;
@@ -118,20 +120,38 @@ public class UpdateCapacityPlanRequest  implements Serializable {
 
 
   /**
-   * The selected forecast for this capacity plan
+   * The generated forecast for this capacity plan. When switching from an imported forecast, provide a value for forecast
    **/
   public UpdateCapacityPlanRequest forecast(ValueWrapperBuShortTermForecastReference forecast) {
     this.forecast = forecast;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The selected forecast for this capacity plan")
+  @ApiModelProperty(example = "null", value = "The generated forecast for this capacity plan. When switching from an imported forecast, provide a value for forecast")
   @JsonProperty("forecast")
   public ValueWrapperBuShortTermForecastReference getForecast() {
     return forecast;
   }
   public void setForecast(ValueWrapperBuShortTermForecastReference forecast) {
     this.forecast = forecast;
+  }
+
+
+  /**
+   * The externally imported forecast for this capacity plan. When switching from a forecast, provide a value for importedForecast
+   **/
+  public UpdateCapacityPlanRequest importedForecast(ValueWrapperCapacityPlanImportedForecastRequest importedForecast) {
+    this.importedForecast = importedForecast;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The externally imported forecast for this capacity plan. When switching from a forecast, provide a value for importedForecast")
+  @JsonProperty("importedForecast")
+  public ValueWrapperCapacityPlanImportedForecastRequest getImportedForecast() {
+    return importedForecast;
+  }
+  public void setImportedForecast(ValueWrapperCapacityPlanImportedForecastRequest importedForecast) {
+    this.importedForecast = importedForecast;
   }
 
 
@@ -204,6 +224,7 @@ public class UpdateCapacityPlanRequest  implements Serializable {
             Objects.equals(this.startBusinessUnitDate, updateCapacityPlanRequest.startBusinessUnitDate) &&
             Objects.equals(this.endBusinessUnitDate, updateCapacityPlanRequest.endBusinessUnitDate) &&
             Objects.equals(this.forecast, updateCapacityPlanRequest.forecast) &&
+            Objects.equals(this.importedForecast, updateCapacityPlanRequest.importedForecast) &&
             Objects.equals(this.fullTimeEquivalentWeeklyHours, updateCapacityPlanRequest.fullTimeEquivalentWeeklyHours) &&
             Objects.equals(this.useLatestPlanningGroupStaffingGroupAssociation, updateCapacityPlanRequest.useLatestPlanningGroupStaffingGroupAssociation) &&
             Objects.equals(this.metadata, updateCapacityPlanRequest.metadata);
@@ -211,7 +232,7 @@ public class UpdateCapacityPlanRequest  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, startBusinessUnitDate, endBusinessUnitDate, forecast, fullTimeEquivalentWeeklyHours, useLatestPlanningGroupStaffingGroupAssociation, metadata);
+    return Objects.hash(name, description, startBusinessUnitDate, endBusinessUnitDate, forecast, importedForecast, fullTimeEquivalentWeeklyHours, useLatestPlanningGroupStaffingGroupAssociation, metadata);
   }
 
   @Override
@@ -224,6 +245,7 @@ public class UpdateCapacityPlanRequest  implements Serializable {
     sb.append("    startBusinessUnitDate: ").append(toIndentedString(startBusinessUnitDate)).append("\n");
     sb.append("    endBusinessUnitDate: ").append(toIndentedString(endBusinessUnitDate)).append("\n");
     sb.append("    forecast: ").append(toIndentedString(forecast)).append("\n");
+    sb.append("    importedForecast: ").append(toIndentedString(importedForecast)).append("\n");
     sb.append("    fullTimeEquivalentWeeklyHours: ").append(toIndentedString(fullTimeEquivalentWeeklyHours)).append("\n");
     sb.append("    useLatestPlanningGroupStaffingGroupAssociation: ").append(toIndentedString(useLatestPlanningGroupStaffingGroupAssociation)).append("\n");
     sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");

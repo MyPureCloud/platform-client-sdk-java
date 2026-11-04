@@ -82,7 +82,13 @@ public class KnowledgeBaseWithDialectReference  implements Serializable {
     FIL_PH("fil-PH"),
     MS_MY("ms-MY"),
     HE_IL("he-IL"),
-    EL_GR("el-GR");
+    EL_GR("el-GR"),
+    CA_ES("ca-ES"),
+    EN_NZ("en-NZ"),
+    ZH_HK("zh-HK"),
+    ZH_TW("zh-TW"),
+    ZH_CN("zh-CN"),
+    AR_SA("ar-SA");
 
     private String value;
 

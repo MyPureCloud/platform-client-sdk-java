@@ -214,7 +214,7 @@ public class SchedulingSettingsResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Schedule visibility settings for agents")
+  @ApiModelProperty(example = "null", required = true, value = "Schedule visibility settings for agents")
   @JsonProperty("scheduleVisibility")
   public ScheduleVisibilitySettingsResponse getScheduleVisibility() {
     return scheduleVisibility;

@@ -282,6 +282,7 @@ public class Message  implements Serializable {
     INSTAGRAM("instagram"),
     KAKAO("kakao"),
     LINE("line"),
+    LINKEDIN("linkedin"),
     OPEN("open"),
     SMS("sms"),
     TELEGRAM("telegram"),

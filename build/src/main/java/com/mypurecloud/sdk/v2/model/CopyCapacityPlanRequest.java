@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.ValueWrapperBuShortTermForecastReference;
+import com.mypurecloud.sdk.v2.model.ValueWrapperCapacityPlanImportedForecastRequest;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
@@ -29,6 +30,7 @@ public class CopyCapacityPlanRequest  implements Serializable {
   private LocalDate startBusinessUnitDate = null;
   private LocalDate endBusinessUnitDate = null;
   private ValueWrapperBuShortTermForecastReference forecast = null;
+  private ValueWrapperCapacityPlanImportedForecastRequest importedForecast = null;
 
   public CopyCapacityPlanRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -114,20 +116,38 @@ public class CopyCapacityPlanRequest  implements Serializable {
 
 
   /**
-   * The selected forecast for this capacity plan. Uses forecast from original capacity plan if not specified
+   * The generated forecast for the capacity plan. Uses forecast from original capacity plan if not specified
    **/
   public CopyCapacityPlanRequest forecast(ValueWrapperBuShortTermForecastReference forecast) {
     this.forecast = forecast;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The selected forecast for this capacity plan. Uses forecast from original capacity plan if not specified")
+  @ApiModelProperty(example = "null", value = "The generated forecast for the capacity plan. Uses forecast from original capacity plan if not specified")
   @JsonProperty("forecast")
   public ValueWrapperBuShortTermForecastReference getForecast() {
     return forecast;
   }
   public void setForecast(ValueWrapperBuShortTermForecastReference forecast) {
     this.forecast = forecast;
+  }
+
+
+  /**
+   * The externally imported forecast for the capacity plan. Uses forecast from original capacity plan if not specified
+   **/
+  public CopyCapacityPlanRequest importedForecast(ValueWrapperCapacityPlanImportedForecastRequest importedForecast) {
+    this.importedForecast = importedForecast;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The externally imported forecast for the capacity plan. Uses forecast from original capacity plan if not specified")
+  @JsonProperty("importedForecast")
+  public ValueWrapperCapacityPlanImportedForecastRequest getImportedForecast() {
+    return importedForecast;
+  }
+  public void setImportedForecast(ValueWrapperCapacityPlanImportedForecastRequest importedForecast) {
+    this.importedForecast = importedForecast;
   }
 
 
@@ -145,12 +165,13 @@ public class CopyCapacityPlanRequest  implements Serializable {
             Objects.equals(this.description, copyCapacityPlanRequest.description) &&
             Objects.equals(this.startBusinessUnitDate, copyCapacityPlanRequest.startBusinessUnitDate) &&
             Objects.equals(this.endBusinessUnitDate, copyCapacityPlanRequest.endBusinessUnitDate) &&
-            Objects.equals(this.forecast, copyCapacityPlanRequest.forecast);
+            Objects.equals(this.forecast, copyCapacityPlanRequest.forecast) &&
+            Objects.equals(this.importedForecast, copyCapacityPlanRequest.importedForecast);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, startBusinessUnitDate, endBusinessUnitDate, forecast);
+    return Objects.hash(name, description, startBusinessUnitDate, endBusinessUnitDate, forecast, importedForecast);
   }
 
   @Override
@@ -163,6 +184,7 @@ public class CopyCapacityPlanRequest  implements Serializable {
     sb.append("    startBusinessUnitDate: ").append(toIndentedString(startBusinessUnitDate)).append("\n");
     sb.append("    endBusinessUnitDate: ").append(toIndentedString(endBusinessUnitDate)).append("\n");
     sb.append("    forecast: ").append(toIndentedString(forecast)).append("\n");
+    sb.append("    importedForecast: ").append(toIndentedString(importedForecast)).append("\n");
     sb.append("}");
     return sb.toString();
   }

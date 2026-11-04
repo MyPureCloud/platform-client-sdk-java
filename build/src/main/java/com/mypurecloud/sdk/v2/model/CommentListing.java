@@ -27,8 +27,6 @@ public class CommentListing  implements Serializable {
   
   private List<Comment> entities = null;
   private String nextUri = null;
-  private String selfUri = null;
-  private String previousUri = null;
 
   public CommentListing() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -77,40 +75,6 @@ public class CommentListing  implements Serializable {
   }
 
 
-  /**
-   **/
-  public CommentListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public CommentListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -122,14 +86,12 @@ public class CommentListing  implements Serializable {
     CommentListing commentListing = (CommentListing) o;
 
     return Objects.equals(this.entities, commentListing.entities) &&
-            Objects.equals(this.nextUri, commentListing.nextUri) &&
-            Objects.equals(this.selfUri, commentListing.selfUri) &&
-            Objects.equals(this.previousUri, commentListing.previousUri);
+            Objects.equals(this.nextUri, commentListing.nextUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, nextUri, selfUri, previousUri);
+    return Objects.hash(entities, nextUri);
   }
 
   @Override
@@ -139,8 +101,6 @@ public class CommentListing  implements Serializable {
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
     sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("}");
     return sb.toString();
   }

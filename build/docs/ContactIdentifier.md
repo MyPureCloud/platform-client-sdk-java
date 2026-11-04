@@ -10,6 +10,7 @@
 | **value** | **String** | The string value of the identifier. Will vary in syntax by type. Max: 255 characters. Leading and trailing whitespace stripped. |  |
 | **dateCreated** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 | **externalSource** | [**ExternalSource**](ExternalSource) | The External Source ID of the identifier |  [optional] |
+| **portfolioId** | **String** | The portfolio id associated with the identifier. Only applicable to identifiers of type SocialWhatsappBsuid. |  [optional] |
 
 
 ## Enum: TypeEnum
@@ -33,4 +34,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

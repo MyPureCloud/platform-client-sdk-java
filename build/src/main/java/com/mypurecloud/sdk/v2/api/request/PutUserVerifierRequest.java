@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.CreateVerifierResponse;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
+import com.mypurecloud.sdk.v2.model.DeleteVerifierResponse;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;

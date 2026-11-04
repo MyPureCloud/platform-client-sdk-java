@@ -3654,7 +3654,7 @@ This endpoint does not require any parameters.
 # **getRoutingQueue**
 
 
-> [Queue](Queue) getRoutingQueue(queueId, expand)
+> [Queue](Queue) getRoutingQueue(queueId, expand, forceMemberRecount)
 
 Get details about this queue.
 
@@ -3688,8 +3688,9 @@ Configuration.setDefaultApiClient(apiClient);
 RoutingApi apiInstance = new RoutingApi();
 String queueId = "queueId_example"; // String | Queue ID
 List<String> expand = Arrays.asList(null); // List<String> | Which fields, if any, to expand
+Boolean forceMemberRecount = false; // Boolean | Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters.
 try {
-    Queue result = apiInstance.getRoutingQueue(queueId, expand);
+    Queue result = apiInstance.getRoutingQueue(queueId, expand, forceMemberRecount);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling RoutingApi#getRoutingQueue");
@@ -3704,6 +3705,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **queueId** | **String**| Queue ID | 
 | **expand** | [**List&lt;String&gt;**](String)| Which fields, if any, to expand | [optional]<br />**Values**: identityresolution 
+| **forceMemberRecount** | **Boolean**| Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters. | [optional] [default to false] 
 {: class="table-striped"}
 
 
@@ -7854,7 +7856,7 @@ Assign multiple routing skills to a user
 
 Wraps PATCH /api/v2/users/{userId}/routingskills/bulk  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:skill:assign
 
@@ -10881,7 +10883,7 @@ Assign multiple routing skills to a user, replacing any current assignments
 
 Wraps PUT /api/v2/users/{userId}/routingskills/bulk  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:skill:assign
 
@@ -10933,4 +10935,4 @@ try {
 [**UserSkillEntityListing**](UserSkillEntityListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

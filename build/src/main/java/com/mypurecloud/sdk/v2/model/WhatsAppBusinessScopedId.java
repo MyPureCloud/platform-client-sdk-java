@@ -11,7 +11,9 @@ import java.util.Objects;
 import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 /**
@@ -21,6 +23,9 @@ import java.io.Serializable;
 
 public class WhatsAppBusinessScopedId  implements Serializable {
   
+  private String bsuid = null;
+  private Boolean parent = null;
+  private String portfolioId = null;
 
   public WhatsAppBusinessScopedId() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -33,6 +38,60 @@ public class WhatsAppBusinessScopedId  implements Serializable {
   }
 
   
+  /**
+   * The Whatsapp Business Scoped Id associated with a WhatsApp User.
+   **/
+  public WhatsAppBusinessScopedId bsuid(String bsuid) {
+    this.bsuid = bsuid;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The Whatsapp Business Scoped Id associated with a WhatsApp User.")
+  @JsonProperty("bsuid")
+  public String getBsuid() {
+    return bsuid;
+  }
+  public void setBsuid(String bsuid) {
+    this.bsuid = bsuid;
+  }
+
+
+  /**
+   * True if this is a parent BSUID, false if it is a regular BSUID.
+   **/
+  public WhatsAppBusinessScopedId parent(Boolean parent) {
+    this.parent = parent;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "True if this is a parent BSUID, false if it is a regular BSUID.")
+  @JsonProperty("parent")
+  public Boolean getParent() {
+    return parent;
+  }
+  public void setParent(Boolean parent) {
+    this.parent = parent;
+  }
+
+
+  /**
+   * The portfolio id associated with the WhatsApp bsuid.
+   **/
+  public WhatsAppBusinessScopedId portfolioId(String portfolioId) {
+    this.portfolioId = portfolioId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The portfolio id associated with the WhatsApp bsuid.")
+  @JsonProperty("portfolioId")
+  public String getPortfolioId() {
+    return portfolioId;
+  }
+  public void setPortfolioId(String portfolioId) {
+    this.portfolioId = portfolioId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -41,13 +100,16 @@ public class WhatsAppBusinessScopedId  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
+    WhatsAppBusinessScopedId whatsAppBusinessScopedId = (WhatsAppBusinessScopedId) o;
 
-    return true;
+    return Objects.equals(this.bsuid, whatsAppBusinessScopedId.bsuid) &&
+            Objects.equals(this.parent, whatsAppBusinessScopedId.parent) &&
+            Objects.equals(this.portfolioId, whatsAppBusinessScopedId.portfolioId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash();
+    return Objects.hash(bsuid, parent, portfolioId);
   }
 
   @Override
@@ -55,6 +117,9 @@ public class WhatsAppBusinessScopedId  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class WhatsAppBusinessScopedId {\n");
     
+    sb.append("    bsuid: ").append(toIndentedString(bsuid)).append("\n");
+    sb.append("    parent: ").append(toIndentedString(parent)).append("\n");
+    sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

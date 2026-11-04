@@ -20,6 +20,8 @@ import com.mypurecloud.sdk.v2.model.ActivityPlanDeletionSessionUserIds;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobListing;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrenceListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrenceResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrencesDeletionJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanRunJobResponse;
@@ -161,6 +163,8 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitSchedulingPreferencesSettingsResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastImportUploadRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastImportUploadResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanForecastInputsResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.CapacityPlanResponse;
@@ -292,6 +296,15 @@ import com.mypurecloud.sdk.v2.model.SearchAlternativeShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.SearchUnmatchedShiftTradeListJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleActivityMoveListItem;
+import com.mypurecloud.sdk.v2.model.SelfScheduleAgentManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.SelfScheduleJob;
+import com.mypurecloud.sdk.v2.model.SelfScheduleJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.SelfScheduleManagementUnitSettingsRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleOffersJob;
+import com.mypurecloud.sdk.v2.model.SelfScheduleOffersJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleQuery;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
 import com.mypurecloud.sdk.v2.model.SetTimeOffIntegrationStatusRequest;
@@ -455,8 +468,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActi
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanDeletionsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplansRequest;
@@ -551,6 +567,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAd
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitDecisionmetricsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSelfscheduleSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesMatchedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitTimeofflimitRequest;
@@ -576,6 +593,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidSched
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingpreferencesSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSelfscheduleActivitymoveRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSelfscheduleJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSelfscheduleOffersJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSelfscheduleQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSelfscheduleSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeMatchJobRequest;
@@ -628,6 +650,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitWo
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitSelfscheduleSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest;
@@ -666,6 +689,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshif
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsTradesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanDeletionsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsRequest;
@@ -685,6 +709,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCap
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
@@ -774,6 +799,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunits
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulingpreferencesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSelfscheduleJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSelfscheduleOffersJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeMatchJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeStateJobsRequest;
@@ -4417,6 +4444,156 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Get a specific occurrence for the activity plan
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanOccurrenceResponse> getWorkforcemanagementBusinessunitActivityplanOccurrenceAsync(GetWorkforcemanagementBusinessunitActivityplanOccurrenceRequest request, final AsyncApiCallback<ActivityPlanOccurrenceResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanOccurrenceResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanOccurrenceResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanOccurrenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanOccurrenceResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get a specific occurrence for the activity plan
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanOccurrenceResponse>> getWorkforcemanagementBusinessunitActivityplanOccurrenceAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanOccurrenceResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanOccurrenceResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanOccurrenceResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanOccurrenceResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanOccurrenceResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanOccurrenceResponse> response = (ApiResponse<ActivityPlanOccurrenceResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanOccurrenceResponse> response = (ApiResponse<ActivityPlanOccurrenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets an occurrence deletion job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobAsync(GetWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Gets an occurrence deletion job
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanJobResponse>> getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Gets a session users deletion job
    * 
    * @param request the request object
@@ -4555,6 +4732,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all occurrences for an activity plan
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanOccurrenceListing> getWorkforcemanagementBusinessunitActivityplanOccurrencesAsync(GetWorkforcemanagementBusinessunitActivityplanOccurrencesRequest request, final AsyncApiCallback<ActivityPlanOccurrenceListing> callback) {
+    try {
+      final SettableFuture<ActivityPlanOccurrenceListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanOccurrenceListing>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanOccurrenceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanOccurrenceListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get all occurrences for an activity plan
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanOccurrenceListing>> getWorkforcemanagementBusinessunitActivityplanOccurrencesAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanOccurrenceListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanOccurrenceListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanOccurrenceListing>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanOccurrenceListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanOccurrenceListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanOccurrenceListing> response = (ApiResponse<ActivityPlanOccurrenceListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanOccurrenceListing> response = (ApiResponse<ActivityPlanOccurrenceListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -11629,6 +11881,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Get admin self-scheduling settings for a management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SelfScheduleManagementUnitSettings> getWorkforcemanagementManagementunitSelfscheduleSettingsAsync(GetWorkforcemanagementManagementunitSelfscheduleSettingsRequest request, final AsyncApiCallback<SelfScheduleManagementUnitSettings> callback) {
+    try {
+      final SettableFuture<SelfScheduleManagementUnitSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SelfScheduleManagementUnitSettings>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleManagementUnitSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleManagementUnitSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get admin self-scheduling settings for a management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SelfScheduleManagementUnitSettings>> getWorkforcemanagementManagementunitSelfscheduleSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SelfScheduleManagementUnitSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SelfScheduleManagementUnitSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SelfScheduleManagementUnitSettings>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleManagementUnitSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleManagementUnitSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleManagementUnitSettings> response = (ApiResponse<SelfScheduleManagementUnitSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleManagementUnitSettings> response = (ApiResponse<SelfScheduleManagementUnitSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Gets a summary of all shift trades in the matched state
    * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
    * @param request the request object
@@ -13510,6 +13837,381 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Lookup a single agent activity move based on its identifier
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SelfScheduleActivityMoveListItem> getWorkforcemanagementSelfscheduleActivitymoveAsync(GetWorkforcemanagementSelfscheduleActivitymoveRequest request, final AsyncApiCallback<SelfScheduleActivityMoveListItem> callback) {
+    try {
+      final SettableFuture<SelfScheduleActivityMoveListItem> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SelfScheduleActivityMoveListItem>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleActivityMoveListItem>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleActivityMoveListItem> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Lookup a single agent activity move based on its identifier
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SelfScheduleActivityMoveListItem>> getWorkforcemanagementSelfscheduleActivitymoveAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SelfScheduleActivityMoveListItem>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SelfScheduleActivityMoveListItem>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SelfScheduleActivityMoveListItem>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleActivityMoveListItem>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleActivityMoveListItem> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleActivityMoveListItem> response = (ApiResponse<SelfScheduleActivityMoveListItem>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleActivityMoveListItem> response = (ApiResponse<SelfScheduleActivityMoveListItem>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of create self-schedule activity move operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SelfScheduleJob> getWorkforcemanagementSelfscheduleJobAsync(GetWorkforcemanagementSelfscheduleJobRequest request, final AsyncApiCallback<SelfScheduleJob> callback) {
+    try {
+      final SettableFuture<SelfScheduleJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SelfScheduleJob>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of create self-schedule activity move operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SelfScheduleJob>> getWorkforcemanagementSelfscheduleJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SelfScheduleJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SelfScheduleJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SelfScheduleJob>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleJob> response = (ApiResponse<SelfScheduleJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleJob> response = (ApiResponse<SelfScheduleJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SelfScheduleOffersJob> getWorkforcemanagementSelfscheduleOffersJobAsync(GetWorkforcemanagementSelfscheduleOffersJobRequest request, final AsyncApiCallback<SelfScheduleOffersJob> callback) {
+    try {
+      final SettableFuture<SelfScheduleOffersJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SelfScheduleOffersJob>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleOffersJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleOffersJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SelfScheduleOffersJob>> getWorkforcemanagementSelfscheduleOffersJobAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SelfScheduleOffersJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SelfScheduleOffersJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SelfScheduleOffersJob>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleOffersJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleOffersJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleOffersJob> response = (ApiResponse<SelfScheduleOffersJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleOffersJob> response = (ApiResponse<SelfScheduleOffersJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query self-schedule activity moves for agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SelfScheduleQuery> getWorkforcemanagementSelfscheduleQueryAsync(GetWorkforcemanagementSelfscheduleQueryRequest request, final AsyncApiCallback<SelfScheduleQuery> callback) {
+    try {
+      final SettableFuture<SelfScheduleQuery> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SelfScheduleQuery>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleQuery>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleQuery> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Query self-schedule activity moves for agent
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SelfScheduleQuery>> getWorkforcemanagementSelfscheduleQueryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SelfScheduleQuery>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SelfScheduleQuery>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SelfScheduleQuery>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleQuery>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleQuery> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleQuery> response = (ApiResponse<SelfScheduleQuery>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleQuery> response = (ApiResponse<SelfScheduleQuery>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Agent gets the self-schedule management unit settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SelfScheduleAgentManagementUnitSettings> getWorkforcemanagementSelfscheduleSettingsAsync(GetWorkforcemanagementSelfscheduleSettingsRequest request, final AsyncApiCallback<SelfScheduleAgentManagementUnitSettings> callback) {
+    try {
+      final SettableFuture<SelfScheduleAgentManagementUnitSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SelfScheduleAgentManagementUnitSettings>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleAgentManagementUnitSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleAgentManagementUnitSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Agent gets the self-schedule management unit settings.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SelfScheduleAgentManagementUnitSettings>> getWorkforcemanagementSelfscheduleSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<SelfScheduleAgentManagementUnitSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SelfScheduleAgentManagementUnitSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SelfScheduleAgentManagementUnitSettings>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleAgentManagementUnitSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleAgentManagementUnitSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleAgentManagementUnitSettings> response = (ApiResponse<SelfScheduleAgentManagementUnitSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleAgentManagementUnitSettings> response = (ApiResponse<SelfScheduleAgentManagementUnitSettings>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -17426,6 +18128,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Update admin self-scheduling settings for a management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SelfScheduleManagementUnitSettings> patchWorkforcemanagementManagementunitSelfscheduleSettingsAsync(PatchWorkforcemanagementManagementunitSelfscheduleSettingsRequest request, final AsyncApiCallback<SelfScheduleManagementUnitSettings> callback) {
+    try {
+      final SettableFuture<SelfScheduleManagementUnitSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SelfScheduleManagementUnitSettings>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleManagementUnitSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleManagementUnitSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Update admin self-scheduling settings for a management unit
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SelfScheduleManagementUnitSettings>> patchWorkforcemanagementManagementunitSelfscheduleSettingsAsync(ApiRequest<SelfScheduleManagementUnitSettingsRequest> request, final AsyncApiCallback<ApiResponse<SelfScheduleManagementUnitSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SelfScheduleManagementUnitSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SelfScheduleManagementUnitSettings>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleManagementUnitSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleManagementUnitSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleManagementUnitSettings> response = (ApiResponse<SelfScheduleManagementUnitSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleManagementUnitSettings> response = (ApiResponse<SelfScheduleManagementUnitSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Updates a time off limit object.
    * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
    * @param request the request object
@@ -20286,6 +21063,81 @@ public class WorkforceManagementApiAsync {
   }
 
   /**
+   * Delete an occurrence for the activity plan
+   * Triggers a job to delete an occurrence of the activity plan. The activity plan cannot be updated until the job completes
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsAsync(PostWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsRequest request, final AsyncApiCallback<ActivityPlanJobResponse> callback) {
+    try {
+      final SettableFuture<ActivityPlanJobResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Delete an occurrence for the activity plan
+   * Triggers a job to delete an occurrence of the activity plan. The activity plan cannot be updated until the job completes
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ActivityPlanJobResponse>> postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ActivityPlanJobResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ActivityPlanJobResponse>() {}, new AsyncApiCallback<ApiResponse<ActivityPlanJobResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<ActivityPlanJobResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Triggers a job to delete users from a session in the activity plan occurrence
    * 
    * @param request the request object
@@ -21699,6 +22551,81 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan
+   * Returns two upload URLs, one for the hourly forecast and one for the daily forecast. Once both uploads are complete, call POST /capacityplans (new capacity plan) or PATCH /capacityplans/{capacityPlanId} (existing capacity plan) or POST /capacityplans/{capacityPlanId}/copy (copy capacity plan) with both upload keys in importedForecast
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<CapacityPlanForecastImportUploadResponse> postWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsAsync(PostWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsRequest request, final AsyncApiCallback<CapacityPlanForecastImportUploadResponse> callback) {
+    try {
+      final SettableFuture<CapacityPlanForecastImportUploadResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<CapacityPlanForecastImportUploadResponse>() {}, new AsyncApiCallback<ApiResponse<CapacityPlanForecastImportUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CapacityPlanForecastImportUploadResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan
+   * Returns two upload URLs, one for the hourly forecast and one for the daily forecast. Once both uploads are complete, call POST /capacityplans (new capacity plan) or PATCH /capacityplans/{capacityPlanId} (existing capacity plan) or POST /capacityplans/{capacityPlanId}/copy (copy capacity plan) with both upload keys in importedForecast
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<CapacityPlanForecastImportUploadResponse>> postWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsAsync(ApiRequest<CapacityPlanForecastImportUploadRequest> request, final AsyncApiCallback<ApiResponse<CapacityPlanForecastImportUploadResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<CapacityPlanForecastImportUploadResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<CapacityPlanForecastImportUploadResponse>() {}, new AsyncApiCallback<ApiResponse<CapacityPlanForecastImportUploadResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<CapacityPlanForecastImportUploadResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CapacityPlanForecastImportUploadResponse> response = (ApiResponse<CapacityPlanForecastImportUploadResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<CapacityPlanForecastImportUploadResponse> response = (ApiResponse<CapacityPlanForecastImportUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -28396,6 +29323,156 @@ public class WorkforceManagementApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Agent starts an async job to edit a shift request by updating the start time of one or more activities.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SelfScheduleJob> postWorkforcemanagementSelfscheduleJobsAsync(PostWorkforcemanagementSelfscheduleJobsRequest request, final AsyncApiCallback<SelfScheduleJob> callback) {
+    try {
+      final SettableFuture<SelfScheduleJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SelfScheduleJob>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Agent starts an async job to edit a shift request by updating the start time of one or more activities.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SelfScheduleJob>> postWorkforcemanagementSelfscheduleJobsAsync(ApiRequest<SelfScheduleJobRequest> request, final AsyncApiCallback<ApiResponse<SelfScheduleJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SelfScheduleJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SelfScheduleJob>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleJob> response = (ApiResponse<SelfScheduleJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleJob> response = (ApiResponse<SelfScheduleJob>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Agent starts async job to search for best time for offers
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SelfScheduleOffersJob> postWorkforcemanagementSelfscheduleOffersJobsAsync(PostWorkforcemanagementSelfscheduleOffersJobsRequest request, final AsyncApiCallback<SelfScheduleOffersJob> callback) {
+    try {
+      final SettableFuture<SelfScheduleOffersJob> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SelfScheduleOffersJob>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleOffersJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleOffersJob> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Agent starts async job to search for best time for offers
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SelfScheduleOffersJob>> postWorkforcemanagementSelfscheduleOffersJobsAsync(ApiRequest<SelfScheduleOffersJobRequest> request, final AsyncApiCallback<ApiResponse<SelfScheduleOffersJob>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SelfScheduleOffersJob>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SelfScheduleOffersJob>() {}, new AsyncApiCallback<ApiResponse<SelfScheduleOffersJob>>() {
+        @Override
+        public void onCompleted(ApiResponse<SelfScheduleOffersJob> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleOffersJob> response = (ApiResponse<SelfScheduleOffersJob>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SelfScheduleOffersJob> response = (ApiResponse<SelfScheduleOffersJob>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

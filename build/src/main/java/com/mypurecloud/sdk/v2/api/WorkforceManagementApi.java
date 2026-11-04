@@ -17,6 +17,8 @@ import com.mypurecloud.sdk.v2.model.ActivityPlanDeletionSessionUserIds;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobListing;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrenceListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrenceResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrencesDeletionJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanRunJobResponse;
@@ -158,6 +160,8 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitSchedulingPreferencesSettingsResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastImportUploadRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastImportUploadResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanForecastInputsResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.CapacityPlanResponse;
@@ -289,6 +293,15 @@ import com.mypurecloud.sdk.v2.model.SearchAlternativeShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.SearchUnmatchedShiftTradeListJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleActivityMoveListItem;
+import com.mypurecloud.sdk.v2.model.SelfScheduleAgentManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.SelfScheduleJob;
+import com.mypurecloud.sdk.v2.model.SelfScheduleJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.SelfScheduleManagementUnitSettingsRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleOffersJob;
+import com.mypurecloud.sdk.v2.model.SelfScheduleOffersJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleQuery;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
 import com.mypurecloud.sdk.v2.model.SetTimeOffIntegrationStatusRequest;
@@ -452,8 +465,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActi
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanDeletionsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrencesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplanRunsJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementBusinessunitActivityplansRequest;
@@ -548,6 +564,7 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAd
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitAgentShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitDecisionmetricsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitSelfscheduleSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesMatchedRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitShifttradesUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementManagementunitTimeofflimitRequest;
@@ -573,6 +590,11 @@ import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidSched
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulebidsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingjobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSchedulingpreferencesSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSelfscheduleActivitymoveRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSelfscheduleJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSelfscheduleOffersJobRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSelfscheduleQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementSelfscheduleSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeJobRequest;
 import com.mypurecloud.sdk.v2.api.request.GetWorkforcemanagementShifttradingTradeMatchJobRequest;
@@ -625,6 +647,7 @@ import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementBusinessunitWo
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitAgentsWorkplansBulkRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitSelfscheduleSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeofflimitRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffplanRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatusRequest;
@@ -663,6 +686,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshif
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementAlternativeshiftsTradesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivitycodesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanDeletionsJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobsRequest;
@@ -682,6 +706,7 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCap
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansBulkRemoveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurlRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementBusinessunitIntradayRequest;
@@ -771,6 +796,8 @@ import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementManagementunits
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementNotificationsUpdateRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulesRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSchedulingpreferencesQueryRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSelfscheduleJobsRequest;
+import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementSelfscheduleOffersJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeMatchJobsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostWorkforcemanagementShifttradingTradeStateJobsRequest;
@@ -4620,6 +4647,182 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get a specific occurrence for the activity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @return ActivityPlanOccurrenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanOccurrenceResponse getWorkforcemanagementBusinessunitActivityplanOccurrence(String businessUnitId, String activityPlanId, String occurrenceId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplanOccurrence(createGetWorkforcemanagementBusinessunitActivityplanOccurrenceRequest(businessUnitId, activityPlanId, occurrenceId));
+  }
+
+  /**
+   * Get a specific occurrence for the activity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @return ActivityPlanOccurrenceResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanOccurrenceResponse> getWorkforcemanagementBusinessunitActivityplanOccurrenceWithHttpInfo(String businessUnitId, String activityPlanId, String occurrenceId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplanOccurrence(createGetWorkforcemanagementBusinessunitActivityplanOccurrenceRequest(businessUnitId, activityPlanId, occurrenceId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplanOccurrenceRequest createGetWorkforcemanagementBusinessunitActivityplanOccurrenceRequest(String businessUnitId, String activityPlanId, String occurrenceId) {
+    return GetWorkforcemanagementBusinessunitActivityplanOccurrenceRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withOccurrenceId(occurrenceId)
+
+            .build();
+  }
+
+  /**
+   * Get a specific occurrence for the activity plan
+   * 
+   * @param request The request object
+   * @return ActivityPlanOccurrenceResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanOccurrenceResponse getWorkforcemanagementBusinessunitActivityplanOccurrence(GetWorkforcemanagementBusinessunitActivityplanOccurrenceRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanOccurrenceResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanOccurrenceResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a specific occurrence for the activity plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanOccurrenceResponse> getWorkforcemanagementBusinessunitActivityplanOccurrence(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanOccurrenceResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanOccurrenceResponse> response = (ApiResponse<ActivityPlanOccurrenceResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanOccurrenceResponse> response = (ApiResponse<ActivityPlanOccurrenceResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Gets an occurrence deletion job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @param jobId The ID of the activity plan occurrence deletion job (required)
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob(String businessUnitId, String activityPlanId, String occurrenceId, String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob(createGetWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobRequest(businessUnitId, activityPlanId, occurrenceId, jobId));
+  }
+
+  /**
+   * Gets an occurrence deletion job
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @param jobId The ID of the activity plan occurrence deletion job (required)
+   * @return ActivityPlanJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobWithHttpInfo(String businessUnitId, String activityPlanId, String occurrenceId, String jobId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob(createGetWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobRequest(businessUnitId, activityPlanId, occurrenceId, jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobRequest createGetWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobRequest(String businessUnitId, String activityPlanId, String occurrenceId, String jobId) {
+    return GetWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withOccurrenceId(occurrenceId)
+
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * Gets an occurrence deletion job
+   * 
+   * @param request The request object
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob(GetWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Gets an occurrence deletion job
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Gets a session users deletion job
    * 
    * @param businessUnitId The ID of the business unit (required)
@@ -4799,6 +5002,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get all occurrences for an activity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @return ActivityPlanOccurrenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanOccurrenceListing getWorkforcemanagementBusinessunitActivityplanOccurrences(String businessUnitId, String activityPlanId) throws IOException, ApiException {
+    return  getWorkforcemanagementBusinessunitActivityplanOccurrences(createGetWorkforcemanagementBusinessunitActivityplanOccurrencesRequest(businessUnitId, activityPlanId));
+  }
+
+  /**
+   * Get all occurrences for an activity plan
+   * 
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @return ActivityPlanOccurrenceListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanOccurrenceListing> getWorkforcemanagementBusinessunitActivityplanOccurrencesWithHttpInfo(String businessUnitId, String activityPlanId) throws IOException {
+    return getWorkforcemanagementBusinessunitActivityplanOccurrences(createGetWorkforcemanagementBusinessunitActivityplanOccurrencesRequest(businessUnitId, activityPlanId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementBusinessunitActivityplanOccurrencesRequest createGetWorkforcemanagementBusinessunitActivityplanOccurrencesRequest(String businessUnitId, String activityPlanId) {
+    return GetWorkforcemanagementBusinessunitActivityplanOccurrencesRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .build();
+  }
+
+  /**
+   * Get all occurrences for an activity plan
+   * 
+   * @param request The request object
+   * @return ActivityPlanOccurrenceListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanOccurrenceListing getWorkforcemanagementBusinessunitActivityplanOccurrences(GetWorkforcemanagementBusinessunitActivityplanOccurrencesRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanOccurrenceListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanOccurrenceListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get all occurrences for an activity plan
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanOccurrenceListing> getWorkforcemanagementBusinessunitActivityplanOccurrences(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanOccurrenceListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanOccurrenceListing> response = (ApiResponse<ActivityPlanOccurrenceListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanOccurrenceListing> response = (ApiResponse<ActivityPlanOccurrenceListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -12624,6 +12909,84 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Get admin self-scheduling settings for a management unit
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @return SelfScheduleManagementUnitSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleManagementUnitSettings getWorkforcemanagementManagementunitSelfscheduleSettings(String managementUnitId) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitSelfscheduleSettings(createGetWorkforcemanagementManagementunitSelfscheduleSettingsRequest(managementUnitId));
+  }
+
+  /**
+   * Get admin self-scheduling settings for a management unit
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @return SelfScheduleManagementUnitSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleManagementUnitSettings> getWorkforcemanagementManagementunitSelfscheduleSettingsWithHttpInfo(String managementUnitId) throws IOException {
+    return getWorkforcemanagementManagementunitSelfscheduleSettings(createGetWorkforcemanagementManagementunitSelfscheduleSettingsRequest(managementUnitId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementManagementunitSelfscheduleSettingsRequest createGetWorkforcemanagementManagementunitSelfscheduleSettingsRequest(String managementUnitId) {
+    return GetWorkforcemanagementManagementunitSelfscheduleSettingsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .build();
+  }
+
+  /**
+   * Get admin self-scheduling settings for a management unit
+   * 
+   * @param request The request object
+   * @return SelfScheduleManagementUnitSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleManagementUnitSettings getWorkforcemanagementManagementunitSelfscheduleSettings(GetWorkforcemanagementManagementunitSelfscheduleSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SelfScheduleManagementUnitSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SelfScheduleManagementUnitSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get admin self-scheduling settings for a management unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleManagementUnitSettings> getWorkforcemanagementManagementunitSelfscheduleSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SelfScheduleManagementUnitSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleManagementUnitSettings> response = (ApiResponse<SelfScheduleManagementUnitSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleManagementUnitSettings> response = (ApiResponse<SelfScheduleManagementUnitSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Gets a summary of all shift trades in the matched state
    * Deprecated. Use new route instead (/businessunits/{businessUnitId}/shifttrading/weeks/summary/jobs)
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
@@ -14001,12 +14364,13 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param expand Include to access additional data on the work plans (optional)
    * @param exclude Exclude specific data on the work plans from the response (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return WorkPlanListResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public WorkPlanListResponse getWorkforcemanagementManagementunitWorkplans(String managementUnitId, List<String> expand, List<String> exclude) throws IOException, ApiException {
-    return  getWorkforcemanagementManagementunitWorkplans(createGetWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, expand, exclude));
+  public WorkPlanListResponse getWorkforcemanagementManagementunitWorkplans(String managementUnitId, List<String> expand, List<String> exclude, Boolean forceDownloadService) throws IOException, ApiException {
+    return  getWorkforcemanagementManagementunitWorkplans(createGetWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, expand, exclude, forceDownloadService));
   }
 
   /**
@@ -14015,20 +14379,23 @@ public class WorkforceManagementApi {
    * @param managementUnitId The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
    * @param expand Include to access additional data on the work plans (optional)
    * @param exclude Exclude specific data on the work plans from the response (optional)
+   * @param forceDownloadService Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
    * @return WorkPlanListResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<WorkPlanListResponse> getWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, List<String> expand, List<String> exclude) throws IOException {
-    return getWorkforcemanagementManagementunitWorkplans(createGetWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, expand, exclude).withHttpInfo());
+  public ApiResponse<WorkPlanListResponse> getWorkforcemanagementManagementunitWorkplansWithHttpInfo(String managementUnitId, List<String> expand, List<String> exclude, Boolean forceDownloadService) throws IOException {
+    return getWorkforcemanagementManagementunitWorkplans(createGetWorkforcemanagementManagementunitWorkplansRequest(managementUnitId, expand, exclude, forceDownloadService).withHttpInfo());
   }
 
-  private GetWorkforcemanagementManagementunitWorkplansRequest createGetWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, List<String> expand, List<String> exclude) {
+  private GetWorkforcemanagementManagementunitWorkplansRequest createGetWorkforcemanagementManagementunitWorkplansRequest(String managementUnitId, List<String> expand, List<String> exclude, Boolean forceDownloadService) {
     return GetWorkforcemanagementManagementunitWorkplansRequest.builder()
             .withManagementUnitId(managementUnitId)
 
             .withExpand(expand)
 
             .withExclude(exclude)
+
+            .withForceDownloadService(forceDownloadService)
 
             .build();
   }
@@ -14709,6 +15076,388 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse> response = (ApiResponse<BusinessUnitSchedulingPreferencesSettingsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Lookup a single agent activity move based on its identifier
+   * 
+   * @param activityMoveId The ID of the activity move (required)
+   * @return SelfScheduleActivityMoveListItem
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleActivityMoveListItem getWorkforcemanagementSelfscheduleActivitymove(String activityMoveId) throws IOException, ApiException {
+    return  getWorkforcemanagementSelfscheduleActivitymove(createGetWorkforcemanagementSelfscheduleActivitymoveRequest(activityMoveId));
+  }
+
+  /**
+   * Lookup a single agent activity move based on its identifier
+   * 
+   * @param activityMoveId The ID of the activity move (required)
+   * @return SelfScheduleActivityMoveListItem
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleActivityMoveListItem> getWorkforcemanagementSelfscheduleActivitymoveWithHttpInfo(String activityMoveId) throws IOException {
+    return getWorkforcemanagementSelfscheduleActivitymove(createGetWorkforcemanagementSelfscheduleActivitymoveRequest(activityMoveId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementSelfscheduleActivitymoveRequest createGetWorkforcemanagementSelfscheduleActivitymoveRequest(String activityMoveId) {
+    return GetWorkforcemanagementSelfscheduleActivitymoveRequest.builder()
+            .withActivityMoveId(activityMoveId)
+
+            .build();
+  }
+
+  /**
+   * Lookup a single agent activity move based on its identifier
+   * 
+   * @param request The request object
+   * @return SelfScheduleActivityMoveListItem
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleActivityMoveListItem getWorkforcemanagementSelfscheduleActivitymove(GetWorkforcemanagementSelfscheduleActivitymoveRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SelfScheduleActivityMoveListItem> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SelfScheduleActivityMoveListItem>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Lookup a single agent activity move based on its identifier
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleActivityMoveListItem> getWorkforcemanagementSelfscheduleActivitymove(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SelfScheduleActivityMoveListItem>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleActivityMoveListItem> response = (ApiResponse<SelfScheduleActivityMoveListItem>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleActivityMoveListItem> response = (ApiResponse<SelfScheduleActivityMoveListItem>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * View result of create self-schedule activity move operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return SelfScheduleJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleJob getWorkforcemanagementSelfscheduleJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementSelfscheduleJob(createGetWorkforcemanagementSelfscheduleJobRequest(jobId));
+  }
+
+  /**
+   * View result of create self-schedule activity move operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the job (required)
+   * @return SelfScheduleJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleJob> getWorkforcemanagementSelfscheduleJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementSelfscheduleJob(createGetWorkforcemanagementSelfscheduleJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementSelfscheduleJobRequest createGetWorkforcemanagementSelfscheduleJobRequest(String jobId) {
+    return GetWorkforcemanagementSelfscheduleJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View result of create self-schedule activity move operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return SelfScheduleJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleJob getWorkforcemanagementSelfscheduleJob(GetWorkforcemanagementSelfscheduleJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SelfScheduleJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SelfScheduleJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View result of create self-schedule activity move operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleJob> getWorkforcemanagementSelfscheduleJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SelfScheduleJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleJob> response = (ApiResponse<SelfScheduleJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleJob> response = (ApiResponse<SelfScheduleJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the offer job (required)
+   * @return SelfScheduleOffersJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleOffersJob getWorkforcemanagementSelfscheduleOffersJob(String jobId) throws IOException, ApiException {
+    return  getWorkforcemanagementSelfscheduleOffersJob(createGetWorkforcemanagementSelfscheduleOffersJobRequest(jobId));
+  }
+
+  /**
+   * View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param jobId The ID of the offer job (required)
+   * @return SelfScheduleOffersJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleOffersJob> getWorkforcemanagementSelfscheduleOffersJobWithHttpInfo(String jobId) throws IOException {
+    return getWorkforcemanagementSelfscheduleOffersJob(createGetWorkforcemanagementSelfscheduleOffersJobRequest(jobId).withHttpInfo());
+  }
+
+  private GetWorkforcemanagementSelfscheduleOffersJobRequest createGetWorkforcemanagementSelfscheduleOffersJobRequest(String jobId) {
+    return GetWorkforcemanagementSelfscheduleOffersJobRequest.builder()
+            .withJobId(jobId)
+
+            .build();
+  }
+
+  /**
+   * View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return SelfScheduleOffersJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleOffersJob getWorkforcemanagementSelfscheduleOffersJob(GetWorkforcemanagementSelfscheduleOffersJobRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SelfScheduleOffersJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SelfScheduleOffersJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status
+   * Job details are only retained if the initial request returned a 202 ACCEPTED response
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleOffersJob> getWorkforcemanagementSelfscheduleOffersJob(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SelfScheduleOffersJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleOffersJob> response = (ApiResponse<SelfScheduleOffersJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleOffersJob> response = (ApiResponse<SelfScheduleOffersJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Query self-schedule activity moves for agent
+   * 
+   * @return SelfScheduleQuery
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleQuery getWorkforcemanagementSelfscheduleQuery() throws IOException, ApiException {
+    return  getWorkforcemanagementSelfscheduleQuery(createGetWorkforcemanagementSelfscheduleQueryRequest());
+  }
+
+  /**
+   * Query self-schedule activity moves for agent
+   * 
+   * @return SelfScheduleQuery
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleQuery> getWorkforcemanagementSelfscheduleQueryWithHttpInfo() throws IOException {
+    return getWorkforcemanagementSelfscheduleQuery(createGetWorkforcemanagementSelfscheduleQueryRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementSelfscheduleQueryRequest createGetWorkforcemanagementSelfscheduleQueryRequest() {
+    return GetWorkforcemanagementSelfscheduleQueryRequest.builder()
+            .build();
+  }
+
+  /**
+   * Query self-schedule activity moves for agent
+   * 
+   * @param request The request object
+   * @return SelfScheduleQuery
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleQuery getWorkforcemanagementSelfscheduleQuery(GetWorkforcemanagementSelfscheduleQueryRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SelfScheduleQuery> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SelfScheduleQuery>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Query self-schedule activity moves for agent
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleQuery> getWorkforcemanagementSelfscheduleQuery(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SelfScheduleQuery>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleQuery> response = (ApiResponse<SelfScheduleQuery>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleQuery> response = (ApiResponse<SelfScheduleQuery>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Agent gets the self-schedule management unit settings.
+   * 
+   * @return SelfScheduleAgentManagementUnitSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleAgentManagementUnitSettings getWorkforcemanagementSelfscheduleSettings() throws IOException, ApiException {
+    return  getWorkforcemanagementSelfscheduleSettings(createGetWorkforcemanagementSelfscheduleSettingsRequest());
+  }
+
+  /**
+   * Agent gets the self-schedule management unit settings.
+   * 
+   * @return SelfScheduleAgentManagementUnitSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleAgentManagementUnitSettings> getWorkforcemanagementSelfscheduleSettingsWithHttpInfo() throws IOException {
+    return getWorkforcemanagementSelfscheduleSettings(createGetWorkforcemanagementSelfscheduleSettingsRequest().withHttpInfo());
+  }
+
+  private GetWorkforcemanagementSelfscheduleSettingsRequest createGetWorkforcemanagementSelfscheduleSettingsRequest() {
+    return GetWorkforcemanagementSelfscheduleSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Agent gets the self-schedule management unit settings.
+   * 
+   * @param request The request object
+   * @return SelfScheduleAgentManagementUnitSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleAgentManagementUnitSettings getWorkforcemanagementSelfscheduleSettings(GetWorkforcemanagementSelfscheduleSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SelfScheduleAgentManagementUnitSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SelfScheduleAgentManagementUnitSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Agent gets the self-schedule management unit settings.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleAgentManagementUnitSettings> getWorkforcemanagementSelfscheduleSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SelfScheduleAgentManagementUnitSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleAgentManagementUnitSettings> response = (ApiResponse<SelfScheduleAgentManagementUnitSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleAgentManagementUnitSettings> response = (ApiResponse<SelfScheduleAgentManagementUnitSettings>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -18992,6 +19741,88 @@ public class WorkforceManagementApi {
   }
 
   /**
+   * Update admin self-scheduling settings for a management unit
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @param body body (required)
+   * @return SelfScheduleManagementUnitSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleManagementUnitSettings patchWorkforcemanagementManagementunitSelfscheduleSettings(String managementUnitId, SelfScheduleManagementUnitSettingsRequest body) throws IOException, ApiException {
+    return  patchWorkforcemanagementManagementunitSelfscheduleSettings(createPatchWorkforcemanagementManagementunitSelfscheduleSettingsRequest(managementUnitId, body));
+  }
+
+  /**
+   * Update admin self-scheduling settings for a management unit
+   * 
+   * @param managementUnitId The ID of the management unit (required)
+   * @param body body (required)
+   * @return SelfScheduleManagementUnitSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleManagementUnitSettings> patchWorkforcemanagementManagementunitSelfscheduleSettingsWithHttpInfo(String managementUnitId, SelfScheduleManagementUnitSettingsRequest body) throws IOException {
+    return patchWorkforcemanagementManagementunitSelfscheduleSettings(createPatchWorkforcemanagementManagementunitSelfscheduleSettingsRequest(managementUnitId, body).withHttpInfo());
+  }
+
+  private PatchWorkforcemanagementManagementunitSelfscheduleSettingsRequest createPatchWorkforcemanagementManagementunitSelfscheduleSettingsRequest(String managementUnitId, SelfScheduleManagementUnitSettingsRequest body) {
+    return PatchWorkforcemanagementManagementunitSelfscheduleSettingsRequest.builder()
+            .withManagementUnitId(managementUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Update admin self-scheduling settings for a management unit
+   * 
+   * @param request The request object
+   * @return SelfScheduleManagementUnitSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleManagementUnitSettings patchWorkforcemanagementManagementunitSelfscheduleSettings(PatchWorkforcemanagementManagementunitSelfscheduleSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SelfScheduleManagementUnitSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SelfScheduleManagementUnitSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Update admin self-scheduling settings for a management unit
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleManagementUnitSettings> patchWorkforcemanagementManagementunitSelfscheduleSettings(ApiRequest<SelfScheduleManagementUnitSettingsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SelfScheduleManagementUnitSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleManagementUnitSettings> response = (ApiResponse<SelfScheduleManagementUnitSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleManagementUnitSettings> response = (ApiResponse<SelfScheduleManagementUnitSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Updates a time off limit object.
    * Updates time off limit object properties, but not daily values. Deprecated: Updating defaultLimitMinutes is no longer supported
    * @param managementUnitId The ID of the management unit. (required)
@@ -21679,28 +22510,32 @@ public class WorkforceManagementApi {
    * Get published schedule for the current user
    * 
    * @param body body (required)
+   * @param expand Include to access additional data on the agent schedules (optional)
    * @return BuCurrentAgentScheduleSearchResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(BuGetCurrentAgentScheduleRequest body) throws IOException, ApiException {
-    return  postWorkforcemanagementAgentschedulesMine(createPostWorkforcemanagementAgentschedulesMineRequest(body));
+  public BuCurrentAgentScheduleSearchResponse postWorkforcemanagementAgentschedulesMine(BuGetCurrentAgentScheduleRequest body, List<String> expand) throws IOException, ApiException {
+    return  postWorkforcemanagementAgentschedulesMine(createPostWorkforcemanagementAgentschedulesMineRequest(body, expand));
   }
 
   /**
    * Get published schedule for the current user
    * 
    * @param body body (required)
+   * @param expand Include to access additional data on the agent schedules (optional)
    * @return BuCurrentAgentScheduleSearchResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BuCurrentAgentScheduleSearchResponse> postWorkforcemanagementAgentschedulesMineWithHttpInfo(BuGetCurrentAgentScheduleRequest body) throws IOException {
-    return postWorkforcemanagementAgentschedulesMine(createPostWorkforcemanagementAgentschedulesMineRequest(body).withHttpInfo());
+  public ApiResponse<BuCurrentAgentScheduleSearchResponse> postWorkforcemanagementAgentschedulesMineWithHttpInfo(BuGetCurrentAgentScheduleRequest body, List<String> expand) throws IOException {
+    return postWorkforcemanagementAgentschedulesMine(createPostWorkforcemanagementAgentschedulesMineRequest(body, expand).withHttpInfo());
   }
 
-  private PostWorkforcemanagementAgentschedulesMineRequest createPostWorkforcemanagementAgentschedulesMineRequest(BuGetCurrentAgentScheduleRequest body) {
+  private PostWorkforcemanagementAgentschedulesMineRequest createPostWorkforcemanagementAgentschedulesMineRequest(BuGetCurrentAgentScheduleRequest body, List<String> expand) {
     return PostWorkforcemanagementAgentschedulesMineRequest.builder()
             .withBody(body)
+
+            .withExpand(expand)
 
             .build();
   }
@@ -22130,6 +22965,92 @@ public class WorkforceManagementApi {
    * @throws IOException if the request fails to be processed
    */
   public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanDeletionsJobs(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ActivityPlanJobResponse> response = (ApiResponse<ActivityPlanJobResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Delete an occurrence for the activity plan
+   * Triggers a job to delete an occurrence of the activity plan. The activity plan cannot be updated until the job completes
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs(String businessUnitId, String activityPlanId, String occurrenceId) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs(createPostWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsRequest(businessUnitId, activityPlanId, occurrenceId));
+  }
+
+  /**
+   * Delete an occurrence for the activity plan
+   * Triggers a job to delete an occurrence of the activity plan. The activity plan cannot be updated until the job completes
+   * @param businessUnitId The ID of the business unit (required)
+   * @param activityPlanId The ID of the activity plan (required)
+   * @param occurrenceId The ID of the activity plan occurrence (required)
+   * @return ActivityPlanJobResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsWithHttpInfo(String businessUnitId, String activityPlanId, String occurrenceId) throws IOException {
+    return postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs(createPostWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsRequest(businessUnitId, activityPlanId, occurrenceId).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsRequest createPostWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsRequest(String businessUnitId, String activityPlanId, String occurrenceId) {
+    return PostWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withActivityPlanId(activityPlanId)
+
+            .withOccurrenceId(occurrenceId)
+
+            .build();
+  }
+
+  /**
+   * Delete an occurrence for the activity plan
+   * Triggers a job to delete an occurrence of the activity plan. The activity plan cannot be updated until the job completes
+   * @param request The request object
+   * @return ActivityPlanJobResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ActivityPlanJobResponse postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs(PostWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ActivityPlanJobResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ActivityPlanJobResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Delete an occurrence for the activity plan
+   * Triggers a job to delete an occurrence of the activity plan. The activity plan cannot be updated until the job completes
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ActivityPlanJobResponse> postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs(ApiRequest<Void> request) throws IOException {
     try {
       return pcapiClient.invoke(request, new TypeReference<ActivityPlanJobResponse>() {});
     }
@@ -23774,6 +24695,88 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan
+   * Returns two upload URLs, one for the hourly forecast and one for the daily forecast. Once both uploads are complete, call POST /capacityplans (new capacity plan) or PATCH /capacityplans/{capacityPlanId} (existing capacity plan) or POST /capacityplans/{capacityPlanId}/copy (copy capacity plan) with both upload keys in importedForecast
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return CapacityPlanForecastImportUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanForecastImportUploadResponse postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls(String businessUnitId, CapacityPlanForecastImportUploadRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls(createPostWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsRequest(businessUnitId, body));
+  }
+
+  /**
+   * Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan
+   * Returns two upload URLs, one for the hourly forecast and one for the daily forecast. Once both uploads are complete, call POST /capacityplans (new capacity plan) or PATCH /capacityplans/{capacityPlanId} (existing capacity plan) or POST /capacityplans/{capacityPlanId}/copy (copy capacity plan) with both upload keys in importedForecast
+   * @param businessUnitId The ID of the business unit (required)
+   * @param body body (required)
+   * @return CapacityPlanForecastImportUploadResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanForecastImportUploadResponse> postWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsWithHttpInfo(String businessUnitId, CapacityPlanForecastImportUploadRequest body) throws IOException {
+    return postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls(createPostWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsRequest(businessUnitId, body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsRequest createPostWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsRequest(String businessUnitId, CapacityPlanForecastImportUploadRequest body) {
+    return PostWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsRequest.builder()
+            .withBusinessUnitId(businessUnitId)
+
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan
+   * Returns two upload URLs, one for the hourly forecast and one for the daily forecast. Once both uploads are complete, call POST /capacityplans (new capacity plan) or PATCH /capacityplans/{capacityPlanId} (existing capacity plan) or POST /capacityplans/{capacityPlanId}/copy (copy capacity plan) with both upload keys in importedForecast
+   * @param request The request object
+   * @return CapacityPlanForecastImportUploadResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public CapacityPlanForecastImportUploadResponse postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls(PostWorkforcemanagementBusinessunitCapacityplansForecastUploadurlsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<CapacityPlanForecastImportUploadResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<CapacityPlanForecastImportUploadResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan
+   * Returns two upload URLs, one for the hourly forecast and one for the daily forecast. Once both uploads are complete, call POST /capacityplans (new capacity plan) or PATCH /capacityplans/{capacityPlanId} (existing capacity plan) or POST /capacityplans/{capacityPlanId}/copy (copy capacity plan) with both upload keys in importedForecast
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<CapacityPlanForecastImportUploadResponse> postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls(ApiRequest<CapacityPlanForecastImportUploadRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<CapacityPlanForecastImportUploadResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanForecastImportUploadResponse> response = (ApiResponse<CapacityPlanForecastImportUploadResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<CapacityPlanForecastImportUploadResponse> response = (ApiResponse<CapacityPlanForecastImportUploadResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -31360,6 +32363,162 @@ public class WorkforceManagementApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<AgentSchedulingPreferenceListing> response = (ApiResponse<AgentSchedulingPreferenceListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Agent starts an async job to edit a shift request by updating the start time of one or more activities.
+   * 
+   * @param body The request body (required)
+   * @return SelfScheduleJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleJob postWorkforcemanagementSelfscheduleJobs(SelfScheduleJobRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementSelfscheduleJobs(createPostWorkforcemanagementSelfscheduleJobsRequest(body));
+  }
+
+  /**
+   * Agent starts an async job to edit a shift request by updating the start time of one or more activities.
+   * 
+   * @param body The request body (required)
+   * @return SelfScheduleJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleJob> postWorkforcemanagementSelfscheduleJobsWithHttpInfo(SelfScheduleJobRequest body) throws IOException {
+    return postWorkforcemanagementSelfscheduleJobs(createPostWorkforcemanagementSelfscheduleJobsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementSelfscheduleJobsRequest createPostWorkforcemanagementSelfscheduleJobsRequest(SelfScheduleJobRequest body) {
+    return PostWorkforcemanagementSelfscheduleJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Agent starts an async job to edit a shift request by updating the start time of one or more activities.
+   * 
+   * @param request The request object
+   * @return SelfScheduleJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleJob postWorkforcemanagementSelfscheduleJobs(PostWorkforcemanagementSelfscheduleJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SelfScheduleJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SelfScheduleJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Agent starts an async job to edit a shift request by updating the start time of one or more activities.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleJob> postWorkforcemanagementSelfscheduleJobs(ApiRequest<SelfScheduleJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SelfScheduleJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleJob> response = (ApiResponse<SelfScheduleJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleJob> response = (ApiResponse<SelfScheduleJob>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Agent starts async job to search for best time for offers
+   * 
+   * @param body The request body (required)
+   * @return SelfScheduleOffersJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleOffersJob postWorkforcemanagementSelfscheduleOffersJobs(SelfScheduleOffersJobRequest body) throws IOException, ApiException {
+    return  postWorkforcemanagementSelfscheduleOffersJobs(createPostWorkforcemanagementSelfscheduleOffersJobsRequest(body));
+  }
+
+  /**
+   * Agent starts async job to search for best time for offers
+   * 
+   * @param body The request body (required)
+   * @return SelfScheduleOffersJob
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleOffersJob> postWorkforcemanagementSelfscheduleOffersJobsWithHttpInfo(SelfScheduleOffersJobRequest body) throws IOException {
+    return postWorkforcemanagementSelfscheduleOffersJobs(createPostWorkforcemanagementSelfscheduleOffersJobsRequest(body).withHttpInfo());
+  }
+
+  private PostWorkforcemanagementSelfscheduleOffersJobsRequest createPostWorkforcemanagementSelfscheduleOffersJobsRequest(SelfScheduleOffersJobRequest body) {
+    return PostWorkforcemanagementSelfscheduleOffersJobsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Agent starts async job to search for best time for offers
+   * 
+   * @param request The request object
+   * @return SelfScheduleOffersJob
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SelfScheduleOffersJob postWorkforcemanagementSelfscheduleOffersJobs(PostWorkforcemanagementSelfscheduleOffersJobsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SelfScheduleOffersJob> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SelfScheduleOffersJob>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Agent starts async job to search for best time for offers
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SelfScheduleOffersJob> postWorkforcemanagementSelfscheduleOffersJobs(ApiRequest<SelfScheduleOffersJobRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SelfScheduleOffersJob>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleOffersJob> response = (ApiResponse<SelfScheduleOffersJob>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SelfScheduleOffersJob> response = (ApiResponse<SelfScheduleOffersJob>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

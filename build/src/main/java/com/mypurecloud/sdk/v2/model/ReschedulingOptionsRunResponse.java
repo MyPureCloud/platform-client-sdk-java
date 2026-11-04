@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BuScheduleReference;
 import com.mypurecloud.sdk.v2.model.ReschedulingManagementUnitResponse;
 import io.swagger.annotations.ApiModel;
@@ -37,6 +38,57 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
   private Boolean doNotChangeDailyPaidTime = null;
   private Boolean doNotChangeShiftStartTimes = null;
   private Boolean doNotChangeManuallyEditedShifts = null;
+
+  private static class ActivitySmoothingTypeEnumDeserializer extends StdDeserializer<ActivitySmoothingTypeEnum> {
+    public ActivitySmoothingTypeEnumDeserializer() {
+      super(ActivitySmoothingTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public ActivitySmoothingTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ActivitySmoothingTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The activity smoothing type used for this reschedule run
+   */
+ @JsonDeserialize(using = ActivitySmoothingTypeEnumDeserializer.class)
+  public enum ActivitySmoothingTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    REDUCECONCURRENTACTIVITIESACROSSBU("ReduceConcurrentActivitiesAcrossBu"),
+    REDUCECONCURRENTACTIVITIESACROSSMU("ReduceConcurrentActivitiesAcrossMu"),
+    CONSISTENTSERVICELEVEL("ConsistentServiceLevel");
+
+    private String value;
+
+    ActivitySmoothingTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ActivitySmoothingTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ActivitySmoothingTypeEnum value : ActivitySmoothingTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ActivitySmoothingTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ActivitySmoothingTypeEnum activitySmoothingType = null;
+  private Boolean induceScheduleVariability = null;
+  private Boolean useUnavailableTimesSnapshot = null;
 
   public ReschedulingOptionsRunResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -169,7 +221,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether weekly paid time is allowed to be changed")
+  @ApiModelProperty(example = "null", required = true, value = "Whether weekly paid time is allowed to be changed")
   @JsonProperty("doNotChangeWeeklyPaidTime")
   public Boolean getDoNotChangeWeeklyPaidTime() {
     return doNotChangeWeeklyPaidTime;
@@ -187,7 +239,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether daily paid time is allowed to be changed")
+  @ApiModelProperty(example = "null", required = true, value = "Whether daily paid time is allowed to be changed")
   @JsonProperty("doNotChangeDailyPaidTime")
   public Boolean getDoNotChangeDailyPaidTime() {
     return doNotChangeDailyPaidTime;
@@ -205,7 +257,7 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether shift start times are allowed to be changed")
+  @ApiModelProperty(example = "null", required = true, value = "Whether shift start times are allowed to be changed")
   @JsonProperty("doNotChangeShiftStartTimes")
   public Boolean getDoNotChangeShiftStartTimes() {
     return doNotChangeShiftStartTimes;
@@ -223,13 +275,67 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Whether manually edited shifts are allowed to be changed")
+  @ApiModelProperty(example = "null", required = true, value = "Whether manually edited shifts are allowed to be changed")
   @JsonProperty("doNotChangeManuallyEditedShifts")
   public Boolean getDoNotChangeManuallyEditedShifts() {
     return doNotChangeManuallyEditedShifts;
   }
   public void setDoNotChangeManuallyEditedShifts(Boolean doNotChangeManuallyEditedShifts) {
     this.doNotChangeManuallyEditedShifts = doNotChangeManuallyEditedShifts;
+  }
+
+
+  /**
+   * The activity smoothing type used for this reschedule run
+   **/
+  public ReschedulingOptionsRunResponse activitySmoothingType(ActivitySmoothingTypeEnum activitySmoothingType) {
+    this.activitySmoothingType = activitySmoothingType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "The activity smoothing type used for this reschedule run")
+  @JsonProperty("activitySmoothingType")
+  public ActivitySmoothingTypeEnum getActivitySmoothingType() {
+    return activitySmoothingType;
+  }
+  public void setActivitySmoothingType(ActivitySmoothingTypeEnum activitySmoothingType) {
+    this.activitySmoothingType = activitySmoothingType;
+  }
+
+
+  /**
+   * Whether schedule variability was induced for this reschedule run
+   **/
+  public ReschedulingOptionsRunResponse induceScheduleVariability(Boolean induceScheduleVariability) {
+    this.induceScheduleVariability = induceScheduleVariability;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Whether schedule variability was induced for this reschedule run")
+  @JsonProperty("induceScheduleVariability")
+  public Boolean getInduceScheduleVariability() {
+    return induceScheduleVariability;
+  }
+  public void setInduceScheduleVariability(Boolean induceScheduleVariability) {
+    this.induceScheduleVariability = induceScheduleVariability;
+  }
+
+
+  /**
+   * Whether original unavailable times from schedule generation were used instead of the latest saved unavailable times
+   **/
+  public ReschedulingOptionsRunResponse useUnavailableTimesSnapshot(Boolean useUnavailableTimesSnapshot) {
+    this.useUnavailableTimesSnapshot = useUnavailableTimesSnapshot;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", required = true, value = "Whether original unavailable times from schedule generation were used instead of the latest saved unavailable times")
+  @JsonProperty("useUnavailableTimesSnapshot")
+  public Boolean getUseUnavailableTimesSnapshot() {
+    return useUnavailableTimesSnapshot;
+  }
+  public void setUseUnavailableTimesSnapshot(Boolean useUnavailableTimesSnapshot) {
+    this.useUnavailableTimesSnapshot = useUnavailableTimesSnapshot;
   }
 
 
@@ -252,12 +358,15 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
             Objects.equals(this.doNotChangeWeeklyPaidTime, reschedulingOptionsRunResponse.doNotChangeWeeklyPaidTime) &&
             Objects.equals(this.doNotChangeDailyPaidTime, reschedulingOptionsRunResponse.doNotChangeDailyPaidTime) &&
             Objects.equals(this.doNotChangeShiftStartTimes, reschedulingOptionsRunResponse.doNotChangeShiftStartTimes) &&
-            Objects.equals(this.doNotChangeManuallyEditedShifts, reschedulingOptionsRunResponse.doNotChangeManuallyEditedShifts);
+            Objects.equals(this.doNotChangeManuallyEditedShifts, reschedulingOptionsRunResponse.doNotChangeManuallyEditedShifts) &&
+            Objects.equals(this.activitySmoothingType, reschedulingOptionsRunResponse.activitySmoothingType) &&
+            Objects.equals(this.induceScheduleVariability, reschedulingOptionsRunResponse.induceScheduleVariability) &&
+            Objects.equals(this.useUnavailableTimesSnapshot, reschedulingOptionsRunResponse.useUnavailableTimesSnapshot);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(existingSchedule, startDate, endDate, managementUnits, agentCount, activityCodeIds, doNotChangeWeeklyPaidTime, doNotChangeDailyPaidTime, doNotChangeShiftStartTimes, doNotChangeManuallyEditedShifts);
+    return Objects.hash(existingSchedule, startDate, endDate, managementUnits, agentCount, activityCodeIds, doNotChangeWeeklyPaidTime, doNotChangeDailyPaidTime, doNotChangeShiftStartTimes, doNotChangeManuallyEditedShifts, activitySmoothingType, induceScheduleVariability, useUnavailableTimesSnapshot);
   }
 
   @Override
@@ -275,6 +384,9 @@ public class ReschedulingOptionsRunResponse  implements Serializable {
     sb.append("    doNotChangeDailyPaidTime: ").append(toIndentedString(doNotChangeDailyPaidTime)).append("\n");
     sb.append("    doNotChangeShiftStartTimes: ").append(toIndentedString(doNotChangeShiftStartTimes)).append("\n");
     sb.append("    doNotChangeManuallyEditedShifts: ").append(toIndentedString(doNotChangeManuallyEditedShifts)).append("\n");
+    sb.append("    activitySmoothingType: ").append(toIndentedString(activitySmoothingType)).append("\n");
+    sb.append("    induceScheduleVariability: ").append(toIndentedString(induceScheduleVariability)).append("\n");
+    sb.append("    useUnavailableTimesSnapshot: ").append(toIndentedString(useUnavailableTimesSnapshot)).append("\n");
     sb.append("}");
     return sb.toString();
   }

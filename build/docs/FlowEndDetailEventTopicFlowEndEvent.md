@@ -29,6 +29,9 @@
 | **exitReason** | [**ExitReasonEnum**](#Enum--ExitReasonEnum) |  |  [optional] |
 | **transferType** | [**TransferTypeEnum**](#Enum--TransferTypeEnum) |  |  [optional] |
 | **utilizationLabel** | **String** |  |  [optional] |
+| **outboundCampaignId** | **String** |  |  [optional] |
+| **outboundContactListId** | **String** |  |  [optional] |
+| **outboundContactId** | **String** |  |  [optional] |
 
 
 ## Enum: DisconnectTypeEnum
@@ -130,6 +133,7 @@
 | VOICEMAIL | &quot;VOICEMAIL&quot; | 
 | WORKITEM | &quot;WORKITEM&quot; | 
 | VOICESURVEY | &quot;VOICESURVEY&quot; | 
+| BUSINESSPROCESS | &quot;BUSINESSPROCESS&quot; | 
 
 
 ## Enum: ExitReasonEnum
@@ -170,4 +174,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

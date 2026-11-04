@@ -89,6 +89,7 @@
 | CONVERSATIONS | &quot;Conversations&quot; | 
 | GENESYSCLOUDCOPILOT | &quot;GenesysCloudCopilot&quot; | 
 | CONVERSATIONREFINEMENT | &quot;ConversationRefinement&quot; | 
+| CASEMANAGEMENT | &quot;CaseManagement&quot; | 
 
 
 ## Enum: ActionEnum
@@ -338,6 +339,7 @@
 | ALTERNATIVESHIFT | &quot;AlternativeShift&quot; | 
 | BUSINESSUNIT | &quot;BusinessUnit&quot; | 
 | FORECAST | &quot;Forecast&quot; | 
+| FORECASTSCENARIO | &quot;ForecastScenario&quot; | 
 | MANAGEMENTUNIT | &quot;ManagementUnit&quot; | 
 | PLANNINGGROUP | &quot;PlanningGroup&quot; | 
 | SCHEDULE | &quot;Schedule&quot; | 
@@ -358,6 +360,8 @@
 | SCHEDULESETBIDGROUP | &quot;ScheduleSetBidGroup&quot; | 
 | OPPORTUNITY | &quot;Opportunity&quot; | 
 | DECISIONMETRICS | &quot;DecisionMetrics&quot; | 
+| SCHEDULECHANGECONSTRAINT | &quot;ScheduleChangeConstraint&quot; | 
+| SHIFTACTIVITYRULE | &quot;ShiftActivityRule&quot; | 
 | TRIGGER | &quot;Trigger&quot; | 
 | RESPONSE | &quot;Response&quot; | 
 | RESPONSELIBRARY | &quot;ResponseLibrary&quot; | 
@@ -426,6 +430,7 @@
 | CUSTOMCALCULATIONS | &quot;CustomCalculations&quot; | 
 | SAVEDVIEWS | &quot;SavedViews&quot; | 
 | ANALYTICSLAKEHOUSESETTINGS | &quot;AnalyticsLakehouseSettings&quot; | 
+| DASHBOARDSLIDESHOW | &quot;DashboardSlideShow&quot; | 
 | USERS | &quot;Users&quot; | 
 | ANALYSES | &quot;Analyses&quot; | 
 | DASHBOARD | &quot;Dashboard&quot; | 
@@ -526,8 +531,12 @@
 | AGENT | &quot;Agent&quot; | 
 | GRAPHSETTINGS | &quot;GraphSettings&quot; | 
 | REFINEMENTCONFIGURATION | &quot;RefinementConfiguration&quot; | 
+| PROGRAMCONVERSATIONHEALTHSETTINGS | &quot;ProgramConversationHealthSettings&quot; | 
+| CASEPLAN | &quot;Caseplan&quot; | 
+| STAGEPLAN | &quot;Stageplan&quot; | 
+| STEPPLAN | &quot;Stepplan&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

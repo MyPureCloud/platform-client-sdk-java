@@ -21,12 +21,14 @@ import java.util.Map;
 import java.util.regex.Pattern;
 
 import com.mypurecloud.sdk.v2.model.AutoAnswerSettings;
+import com.mypurecloud.sdk.v2.model.ContentSearchSetting;
 import com.mypurecloud.sdk.v2.model.EmailSettings;
 import com.mypurecloud.sdk.v2.model.EmailThreadingSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecutionDataGlobalSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ExecutionDataSettingsRequest;
 import com.mypurecloud.sdk.v2.model.ExternalContactsSettings;
+import com.mypurecloud.sdk.v2.model.OrgSettings;
 import com.mypurecloud.sdk.v2.model.UpdatedSettingsResponse;
 
 public class GetEmailsSettingsRequest {

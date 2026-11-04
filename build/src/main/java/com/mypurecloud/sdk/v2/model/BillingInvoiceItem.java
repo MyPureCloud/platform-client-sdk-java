@@ -34,7 +34,7 @@ public class BillingInvoiceItem  implements Serializable {
   private LocalDate dateStart = null;
   private LocalDate dateEnd = null;
   private NamedEntity organization = null;
-  private Integer quantity = null;
+  private BigDecimal quantity = null;
 
   private static class UnitOfMeasureEnumDeserializer extends StdDeserializer<UnitOfMeasureEnum> {
     public UnitOfMeasureEnumDeserializer() {
@@ -248,17 +248,17 @@ public class BillingInvoiceItem  implements Serializable {
   /**
    * Quantity of the item.
    **/
-  public BillingInvoiceItem quantity(Integer quantity) {
+  public BillingInvoiceItem quantity(BigDecimal quantity) {
     this.quantity = quantity;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Quantity of the item.")
   @JsonProperty("quantity")
-  public Integer getQuantity() {
+  public BigDecimal getQuantity() {
     return quantity;
   }
-  public void setQuantity(Integer quantity) {
+  public void setQuantity(BigDecimal quantity) {
     this.quantity = quantity;
   }
 

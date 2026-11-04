@@ -76,6 +76,8 @@ import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
+import com.mypurecloud.sdk.v2.model.TrunkBaseMetrics;
+import com.mypurecloud.sdk.v2.model.TrunkBaseMetricsEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkBasesSearchResponse;
 import com.mypurecloud.sdk.v2.model.TrunkEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkInstanceSearchResponse;
@@ -172,6 +174,8 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbaseset
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkswithrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyTrunkbasesettingMetricsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyTrunkbasesettingsMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTelephonyProvidersEdgesSiteSiteconnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticNslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticPingRequest;
@@ -7337,6 +7341,162 @@ public class TelephonyProvidersEdgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TrunkRecordingEnabledCount> response = (ApiResponse<TrunkRecordingEnabledCount>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the trunkbase metrics.
+   * 
+   * @param trunkBaseId TrunkBase Id (required)
+   * @return TrunkBaseMetrics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkBaseMetrics getTelephonyTrunkbasesettingMetrics(String trunkBaseId) throws IOException, ApiException {
+    return  getTelephonyTrunkbasesettingMetrics(createGetTelephonyTrunkbasesettingMetricsRequest(trunkBaseId));
+  }
+
+  /**
+   * Get the trunkbase metrics.
+   * 
+   * @param trunkBaseId TrunkBase Id (required)
+   * @return TrunkBaseMetrics
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkBaseMetrics> getTelephonyTrunkbasesettingMetricsWithHttpInfo(String trunkBaseId) throws IOException {
+    return getTelephonyTrunkbasesettingMetrics(createGetTelephonyTrunkbasesettingMetricsRequest(trunkBaseId).withHttpInfo());
+  }
+
+  private GetTelephonyTrunkbasesettingMetricsRequest createGetTelephonyTrunkbasesettingMetricsRequest(String trunkBaseId) {
+    return GetTelephonyTrunkbasesettingMetricsRequest.builder()
+            .withTrunkBaseId(trunkBaseId)
+
+            .build();
+  }
+
+  /**
+   * Get the trunkbase metrics.
+   * 
+   * @param request The request object
+   * @return TrunkBaseMetrics
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkBaseMetrics getTelephonyTrunkbasesettingMetrics(GetTelephonyTrunkbasesettingMetricsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrunkBaseMetrics> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkBaseMetrics>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the trunkbase metrics.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkBaseMetrics> getTelephonyTrunkbasesettingMetrics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkBaseMetrics>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBaseMetrics> response = (ApiResponse<TrunkBaseMetrics>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBaseMetrics> response = (ApiResponse<TrunkBaseMetrics>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the trunkbase metrics for the specified ids.
+   * 
+   * @param ids TrunkBase Ids (required)
+   * @return TrunkBaseMetricsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkBaseMetricsEntityListing getTelephonyTrunkbasesettingsMetrics(String ids) throws IOException, ApiException {
+    return  getTelephonyTrunkbasesettingsMetrics(createGetTelephonyTrunkbasesettingsMetricsRequest(ids));
+  }
+
+  /**
+   * Get the trunkbase metrics for the specified ids.
+   * 
+   * @param ids TrunkBase Ids (required)
+   * @return TrunkBaseMetricsEntityListing
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkBaseMetricsEntityListing> getTelephonyTrunkbasesettingsMetricsWithHttpInfo(String ids) throws IOException {
+    return getTelephonyTrunkbasesettingsMetrics(createGetTelephonyTrunkbasesettingsMetricsRequest(ids).withHttpInfo());
+  }
+
+  private GetTelephonyTrunkbasesettingsMetricsRequest createGetTelephonyTrunkbasesettingsMetricsRequest(String ids) {
+    return GetTelephonyTrunkbasesettingsMetricsRequest.builder()
+            .withIds(ids)
+
+            .build();
+  }
+
+  /**
+   * Get the trunkbase metrics for the specified ids.
+   * 
+   * @param request The request object
+   * @return TrunkBaseMetricsEntityListing
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TrunkBaseMetricsEntityListing getTelephonyTrunkbasesettingsMetrics(GetTelephonyTrunkbasesettingsMetricsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TrunkBaseMetricsEntityListing> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TrunkBaseMetricsEntityListing>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the trunkbase metrics for the specified ids.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TrunkBaseMetricsEntityListing> getTelephonyTrunkbasesettingsMetrics(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TrunkBaseMetricsEntityListing>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBaseMetricsEntityListing> response = (ApiResponse<TrunkBaseMetricsEntityListing>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TrunkBaseMetricsEntityListing> response = (ApiResponse<TrunkBaseMetricsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

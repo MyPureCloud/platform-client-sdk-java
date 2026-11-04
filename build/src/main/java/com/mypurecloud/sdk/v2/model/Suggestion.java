@@ -18,6 +18,7 @@ import com.mypurecloud.sdk.v2.model.Article;
 import com.mypurecloud.sdk.v2.model.Faq;
 import com.mypurecloud.sdk.v2.model.SuggestionCannedResponse;
 import com.mypurecloud.sdk.v2.model.SuggestionContext;
+import com.mypurecloud.sdk.v2.model.SuggestionGeneratedKnowledgeAnswer;
 import com.mypurecloud.sdk.v2.model.SuggestionKnowledgeArticle;
 import com.mypurecloud.sdk.v2.model.SuggestionKnowledgeSearch;
 import com.mypurecloud.sdk.v2.model.SuggestionScript;
@@ -202,6 +203,7 @@ public class Suggestion  implements Serializable {
   private SuggestionKnowledgeArticle knowledgeArticle = null;
   private SuggestionCannedResponse cannedResponse = null;
   private SuggestionScript script = null;
+  private SuggestionGeneratedKnowledgeAnswer suggestedKnowledgeAnswer = null;
   private ThirdPartySuggestion thirdPartySuggestion = null;
   private String selfUri = null;
 
@@ -321,6 +323,13 @@ public class Suggestion  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The generated knowledge answer that was provided as the suggestion.")
+  @JsonProperty("suggestedKnowledgeAnswer")
+  public SuggestionGeneratedKnowledgeAnswer getSuggestedKnowledgeAnswer() {
+    return suggestedKnowledgeAnswer;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The third-party suggestion.")
   @JsonProperty("thirdPartySuggestion")
   public ThirdPartySuggestion getThirdPartySuggestion() {
@@ -360,13 +369,14 @@ public class Suggestion  implements Serializable {
             Objects.equals(this.knowledgeArticle, suggestion.knowledgeArticle) &&
             Objects.equals(this.cannedResponse, suggestion.cannedResponse) &&
             Objects.equals(this.script, suggestion.script) &&
+            Objects.equals(this.suggestedKnowledgeAnswer, suggestion.suggestedKnowledgeAnswer) &&
             Objects.equals(this.thirdPartySuggestion, suggestion.thirdPartySuggestion) &&
             Objects.equals(this.selfUri, suggestion.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, conversation, assistant, type, faq, article, dateCreated, answerRecordId, triggerType, context, state, knowledgeSearch, knowledgeArticle, cannedResponse, script, thirdPartySuggestion, selfUri);
+    return Objects.hash(id, conversation, assistant, type, faq, article, dateCreated, answerRecordId, triggerType, context, state, knowledgeSearch, knowledgeArticle, cannedResponse, script, suggestedKnowledgeAnswer, thirdPartySuggestion, selfUri);
   }
 
   @Override
@@ -389,6 +399,7 @@ public class Suggestion  implements Serializable {
     sb.append("    knowledgeArticle: ").append(toIndentedString(knowledgeArticle)).append("\n");
     sb.append("    cannedResponse: ").append(toIndentedString(cannedResponse)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
+    sb.append("    suggestedKnowledgeAnswer: ").append(toIndentedString(suggestedKnowledgeAnswer)).append("\n");
     sb.append("    thirdPartySuggestion: ").append(toIndentedString(thirdPartySuggestion)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");

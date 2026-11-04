@@ -293,7 +293,8 @@ public class ConversationEventTopicMessage  implements Serializable {
     WEBMESSAGING("webmessaging"),
     OPEN("open"),
     INSTAGRAM("instagram"),
-    APPLE("apple");
+    APPLE("apple"),
+    LINKEDIN("linkedin");
 
     private String value;
 

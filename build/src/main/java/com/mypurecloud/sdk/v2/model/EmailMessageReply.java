@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.Attachment;
 import com.mypurecloud.sdk.v2.model.EmailAddress;
+import com.mypurecloud.sdk.v2.model.RecipientWarning;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ public class EmailMessageReply  implements Serializable {
   private Boolean historyIncluded = null;
   private Integer emailSizeBytes = null;
   private Integer maxEmailSizeBytes = null;
+  private List<RecipientWarning> recipientWarnings = null;
 
   public EmailMessageReply() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -47,6 +49,7 @@ public class EmailMessageReply  implements Serializable {
       cc = new ArrayList<EmailAddress>();
       bcc = new ArrayList<EmailAddress>();
       attachments = new ArrayList<Attachment>();
+      recipientWarnings = new ArrayList<RecipientWarning>();
     }
   }
 
@@ -56,6 +59,7 @@ public class EmailMessageReply  implements Serializable {
       cc = new ArrayList<EmailAddress>();
       bcc = new ArrayList<EmailAddress>();
       attachments = new ArrayList<Attachment>();
+      recipientWarnings = new ArrayList<RecipientWarning>();
     }
   }
 
@@ -272,6 +276,13 @@ public class EmailMessageReply  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The recipients that failed validation. Advisory only; recipient policy is enforced at send time.")
+  @JsonProperty("recipientWarnings")
+  public List<RecipientWarning> getRecipientWarnings() {
+    return recipientWarnings;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -294,12 +305,13 @@ public class EmailMessageReply  implements Serializable {
             Objects.equals(this.time, emailMessageReply.time) &&
             Objects.equals(this.historyIncluded, emailMessageReply.historyIncluded) &&
             Objects.equals(this.emailSizeBytes, emailMessageReply.emailSizeBytes) &&
-            Objects.equals(this.maxEmailSizeBytes, emailMessageReply.maxEmailSizeBytes);
+            Objects.equals(this.maxEmailSizeBytes, emailMessageReply.maxEmailSizeBytes) &&
+            Objects.equals(this.recipientWarnings, emailMessageReply.recipientWarnings);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(to, cc, bcc, from, replyTo, subject, attachments, textBody, htmlBody, time, historyIncluded, emailSizeBytes, maxEmailSizeBytes);
+    return Objects.hash(to, cc, bcc, from, replyTo, subject, attachments, textBody, htmlBody, time, historyIncluded, emailSizeBytes, maxEmailSizeBytes, recipientWarnings);
   }
 
   @Override
@@ -320,6 +332,7 @@ public class EmailMessageReply  implements Serializable {
     sb.append("    historyIncluded: ").append(toIndentedString(historyIncluded)).append("\n");
     sb.append("    emailSizeBytes: ").append(toIndentedString(emailSizeBytes)).append("\n");
     sb.append("    maxEmailSizeBytes: ").append(toIndentedString(maxEmailSizeBytes)).append("\n");
+    sb.append("    recipientWarnings: ").append(toIndentedString(recipientWarnings)).append("\n");
     sb.append("}");
     return sb.toString();
   }

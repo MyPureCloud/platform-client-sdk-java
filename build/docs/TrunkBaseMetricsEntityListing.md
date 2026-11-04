@@ -1,0 +1,15 @@
+# TrunkBaseMetricsEntityListing
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **total** | **Long** |  |  [optional] |
+| **entities** | [**List&lt;TrunkBaseMetrics&gt;**](TrunkBaseMetrics) |  |  [optional] |
+| **selfUri** | **String** |  |  [optional] |
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

@@ -46,7 +46,8 @@ public class ExportDetails  implements Serializable {
   public enum ExportTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ARCHITECT("Architect"),
-    YAML("Yaml");
+    YAML("Yaml"),
+    FLOWINFOSPEC("FlowInfoSpec");
 
     private String value;
 

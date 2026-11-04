@@ -26,6 +26,9 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntentsCategory;
 import com.mypurecloud.sdk.v2.model.IntentsCategoryListing;
 import com.mypurecloud.sdk.v2.model.IntentsCategoryPatch;
+import com.mypurecloud.sdk.v2.model.SimilarCategoriesResponse;
+import com.mypurecloud.sdk.v2.model.SimilarCustomerIntentsRequest;
+import com.mypurecloud.sdk.v2.model.SimilarCustomerIntentsResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteIntentsCategoryRequest;
@@ -41,10 +44,12 @@ import com.mypurecloud.sdk.v2.api.request.PatchIntentsCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntentsCustomerintentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsAssignmentsExternalcontactCustomerintentAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntentsCategoriesSimilarRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentSourceintentsBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentSourceintentsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentsBulkRetrieveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentsSimilarRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -389,28 +394,32 @@ public class IntentsApi {
    * Get category for categoryId
    * 
    * @param categoryId Category id (required)
+   * @param includeUsage When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off. (optional)
    * @return IntentsCategory
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public IntentsCategory getIntentsCategory(String categoryId) throws IOException, ApiException {
-    return  getIntentsCategory(createGetIntentsCategoryRequest(categoryId));
+  public IntentsCategory getIntentsCategory(String categoryId, Boolean includeUsage) throws IOException, ApiException {
+    return  getIntentsCategory(createGetIntentsCategoryRequest(categoryId, includeUsage));
   }
 
   /**
    * Get category for categoryId
    * 
    * @param categoryId Category id (required)
+   * @param includeUsage When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off. (optional)
    * @return IntentsCategory
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<IntentsCategory> getIntentsCategoryWithHttpInfo(String categoryId) throws IOException {
-    return getIntentsCategory(createGetIntentsCategoryRequest(categoryId).withHttpInfo());
+  public ApiResponse<IntentsCategory> getIntentsCategoryWithHttpInfo(String categoryId, Boolean includeUsage) throws IOException {
+    return getIntentsCategory(createGetIntentsCategoryRequest(categoryId, includeUsage).withHttpInfo());
   }
 
-  private GetIntentsCategoryRequest createGetIntentsCategoryRequest(String categoryId) {
+  private GetIntentsCategoryRequest createGetIntentsCategoryRequest(String categoryId, Boolean includeUsage) {
     return GetIntentsCategoryRequest.builder()
             .withCategoryId(categoryId)
+
+            .withIncludeUsage(includeUsage)
 
             .build();
   }
@@ -467,28 +476,32 @@ public class IntentsApi {
    * Get customer intent for customerIntentId
    * 
    * @param customerIntentId Customer Intent id (required)
+   * @param includeUsage When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off. (optional)
    * @return CustomerIntentResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CustomerIntentResponse getIntentsCustomerintent(String customerIntentId) throws IOException, ApiException {
-    return  getIntentsCustomerintent(createGetIntentsCustomerintentRequest(customerIntentId));
+  public CustomerIntentResponse getIntentsCustomerintent(String customerIntentId, Boolean includeUsage) throws IOException, ApiException {
+    return  getIntentsCustomerintent(createGetIntentsCustomerintentRequest(customerIntentId, includeUsage));
   }
 
   /**
    * Get customer intent for customerIntentId
    * 
    * @param customerIntentId Customer Intent id (required)
+   * @param includeUsage When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off. (optional)
    * @return CustomerIntentResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CustomerIntentResponse> getIntentsCustomerintentWithHttpInfo(String customerIntentId) throws IOException {
-    return getIntentsCustomerintent(createGetIntentsCustomerintentRequest(customerIntentId).withHttpInfo());
+  public ApiResponse<CustomerIntentResponse> getIntentsCustomerintentWithHttpInfo(String customerIntentId, Boolean includeUsage) throws IOException {
+    return getIntentsCustomerintent(createGetIntentsCustomerintentRequest(customerIntentId, includeUsage).withHttpInfo());
   }
 
-  private GetIntentsCustomerintentRequest createGetIntentsCustomerintentRequest(String customerIntentId) {
+  private GetIntentsCustomerintentRequest createGetIntentsCustomerintentRequest(String customerIntentId, Boolean includeUsage) {
     return GetIntentsCustomerintentRequest.builder()
             .withCustomerIntentId(customerIntentId)
+
+            .withIncludeUsage(includeUsage)
 
             .build();
   }
@@ -1140,6 +1153,88 @@ public class IntentsApi {
   }
 
   /**
+   * Find similar categories
+   * 
+   * postIntentsCategoriesSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Similarity search criteria (required)
+   * @return SimilarCategoriesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SimilarCategoriesResponse postIntentsCategoriesSimilar(IntentsCategory body) throws IOException, ApiException {
+    return  postIntentsCategoriesSimilar(createPostIntentsCategoriesSimilarRequest(body));
+  }
+
+  /**
+   * Find similar categories
+   * 
+   * postIntentsCategoriesSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Similarity search criteria (required)
+   * @return SimilarCategoriesResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SimilarCategoriesResponse> postIntentsCategoriesSimilarWithHttpInfo(IntentsCategory body) throws IOException {
+    return postIntentsCategoriesSimilar(createPostIntentsCategoriesSimilarRequest(body).withHttpInfo());
+  }
+
+  private PostIntentsCategoriesSimilarRequest createPostIntentsCategoriesSimilarRequest(IntentsCategory body) {
+    return PostIntentsCategoriesSimilarRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Find similar categories
+   * 
+   * postIntentsCategoriesSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SimilarCategoriesResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SimilarCategoriesResponse postIntentsCategoriesSimilar(PostIntentsCategoriesSimilarRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SimilarCategoriesResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SimilarCategoriesResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Find similar categories
+   * 
+   * postIntentsCategoriesSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SimilarCategoriesResponse> postIntentsCategoriesSimilar(ApiRequest<IntentsCategory> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SimilarCategoriesResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SimilarCategoriesResponse> response = (ApiResponse<SimilarCategoriesResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SimilarCategoriesResponse> response = (ApiResponse<SimilarCategoriesResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Bulk add source intents to a customer intent
    * 
    * @param customerIntentId Customer Intent id (required)
@@ -1455,6 +1550,88 @@ public class IntentsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<List<CustomerIntentResponse>> response = (ApiResponse<List<CustomerIntentResponse>>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Find similar customer intents
+   * 
+   * postIntentsCustomerintentsSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Similarity search criteria (required)
+   * @return SimilarCustomerIntentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SimilarCustomerIntentsResponse postIntentsCustomerintentsSimilar(SimilarCustomerIntentsRequest body) throws IOException, ApiException {
+    return  postIntentsCustomerintentsSimilar(createPostIntentsCustomerintentsSimilarRequest(body));
+  }
+
+  /**
+   * Find similar customer intents
+   * 
+   * postIntentsCustomerintentsSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Similarity search criteria (required)
+   * @return SimilarCustomerIntentsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SimilarCustomerIntentsResponse> postIntentsCustomerintentsSimilarWithHttpInfo(SimilarCustomerIntentsRequest body) throws IOException {
+    return postIntentsCustomerintentsSimilar(createPostIntentsCustomerintentsSimilarRequest(body).withHttpInfo());
+  }
+
+  private PostIntentsCustomerintentsSimilarRequest createPostIntentsCustomerintentsSimilarRequest(SimilarCustomerIntentsRequest body) {
+    return PostIntentsCustomerintentsSimilarRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Find similar customer intents
+   * 
+   * postIntentsCustomerintentsSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return SimilarCustomerIntentsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public SimilarCustomerIntentsResponse postIntentsCustomerintentsSimilar(PostIntentsCustomerintentsSimilarRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<SimilarCustomerIntentsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<SimilarCustomerIntentsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Find similar customer intents
+   * 
+   * postIntentsCustomerintentsSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<SimilarCustomerIntentsResponse> postIntentsCustomerintentsSimilar(ApiRequest<SimilarCustomerIntentsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<SimilarCustomerIntentsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<SimilarCustomerIntentsResponse> response = (ApiResponse<SimilarCustomerIntentsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<SimilarCustomerIntentsResponse> response = (ApiResponse<SimilarCustomerIntentsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

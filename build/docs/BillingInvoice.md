@@ -19,6 +19,7 @@
 | **customerPoNumber** | **String** | Purchase Order Number. |  [optional] |
 | **customerInvoiceType** | **String** | Type of the invoice. |  [optional] |
 | **amount** | [**BigDecimal**](BigDecimal) | Amount. |  [optional] |
+| **agreementIds** | **List&lt;String&gt;** | Agreement IDs billed on this invoice, collected from its invoice lines. |  [optional] |
 
 
 ## Enum: PaymentStatusEnum
@@ -32,4 +33,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

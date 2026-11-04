@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.BillingAiSubItem;
 import com.mypurecloud.sdk.v2.model.BillingProduct;
 import com.mypurecloud.sdk.v2.model.NamedEntity;
 import io.swagger.annotations.ApiModel;
@@ -32,7 +33,8 @@ public class BillingCharge  implements Serializable {
   private BillingProduct product = null;
   private List<NamedEntity> organizations = null;
   private BigDecimal prepaidQuantity = null;
-  private BigDecimal fairuseQuantity = null;
+  private BigDecimal fairuseAllocation = null;
+  private BigDecimal fairuseAmount = null;
   private BigDecimal actualQuantity = null;
   private BigDecimal overageQuantity = null;
   private BigDecimal overageRate = null;
@@ -40,16 +42,19 @@ public class BillingCharge  implements Serializable {
   private String overageCurrency = null;
   private BigDecimal convertedTokenCount = null;
   private BigDecimal tokenConversionRate = null;
+  private List<BillingAiSubItem> aiSubItems = null;
 
   public BillingCharge() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       organizations = new ArrayList<NamedEntity>();
+      aiSubItems = new ArrayList<BillingAiSubItem>();
     }
   }
 
   public BillingCharge(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
       organizations = new ArrayList<NamedEntity>();
+      aiSubItems = new ArrayList<BillingAiSubItem>();
     }
   }
 
@@ -87,14 +92,14 @@ public class BillingCharge  implements Serializable {
 
 
   /**
-   * List of plans within the organization.
+   * Organizations associated with this charge.
    **/
   public BillingCharge organizations(List<NamedEntity> organizations) {
     this.organizations = organizations;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of plans within the organization.")
+  @ApiModelProperty(example = "null", value = "Organizations associated with this charge.")
   @JsonProperty("organizations")
   public List<NamedEntity> getOrganizations() {
     return organizations;
@@ -123,20 +128,38 @@ public class BillingCharge  implements Serializable {
 
 
   /**
-   * The quantity of usage allowed under fair use policies.
+   * Quantity of usage allowed under fair-use policies.
    **/
-  public BillingCharge fairuseQuantity(BigDecimal fairuseQuantity) {
-    this.fairuseQuantity = fairuseQuantity;
+  public BillingCharge fairuseAllocation(BigDecimal fairuseAllocation) {
+    this.fairuseAllocation = fairuseAllocation;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The quantity of usage allowed under fair use policies.")
-  @JsonProperty("fairuseQuantity")
-  public BigDecimal getFairuseQuantity() {
-    return fairuseQuantity;
+  @ApiModelProperty(example = "null", value = "Quantity of usage allowed under fair-use policies.")
+  @JsonProperty("fairuseAllocation")
+  public BigDecimal getFairuseAllocation() {
+    return fairuseAllocation;
   }
-  public void setFairuseQuantity(BigDecimal fairuseQuantity) {
-    this.fairuseQuantity = fairuseQuantity;
+  public void setFairuseAllocation(BigDecimal fairuseAllocation) {
+    this.fairuseAllocation = fairuseAllocation;
+  }
+
+
+  /**
+   * Monetary value of the fair-use allocation, in the same currency as overageCurrency.
+   **/
+  public BillingCharge fairuseAmount(BigDecimal fairuseAmount) {
+    this.fairuseAmount = fairuseAmount;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Monetary value of the fair-use allocation, in the same currency as overageCurrency.")
+  @JsonProperty("fairuseAmount")
+  public BigDecimal getFairuseAmount() {
+    return fairuseAmount;
+  }
+  public void setFairuseAmount(BigDecimal fairuseAmount) {
+    this.fairuseAmount = fairuseAmount;
   }
 
 
@@ -266,6 +289,24 @@ public class BillingCharge  implements Serializable {
   }
 
 
+  /**
+   * Usage that makes up this AI parent bundle, including the bundle's own token usage and each child product's usage converted to tokens; the converted total is the parent's actual quantity.
+   **/
+  public BillingCharge aiSubItems(List<BillingAiSubItem> aiSubItems) {
+    this.aiSubItems = aiSubItems;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Usage that makes up this AI parent bundle, including the bundle's own token usage and each child product's usage converted to tokens; the converted total is the parent's actual quantity.")
+  @JsonProperty("aiSubItems")
+  public List<BillingAiSubItem> getAiSubItems() {
+    return aiSubItems;
+  }
+  public void setAiSubItems(List<BillingAiSubItem> aiSubItems) {
+    this.aiSubItems = aiSubItems;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -281,19 +322,21 @@ public class BillingCharge  implements Serializable {
             Objects.equals(this.product, billingCharge.product) &&
             Objects.equals(this.organizations, billingCharge.organizations) &&
             Objects.equals(this.prepaidQuantity, billingCharge.prepaidQuantity) &&
-            Objects.equals(this.fairuseQuantity, billingCharge.fairuseQuantity) &&
+            Objects.equals(this.fairuseAllocation, billingCharge.fairuseAllocation) &&
+            Objects.equals(this.fairuseAmount, billingCharge.fairuseAmount) &&
             Objects.equals(this.actualQuantity, billingCharge.actualQuantity) &&
             Objects.equals(this.overageQuantity, billingCharge.overageQuantity) &&
             Objects.equals(this.overageRate, billingCharge.overageRate) &&
             Objects.equals(this.overageCharge, billingCharge.overageCharge) &&
             Objects.equals(this.overageCurrency, billingCharge.overageCurrency) &&
             Objects.equals(this.convertedTokenCount, billingCharge.convertedTokenCount) &&
-            Objects.equals(this.tokenConversionRate, billingCharge.tokenConversionRate);
+            Objects.equals(this.tokenConversionRate, billingCharge.tokenConversionRate) &&
+            Objects.equals(this.aiSubItems, billingCharge.aiSubItems);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, product, organizations, prepaidQuantity, fairuseQuantity, actualQuantity, overageQuantity, overageRate, overageCharge, overageCurrency, convertedTokenCount, tokenConversionRate);
+    return Objects.hash(id, name, product, organizations, prepaidQuantity, fairuseAllocation, fairuseAmount, actualQuantity, overageQuantity, overageRate, overageCharge, overageCurrency, convertedTokenCount, tokenConversionRate, aiSubItems);
   }
 
   @Override
@@ -306,7 +349,8 @@ public class BillingCharge  implements Serializable {
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
     sb.append("    organizations: ").append(toIndentedString(organizations)).append("\n");
     sb.append("    prepaidQuantity: ").append(toIndentedString(prepaidQuantity)).append("\n");
-    sb.append("    fairuseQuantity: ").append(toIndentedString(fairuseQuantity)).append("\n");
+    sb.append("    fairuseAllocation: ").append(toIndentedString(fairuseAllocation)).append("\n");
+    sb.append("    fairuseAmount: ").append(toIndentedString(fairuseAmount)).append("\n");
     sb.append("    actualQuantity: ").append(toIndentedString(actualQuantity)).append("\n");
     sb.append("    overageQuantity: ").append(toIndentedString(overageQuantity)).append("\n");
     sb.append("    overageRate: ").append(toIndentedString(overageRate)).append("\n");
@@ -314,6 +358,7 @@ public class BillingCharge  implements Serializable {
     sb.append("    overageCurrency: ").append(toIndentedString(overageCurrency)).append("\n");
     sb.append("    convertedTokenCount: ").append(toIndentedString(convertedTokenCount)).append("\n");
     sb.append("    tokenConversionRate: ").append(toIndentedString(tokenConversionRate)).append("\n");
+    sb.append("    aiSubItems: ").append(toIndentedString(aiSubItems)).append("\n");
     sb.append("}");
     return sb.toString();
   }

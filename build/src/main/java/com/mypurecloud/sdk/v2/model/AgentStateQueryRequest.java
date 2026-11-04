@@ -54,7 +54,12 @@ public class AgentStateQueryRequest  implements Serializable {
     SYSTEMPRESENCE("systemPresence"),
     ROUTINGSTATUS("routingStatus"),
     ORGANIZATIONPRESENCEID("organizationPresenceId"),
-    ADHERENCEDATE("adherenceDate");
+    ADHERENCEDATE("adherenceDate"),
+    WORKITEMDATEDUE("workitemDateDue"),
+    WORKITEMDATEEXPIRES("workitemDateExpires"),
+    WORKITEMDATESTATUSCHANGED("workitemDateStatusChanged"),
+    WORKITEMDATEASSIGNMENTSTATECHANGED("workitemDateAssignmentStateChanged"),
+    WORKITEMDATECREATED("workitemDateCreated");
 
     private String value;
 

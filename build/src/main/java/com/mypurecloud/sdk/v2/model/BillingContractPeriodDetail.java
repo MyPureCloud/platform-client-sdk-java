@@ -14,7 +14,6 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BillingCharge;
-import com.mypurecloud.sdk.v2.model.BillingWallet;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
@@ -80,19 +79,16 @@ public class BillingContractPeriodDetail  implements Serializable {
   }
   private StatusEnum status = null;
   private List<BillingCharge> charges = null;
-  private List<BillingWallet> wallets = null;
 
   public BillingContractPeriodDetail() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       charges = new ArrayList<BillingCharge>();
-      wallets = new ArrayList<BillingWallet>();
     }
   }
 
   public BillingContractPeriodDetail(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
       charges = new ArrayList<BillingCharge>();
-      wallets = new ArrayList<BillingWallet>();
     }
   }
 
@@ -176,24 +172,6 @@ public class BillingContractPeriodDetail  implements Serializable {
   }
 
 
-  /**
-   * Represents usage metrics including prepaid, actual, and overage quantities along with associated charges.
-   **/
-  public BillingContractPeriodDetail wallets(List<BillingWallet> wallets) {
-    this.wallets = wallets;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "Represents usage metrics including prepaid, actual, and overage quantities along with associated charges.")
-  @JsonProperty("wallets")
-  public List<BillingWallet> getWallets() {
-    return wallets;
-  }
-  public void setWallets(List<BillingWallet> wallets) {
-    this.wallets = wallets;
-  }
-
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -208,13 +186,12 @@ public class BillingContractPeriodDetail  implements Serializable {
             Objects.equals(this.dateStart, billingContractPeriodDetail.dateStart) &&
             Objects.equals(this.dateEnd, billingContractPeriodDetail.dateEnd) &&
             Objects.equals(this.status, billingContractPeriodDetail.status) &&
-            Objects.equals(this.charges, billingContractPeriodDetail.charges) &&
-            Objects.equals(this.wallets, billingContractPeriodDetail.wallets);
+            Objects.equals(this.charges, billingContractPeriodDetail.charges);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, dateStart, dateEnd, status, charges, wallets);
+    return Objects.hash(id, dateStart, dateEnd, status, charges);
   }
 
   @Override
@@ -227,7 +204,6 @@ public class BillingContractPeriodDetail  implements Serializable {
     sb.append("    dateEnd: ").append(toIndentedString(dateEnd)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    charges: ").append(toIndentedString(charges)).append("\n");
-    sb.append("    wallets: ").append(toIndentedString(wallets)).append("\n");
     sb.append("}");
     return sb.toString();
   }

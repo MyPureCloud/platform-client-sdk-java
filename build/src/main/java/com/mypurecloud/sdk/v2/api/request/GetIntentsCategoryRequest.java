@@ -36,6 +36,9 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntentsCategory;
 import com.mypurecloud.sdk.v2.model.IntentsCategoryListing;
 import com.mypurecloud.sdk.v2.model.IntentsCategoryPatch;
+import com.mypurecloud.sdk.v2.model.SimilarCategoriesResponse;
+import com.mypurecloud.sdk.v2.model.SimilarCustomerIntentsRequest;
+import com.mypurecloud.sdk.v2.model.SimilarCustomerIntentsResponse;
 
 public class GetIntentsCategoryRequest {
 
@@ -50,6 +53,20 @@ public class GetIntentsCategoryRequest {
 
 	public GetIntentsCategoryRequest withCategoryId(String categoryId) {
 	    this.setCategoryId(categoryId);
+	    return this;
+	} 
+
+	private Boolean includeUsage;
+	public Boolean getIncludeUsage() {
+		return this.includeUsage;
+	}
+
+	public void setIncludeUsage(Boolean includeUsage) {
+		this.includeUsage = includeUsage;
+	}
+
+	public GetIntentsCategoryRequest withIncludeUsage(Boolean includeUsage) {
+	    this.setIncludeUsage(includeUsage);
 	    return this;
 	} 
 
@@ -83,6 +100,9 @@ public class GetIntentsCategoryRequest {
         return ApiRequestBuilder.create("GET", "/api/v2/intents/categories/{categoryId}")
                 .withPathParameter("categoryId", categoryId)
         
+
+                .withQueryParameters("includeUsage", "", includeUsage)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -111,6 +131,11 @@ public class GetIntentsCategoryRequest {
 
 		public Builder withCategoryId(String categoryId) {
 			request.setCategoryId(categoryId);
+			return this;
+		}
+
+		public Builder withIncludeUsage(Boolean includeUsage) {
+			request.setIncludeUsage(includeUsage);
 			return this;
 		}
 

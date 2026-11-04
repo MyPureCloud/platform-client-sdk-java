@@ -43,7 +43,8 @@ public class ChecklistActivationPayload  implements Serializable {
   public enum ActivationTriggerTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INTENT("Intent"),
-    CONVERSATIONSTART("ConversationStart");
+    CONVERSATIONSTART("ConversationStart"),
+    SENTIMENT("Sentiment");
 
     private String value;
 

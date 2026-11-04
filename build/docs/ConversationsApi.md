@@ -257,7 +257,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postConversationsKeyconfigurations**](ConversationsApi#postConversationsKeyconfigurations) | Setup configurations for encryption key creation |
 | [**postConversationsKeyconfigurationsValidate**](ConversationsApi#postConversationsKeyconfigurationsValidate) | Validate encryption key configurations without saving it |
 | [**postConversationsMessageCommunicationMessages**](ConversationsApi#postConversationsMessageCommunicationMessages) | Send message |
-| [**postConversationsMessageCommunicationMessagesMedia**](ConversationsApi#postConversationsMessageCommunicationMessagesMedia) | Create media |
 | [**postConversationsMessageCommunicationMessagesMediaUploads**](ConversationsApi#postConversationsMessageCommunicationMessagesMediaUploads) | Create a URL to upload a message media file |
 | [**postConversationsMessageCommunicationSocialmediaMessages**](ConversationsApi#postConversationsMessageCommunicationSocialmediaMessages) | Send a social media message |
 | [**postConversationsMessageCommunicationTyping**](ConversationsApi#postConversationsMessageCommunicationTyping) | Send message typing event |
@@ -8300,6 +8299,8 @@ Wraps GET /api/v2/conversations/videos/{conferenceId}/details
 Requires ANY permissions: 
 
 * video:video:access
+* conversation:video:add
+* conversation:videoVoice:add
 
 ### Example
 
@@ -11860,6 +11861,7 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
+* externalContacts:conversation:viewAll
 
 ### Example
 
@@ -11920,6 +11922,7 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
+* externalContacts:conversation:viewAll
 
 ### Example
 
@@ -15842,74 +15845,6 @@ try {
 [**MessageData**](MessageData)
 
 
-# **postConversationsMessageCommunicationMessagesMedia**
-
-:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
-This resource has been deprecated
-:::
-
-> [MessageMediaData](MessageMediaData) postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId)
-
-Create media
-
-See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
-
-Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media  
-
-Requires ANY permissions: 
-
-* conversation:message:create
-* conversation:webmessaging:create
-* conversation:socialmedia:create
-
-### Example
-
-```{"language":"java"}
-//Import classes:
-import com.mypurecloud.sdk.v2.ApiClient;
-import com.mypurecloud.sdk.v2.ApiException;
-import com.mypurecloud.sdk.v2.Configuration;
-import com.mypurecloud.sdk.v2.auth.*;
-import com.mypurecloud.sdk.v2.api.ConversationsApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Create ApiClient instance
-ApiClient apiClient = ApiClient.Builder.standard()
-		.withAccessToken(accessToken)
-		.withBasePath("https://api.mypurecloud.com")
-		.build();
-
-// Use the ApiClient instance
-Configuration.setDefaultApiClient(apiClient);
-
-ConversationsApi apiInstance = new ConversationsApi();
-String conversationId = "conversationId_example"; // String | conversationId
-String communicationId = "communicationId_example"; // String | communicationId
-try {
-    MessageMediaData result = apiInstance.postConversationsMessageCommunicationMessagesMedia(conversationId, communicationId);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling ConversationsApi#postConversationsMessageCommunicationMessagesMedia");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **conversationId** | **String**| conversationId | 
-| **communicationId** | **String**| communicationId | 
-{: class="table-striped"}
-
-
-### Return type
-
-[**MessageMediaData**](MessageMediaData)
-
-
 # **postConversationsMessageCommunicationMessagesMediaUploads**
 
 
@@ -17796,6 +17731,7 @@ Wraps POST /api/v2/conversations/videos/{conversationId}/agentconference/communi
 Requires ANY permissions: 
 
 * conversation:video:add
+* conversation:videoVoice:add
 
 ### Example
 
@@ -19633,4 +19569,4 @@ try {
 **String**
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

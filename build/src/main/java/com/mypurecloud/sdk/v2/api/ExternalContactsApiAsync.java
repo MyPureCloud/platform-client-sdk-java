@@ -81,6 +81,7 @@ import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 import com.mypurecloud.sdk.v2.model.ExternalSource;
 import com.mypurecloud.sdk.v2.model.GraphSettings;
 import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
+import com.mypurecloud.sdk.v2.model.LatestClusterScan;
 import com.mypurecloud.sdk.v2.model.Listing;
 import com.mypurecloud.sdk.v2.model.MergeContactsRequest;
 import com.mypurecloud.sdk.v2.model.MergeRequest;
@@ -2444,7 +2445,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2479,7 +2479,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2521,7 +2520,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns a single cluster found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2556,7 +2554,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns a single cluster found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2598,7 +2595,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns a list of clusters found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2633,7 +2629,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns a list of clusters found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2675,7 +2670,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns the statistics about a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2710,7 +2704,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns the statistics about a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2752,7 +2745,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns a list of cluster scans
    * 
-   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2787,7 +2779,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns a list of cluster scans
    * 
-   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2829,18 +2820,17 @@ public class ExternalContactsApiAsync {
   /**
    * Returns the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ClusterScan> getExternalcontactsGraphsClusterscansLatestAsync(GetExternalcontactsGraphsClusterscansLatestRequest request, final AsyncApiCallback<ClusterScan> callback) {
+  public Future<LatestClusterScan> getExternalcontactsGraphsClusterscansLatestAsync(GetExternalcontactsGraphsClusterscansLatestRequest request, final AsyncApiCallback<LatestClusterScan> callback) {
     try {
-      final SettableFuture<ClusterScan> future = SettableFuture.create();
+      final SettableFuture<LatestClusterScan> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ClusterScan>() {}, new AsyncApiCallback<ApiResponse<ClusterScan>>() {
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<LatestClusterScan>() {}, new AsyncApiCallback<ApiResponse<LatestClusterScan>>() {
         @Override
-        public void onCompleted(ApiResponse<ClusterScan> response) {
+        public void onCompleted(ApiResponse<LatestClusterScan> response) {
           notifySuccess(future, callback, response.getBody());
         }
 
@@ -2864,18 +2854,17 @@ public class ExternalContactsApiAsync {
   /**
    * Returns the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
    */
-  public Future<ApiResponse<ClusterScan>> getExternalcontactsGraphsClusterscansLatestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ClusterScan>> callback) {
+  public Future<ApiResponse<LatestClusterScan>> getExternalcontactsGraphsClusterscansLatestAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<LatestClusterScan>> callback) {
     try {
-      final SettableFuture<ApiResponse<ClusterScan>> future = SettableFuture.create();
+      final SettableFuture<ApiResponse<LatestClusterScan>> future = SettableFuture.create();
       final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
-      pcapiClient.invokeAsync(request, new TypeReference<ClusterScan>() {}, new AsyncApiCallback<ApiResponse<ClusterScan>>() {
+      pcapiClient.invokeAsync(request, new TypeReference<LatestClusterScan>() {}, new AsyncApiCallback<ApiResponse<LatestClusterScan>>() {
         @Override
-        public void onCompleted(ApiResponse<ClusterScan> response) {
+        public void onCompleted(ApiResponse<LatestClusterScan> response) {
           notifySuccess(future, callback, response);
         }
 
@@ -2883,7 +2872,7 @@ public class ExternalContactsApiAsync {
         public void onFailed(Throwable exception) {
           if (exception instanceof ApiException) {
             @SuppressWarnings("unchecked")
-            ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)exception;
+            ApiResponse<LatestClusterScan> response = (ApiResponse<LatestClusterScan>)(ApiResponse<?>)exception;
             notifySuccess(future, callback, response);
           }
           if (shouldThrowErrors) {
@@ -2891,7 +2880,7 @@ public class ExternalContactsApiAsync {
           }
           else {
             @SuppressWarnings("unchecked")
-            ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)(new ApiException(exception));
+            ApiResponse<LatestClusterScan> response = (ApiResponse<LatestClusterScan>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }
@@ -2906,7 +2895,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns the statistics about the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2941,7 +2929,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns the statistics about the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -2983,7 +2970,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns the org-wide settings for ExternalContact graph operations
    * 
-   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -3018,7 +3004,6 @@ public class ExternalContactsApiAsync {
   /**
    * Returns the org-wide settings for ExternalContact graph operations
    * 
-   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10414,7 +10399,6 @@ public class ExternalContactsApiAsync {
   /**
    * Merge a single cluster found by a scan
    * 
-   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10449,7 +10433,6 @@ public class ExternalContactsApiAsync {
   /**
    * Merge a single cluster found by a scan
    * 
-   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10491,7 +10474,6 @@ public class ExternalContactsApiAsync {
   /**
    * Updates the org-wide settings for ExternalContact graph operations
    * 
-   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
@@ -10526,7 +10508,6 @@ public class ExternalContactsApiAsync {
   /**
    * Updates the org-wide settings for ExternalContact graph operations
    * 
-   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed

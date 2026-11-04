@@ -15,6 +15,7 @@
 | **feedback** | [**ConversationKnowledgeArticleSuggestionsTopicSuggestionFeedback**](ConversationKnowledgeArticleSuggestionsTopicSuggestionFeedback) |  |  [optional] |
 | **knowledgeArticle** | [**ConversationKnowledgeArticleSuggestionsTopicSuggestedArticle**](ConversationKnowledgeArticleSuggestionsTopicSuggestedArticle) |  |  [optional] |
 | **activeIntent** | [**ConversationKnowledgeArticleSuggestionsTopicSuggestedIntent**](ConversationKnowledgeArticleSuggestionsTopicSuggestedIntent) |  |  [optional] |
+| **activeSentiment** | [**ConversationKnowledgeArticleSuggestionsTopicActiveSentiment**](ConversationKnowledgeArticleSuggestionsTopicActiveSentiment) |  |  [optional] |
 
 
 ## Enum: StateEnum
@@ -59,4 +60,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

@@ -55,6 +55,7 @@ public class MessagingInitialConfiguration  implements Serializable {
     WEBMESSAGE("WebMessage"),
     OPEN("Open"),
     INSTAGRAM("Instagram"),
+    LINKEDIN("LinkedIn"),
     UNKNOWN("Unknown");
 
     private String value;

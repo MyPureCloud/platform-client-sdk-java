@@ -96,14 +96,14 @@ public class UserPresenceEvent  implements Serializable {
 
 
   /**
-   * The id (V4 UUID) of the presence source being updated
+   * The id (UUID) of the presence source being updated
    **/
   public UserPresenceEvent sourceId(String sourceId) {
     this.sourceId = sourceId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The id (V4 UUID) of the presence source being updated")
+  @ApiModelProperty(example = "null", required = true, value = "The id (UUID) of the presence source being updated")
   @JsonProperty("sourceId")
   public String getSourceId() {
     return sourceId;

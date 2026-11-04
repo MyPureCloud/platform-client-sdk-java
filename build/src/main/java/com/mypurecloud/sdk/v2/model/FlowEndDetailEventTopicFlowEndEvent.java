@@ -303,7 +303,8 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     VOICE("VOICE"),
     VOICEMAIL("VOICEMAIL"),
     WORKITEM("WORKITEM"),
-    VOICESURVEY("VOICESURVEY");
+    VOICESURVEY("VOICESURVEY"),
+    BUSINESSPROCESS("BUSINESSPROCESS");
 
     private String value;
 
@@ -452,6 +453,9 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
   }
   private TransferTypeEnum transferType = null;
   private String utilizationLabel = null;
+  private String outboundCampaignId = null;
+  private String outboundContactListId = null;
+  private String outboundContactId = null;
 
   public FlowEndDetailEventTopicFlowEndEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -876,6 +880,57 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public FlowEndDetailEventTopicFlowEndEvent outboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundCampaignId")
+  public String getOutboundCampaignId() {
+    return outboundCampaignId;
+  }
+  public void setOutboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+  }
+
+
+  /**
+   **/
+  public FlowEndDetailEventTopicFlowEndEvent outboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactListId")
+  public String getOutboundContactListId() {
+    return outboundContactListId;
+  }
+  public void setOutboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+  }
+
+
+  /**
+   **/
+  public FlowEndDetailEventTopicFlowEndEvent outboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactId")
+  public String getOutboundContactId() {
+    return outboundContactId;
+  }
+  public void setOutboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -909,12 +964,15 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
             Objects.equals(this.conversationExternalOrganizationIds, flowEndDetailEventTopicFlowEndEvent.conversationExternalOrganizationIds) &&
             Objects.equals(this.exitReason, flowEndDetailEventTopicFlowEndEvent.exitReason) &&
             Objects.equals(this.transferType, flowEndDetailEventTopicFlowEndEvent.transferType) &&
-            Objects.equals(this.utilizationLabel, flowEndDetailEventTopicFlowEndEvent.utilizationLabel);
+            Objects.equals(this.utilizationLabel, flowEndDetailEventTopicFlowEndEvent.utilizationLabel) &&
+            Objects.equals(this.outboundCampaignId, flowEndDetailEventTopicFlowEndEvent.outboundCampaignId) &&
+            Objects.equals(this.outboundContactListId, flowEndDetailEventTopicFlowEndEvent.outboundContactListId) &&
+            Objects.equals(this.outboundContactId, flowEndDetailEventTopicFlowEndEvent.outboundContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, subject, messageType, flowType, flowId, divisionId, flowVersion, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, exitReason, transferType, utilizationLabel);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, subject, messageType, flowType, flowId, divisionId, flowVersion, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, exitReason, transferType, utilizationLabel, outboundCampaignId, outboundContactListId, outboundContactId);
   }
 
   @Override
@@ -946,6 +1004,9 @@ public class FlowEndDetailEventTopicFlowEndEvent  implements Serializable {
     sb.append("    exitReason: ").append(toIndentedString(exitReason)).append("\n");
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
+    sb.append("    outboundCampaignId: ").append(toIndentedString(outboundCampaignId)).append("\n");
+    sb.append("    outboundContactListId: ").append(toIndentedString(outboundContactListId)).append("\n");
+    sb.append("    outboundContactId: ").append(toIndentedString(outboundContactId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

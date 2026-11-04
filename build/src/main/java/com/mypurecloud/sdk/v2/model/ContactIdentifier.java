@@ -88,6 +88,7 @@ public class ContactIdentifier  implements Serializable {
   private String value = null;
   private Date dateCreated = null;
   private ExternalSource externalSource = null;
+  private String portfolioId = null;
 
   public ContactIdentifier() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -190,6 +191,24 @@ public class ContactIdentifier  implements Serializable {
   }
 
 
+  /**
+   * The portfolio id associated with the identifier. Only applicable to identifiers of type SocialWhatsappBsuid.
+   **/
+  public ContactIdentifier portfolioId(String portfolioId) {
+    this.portfolioId = portfolioId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The portfolio id associated with the identifier. Only applicable to identifiers of type SocialWhatsappBsuid.")
+  @JsonProperty("portfolioId")
+  public String getPortfolioId() {
+    return portfolioId;
+  }
+  public void setPortfolioId(String portfolioId) {
+    this.portfolioId = portfolioId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -204,12 +223,13 @@ public class ContactIdentifier  implements Serializable {
             Objects.equals(this.type, contactIdentifier.type) &&
             Objects.equals(this.value, contactIdentifier.value) &&
             Objects.equals(this.dateCreated, contactIdentifier.dateCreated) &&
-            Objects.equals(this.externalSource, contactIdentifier.externalSource);
+            Objects.equals(this.externalSource, contactIdentifier.externalSource) &&
+            Objects.equals(this.portfolioId, contactIdentifier.portfolioId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(division, type, value, dateCreated, externalSource);
+    return Objects.hash(division, type, value, dateCreated, externalSource, portfolioId);
   }
 
   @Override
@@ -222,6 +242,7 @@ public class ContactIdentifier  implements Serializable {
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    externalSource: ").append(toIndentedString(externalSource)).append("\n");
+    sb.append("    portfolioId: ").append(toIndentedString(portfolioId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

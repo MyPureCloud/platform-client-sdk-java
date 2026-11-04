@@ -27,6 +27,8 @@ import com.mypurecloud.sdk.v2.model.ActivityPlanDeletionSessionUserIds;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobListing;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrenceListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrenceResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrencesDeletionJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanRunJobResponse;
@@ -168,6 +170,8 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitSchedulingPreferencesSettingsResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastImportUploadRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastImportUploadResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanForecastInputsResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.CapacityPlanResponse;
@@ -299,6 +303,15 @@ import com.mypurecloud.sdk.v2.model.SearchAlternativeShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.SearchUnmatchedShiftTradeListJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleActivityMoveListItem;
+import com.mypurecloud.sdk.v2.model.SelfScheduleAgentManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.SelfScheduleJob;
+import com.mypurecloud.sdk.v2.model.SelfScheduleJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.SelfScheduleManagementUnitSettingsRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleOffersJob;
+import com.mypurecloud.sdk.v2.model.SelfScheduleOffersJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleQuery;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
 import com.mypurecloud.sdk.v2.model.SetTimeOffIntegrationStatusRequest;
@@ -429,6 +442,50 @@ public class PostWorkforcemanagementAgentschedulesMineRequest {
 	    return this;
 	} 
 
+	private List<String> expand;
+	public List<String> getExpand() {
+		return this.expand;
+	}
+
+	public void setExpand(List<String> expand) {
+		this.expand = expand;
+	}
+
+	public PostWorkforcemanagementAgentschedulesMineRequest withExpand(List<String> expand) {
+	    this.setExpand(expand);
+	    return this;
+	} 
+
+	public enum expandValues { 
+		AGENTSCHEDULES_WORKPLANSPERWEEK("agentSchedules.workPlansPerWeek");
+
+		private String value;
+
+		expandValues(String value) {
+		  this.value = value;
+		}
+
+		@JsonCreator
+		public static expandValues fromString(String key) {
+			if (key == null) return null;
+
+			for (expandValues value : expandValues.values()) {
+				if (key.equalsIgnoreCase(value.toString())) {
+					return value;
+				}
+			}
+
+			return expandValues.values()[0];
+		}
+
+		@Override
+		@JsonValue
+		public String toString() {
+			return String.valueOf(value);
+		}
+
+	}
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -457,6 +514,9 @@ public class PostWorkforcemanagementAgentschedulesMineRequest {
         
 
         return ApiRequestBuilder.create("POST", "/api/v2/workforcemanagement/agentschedules/mine")
+
+                .withQueryParameters("expand", "multi", expand)
+        
                 .withBody(body)
 
 		.withCustomHeaders(customHeaders)
@@ -488,6 +548,22 @@ public class PostWorkforcemanagementAgentschedulesMineRequest {
 		public Builder withBody(BuGetCurrentAgentScheduleRequest body) {
 			request.setBody(body);
 			return this;
+		}
+
+		public Builder withExpand(List<String> expand) {
+			request.setExpand(expand);
+			return this;
+		}
+
+
+
+		public Builder withExpandEnumValues(List<expandValues> expand) {
+		    List<String> stringList = new ArrayList<>();
+	      for (expandValues e : expand) {
+	        stringList.add(e.toString());
+	      }
+	      request.setExpand(stringList);
+		    return this;
 		}
 
 

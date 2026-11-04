@@ -78,6 +78,7 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
   private String userId = null;
   private String externalContactId = null;
   private String assistantId = null;
+  private String variationId = null;
   private String utteranceId = null;
   private String messageId = null;
   private String queryStatement = null;
@@ -231,6 +232,23 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
 
   /**
    **/
+  public ConversationScriptSuggestionsTopicSuggestionContext variationId(String variationId) {
+    this.variationId = variationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("variationId")
+  public String getVariationId() {
+    return variationId;
+  }
+  public void setVariationId(String variationId) {
+    this.variationId = variationId;
+  }
+
+
+  /**
+   **/
   public ConversationScriptSuggestionsTopicSuggestionContext utteranceId(String utteranceId) {
     this.utteranceId = utteranceId;
     return this;
@@ -346,6 +364,7 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
             Objects.equals(this.userId, conversationScriptSuggestionsTopicSuggestionContext.userId) &&
             Objects.equals(this.externalContactId, conversationScriptSuggestionsTopicSuggestionContext.externalContactId) &&
             Objects.equals(this.assistantId, conversationScriptSuggestionsTopicSuggestionContext.assistantId) &&
+            Objects.equals(this.variationId, conversationScriptSuggestionsTopicSuggestionContext.variationId) &&
             Objects.equals(this.utteranceId, conversationScriptSuggestionsTopicSuggestionContext.utteranceId) &&
             Objects.equals(this.messageId, conversationScriptSuggestionsTopicSuggestionContext.messageId) &&
             Objects.equals(this.queryStatement, conversationScriptSuggestionsTopicSuggestionContext.queryStatement) &&
@@ -356,7 +375,7 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, utteranceId, messageId, queryStatement, language, queryReformulationContext, participantType);
+    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, variationId, utteranceId, messageId, queryStatement, language, queryReformulationContext, participantType);
   }
 
   @Override
@@ -369,6 +388,7 @@ public class ConversationScriptSuggestionsTopicSuggestionContext  implements Ser
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    assistantId: ").append(toIndentedString(assistantId)).append("\n");
+    sb.append("    variationId: ").append(toIndentedString(variationId)).append("\n");
     sb.append("    utteranceId: ").append(toIndentedString(utteranceId)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    queryStatement: ").append(toIndentedString(queryStatement)).append("\n");

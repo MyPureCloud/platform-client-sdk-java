@@ -78,6 +78,7 @@ import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 import com.mypurecloud.sdk.v2.model.ExternalSource;
 import com.mypurecloud.sdk.v2.model.GraphSettings;
 import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
+import com.mypurecloud.sdk.v2.model.LatestClusterScan;
 import com.mypurecloud.sdk.v2.model.Listing;
 import com.mypurecloud.sdk.v2.model.MergeContactsRequest;
 import com.mypurecloud.sdk.v2.model.MergeRequest;
@@ -2607,7 +2608,6 @@ public class ExternalContactsApi {
   /**
    * Returns a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param scanId Cluster scan ID (required)
    * @param expand which fields, if any, to expand (optional)
    * @return ClusterScan
@@ -2621,7 +2621,6 @@ public class ExternalContactsApi {
   /**
    * Returns a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param scanId Cluster scan ID (required)
    * @param expand which fields, if any, to expand (optional)
    * @return ClusterScan
@@ -2643,7 +2642,6 @@ public class ExternalContactsApi {
   /**
    * Returns a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ClusterScan
    * @throws ApiException if the request fails on the server
@@ -2663,7 +2661,6 @@ public class ExternalContactsApi {
   /**
    * Returns a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2693,7 +2690,6 @@ public class ExternalContactsApi {
   /**
    * Returns a single cluster found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param scanId Cluster scan ID (required)
    * @param clusterId Cluster ID (required)
    * @return Cluster
@@ -2707,7 +2703,6 @@ public class ExternalContactsApi {
   /**
    * Returns a single cluster found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param scanId Cluster scan ID (required)
    * @param clusterId Cluster ID (required)
    * @return Cluster
@@ -2729,7 +2724,6 @@ public class ExternalContactsApi {
   /**
    * Returns a single cluster found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Cluster
    * @throws ApiException if the request fails on the server
@@ -2749,7 +2743,6 @@ public class ExternalContactsApi {
   /**
    * Returns a single cluster found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2779,7 +2772,6 @@ public class ExternalContactsApi {
   /**
    * Returns a list of clusters found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param scanId Cluster scan ID (required)
    * @param limit Max number of records to return (must be between 1 and 100) (optional, default to 20)
    * @param cursor Cursor to continue scanning (optional)
@@ -2796,7 +2788,6 @@ public class ExternalContactsApi {
   /**
    * Returns a list of clusters found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param scanId Cluster scan ID (required)
    * @param limit Max number of records to return (must be between 1 and 100) (optional, default to 20)
    * @param cursor Cursor to continue scanning (optional)
@@ -2827,7 +2818,6 @@ public class ExternalContactsApi {
   /**
    * Returns a list of clusters found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ClusterList
    * @throws ApiException if the request fails on the server
@@ -2847,7 +2837,6 @@ public class ExternalContactsApi {
   /**
    * Returns a list of clusters found by a scan
    * 
-   * getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2877,7 +2866,6 @@ public class ExternalContactsApi {
   /**
    * Returns the statistics about a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param scanId Cluster scan ID (required)
    * @return ClusterScanStatistics
    * @throws ApiException if the request fails on the server
@@ -2890,7 +2878,6 @@ public class ExternalContactsApi {
   /**
    * Returns the statistics about a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param scanId Cluster scan ID (required)
    * @return ClusterScanStatistics
    * @throws IOException if the request fails to be processed
@@ -2909,7 +2896,6 @@ public class ExternalContactsApi {
   /**
    * Returns the statistics about a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ClusterScanStatistics
    * @throws ApiException if the request fails on the server
@@ -2929,7 +2915,6 @@ public class ExternalContactsApi {
   /**
    * Returns the statistics about a single cluster scan
    * 
-   * getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -2959,7 +2944,6 @@ public class ExternalContactsApi {
   /**
    * Returns a list of cluster scans
    * 
-   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param limit Max number of records to return (must be between 1 and 100) (optional, default to 20)
    * @param cursor Cursor to continue scanning (optional)
    * @param expand which fields, if any, to expand (optional)
@@ -2974,7 +2958,6 @@ public class ExternalContactsApi {
   /**
    * Returns a list of cluster scans
    * 
-   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param limit Max number of records to return (must be between 1 and 100) (optional, default to 20)
    * @param cursor Cursor to continue scanning (optional)
    * @param expand which fields, if any, to expand (optional)
@@ -2999,7 +2982,6 @@ public class ExternalContactsApi {
   /**
    * Returns a list of cluster scans
    * 
-   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ClusterScanList
    * @throws ApiException if the request fails on the server
@@ -3019,7 +3001,6 @@ public class ExternalContactsApi {
   /**
    * Returns a list of cluster scans
    * 
-   * getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3049,25 +3030,23 @@ public class ExternalContactsApi {
   /**
    * Returns the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param expand which fields, if any, to expand (optional)
-   * @return ClusterScan
+   * @return LatestClusterScan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ClusterScan getExternalcontactsGraphsClusterscansLatest(List<String> expand) throws IOException, ApiException {
+  public LatestClusterScan getExternalcontactsGraphsClusterscansLatest(List<String> expand) throws IOException, ApiException {
     return  getExternalcontactsGraphsClusterscansLatest(createGetExternalcontactsGraphsClusterscansLatestRequest(expand));
   }
 
   /**
    * Returns the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param expand which fields, if any, to expand (optional)
-   * @return ClusterScan
+   * @return LatestClusterScan
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ClusterScan> getExternalcontactsGraphsClusterscansLatestWithHttpInfo(List<String> expand) throws IOException {
+  public ApiResponse<LatestClusterScan> getExternalcontactsGraphsClusterscansLatestWithHttpInfo(List<String> expand) throws IOException {
     return getExternalcontactsGraphsClusterscansLatest(createGetExternalcontactsGraphsClusterscansLatestRequest(expand).withHttpInfo());
   }
 
@@ -3081,15 +3060,14 @@ public class ExternalContactsApi {
   /**
    * Returns the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
-   * @return ClusterScan
+   * @return LatestClusterScan
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ClusterScan getExternalcontactsGraphsClusterscansLatest(GetExternalcontactsGraphsClusterscansLatestRequest request) throws IOException, ApiException {
+  public LatestClusterScan getExternalcontactsGraphsClusterscansLatest(GetExternalcontactsGraphsClusterscansLatestRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<ClusterScan> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ClusterScan>() {});
+      ApiResponse<LatestClusterScan> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<LatestClusterScan>() {});
       return response.getBody();
     }
     catch (ApiException | IOException exception) {
@@ -3101,18 +3079,17 @@ public class ExternalContactsApi {
   /**
    * Returns the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ClusterScan> getExternalcontactsGraphsClusterscansLatest(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<LatestClusterScan> getExternalcontactsGraphsClusterscansLatest(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, new TypeReference<ClusterScan>() {});
+      return pcapiClient.invoke(request, new TypeReference<LatestClusterScan>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)exception;
+      ApiResponse<LatestClusterScan> response = (ApiResponse<LatestClusterScan>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -3123,7 +3100,7 @@ public class ExternalContactsApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<ClusterScan> response = (ApiResponse<ClusterScan>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<LatestClusterScan> response = (ApiResponse<LatestClusterScan>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -3131,7 +3108,6 @@ public class ExternalContactsApi {
   /**
    * Returns the statistics about the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return ClusterScanStatistics
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3143,7 +3119,6 @@ public class ExternalContactsApi {
   /**
    * Returns the statistics about the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return ClusterScanStatistics
    * @throws IOException if the request fails to be processed
    */
@@ -3159,7 +3134,6 @@ public class ExternalContactsApi {
   /**
    * Returns the statistics about the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ClusterScanStatistics
    * @throws ApiException if the request fails on the server
@@ -3179,7 +3153,6 @@ public class ExternalContactsApi {
   /**
    * Returns the statistics about the latest cluster scan
    * 
-   * getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3209,7 +3182,6 @@ public class ExternalContactsApi {
   /**
    * Returns the org-wide settings for ExternalContact graph operations
    * 
-   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return GraphSettings
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
@@ -3221,7 +3193,6 @@ public class ExternalContactsApi {
   /**
    * Returns the org-wide settings for ExternalContact graph operations
    * 
-   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @return GraphSettings
    * @throws IOException if the request fails to be processed
    */
@@ -3237,7 +3208,6 @@ public class ExternalContactsApi {
   /**
    * Returns the org-wide settings for ExternalContact graph operations
    * 
-   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GraphSettings
    * @throws ApiException if the request fails on the server
@@ -3257,7 +3227,6 @@ public class ExternalContactsApi {
   /**
    * Returns the org-wide settings for ExternalContact graph operations
    * 
-   * getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11248,7 +11217,6 @@ public class ExternalContactsApi {
   /**
    * Merge a single cluster found by a scan
    * 
-   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param scanId Cluster scan ID (required)
    * @param clusterId Cluster ID (required)
    * @return Cluster
@@ -11262,7 +11230,6 @@ public class ExternalContactsApi {
   /**
    * Merge a single cluster found by a scan
    * 
-   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param scanId Cluster scan ID (required)
    * @param clusterId Cluster ID (required)
    * @return Cluster
@@ -11284,7 +11251,6 @@ public class ExternalContactsApi {
   /**
    * Merge a single cluster found by a scan
    * 
-   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Cluster
    * @throws ApiException if the request fails on the server
@@ -11304,7 +11270,6 @@ public class ExternalContactsApi {
   /**
    * Merge a single cluster found by a scan
    * 
-   * putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11334,7 +11299,6 @@ public class ExternalContactsApi {
   /**
    * Updates the org-wide settings for ExternalContact graph operations
    * 
-   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body OrgConfiguration (required)
    * @return GraphSettings
    * @throws ApiException if the request fails on the server
@@ -11347,7 +11311,6 @@ public class ExternalContactsApi {
   /**
    * Updates the org-wide settings for ExternalContact graph operations
    * 
-   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body OrgConfiguration (required)
    * @return GraphSettings
    * @throws IOException if the request fails to be processed
@@ -11366,7 +11329,6 @@ public class ExternalContactsApi {
   /**
    * Updates the org-wide settings for ExternalContact graph operations
    * 
-   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return GraphSettings
    * @throws ApiException if the request fails on the server
@@ -11386,7 +11348,6 @@ public class ExternalContactsApi {
   /**
    * Updates the org-wide settings for ExternalContact graph operations
    * 
-   * putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

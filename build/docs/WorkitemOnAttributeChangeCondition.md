@@ -6,10 +6,9 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **attribute** | [**AttributeEnum**](#Enum--AttributeEnum) | The name of the workitem attribute whose change will be evaluated as part of the rule. |  |
-| **newValue** | **String** | The new value of the attribute. If the attribute is updated to this value this part of the condition will be met. Required for exact-match conditions (when operator is not set). |  [optional] |
-| **oldValue** | **String** | The old value of the attribute. If the attribute was updated from this value this part of the condition will be met. |  [optional] |
-| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | The comparison operator used to evaluate the priority attribute against the value. Only supported for the priority attribute. |  [optional] |
-| **value** | **Integer** | The numeric value compared against the priority attribute using the operator. Required when operator is set. Only supported for the priority attribute. |  [optional] |
+| **newValue** | **String** | The value the attribute's new value is compared against. Compared for equality unless an operator is supplied. Null matches the attribute having been cleared, on clearable attributes. |  [optional] |
+| **oldValue** | **String** | The value the attribute is transitioning from. Not permitted for the priority attribute. Omitted or null matches any previous value. |  [optional] |
+| **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | How the attribute's new value is compared against newValue. Required for the priority attribute; not permitted otherwise. |  [optional] |
 
 
 ## Enum: AttributeEnum
@@ -24,7 +23,6 @@
 | ASSIGNMENTSTATE | &quot;assignmentState&quot; | 
 | LANGUAGEID | &quot;languageId&quot; | 
 | EXTERNALTAG | &quot;externalTag&quot; | 
-| WRAPUP | &quot;wrapup&quot; | 
 
 
 ## Enum: OperatorEnum
@@ -41,4 +39,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

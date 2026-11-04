@@ -44,7 +44,8 @@ public class ActivationTrigger  implements Serializable {
   public enum TriggerTypeEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     INTENT("Intent"),
-    CONVERSATIONSTART("ConversationStart");
+    CONVERSATIONSTART("ConversationStart"),
+    SENTIMENT("Sentiment");
 
     private String value;
 

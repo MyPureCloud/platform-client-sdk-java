@@ -62,6 +62,7 @@ public class AgentStateSegmentTypeCount  implements Serializable {
     TRANSMITTING("transmitting"),
     UNKNOWN("unknown"),
     UPLOADING("uploading"),
+    VIDEO("video"),
     VOICEMAIL("voicemail"),
     WRAPUP("wrapup");
 

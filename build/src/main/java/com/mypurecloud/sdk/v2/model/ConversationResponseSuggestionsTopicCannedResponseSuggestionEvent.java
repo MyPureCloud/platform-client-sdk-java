@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationResponseSuggestionsTopicActiveSentiment;
 import com.mypurecloud.sdk.v2.model.ConversationResponseSuggestionsTopicSuggestedCannedResponse;
 import com.mypurecloud.sdk.v2.model.ConversationResponseSuggestionsTopicSuggestedIntent;
 import com.mypurecloud.sdk.v2.model.ConversationResponseSuggestionsTopicSuggestionContext;
@@ -192,6 +193,7 @@ public class ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent  
   private ConversationResponseSuggestionsTopicSuggestionFeedback feedback = null;
   private ConversationResponseSuggestionsTopicSuggestedCannedResponse cannedResponse = null;
   private ConversationResponseSuggestionsTopicSuggestedIntent activeIntent = null;
+  private ConversationResponseSuggestionsTopicActiveSentiment activeSentiment = null;
 
   public ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -374,6 +376,23 @@ public class ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent  
   }
 
 
+  /**
+   **/
+  public ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent activeSentiment(ConversationResponseSuggestionsTopicActiveSentiment activeSentiment) {
+    this.activeSentiment = activeSentiment;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("activeSentiment")
+  public ConversationResponseSuggestionsTopicActiveSentiment getActiveSentiment() {
+    return activeSentiment;
+  }
+  public void setActiveSentiment(ConversationResponseSuggestionsTopicActiveSentiment activeSentiment) {
+    this.activeSentiment = activeSentiment;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -393,12 +412,13 @@ public class ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent  
             Objects.equals(this.context, conversationResponseSuggestionsTopicCannedResponseSuggestionEvent.context) &&
             Objects.equals(this.feedback, conversationResponseSuggestionsTopicCannedResponseSuggestionEvent.feedback) &&
             Objects.equals(this.cannedResponse, conversationResponseSuggestionsTopicCannedResponseSuggestionEvent.cannedResponse) &&
-            Objects.equals(this.activeIntent, conversationResponseSuggestionsTopicCannedResponseSuggestionEvent.activeIntent);
+            Objects.equals(this.activeIntent, conversationResponseSuggestionsTopicCannedResponseSuggestionEvent.activeIntent) &&
+            Objects.equals(this.activeSentiment, conversationResponseSuggestionsTopicCannedResponseSuggestionEvent.activeSentiment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, suggestionId, state, triggerType, engagementType, context, feedback, cannedResponse, activeIntent);
+    return Objects.hash(eventTime, conversationId, suggestionId, state, triggerType, engagementType, context, feedback, cannedResponse, activeIntent, activeSentiment);
   }
 
   @Override
@@ -416,6 +436,7 @@ public class ConversationResponseSuggestionsTopicCannedResponseSuggestionEvent  
     sb.append("    feedback: ").append(toIndentedString(feedback)).append("\n");
     sb.append("    cannedResponse: ").append(toIndentedString(cannedResponse)).append("\n");
     sb.append("    activeIntent: ").append(toIndentedString(activeIntent)).append("\n");
+    sb.append("    activeSentiment: ").append(toIndentedString(activeSentiment)).append("\n");
     sb.append("}");
     return sb.toString();
   }

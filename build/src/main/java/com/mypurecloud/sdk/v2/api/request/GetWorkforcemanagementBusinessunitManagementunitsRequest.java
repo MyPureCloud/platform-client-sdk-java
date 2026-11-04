@@ -27,6 +27,8 @@ import com.mypurecloud.sdk.v2.model.ActivityPlanDeletionSessionUserIds;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobListing;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrenceListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrenceResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrencesDeletionJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanRunJobResponse;
@@ -168,6 +170,8 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitSchedulingPreferencesSettingsResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastImportUploadRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastImportUploadResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanForecastInputsResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.CapacityPlanResponse;
@@ -299,6 +303,15 @@ import com.mypurecloud.sdk.v2.model.SearchAlternativeShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.SearchUnmatchedShiftTradeListJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleActivityMoveListItem;
+import com.mypurecloud.sdk.v2.model.SelfScheduleAgentManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.SelfScheduleJob;
+import com.mypurecloud.sdk.v2.model.SelfScheduleJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.SelfScheduleManagementUnitSettingsRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleOffersJob;
+import com.mypurecloud.sdk.v2.model.SelfScheduleOffersJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleQuery;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
 import com.mypurecloud.sdk.v2.model.SetTimeOffIntegrationStatusRequest;
@@ -451,6 +464,8 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		AGENTTIMEOFFREQUEST("AgentTimeOffRequest"),
 		AGENTWORKPLANBID("AgentWorkPlanBid"),
 		AGENTSCHEDULEBID("AgentScheduleBid"),
+		AGENTSCHEDULECHANGECONSTRAINT("AgentScheduleChangeConstraint"),
+		AGENTSHIFTACTIVITYRULE("AgentShiftActivityRule"),
 		AGENTSHIFTTRADE("AgentShiftTrade"),
 		ALTERNATIVESHIFT("AlternativeShift"),
 		COACHING("Coaching"),
@@ -465,6 +480,7 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		AGENTOPPORTUNITIESQUERY("AgentOpportunitiesQuery"),
 		AGENTOPPORTUNITIESENROLLMENTS("AgentOpportunitiesEnrollments"),
 		AGENTOPPORTUNITIESENROLLMENTSSTATUSES("AgentOpportunitiesEnrollmentsStatuses"),
+		AGENTOPPORTUNITYSETTINGS("AgentOpportunitySettings"),
 		AGENTSCHEDULINGPREFERENCESQUERY("AgentSchedulingPreferencesQuery"),
 		AGENTSCHEDULINGPREFERENCES("AgentSchedulingPreferences"),
 		AGENTSCHEDULINGPREFERENCESSETTINGS("AgentSchedulingPreferencesSettings"),
@@ -509,7 +525,14 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		WORKPLANS("WorkPlans"),
 		SCHEDULEBID("ScheduleBid"),
 		SCHEDULEBIDGROUP("ScheduleBidGroup"),
+		SCHEDULECHANGECONSTRAINT("ScheduleChangeConstraint"),
+		SCHEDULECHANGECONSTRAINTLISTING("ScheduleChangeConstraintListing"),
+		SCHEDULECHANGECONSTRAINTWORKPLANS("ScheduleChangeConstraintWorkPlans"),
+		SHIFTACTIVITYRULE("ShiftActivityRule"),
+		SHIFTACTIVITYRULELISTING("ShiftActivityRuleListing"),
+		SHIFTACTIVITYRULEWORKPLANS("ShiftActivityRuleWorkPlans"),
 		OPPORTUNITIES("Opportunities"),
+		OPPORTUNITYSETTINGS("OpportunitySettings"),
 		OPPORTUNITIESQUERY("OpportunitiesQuery"),
 		OPPORTUNITIESENROLLMENTSQUERY("OpportunitiesEnrollmentsQuery"),
 		OPPORTUNITIESEXTERNALACTIVITIESQUERY("OpportunitiesExternalActivitiesQuery"),
@@ -517,6 +540,8 @@ public class GetWorkforcemanagementBusinessunitManagementunitsRequest {
 		OPPORTUNITIESENROLLMENTSSTATUSES("OpportunitiesEnrollmentsStatuses"),
 		SCHEDULINGPREFERENCESQUERY("SchedulingPreferencesQuery"),
 		SCHEDULINGPREFERENCESSETTINGS("SchedulingPreferencesSettings"),
+		SCHEDULINGPREFERENCESSCHEDULESQUERY("SchedulingPreferencesSchedulesQuery"),
+		SCHEDULINGPREFERENCESSETTINGSQUERY("SchedulingPreferencesSettingsQuery"),
 		DECISIONMETRICS("DecisionMetrics");
 
 		private String value;

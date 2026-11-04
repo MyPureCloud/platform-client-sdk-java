@@ -209,6 +209,9 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
   private CustomerStartDetailEventTopicJourneyContext journeyContext = null;
   private String divisionId = null;
   private String utilizationLabel = null;
+  private String outboundCampaignId = null;
+  private String outboundContactListId = null;
+  private String outboundContactId = null;
 
   public CustomerStartDetailEventTopicCustomerStartEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -618,6 +621,57 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
   }
 
 
+  /**
+   **/
+  public CustomerStartDetailEventTopicCustomerStartEvent outboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundCampaignId")
+  public String getOutboundCampaignId() {
+    return outboundCampaignId;
+  }
+  public void setOutboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+  }
+
+
+  /**
+   **/
+  public CustomerStartDetailEventTopicCustomerStartEvent outboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactListId")
+  public String getOutboundContactListId() {
+    return outboundContactListId;
+  }
+  public void setOutboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+  }
+
+
+  /**
+   **/
+  public CustomerStartDetailEventTopicCustomerStartEvent outboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactId")
+  public String getOutboundContactId() {
+    return outboundContactId;
+  }
+  public void setOutboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -650,12 +704,15 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
             Objects.equals(this.conversationExternalOrganizationIds, customerStartDetailEventTopicCustomerStartEvent.conversationExternalOrganizationIds) &&
             Objects.equals(this.journeyContext, customerStartDetailEventTopicCustomerStartEvent.journeyContext) &&
             Objects.equals(this.divisionId, customerStartDetailEventTopicCustomerStartEvent.divisionId) &&
-            Objects.equals(this.utilizationLabel, customerStartDetailEventTopicCustomerStartEvent.utilizationLabel);
+            Objects.equals(this.utilizationLabel, customerStartDetailEventTopicCustomerStartEvent.utilizationLabel) &&
+            Objects.equals(this.outboundCampaignId, customerStartDetailEventTopicCustomerStartEvent.outboundCampaignId) &&
+            Objects.equals(this.outboundContactListId, customerStartDetailEventTopicCustomerStartEvent.outboundContactListId) &&
+            Objects.equals(this.outboundContactId, customerStartDetailEventTopicCustomerStartEvent.outboundContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, conversationExternalContactIds, conversationExternalOrganizationIds, journeyContext, divisionId, utilizationLabel);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, conversationExternalContactIds, conversationExternalOrganizationIds, journeyContext, divisionId, utilizationLabel, outboundCampaignId, outboundContactListId, outboundContactId);
   }
 
   @Override
@@ -686,6 +743,9 @@ public class CustomerStartDetailEventTopicCustomerStartEvent  implements Seriali
     sb.append("    journeyContext: ").append(toIndentedString(journeyContext)).append("\n");
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
     sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
+    sb.append("    outboundCampaignId: ").append(toIndentedString(outboundCampaignId)).append("\n");
+    sb.append("    outboundContactListId: ").append(toIndentedString(outboundContactListId)).append("\n");
+    sb.append("    outboundContactId: ").append(toIndentedString(outboundContactId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

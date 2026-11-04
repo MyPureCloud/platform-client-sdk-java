@@ -83,6 +83,7 @@ public class CaseQueryJobFilter  implements Serializable {
   }
   private OperatorEnum operator = null;
   private List<String> values = null;
+  private Boolean caseSensitive = null;
 
   public CaseQueryJobFilter() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -98,14 +99,14 @@ public class CaseQueryJobFilter  implements Serializable {
 
   
   /**
-   * Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference'.
+   * Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference', 'externalId'.
    **/
   public CaseQueryJobFilter name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference'.")
+  @ApiModelProperty(example = "null", required = true, value = "Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference', 'externalId'.")
   @JsonProperty("name")
   public String getName() {
     return name;
@@ -151,6 +152,24 @@ public class CaseQueryJobFilter  implements Serializable {
   }
 
 
+  /**
+   * Whether the filter matches letter case exactly. Only valid for 'reference' and 'externalId' filters. Defaults to true.
+   **/
+  public CaseQueryJobFilter caseSensitive(Boolean caseSensitive) {
+    this.caseSensitive = caseSensitive;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether the filter matches letter case exactly. Only valid for 'reference' and 'externalId' filters. Defaults to true.")
+  @JsonProperty("caseSensitive")
+  public Boolean getCaseSensitive() {
+    return caseSensitive;
+  }
+  public void setCaseSensitive(Boolean caseSensitive) {
+    this.caseSensitive = caseSensitive;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -163,12 +182,13 @@ public class CaseQueryJobFilter  implements Serializable {
 
     return Objects.equals(this.name, caseQueryJobFilter.name) &&
             Objects.equals(this.operator, caseQueryJobFilter.operator) &&
-            Objects.equals(this.values, caseQueryJobFilter.values);
+            Objects.equals(this.values, caseQueryJobFilter.values) &&
+            Objects.equals(this.caseSensitive, caseQueryJobFilter.caseSensitive);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, operator, values);
+    return Objects.hash(name, operator, values, caseSensitive);
   }
 
   @Override
@@ -179,6 +199,7 @@ public class CaseQueryJobFilter  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    values: ").append(toIndentedString(values)).append("\n");
+    sb.append("    caseSensitive: ").append(toIndentedString(caseSensitive)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationCustomAttributesSearchCriteria;
 import com.mypurecloud.sdk.v2.model.SearchSort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -27,6 +28,8 @@ import java.io.Serializable;
 public class ConversationCustomAttributesSearchRequest  implements Serializable {
   
   private List<String> expand = null;
+  private List<ConversationCustomAttributesSearchCriteria> queryReservedFields = null;
+  private List<ConversationCustomAttributesSearchCriteria> queryCustomAttributes = null;
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private List<SearchSort> sort = null;
@@ -84,6 +87,8 @@ public class ConversationCustomAttributesSearchRequest  implements Serializable 
   public ConversationCustomAttributesSearchRequest() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       expand = new ArrayList<String>();
+      queryReservedFields = new ArrayList<ConversationCustomAttributesSearchCriteria>();
+      queryCustomAttributes = new ArrayList<ConversationCustomAttributesSearchCriteria>();
       sort = new ArrayList<SearchSort>();
     }
   }
@@ -91,6 +96,8 @@ public class ConversationCustomAttributesSearchRequest  implements Serializable 
   public ConversationCustomAttributesSearchRequest(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
       expand = new ArrayList<String>();
+      queryReservedFields = new ArrayList<ConversationCustomAttributesSearchCriteria>();
+      queryCustomAttributes = new ArrayList<ConversationCustomAttributesSearchCriteria>();
       sort = new ArrayList<SearchSort>();
     }
   }
@@ -111,6 +118,42 @@ public class ConversationCustomAttributesSearchRequest  implements Serializable 
   }
   public void setExpand(List<String> expand) {
     this.expand = expand;
+  }
+
+
+  /**
+   * The search criteria for reserved fields
+   **/
+  public ConversationCustomAttributesSearchRequest queryReservedFields(List<ConversationCustomAttributesSearchCriteria> queryReservedFields) {
+    this.queryReservedFields = queryReservedFields;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The search criteria for reserved fields")
+  @JsonProperty("queryReservedFields")
+  public List<ConversationCustomAttributesSearchCriteria> getQueryReservedFields() {
+    return queryReservedFields;
+  }
+  public void setQueryReservedFields(List<ConversationCustomAttributesSearchCriteria> queryReservedFields) {
+    this.queryReservedFields = queryReservedFields;
+  }
+
+
+  /**
+   * The search criteria for custom attributes
+   **/
+  public ConversationCustomAttributesSearchRequest queryCustomAttributes(List<ConversationCustomAttributesSearchCriteria> queryCustomAttributes) {
+    this.queryCustomAttributes = queryCustomAttributes;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The search criteria for custom attributes")
+  @JsonProperty("queryCustomAttributes")
+  public List<ConversationCustomAttributesSearchCriteria> getQueryCustomAttributes() {
+    return queryCustomAttributes;
+  }
+  public void setQueryCustomAttributes(List<ConversationCustomAttributesSearchCriteria> queryCustomAttributes) {
+    this.queryCustomAttributes = queryCustomAttributes;
   }
 
 
@@ -215,6 +258,8 @@ public class ConversationCustomAttributesSearchRequest  implements Serializable 
     ConversationCustomAttributesSearchRequest conversationCustomAttributesSearchRequest = (ConversationCustomAttributesSearchRequest) o;
 
     return Objects.equals(this.expand, conversationCustomAttributesSearchRequest.expand) &&
+            Objects.equals(this.queryReservedFields, conversationCustomAttributesSearchRequest.queryReservedFields) &&
+            Objects.equals(this.queryCustomAttributes, conversationCustomAttributesSearchRequest.queryCustomAttributes) &&
             Objects.equals(this.pageSize, conversationCustomAttributesSearchRequest.pageSize) &&
             Objects.equals(this.pageNumber, conversationCustomAttributesSearchRequest.pageNumber) &&
             Objects.equals(this.sort, conversationCustomAttributesSearchRequest.sort) &&
@@ -224,7 +269,7 @@ public class ConversationCustomAttributesSearchRequest  implements Serializable 
 
   @Override
   public int hashCode() {
-    return Objects.hash(expand, pageSize, pageNumber, sort, sortBy, sortOrder);
+    return Objects.hash(expand, queryReservedFields, queryCustomAttributes, pageSize, pageNumber, sort, sortBy, sortOrder);
   }
 
   @Override
@@ -233,6 +278,8 @@ public class ConversationCustomAttributesSearchRequest  implements Serializable 
     sb.append("class ConversationCustomAttributesSearchRequest {\n");
     
     sb.append("    expand: ").append(toIndentedString(expand)).append("\n");
+    sb.append("    queryReservedFields: ").append(toIndentedString(queryReservedFields)).append("\n");
+    sb.append("    queryCustomAttributes: ").append(toIndentedString(queryCustomAttributes)).append("\n");
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    sort: ").append(toIndentedString(sort)).append("\n");

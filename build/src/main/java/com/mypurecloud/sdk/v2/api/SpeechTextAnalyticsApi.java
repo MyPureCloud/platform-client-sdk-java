@@ -64,6 +64,7 @@ import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicsDefinitionsProgramMappings;
 import com.mypurecloud.sdk.v2.model.TopicsDefinitionsProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.TranscriptOutlineResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
 import com.mypurecloud.sdk.v2.model.TranscriptUrls;
@@ -84,6 +85,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsCategoriesReq
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscriptoutlineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationSentimentsRequest;
@@ -1028,6 +1030,88 @@ public class SpeechTextAnalyticsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<ConversationCategoriesEntityListing> response = (ApiResponse<ConversationCategoriesEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get the transcript outline for a specific conversation and communication.
+   * 
+   * @param conversationId The ID of the conversation (required)
+   * @param communicationId The ID of the communication (required)
+   * @return TranscriptOutlineResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptOutlineResponse getSpeechandtextanalyticsConversationCommunicationTranscriptoutline(String conversationId, String communicationId) throws IOException, ApiException {
+    return  getSpeechandtextanalyticsConversationCommunicationTranscriptoutline(createGetSpeechandtextanalyticsConversationCommunicationTranscriptoutlineRequest(conversationId, communicationId));
+  }
+
+  /**
+   * Get the transcript outline for a specific conversation and communication.
+   * 
+   * @param conversationId The ID of the conversation (required)
+   * @param communicationId The ID of the communication (required)
+   * @return TranscriptOutlineResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptOutlineResponse> getSpeechandtextanalyticsConversationCommunicationTranscriptoutlineWithHttpInfo(String conversationId, String communicationId) throws IOException {
+    return getSpeechandtextanalyticsConversationCommunicationTranscriptoutline(createGetSpeechandtextanalyticsConversationCommunicationTranscriptoutlineRequest(conversationId, communicationId).withHttpInfo());
+  }
+
+  private GetSpeechandtextanalyticsConversationCommunicationTranscriptoutlineRequest createGetSpeechandtextanalyticsConversationCommunicationTranscriptoutlineRequest(String conversationId, String communicationId) {
+    return GetSpeechandtextanalyticsConversationCommunicationTranscriptoutlineRequest.builder()
+            .withConversationId(conversationId)
+
+            .withCommunicationId(communicationId)
+
+            .build();
+  }
+
+  /**
+   * Get the transcript outline for a specific conversation and communication.
+   * 
+   * @param request The request object
+   * @return TranscriptOutlineResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public TranscriptOutlineResponse getSpeechandtextanalyticsConversationCommunicationTranscriptoutline(GetSpeechandtextanalyticsConversationCommunicationTranscriptoutlineRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<TranscriptOutlineResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<TranscriptOutlineResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the transcript outline for a specific conversation and communication.
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<TranscriptOutlineResponse> getSpeechandtextanalyticsConversationCommunicationTranscriptoutline(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<TranscriptOutlineResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptOutlineResponse> response = (ApiResponse<TranscriptOutlineResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<TranscriptOutlineResponse> response = (ApiResponse<TranscriptOutlineResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

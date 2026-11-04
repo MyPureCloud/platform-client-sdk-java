@@ -15,9 +15,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
 import com.mypurecloud.sdk.v2.model.ConversationEditedInput;
+import com.mypurecloud.sdk.v2.model.ConversationSummaryEditedBy;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryFollowup;
+import com.mypurecloud.sdk.v2.model.ConversationSummaryLabel;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryReason;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryResolution;
+import com.mypurecloud.sdk.v2.model.ConversationSummaryTriggerSource;
 import com.mypurecloud.sdk.v2.model.ConversationSummaryWrapupCode;
 import com.mypurecloud.sdk.v2.model.Entity;
 import io.swagger.annotations.ApiModel;
@@ -147,12 +150,114 @@ public class ConversationSessionSummary  implements Serializable {
   private ConversationSummaryFollowup followup = null;
   private ConversationSummaryResolution resolution = null;
   private Date dateCreated = null;
+  private Entity latestCommunication = null;
+  private List<ConversationSummaryLabel> labels = null;
+  private AddressableEntityRef queue = null;
+  private ConversationSummaryTriggerSource triggerSource = null;
+
+  private static class SummarySourceTypeEnumDeserializer extends StdDeserializer<SummarySourceTypeEnum> {
+    public SummarySourceTypeEnumDeserializer() {
+      super(SummarySourceTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public SummarySourceTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return SummarySourceTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * The service used to generate the summary.
+   */
+ @JsonDeserialize(using = SummarySourceTypeEnumDeserializer.class)
+  public enum SummarySourceTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    GENESYSNATIVESERVICE("GenesysNativeService"),
+    EXTERNALSERVICE("ExternalService");
+
+    private String value;
+
+    SummarySourceTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static SummarySourceTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (SummarySourceTypeEnum value : SummarySourceTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return SummarySourceTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private SummarySourceTypeEnum summarySourceType = null;
+
+  private static class TriggerTypeEnumDeserializer extends StdDeserializer<TriggerTypeEnum> {
+    public TriggerTypeEnumDeserializer() {
+      super(TriggerTypeEnumDeserializer.class);
+    }
+
+    @Override
+    public TriggerTypeEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return TriggerTypeEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * How summarization was triggered, either on-demand by an agent or automatically after the conversation disconnect.
+   */
+ @JsonDeserialize(using = TriggerTypeEnumDeserializer.class)
+  public enum TriggerTypeEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    ONDEMAND("OnDemand"),
+    AFTERDISCONNECT("AfterDisconnect");
+
+    private String value;
+
+    TriggerTypeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static TriggerTypeEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (TriggerTypeEnum value : TriggerTypeEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return TriggerTypeEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private TriggerTypeEnum triggerType = null;
+  private ConversationSummaryEditedBy lastEditedBy = null;
   private Entity communication = null;
   private List<AddressableEntityRef> participants = null;
 
   public ConversationSessionSummary() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       predictedWrapupCodes = new ArrayList<ConversationSummaryWrapupCode>();
+      labels = new ArrayList<ConversationSummaryLabel>();
       participants = new ArrayList<AddressableEntityRef>();
     }
   }
@@ -160,6 +265,7 @@ public class ConversationSessionSummary  implements Serializable {
   public ConversationSessionSummary(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
       predictedWrapupCodes = new ArrayList<ConversationSummaryWrapupCode>();
+      labels = new ArrayList<ConversationSummaryLabel>();
       participants = new ArrayList<AddressableEntityRef>();
     }
   }
@@ -382,6 +488,132 @@ public class ConversationSessionSummary  implements Serializable {
 
 
   /**
+   * The most recent communication whose corresponding content was used for generating the summary. This field will be null if not available.
+   **/
+  public ConversationSessionSummary latestCommunication(Entity latestCommunication) {
+    this.latestCommunication = latestCommunication;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The most recent communication whose corresponding content was used for generating the summary. This field will be null if not available.")
+  @JsonProperty("latestCommunication")
+  public Entity getLatestCommunication() {
+    return latestCommunication;
+  }
+  public void setLatestCommunication(Entity latestCommunication) {
+    this.latestCommunication = latestCommunication;
+  }
+
+
+  /**
+   * The summary labels.
+   **/
+  public ConversationSessionSummary labels(List<ConversationSummaryLabel> labels) {
+    this.labels = labels;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The summary labels.")
+  @JsonProperty("labels")
+  public List<ConversationSummaryLabel> getLabels() {
+    return labels;
+  }
+  public void setLabels(List<ConversationSummaryLabel> labels) {
+    this.labels = labels;
+  }
+
+
+  /**
+   * The queue that handled the conversation, if any.
+   **/
+  public ConversationSessionSummary queue(AddressableEntityRef queue) {
+    this.queue = queue;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The queue that handled the conversation, if any.")
+  @JsonProperty("queue")
+  public AddressableEntityRef getQueue() {
+    return queue;
+  }
+  public void setQueue(AddressableEntityRef queue) {
+    this.queue = queue;
+  }
+
+
+  /**
+   * The configuration source that triggered summarization.
+   **/
+  public ConversationSessionSummary triggerSource(ConversationSummaryTriggerSource triggerSource) {
+    this.triggerSource = triggerSource;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The configuration source that triggered summarization.")
+  @JsonProperty("triggerSource")
+  public ConversationSummaryTriggerSource getTriggerSource() {
+    return triggerSource;
+  }
+  public void setTriggerSource(ConversationSummaryTriggerSource triggerSource) {
+    this.triggerSource = triggerSource;
+  }
+
+
+  /**
+   * The service used to generate the summary.
+   **/
+  public ConversationSessionSummary summarySourceType(SummarySourceTypeEnum summarySourceType) {
+    this.summarySourceType = summarySourceType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The service used to generate the summary.")
+  @JsonProperty("summarySourceType")
+  public SummarySourceTypeEnum getSummarySourceType() {
+    return summarySourceType;
+  }
+  public void setSummarySourceType(SummarySourceTypeEnum summarySourceType) {
+    this.summarySourceType = summarySourceType;
+  }
+
+
+  /**
+   * How summarization was triggered, either on-demand by an agent or automatically after the conversation disconnect.
+   **/
+  public ConversationSessionSummary triggerType(TriggerTypeEnum triggerType) {
+    this.triggerType = triggerType;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "How summarization was triggered, either on-demand by an agent or automatically after the conversation disconnect.")
+  @JsonProperty("triggerType")
+  public TriggerTypeEnum getTriggerType() {
+    return triggerType;
+  }
+  public void setTriggerType(TriggerTypeEnum triggerType) {
+    this.triggerType = triggerType;
+  }
+
+
+  /**
+   * The user that last edited the summary, if the summary was edited.
+   **/
+  public ConversationSessionSummary lastEditedBy(ConversationSummaryEditedBy lastEditedBy) {
+    this.lastEditedBy = lastEditedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The user that last edited the summary, if the summary was edited.")
+  @JsonProperty("lastEditedBy")
+  public ConversationSummaryEditedBy getLastEditedBy() {
+    return lastEditedBy;
+  }
+  public void setLastEditedBy(ConversationSummaryEditedBy lastEditedBy) {
+    this.lastEditedBy = lastEditedBy;
+  }
+
+
+  /**
    * The communication object of the summary.
    **/
   public ConversationSessionSummary communication(Entity communication) {
@@ -439,13 +671,20 @@ public class ConversationSessionSummary  implements Serializable {
             Objects.equals(this.followup, conversationSessionSummary.followup) &&
             Objects.equals(this.resolution, conversationSessionSummary.resolution) &&
             Objects.equals(this.dateCreated, conversationSessionSummary.dateCreated) &&
+            Objects.equals(this.latestCommunication, conversationSessionSummary.latestCommunication) &&
+            Objects.equals(this.labels, conversationSessionSummary.labels) &&
+            Objects.equals(this.queue, conversationSessionSummary.queue) &&
+            Objects.equals(this.triggerSource, conversationSessionSummary.triggerSource) &&
+            Objects.equals(this.summarySourceType, conversationSessionSummary.summarySourceType) &&
+            Objects.equals(this.triggerType, conversationSessionSummary.triggerType) &&
+            Objects.equals(this.lastEditedBy, conversationSessionSummary.lastEditedBy) &&
             Objects.equals(this.communication, conversationSessionSummary.communication) &&
             Objects.equals(this.participants, conversationSessionSummary.participants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, text, confidence, status, mediaType, language, predictedWrapupCodes, editedSummary, reason, followup, resolution, dateCreated, communication, participants);
+    return Objects.hash(id, text, confidence, status, mediaType, language, predictedWrapupCodes, editedSummary, reason, followup, resolution, dateCreated, latestCommunication, labels, queue, triggerSource, summarySourceType, triggerType, lastEditedBy, communication, participants);
   }
 
   @Override
@@ -465,6 +704,13 @@ public class ConversationSessionSummary  implements Serializable {
     sb.append("    followup: ").append(toIndentedString(followup)).append("\n");
     sb.append("    resolution: ").append(toIndentedString(resolution)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    latestCommunication: ").append(toIndentedString(latestCommunication)).append("\n");
+    sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
+    sb.append("    queue: ").append(toIndentedString(queue)).append("\n");
+    sb.append("    triggerSource: ").append(toIndentedString(triggerSource)).append("\n");
+    sb.append("    summarySourceType: ").append(toIndentedString(summarySourceType)).append("\n");
+    sb.append("    triggerType: ").append(toIndentedString(triggerType)).append("\n");
+    sb.append("    lastEditedBy: ").append(toIndentedString(lastEditedBy)).append("\n");
     sb.append("    communication: ").append(toIndentedString(communication)).append("\n");
     sb.append("    participants: ").append(toIndentedString(participants)).append("\n");
     sb.append("}");

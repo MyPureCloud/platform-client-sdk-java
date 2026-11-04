@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleShift;
 import com.mypurecloud.sdk.v2.model.BuFullDayTimeOffMarker;
 import com.mypurecloud.sdk.v2.model.UserReference;
+import com.mypurecloud.sdk.v2.model.WorkPlanReference;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -30,11 +31,13 @@ public class BuAgentScheduleSearchResponse  implements Serializable {
   private UserReference user = null;
   private List<BuAgentScheduleShift> shifts = null;
   private List<BuFullDayTimeOffMarker> fullDayTimeOffMarkers = null;
+  private List<WorkPlanReference> workPlansPerWeek = null;
 
   public BuAgentScheduleSearchResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       shifts = new ArrayList<BuAgentScheduleShift>();
       fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
+      workPlansPerWeek = new ArrayList<WorkPlanReference>();
     }
   }
 
@@ -42,6 +45,7 @@ public class BuAgentScheduleSearchResponse  implements Serializable {
     if (initWithEmptyList == true) { 
       shifts = new ArrayList<BuAgentScheduleShift>();
       fullDayTimeOffMarkers = new ArrayList<BuFullDayTimeOffMarker>();
+      workPlansPerWeek = new ArrayList<WorkPlanReference>();
     }
   }
 
@@ -100,6 +104,24 @@ public class BuAgentScheduleSearchResponse  implements Serializable {
   }
 
 
+  /**
+   * The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week
+   **/
+  public BuAgentScheduleSearchResponse workPlansPerWeek(List<WorkPlanReference> workPlansPerWeek) {
+    this.workPlansPerWeek = workPlansPerWeek;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The work plans per week for this user from the work plan rotation. Null values in the list denotes that user is not part of any work plan for that week")
+  @JsonProperty("workPlansPerWeek")
+  public List<WorkPlanReference> getWorkPlansPerWeek() {
+    return workPlansPerWeek;
+  }
+  public void setWorkPlansPerWeek(List<WorkPlanReference> workPlansPerWeek) {
+    this.workPlansPerWeek = workPlansPerWeek;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -112,12 +134,13 @@ public class BuAgentScheduleSearchResponse  implements Serializable {
 
     return Objects.equals(this.user, buAgentScheduleSearchResponse.user) &&
             Objects.equals(this.shifts, buAgentScheduleSearchResponse.shifts) &&
-            Objects.equals(this.fullDayTimeOffMarkers, buAgentScheduleSearchResponse.fullDayTimeOffMarkers);
+            Objects.equals(this.fullDayTimeOffMarkers, buAgentScheduleSearchResponse.fullDayTimeOffMarkers) &&
+            Objects.equals(this.workPlansPerWeek, buAgentScheduleSearchResponse.workPlansPerWeek);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(user, shifts, fullDayTimeOffMarkers);
+    return Objects.hash(user, shifts, fullDayTimeOffMarkers, workPlansPerWeek);
   }
 
   @Override
@@ -128,6 +151,7 @@ public class BuAgentScheduleSearchResponse  implements Serializable {
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    shifts: ").append(toIndentedString(shifts)).append("\n");
     sb.append("    fullDayTimeOffMarkers: ").append(toIndentedString(fullDayTimeOffMarkers)).append("\n");
+    sb.append("    workPlansPerWeek: ").append(toIndentedString(workPlansPerWeek)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -43,14 +43,14 @@ public class PredictiveRoutingCustomKpiAttributionEvent  implements Serializable
 
   
   /**
-   * A unique (UUID) eventId for this event
+   * A unique UUID v4 used to identify each attribution event uniquely
    **/
   public PredictiveRoutingCustomKpiAttributionEvent eventId(String eventId) {
     this.eventId = eventId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A unique (UUID) eventId for this event")
+  @ApiModelProperty(example = "null", required = true, value = "A unique UUID v4 used to identify each attribution event uniquely")
   @JsonProperty("eventId")
   public String getEventId() {
     return eventId;
@@ -61,14 +61,14 @@ public class PredictiveRoutingCustomKpiAttributionEvent  implements Serializable
 
 
   /**
-   * A timestamp as epoch representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   * The date and time at which the attributed business result was achieved, in UTC, formatted as an ISO-8601 string. For example, 2023-01-07T08:30:00.123Z. Use the time the business result actually occurred or was confirmed, not a later ingestion, synchronisation, reporting, or batch-processing time. When conversationId is supplied, this timestamp must fall within the conversation attribution window, or the event is rejected. This means eventDateTime must be no earlier than the conversation start time, and no later than the conversation end time plus the grace period for the conversation's media type (1 hour for voice, message and email).
    **/
   public PredictiveRoutingCustomKpiAttributionEvent eventDateTime(Date eventDateTime) {
     this.eventDateTime = eventDateTime;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "A timestamp as epoch representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @ApiModelProperty(example = "null", required = true, value = "The date and time at which the attributed business result was achieved, in UTC, formatted as an ISO-8601 string. For example, 2023-01-07T08:30:00.123Z. Use the time the business result actually occurred or was confirmed, not a later ingestion, synchronisation, reporting, or batch-processing time. When conversationId is supplied, this timestamp must fall within the conversation attribution window, or the event is rejected. This means eventDateTime must be no earlier than the conversation start time, and no later than the conversation end time plus the grace period for the conversation's media type (1 hour for voice, message and email).")
   @JsonProperty("eventDateTime")
   public Date getEventDateTime() {
     return eventDateTime;
@@ -79,14 +79,14 @@ public class PredictiveRoutingCustomKpiAttributionEvent  implements Serializable
 
 
   /**
-   * The UUID of the external contact associated with this event
+   * The id of the External Contact of the customer who was involved in the KPI attribution. If this field is populated, we will retrieve the relevant conversation internally - thus this field is not compatible with conversationId. You must chose to use either externalContactId or conversationId but not both on the same event.
    **/
   public PredictiveRoutingCustomKpiAttributionEvent externalContactId(String externalContactId) {
     this.externalContactId = externalContactId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The UUID of the external contact associated with this event")
+  @ApiModelProperty(example = "null", value = "The id of the External Contact of the customer who was involved in the KPI attribution. If this field is populated, we will retrieve the relevant conversation internally - thus this field is not compatible with conversationId. You must chose to use either externalContactId or conversationId but not both on the same event.")
   @JsonProperty("externalContactId")
   public String getExternalContactId() {
     return externalContactId;
@@ -97,14 +97,14 @@ public class PredictiveRoutingCustomKpiAttributionEvent  implements Serializable
 
 
   /**
-   * The UUID of the conversation associated with this event
+   * The id of the conversation. This field must be omitted if externalContactId is already populated on the event.
    **/
   public PredictiveRoutingCustomKpiAttributionEvent conversationId(String conversationId) {
     this.conversationId = conversationId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The UUID of the conversation associated with this event")
+  @ApiModelProperty(example = "null", value = "The id of the conversation. This field must be omitted if externalContactId is already populated on the event.")
   @JsonProperty("conversationId")
   public String getConversationId() {
     return conversationId;
@@ -115,14 +115,14 @@ public class PredictiveRoutingCustomKpiAttributionEvent  implements Serializable
 
 
   /**
-   * The UUID of the agent associated with this event
+   * The id of the agent who achieved the KPI attribution that is getting the attribution.
    **/
   public PredictiveRoutingCustomKpiAttributionEvent agentId(String agentId) {
     this.agentId = agentId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The UUID of the agent associated with this event")
+  @ApiModelProperty(example = "null", value = "The id of the agent who achieved the KPI attribution that is getting the attribution.")
   @JsonProperty("agentId")
   public String getAgentId() {
     return agentId;
@@ -133,14 +133,14 @@ public class PredictiveRoutingCustomKpiAttributionEvent  implements Serializable
 
 
   /**
-   * The UUID of the KPI associated with this event
+   * The id of the relevant revenue KPI within the Genesys Platform - this id can be retrieved from the Revenue KPI Admin UI.
    **/
   public PredictiveRoutingCustomKpiAttributionEvent kpiId(String kpiId) {
     this.kpiId = kpiId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The UUID of the KPI associated with this event")
+  @ApiModelProperty(example = "null", required = true, value = "The id of the relevant revenue KPI within the Genesys Platform - this id can be retrieved from the Revenue KPI Admin UI.")
   @JsonProperty("kpiId")
   public String getKpiId() {
     return kpiId;
@@ -151,14 +151,14 @@ public class PredictiveRoutingCustomKpiAttributionEvent  implements Serializable
 
 
   /**
-   * The value associated with this outcome attribution
+   * For Sales Conversion, Retention and Churn KPI type, the numeric value expected is \"1\". For SalesValue KPI type, a numeric value representing the aggregated value of all KPI attributions achieved by an agent during a conversation, we do not allow multiple event uploads for the same conversationId and agentId pair.
    **/
   public PredictiveRoutingCustomKpiAttributionEvent associatedValue(Double associatedValue) {
     this.associatedValue = associatedValue;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The value associated with this outcome attribution")
+  @ApiModelProperty(example = "null", required = true, value = "For Sales Conversion, Retention and Churn KPI type, the numeric value expected is \"1\". For SalesValue KPI type, a numeric value representing the aggregated value of all KPI attributions achieved by an agent during a conversation, we do not allow multiple event uploads for the same conversationId and agentId pair.")
   @JsonProperty("associatedValue")
   public Double getAssociatedValue() {
     return associatedValue;

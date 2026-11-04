@@ -78,6 +78,7 @@ public class ConversationResponseSuggestionsTopicSuggestionContext  implements S
   private String userId = null;
   private String externalContactId = null;
   private String assistantId = null;
+  private String variationId = null;
   private String utteranceId = null;
   private String messageId = null;
   private String queryStatement = null;
@@ -231,6 +232,23 @@ public class ConversationResponseSuggestionsTopicSuggestionContext  implements S
 
   /**
    **/
+  public ConversationResponseSuggestionsTopicSuggestionContext variationId(String variationId) {
+    this.variationId = variationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("variationId")
+  public String getVariationId() {
+    return variationId;
+  }
+  public void setVariationId(String variationId) {
+    this.variationId = variationId;
+  }
+
+
+  /**
+   **/
   public ConversationResponseSuggestionsTopicSuggestionContext utteranceId(String utteranceId) {
     this.utteranceId = utteranceId;
     return this;
@@ -346,6 +364,7 @@ public class ConversationResponseSuggestionsTopicSuggestionContext  implements S
             Objects.equals(this.userId, conversationResponseSuggestionsTopicSuggestionContext.userId) &&
             Objects.equals(this.externalContactId, conversationResponseSuggestionsTopicSuggestionContext.externalContactId) &&
             Objects.equals(this.assistantId, conversationResponseSuggestionsTopicSuggestionContext.assistantId) &&
+            Objects.equals(this.variationId, conversationResponseSuggestionsTopicSuggestionContext.variationId) &&
             Objects.equals(this.utteranceId, conversationResponseSuggestionsTopicSuggestionContext.utteranceId) &&
             Objects.equals(this.messageId, conversationResponseSuggestionsTopicSuggestionContext.messageId) &&
             Objects.equals(this.queryStatement, conversationResponseSuggestionsTopicSuggestionContext.queryStatement) &&
@@ -356,7 +375,7 @@ public class ConversationResponseSuggestionsTopicSuggestionContext  implements S
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, utteranceId, messageId, queryStatement, language, queryReformulationContext, participantType);
+    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, variationId, utteranceId, messageId, queryStatement, language, queryReformulationContext, participantType);
   }
 
   @Override
@@ -369,6 +388,7 @@ public class ConversationResponseSuggestionsTopicSuggestionContext  implements S
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    assistantId: ").append(toIndentedString(assistantId)).append("\n");
+    sb.append("    variationId: ").append(toIndentedString(variationId)).append("\n");
     sb.append("    utteranceId: ").append(toIndentedString(utteranceId)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    queryStatement: ").append(toIndentedString(queryStatement)).append("\n");

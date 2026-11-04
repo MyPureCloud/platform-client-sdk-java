@@ -9,9 +9,10 @@
 | **name** | **String** | Name of the category |  |
 | **description** | **String** | Description of the category |  |
 | **dateCreated** | [**Date**](Date) | Creation date of the category. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
+| **usage** | [**List&lt;CustomerIntentUsage&gt;**](CustomerIntentUsage) | Places where the category is used. Omitted when usage tracking is off or includeUsage is false or omitted. Otherwise, empty when unused or populated with usage entries. |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

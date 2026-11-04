@@ -149,6 +149,20 @@ public class GetBillingContractsInvoicesRequest {
 
 	}
 
+	private String agreementId;
+	public String getAgreementId() {
+		return this.agreementId;
+	}
+
+	public void setAgreementId(String agreementId) {
+		this.agreementId = agreementId;
+	}
+
+	public GetBillingContractsInvoicesRequest withAgreementId(String agreementId) {
+	    this.setAgreementId(agreementId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -189,6 +203,9 @@ public class GetBillingContractsInvoicesRequest {
         
 
                 .withQueryParameters("paymentStatus", "", paymentStatus)
+        
+
+                .withQueryParameters("agreementId", "", agreementId)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -248,6 +265,11 @@ public class GetBillingContractsInvoicesRequest {
 		    request.setPaymentStatus(paymentStatus.toString());
 
 		    return this;
+		}
+
+		public Builder withAgreementId(String agreementId) {
+			request.setAgreementId(agreementId);
+			return this;
 		}
 
 

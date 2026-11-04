@@ -102,6 +102,7 @@ import com.mypurecloud.sdk.v2.model.LabelUpdateRequest;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.OperationCreatorUserResponse;
 import com.mypurecloud.sdk.v2.model.OperationListing;
+import com.mypurecloud.sdk.v2.model.OrgV3SourcesTagsResponse;
 import com.mypurecloud.sdk.v2.model.SalesforceSourceRequest;
 import com.mypurecloud.sdk.v2.model.SalesforceSourceResponse;
 import com.mypurecloud.sdk.v2.model.SearchUpdateRequest;
@@ -121,6 +122,9 @@ import com.mypurecloud.sdk.v2.model.V3SourceCreateRequest;
 import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceExpandableListing;
 import com.mypurecloud.sdk.v2.model.V3SourceExpandableResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceFileCountsRequest;
+import com.mypurecloud.sdk.v2.model.V3SourceFileCountsResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceTagsGroupedResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
 import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
 import com.mypurecloud.sdk.v2.model.V3Synchronization;
@@ -198,6 +202,8 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationUploa
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesSynchronizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesTagsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesTagsGroupedRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeConnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeGuestSessionDocumentsSearchSearchIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
@@ -259,6 +265,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationDele
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourcesFilesCountsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeSourceRequest;
@@ -5007,6 +5014,156 @@ public class KnowledgeApiAsync {
   }
 
   /**
+   * Get tags across sources for the organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OrgV3SourcesTagsResponse> getKnowledgeSourcesTagsAsync(GetKnowledgeSourcesTagsRequest request, final AsyncApiCallback<OrgV3SourcesTagsResponse> callback) {
+    try {
+      final SettableFuture<OrgV3SourcesTagsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrgV3SourcesTagsResponse>() {}, new AsyncApiCallback<ApiResponse<OrgV3SourcesTagsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgV3SourcesTagsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get tags across sources for the organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OrgV3SourcesTagsResponse>> getKnowledgeSourcesTagsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrgV3SourcesTagsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OrgV3SourcesTagsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OrgV3SourcesTagsResponse>() {}, new AsyncApiCallback<ApiResponse<OrgV3SourcesTagsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgV3SourcesTagsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgV3SourcesTagsResponse> response = (ApiResponse<OrgV3SourcesTagsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgV3SourcesTagsResponse> response = (ApiResponse<OrgV3SourcesTagsResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get tags grouped by source for the organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SourceTagsGroupedResponse> getKnowledgeSourcesTagsGroupedAsync(GetKnowledgeSourcesTagsGroupedRequest request, final AsyncApiCallback<V3SourceTagsGroupedResponse> callback) {
+    try {
+      final SettableFuture<V3SourceTagsGroupedResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SourceTagsGroupedResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceTagsGroupedResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceTagsGroupedResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get tags grouped by source for the organization
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SourceTagsGroupedResponse>> getKnowledgeSourcesTagsGroupedAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<V3SourceTagsGroupedResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SourceTagsGroupedResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SourceTagsGroupedResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceTagsGroupedResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceTagsGroupedResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceTagsGroupedResponse> response = (ApiResponse<V3SourceTagsGroupedResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceTagsGroupedResponse> response = (ApiResponse<V3SourceTagsGroupedResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Update connection
    * 
    * @param request the request object
@@ -9570,6 +9727,81 @@ public class KnowledgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<V3SourceDetailedResponse> response = (ApiResponse<V3SourceDetailedResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get per-source file counts for the selected tag filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<V3SourceFileCountsResponse> postKnowledgeSourcesFilesCountsAsync(PostKnowledgeSourcesFilesCountsRequest request, final AsyncApiCallback<V3SourceFileCountsResponse> callback) {
+    try {
+      final SettableFuture<V3SourceFileCountsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<V3SourceFileCountsResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceFileCountsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceFileCountsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get per-source file counts for the selected tag filter
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<V3SourceFileCountsResponse>> postKnowledgeSourcesFilesCountsAsync(ApiRequest<V3SourceFileCountsRequest> request, final AsyncApiCallback<ApiResponse<V3SourceFileCountsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<V3SourceFileCountsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<V3SourceFileCountsResponse>() {}, new AsyncApiCallback<ApiResponse<V3SourceFileCountsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<V3SourceFileCountsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceFileCountsResponse> response = (ApiResponse<V3SourceFileCountsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<V3SourceFileCountsResponse> response = (ApiResponse<V3SourceFileCountsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

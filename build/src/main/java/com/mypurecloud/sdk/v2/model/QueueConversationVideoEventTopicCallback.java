@@ -278,6 +278,7 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
   private String callerId = null;
   private String callerIdName = null;
   private QueueConversationVideoEventTopicQueueMediaSettings queueMediaSettings = null;
+  private String publicIpAddress = null;
 
   public QueueConversationVideoEventTopicCallback() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -774,6 +775,24 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
   }
 
 
+  /**
+   * The reported client IP of the phone for the call.
+   **/
+  public QueueConversationVideoEventTopicCallback publicIpAddress(String publicIpAddress) {
+    this.publicIpAddress = publicIpAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reported client IP of the phone for the call.")
+  @JsonProperty("publicIpAddress")
+  public String getPublicIpAddress() {
+    return publicIpAddress;
+  }
+  public void setPublicIpAddress(String publicIpAddress) {
+    this.publicIpAddress = publicIpAddress;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -810,12 +829,13 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
             Objects.equals(this.afterCallWorkRequired, queueConversationVideoEventTopicCallback.afterCallWorkRequired) &&
             Objects.equals(this.callerId, queueConversationVideoEventTopicCallback.callerId) &&
             Objects.equals(this.callerIdName, queueConversationVideoEventTopicCallback.callerIdName) &&
-            Objects.equals(this.queueMediaSettings, queueConversationVideoEventTopicCallback.queueMediaSettings);
+            Objects.equals(this.queueMediaSettings, queueConversationVideoEventTopicCallback.queueMediaSettings) &&
+            Objects.equals(this.publicIpAddress, queueConversationVideoEventTopicCallback.publicIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName, queueMediaSettings);
+    return Objects.hash(state, initialState, id, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, peerId, externalCampaign, skipEnabled, provider, timeoutSeconds, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName, queueMediaSettings, publicIpAddress);
   }
 
   @Override
@@ -850,6 +870,7 @@ public class QueueConversationVideoEventTopicCallback  implements Serializable {
     sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
     sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
+    sb.append("    publicIpAddress: ").append(toIndentedString(publicIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

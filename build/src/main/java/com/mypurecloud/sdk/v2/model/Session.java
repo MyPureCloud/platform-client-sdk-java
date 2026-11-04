@@ -1093,14 +1093,14 @@ public class Session  implements Serializable {
 
 
   /**
-   * Cases associated with the session - conversation only.
+   * Cases associated with the session - conversation and campaign only.
    **/
   public Session caseAssociations(List<JourneyCaseAssociation> caseAssociations) {
     this.caseAssociations = caseAssociations;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "Cases associated with the session - conversation only.")
+  @ApiModelProperty(example = "null", value = "Cases associated with the session - conversation and campaign only.")
   @JsonProperty("caseAssociations")
   public List<JourneyCaseAssociation> getCaseAssociations() {
     return caseAssociations;

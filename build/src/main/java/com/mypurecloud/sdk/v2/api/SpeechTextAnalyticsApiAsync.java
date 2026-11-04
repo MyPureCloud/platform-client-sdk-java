@@ -67,6 +67,7 @@ import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicsDefinitionsProgramMappings;
 import com.mypurecloud.sdk.v2.model.TopicsDefinitionsProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.TranscriptOutlineResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
 import com.mypurecloud.sdk.v2.model.TranscriptUrls;
@@ -87,6 +88,7 @@ import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsCategoriesReq
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscriptoutlineRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationCommunicationTranscripturlsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSpeechandtextanalyticsConversationSentimentsRequest;
@@ -980,6 +982,81 @@ public class SpeechTextAnalyticsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<ConversationCategoriesEntityListing> response = (ApiResponse<ConversationCategoriesEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the transcript outline for a specific conversation and communication.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TranscriptOutlineResponse> getSpeechandtextanalyticsConversationCommunicationTranscriptoutlineAsync(GetSpeechandtextanalyticsConversationCommunicationTranscriptoutlineRequest request, final AsyncApiCallback<TranscriptOutlineResponse> callback) {
+    try {
+      final SettableFuture<TranscriptOutlineResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TranscriptOutlineResponse>() {}, new AsyncApiCallback<ApiResponse<TranscriptOutlineResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TranscriptOutlineResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the transcript outline for a specific conversation and communication.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TranscriptOutlineResponse>> getSpeechandtextanalyticsConversationCommunicationTranscriptoutlineAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TranscriptOutlineResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TranscriptOutlineResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TranscriptOutlineResponse>() {}, new AsyncApiCallback<ApiResponse<TranscriptOutlineResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<TranscriptOutlineResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TranscriptOutlineResponse> response = (ApiResponse<TranscriptOutlineResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TranscriptOutlineResponse> response = (ApiResponse<TranscriptOutlineResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -209,6 +209,11 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
   private Long routingPriority = null;
   private List<String> requestedRoutingSkillIds = null;
   private Boolean skillExpressionApplied = null;
+  private String requestedLanguageId = null;
+  private List<String> preferredAgentIds = null;
+  private String outboundCampaignId = null;
+  private String outboundContactListId = null;
+  private String outboundContactId = null;
 
   public AcdStartDetailEventTopicAcdStartEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -216,6 +221,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
       conversationExternalContactIds = new ArrayList<String>();
       conversationExternalOrganizationIds = new ArrayList<String>();
       requestedRoutingSkillIds = new ArrayList<String>();
+      preferredAgentIds = new ArrayList<String>();
     }
   }
 
@@ -225,6 +231,7 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
       conversationExternalContactIds = new ArrayList<String>();
       conversationExternalOrganizationIds = new ArrayList<String>();
       requestedRoutingSkillIds = new ArrayList<String>();
+      preferredAgentIds = new ArrayList<String>();
     }
   }
 
@@ -637,6 +644,91 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public AcdStartDetailEventTopicAcdStartEvent requestedLanguageId(String requestedLanguageId) {
+    this.requestedLanguageId = requestedLanguageId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("requestedLanguageId")
+  public String getRequestedLanguageId() {
+    return requestedLanguageId;
+  }
+  public void setRequestedLanguageId(String requestedLanguageId) {
+    this.requestedLanguageId = requestedLanguageId;
+  }
+
+
+  /**
+   **/
+  public AcdStartDetailEventTopicAcdStartEvent preferredAgentIds(List<String> preferredAgentIds) {
+    this.preferredAgentIds = preferredAgentIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("preferredAgentIds")
+  public List<String> getPreferredAgentIds() {
+    return preferredAgentIds;
+  }
+  public void setPreferredAgentIds(List<String> preferredAgentIds) {
+    this.preferredAgentIds = preferredAgentIds;
+  }
+
+
+  /**
+   **/
+  public AcdStartDetailEventTopicAcdStartEvent outboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundCampaignId")
+  public String getOutboundCampaignId() {
+    return outboundCampaignId;
+  }
+  public void setOutboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+  }
+
+
+  /**
+   **/
+  public AcdStartDetailEventTopicAcdStartEvent outboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactListId")
+  public String getOutboundContactListId() {
+    return outboundContactListId;
+  }
+  public void setOutboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+  }
+
+
+  /**
+   **/
+  public AcdStartDetailEventTopicAcdStartEvent outboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactId")
+  public String getOutboundContactId() {
+    return outboundContactId;
+  }
+  public void setOutboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -670,12 +762,17 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
             Objects.equals(this.utilizationLabel, acdStartDetailEventTopicAcdStartEvent.utilizationLabel) &&
             Objects.equals(this.routingPriority, acdStartDetailEventTopicAcdStartEvent.routingPriority) &&
             Objects.equals(this.requestedRoutingSkillIds, acdStartDetailEventTopicAcdStartEvent.requestedRoutingSkillIds) &&
-            Objects.equals(this.skillExpressionApplied, acdStartDetailEventTopicAcdStartEvent.skillExpressionApplied);
+            Objects.equals(this.skillExpressionApplied, acdStartDetailEventTopicAcdStartEvent.skillExpressionApplied) &&
+            Objects.equals(this.requestedLanguageId, acdStartDetailEventTopicAcdStartEvent.requestedLanguageId) &&
+            Objects.equals(this.preferredAgentIds, acdStartDetailEventTopicAcdStartEvent.preferredAgentIds) &&
+            Objects.equals(this.outboundCampaignId, acdStartDetailEventTopicAcdStartEvent.outboundCampaignId) &&
+            Objects.equals(this.outboundContactListId, acdStartDetailEventTopicAcdStartEvent.outboundContactListId) &&
+            Objects.equals(this.outboundContactId, acdStartDetailEventTopicAcdStartEvent.outboundContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, routingPriority, requestedRoutingSkillIds, skillExpressionApplied);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, routingPriority, requestedRoutingSkillIds, skillExpressionApplied, requestedLanguageId, preferredAgentIds, outboundCampaignId, outboundContactListId, outboundContactId);
   }
 
   @Override
@@ -707,6 +804,11 @@ public class AcdStartDetailEventTopicAcdStartEvent  implements Serializable {
     sb.append("    routingPriority: ").append(toIndentedString(routingPriority)).append("\n");
     sb.append("    requestedRoutingSkillIds: ").append(toIndentedString(requestedRoutingSkillIds)).append("\n");
     sb.append("    skillExpressionApplied: ").append(toIndentedString(skillExpressionApplied)).append("\n");
+    sb.append("    requestedLanguageId: ").append(toIndentedString(requestedLanguageId)).append("\n");
+    sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");
+    sb.append("    outboundCampaignId: ").append(toIndentedString(outboundCampaignId)).append("\n");
+    sb.append("    outboundContactListId: ").append(toIndentedString(outboundContactListId)).append("\n");
+    sb.append("    outboundContactId: ").append(toIndentedString(outboundContactId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

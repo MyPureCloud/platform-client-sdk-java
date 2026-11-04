@@ -74,6 +74,7 @@ import com.mypurecloud.sdk.v2.model.TopicRequest;
 import com.mypurecloud.sdk.v2.model.TopicsDefinitionsProgramMappings;
 import com.mypurecloud.sdk.v2.model.TopicsDefinitionsProgramsMappingsEntityListing;
 import com.mypurecloud.sdk.v2.model.TopicsEntityListing;
+import com.mypurecloud.sdk.v2.model.TranscriptOutlineResponse;
 import com.mypurecloud.sdk.v2.model.TranscriptSearchRequest;
 import com.mypurecloud.sdk.v2.model.TranscriptUrl;
 import com.mypurecloud.sdk.v2.model.TranscriptUrls;

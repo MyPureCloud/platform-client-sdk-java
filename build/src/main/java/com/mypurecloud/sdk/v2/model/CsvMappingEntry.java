@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -24,6 +25,54 @@ public class CsvMappingEntry  implements Serializable {
   
   private String sourceField = null;
   private String targetField = null;
+
+  private static class ValueFormatEnumDeserializer extends StdDeserializer<ValueFormatEnum> {
+    public ValueFormatEnumDeserializer() {
+      super(ValueFormatEnumDeserializer.class);
+    }
+
+    @Override
+    public ValueFormatEnum deserialize(JsonParser jsonParser, DeserializationContext ctxt)
+            throws IOException {
+      JsonNode node = jsonParser.getCodec().readTree(jsonParser);
+      return ValueFormatEnum.fromString(node.toString().replace("\"", ""));
+    }
+  }
+  /**
+   * How the CSV cell value is interpreted at the target path. When omitted, the cell is treated as a string.
+   */
+ @JsonDeserialize(using = ValueFormatEnumDeserializer.class)
+  public enum ValueFormatEnum {
+    OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    STRING("String"),
+    JSON("Json");
+
+    private String value;
+
+    ValueFormatEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonCreator
+    public static ValueFormatEnum fromString(String key) {
+      if (key == null) return null;
+
+      for (ValueFormatEnum value : ValueFormatEnum.values()) {
+        if (key.equalsIgnoreCase(value.toString())) {
+          return value;
+        }
+      }
+
+      return ValueFormatEnum.values()[0];
+    }
+
+    @Override
+    @JsonValue
+    public String toString() {
+      return String.valueOf(value);
+    }
+  }
+  private ValueFormatEnum valueFormat = null;
 
   public CsvMappingEntry() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -72,6 +121,24 @@ public class CsvMappingEntry  implements Serializable {
   }
 
 
+  /**
+   * How the CSV cell value is interpreted at the target path. When omitted, the cell is treated as a string.
+   **/
+  public CsvMappingEntry valueFormat(ValueFormatEnum valueFormat) {
+    this.valueFormat = valueFormat;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "How the CSV cell value is interpreted at the target path. When omitted, the cell is treated as a string.")
+  @JsonProperty("valueFormat")
+  public ValueFormatEnum getValueFormat() {
+    return valueFormat;
+  }
+  public void setValueFormat(ValueFormatEnum valueFormat) {
+    this.valueFormat = valueFormat;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -83,12 +150,13 @@ public class CsvMappingEntry  implements Serializable {
     CsvMappingEntry csvMappingEntry = (CsvMappingEntry) o;
 
     return Objects.equals(this.sourceField, csvMappingEntry.sourceField) &&
-            Objects.equals(this.targetField, csvMappingEntry.targetField);
+            Objects.equals(this.targetField, csvMappingEntry.targetField) &&
+            Objects.equals(this.valueFormat, csvMappingEntry.valueFormat);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(sourceField, targetField);
+    return Objects.hash(sourceField, targetField, valueFormat);
   }
 
   @Override
@@ -98,6 +166,7 @@ public class CsvMappingEntry  implements Serializable {
     
     sb.append("    sourceField: ").append(toIndentedString(sourceField)).append("\n");
     sb.append("    targetField: ").append(toIndentedString(targetField)).append("\n");
+    sb.append("    valueFormat: ").append(toIndentedString(valueFormat)).append("\n");
     sb.append("}");
     return sb.toString();
   }

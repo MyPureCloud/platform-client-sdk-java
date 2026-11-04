@@ -11,12 +11,14 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AutoAnswerSettings;
+import com.mypurecloud.sdk.v2.model.ContentSearchSetting;
 import com.mypurecloud.sdk.v2.model.EmailSettings;
 import com.mypurecloud.sdk.v2.model.EmailThreadingSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecutionDataGlobalSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ExecutionDataSettingsRequest;
 import com.mypurecloud.sdk.v2.model.ExternalContactsSettings;
+import com.mypurecloud.sdk.v2.model.OrgSettings;
 import com.mypurecloud.sdk.v2.model.UpdatedSettingsResponse;
 
 
@@ -26,10 +28,13 @@ import com.mypurecloud.sdk.v2.api.request.DeleteUsersAgentuiAgentsAutoanswerAgen
 import com.mypurecloud.sdk.v2.api.request.GetEmailsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmailsSettingsThreadingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSearchSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSettingsExecutiondataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmailsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmailsSettingsThreadingRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchSearchSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchSearchSettingsContentsearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSettingsExecutiondataRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsSettingsRequest;
@@ -495,6 +500,84 @@ public class SettingsApi {
   }
 
   /**
+   * Get the organization's search settings
+   * 
+   * getSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return OrgSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgSettings getSearchSettings() throws IOException, ApiException {
+    return  getSearchSettings(createGetSearchSettingsRequest());
+  }
+
+  /**
+   * Get the organization's search settings
+   * 
+   * getSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @return OrgSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgSettings> getSearchSettingsWithHttpInfo() throws IOException {
+    return getSearchSettings(createGetSearchSettingsRequest().withHttpInfo());
+  }
+
+  private GetSearchSettingsRequest createGetSearchSettingsRequest() {
+    return GetSearchSettingsRequest.builder()
+            .build();
+  }
+
+  /**
+   * Get the organization's search settings
+   * 
+   * getSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return OrgSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgSettings getSearchSettings(GetSearchSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrgSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrgSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get the organization's search settings
+   * 
+   * getSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgSettings> getSearchSettings(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrgSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgSettings> response = (ApiResponse<OrgSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgSettings> response = (ApiResponse<OrgSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
    * @return ExecutionDataGlobalSettingsResponse
@@ -798,6 +881,170 @@ public class SettingsApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<EmailThreadingSettings> response = (ApiResponse<EmailThreadingSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Patch the organization's search settings
+   * 
+   * patchSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Search Settings (required)
+   * @return OrgSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgSettings patchSearchSettings(OrgSettings body) throws IOException, ApiException {
+    return  patchSearchSettings(createPatchSearchSettingsRequest(body));
+  }
+
+  /**
+   * Patch the organization's search settings
+   * 
+   * patchSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Search Settings (required)
+   * @return OrgSettings
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgSettings> patchSearchSettingsWithHttpInfo(OrgSettings body) throws IOException {
+    return patchSearchSettings(createPatchSearchSettingsRequest(body).withHttpInfo());
+  }
+
+  private PatchSearchSettingsRequest createPatchSearchSettingsRequest(OrgSettings body) {
+    return PatchSearchSettingsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Patch the organization's search settings
+   * 
+   * patchSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return OrgSettings
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgSettings patchSearchSettings(PatchSearchSettingsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrgSettings> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrgSettings>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Patch the organization's search settings
+   * 
+   * patchSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgSettings> patchSearchSettings(ApiRequest<OrgSettings> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrgSettings>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgSettings> response = (ApiResponse<OrgSettings>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgSettings> response = (ApiResponse<OrgSettings>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Patch the organization's content search settings
+   * 
+   * patchSearchSettingsContentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Content search setting (required)
+   * @return ContentSearchSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContentSearchSetting patchSearchSettingsContentsearch(ContentSearchSetting body) throws IOException, ApiException {
+    return  patchSearchSettingsContentsearch(createPatchSearchSettingsContentsearchRequest(body));
+  }
+
+  /**
+   * Patch the organization's content search settings
+   * 
+   * patchSearchSettingsContentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param body Content search setting (required)
+   * @return ContentSearchSetting
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContentSearchSetting> patchSearchSettingsContentsearchWithHttpInfo(ContentSearchSetting body) throws IOException {
+    return patchSearchSettingsContentsearch(createPatchSearchSettingsContentsearchRequest(body).withHttpInfo());
+  }
+
+  private PatchSearchSettingsContentsearchRequest createPatchSearchSettingsContentsearchRequest(ContentSearchSetting body) {
+    return PatchSearchSettingsContentsearchRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Patch the organization's content search settings
+   * 
+   * patchSearchSettingsContentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return ContentSearchSetting
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public ContentSearchSetting patchSearchSettingsContentsearch(PatchSearchSettingsContentsearchRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<ContentSearchSetting> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<ContentSearchSetting>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Patch the organization's content search settings
+   * 
+   * patchSearchSettingsContentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<ContentSearchSetting> patchSearchSettingsContentsearch(ApiRequest<ContentSearchSetting> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<ContentSearchSetting>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContentSearchSetting> response = (ApiResponse<ContentSearchSetting>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<ContentSearchSetting> response = (ApiResponse<ContentSearchSetting>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

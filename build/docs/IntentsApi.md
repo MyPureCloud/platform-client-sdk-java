@@ -17,10 +17,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchIntentsCustomerintent**](IntentsApi#patchIntentsCustomerintent) | Patch customer intent for customerIntentId |
 | [**postIntentsAssignmentsExternalcontactCustomerintentAssignment**](IntentsApi#postIntentsAssignmentsExternalcontactCustomerintentAssignment) | Create customer intent assignment for external contact |
 | [**postIntentsCategories**](IntentsApi#postIntentsCategories) | Create category |
+| [**postIntentsCategoriesSimilar**](IntentsApi#postIntentsCategoriesSimilar) | Find similar categories |
 | [**postIntentsCustomerintentSourceintentsBulkAdd**](IntentsApi#postIntentsCustomerintentSourceintentsBulkAdd) | Bulk add source intents to a customer intent |
 | [**postIntentsCustomerintentSourceintentsBulkRemove**](IntentsApi#postIntentsCustomerintentSourceintentsBulkRemove) | Bulk remove source intents mapped to a customer intent |
 | [**postIntentsCustomerintents**](IntentsApi#postIntentsCustomerintents) | Create customer intents |
 | [**postIntentsCustomerintentsBulkRetrieve**](IntentsApi#postIntentsCustomerintentsBulkRetrieve) | Get customer intents by IDs |
+| [**postIntentsCustomerintentsSimilar**](IntentsApi#postIntentsCustomerintentsSimilar) | Find similar customer intents |
 {: class="table-striped"}
 
 
@@ -269,7 +271,7 @@ try {
 # **getIntentsCategory**
 
 
-> [IntentsCategory](IntentsCategory) getIntentsCategory(categoryId)
+> [IntentsCategory](IntentsCategory) getIntentsCategory(categoryId, includeUsage)
 
 Get category for categoryId
 
@@ -302,8 +304,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 IntentsApi apiInstance = new IntentsApi();
 String categoryId = "categoryId_example"; // String | Category id
+Boolean includeUsage = true; // Boolean | When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off.
 try {
-    IntentsCategory result = apiInstance.getIntentsCategory(categoryId);
+    IntentsCategory result = apiInstance.getIntentsCategory(categoryId, includeUsage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntentsApi#getIntentsCategory");
@@ -317,6 +320,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **categoryId** | **String**| Category id | 
+| **includeUsage** | **Boolean**| When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off. | [optional] 
 {: class="table-striped"}
 
 
@@ -328,7 +332,7 @@ try {
 # **getIntentsCustomerintent**
 
 
-> [CustomerIntentResponse](CustomerIntentResponse) getIntentsCustomerintent(customerIntentId)
+> [CustomerIntentResponse](CustomerIntentResponse) getIntentsCustomerintent(customerIntentId, includeUsage)
 
 Get customer intent for customerIntentId
 
@@ -361,8 +365,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 IntentsApi apiInstance = new IntentsApi();
 String customerIntentId = "customerIntentId_example"; // String | Customer Intent id
+Boolean includeUsage = true; // Boolean | When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off.
 try {
-    CustomerIntentResponse result = apiInstance.getIntentsCustomerintent(customerIntentId);
+    CustomerIntentResponse result = apiInstance.getIntentsCustomerintent(customerIntentId, includeUsage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling IntentsApi#getIntentsCustomerintent");
@@ -376,6 +381,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **customerIntentId** | **String**| Customer Intent id | 
+| **includeUsage** | **Boolean**| When usage tracking is enabled, usage is absent when includeUsage is false or omitted, empty when no usage exists, and populated when usage exists. includeUsage is ignored when usage tracking is off. | [optional] 
 {: class="table-striped"}
 
 
@@ -823,6 +829,67 @@ try {
 [**IntentsCategory**](IntentsCategory)
 
 
+# **postIntentsCategoriesSimilar**
+
+
+> [SimilarCategoriesResponse](SimilarCategoriesResponse) postIntentsCategoriesSimilar(body)
+
+Find similar categories
+
+postIntentsCategoriesSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/intents/categories/similar  
+
+Requires ANY permissions: 
+
+* externalContacts:customerIntentTaxonomy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntentsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntentsApi apiInstance = new IntentsApi();
+IntentsCategory body = new IntentsCategory(); // IntentsCategory | Similarity search criteria
+try {
+    SimilarCategoriesResponse result = apiInstance.postIntentsCategoriesSimilar(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntentsApi#postIntentsCategoriesSimilar");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**IntentsCategory**](IntentsCategory)| Similarity search criteria | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SimilarCategoriesResponse**](SimilarCategoriesResponse)
+
+
 # **postIntentsCustomerintentSourceintentsBulkAdd**
 
 
@@ -1063,4 +1130,65 @@ try {
 [**List&lt;CustomerIntentResponse&gt;**](CustomerIntentResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+# **postIntentsCustomerintentsSimilar**
+
+
+> [SimilarCustomerIntentsResponse](SimilarCustomerIntentsResponse) postIntentsCustomerintentsSimilar(body)
+
+Find similar customer intents
+
+postIntentsCustomerintentsSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/intents/customerintents/similar  
+
+Requires ANY permissions: 
+
+* externalContacts:customerIntentTaxonomy:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.IntentsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+IntentsApi apiInstance = new IntentsApi();
+SimilarCustomerIntentsRequest body = new SimilarCustomerIntentsRequest(); // SimilarCustomerIntentsRequest | Similarity search criteria
+try {
+    SimilarCustomerIntentsResponse result = apiInstance.postIntentsCustomerintentsSimilar(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IntentsApi#postIntentsCustomerintentsSimilar");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SimilarCustomerIntentsRequest**](SimilarCustomerIntentsRequest)| Similarity search criteria | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SimilarCustomerIntentsResponse**](SimilarCustomerIntentsResponse)
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

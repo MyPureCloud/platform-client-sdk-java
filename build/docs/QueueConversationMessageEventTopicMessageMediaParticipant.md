@@ -158,8 +158,9 @@
 | OPEN | &quot;open&quot; | 
 | INSTAGRAM | &quot;instagram&quot; | 
 | APPLE | &quot;apple&quot; | 
+| LINKEDIN | &quot;linkedin&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

@@ -20,10 +20,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 # **getOauthClientUsageQueryResult**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ApiUsageQueryResult](ApiUsageQueryResult) getOauthClientUsageQueryResult(executionId, clientId)
 
 Get the results of a usage query
+
+Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
 
 Wraps GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}  
 
@@ -82,12 +87,15 @@ try {
 
 # **getOauthClientUsageSummary**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UsageExecutionResult](UsageExecutionResult) getOauthClientUsageSummary(clientId, days)
 
 Get a summary of OAuth client API usage
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id
+Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
 Wraps GET /api/v2/oauth/clients/{clientId}/usage/summary  
 
@@ -274,10 +282,15 @@ try {
 
 # **getUsageQueryExecutionIdResults**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ApiUsageQueryResult](ApiUsageQueryResult) getUsageQueryExecutionIdResults(executionId)
 
 Get the results of a usage query
+
+Deprecated - use GET /api/v2/usage/aggregates/query/jobs/{jobId} instead.
 
 Wraps GET /api/v2/usage/query/{executionId}/results  
 
@@ -334,10 +347,15 @@ try {
 
 # **getUsageSimplesearchExecutionIdResults**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [ApiUsageQueryResult](ApiUsageQueryResult) getUsageSimplesearchExecutionIdResults(executionId, after, pageSize)
 
 Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
+
+Deprecated - use GET /api/v2/usage/aggregates/query/jobs/{jobId} instead.
 
 Wraps GET /api/v2/usage/simplesearch/{executionId}/results  
 
@@ -398,12 +416,15 @@ try {
 
 # **postOauthClientUsageQuery**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UsageExecutionResult](UsageExecutionResult) postOauthClientUsageQuery(clientId, body)
 
 Query for OAuth client API usage
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id
+Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
 Wraps POST /api/v2/oauth/clients/{clientId}/usage/query  
 
@@ -586,12 +607,15 @@ try {
 
 # **postUsageQuery**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UsageExecutionResult](UsageExecutionResult) postUsageQuery(body)
 
 Query organization API Usage - 
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id
+Deprecated - use POST /api/v2/usage/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
 
 Wraps POST /api/v2/usage/query  
 
@@ -648,12 +672,15 @@ try {
 
 # **postUsageSimplesearch**
 
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 > [UsageExecutionResult](UsageExecutionResult) postUsageSimplesearch(body)
 
 Search organization API Usage
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
+Deprecated - use POST /api/v2/usage/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
 
 Wraps POST /api/v2/usage/simplesearch  
 
@@ -708,4 +735,4 @@ try {
 [**UsageExecutionResult**](UsageExecutionResult)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

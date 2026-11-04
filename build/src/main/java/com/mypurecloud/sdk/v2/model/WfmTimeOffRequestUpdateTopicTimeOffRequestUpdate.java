@@ -27,6 +27,7 @@ import java.io.Serializable;
 public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serializable {
   
   private String id = null;
+  private String muId = null;
   private WfmTimeOffRequestUpdateTopicUserReference user = null;
   private Boolean isFullDayRequest = null;
   private Boolean markedAsRead = null;
@@ -191,6 +192,23 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
   }
   public void setId(String id) {
     this.id = id;
+  }
+
+
+  /**
+   **/
+  public WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate muId(String muId) {
+    this.muId = muId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("muId")
+  public String getMuId() {
+    return muId;
+  }
+  public void setMuId(String muId) {
+    this.muId = muId;
   }
 
 
@@ -562,6 +580,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate = (WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate) o;
 
     return Objects.equals(this.id, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.id) &&
+            Objects.equals(this.muId, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.muId) &&
             Objects.equals(this.user, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.user) &&
             Objects.equals(this.isFullDayRequest, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.isFullDayRequest) &&
             Objects.equals(this.markedAsRead, wfmTimeOffRequestUpdateTopicTimeOffRequestUpdate.markedAsRead) &&
@@ -587,7 +606,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, fullDayEarliestStartOffsetMinutes, fullDayLatestEndOffsetMinutes, dailyDurationMinutes, durationMinutes, payableMinutes, notes, reviewedDate, reviewedBy, submittedDate, submittedBy, modifiedDate, modifiedBy);
+    return Objects.hash(id, muId, user, isFullDayRequest, markedAsRead, activityCodeId, paid, status, substatus, partialDayStartDateTimes, fullDayManagementUnitDates, fullDayEarliestStartOffsetMinutes, fullDayLatestEndOffsetMinutes, dailyDurationMinutes, durationMinutes, payableMinutes, notes, reviewedDate, reviewedBy, submittedDate, submittedBy, modifiedDate, modifiedBy);
   }
 
   @Override
@@ -596,6 +615,7 @@ public class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate  implements Serial
     sb.append("class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    muId: ").append(toIndentedString(muId)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");
     sb.append("    isFullDayRequest: ").append(toIndentedString(isFullDayRequest)).append("\n");
     sb.append("    markedAsRead: ").append(toIndentedString(markedAsRead)).append("\n");

@@ -78,6 +78,7 @@ public class ConversationThirdPartyActionSuggestionsTopicSuggestionContext  impl
   private String userId = null;
   private String externalContactId = null;
   private String assistantId = null;
+  private String variationId = null;
   private String utteranceId = null;
   private String messageId = null;
   private String queryStatement = null;
@@ -231,6 +232,23 @@ public class ConversationThirdPartyActionSuggestionsTopicSuggestionContext  impl
 
   /**
    **/
+  public ConversationThirdPartyActionSuggestionsTopicSuggestionContext variationId(String variationId) {
+    this.variationId = variationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("variationId")
+  public String getVariationId() {
+    return variationId;
+  }
+  public void setVariationId(String variationId) {
+    this.variationId = variationId;
+  }
+
+
+  /**
+   **/
   public ConversationThirdPartyActionSuggestionsTopicSuggestionContext utteranceId(String utteranceId) {
     this.utteranceId = utteranceId;
     return this;
@@ -346,6 +364,7 @@ public class ConversationThirdPartyActionSuggestionsTopicSuggestionContext  impl
             Objects.equals(this.userId, conversationThirdPartyActionSuggestionsTopicSuggestionContext.userId) &&
             Objects.equals(this.externalContactId, conversationThirdPartyActionSuggestionsTopicSuggestionContext.externalContactId) &&
             Objects.equals(this.assistantId, conversationThirdPartyActionSuggestionsTopicSuggestionContext.assistantId) &&
+            Objects.equals(this.variationId, conversationThirdPartyActionSuggestionsTopicSuggestionContext.variationId) &&
             Objects.equals(this.utteranceId, conversationThirdPartyActionSuggestionsTopicSuggestionContext.utteranceId) &&
             Objects.equals(this.messageId, conversationThirdPartyActionSuggestionsTopicSuggestionContext.messageId) &&
             Objects.equals(this.queryStatement, conversationThirdPartyActionSuggestionsTopicSuggestionContext.queryStatement) &&
@@ -356,7 +375,7 @@ public class ConversationThirdPartyActionSuggestionsTopicSuggestionContext  impl
 
   @Override
   public int hashCode() {
-    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, utteranceId, messageId, queryStatement, language, queryReformulationContext, participantType);
+    return Objects.hash(queueId, mediaType, userId, externalContactId, assistantId, variationId, utteranceId, messageId, queryStatement, language, queryReformulationContext, participantType);
   }
 
   @Override
@@ -369,6 +388,7 @@ public class ConversationThirdPartyActionSuggestionsTopicSuggestionContext  impl
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    externalContactId: ").append(toIndentedString(externalContactId)).append("\n");
     sb.append("    assistantId: ").append(toIndentedString(assistantId)).append("\n");
+    sb.append("    variationId: ").append(toIndentedString(variationId)).append("\n");
     sb.append("    utteranceId: ").append(toIndentedString(utteranceId)).append("\n");
     sb.append("    messageId: ").append(toIndentedString(messageId)).append("\n");
     sb.append("    queryStatement: ").append(toIndentedString(queryStatement)).append("\n");

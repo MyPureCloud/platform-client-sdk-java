@@ -189,6 +189,7 @@ public class ConversationDetailQueryPredicate  implements Serializable {
     TACD("tAcd"),
     TACTIVECALLBACK("tActiveCallback"),
     TACTIVECALLBACKCOMPLETE("tActiveCallbackComplete"),
+    TACTIVEVIDEO("tActiveVideo"),
     TACW("tAcw"),
     TAGENTRESPONSETIME("tAgentResponseTime"),
     TAGENTVIDEOCONNECTED("tAgentVideoConnected"),

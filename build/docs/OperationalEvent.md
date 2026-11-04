@@ -20,8 +20,19 @@
 | **entityVersion** | **String** | The version of the entity in the providing service |  [optional] |
 | **phoneNumber** | **String** | The phone number associated with the event |  [optional] |
 | **externalContactId** | **String** | The external contact ID associated with the event |  [optional] |
+| **referenceId** | **String** | The identifier of an external record that provides additional information or context related to the event |  [optional] |
+| **referenceType** | [**ReferenceTypeEnum**](#Enum--ReferenceTypeEnum) | The type of external record that referenceId refers to |  [optional] |
+
+
+## Enum: ReferenceTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;Unknown&quot; | 
+| SALESFORCE | &quot;Salesforce&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

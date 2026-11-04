@@ -36,6 +36,9 @@ public class CommonRule  implements Serializable {
   private Boolean sendExitingAlarmNotifications = null;
   private Long waitBetweenNotificationMs = null;
   private CommonRuleConditions conditions = null;
+  private Boolean muted = null;
+  private Date dateStartMute = null;
+  private Date dateEndMute = null;
 
   private static class TypeEnumDeserializer extends StdDeserializer<TypeEnum> {
     public TypeEnumDeserializer() {
@@ -242,6 +245,60 @@ public class CommonRule  implements Serializable {
 
 
   /**
+   * Flag that indicates if the rule is muted.
+   **/
+  public CommonRule muted(Boolean muted) {
+    this.muted = muted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag that indicates if the rule is muted.")
+  @JsonProperty("muted")
+  public Boolean getMuted() {
+    return muted;
+  }
+  public void setMuted(Boolean muted) {
+    this.muted = muted;
+  }
+
+
+  /**
+   * Timestamp of when the mute status of the rule should start. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public CommonRule dateStartMute(Date dateStartMute) {
+    this.dateStartMute = dateStartMute;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Timestamp of when the mute status of the rule should start. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateStartMute")
+  public Date getDateStartMute() {
+    return dateStartMute;
+  }
+  public void setDateStartMute(Date dateStartMute) {
+    this.dateStartMute = dateStartMute;
+  }
+
+
+  /**
+   * Timestamp of when the mute status of the rule should end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public CommonRule dateEndMute(Date dateEndMute) {
+    this.dateEndMute = dateEndMute;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Timestamp of when the mute status of the rule should end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateEndMute")
+  public Date getDateEndMute() {
+    return dateEndMute;
+  }
+  public void setDateEndMute(Date dateEndMute) {
+    this.dateEndMute = dateEndMute;
+  }
+
+
+  /**
    * The type of the rule.
    **/
   public CommonRule type(TypeEnum type) {
@@ -374,6 +431,9 @@ public class CommonRule  implements Serializable {
             Objects.equals(this.sendExitingAlarmNotifications, commonRule.sendExitingAlarmNotifications) &&
             Objects.equals(this.waitBetweenNotificationMs, commonRule.waitBetweenNotificationMs) &&
             Objects.equals(this.conditions, commonRule.conditions) &&
+            Objects.equals(this.muted, commonRule.muted) &&
+            Objects.equals(this.dateStartMute, commonRule.dateStartMute) &&
+            Objects.equals(this.dateEndMute, commonRule.dateEndMute) &&
             Objects.equals(this.type, commonRule.type) &&
             Objects.equals(this.inAlarm, commonRule.inAlarm) &&
             Objects.equals(this.user, commonRule.user) &&
@@ -385,7 +445,7 @@ public class CommonRule  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, enabled, notifications, sendExitingAlarmNotifications, waitBetweenNotificationMs, conditions, type, inAlarm, user, version, dateCreated, dateLastModified, selfUri);
+    return Objects.hash(id, name, description, enabled, notifications, sendExitingAlarmNotifications, waitBetweenNotificationMs, conditions, muted, dateStartMute, dateEndMute, type, inAlarm, user, version, dateCreated, dateLastModified, selfUri);
   }
 
   @Override
@@ -401,6 +461,9 @@ public class CommonRule  implements Serializable {
     sb.append("    sendExitingAlarmNotifications: ").append(toIndentedString(sendExitingAlarmNotifications)).append("\n");
     sb.append("    waitBetweenNotificationMs: ").append(toIndentedString(waitBetweenNotificationMs)).append("\n");
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+    sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
+    sb.append("    dateStartMute: ").append(toIndentedString(dateStartMute)).append("\n");
+    sb.append("    dateEndMute: ").append(toIndentedString(dateEndMute)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    inAlarm: ").append(toIndentedString(inAlarm)).append("\n");
     sb.append("    user: ").append(toIndentedString(user)).append("\n");

@@ -14,6 +14,8 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -25,15 +27,19 @@ public class PureCloud  implements Serializable {
   private String id = null;
   private String name = null;
   private Boolean disabled = null;
+  private Boolean nativeLoginExceptionsEnabled = null;
+  private List<String> nativeLoginExceptionGroupIds = null;
   private String selfUri = null;
 
   public PureCloud() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      nativeLoginExceptionGroupIds = new ArrayList<String>();
     }
   }
 
   public PureCloud(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      nativeLoginExceptionGroupIds = new ArrayList<String>();
     }
   }
 
@@ -79,6 +85,40 @@ public class PureCloud  implements Serializable {
   }
 
 
+  /**
+   **/
+  public PureCloud nativeLoginExceptionsEnabled(Boolean nativeLoginExceptionsEnabled) {
+    this.nativeLoginExceptionsEnabled = nativeLoginExceptionsEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nativeLoginExceptionsEnabled")
+  public Boolean getNativeLoginExceptionsEnabled() {
+    return nativeLoginExceptionsEnabled;
+  }
+  public void setNativeLoginExceptionsEnabled(Boolean nativeLoginExceptionsEnabled) {
+    this.nativeLoginExceptionsEnabled = nativeLoginExceptionsEnabled;
+  }
+
+
+  /**
+   **/
+  public PureCloud nativeLoginExceptionGroupIds(List<String> nativeLoginExceptionGroupIds) {
+    this.nativeLoginExceptionGroupIds = nativeLoginExceptionGroupIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("nativeLoginExceptionGroupIds")
+  public List<String> getNativeLoginExceptionGroupIds() {
+    return nativeLoginExceptionGroupIds;
+  }
+  public void setNativeLoginExceptionGroupIds(List<String> nativeLoginExceptionGroupIds) {
+    this.nativeLoginExceptionGroupIds = nativeLoginExceptionGroupIds;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -99,12 +139,14 @@ public class PureCloud  implements Serializable {
     return Objects.equals(this.id, pureCloud.id) &&
             Objects.equals(this.name, pureCloud.name) &&
             Objects.equals(this.disabled, pureCloud.disabled) &&
+            Objects.equals(this.nativeLoginExceptionsEnabled, pureCloud.nativeLoginExceptionsEnabled) &&
+            Objects.equals(this.nativeLoginExceptionGroupIds, pureCloud.nativeLoginExceptionGroupIds) &&
             Objects.equals(this.selfUri, pureCloud.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, disabled, selfUri);
+    return Objects.hash(id, name, disabled, nativeLoginExceptionsEnabled, nativeLoginExceptionGroupIds, selfUri);
   }
 
   @Override
@@ -115,6 +157,8 @@ public class PureCloud  implements Serializable {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    disabled: ").append(toIndentedString(disabled)).append("\n");
+    sb.append("    nativeLoginExceptionsEnabled: ").append(toIndentedString(nativeLoginExceptionsEnabled)).append("\n");
+    sb.append("    nativeLoginExceptionGroupIds: ").append(toIndentedString(nativeLoginExceptionGroupIds)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

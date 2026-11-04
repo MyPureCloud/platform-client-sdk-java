@@ -36,6 +36,9 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntentsCategory;
 import com.mypurecloud.sdk.v2.model.IntentsCategoryListing;
 import com.mypurecloud.sdk.v2.model.IntentsCategoryPatch;
+import com.mypurecloud.sdk.v2.model.SimilarCategoriesResponse;
+import com.mypurecloud.sdk.v2.model.SimilarCustomerIntentsRequest;
+import com.mypurecloud.sdk.v2.model.SimilarCustomerIntentsResponse;
 
 public class GetIntentsCategoriesRequest {
 

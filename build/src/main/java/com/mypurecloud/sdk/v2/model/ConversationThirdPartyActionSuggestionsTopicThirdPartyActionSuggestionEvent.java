@@ -13,13 +13,18 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationThirdPartyActionSuggestionsTopicActiveSentiment;
+import com.mypurecloud.sdk.v2.model.ConversationThirdPartyActionSuggestionsTopicConversationTurn;
+import com.mypurecloud.sdk.v2.model.ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry;
 import com.mypurecloud.sdk.v2.model.ConversationThirdPartyActionSuggestionsTopicSuggestedIntent;
 import com.mypurecloud.sdk.v2.model.ConversationThirdPartyActionSuggestionsTopicSuggestionContext;
 import com.mypurecloud.sdk.v2.model.ConversationThirdPartyActionSuggestionsTopicSuggestionFeedback;
 import com.mypurecloud.sdk.v2.model.ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -190,16 +195,23 @@ public class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggest
   private EngagementTypeEnum engagementType = null;
   private ConversationThirdPartyActionSuggestionsTopicSuggestionFeedback feedback = null;
   private ConversationThirdPartyActionSuggestionsTopicSuggestedIntent activeIntent = null;
+  private ConversationThirdPartyActionSuggestionsTopicActiveSentiment activeSentiment = null;
   private ConversationThirdPartyActionSuggestionsTopicSuggestionContext context = null;
+  private List<ConversationThirdPartyActionSuggestionsTopicConversationTurn> conversationTurns = null;
   private ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion thirdPartySuggestion = null;
+  private List<ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry> copilotContext = null;
 
   public ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      conversationTurns = new ArrayList<ConversationThirdPartyActionSuggestionsTopicConversationTurn>();
+      copilotContext = new ArrayList<ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry>();
     }
   }
 
   public ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      conversationTurns = new ArrayList<ConversationThirdPartyActionSuggestionsTopicConversationTurn>();
+      copilotContext = new ArrayList<ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry>();
     }
   }
 
@@ -342,6 +354,23 @@ public class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggest
 
   /**
    **/
+  public ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent activeSentiment(ConversationThirdPartyActionSuggestionsTopicActiveSentiment activeSentiment) {
+    this.activeSentiment = activeSentiment;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("activeSentiment")
+  public ConversationThirdPartyActionSuggestionsTopicActiveSentiment getActiveSentiment() {
+    return activeSentiment;
+  }
+  public void setActiveSentiment(ConversationThirdPartyActionSuggestionsTopicActiveSentiment activeSentiment) {
+    this.activeSentiment = activeSentiment;
+  }
+
+
+  /**
+   **/
   public ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent context(ConversationThirdPartyActionSuggestionsTopicSuggestionContext context) {
     this.context = context;
     return this;
@@ -359,6 +388,23 @@ public class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggest
 
   /**
    **/
+  public ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent conversationTurns(List<ConversationThirdPartyActionSuggestionsTopicConversationTurn> conversationTurns) {
+    this.conversationTurns = conversationTurns;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("conversationTurns")
+  public List<ConversationThirdPartyActionSuggestionsTopicConversationTurn> getConversationTurns() {
+    return conversationTurns;
+  }
+  public void setConversationTurns(List<ConversationThirdPartyActionSuggestionsTopicConversationTurn> conversationTurns) {
+    this.conversationTurns = conversationTurns;
+  }
+
+
+  /**
+   **/
   public ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent thirdPartySuggestion(ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion thirdPartySuggestion) {
     this.thirdPartySuggestion = thirdPartySuggestion;
     return this;
@@ -371,6 +417,23 @@ public class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggest
   }
   public void setThirdPartySuggestion(ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion thirdPartySuggestion) {
     this.thirdPartySuggestion = thirdPartySuggestion;
+  }
+
+
+  /**
+   **/
+  public ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent copilotContext(List<ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry> copilotContext) {
+    this.copilotContext = copilotContext;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("copilotContext")
+  public List<ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry> getCopilotContext() {
+    return copilotContext;
+  }
+  public void setCopilotContext(List<ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry> copilotContext) {
+    this.copilotContext = copilotContext;
   }
 
 
@@ -392,13 +455,16 @@ public class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggest
             Objects.equals(this.engagementType, conversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.engagementType) &&
             Objects.equals(this.feedback, conversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.feedback) &&
             Objects.equals(this.activeIntent, conversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.activeIntent) &&
+            Objects.equals(this.activeSentiment, conversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.activeSentiment) &&
             Objects.equals(this.context, conversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.context) &&
-            Objects.equals(this.thirdPartySuggestion, conversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.thirdPartySuggestion);
+            Objects.equals(this.conversationTurns, conversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.conversationTurns) &&
+            Objects.equals(this.thirdPartySuggestion, conversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.thirdPartySuggestion) &&
+            Objects.equals(this.copilotContext, conversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggestionEvent.copilotContext);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, suggestionId, state, triggerType, engagementType, feedback, activeIntent, context, thirdPartySuggestion);
+    return Objects.hash(eventTime, conversationId, suggestionId, state, triggerType, engagementType, feedback, activeIntent, activeSentiment, context, conversationTurns, thirdPartySuggestion, copilotContext);
   }
 
   @Override
@@ -414,8 +480,11 @@ public class ConversationThirdPartyActionSuggestionsTopicThirdPartyActionSuggest
     sb.append("    engagementType: ").append(toIndentedString(engagementType)).append("\n");
     sb.append("    feedback: ").append(toIndentedString(feedback)).append("\n");
     sb.append("    activeIntent: ").append(toIndentedString(activeIntent)).append("\n");
+    sb.append("    activeSentiment: ").append(toIndentedString(activeSentiment)).append("\n");
     sb.append("    context: ").append(toIndentedString(context)).append("\n");
+    sb.append("    conversationTurns: ").append(toIndentedString(conversationTurns)).append("\n");
     sb.append("    thirdPartySuggestion: ").append(toIndentedString(thirdPartySuggestion)).append("\n");
+    sb.append("    copilotContext: ").append(toIndentedString(copilotContext)).append("\n");
     sb.append("}");
     return sb.toString();
   }

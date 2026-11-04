@@ -191,6 +191,20 @@ public class GetRoutingQueueRequest {
 
 	}
 
+	private Boolean forceMemberRecount;
+	public Boolean getForceMemberRecount() {
+		return this.forceMemberRecount;
+	}
+
+	public void setForceMemberRecount(Boolean forceMemberRecount) {
+		this.forceMemberRecount = forceMemberRecount;
+	}
+
+	public GetRoutingQueueRequest withForceMemberRecount(Boolean forceMemberRecount) {
+	    this.setForceMemberRecount(forceMemberRecount);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -223,6 +237,9 @@ public class GetRoutingQueueRequest {
         
 
                 .withQueryParameters("expand", "multi", expand)
+        
+
+                .withQueryParameters("forceMemberRecount", "", forceMemberRecount)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -269,6 +286,11 @@ public class GetRoutingQueueRequest {
 	      }
 	      request.setExpand(stringList);
 		    return this;
+		}
+
+		public Builder withForceMemberRecount(Boolean forceMemberRecount) {
+			request.setForceMemberRecount(forceMemberRecount);
+			return this;
 		}
 
 

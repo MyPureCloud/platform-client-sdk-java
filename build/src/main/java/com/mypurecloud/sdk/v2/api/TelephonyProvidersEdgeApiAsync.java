@@ -79,6 +79,8 @@ import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
+import com.mypurecloud.sdk.v2.model.TrunkBaseMetrics;
+import com.mypurecloud.sdk.v2.model.TrunkBaseMetricsEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkBasesSearchResponse;
 import com.mypurecloud.sdk.v2.model.TrunkEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkInstanceSearchResponse;
@@ -175,6 +177,8 @@ import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkbaseset
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunksMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetTelephonyProvidersEdgesTrunkswithrecordingRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyTrunkbasesettingMetricsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetTelephonyTrunkbasesettingsMetricsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchTelephonyProvidersEdgesSiteSiteconnectionsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticNslookupRequest;
 import com.mypurecloud.sdk.v2.api.request.PostTelephonyProvidersEdgeDiagnosticPingRequest;
@@ -6606,6 +6610,156 @@ public class TelephonyProvidersEdgeApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<TrunkRecordingEnabledCount> response = (ApiResponse<TrunkRecordingEnabledCount>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the trunkbase metrics.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrunkBaseMetrics> getTelephonyTrunkbasesettingMetricsAsync(GetTelephonyTrunkbasesettingMetricsRequest request, final AsyncApiCallback<TrunkBaseMetrics> callback) {
+    try {
+      final SettableFuture<TrunkBaseMetrics> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkBaseMetrics>() {}, new AsyncApiCallback<ApiResponse<TrunkBaseMetrics>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBaseMetrics> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the trunkbase metrics.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrunkBaseMetrics>> getTelephonyTrunkbasesettingMetricsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrunkBaseMetrics>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrunkBaseMetrics>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkBaseMetrics>() {}, new AsyncApiCallback<ApiResponse<TrunkBaseMetrics>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBaseMetrics> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBaseMetrics> response = (ApiResponse<TrunkBaseMetrics>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBaseMetrics> response = (ApiResponse<TrunkBaseMetrics>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the trunkbase metrics for the specified ids.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<TrunkBaseMetricsEntityListing> getTelephonyTrunkbasesettingsMetricsAsync(GetTelephonyTrunkbasesettingsMetricsRequest request, final AsyncApiCallback<TrunkBaseMetricsEntityListing> callback) {
+    try {
+      final SettableFuture<TrunkBaseMetricsEntityListing> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<TrunkBaseMetricsEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkBaseMetricsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBaseMetricsEntityListing> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the trunkbase metrics for the specified ids.
+   * 
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<TrunkBaseMetricsEntityListing>> getTelephonyTrunkbasesettingsMetricsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<TrunkBaseMetricsEntityListing>> callback) {
+    try {
+      final SettableFuture<ApiResponse<TrunkBaseMetricsEntityListing>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<TrunkBaseMetricsEntityListing>() {}, new AsyncApiCallback<ApiResponse<TrunkBaseMetricsEntityListing>>() {
+        @Override
+        public void onCompleted(ApiResponse<TrunkBaseMetricsEntityListing> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBaseMetricsEntityListing> response = (ApiResponse<TrunkBaseMetricsEntityListing>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<TrunkBaseMetricsEntityListing> response = (ApiResponse<TrunkBaseMetricsEntityListing>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

@@ -1,0 +1,145 @@
+package com.mypurecloud.sdk.v2.model;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import java.util.Objects;
+import java.util.ArrayList;
+import java.io.IOException;
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.BuAgentSchedulePublishedScheduleReference;
+import com.mypurecloud.sdk.v2.model.BuAgentScheduleSearchResponse;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
+
+import java.io.Serializable;
+/**
+ * BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse
+ */
+
+public class BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse  implements Serializable {
+  
+  private List<BuAgentScheduleSearchResponse> agentSchedules = null;
+  private String businessUnitTimeZone = null;
+  private List<BuAgentSchedulePublishedScheduleReference> publishedSchedules = null;
+
+  public BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse() {
+    if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agentSchedules = new ArrayList<BuAgentScheduleSearchResponse>();
+      publishedSchedules = new ArrayList<BuAgentSchedulePublishedScheduleReference>();
+    }
+  }
+
+  public BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse(Boolean initWithEmptyList) {
+    if (initWithEmptyList == true) { 
+      agentSchedules = new ArrayList<BuAgentScheduleSearchResponse>();
+      publishedSchedules = new ArrayList<BuAgentSchedulePublishedScheduleReference>();
+    }
+  }
+
+  
+  /**
+   * The requested agent schedules
+   **/
+  public BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse agentSchedules(List<BuAgentScheduleSearchResponse> agentSchedules) {
+    this.agentSchedules = agentSchedules;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The requested agent schedules")
+  @JsonProperty("agentSchedules")
+  public List<BuAgentScheduleSearchResponse> getAgentSchedules() {
+    return agentSchedules;
+  }
+  public void setAgentSchedules(List<BuAgentScheduleSearchResponse> agentSchedules) {
+    this.agentSchedules = agentSchedules;
+  }
+
+
+  /**
+   * The time zone configured for the business unit to which this schedule applies
+   **/
+  public BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse businessUnitTimeZone(String businessUnitTimeZone) {
+    this.businessUnitTimeZone = businessUnitTimeZone;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The time zone configured for the business unit to which this schedule applies")
+  @JsonProperty("businessUnitTimeZone")
+  public String getBusinessUnitTimeZone() {
+    return businessUnitTimeZone;
+  }
+  public void setBusinessUnitTimeZone(String businessUnitTimeZone) {
+    this.businessUnitTimeZone = businessUnitTimeZone;
+  }
+
+
+  /**
+   * References to all published week schedules overlapping the start/end date query parameters
+   **/
+  public BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse publishedSchedules(List<BuAgentSchedulePublishedScheduleReference> publishedSchedules) {
+    this.publishedSchedules = publishedSchedules;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "References to all published week schedules overlapping the start/end date query parameters")
+  @JsonProperty("publishedSchedules")
+  public List<BuAgentSchedulePublishedScheduleReference> getPublishedSchedules() {
+    return publishedSchedules;
+  }
+  public void setPublishedSchedules(List<BuAgentSchedulePublishedScheduleReference> publishedSchedules) {
+    this.publishedSchedules = publishedSchedules;
+  }
+
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse buAgentSchedulesSearchResponseBuAgentScheduleSearchResponse = (BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse) o;
+
+    return Objects.equals(this.agentSchedules, buAgentSchedulesSearchResponseBuAgentScheduleSearchResponse.agentSchedules) &&
+            Objects.equals(this.businessUnitTimeZone, buAgentSchedulesSearchResponseBuAgentScheduleSearchResponse.businessUnitTimeZone) &&
+            Objects.equals(this.publishedSchedules, buAgentSchedulesSearchResponseBuAgentScheduleSearchResponse.publishedSchedules);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(agentSchedules, businessUnitTimeZone, publishedSchedules);
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse {\n");
+    
+    sb.append("    agentSchedules: ").append(toIndentedString(agentSchedules)).append("\n");
+    sb.append("    businessUnitTimeZone: ").append(toIndentedString(businessUnitTimeZone)).append("\n");
+    sb.append("    publishedSchedules: ").append(toIndentedString(publishedSchedules)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+}
+

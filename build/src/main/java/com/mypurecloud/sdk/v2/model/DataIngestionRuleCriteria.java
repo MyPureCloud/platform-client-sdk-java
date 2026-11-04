@@ -47,7 +47,8 @@ public class DataIngestionRuleCriteria  implements Serializable {
     TWITTER("Twitter"),
     OPEN("Open"),
     GOOGLEBUSINESSPROFILE("GoogleBusinessProfile"),
-    LINKEDIN("LinkedIn");
+    LINKEDIN("LinkedIn"),
+    YOUTUBE("YouTube");
 
     private String value;
 

@@ -45,6 +45,7 @@ public class CaseplanFilter  implements Serializable {
  @JsonDeserialize(using = OperatorEnumDeserializer.class)
   public enum OperatorEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    EQ("EQ"),
     IN("IN"),
     CONTAINS("CONTAINS"),
     BEGINS_WITH("BEGINS_WITH");
@@ -91,14 +92,14 @@ public class CaseplanFilter  implements Serializable {
 
   
   /**
-   * Attribute name. Valid values: id, name, divisionId.
+   * Attribute name. Valid values: id, name, divisionId, published. The published filter requires the EQ operator and exactly one value: 'true' (Caseplans that have a published version) or 'false' (Caseplans that have never been published).
    **/
   public CaseplanFilter name(String name) {
     this.name = name;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "Attribute name. Valid values: id, name, divisionId.")
+  @ApiModelProperty(example = "null", required = true, value = "Attribute name. Valid values: id, name, divisionId, published. The published filter requires the EQ operator and exactly one value: 'true' (Caseplans that have a published version) or 'false' (Caseplans that have never been published).")
   @JsonProperty("name")
   public String getName() {
     return name;

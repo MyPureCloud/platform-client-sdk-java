@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeCondition;
+import com.mypurecloud.sdk.v2.model.WorkitemOnAttributeChangeMatch;
 import com.mypurecloud.sdk.v2.model.WorkitemRuleAction;
 import com.mypurecloud.sdk.v2.model.WorktypeReference;
 import io.swagger.annotations.ApiModel;
@@ -80,6 +81,7 @@ public class WorkitemOnAttributeChangeRule  implements Serializable {
   private WorkitemRuleAction action = null;
   private WorktypeReference worktype = null;
   private WorkitemOnAttributeChangeCondition condition = null;
+  private WorkitemOnAttributeChangeMatch match = null;
   private String selfUri = null;
 
   public WorkitemOnAttributeChangeRule() {
@@ -172,20 +174,38 @@ public class WorkitemOnAttributeChangeRule  implements Serializable {
 
 
   /**
-   * The rules condition. If the condition criteria is met the rules action will be executed.
+   * The rules condition. If the condition criteria is met the rules action will be executed. Mutually exclusive with match; a rule carries exactly one of condition or match.
    **/
   public WorkitemOnAttributeChangeRule condition(WorkitemOnAttributeChangeCondition condition) {
     this.condition = condition;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The rules condition. If the condition criteria is met the rules action will be executed.")
+  @ApiModelProperty(example = "null", value = "The rules condition. If the condition criteria is met the rules action will be executed. Mutually exclusive with match; a rule carries exactly one of condition or match.")
   @JsonProperty("condition")
   public WorkitemOnAttributeChangeCondition getCondition() {
     return condition;
   }
   public void setCondition(WorkitemOnAttributeChangeCondition condition) {
     this.condition = condition;
+  }
+
+
+  /**
+   * Grouped match criteria combined with logical operators. Mutually exclusive with condition; a rule carries exactly one of condition or match.
+   **/
+  public WorkitemOnAttributeChangeRule match(WorkitemOnAttributeChangeMatch match) {
+    this.match = match;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Grouped match criteria combined with logical operators. Mutually exclusive with condition; a rule carries exactly one of condition or match.")
+  @JsonProperty("match")
+  public WorkitemOnAttributeChangeMatch getMatch() {
+    return match;
+  }
+  public void setMatch(WorkitemOnAttributeChangeMatch match) {
+    this.match = match;
   }
 
 
@@ -212,12 +232,13 @@ public class WorkitemOnAttributeChangeRule  implements Serializable {
             Objects.equals(this.action, workitemOnAttributeChangeRule.action) &&
             Objects.equals(this.worktype, workitemOnAttributeChangeRule.worktype) &&
             Objects.equals(this.condition, workitemOnAttributeChangeRule.condition) &&
+            Objects.equals(this.match, workitemOnAttributeChangeRule.match) &&
             Objects.equals(this.selfUri, workitemOnAttributeChangeRule.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, type, action, worktype, condition, selfUri);
+    return Objects.hash(id, name, type, action, worktype, condition, match, selfUri);
   }
 
   @Override
@@ -231,6 +252,7 @@ public class WorkitemOnAttributeChangeRule  implements Serializable {
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    worktype: ").append(toIndentedString(worktype)).append("\n");
     sb.append("    condition: ").append(toIndentedString(condition)).append("\n");
+    sb.append("    match: ").append(toIndentedString(match)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

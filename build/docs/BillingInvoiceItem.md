@@ -12,7 +12,7 @@
 | **dateStart** | [**LocalDate**](LocalDate) | Invoice start date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **dateEnd** | [**LocalDate**](LocalDate) | Invoice end date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  [optional] |
 | **organization** | [**NamedEntity**](NamedEntity) | A Genesys Cloud Organization. |  [optional] |
-| **quantity** | **Integer** | Quantity of the item. |  [optional] |
+| **quantity** | [**BigDecimal**](BigDecimal) | Quantity of the item. |  [optional] |
 | **unitOfMeasure** | [**UnitOfMeasureEnum**](#Enum--UnitOfMeasureEnum) | Unit of Measure. |  [optional] |
 | **amount** | [**BigDecimal**](BigDecimal) | Amount. |  [optional] |
 
@@ -62,4 +62,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

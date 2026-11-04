@@ -369,12 +369,13 @@ public class OAuthApi {
 
   /**
    * Get the results of a usage query
-   * 
+   * Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
    * @param executionId ID of the query execution (required)
    * @param clientId Client ID (required)
    * @return ApiUsageQueryResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiUsageQueryResult getOauthClientUsageQueryResult(String executionId, String clientId) throws IOException, ApiException {
     return  getOauthClientUsageQueryResult(createGetOauthClientUsageQueryResultRequest(executionId, clientId));
@@ -382,11 +383,12 @@ public class OAuthApi {
 
   /**
    * Get the results of a usage query
-   * 
+   * Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
    * @param executionId ID of the query execution (required)
    * @param clientId Client ID (required)
    * @return ApiUsageQueryResult
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ApiUsageQueryResult> getOauthClientUsageQueryResultWithHttpInfo(String executionId, String clientId) throws IOException {
     return getOauthClientUsageQueryResult(createGetOauthClientUsageQueryResultRequest(executionId, clientId).withHttpInfo());
@@ -403,11 +405,12 @@ public class OAuthApi {
 
   /**
    * Get the results of a usage query
-   * 
+   * Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
    * @param request The request object
    * @return ApiUsageQueryResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiUsageQueryResult getOauthClientUsageQueryResult(GetOauthClientUsageQueryResultRequest request) throws IOException, ApiException {
     try {
@@ -422,10 +425,11 @@ public class OAuthApi {
 
   /**
    * Get the results of a usage query
-   * 
+   * Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<ApiUsageQueryResult> getOauthClientUsageQueryResult(ApiRequest<Void> request) throws IOException {
     try {
@@ -451,12 +455,13 @@ public class OAuthApi {
 
   /**
    * Get a summary of OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param clientId Client ID (required)
    * @param days Previous number of days to query (optional, default to 7)
    * @return UsageExecutionResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UsageExecutionResult getOauthClientUsageSummary(String clientId, String days) throws IOException, ApiException {
     return  getOauthClientUsageSummary(createGetOauthClientUsageSummaryRequest(clientId, days));
@@ -464,11 +469,12 @@ public class OAuthApi {
 
   /**
    * Get a summary of OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param clientId Client ID (required)
    * @param days Previous number of days to query (optional, default to 7)
    * @return UsageExecutionResult
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UsageExecutionResult> getOauthClientUsageSummaryWithHttpInfo(String clientId, String days) throws IOException {
     return getOauthClientUsageSummary(createGetOauthClientUsageSummaryRequest(clientId, days).withHttpInfo());
@@ -485,11 +491,12 @@ public class OAuthApi {
 
   /**
    * Get a summary of OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param request The request object
    * @return UsageExecutionResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UsageExecutionResult getOauthClientUsageSummary(GetOauthClientUsageSummaryRequest request) throws IOException, ApiException {
     try {
@@ -504,10 +511,11 @@ public class OAuthApi {
 
   /**
    * Get a summary of OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UsageExecutionResult> getOauthClientUsageSummary(ApiRequest<Void> request) throws IOException {
     try {
@@ -845,12 +853,13 @@ public class OAuthApi {
 
   /**
    * Query for OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param clientId Client ID (required)
    * @param body Query (required)
    * @return UsageExecutionResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UsageExecutionResult postOauthClientUsageQuery(String clientId, ApiUsageClientQuery body) throws IOException, ApiException {
     return  postOauthClientUsageQuery(createPostOauthClientUsageQueryRequest(clientId, body));
@@ -858,11 +867,12 @@ public class OAuthApi {
 
   /**
    * Query for OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param clientId Client ID (required)
    * @param body Query (required)
    * @return UsageExecutionResult
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UsageExecutionResult> postOauthClientUsageQueryWithHttpInfo(String clientId, ApiUsageClientQuery body) throws IOException {
     return postOauthClientUsageQuery(createPostOauthClientUsageQueryRequest(clientId, body).withHttpInfo());
@@ -879,11 +889,12 @@ public class OAuthApi {
 
   /**
    * Query for OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param request The request object
    * @return UsageExecutionResult
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public UsageExecutionResult postOauthClientUsageQuery(PostOauthClientUsageQueryRequest request) throws IOException, ApiException {
     try {
@@ -898,10 +909,11 @@ public class OAuthApi {
 
   /**
    * Query for OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
+   * @deprecated
    */
   public ApiResponse<UsageExecutionResult> postOauthClientUsageQuery(ApiRequest<ApiUsageClientQuery> request) throws IOException {
     try {

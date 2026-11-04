@@ -13,8 +13,10 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.PhoneNumber;
+import com.mypurecloud.sdk.v2.model.WhatsAppBusinessScopedId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -26,14 +28,18 @@ public class WhatsAppId  implements Serializable {
   
   private PhoneNumber phoneNumber = null;
   private String displayName = null;
+  private String username = null;
+  private List<WhatsAppBusinessScopedId> whatsAppBusinessScopedIds = null;
 
   public WhatsAppId() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      whatsAppBusinessScopedIds = new ArrayList<WhatsAppBusinessScopedId>();
     }
   }
 
   public WhatsAppId(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      whatsAppBusinessScopedIds = new ArrayList<WhatsAppBusinessScopedId>();
     }
   }
 
@@ -74,6 +80,42 @@ public class WhatsAppId  implements Serializable {
   }
 
 
+  /**
+   * The username of the account.
+   **/
+  public WhatsAppId username(String username) {
+    this.username = username;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The username of the account.")
+  @JsonProperty("username")
+  public String getUsername() {
+    return username;
+  }
+  public void setUsername(String username) {
+    this.username = username;
+  }
+
+
+  /**
+   * The set of Whatsapp Business Scoped Ids that this contact is associated with.
+   **/
+  public WhatsAppId whatsAppBusinessScopedIds(List<WhatsAppBusinessScopedId> whatsAppBusinessScopedIds) {
+    this.whatsAppBusinessScopedIds = whatsAppBusinessScopedIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The set of Whatsapp Business Scoped Ids that this contact is associated with.")
+  @JsonProperty("whatsAppBusinessScopedIds")
+  public List<WhatsAppBusinessScopedId> getWhatsAppBusinessScopedIds() {
+    return whatsAppBusinessScopedIds;
+  }
+  public void setWhatsAppBusinessScopedIds(List<WhatsAppBusinessScopedId> whatsAppBusinessScopedIds) {
+    this.whatsAppBusinessScopedIds = whatsAppBusinessScopedIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -85,12 +127,14 @@ public class WhatsAppId  implements Serializable {
     WhatsAppId whatsAppId = (WhatsAppId) o;
 
     return Objects.equals(this.phoneNumber, whatsAppId.phoneNumber) &&
-            Objects.equals(this.displayName, whatsAppId.displayName);
+            Objects.equals(this.displayName, whatsAppId.displayName) &&
+            Objects.equals(this.username, whatsAppId.username) &&
+            Objects.equals(this.whatsAppBusinessScopedIds, whatsAppId.whatsAppBusinessScopedIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(phoneNumber, displayName);
+    return Objects.hash(phoneNumber, displayName, username, whatsAppBusinessScopedIds);
   }
 
   @Override
@@ -100,6 +144,8 @@ public class WhatsAppId  implements Serializable {
     
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    displayName: ").append(toIndentedString(displayName)).append("\n");
+    sb.append("    username: ").append(toIndentedString(username)).append("\n");
+    sb.append("    whatsAppBusinessScopedIds: ").append(toIndentedString(whatsAppBusinessScopedIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

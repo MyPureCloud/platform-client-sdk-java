@@ -81,6 +81,7 @@ public class OrgAuthSettings  implements Serializable {
     }
   }
   private TokenStorageLocationEnum tokenStorageLocation = null;
+  private Boolean ssoLoginFirst = null;
 
   public OrgAuthSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -243,6 +244,24 @@ public class OrgAuthSettings  implements Serializable {
   }
 
 
+  /**
+   * Indicates whether single sign-on is displayed before Genesys Cloud credentials on the login page.
+   **/
+  public OrgAuthSettings ssoLoginFirst(Boolean ssoLoginFirst) {
+    this.ssoLoginFirst = ssoLoginFirst;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Indicates whether single sign-on is displayed before Genesys Cloud credentials on the login page.")
+  @JsonProperty("ssoLoginFirst")
+  public Boolean getSsoLoginFirst() {
+    return ssoLoginFirst;
+  }
+  public void setSsoLoginFirst(Boolean ssoLoginFirst) {
+    this.ssoLoginFirst = ssoLoginFirst;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -260,12 +279,13 @@ public class OrgAuthSettings  implements Serializable {
             Objects.equals(this.passwordRequirements, orgAuthSettings.passwordRequirements) &&
             Objects.equals(this.inactivityTimeoutExclusions, orgAuthSettings.inactivityTimeoutExclusions) &&
             Objects.equals(this.universalLogout, orgAuthSettings.universalLogout) &&
-            Objects.equals(this.tokenStorageLocation, orgAuthSettings.tokenStorageLocation);
+            Objects.equals(this.tokenStorageLocation, orgAuthSettings.tokenStorageLocation) &&
+            Objects.equals(this.ssoLoginFirst, orgAuthSettings.ssoLoginFirst);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(multifactorAuthenticationRequired, domainAllowlistEnabled, domainAllowlist, ipAddressAllowlist, passwordRequirements, inactivityTimeoutExclusions, universalLogout, tokenStorageLocation);
+    return Objects.hash(multifactorAuthenticationRequired, domainAllowlistEnabled, domainAllowlist, ipAddressAllowlist, passwordRequirements, inactivityTimeoutExclusions, universalLogout, tokenStorageLocation, ssoLoginFirst);
   }
 
   @Override
@@ -281,6 +301,7 @@ public class OrgAuthSettings  implements Serializable {
     sb.append("    inactivityTimeoutExclusions: ").append(toIndentedString(inactivityTimeoutExclusions)).append("\n");
     sb.append("    universalLogout: ").append(toIndentedString(universalLogout)).append("\n");
     sb.append("    tokenStorageLocation: ").append(toIndentedString(tokenStorageLocation)).append("\n");
+    sb.append("    ssoLoginFirst: ").append(toIndentedString(ssoLoginFirst)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -451,7 +451,6 @@ public class CaseManagementApi {
   /**
    * Delete a Stageplan from a draft Caseplan.
    * 
-   * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param caseplanId Caseplan identifier. (required)
    * @param stageplanId Stageplan identifier. (required)
    * @return Empty
@@ -465,7 +464,6 @@ public class CaseManagementApi {
   /**
    * Delete a Stageplan from a draft Caseplan.
    * 
-   * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param caseplanId Caseplan identifier. (required)
    * @param stageplanId Stageplan identifier. (required)
    * @return Empty
@@ -487,7 +485,6 @@ public class CaseManagementApi {
   /**
    * Delete a Stageplan from a draft Caseplan.
    * 
-   * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Empty
    * @throws ApiException if the request fails on the server
@@ -507,7 +504,6 @@ public class CaseManagementApi {
   /**
    * Delete a Stageplan from a draft Caseplan.
    * 
-   * deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -702,36 +698,32 @@ public class CaseManagementApi {
    * Get a list of Case associations for the Case.
    * 
    * @param caseId Case identifier. (required)
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after Cursor that points to the end of the previously returned page. (optional)
+   * @param pageSize Number of entities to return. Maximum is 200. (optional)
    * @return CaseAssociationListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public CaseAssociationListing getCasemanagementCaseAssociations(String caseId, String before, String after, String pageSize) throws IOException, ApiException {
-    return  getCasemanagementCaseAssociations(createGetCasemanagementCaseAssociationsRequest(caseId, before, after, pageSize));
+  public CaseAssociationListing getCasemanagementCaseAssociations(String caseId, String after, Integer pageSize) throws IOException, ApiException {
+    return  getCasemanagementCaseAssociations(createGetCasemanagementCaseAssociationsRequest(caseId, after, pageSize));
   }
 
   /**
    * Get a list of Case associations for the Case.
    * 
    * @param caseId Case identifier. (required)
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after Cursor that points to the end of the previously returned page. (optional)
+   * @param pageSize Number of entities to return. Maximum is 200. (optional)
    * @return CaseAssociationListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<CaseAssociationListing> getCasemanagementCaseAssociationsWithHttpInfo(String caseId, String before, String after, String pageSize) throws IOException {
-    return getCasemanagementCaseAssociations(createGetCasemanagementCaseAssociationsRequest(caseId, before, after, pageSize).withHttpInfo());
+  public ApiResponse<CaseAssociationListing> getCasemanagementCaseAssociationsWithHttpInfo(String caseId, String after, Integer pageSize) throws IOException {
+    return getCasemanagementCaseAssociations(createGetCasemanagementCaseAssociationsRequest(caseId, after, pageSize).withHttpInfo());
   }
 
-  private GetCasemanagementCaseAssociationsRequest createGetCasemanagementCaseAssociationsRequest(String caseId, String before, String after, String pageSize) {
+  private GetCasemanagementCaseAssociationsRequest createGetCasemanagementCaseAssociationsRequest(String caseId, String after, Integer pageSize) {
     return GetCasemanagementCaseAssociationsRequest.builder()
             .withCaseId(caseId)
-
-            .withBefore(before)
 
             .withAfter(after)
 
@@ -1133,15 +1125,14 @@ public class CaseManagementApi {
    * 
    * @param caseId Case identifier. (required)
    * @param stageId Stage identifier. (required)
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after Cursor that points to the end of the previously returned page. (optional)
+   * @param pageSize Number of entities to return. Maximum is 200. (optional)
    * @return StepListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public StepListing getCasemanagementCaseStageSteps(String caseId, String stageId, String before, String after, String pageSize) throws IOException, ApiException {
-    return  getCasemanagementCaseStageSteps(createGetCasemanagementCaseStageStepsRequest(caseId, stageId, before, after, pageSize));
+  public StepListing getCasemanagementCaseStageSteps(String caseId, String stageId, String after, Integer pageSize) throws IOException, ApiException {
+    return  getCasemanagementCaseStageSteps(createGetCasemanagementCaseStageStepsRequest(caseId, stageId, after, pageSize));
   }
 
   /**
@@ -1149,23 +1140,20 @@ public class CaseManagementApi {
    * 
    * @param caseId Case identifier. (required)
    * @param stageId Stage identifier. (required)
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after Cursor that points to the end of the previously returned page. (optional)
+   * @param pageSize Number of entities to return. Maximum is 200. (optional)
    * @return StepListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<StepListing> getCasemanagementCaseStageStepsWithHttpInfo(String caseId, String stageId, String before, String after, String pageSize) throws IOException {
-    return getCasemanagementCaseStageSteps(createGetCasemanagementCaseStageStepsRequest(caseId, stageId, before, after, pageSize).withHttpInfo());
+  public ApiResponse<StepListing> getCasemanagementCaseStageStepsWithHttpInfo(String caseId, String stageId, String after, Integer pageSize) throws IOException {
+    return getCasemanagementCaseStageSteps(createGetCasemanagementCaseStageStepsRequest(caseId, stageId, after, pageSize).withHttpInfo());
   }
 
-  private GetCasemanagementCaseStageStepsRequest createGetCasemanagementCaseStageStepsRequest(String caseId, String stageId, String before, String after, String pageSize) {
+  private GetCasemanagementCaseStageStepsRequest createGetCasemanagementCaseStageStepsRequest(String caseId, String stageId, String after, Integer pageSize) {
     return GetCasemanagementCaseStageStepsRequest.builder()
             .withCaseId(caseId)
 
             .withStageId(stageId)
-
-            .withBefore(before)
 
             .withAfter(after)
 
@@ -1226,36 +1214,32 @@ public class CaseManagementApi {
    * Get a list of Stages.
    * 
    * @param caseId Case identifier. (required)
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after Cursor that points to the end of the previously returned page. (optional)
+   * @param pageSize Number of entities to return. Maximum is 200. (optional)
    * @return StageListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public StageListing getCasemanagementCaseStages(String caseId, String before, String after, String pageSize) throws IOException, ApiException {
-    return  getCasemanagementCaseStages(createGetCasemanagementCaseStagesRequest(caseId, before, after, pageSize));
+  public StageListing getCasemanagementCaseStages(String caseId, String after, Integer pageSize) throws IOException, ApiException {
+    return  getCasemanagementCaseStages(createGetCasemanagementCaseStagesRequest(caseId, after, pageSize));
   }
 
   /**
    * Get a list of Stages.
    * 
    * @param caseId Case identifier. (required)
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after Cursor that points to the end of the previously returned page. (optional)
+   * @param pageSize Number of entities to return. Maximum is 200. (optional)
    * @return StageListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<StageListing> getCasemanagementCaseStagesWithHttpInfo(String caseId, String before, String after, String pageSize) throws IOException {
-    return getCasemanagementCaseStages(createGetCasemanagementCaseStagesRequest(caseId, before, after, pageSize).withHttpInfo());
+  public ApiResponse<StageListing> getCasemanagementCaseStagesWithHttpInfo(String caseId, String after, Integer pageSize) throws IOException {
+    return getCasemanagementCaseStages(createGetCasemanagementCaseStagesRequest(caseId, after, pageSize).withHttpInfo());
   }
 
-  private GetCasemanagementCaseStagesRequest createGetCasemanagementCaseStagesRequest(String caseId, String before, String after, String pageSize) {
+  private GetCasemanagementCaseStagesRequest createGetCasemanagementCaseStagesRequest(String caseId, String after, Integer pageSize) {
     return GetCasemanagementCaseStagesRequest.builder()
             .withCaseId(caseId)
-
-            .withBefore(before)
 
             .withAfter(after)
 
@@ -1908,16 +1892,15 @@ public class CaseManagementApi {
    * @param caseplanId Caseplan identifier. (required)
    * @param versionId Caseplan version identifier. (required)
    * @param stageplanId Stageplan identifier. (required)
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after Cursor that points to the end of the previously returned page. (optional)
+   * @param pageSize Number of entities to return. Maximum is 200. (optional)
    * @param expands Fields to expand. (optional)
    * @return StepplanListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public StepplanListing getCasemanagementCaseplanVersionStageplanStepplans(String caseplanId, String versionId, String stageplanId, String before, String after, String pageSize, List<String> expands) throws IOException, ApiException {
-    return  getCasemanagementCaseplanVersionStageplanStepplans(createGetCasemanagementCaseplanVersionStageplanStepplansRequest(caseplanId, versionId, stageplanId, before, after, pageSize, expands));
+  public StepplanListing getCasemanagementCaseplanVersionStageplanStepplans(String caseplanId, String versionId, String stageplanId, String after, Integer pageSize, List<String> expands) throws IOException, ApiException {
+    return  getCasemanagementCaseplanVersionStageplanStepplans(createGetCasemanagementCaseplanVersionStageplanStepplansRequest(caseplanId, versionId, stageplanId, after, pageSize, expands));
   }
 
   /**
@@ -1926,26 +1909,23 @@ public class CaseManagementApi {
    * @param caseplanId Caseplan identifier. (required)
    * @param versionId Caseplan version identifier. (required)
    * @param stageplanId Stageplan identifier. (required)
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after Cursor that points to the end of the previously returned page. (optional)
+   * @param pageSize Number of entities to return. Maximum is 200. (optional)
    * @param expands Fields to expand. (optional)
    * @return StepplanListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<StepplanListing> getCasemanagementCaseplanVersionStageplanStepplansWithHttpInfo(String caseplanId, String versionId, String stageplanId, String before, String after, String pageSize, List<String> expands) throws IOException {
-    return getCasemanagementCaseplanVersionStageplanStepplans(createGetCasemanagementCaseplanVersionStageplanStepplansRequest(caseplanId, versionId, stageplanId, before, after, pageSize, expands).withHttpInfo());
+  public ApiResponse<StepplanListing> getCasemanagementCaseplanVersionStageplanStepplansWithHttpInfo(String caseplanId, String versionId, String stageplanId, String after, Integer pageSize, List<String> expands) throws IOException {
+    return getCasemanagementCaseplanVersionStageplanStepplans(createGetCasemanagementCaseplanVersionStageplanStepplansRequest(caseplanId, versionId, stageplanId, after, pageSize, expands).withHttpInfo());
   }
 
-  private GetCasemanagementCaseplanVersionStageplanStepplansRequest createGetCasemanagementCaseplanVersionStageplanStepplansRequest(String caseplanId, String versionId, String stageplanId, String before, String after, String pageSize, List<String> expands) {
+  private GetCasemanagementCaseplanVersionStageplanStepplansRequest createGetCasemanagementCaseplanVersionStageplanStepplansRequest(String caseplanId, String versionId, String stageplanId, String after, Integer pageSize, List<String> expands) {
     return GetCasemanagementCaseplanVersionStageplanStepplansRequest.builder()
             .withCaseplanId(caseplanId)
 
             .withVersionId(versionId)
 
             .withStageplanId(stageplanId)
-
-            .withBefore(before)
 
             .withAfter(after)
 
@@ -2009,16 +1989,15 @@ public class CaseManagementApi {
    * 
    * @param caseplanId Caseplan identifier. (required)
    * @param versionId Caseplan version identifier. (required)
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after Cursor that points to the end of the previously returned page. (optional)
+   * @param pageSize Number of entities to return. Maximum is 200. (optional)
    * @param expands Fields to expand. (optional)
    * @return StageplanListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public StageplanListing getCasemanagementCaseplanVersionStageplans(String caseplanId, String versionId, String before, String after, String pageSize, List<String> expands) throws IOException, ApiException {
-    return  getCasemanagementCaseplanVersionStageplans(createGetCasemanagementCaseplanVersionStageplansRequest(caseplanId, versionId, before, after, pageSize, expands));
+  public StageplanListing getCasemanagementCaseplanVersionStageplans(String caseplanId, String versionId, String after, Integer pageSize, List<String> expands) throws IOException, ApiException {
+    return  getCasemanagementCaseplanVersionStageplans(createGetCasemanagementCaseplanVersionStageplansRequest(caseplanId, versionId, after, pageSize, expands));
   }
 
   /**
@@ -2026,24 +2005,21 @@ public class CaseManagementApi {
    * 
    * @param caseplanId Caseplan identifier. (required)
    * @param versionId Caseplan version identifier. (required)
-   * @param before The cursor that points to the start of the set of entities that has been returned. (optional)
-   * @param after The cursor that points to the end of the set of entities that has been returned. (optional)
-   * @param pageSize Number of entities to return. Maximum of 200. (optional)
+   * @param after Cursor that points to the end of the previously returned page. (optional)
+   * @param pageSize Number of entities to return. Maximum is 200. (optional)
    * @param expands Fields to expand. (optional)
    * @return StageplanListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<StageplanListing> getCasemanagementCaseplanVersionStageplansWithHttpInfo(String caseplanId, String versionId, String before, String after, String pageSize, List<String> expands) throws IOException {
-    return getCasemanagementCaseplanVersionStageplans(createGetCasemanagementCaseplanVersionStageplansRequest(caseplanId, versionId, before, after, pageSize, expands).withHttpInfo());
+  public ApiResponse<StageplanListing> getCasemanagementCaseplanVersionStageplansWithHttpInfo(String caseplanId, String versionId, String after, Integer pageSize, List<String> expands) throws IOException {
+    return getCasemanagementCaseplanVersionStageplans(createGetCasemanagementCaseplanVersionStageplansRequest(caseplanId, versionId, after, pageSize, expands).withHttpInfo());
   }
 
-  private GetCasemanagementCaseplanVersionStageplansRequest createGetCasemanagementCaseplanVersionStageplansRequest(String caseplanId, String versionId, String before, String after, String pageSize, List<String> expands) {
+  private GetCasemanagementCaseplanVersionStageplansRequest createGetCasemanagementCaseplanVersionStageplansRequest(String caseplanId, String versionId, String after, Integer pageSize, List<String> expands) {
     return GetCasemanagementCaseplanVersionStageplansRequest.builder()
             .withCaseplanId(caseplanId)
 
             .withVersionId(versionId)
-
-            .withBefore(before)
 
             .withAfter(after)
 
@@ -3687,7 +3663,6 @@ public class CaseManagementApi {
   /**
    * Reposition a Stageplan within a draft Caseplan.
    * 
-   * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param caseplanId Caseplan identifier. (required)
    * @param stageplanId Stageplan identifier. (required)
    * @param body Stageplan reposition request. (required)
@@ -3702,7 +3677,6 @@ public class CaseManagementApi {
   /**
    * Reposition a Stageplan within a draft Caseplan.
    * 
-   * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param caseplanId Caseplan identifier. (required)
    * @param stageplanId Stageplan identifier. (required)
    * @param body Stageplan reposition request. (required)
@@ -3727,7 +3701,6 @@ public class CaseManagementApi {
   /**
    * Reposition a Stageplan within a draft Caseplan.
    * 
-   * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Empty
    * @throws ApiException if the request fails on the server
@@ -3747,7 +3720,6 @@ public class CaseManagementApi {
   /**
    * Reposition a Stageplan within a draft Caseplan.
    * 
-   * postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -3777,7 +3749,6 @@ public class CaseManagementApi {
   /**
    * Create a Stageplan on a draft Caseplan.
    * 
-   * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param caseplanId Caseplan identifier. (required)
    * @param body Stageplan create request. (required)
    * @return Stageplan
@@ -3791,7 +3762,6 @@ public class CaseManagementApi {
   /**
    * Create a Stageplan on a draft Caseplan.
    * 
-   * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param caseplanId Caseplan identifier. (required)
    * @param body Stageplan create request. (required)
    * @return Stageplan
@@ -3813,7 +3783,6 @@ public class CaseManagementApi {
   /**
    * Create a Stageplan on a draft Caseplan.
    * 
-   * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return Stageplan
    * @throws ApiException if the request fails on the server
@@ -3833,7 +3802,6 @@ public class CaseManagementApi {
   /**
    * Create a Stageplan on a draft Caseplan.
    * 
-   * postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

@@ -54,7 +54,7 @@ public class WfmActivityPlanRunJobCompleteTopicActivityPlanJobCompleteNotificati
     DELETEOCCURRENCES("DeleteOccurrences"),
     DELETESESSIONS("DeleteSessions"),
     DELETESESSIONUSERS("DeleteSessionUsers"),
-    MAXIMIZEOCCURRENCE("MaximizeOccurrence"),
+    RUNOCCURRENCE("RunOccurrence"),
     CREATESESSION("CreateSession"),
     EDITSESSION("EditSession");
 

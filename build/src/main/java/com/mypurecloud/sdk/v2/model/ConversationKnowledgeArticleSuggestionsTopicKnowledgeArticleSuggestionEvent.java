@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationKnowledgeArticleSuggestionsTopicActiveSentiment;
 import com.mypurecloud.sdk.v2.model.ConversationKnowledgeArticleSuggestionsTopicSuggestedArticle;
 import com.mypurecloud.sdk.v2.model.ConversationKnowledgeArticleSuggestionsTopicSuggestedIntent;
 import com.mypurecloud.sdk.v2.model.ConversationKnowledgeArticleSuggestionsTopicSuggestionContext;
@@ -192,6 +193,7 @@ public class ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggest
   private ConversationKnowledgeArticleSuggestionsTopicSuggestionFeedback feedback = null;
   private ConversationKnowledgeArticleSuggestionsTopicSuggestedArticle knowledgeArticle = null;
   private ConversationKnowledgeArticleSuggestionsTopicSuggestedIntent activeIntent = null;
+  private ConversationKnowledgeArticleSuggestionsTopicActiveSentiment activeSentiment = null;
 
   public ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -374,6 +376,23 @@ public class ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggest
   }
 
 
+  /**
+   **/
+  public ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent activeSentiment(ConversationKnowledgeArticleSuggestionsTopicActiveSentiment activeSentiment) {
+    this.activeSentiment = activeSentiment;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("activeSentiment")
+  public ConversationKnowledgeArticleSuggestionsTopicActiveSentiment getActiveSentiment() {
+    return activeSentiment;
+  }
+  public void setActiveSentiment(ConversationKnowledgeArticleSuggestionsTopicActiveSentiment activeSentiment) {
+    this.activeSentiment = activeSentiment;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -393,12 +412,13 @@ public class ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggest
             Objects.equals(this.context, conversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent.context) &&
             Objects.equals(this.feedback, conversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent.feedback) &&
             Objects.equals(this.knowledgeArticle, conversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent.knowledgeArticle) &&
-            Objects.equals(this.activeIntent, conversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent.activeIntent);
+            Objects.equals(this.activeIntent, conversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent.activeIntent) &&
+            Objects.equals(this.activeSentiment, conversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggestionEvent.activeSentiment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, suggestionId, state, triggerType, engagementType, context, feedback, knowledgeArticle, activeIntent);
+    return Objects.hash(eventTime, conversationId, suggestionId, state, triggerType, engagementType, context, feedback, knowledgeArticle, activeIntent, activeSentiment);
   }
 
   @Override
@@ -416,6 +436,7 @@ public class ConversationKnowledgeArticleSuggestionsTopicKnowledgeArticleSuggest
     sb.append("    feedback: ").append(toIndentedString(feedback)).append("\n");
     sb.append("    knowledgeArticle: ").append(toIndentedString(knowledgeArticle)).append("\n");
     sb.append("    activeIntent: ").append(toIndentedString(activeIntent)).append("\n");
+    sb.append("    activeSentiment: ").append(toIndentedString(activeSentiment)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -13,7 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.BuAgentSchedulesSearchResponse;
+import com.mypurecloud.sdk.v2.model.BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -75,7 +75,7 @@ public class BuAsyncAgentSchedulesSearchResponse  implements Serializable {
   }
   private StatusEnum status = null;
   private String operationId = null;
-  private BuAgentSchedulesSearchResponse result = null;
+  private BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse result = null;
   private Integer progress = null;
   private String downloadUrl = null;
 
@@ -129,17 +129,17 @@ public class BuAsyncAgentSchedulesSearchResponse  implements Serializable {
   /**
    * The result of the operation.  Null unless status == Complete
    **/
-  public BuAsyncAgentSchedulesSearchResponse result(BuAgentSchedulesSearchResponse result) {
+  public BuAsyncAgentSchedulesSearchResponse result(BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse result) {
     this.result = result;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The result of the operation.  Null unless status == Complete")
   @JsonProperty("result")
-  public BuAgentSchedulesSearchResponse getResult() {
+  public BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse getResult() {
     return result;
   }
-  public void setResult(BuAgentSchedulesSearchResponse result) {
+  public void setResult(BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse result) {
     this.result = result;
   }
 

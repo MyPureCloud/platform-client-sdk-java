@@ -18,8 +18,9 @@
 | **historyIncluded** | **Boolean** | Indicates whether the history of previous emails of the conversation is included within the email bodies of this message. |  [optional] |
 | **emailSizeBytes** | **Integer** | Indicates an estimation of the size of the current email as a whole, in its final, ready to be sent form. |  [optional] |
 | **maxEmailSizeBytes** | **Integer** | Indicates the maximum allowed size for an email to be send via SMTP server, based on the email domain configuration |  [optional] |
+| **recipientWarnings** | [**List&lt;RecipientWarning&gt;**](RecipientWarning) | The recipients that failed validation. Advisory only; recipient policy is enforced at send time. |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

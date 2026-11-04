@@ -209,6 +209,9 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
   private List<String> conversationExternalContactIds = null;
   private List<String> conversationExternalOrganizationIds = null;
   private String utilizationLabel = null;
+  private String outboundCampaignId = null;
+  private String outboundContactListId = null;
+  private String outboundContactId = null;
 
   public AcwDetailEventTopicAfterCallWorkEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -635,6 +638,57 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public AcwDetailEventTopicAfterCallWorkEvent outboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundCampaignId")
+  public String getOutboundCampaignId() {
+    return outboundCampaignId;
+  }
+  public void setOutboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+  }
+
+
+  /**
+   **/
+  public AcwDetailEventTopicAfterCallWorkEvent outboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactListId")
+  public String getOutboundContactListId() {
+    return outboundContactListId;
+  }
+  public void setOutboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+  }
+
+
+  /**
+   **/
+  public AcwDetailEventTopicAfterCallWorkEvent outboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactId")
+  public String getOutboundContactId() {
+    return outboundContactId;
+  }
+  public void setOutboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -668,12 +722,15 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
             Objects.equals(this.wrapupDurationMs, acwDetailEventTopicAfterCallWorkEvent.wrapupDurationMs) &&
             Objects.equals(this.conversationExternalContactIds, acwDetailEventTopicAfterCallWorkEvent.conversationExternalContactIds) &&
             Objects.equals(this.conversationExternalOrganizationIds, acwDetailEventTopicAfterCallWorkEvent.conversationExternalOrganizationIds) &&
-            Objects.equals(this.utilizationLabel, acwDetailEventTopicAfterCallWorkEvent.utilizationLabel);
+            Objects.equals(this.utilizationLabel, acwDetailEventTopicAfterCallWorkEvent.utilizationLabel) &&
+            Objects.equals(this.outboundCampaignId, acwDetailEventTopicAfterCallWorkEvent.outboundCampaignId) &&
+            Objects.equals(this.outboundContactListId, acwDetailEventTopicAfterCallWorkEvent.outboundContactListId) &&
+            Objects.equals(this.outboundContactId, acwDetailEventTopicAfterCallWorkEvent.outboundContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, queueId, wrapupCode, wrapupNotes, wrapupDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, userId, queueId, wrapupCode, wrapupNotes, wrapupDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, outboundCampaignId, outboundContactListId, outboundContactId);
   }
 
   @Override
@@ -705,6 +762,9 @@ public class AcwDetailEventTopicAfterCallWorkEvent  implements Serializable {
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
+    sb.append("    outboundCampaignId: ").append(toIndentedString(outboundCampaignId)).append("\n");
+    sb.append("    outboundContactListId: ").append(toIndentedString(outboundContactListId)).append("\n");
+    sb.append("    outboundContactId: ").append(toIndentedString(outboundContactId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

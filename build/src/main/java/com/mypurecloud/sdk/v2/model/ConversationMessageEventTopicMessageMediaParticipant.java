@@ -383,7 +383,8 @@ public class ConversationMessageEventTopicMessageMediaParticipant  implements Se
     WEBMESSAGING("webmessaging"),
     OPEN("open"),
     INSTAGRAM("instagram"),
-    APPLE("apple");
+    APPLE("apple"),
+    LINKEDIN("linkedin");
 
     private String value;
 

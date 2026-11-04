@@ -105,6 +105,7 @@ public class ReportingTurnKnowledgeMetadata  implements Serializable {
     NOTATTEMPTED("NotAttempted"),
     NOANSWERGENERATED("NoAnswerGenerated"),
     TIMEOUT("Timeout"),
+    DELEGATEDTOAGENTICVIRTUALAGENT("DelegatedToAgenticVirtualAgent"),
     UNKNOWN("Unknown");
 
     private String value;

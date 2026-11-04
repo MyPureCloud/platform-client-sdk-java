@@ -118,7 +118,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ANOMALYDETECTION("AnomalyDetection"),
     CONVERSATIONS("Conversations"),
     GENESYSCLOUDCOPILOT("GenesysCloudCopilot"),
-    CONVERSATIONREFINEMENT("ConversationRefinement");
+    CONVERSATIONREFINEMENT("ConversationRefinement"),
+    CASEMANAGEMENT("CaseManagement");
 
     private String value;
 
@@ -449,6 +450,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     ALTERNATIVESHIFT("AlternativeShift"),
     BUSINESSUNIT("BusinessUnit"),
     FORECAST("Forecast"),
+    FORECASTSCENARIO("ForecastScenario"),
     MANAGEMENTUNIT("ManagementUnit"),
     PLANNINGGROUP("PlanningGroup"),
     SCHEDULE("Schedule"),
@@ -469,6 +471,8 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     SCHEDULESETBIDGROUP("ScheduleSetBidGroup"),
     OPPORTUNITY("Opportunity"),
     DECISIONMETRICS("DecisionMetrics"),
+    SCHEDULECHANGECONSTRAINT("ScheduleChangeConstraint"),
+    SHIFTACTIVITYRULE("ShiftActivityRule"),
     TRIGGER("Trigger"),
     RESPONSE("Response"),
     RESPONSELIBRARY("ResponseLibrary"),
@@ -537,6 +541,7 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     CUSTOMCALCULATIONS("CustomCalculations"),
     SAVEDVIEWS("SavedViews"),
     ANALYTICSLAKEHOUSESETTINGS("AnalyticsLakehouseSettings"),
+    DASHBOARDSLIDESHOW("DashboardSlideShow"),
     USERS("Users"),
     ANALYSES("Analyses"),
     DASHBOARD("Dashboard"),
@@ -636,7 +641,11 @@ public class AuditTopicAuditLogMessage  implements Serializable {
     SETTINGS("Settings"),
     AGENT("Agent"),
     GRAPHSETTINGS("GraphSettings"),
-    REFINEMENTCONFIGURATION("RefinementConfiguration");
+    REFINEMENTCONFIGURATION("RefinementConfiguration"),
+    PROGRAMCONVERSATIONHEALTHSETTINGS("ProgramConversationHealthSettings"),
+    CASEPLAN("Caseplan"),
+    STAGEPLAN("Stageplan"),
+    STEPPLAN("Stepplan");
 
     private String value;
 

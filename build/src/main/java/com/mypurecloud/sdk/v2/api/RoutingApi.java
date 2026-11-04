@@ -4919,12 +4919,13 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param expand Which fields, if any, to expand (optional)
+   * @param forceMemberRecount Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters. (optional, default to false)
    * @return Queue
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public Queue getRoutingQueue(String queueId, List<String> expand) throws IOException, ApiException {
-    return  getRoutingQueue(createGetRoutingQueueRequest(queueId, expand));
+  public Queue getRoutingQueue(String queueId, List<String> expand, Boolean forceMemberRecount) throws IOException, ApiException {
+    return  getRoutingQueue(createGetRoutingQueueRequest(queueId, expand, forceMemberRecount));
   }
 
   /**
@@ -4932,18 +4933,21 @@ public class RoutingApi {
    * 
    * @param queueId Queue ID (required)
    * @param expand Which fields, if any, to expand (optional)
+   * @param forceMemberRecount Force a recount of queue membership. This is an expensive, opt-in operation intended for repairing out-of-sync membership counters. (optional, default to false)
    * @return Queue
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Queue> getRoutingQueueWithHttpInfo(String queueId, List<String> expand) throws IOException {
-    return getRoutingQueue(createGetRoutingQueueRequest(queueId, expand).withHttpInfo());
+  public ApiResponse<Queue> getRoutingQueueWithHttpInfo(String queueId, List<String> expand, Boolean forceMemberRecount) throws IOException {
+    return getRoutingQueue(createGetRoutingQueueRequest(queueId, expand, forceMemberRecount).withHttpInfo());
   }
 
-  private GetRoutingQueueRequest createGetRoutingQueueRequest(String queueId, List<String> expand) {
+  private GetRoutingQueueRequest createGetRoutingQueueRequest(String queueId, List<String> expand, Boolean forceMemberRecount) {
     return GetRoutingQueueRequest.builder()
             .withQueueId(queueId)
 
             .withExpand(expand)
+
+            .withForceMemberRecount(forceMemberRecount)
 
             .build();
   }

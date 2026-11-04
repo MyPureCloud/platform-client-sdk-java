@@ -15,7 +15,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.BillingContractPeriod;
 import com.mypurecloud.sdk.v2.model.BillingPlan;
+import com.mypurecloud.sdk.v2.model.BillingWallet;
 import com.mypurecloud.sdk.v2.model.Customer;
+import com.mypurecloud.sdk.v2.model.NamedEntity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
@@ -89,13 +91,17 @@ public class BillingContract  implements Serializable {
   private LocalDate dateRampStart = null;
   private LocalDate dateRampEnd = null;
   private List<BillingContractPeriod> billingPeriods = null;
+  private List<NamedEntity> organizations = null;
   private List<BillingPlan> plans = null;
+  private List<BillingWallet> wallets = null;
 
   public BillingContract() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       purchaseOrderNumbers = new ArrayList<String>();
       billingPeriods = new ArrayList<BillingContractPeriod>();
+      organizations = new ArrayList<NamedEntity>();
       plans = new ArrayList<BillingPlan>();
+      wallets = new ArrayList<BillingWallet>();
     }
   }
 
@@ -103,7 +109,9 @@ public class BillingContract  implements Serializable {
     if (initWithEmptyList == true) { 
       purchaseOrderNumbers = new ArrayList<String>();
       billingPeriods = new ArrayList<BillingContractPeriod>();
+      organizations = new ArrayList<NamedEntity>();
       plans = new ArrayList<BillingPlan>();
+      wallets = new ArrayList<BillingWallet>();
     }
   }
 
@@ -332,6 +340,24 @@ public class BillingContract  implements Serializable {
 
 
   /**
+   * Organizations associated with the contract, deduplicated from plan associations.
+   **/
+  public BillingContract organizations(List<NamedEntity> organizations) {
+    this.organizations = organizations;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Organizations associated with the contract, deduplicated from plan associations.")
+  @JsonProperty("organizations")
+  public List<NamedEntity> getOrganizations() {
+    return organizations;
+  }
+  public void setOrganizations(List<NamedEntity> organizations) {
+    this.organizations = organizations;
+  }
+
+
+  /**
    * The collection of prices for the related organizations.
    **/
   public BillingContract plans(List<BillingPlan> plans) {
@@ -346,6 +372,24 @@ public class BillingContract  implements Serializable {
   }
   public void setPlans(List<BillingPlan> plans) {
     this.plans = plans;
+  }
+
+
+  /**
+   * Wallet balances for the contract.
+   **/
+  public BillingContract wallets(List<BillingWallet> wallets) {
+    this.wallets = wallets;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Wallet balances for the contract.")
+  @JsonProperty("wallets")
+  public List<BillingWallet> getWallets() {
+    return wallets;
+  }
+  public void setWallets(List<BillingWallet> wallets) {
+    this.wallets = wallets;
   }
 
 
@@ -372,12 +416,14 @@ public class BillingContract  implements Serializable {
             Objects.equals(this.dateRampStart, billingContract.dateRampStart) &&
             Objects.equals(this.dateRampEnd, billingContract.dateRampEnd) &&
             Objects.equals(this.billingPeriods, billingContract.billingPeriods) &&
-            Objects.equals(this.plans, billingContract.plans);
+            Objects.equals(this.organizations, billingContract.organizations) &&
+            Objects.equals(this.plans, billingContract.plans) &&
+            Objects.equals(this.wallets, billingContract.wallets);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, externalNumber, status, commercialModel, purchaseOrderNumbers, billToCustomer, soldToCustomer, endCustomer, dateStart, dateEnd, dateRampStart, dateRampEnd, billingPeriods, plans);
+    return Objects.hash(id, externalNumber, status, commercialModel, purchaseOrderNumbers, billToCustomer, soldToCustomer, endCustomer, dateStart, dateEnd, dateRampStart, dateRampEnd, billingPeriods, organizations, plans, wallets);
   }
 
   @Override
@@ -398,7 +444,9 @@ public class BillingContract  implements Serializable {
     sb.append("    dateRampStart: ").append(toIndentedString(dateRampStart)).append("\n");
     sb.append("    dateRampEnd: ").append(toIndentedString(dateRampEnd)).append("\n");
     sb.append("    billingPeriods: ").append(toIndentedString(billingPeriods)).append("\n");
+    sb.append("    organizations: ").append(toIndentedString(organizations)).append("\n");
     sb.append("    plans: ").append(toIndentedString(plans)).append("\n");
+    sb.append("    wallets: ").append(toIndentedString(wallets)).append("\n");
     sb.append("}");
     return sb.toString();
   }

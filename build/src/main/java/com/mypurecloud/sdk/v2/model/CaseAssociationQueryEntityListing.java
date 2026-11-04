@@ -26,9 +26,6 @@ import java.io.Serializable;
 public class CaseAssociationQueryEntityListing  implements Serializable {
   
   private List<CaseAssociation> entities = null;
-  private String nextUri = null;
-  private String selfUri = null;
-  private String previousUri = null;
   private String after = null;
 
   public CaseAssociationQueryEntityListing() {
@@ -63,57 +60,6 @@ public class CaseAssociationQueryEntityListing  implements Serializable {
 
   /**
    **/
-  public CaseAssociationQueryEntityListing nextUri(String nextUri) {
-    this.nextUri = nextUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("nextUri")
-  public String getNextUri() {
-    return nextUri;
-  }
-  public void setNextUri(String nextUri) {
-    this.nextUri = nextUri;
-  }
-
-
-  /**
-   **/
-  public CaseAssociationQueryEntityListing selfUri(String selfUri) {
-    this.selfUri = selfUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("selfUri")
-  public String getSelfUri() {
-    return selfUri;
-  }
-  public void setSelfUri(String selfUri) {
-    this.selfUri = selfUri;
-  }
-
-
-  /**
-   **/
-  public CaseAssociationQueryEntityListing previousUri(String previousUri) {
-    this.previousUri = previousUri;
-    return this;
-  }
-  
-  @ApiModelProperty(example = "null", value = "")
-  @JsonProperty("previousUri")
-  public String getPreviousUri() {
-    return previousUri;
-  }
-  public void setPreviousUri(String previousUri) {
-    this.previousUri = previousUri;
-  }
-
-
-  /**
-   **/
   public CaseAssociationQueryEntityListing after(String after) {
     this.after = after;
     return this;
@@ -140,15 +86,12 @@ public class CaseAssociationQueryEntityListing  implements Serializable {
     CaseAssociationQueryEntityListing caseAssociationQueryEntityListing = (CaseAssociationQueryEntityListing) o;
 
     return Objects.equals(this.entities, caseAssociationQueryEntityListing.entities) &&
-            Objects.equals(this.nextUri, caseAssociationQueryEntityListing.nextUri) &&
-            Objects.equals(this.selfUri, caseAssociationQueryEntityListing.selfUri) &&
-            Objects.equals(this.previousUri, caseAssociationQueryEntityListing.previousUri) &&
             Objects.equals(this.after, caseAssociationQueryEntityListing.after);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities, nextUri, selfUri, previousUri, after);
+    return Objects.hash(entities, after);
   }
 
   @Override
@@ -157,9 +100,6 @@ public class CaseAssociationQueryEntityListing  implements Serializable {
     sb.append("class CaseAssociationQueryEntityListing {\n");
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
-    sb.append("    nextUri: ").append(toIndentedString(nextUri)).append("\n");
-    sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
-    sb.append("    previousUri: ").append(toIndentedString(previousUri)).append("\n");
     sb.append("    after: ").append(toIndentedString(after)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -13,7 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.mypurecloud.sdk.v2.model.Division;
+import com.mypurecloud.sdk.v2.model.WritableDivision;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.Date;
@@ -27,7 +27,7 @@ public class ExtensionPool  implements Serializable {
   
   private String id = null;
   private String name = null;
-  private Division division = null;
+  private WritableDivision division = null;
   private String description = null;
   private Integer version = null;
   private Date dateCreated = null;
@@ -128,17 +128,17 @@ public class ExtensionPool  implements Serializable {
   /**
    * The division to which this entity belongs.
    **/
-  public ExtensionPool division(Division division) {
+  public ExtensionPool division(WritableDivision division) {
     this.division = division;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The division to which this entity belongs.")
   @JsonProperty("division")
-  public Division getDivision() {
+  public WritableDivision getDivision() {
     return division;
   }
-  public void setDivision(Division division) {
+  public void setDivision(WritableDivision division) {
     this.division = division;
   }
 

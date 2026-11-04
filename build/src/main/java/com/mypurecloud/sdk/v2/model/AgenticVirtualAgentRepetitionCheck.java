@@ -87,11 +87,12 @@ public class AgenticVirtualAgentRepetitionCheck  implements Serializable {
     }
   }
   /**
-   * The similarity category compared to the Levenshtein result that triggers this check's instruction.
+   * The similarity category compared to the comparison result that triggers this check's instruction. VeryLoose, Loose, and Strict require semantic comparison to be enabled for your organization; a request using one of these without that capability enabled fails with 501 Not Implemented.
    */
  @JsonDeserialize(using = SimilarityEnumDeserializer.class)
   public enum SimilarityEnum {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
+    VERYLOOSE("VeryLoose"),
     LOOSE("Loose"),
     MODERATE("Moderate"),
     STRICT("Strict"),
@@ -173,14 +174,14 @@ public class AgenticVirtualAgentRepetitionCheck  implements Serializable {
 
 
   /**
-   * The similarity category compared to the Levenshtein result that triggers this check's instruction.
+   * The similarity category compared to the comparison result that triggers this check's instruction. VeryLoose, Loose, and Strict require semantic comparison to be enabled for your organization; a request using one of these without that capability enabled fails with 501 Not Implemented.
    **/
   public AgenticVirtualAgentRepetitionCheck similarity(SimilarityEnum similarity) {
     this.similarity = similarity;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The similarity category compared to the Levenshtein result that triggers this check's instruction.")
+  @ApiModelProperty(example = "null", required = true, value = "The similarity category compared to the comparison result that triggers this check's instruction. VeryLoose, Loose, and Strict require semantic comparison to be enabled for your organization; a request using one of these without that capability enabled fails with 501 Not Implemented.")
   @JsonProperty("similarity")
   public SimilarityEnum getSimilarity() {
     return similarity;

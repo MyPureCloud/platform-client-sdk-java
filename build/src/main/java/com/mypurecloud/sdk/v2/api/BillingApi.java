@@ -509,12 +509,13 @@ public class BillingApi {
    * @param dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param paymentStatus Payment Status (optional)
+   * @param agreementId Filter invoices by agreement ID. (optional)
    * @return BillingInvoiceListing
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public BillingInvoiceListing getBillingContractsInvoices(String before, String after, String pageSize, LocalDate dateStart, LocalDate dateEnd, String paymentStatus) throws IOException, ApiException {
-    return  getBillingContractsInvoices(createGetBillingContractsInvoicesRequest(before, after, pageSize, dateStart, dateEnd, paymentStatus));
+  public BillingInvoiceListing getBillingContractsInvoices(String before, String after, String pageSize, LocalDate dateStart, LocalDate dateEnd, String paymentStatus, String agreementId) throws IOException, ApiException {
+    return  getBillingContractsInvoices(createGetBillingContractsInvoicesRequest(before, after, pageSize, dateStart, dateEnd, paymentStatus, agreementId));
   }
 
   /**
@@ -527,14 +528,15 @@ public class BillingApi {
    * @param dateStart Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param dateEnd End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
    * @param paymentStatus Payment Status (optional)
+   * @param agreementId Filter invoices by agreement ID. (optional)
    * @return BillingInvoiceListing
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<BillingInvoiceListing> getBillingContractsInvoicesWithHttpInfo(String before, String after, String pageSize, LocalDate dateStart, LocalDate dateEnd, String paymentStatus) throws IOException {
-    return getBillingContractsInvoices(createGetBillingContractsInvoicesRequest(before, after, pageSize, dateStart, dateEnd, paymentStatus).withHttpInfo());
+  public ApiResponse<BillingInvoiceListing> getBillingContractsInvoicesWithHttpInfo(String before, String after, String pageSize, LocalDate dateStart, LocalDate dateEnd, String paymentStatus, String agreementId) throws IOException {
+    return getBillingContractsInvoices(createGetBillingContractsInvoicesRequest(before, after, pageSize, dateStart, dateEnd, paymentStatus, agreementId).withHttpInfo());
   }
 
-  private GetBillingContractsInvoicesRequest createGetBillingContractsInvoicesRequest(String before, String after, String pageSize, LocalDate dateStart, LocalDate dateEnd, String paymentStatus) {
+  private GetBillingContractsInvoicesRequest createGetBillingContractsInvoicesRequest(String before, String after, String pageSize, LocalDate dateStart, LocalDate dateEnd, String paymentStatus, String agreementId) {
     return GetBillingContractsInvoicesRequest.builder()
             .withBefore(before)
 
@@ -547,6 +549,8 @@ public class BillingApi {
             .withDateEnd(dateEnd)
 
             .withPaymentStatus(paymentStatus)
+
+            .withAgreementId(agreementId)
 
             .build();
   }

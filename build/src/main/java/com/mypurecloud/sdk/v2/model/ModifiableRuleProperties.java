@@ -16,6 +16,7 @@ import com.mypurecloud.sdk.v2.model.AlertNotification;
 import com.mypurecloud.sdk.v2.model.CommonRuleConditions;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.Date;
 import java.util.List;
 
 import java.io.Serializable;
@@ -33,6 +34,9 @@ public class ModifiableRuleProperties  implements Serializable {
   private Boolean sendExitingAlarmNotifications = null;
   private Long waitBetweenNotificationMs = null;
   private CommonRuleConditions conditions = null;
+  private Boolean muted = null;
+  private Date dateStartMute = null;
+  private Date dateEndMute = null;
   private String selfUri = null;
 
   public ModifiableRuleProperties() {
@@ -181,6 +185,60 @@ public class ModifiableRuleProperties  implements Serializable {
   }
 
 
+  /**
+   * Flag that indicates if the rule is muted.
+   **/
+  public ModifiableRuleProperties muted(Boolean muted) {
+    this.muted = muted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Flag that indicates if the rule is muted.")
+  @JsonProperty("muted")
+  public Boolean getMuted() {
+    return muted;
+  }
+  public void setMuted(Boolean muted) {
+    this.muted = muted;
+  }
+
+
+  /**
+   * Timestamp of when the mute status of the rule should start. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public ModifiableRuleProperties dateStartMute(Date dateStartMute) {
+    this.dateStartMute = dateStartMute;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Timestamp of when the mute status of the rule should start. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateStartMute")
+  public Date getDateStartMute() {
+    return dateStartMute;
+  }
+  public void setDateStartMute(Date dateStartMute) {
+    this.dateStartMute = dateStartMute;
+  }
+
+
+  /**
+   * Timestamp of when the mute status of the rule should end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+   **/
+  public ModifiableRuleProperties dateEndMute(Date dateEndMute) {
+    this.dateEndMute = dateEndMute;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Timestamp of when the mute status of the rule should end. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z")
+  @JsonProperty("dateEndMute")
+  public Date getDateEndMute() {
+    return dateEndMute;
+  }
+  public void setDateEndMute(Date dateEndMute) {
+    this.dateEndMute = dateEndMute;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -206,12 +264,15 @@ public class ModifiableRuleProperties  implements Serializable {
             Objects.equals(this.sendExitingAlarmNotifications, modifiableRuleProperties.sendExitingAlarmNotifications) &&
             Objects.equals(this.waitBetweenNotificationMs, modifiableRuleProperties.waitBetweenNotificationMs) &&
             Objects.equals(this.conditions, modifiableRuleProperties.conditions) &&
+            Objects.equals(this.muted, modifiableRuleProperties.muted) &&
+            Objects.equals(this.dateStartMute, modifiableRuleProperties.dateStartMute) &&
+            Objects.equals(this.dateEndMute, modifiableRuleProperties.dateEndMute) &&
             Objects.equals(this.selfUri, modifiableRuleProperties.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, enabled, notifications, sendExitingAlarmNotifications, waitBetweenNotificationMs, conditions, selfUri);
+    return Objects.hash(id, name, description, enabled, notifications, sendExitingAlarmNotifications, waitBetweenNotificationMs, conditions, muted, dateStartMute, dateEndMute, selfUri);
   }
 
   @Override
@@ -227,6 +288,9 @@ public class ModifiableRuleProperties  implements Serializable {
     sb.append("    sendExitingAlarmNotifications: ").append(toIndentedString(sendExitingAlarmNotifications)).append("\n");
     sb.append("    waitBetweenNotificationMs: ").append(toIndentedString(waitBetweenNotificationMs)).append("\n");
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
+    sb.append("    muted: ").append(toIndentedString(muted)).append("\n");
+    sb.append("    dateStartMute: ").append(toIndentedString(dateStartMute)).append("\n");
+    sb.append("    dateEndMute: ").append(toIndentedString(dateEndMute)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

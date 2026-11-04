@@ -295,6 +295,7 @@ public class CallbackMediaParticipant  implements Serializable {
   private Boolean skipEnabled = null;
   private Integer timeoutSeconds = null;
   private String automatedCallbackConfigId = null;
+  private String clientIpAddress = null;
   private Date callbackScheduledTime = null;
 
   public CallbackMediaParticipant() {
@@ -1141,6 +1142,24 @@ public class CallbackMediaParticipant  implements Serializable {
 
 
   /**
+   * The reported client IP of the phone for the call.
+   **/
+  public CallbackMediaParticipant clientIpAddress(String clientIpAddress) {
+    this.clientIpAddress = clientIpAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reported client IP of the phone for the call.")
+  @JsonProperty("clientIpAddress")
+  public String getClientIpAddress() {
+    return clientIpAddress;
+  }
+  public void setClientIpAddress(String clientIpAddress) {
+    this.clientIpAddress = clientIpAddress;
+  }
+
+
+  /**
    * Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
    **/
   public CallbackMediaParticipant callbackScheduledTime(Date callbackScheduledTime) {
@@ -1214,12 +1233,13 @@ public class CallbackMediaParticipant  implements Serializable {
             Objects.equals(this.skipEnabled, callbackMediaParticipant.skipEnabled) &&
             Objects.equals(this.timeoutSeconds, callbackMediaParticipant.timeoutSeconds) &&
             Objects.equals(this.automatedCallbackConfigId, callbackMediaParticipant.automatedCallbackConfigId) &&
+            Objects.equals(this.clientIpAddress, callbackMediaParticipant.clientIpAddress) &&
             Objects.equals(this.callbackScheduledTime, callbackMediaParticipant.callbackScheduledTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, startAlertingTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, externalCampaign, skipEnabled, timeoutSeconds, automatedCallbackConfigId, callbackScheduledTime);
+    return Objects.hash(id, name, address, startTime, startAlertingTime, connectedTime, endTime, startHoldTime, purpose, state, direction, disconnectType, held, wrapupRequired, wrapupPrompt, mediaRoles, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, peer, flaggedReason, journeyContext, conversationRoutingData, startAcwTime, endAcwTime, parkTime, resumeTime, outboundPreview, voicemail, callbackNumbers, callbackUserName, externalCampaign, skipEnabled, timeoutSeconds, automatedCallbackConfigId, clientIpAddress, callbackScheduledTime);
   }
 
   @Override
@@ -1273,6 +1293,7 @@ public class CallbackMediaParticipant  implements Serializable {
     sb.append("    skipEnabled: ").append(toIndentedString(skipEnabled)).append("\n");
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
     sb.append("    automatedCallbackConfigId: ").append(toIndentedString(automatedCallbackConfigId)).append("\n");
+    sb.append("    clientIpAddress: ").append(toIndentedString(clientIpAddress)).append("\n");
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("}");
     return sb.toString();

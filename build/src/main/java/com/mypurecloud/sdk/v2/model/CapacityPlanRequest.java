@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuShortTermForecastReference;
+import com.mypurecloud.sdk.v2.model.CapacityPlanImportedForecastRequest;
 import com.mypurecloud.sdk.v2.model.CreateStaffingGroupAllocation;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -32,6 +33,7 @@ public class CapacityPlanRequest  implements Serializable {
   private LocalDate startBusinessUnitDate = null;
   private LocalDate endBusinessUnitDate = null;
   private BuShortTermForecastReference forecast = null;
+  private CapacityPlanImportedForecastRequest importedForecast = null;
   private Double fullTimeEquivalentWeeklyHours = null;
   private List<CreateStaffingGroupAllocation> staffingGroupAllocations = null;
 
@@ -121,20 +123,38 @@ public class CapacityPlanRequest  implements Serializable {
 
 
   /**
-   * The selected forecast for this capacity plan. Null when main forecast is used in the future
+   * The generated forecast for this capacity plan. Exactly one of forecast or importedForecast must be provided
    **/
   public CapacityPlanRequest forecast(BuShortTermForecastReference forecast) {
     this.forecast = forecast;
     return this;
   }
   
-  @ApiModelProperty(example = "null", required = true, value = "The selected forecast for this capacity plan. Null when main forecast is used in the future")
+  @ApiModelProperty(example = "null", value = "The generated forecast for this capacity plan. Exactly one of forecast or importedForecast must be provided")
   @JsonProperty("forecast")
   public BuShortTermForecastReference getForecast() {
     return forecast;
   }
   public void setForecast(BuShortTermForecastReference forecast) {
     this.forecast = forecast;
+  }
+
+
+  /**
+   * The externally imported forecast for this capacity plan. Exactly one of forecast or importedForecast must be provided
+   **/
+  public CapacityPlanRequest importedForecast(CapacityPlanImportedForecastRequest importedForecast) {
+    this.importedForecast = importedForecast;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The externally imported forecast for this capacity plan. Exactly one of forecast or importedForecast must be provided")
+  @JsonProperty("importedForecast")
+  public CapacityPlanImportedForecastRequest getImportedForecast() {
+    return importedForecast;
+  }
+  public void setImportedForecast(CapacityPlanImportedForecastRequest importedForecast) {
+    this.importedForecast = importedForecast;
   }
 
 
@@ -189,13 +209,14 @@ public class CapacityPlanRequest  implements Serializable {
             Objects.equals(this.startBusinessUnitDate, capacityPlanRequest.startBusinessUnitDate) &&
             Objects.equals(this.endBusinessUnitDate, capacityPlanRequest.endBusinessUnitDate) &&
             Objects.equals(this.forecast, capacityPlanRequest.forecast) &&
+            Objects.equals(this.importedForecast, capacityPlanRequest.importedForecast) &&
             Objects.equals(this.fullTimeEquivalentWeeklyHours, capacityPlanRequest.fullTimeEquivalentWeeklyHours) &&
             Objects.equals(this.staffingGroupAllocations, capacityPlanRequest.staffingGroupAllocations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, startBusinessUnitDate, endBusinessUnitDate, forecast, fullTimeEquivalentWeeklyHours, staffingGroupAllocations);
+    return Objects.hash(name, description, startBusinessUnitDate, endBusinessUnitDate, forecast, importedForecast, fullTimeEquivalentWeeklyHours, staffingGroupAllocations);
   }
 
   @Override
@@ -208,6 +229,7 @@ public class CapacityPlanRequest  implements Serializable {
     sb.append("    startBusinessUnitDate: ").append(toIndentedString(startBusinessUnitDate)).append("\n");
     sb.append("    endBusinessUnitDate: ").append(toIndentedString(endBusinessUnitDate)).append("\n");
     sb.append("    forecast: ").append(toIndentedString(forecast)).append("\n");
+    sb.append("    importedForecast: ").append(toIndentedString(importedForecast)).append("\n");
     sb.append("    fullTimeEquivalentWeeklyHours: ").append(toIndentedString(fullTimeEquivalentWeeklyHours)).append("\n");
     sb.append("    staffingGroupAllocations: ").append(toIndentedString(staffingGroupAllocations)).append("\n");
     sb.append("}");

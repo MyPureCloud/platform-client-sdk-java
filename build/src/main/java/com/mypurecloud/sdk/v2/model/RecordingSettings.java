@@ -28,6 +28,7 @@ public class RecordingSettings  implements Serializable {
   private Integer recordingPlaybackUrlTtl = null;
   private Integer recordingBatchDownloadUrlTtl = null;
   private Boolean stopRecordingWhenOnlyExternalParticipants = null;
+  private Boolean hierarchyAccessControlEnabled = null;
 
   public RecordingSettings() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -148,6 +149,24 @@ public class RecordingSettings  implements Serializable {
   }
 
 
+  /**
+   * Whether hierarchy access control using the Reports To management chain is enabled for the organization
+   **/
+  public RecordingSettings hierarchyAccessControlEnabled(Boolean hierarchyAccessControlEnabled) {
+    this.hierarchyAccessControlEnabled = hierarchyAccessControlEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Whether hierarchy access control using the Reports To management chain is enabled for the organization")
+  @JsonProperty("hierarchyAccessControlEnabled")
+  public Boolean getHierarchyAccessControlEnabled() {
+    return hierarchyAccessControlEnabled;
+  }
+  public void setHierarchyAccessControlEnabled(Boolean hierarchyAccessControlEnabled) {
+    this.hierarchyAccessControlEnabled = hierarchyAccessControlEnabled;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -163,12 +182,13 @@ public class RecordingSettings  implements Serializable {
             Objects.equals(this.regionalRecordingStorageEnabled, recordingSettings.regionalRecordingStorageEnabled) &&
             Objects.equals(this.recordingPlaybackUrlTtl, recordingSettings.recordingPlaybackUrlTtl) &&
             Objects.equals(this.recordingBatchDownloadUrlTtl, recordingSettings.recordingBatchDownloadUrlTtl) &&
-            Objects.equals(this.stopRecordingWhenOnlyExternalParticipants, recordingSettings.stopRecordingWhenOnlyExternalParticipants);
+            Objects.equals(this.stopRecordingWhenOnlyExternalParticipants, recordingSettings.stopRecordingWhenOnlyExternalParticipants) &&
+            Objects.equals(this.hierarchyAccessControlEnabled, recordingSettings.hierarchyAccessControlEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxSimultaneousStreams, maxConfigurableScreenRecordingStreams, regionalRecordingStorageEnabled, recordingPlaybackUrlTtl, recordingBatchDownloadUrlTtl, stopRecordingWhenOnlyExternalParticipants);
+    return Objects.hash(maxSimultaneousStreams, maxConfigurableScreenRecordingStreams, regionalRecordingStorageEnabled, recordingPlaybackUrlTtl, recordingBatchDownloadUrlTtl, stopRecordingWhenOnlyExternalParticipants, hierarchyAccessControlEnabled);
   }
 
   @Override
@@ -182,6 +202,7 @@ public class RecordingSettings  implements Serializable {
     sb.append("    recordingPlaybackUrlTtl: ").append(toIndentedString(recordingPlaybackUrlTtl)).append("\n");
     sb.append("    recordingBatchDownloadUrlTtl: ").append(toIndentedString(recordingBatchDownloadUrlTtl)).append("\n");
     sb.append("    stopRecordingWhenOnlyExternalParticipants: ").append(toIndentedString(stopRecordingWhenOnlyExternalParticipants)).append("\n");
+    sb.append("    hierarchyAccessControlEnabled: ").append(toIndentedString(hierarchyAccessControlEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

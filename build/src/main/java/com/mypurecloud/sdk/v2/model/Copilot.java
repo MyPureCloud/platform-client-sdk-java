@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.AnswerGenerationConfig;
 import com.mypurecloud.sdk.v2.model.AutoSearchConfig;
+import com.mypurecloud.sdk.v2.model.EmailSummaryGenerationConfig;
 import com.mypurecloud.sdk.v2.model.KnowledgeAnswerConfig;
 import com.mypurecloud.sdk.v2.model.ManualSearchConfig;
 import com.mypurecloud.sdk.v2.model.NluConfig;
@@ -36,6 +37,7 @@ public class Copilot  implements Serializable {
   private String defaultLanguage = null;
   private KnowledgeAnswerConfig knowledgeAnswerConfig = null;
   private SummaryGenerationConfig summaryGenerationConfig = null;
+  private EmailSummaryGenerationConfig emailSummaryGenerationConfig = null;
   private WrapupCodePredictionConfig wrapupCodePredictionConfig = null;
   private AnswerGenerationConfig answerGenerationConfig = null;
 
@@ -178,6 +180,24 @@ public class Copilot  implements Serializable {
   }
   public void setSummaryGenerationConfig(SummaryGenerationConfig summaryGenerationConfig) {
     this.summaryGenerationConfig = summaryGenerationConfig;
+  }
+
+
+  /**
+   * Email summary configuration.
+   **/
+  public Copilot emailSummaryGenerationConfig(EmailSummaryGenerationConfig emailSummaryGenerationConfig) {
+    this.emailSummaryGenerationConfig = emailSummaryGenerationConfig;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Email summary configuration.")
+  @JsonProperty("emailSummaryGenerationConfig")
+  public EmailSummaryGenerationConfig getEmailSummaryGenerationConfig() {
+    return emailSummaryGenerationConfig;
+  }
+  public void setEmailSummaryGenerationConfig(EmailSummaryGenerationConfig emailSummaryGenerationConfig) {
+    this.emailSummaryGenerationConfig = emailSummaryGenerationConfig;
   }
 
 
@@ -329,6 +349,7 @@ public class Copilot  implements Serializable {
             Objects.equals(this.defaultLanguage, copilot.defaultLanguage) &&
             Objects.equals(this.knowledgeAnswerConfig, copilot.knowledgeAnswerConfig) &&
             Objects.equals(this.summaryGenerationConfig, copilot.summaryGenerationConfig) &&
+            Objects.equals(this.emailSummaryGenerationConfig, copilot.emailSummaryGenerationConfig) &&
             Objects.equals(this.wrapupCodePredictionConfig, copilot.wrapupCodePredictionConfig) &&
             Objects.equals(this.answerGenerationConfig, copilot.answerGenerationConfig) &&
             Objects.equals(this.nluEngineType, copilot.nluEngineType) &&
@@ -341,7 +362,7 @@ public class Copilot  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(enabled, liveOnQueue, defaultLanguage, knowledgeAnswerConfig, summaryGenerationConfig, wrapupCodePredictionConfig, answerGenerationConfig, nluEngineType, nluConfig, ruleEngineConfig, autoSearchConfig, manualSearchConfig, selfUri);
+    return Objects.hash(enabled, liveOnQueue, defaultLanguage, knowledgeAnswerConfig, summaryGenerationConfig, emailSummaryGenerationConfig, wrapupCodePredictionConfig, answerGenerationConfig, nluEngineType, nluConfig, ruleEngineConfig, autoSearchConfig, manualSearchConfig, selfUri);
   }
 
   @Override
@@ -354,6 +375,7 @@ public class Copilot  implements Serializable {
     sb.append("    defaultLanguage: ").append(toIndentedString(defaultLanguage)).append("\n");
     sb.append("    knowledgeAnswerConfig: ").append(toIndentedString(knowledgeAnswerConfig)).append("\n");
     sb.append("    summaryGenerationConfig: ").append(toIndentedString(summaryGenerationConfig)).append("\n");
+    sb.append("    emailSummaryGenerationConfig: ").append(toIndentedString(emailSummaryGenerationConfig)).append("\n");
     sb.append("    wrapupCodePredictionConfig: ").append(toIndentedString(wrapupCodePredictionConfig)).append("\n");
     sb.append("    answerGenerationConfig: ").append(toIndentedString(answerGenerationConfig)).append("\n");
     sb.append("    nluEngineType: ").append(toIndentedString(nluEngineType)).append("\n");

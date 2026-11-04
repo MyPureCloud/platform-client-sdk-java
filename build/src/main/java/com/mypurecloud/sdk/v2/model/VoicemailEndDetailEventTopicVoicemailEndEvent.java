@@ -213,6 +213,9 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
   private List<String> conversationExternalContactIds = null;
   private List<String> conversationExternalOrganizationIds = null;
   private String utilizationLabel = null;
+  private String outboundCampaignId = null;
+  private String outboundContactListId = null;
+  private String outboundContactId = null;
 
   public VoicemailEndDetailEventTopicVoicemailEndEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -518,6 +521,57 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
   }
 
 
+  /**
+   **/
+  public VoicemailEndDetailEventTopicVoicemailEndEvent outboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundCampaignId")
+  public String getOutboundCampaignId() {
+    return outboundCampaignId;
+  }
+  public void setOutboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+  }
+
+
+  /**
+   **/
+  public VoicemailEndDetailEventTopicVoicemailEndEvent outboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactListId")
+  public String getOutboundContactListId() {
+    return outboundContactListId;
+  }
+  public void setOutboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+  }
+
+
+  /**
+   **/
+  public VoicemailEndDetailEventTopicVoicemailEndEvent outboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactId")
+  public String getOutboundContactId() {
+    return outboundContactId;
+  }
+  public void setOutboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -544,12 +598,15 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
             Objects.equals(this.voicemailDurationMs, voicemailEndDetailEventTopicVoicemailEndEvent.voicemailDurationMs) &&
             Objects.equals(this.conversationExternalContactIds, voicemailEndDetailEventTopicVoicemailEndEvent.conversationExternalContactIds) &&
             Objects.equals(this.conversationExternalOrganizationIds, voicemailEndDetailEventTopicVoicemailEndEvent.conversationExternalOrganizationIds) &&
-            Objects.equals(this.utilizationLabel, voicemailEndDetailEventTopicVoicemailEndEvent.utilizationLabel);
+            Objects.equals(this.utilizationLabel, voicemailEndDetailEventTopicVoicemailEndEvent.utilizationLabel) &&
+            Objects.equals(this.outboundCampaignId, voicemailEndDetailEventTopicVoicemailEndEvent.outboundCampaignId) &&
+            Objects.equals(this.outboundContactListId, voicemailEndDetailEventTopicVoicemailEndEvent.outboundContactListId) &&
+            Objects.equals(this.outboundContactId, voicemailEndDetailEventTopicVoicemailEndEvent.outboundContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, userId, queueId, divisionId, voicemailDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, userId, queueId, divisionId, voicemailDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, outboundCampaignId, outboundContactListId, outboundContactId);
   }
 
   @Override
@@ -574,6 +631,9 @@ public class VoicemailEndDetailEventTopicVoicemailEndEvent  implements Serializa
     sb.append("    conversationExternalContactIds: ").append(toIndentedString(conversationExternalContactIds)).append("\n");
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
+    sb.append("    outboundCampaignId: ").append(toIndentedString(outboundCampaignId)).append("\n");
+    sb.append("    outboundContactListId: ").append(toIndentedString(outboundContactListId)).append("\n");
+    sb.append("    outboundContactId: ").append(toIndentedString(outboundContactId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -130,14 +130,14 @@ public class SendAgentlessOutboundMessageRequest  implements Serializable {
 
 
   /**
-   * The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, and Open messenger types only. For WebMessaging it is required.
+   * The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, Open and WhatsApp messenger types only. For WebMessaging it is required.
    **/
   public SendAgentlessOutboundMessageRequest externalContactId(String externalContactId) {
     this.externalContactId = externalContactId;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, and Open messenger types only. For WebMessaging it is required.")
+  @ApiModelProperty(example = "null", value = "The externalContactId of the recipient of the message. Supported for WebMessaging, SMS, Open and WhatsApp messenger types only. For WebMessaging it is required.")
   @JsonProperty("externalContactId")
   public String getExternalContactId() {
     return externalContactId;

@@ -277,6 +277,7 @@ public class CallbackBasic  implements Serializable {
   private String callerId = null;
   private String callerIdName = null;
   private ConversationQueueMediaSettings queueMediaSettings = null;
+  private String clientIpAddress = null;
 
   public CallbackBasic() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -815,6 +816,24 @@ public class CallbackBasic  implements Serializable {
   }
 
 
+  /**
+   * The reported client IP of the phone for the call.
+   **/
+  public CallbackBasic clientIpAddress(String clientIpAddress) {
+    this.clientIpAddress = clientIpAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The reported client IP of the phone for the call.")
+  @JsonProperty("clientIpAddress")
+  public String getClientIpAddress() {
+    return clientIpAddress;
+  }
+  public void setClientIpAddress(String clientIpAddress) {
+    this.clientIpAddress = clientIpAddress;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -853,12 +872,13 @@ public class CallbackBasic  implements Serializable {
             Objects.equals(this.afterCallWorkRequired, callbackBasic.afterCallWorkRequired) &&
             Objects.equals(this.callerId, callbackBasic.callerId) &&
             Objects.equals(this.callerIdName, callbackBasic.callerIdName) &&
-            Objects.equals(this.queueMediaSettings, callbackBasic.queueMediaSettings);
+            Objects.equals(this.queueMediaSettings, callbackBasic.queueMediaSettings) &&
+            Objects.equals(this.clientIpAddress, callbackBasic.clientIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(state, initialState, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, externalCampaign, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName, queueMediaSettings);
+    return Objects.hash(state, initialState, id, segments, direction, held, disconnectType, startHoldTime, dialerPreview, voicemail, callbackNumbers, callbackUserName, scriptId, externalCampaign, skipEnabled, timeoutSeconds, startAlertingTime, connectedTime, disconnectedTime, callbackScheduledTime, automatedCallbackConfigId, provider, peerId, wrapup, afterCallWork, afterCallWorkRequired, callerId, callerIdName, queueMediaSettings, clientIpAddress);
   }
 
   @Override
@@ -895,6 +915,7 @@ public class CallbackBasic  implements Serializable {
     sb.append("    callerId: ").append(toIndentedString(callerId)).append("\n");
     sb.append("    callerIdName: ").append(toIndentedString(callerIdName)).append("\n");
     sb.append("    queueMediaSettings: ").append(toIndentedString(queueMediaSettings)).append("\n");
+    sb.append("    clientIpAddress: ").append(toIndentedString(clientIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

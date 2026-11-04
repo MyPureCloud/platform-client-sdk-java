@@ -4,7 +4,7 @@
   <groupId>com.mypurecloud</groupId>
   <artifactId>platform-client-v2</artifactId>
   <name>platform-client-v2</name>
-  <version>265.1.0</version>
+  <version>267.0.0</version>
   <description>A Java package to interface with the PureCloud Platform API</description>
   <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
 
@@ -217,7 +217,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>properties-maven-plugin</artifactId>
-        <version>1.3.0</version>
+        <version>1.3.1</version>
         <executions>
           <execution>
             <phase>initialize</phase>
@@ -353,11 +353,11 @@
   </dependencies>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <slf4j-version>2.0.18</slf4j-version>
+    <slf4j-version>2.0.20</slf4j-version>
     <swagger-annotations-version>1.6.16</swagger-annotations-version>
     <commons-codec-version>1.15</commons-codec-version>
     <jersey-version>1.19.1</jersey-version>
-    <jackson-version>2.22.3</jackson-version>
+    <jackson-version>2.22.4</jackson-version>
     <jackson-annotations-version>2.22</jackson-annotations-version>
     <maven-plugin-version>1.0.0</maven-plugin-version>
     <testng-version>7.10.2</testng-version>
@@ -365,13 +365,13 @@
     <okhttpclient-version>4.12.0</okhttpclient-version>
     <ning-asynchttpclient-version>3.0.14</ning-asynchttpclient-version>
     <nv-websocket-client-version>2.14</nv-websocket-client-version>
-    <guava-version>33.7.1-jre</guava-version>
-    <mockito.version>5.23.0</mockito.version>
+    <guava-version>33.7.2-jre</guava-version>
+    <mockito.version>5.24.0</mockito.version>
     <commons-configuration-version>2.15.1</commons-configuration-version>
-    <io-netty-version>4.2.18.Final</io-netty-version>
+    <io-netty-version>4.2.19.Final</io-netty-version>
 
     <name>platform-client-v2</name>
-    <version>265.1.0</version>
+    <version>267.0.0</version>
     <description>A Java package to interface with the PureCloud Platform API</description>
     <url>https://mypurecloud.github.io/platform-client-sdk-java/</url>
   </properties>

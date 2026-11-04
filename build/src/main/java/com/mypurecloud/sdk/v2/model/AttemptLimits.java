@@ -114,6 +114,7 @@ public class AttemptLimits  implements Serializable {
   }
   private ResetPeriodEnum resetPeriod = null;
   private Map<String, RecallEntry> recallEntries = null;
+  private Map<String, Map<String, RecallEntry>> phoneTypeRecallEntries = null;
   private String selfUri = null;
 
   public AttemptLimits() {
@@ -273,6 +274,24 @@ public class AttemptLimits  implements Serializable {
   }
 
 
+  /**
+   * Configuration for recall attempts per phone type
+   **/
+  public AttemptLimits phoneTypeRecallEntries(Map<String, Map<String, RecallEntry>> phoneTypeRecallEntries) {
+    this.phoneTypeRecallEntries = phoneTypeRecallEntries;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Configuration for recall attempts per phone type")
+  @JsonProperty("phoneTypeRecallEntries")
+  public Map<String, Map<String, RecallEntry>> getPhoneTypeRecallEntries() {
+    return phoneTypeRecallEntries;
+  }
+  public void setPhoneTypeRecallEntries(Map<String, Map<String, RecallEntry>> phoneTypeRecallEntries) {
+    this.phoneTypeRecallEntries = phoneTypeRecallEntries;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -300,12 +319,13 @@ public class AttemptLimits  implements Serializable {
             Objects.equals(this.timeZoneId, attemptLimits.timeZoneId) &&
             Objects.equals(this.resetPeriod, attemptLimits.resetPeriod) &&
             Objects.equals(this.recallEntries, attemptLimits.recallEntries) &&
+            Objects.equals(this.phoneTypeRecallEntries, attemptLimits.phoneTypeRecallEntries) &&
             Objects.equals(this.selfUri, attemptLimits.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, dateCreated, dateModified, version, maxAttemptsPerContact, maxAttemptsPerNumber, timeZoneId, resetPeriod, recallEntries, selfUri);
+    return Objects.hash(id, name, dateCreated, dateModified, version, maxAttemptsPerContact, maxAttemptsPerNumber, timeZoneId, resetPeriod, recallEntries, phoneTypeRecallEntries, selfUri);
   }
 
   @Override
@@ -323,6 +343,7 @@ public class AttemptLimits  implements Serializable {
     sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
     sb.append("    resetPeriod: ").append(toIndentedString(resetPeriod)).append("\n");
     sb.append("    recallEntries: ").append(toIndentedString(recallEntries)).append("\n");
+    sb.append("    phoneTypeRecallEntries: ").append(toIndentedString(phoneTypeRecallEntries)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

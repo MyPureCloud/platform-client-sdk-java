@@ -360,6 +360,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   private Long timeoutSeconds = null;
   private Date callbackScheduledTime = null;
   private String automatedCallbackConfigId = null;
+  private String publicIpAddress = null;
 
   public ConversationCallbackEventTopicCallbackMediaParticipant() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -1209,6 +1210,23 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
   }
 
 
+  /**
+   **/
+  public ConversationCallbackEventTopicCallbackMediaParticipant publicIpAddress(String publicIpAddress) {
+    this.publicIpAddress = publicIpAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("publicIpAddress")
+  public String getPublicIpAddress() {
+    return publicIpAddress;
+  }
+  public void setPublicIpAddress(String publicIpAddress) {
+    this.publicIpAddress = publicIpAddress;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1267,12 +1285,13 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
             Objects.equals(this.externalCampaign, conversationCallbackEventTopicCallbackMediaParticipant.externalCampaign) &&
             Objects.equals(this.timeoutSeconds, conversationCallbackEventTopicCallbackMediaParticipant.timeoutSeconds) &&
             Objects.equals(this.callbackScheduledTime, conversationCallbackEventTopicCallbackMediaParticipant.callbackScheduledTime) &&
-            Objects.equals(this.automatedCallbackConfigId, conversationCallbackEventTopicCallbackMediaParticipant.automatedCallbackConfigId);
+            Objects.equals(this.automatedCallbackConfigId, conversationCallbackEventTopicCallbackMediaParticipant.automatedCallbackConfigId) &&
+            Objects.equals(this.publicIpAddress, conversationCallbackEventTopicCallbackMediaParticipant.publicIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId, publicIpAddress);
   }
 
   @Override
@@ -1329,6 +1348,7 @@ public class ConversationCallbackEventTopicCallbackMediaParticipant  implements 
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    automatedCallbackConfigId: ").append(toIndentedString(automatedCallbackConfigId)).append("\n");
+    sb.append("    publicIpAddress: ").append(toIndentedString(publicIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

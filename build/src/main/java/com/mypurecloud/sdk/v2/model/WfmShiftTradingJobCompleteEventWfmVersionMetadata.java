@@ -23,8 +23,12 @@ import java.io.Serializable;
 public class WfmShiftTradingJobCompleteEventWfmVersionMetadata  implements Serializable {
   
   private Long version = null;
+  private String createdBy = null;
+  private String dateCreated = null;
   private String modifiedBy = null;
   private String dateModified = null;
+  private String deletedBy = null;
+  private String dateDeleted = null;
 
   public WfmShiftTradingJobCompleteEventWfmVersionMetadata() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -51,6 +55,40 @@ public class WfmShiftTradingJobCompleteEventWfmVersionMetadata  implements Seria
   }
   public void setVersion(Long version) {
     this.version = version;
+  }
+
+
+  /**
+   **/
+  public WfmShiftTradingJobCompleteEventWfmVersionMetadata createdBy(String createdBy) {
+    this.createdBy = createdBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("createdBy")
+  public String getCreatedBy() {
+    return createdBy;
+  }
+  public void setCreatedBy(String createdBy) {
+    this.createdBy = createdBy;
+  }
+
+
+  /**
+   **/
+  public WfmShiftTradingJobCompleteEventWfmVersionMetadata dateCreated(String dateCreated) {
+    this.dateCreated = dateCreated;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dateCreated")
+  public String getDateCreated() {
+    return dateCreated;
+  }
+  public void setDateCreated(String dateCreated) {
+    this.dateCreated = dateCreated;
   }
 
 
@@ -88,6 +126,40 @@ public class WfmShiftTradingJobCompleteEventWfmVersionMetadata  implements Seria
   }
 
 
+  /**
+   **/
+  public WfmShiftTradingJobCompleteEventWfmVersionMetadata deletedBy(String deletedBy) {
+    this.deletedBy = deletedBy;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("deletedBy")
+  public String getDeletedBy() {
+    return deletedBy;
+  }
+  public void setDeletedBy(String deletedBy) {
+    this.deletedBy = deletedBy;
+  }
+
+
+  /**
+   **/
+  public WfmShiftTradingJobCompleteEventWfmVersionMetadata dateDeleted(String dateDeleted) {
+    this.dateDeleted = dateDeleted;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("dateDeleted")
+  public String getDateDeleted() {
+    return dateDeleted;
+  }
+  public void setDateDeleted(String dateDeleted) {
+    this.dateDeleted = dateDeleted;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -99,13 +171,17 @@ public class WfmShiftTradingJobCompleteEventWfmVersionMetadata  implements Seria
     WfmShiftTradingJobCompleteEventWfmVersionMetadata wfmShiftTradingJobCompleteEventWfmVersionMetadata = (WfmShiftTradingJobCompleteEventWfmVersionMetadata) o;
 
     return Objects.equals(this.version, wfmShiftTradingJobCompleteEventWfmVersionMetadata.version) &&
+            Objects.equals(this.createdBy, wfmShiftTradingJobCompleteEventWfmVersionMetadata.createdBy) &&
+            Objects.equals(this.dateCreated, wfmShiftTradingJobCompleteEventWfmVersionMetadata.dateCreated) &&
             Objects.equals(this.modifiedBy, wfmShiftTradingJobCompleteEventWfmVersionMetadata.modifiedBy) &&
-            Objects.equals(this.dateModified, wfmShiftTradingJobCompleteEventWfmVersionMetadata.dateModified);
+            Objects.equals(this.dateModified, wfmShiftTradingJobCompleteEventWfmVersionMetadata.dateModified) &&
+            Objects.equals(this.deletedBy, wfmShiftTradingJobCompleteEventWfmVersionMetadata.deletedBy) &&
+            Objects.equals(this.dateDeleted, wfmShiftTradingJobCompleteEventWfmVersionMetadata.dateDeleted);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(version, modifiedBy, dateModified);
+    return Objects.hash(version, createdBy, dateCreated, modifiedBy, dateModified, deletedBy, dateDeleted);
   }
 
   @Override
@@ -114,8 +190,12 @@ public class WfmShiftTradingJobCompleteEventWfmVersionMetadata  implements Seria
     sb.append("class WfmShiftTradingJobCompleteEventWfmVersionMetadata {\n");
     
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("    createdBy: ").append(toIndentedString(createdBy)).append("\n");
+    sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    modifiedBy: ").append(toIndentedString(modifiedBy)).append("\n");
     sb.append("    dateModified: ").append(toIndentedString(dateModified)).append("\n");
+    sb.append("    deletedBy: ").append(toIndentedString(deletedBy)).append("\n");
+    sb.append("    dateDeleted: ").append(toIndentedString(dateDeleted)).append("\n");
     sb.append("}");
     return sb.toString();
   }

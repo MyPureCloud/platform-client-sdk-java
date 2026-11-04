@@ -53,7 +53,8 @@ public class RecordingMessageReceipt  implements Serializable {
     READ("Read"),
     FAILED("Failed"),
     PUBLISHED("Published"),
-    REMOVED("Removed");
+    REMOVED("Removed"),
+    MODIFIED("Modified");
 
     private String value;
 

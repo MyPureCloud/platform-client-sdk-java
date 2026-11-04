@@ -19,6 +19,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -88,14 +90,17 @@ public class BillingInvoice  implements Serializable {
   private String customerPoNumber = null;
   private String customerInvoiceType = null;
   private BigDecimal amount = null;
+  private List<String> agreementIds = null;
 
   public BillingInvoice() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      agreementIds = new ArrayList<String>();
     }
   }
 
   public BillingInvoice(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      agreementIds = new ArrayList<String>();
     }
   }
 
@@ -341,6 +346,24 @@ public class BillingInvoice  implements Serializable {
   }
 
 
+  /**
+   * Agreement IDs billed on this invoice, collected from its invoice lines.
+   **/
+  public BillingInvoice agreementIds(List<String> agreementIds) {
+    this.agreementIds = agreementIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "Agreement IDs billed on this invoice, collected from its invoice lines.")
+  @JsonProperty("agreementIds")
+  public List<String> getAgreementIds() {
+    return agreementIds;
+  }
+  public void setAgreementIds(List<String> agreementIds) {
+    this.agreementIds = agreementIds;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -364,12 +387,13 @@ public class BillingInvoice  implements Serializable {
             Objects.equals(this.paymentLink, billingInvoice.paymentLink) &&
             Objects.equals(this.customerPoNumber, billingInvoice.customerPoNumber) &&
             Objects.equals(this.customerInvoiceType, billingInvoice.customerInvoiceType) &&
-            Objects.equals(this.amount, billingInvoice.amount);
+            Objects.equals(this.amount, billingInvoice.amount) &&
+            Objects.equals(this.agreementIds, billingInvoice.agreementIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, billToCustomer, shipToCustomer, soldToCustomer, dateInvoiced, billToAddress, shipToAddress, currencyIsoCode, paymentStatus, paymentTerms, paymentLink, customerPoNumber, customerInvoiceType, amount);
+    return Objects.hash(id, billToCustomer, shipToCustomer, soldToCustomer, dateInvoiced, billToAddress, shipToAddress, currencyIsoCode, paymentStatus, paymentTerms, paymentLink, customerPoNumber, customerInvoiceType, amount, agreementIds);
   }
 
   @Override
@@ -391,6 +415,7 @@ public class BillingInvoice  implements Serializable {
     sb.append("    customerPoNumber: ").append(toIndentedString(customerPoNumber)).append("\n");
     sb.append("    customerInvoiceType: ").append(toIndentedString(customerInvoiceType)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    agreementIds: ").append(toIndentedString(agreementIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }

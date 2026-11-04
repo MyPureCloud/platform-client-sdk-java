@@ -353,7 +353,7 @@ try {
 # **getBillingContractsInvoices**
 
 
-> [BillingInvoiceListing](BillingInvoiceListing) getBillingContractsInvoices(before, after, pageSize, dateStart, dateEnd, paymentStatus)
+> [BillingInvoiceListing](BillingInvoiceListing) getBillingContractsInvoices(before, after, pageSize, dateStart, dateEnd, paymentStatus, agreementId)
 
 Get invoices
 
@@ -395,8 +395,9 @@ String pageSize = "pageSize_example"; // String | Number of entities to return. 
 LocalDate dateStart = new LocalDate(); // LocalDate | Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 LocalDate dateEnd = new LocalDate(); // LocalDate | End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 String paymentStatus = "paymentStatus_example"; // String | Payment Status
+String agreementId = "agreementId_example"; // String | Filter invoices by agreement ID.
 try {
-    BillingInvoiceListing result = apiInstance.getBillingContractsInvoices(before, after, pageSize, dateStart, dateEnd, paymentStatus);
+    BillingInvoiceListing result = apiInstance.getBillingContractsInvoices(before, after, pageSize, dateStart, dateEnd, paymentStatus, agreementId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BillingApi#getBillingContractsInvoices");
@@ -415,6 +416,7 @@ try {
 | **dateStart** | **LocalDate**| Start date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
 | **dateEnd** | **LocalDate**| End date for the query. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] 
 | **paymentStatus** | **String**| Payment Status | [optional]<br />**Values**: Paid, UnPaid 
+| **agreementId** | **String**| Filter invoices by agreement ID. | [optional] 
 {: class="table-striped"}
 
 
@@ -550,4 +552,4 @@ try {
 [**TrusteeBillingOverview**](TrusteeBillingOverview)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

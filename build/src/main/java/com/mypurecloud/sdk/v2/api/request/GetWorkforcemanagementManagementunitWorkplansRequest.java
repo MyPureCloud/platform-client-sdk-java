@@ -27,6 +27,8 @@ import com.mypurecloud.sdk.v2.model.ActivityPlanDeletionSessionUserIds;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobListing;
 import com.mypurecloud.sdk.v2.model.ActivityPlanJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrenceListing;
+import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrenceResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanOccurrencesDeletionJobResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanResponse;
 import com.mypurecloud.sdk.v2.model.ActivityPlanRunJobResponse;
@@ -168,6 +170,8 @@ import com.mypurecloud.sdk.v2.model.BusinessUnitResponse;
 import com.mypurecloud.sdk.v2.model.BusinessUnitSchedulingPreferencesSettingsResponse;
 import com.mypurecloud.sdk.v2.model.CalendarUrlResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanDeleteRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastImportUploadRequest;
+import com.mypurecloud.sdk.v2.model.CapacityPlanForecastImportUploadResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanForecastInputsResponse;
 import com.mypurecloud.sdk.v2.model.CapacityPlanRequest;
 import com.mypurecloud.sdk.v2.model.CapacityPlanResponse;
@@ -299,6 +303,15 @@ import com.mypurecloud.sdk.v2.model.SearchAlternativeShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesRequest;
 import com.mypurecloud.sdk.v2.model.SearchShiftTradesResponse;
 import com.mypurecloud.sdk.v2.model.SearchUnmatchedShiftTradeListJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleActivityMoveListItem;
+import com.mypurecloud.sdk.v2.model.SelfScheduleAgentManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.SelfScheduleJob;
+import com.mypurecloud.sdk.v2.model.SelfScheduleJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleManagementUnitSettings;
+import com.mypurecloud.sdk.v2.model.SelfScheduleManagementUnitSettingsRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleOffersJob;
+import com.mypurecloud.sdk.v2.model.SelfScheduleOffersJobRequest;
+import com.mypurecloud.sdk.v2.model.SelfScheduleQuery;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplate;
 import com.mypurecloud.sdk.v2.model.ServiceGoalTemplateList;
 import com.mypurecloud.sdk.v2.model.SetTimeOffIntegrationStatusRequest;
@@ -522,6 +535,20 @@ public class GetWorkforcemanagementManagementunitWorkplansRequest {
 
 	}
 
+	private Boolean forceDownloadService;
+	public Boolean getForceDownloadService() {
+		return this.forceDownloadService;
+	}
+
+	public void setForceDownloadService(Boolean forceDownloadService) {
+		this.forceDownloadService = forceDownloadService;
+	}
+
+	public GetWorkforcemanagementManagementunitWorkplansRequest withForceDownloadService(Boolean forceDownloadService) {
+	    this.setForceDownloadService(forceDownloadService);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -557,6 +584,9 @@ public class GetWorkforcemanagementManagementunitWorkplansRequest {
         
 
                 .withQueryParameters("exclude", "multi", exclude)
+        
+
+                .withQueryParameters("forceDownloadService", "", forceDownloadService)
         
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
@@ -619,6 +649,11 @@ public class GetWorkforcemanagementManagementunitWorkplansRequest {
 	      }
 	      request.setExclude(stringList);
 		    return this;
+		}
+
+		public Builder withForceDownloadService(Boolean forceDownloadService) {
+			request.setForceDownloadService(forceDownloadService);
+			return this;
 		}
 
 

@@ -50,6 +50,7 @@
 | TACD | &quot;tAcd&quot; | 
 | TACTIVECALLBACK | &quot;tActiveCallback&quot; | 
 | TACTIVECALLBACKCOMPLETE | &quot;tActiveCallbackComplete&quot; | 
+| TACTIVEVIDEO | &quot;tActiveVideo&quot; | 
 | TACW | &quot;tAcw&quot; | 
 | TAGENTRESPONSETIME | &quot;tAgentResponseTime&quot; | 
 | TAGENTVIDEOCONNECTED | &quot;tAgentVideoConnected&quot; | 
@@ -108,4 +109,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

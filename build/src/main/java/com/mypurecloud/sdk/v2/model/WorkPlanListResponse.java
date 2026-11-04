@@ -26,6 +26,7 @@ import java.io.Serializable;
 public class WorkPlanListResponse  implements Serializable {
   
   private List<WorkPlanListItemResponse> entities = null;
+  private String downloadUrl = null;
 
   public WorkPlanListResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -57,6 +58,24 @@ public class WorkPlanListResponse  implements Serializable {
   }
 
 
+  /**
+   * URL from which to download the work plans. The downloaded data conforms to this same schema, except downloadUrl will be null
+   **/
+  public WorkPlanListResponse downloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "URL from which to download the work plans. The downloaded data conforms to this same schema, except downloadUrl will be null")
+  @JsonProperty("downloadUrl")
+  public String getDownloadUrl() {
+    return downloadUrl;
+  }
+  public void setDownloadUrl(String downloadUrl) {
+    this.downloadUrl = downloadUrl;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -67,12 +86,13 @@ public class WorkPlanListResponse  implements Serializable {
     }
     WorkPlanListResponse workPlanListResponse = (WorkPlanListResponse) o;
 
-    return Objects.equals(this.entities, workPlanListResponse.entities);
+    return Objects.equals(this.entities, workPlanListResponse.entities) &&
+            Objects.equals(this.downloadUrl, workPlanListResponse.downloadUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(entities);
+    return Objects.hash(entities, downloadUrl);
   }
 
   @Override
@@ -81,6 +101,7 @@ public class WorkPlanListResponse  implements Serializable {
     sb.append("class WorkPlanListResponse {\n");
     
     sb.append("    entities: ").append(toIndentedString(entities)).append("\n");
+    sb.append("    downloadUrl: ").append(toIndentedString(downloadUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }

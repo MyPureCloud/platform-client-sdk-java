@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.mypurecloud.sdk.v2.model.BillingContract;
+import com.mypurecloud.sdk.v2.model.BillingContractSummary;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -25,37 +25,37 @@ import java.io.Serializable;
 
 public class BillingContractListing  implements Serializable {
   
-  private List<BillingContract> entities = null;
+  private List<BillingContractSummary> entities = null;
   private String nextUri = null;
   private String selfUri = null;
   private String previousUri = null;
 
   public BillingContractListing() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      entities = new ArrayList<BillingContract>();
+      entities = new ArrayList<BillingContractSummary>();
     }
   }
 
   public BillingContractListing(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
-      entities = new ArrayList<BillingContract>();
+      entities = new ArrayList<BillingContractSummary>();
     }
   }
 
   
   /**
    **/
-  public BillingContractListing entities(List<BillingContract> entities) {
+  public BillingContractListing entities(List<BillingContractSummary> entities) {
     this.entities = entities;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "")
   @JsonProperty("entities")
-  public List<BillingContract> getEntities() {
+  public List<BillingContractSummary> getEntities() {
     return entities;
   }
-  public void setEntities(List<BillingContract> entities) {
+  public void setEntities(List<BillingContractSummary> entities) {
     this.entities = entities;
   }
 

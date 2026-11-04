@@ -276,6 +276,9 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
   private List<String> conversationExternalOrganizationIds = null;
   private String divisionId = null;
   private String utilizationLabel = null;
+  private String outboundCampaignId = null;
+  private String outboundContactListId = null;
+  private String outboundContactId = null;
 
   public CustomerEndDetailEventTopicCustomerEndEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -702,6 +705,57 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
   }
 
 
+  /**
+   **/
+  public CustomerEndDetailEventTopicCustomerEndEvent outboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundCampaignId")
+  public String getOutboundCampaignId() {
+    return outboundCampaignId;
+  }
+  public void setOutboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+  }
+
+
+  /**
+   **/
+  public CustomerEndDetailEventTopicCustomerEndEvent outboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactListId")
+  public String getOutboundContactListId() {
+    return outboundContactListId;
+  }
+  public void setOutboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+  }
+
+
+  /**
+   **/
+  public CustomerEndDetailEventTopicCustomerEndEvent outboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactId")
+  public String getOutboundContactId() {
+    return outboundContactId;
+  }
+  public void setOutboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -735,12 +789,15 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
             Objects.equals(this.conversationExternalContactIds, customerEndDetailEventTopicCustomerEndEvent.conversationExternalContactIds) &&
             Objects.equals(this.conversationExternalOrganizationIds, customerEndDetailEventTopicCustomerEndEvent.conversationExternalOrganizationIds) &&
             Objects.equals(this.divisionId, customerEndDetailEventTopicCustomerEndEvent.divisionId) &&
-            Objects.equals(this.utilizationLabel, customerEndDetailEventTopicCustomerEndEvent.utilizationLabel);
+            Objects.equals(this.utilizationLabel, customerEndDetailEventTopicCustomerEndEvent.utilizationLabel) &&
+            Objects.equals(this.outboundCampaignId, customerEndDetailEventTopicCustomerEndEvent.outboundCampaignId) &&
+            Objects.equals(this.outboundContactListId, customerEndDetailEventTopicCustomerEndEvent.outboundContactListId) &&
+            Objects.equals(this.outboundContactId, customerEndDetailEventTopicCustomerEndEvent.outboundContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, interactingDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, divisionId, utilizationLabel);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, externalOrganizationId, externalContactId, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, interactingDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, divisionId, utilizationLabel, outboundCampaignId, outboundContactListId, outboundContactId);
   }
 
   @Override
@@ -772,6 +829,9 @@ public class CustomerEndDetailEventTopicCustomerEndEvent  implements Serializabl
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("    divisionId: ").append(toIndentedString(divisionId)).append("\n");
     sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
+    sb.append("    outboundCampaignId: ").append(toIndentedString(outboundCampaignId)).append("\n");
+    sb.append("    outboundContactListId: ").append(toIndentedString(outboundContactListId)).append("\n");
+    sb.append("    outboundContactId: ").append(toIndentedString(outboundContactId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

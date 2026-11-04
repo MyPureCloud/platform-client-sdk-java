@@ -107,7 +107,8 @@ public class JourneySessionEventsNotificationConversationChannel  implements Ser
     WEBMESSAGING("WebMessaging"),
     OPEN("Open"),
     INSTAGRAM("Instagram"),
-    APPLE("Apple");
+    APPLE("Apple"),
+    LINKEDIN("LinkedIn");
 
     private String value;
 

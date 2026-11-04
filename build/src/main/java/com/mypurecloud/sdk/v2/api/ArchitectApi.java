@@ -8508,7 +8508,6 @@ public class ArchitectApi {
   /**
    * Fetch Architect Validate Job Status
    * 
-   * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId Job ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return ArchitectValidateJobStateResponse
@@ -8522,7 +8521,6 @@ public class ArchitectApi {
   /**
    * Fetch Architect Validate Job Status
    * 
-   * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param jobId Job ID (required)
    * @param expand Which fields, if any, to expand. (optional)
    * @return ArchitectValidateJobStateResponse
@@ -8544,7 +8542,6 @@ public class ArchitectApi {
   /**
    * Fetch Architect Validate Job Status
    * 
-   * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return ArchitectValidateJobStateResponse
    * @throws ApiException if the request fails on the server
@@ -8564,7 +8561,6 @@ public class ArchitectApi {
   /**
    * Fetch Architect Validate Job Status
    * 
-   * getFlowsValidateJob is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed
@@ -11889,7 +11885,6 @@ public class ArchitectApi {
   /**
    * Register Architect Validate Job
    * 
-   * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (required)
    * @return RegisterArchitectValidateJobResponse
    * @throws ApiException if the request fails on the server
@@ -11902,7 +11897,6 @@ public class ArchitectApi {
   /**
    * Register Architect Validate Job
    * 
-   * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param body  (required)
    * @return RegisterArchitectValidateJobResponse
    * @throws IOException if the request fails to be processed
@@ -11921,7 +11915,6 @@ public class ArchitectApi {
   /**
    * Register Architect Validate Job
    * 
-   * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return RegisterArchitectValidateJobResponse
    * @throws ApiException if the request fails on the server
@@ -11941,7 +11934,6 @@ public class ArchitectApi {
   /**
    * Register Architect Validate Job
    * 
-   * postFlowsValidateJobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
    * @param request The request object
    * @return the response
    * @throws IOException if the request fails to be processed

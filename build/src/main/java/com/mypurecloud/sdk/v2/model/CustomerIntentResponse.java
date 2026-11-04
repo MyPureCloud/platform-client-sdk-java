@@ -13,9 +13,12 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AddressableEntityRef;
+import com.mypurecloud.sdk.v2.model.CustomerIntentUsage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -30,15 +33,18 @@ public class CustomerIntentResponse  implements Serializable {
   private Integer expiryTime = null;
   private AddressableEntityRef category = null;
   private Date dateCreated = null;
+  private List<CustomerIntentUsage> usage = null;
   private String selfUri = null;
 
   public CustomerIntentResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      usage = new ArrayList<CustomerIntentUsage>();
     }
   }
 
   public CustomerIntentResponse(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      usage = new ArrayList<CustomerIntentUsage>();
     }
   }
 
@@ -118,6 +124,13 @@ public class CustomerIntentResponse  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Places where the customer intent is used. Omitted when usage tracking is off or includeUsage is false or omitted. Otherwise, empty when unused or populated with usage entries.")
+  @JsonProperty("usage")
+  public List<CustomerIntentUsage> getUsage() {
+    return usage;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -141,12 +154,13 @@ public class CustomerIntentResponse  implements Serializable {
             Objects.equals(this.expiryTime, customerIntentResponse.expiryTime) &&
             Objects.equals(this.category, customerIntentResponse.category) &&
             Objects.equals(this.dateCreated, customerIntentResponse.dateCreated) &&
+            Objects.equals(this.usage, customerIntentResponse.usage) &&
             Objects.equals(this.selfUri, customerIntentResponse.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, expiryTime, category, dateCreated, selfUri);
+    return Objects.hash(id, name, description, expiryTime, category, dateCreated, usage, selfUri);
   }
 
   @Override
@@ -160,6 +174,7 @@ public class CustomerIntentResponse  implements Serializable {
     sb.append("    expiryTime: ").append(toIndentedString(expiryTime)).append("\n");
     sb.append("    category: ").append(toIndentedString(category)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    usage: ").append(toIndentedString(usage)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

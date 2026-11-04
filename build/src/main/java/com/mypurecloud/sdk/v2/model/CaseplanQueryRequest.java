@@ -153,14 +153,14 @@ public class CaseplanQueryRequest  implements Serializable {
 
 
   /**
-   * List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId'. Multiple filters are combined with AND logic.
+   * List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId', 'published'. Multiple filters are combined with AND logic.
    **/
   public CaseplanQueryRequest filters(List<CaseplanFilter> filters) {
     this.filters = filters;
     return this;
   }
   
-  @ApiModelProperty(example = "null", value = "List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId'. Multiple filters are combined with AND logic.")
+  @ApiModelProperty(example = "null", value = "List of filter objects to be used in the search. Valid filter names are: 'id', 'name', 'divisionId', 'published'. Multiple filters are combined with AND logic.")
   @JsonProperty("filters")
   public List<CaseplanFilter> getFilters() {
     return filters;

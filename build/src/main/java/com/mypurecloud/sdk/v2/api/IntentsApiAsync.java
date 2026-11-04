@@ -29,6 +29,9 @@ import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.IntentsCategory;
 import com.mypurecloud.sdk.v2.model.IntentsCategoryListing;
 import com.mypurecloud.sdk.v2.model.IntentsCategoryPatch;
+import com.mypurecloud.sdk.v2.model.SimilarCategoriesResponse;
+import com.mypurecloud.sdk.v2.model.SimilarCustomerIntentsRequest;
+import com.mypurecloud.sdk.v2.model.SimilarCustomerIntentsResponse;
 
 
 import com.mypurecloud.sdk.v2.api.request.DeleteIntentsCategoryRequest;
@@ -44,10 +47,12 @@ import com.mypurecloud.sdk.v2.api.request.PatchIntentsCategoryRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchIntentsCustomerintentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsAssignmentsExternalcontactCustomerintentAssignmentRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCategoriesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntentsCategoriesSimilarRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentSourceintentsBulkAddRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentSourceintentsBulkRemoveRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentsBulkRetrieveRequest;
+import com.mypurecloud.sdk.v2.api.request.PostIntentsCustomerintentsSimilarRequest;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1043,6 +1048,83 @@ public class IntentsApiAsync {
   }
 
   /**
+   * Find similar categories
+   * 
+   * postIntentsCategoriesSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SimilarCategoriesResponse> postIntentsCategoriesSimilarAsync(PostIntentsCategoriesSimilarRequest request, final AsyncApiCallback<SimilarCategoriesResponse> callback) {
+    try {
+      final SettableFuture<SimilarCategoriesResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SimilarCategoriesResponse>() {}, new AsyncApiCallback<ApiResponse<SimilarCategoriesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SimilarCategoriesResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Find similar categories
+   * 
+   * postIntentsCategoriesSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SimilarCategoriesResponse>> postIntentsCategoriesSimilarAsync(ApiRequest<IntentsCategory> request, final AsyncApiCallback<ApiResponse<SimilarCategoriesResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SimilarCategoriesResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SimilarCategoriesResponse>() {}, new AsyncApiCallback<ApiResponse<SimilarCategoriesResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SimilarCategoriesResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SimilarCategoriesResponse> response = (ApiResponse<SimilarCategoriesResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SimilarCategoriesResponse> response = (ApiResponse<SimilarCategoriesResponse>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Bulk add source intents to a customer intent
    * 
    * @param request the request object
@@ -1331,6 +1413,83 @@ public class IntentsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<List<CustomerIntentResponse>> response = (ApiResponse<List<CustomerIntentResponse>>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Find similar customer intents
+   * 
+   * postIntentsCustomerintentsSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<SimilarCustomerIntentsResponse> postIntentsCustomerintentsSimilarAsync(PostIntentsCustomerintentsSimilarRequest request, final AsyncApiCallback<SimilarCustomerIntentsResponse> callback) {
+    try {
+      final SettableFuture<SimilarCustomerIntentsResponse> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<SimilarCustomerIntentsResponse>() {}, new AsyncApiCallback<ApiResponse<SimilarCustomerIntentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SimilarCustomerIntentsResponse> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Find similar customer intents
+   * 
+   * postIntentsCustomerintentsSimilar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<SimilarCustomerIntentsResponse>> postIntentsCustomerintentsSimilarAsync(ApiRequest<SimilarCustomerIntentsRequest> request, final AsyncApiCallback<ApiResponse<SimilarCustomerIntentsResponse>> callback) {
+    try {
+      final SettableFuture<ApiResponse<SimilarCustomerIntentsResponse>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<SimilarCustomerIntentsResponse>() {}, new AsyncApiCallback<ApiResponse<SimilarCustomerIntentsResponse>>() {
+        @Override
+        public void onCompleted(ApiResponse<SimilarCustomerIntentsResponse> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SimilarCustomerIntentsResponse> response = (ApiResponse<SimilarCustomerIntentsResponse>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<SimilarCustomerIntentsResponse> response = (ApiResponse<SimilarCustomerIntentsResponse>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

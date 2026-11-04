@@ -86,6 +86,8 @@ import com.mypurecloud.sdk.v2.model.TimeZoneEntityListing;
 import com.mypurecloud.sdk.v2.model.Trunk;
 import com.mypurecloud.sdk.v2.model.TrunkBase;
 import com.mypurecloud.sdk.v2.model.TrunkBaseEntityListing;
+import com.mypurecloud.sdk.v2.model.TrunkBaseMetrics;
+import com.mypurecloud.sdk.v2.model.TrunkBaseMetricsEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkBasesSearchResponse;
 import com.mypurecloud.sdk.v2.model.TrunkEntityListing;
 import com.mypurecloud.sdk.v2.model.TrunkInstanceSearchResponse;

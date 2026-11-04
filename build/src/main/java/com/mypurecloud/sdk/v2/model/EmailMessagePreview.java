@@ -15,6 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.Attachment;
 import com.mypurecloud.sdk.v2.model.EmailAddress;
+import com.mypurecloud.sdk.v2.model.RecipientWarning;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -140,6 +141,7 @@ public class EmailMessagePreview  implements Serializable {
   private DraftTypeEnum draftType = null;
   private Integer emailSizeBytes = null;
   private Integer maxEmailSizeBytes = null;
+  private List<RecipientWarning> recipientWarnings = null;
   private String selfUri = null;
 
   public EmailMessagePreview() {
@@ -148,6 +150,7 @@ public class EmailMessagePreview  implements Serializable {
       cc = new ArrayList<EmailAddress>();
       bcc = new ArrayList<EmailAddress>();
       attachments = new ArrayList<Attachment>();
+      recipientWarnings = new ArrayList<RecipientWarning>();
     }
   }
 
@@ -157,6 +160,7 @@ public class EmailMessagePreview  implements Serializable {
       cc = new ArrayList<EmailAddress>();
       bcc = new ArrayList<EmailAddress>();
       attachments = new ArrayList<Attachment>();
+      recipientWarnings = new ArrayList<RecipientWarning>();
     }
   }
 
@@ -415,6 +419,13 @@ public class EmailMessagePreview  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "The recipients that failed validation. Advisory only; recipient policy is enforced at send time.")
+  @JsonProperty("recipientWarnings")
+  public List<RecipientWarning> getRecipientWarnings() {
+    return recipientWarnings;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -448,12 +459,13 @@ public class EmailMessagePreview  implements Serializable {
             Objects.equals(this.draftType, emailMessagePreview.draftType) &&
             Objects.equals(this.emailSizeBytes, emailMessagePreview.emailSizeBytes) &&
             Objects.equals(this.maxEmailSizeBytes, emailMessagePreview.maxEmailSizeBytes) &&
+            Objects.equals(this.recipientWarnings, emailMessagePreview.recipientWarnings) &&
             Objects.equals(this.selfUri, emailMessagePreview.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, to, cc, bcc, from, replyTo, subject, attachments, textBodyPreview, time, historyIncluded, state, draftType, emailSizeBytes, maxEmailSizeBytes, selfUri);
+    return Objects.hash(id, name, to, cc, bcc, from, replyTo, subject, attachments, textBodyPreview, time, historyIncluded, state, draftType, emailSizeBytes, maxEmailSizeBytes, recipientWarnings, selfUri);
   }
 
   @Override
@@ -477,6 +489,7 @@ public class EmailMessagePreview  implements Serializable {
     sb.append("    draftType: ").append(toIndentedString(draftType)).append("\n");
     sb.append("    emailSizeBytes: ").append(toIndentedString(emailSizeBytes)).append("\n");
     sb.append("    maxEmailSizeBytes: ").append(toIndentedString(maxEmailSizeBytes)).append("\n");
+    sb.append("    recipientWarnings: ").append(toIndentedString(recipientWarnings)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

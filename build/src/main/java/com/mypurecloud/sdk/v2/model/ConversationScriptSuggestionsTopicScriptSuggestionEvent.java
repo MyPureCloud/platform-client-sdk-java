@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+import com.mypurecloud.sdk.v2.model.ConversationScriptSuggestionsTopicActiveSentiment;
 import com.mypurecloud.sdk.v2.model.ConversationScriptSuggestionsTopicSuggestedIntent;
 import com.mypurecloud.sdk.v2.model.ConversationScriptSuggestionsTopicSuggestedScript;
 import com.mypurecloud.sdk.v2.model.ConversationScriptSuggestionsTopicSuggestionContext;
@@ -192,6 +193,7 @@ public class ConversationScriptSuggestionsTopicScriptSuggestionEvent  implements
   private ConversationScriptSuggestionsTopicSuggestionFeedback feedback = null;
   private ConversationScriptSuggestionsTopicSuggestedScript script = null;
   private ConversationScriptSuggestionsTopicSuggestedIntent activeIntent = null;
+  private ConversationScriptSuggestionsTopicActiveSentiment activeSentiment = null;
 
   public ConversationScriptSuggestionsTopicScriptSuggestionEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -374,6 +376,23 @@ public class ConversationScriptSuggestionsTopicScriptSuggestionEvent  implements
   }
 
 
+  /**
+   **/
+  public ConversationScriptSuggestionsTopicScriptSuggestionEvent activeSentiment(ConversationScriptSuggestionsTopicActiveSentiment activeSentiment) {
+    this.activeSentiment = activeSentiment;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("activeSentiment")
+  public ConversationScriptSuggestionsTopicActiveSentiment getActiveSentiment() {
+    return activeSentiment;
+  }
+  public void setActiveSentiment(ConversationScriptSuggestionsTopicActiveSentiment activeSentiment) {
+    this.activeSentiment = activeSentiment;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -393,12 +412,13 @@ public class ConversationScriptSuggestionsTopicScriptSuggestionEvent  implements
             Objects.equals(this.context, conversationScriptSuggestionsTopicScriptSuggestionEvent.context) &&
             Objects.equals(this.feedback, conversationScriptSuggestionsTopicScriptSuggestionEvent.feedback) &&
             Objects.equals(this.script, conversationScriptSuggestionsTopicScriptSuggestionEvent.script) &&
-            Objects.equals(this.activeIntent, conversationScriptSuggestionsTopicScriptSuggestionEvent.activeIntent);
+            Objects.equals(this.activeIntent, conversationScriptSuggestionsTopicScriptSuggestionEvent.activeIntent) &&
+            Objects.equals(this.activeSentiment, conversationScriptSuggestionsTopicScriptSuggestionEvent.activeSentiment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, suggestionId, state, triggerType, engagementType, context, feedback, script, activeIntent);
+    return Objects.hash(eventTime, conversationId, suggestionId, state, triggerType, engagementType, context, feedback, script, activeIntent, activeSentiment);
   }
 
   @Override
@@ -416,6 +436,7 @@ public class ConversationScriptSuggestionsTopicScriptSuggestionEvent  implements
     sb.append("    feedback: ").append(toIndentedString(feedback)).append("\n");
     sb.append("    script: ").append(toIndentedString(script)).append("\n");
     sb.append("    activeIntent: ").append(toIndentedString(activeIntent)).append("\n");
+    sb.append("    activeSentiment: ").append(toIndentedString(activeSentiment)).append("\n");
     sb.append("}");
     return sb.toString();
   }

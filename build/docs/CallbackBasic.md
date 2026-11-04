@@ -34,6 +34,7 @@
 | **callerId** | **String** | The phone number displayed to recipients of the phone call. The value should conform to the E164 format. |  [optional] |
 | **callerIdName** | **String** | The name displayed to recipients of the phone call. |  [optional] |
 | **queueMediaSettings** | [**ConversationQueueMediaSettings**](ConversationQueueMediaSettings) | Represents the queue settings for this media type. |  [optional] |
+| **clientIpAddress** | **String** | The reported client IP of the phone for the call. |  [optional] |
 
 
 ## Enum: StateEnum
@@ -102,4 +103,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

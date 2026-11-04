@@ -158,6 +158,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
   private List<ConversationSummaryTopicVirtualAgentsConversationFollowupAction> followupActions = null;
   private List<ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity> extractedEntities = null;
   private List<ConversationSummaryTopicVirtualAgentsConversationWrapUpCode> wrapUpCodes = null;
+  private Boolean wrapUpCodePredictionEnabled = null;
   private ConversationSummaryTopicVirtualAgentsTriggerSource triggerSource = null;
 
   private static class SummarySourceTypeEnumDeserializer extends StdDeserializer<SummarySourceTypeEnum> {
@@ -280,7 +281,8 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     UNKNOWN("UNKNOWN"),
     CONVERSATION_TOO_LONG("CONVERSATION_TOO_LONG"),
     CONVERSATION_TOO_SHORT("CONVERSATION_TOO_SHORT"),
-    RATE_LIMITED("RATE_LIMITED");
+    RATE_LIMITED("RATE_LIMITED"),
+    EXTERNAL_SERVICE_TIMEOUT("EXTERNAL_SERVICE_TIMEOUT");
 
     private String value;
 
@@ -625,6 +627,23 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
 
   /**
    **/
+  public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent wrapUpCodePredictionEnabled(Boolean wrapUpCodePredictionEnabled) {
+    this.wrapUpCodePredictionEnabled = wrapUpCodePredictionEnabled;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("wrapUpCodePredictionEnabled")
+  public Boolean getWrapUpCodePredictionEnabled() {
+    return wrapUpCodePredictionEnabled;
+  }
+  public void setWrapUpCodePredictionEnabled(Boolean wrapUpCodePredictionEnabled) {
+    this.wrapUpCodePredictionEnabled = wrapUpCodePredictionEnabled;
+  }
+
+
+  /**
+   **/
   public ConversationSummaryTopicVirtualAgentsConversationSummaryEvent triggerSource(ConversationSummaryTopicVirtualAgentsTriggerSource triggerSource) {
     this.triggerSource = triggerSource;
     return this;
@@ -769,6 +788,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
             Objects.equals(this.followupActions, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.followupActions) &&
             Objects.equals(this.extractedEntities, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.extractedEntities) &&
             Objects.equals(this.wrapUpCodes, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.wrapUpCodes) &&
+            Objects.equals(this.wrapUpCodePredictionEnabled, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.wrapUpCodePredictionEnabled) &&
             Objects.equals(this.triggerSource, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.triggerSource) &&
             Objects.equals(this.summarySourceType, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.summarySourceType) &&
             Objects.equals(this.triggerType, conversationSummaryTopicVirtualAgentsConversationSummaryEvent.triggerType) &&
@@ -780,7 +800,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
 
   @Override
   public int hashCode() {
-    return Objects.hash(conversationId, queueId, participants, communicationIds, latestCommunicationId, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, triggerSource, summarySourceType, triggerType, lastEditedBy, errorType, durationMs, labels);
+    return Objects.hash(conversationId, queueId, participants, communicationIds, latestCommunicationId, createdDate, messageType, mediaType, summaryId, language, summary, headline, reason, resolution, followupActions, extractedEntities, wrapUpCodes, wrapUpCodePredictionEnabled, triggerSource, summarySourceType, triggerType, lastEditedBy, errorType, durationMs, labels);
   }
 
   @Override
@@ -805,6 +825,7 @@ public class ConversationSummaryTopicVirtualAgentsConversationSummaryEvent  impl
     sb.append("    followupActions: ").append(toIndentedString(followupActions)).append("\n");
     sb.append("    extractedEntities: ").append(toIndentedString(extractedEntities)).append("\n");
     sb.append("    wrapUpCodes: ").append(toIndentedString(wrapUpCodes)).append("\n");
+    sb.append("    wrapUpCodePredictionEnabled: ").append(toIndentedString(wrapUpCodePredictionEnabled)).append("\n");
     sb.append("    triggerSource: ").append(toIndentedString(triggerSource)).append("\n");
     sb.append("    summarySourceType: ").append(toIndentedString(summarySourceType)).append("\n");
     sb.append("    triggerType: ").append(toIndentedString(triggerType)).append("\n");

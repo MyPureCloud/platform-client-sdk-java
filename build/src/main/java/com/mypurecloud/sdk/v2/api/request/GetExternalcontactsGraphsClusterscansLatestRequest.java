@@ -88,6 +88,7 @@ import com.mypurecloud.sdk.v2.model.ExternalOrganizationTrustorLink;
 import com.mypurecloud.sdk.v2.model.ExternalSource;
 import com.mypurecloud.sdk.v2.model.GraphSettings;
 import com.mypurecloud.sdk.v2.model.IdentifierClaimRequest;
+import com.mypurecloud.sdk.v2.model.LatestClusterScan;
 import com.mypurecloud.sdk.v2.model.Listing;
 import com.mypurecloud.sdk.v2.model.MergeContactsRequest;
 import com.mypurecloud.sdk.v2.model.MergeRequest;
@@ -125,7 +126,8 @@ public class GetExternalcontactsGraphsClusterscansLatestRequest {
 	} 
 
 	public enum expandValues { 
-		STATISTICS_AGGREGATED("statistics.aggregated");
+		STATISTICS_AGGREGATED("statistics.aggregated"),
+		SETTINGS("settings");
 
 		private String value;
 

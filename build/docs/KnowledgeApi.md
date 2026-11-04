@@ -67,6 +67,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getKnowledgeSourceSynchronizations**](KnowledgeApi#getKnowledgeSourceSynchronizations) | Get synchronizations of a source. |
 | [**getKnowledgeSources**](KnowledgeApi#getKnowledgeSources) | List sources |
 | [**getKnowledgeSourcesSynchronizations**](KnowledgeApi#getKnowledgeSourcesSynchronizations) | Get synchronizations of all sources of the organization. |
+| [**getKnowledgeSourcesTags**](KnowledgeApi#getKnowledgeSourcesTags) | Get tags across sources for the organization |
+| [**getKnowledgeSourcesTagsGrouped**](KnowledgeApi#getKnowledgeSourcesTagsGrouped) | Get tags grouped by source for the organization |
 | [**patchKnowledgeConnection**](KnowledgeApi#patchKnowledgeConnection) | Update connection |
 | [**patchKnowledgeGuestSessionDocumentsSearchSearchId**](KnowledgeApi#patchKnowledgeGuestSessionDocumentsSearchSearchId) | Update search result. |
 | [**patchKnowledgeKnowledgebase**](KnowledgeApi#patchKnowledgeKnowledgebase) | Update knowledge base |
@@ -128,6 +130,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postKnowledgeSourceSynchronizationUploads**](KnowledgeApi#postKnowledgeSourceSynchronizationUploads) | Create presigned URL for uploading a file in the synchronization. |
 | [**postKnowledgeSourceSynchronizations**](KnowledgeApi#postKnowledgeSourceSynchronizations) | Start a manual synchronization from a source. |
 | [**postKnowledgeSources**](KnowledgeApi#postKnowledgeSources) | Create a new source |
+| [**postKnowledgeSourcesFilesCounts**](KnowledgeApi#postKnowledgeSourcesFilesCounts) | Get per-source file counts for the selected tag filter |
 | [**putKnowledgeKnowledgebaseSourcesSalesforceSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesSalesforceSourceId) | Update Salesforce Knowledge integration source |
 | [**putKnowledgeKnowledgebaseSourcesServicenowSourceId**](KnowledgeApi#putKnowledgeKnowledgebaseSourcesServicenowSourceId) | Update ServiceNow Knowledge integration source |
 | [**putKnowledgeSource**](KnowledgeApi#putKnowledgeSource) | Update the source |
@@ -4153,6 +4156,134 @@ try {
 [**V3SynchronizationListing**](V3SynchronizationListing)
 
 
+# **getKnowledgeSourcesTags**
+
+
+> [OrgV3SourcesTagsResponse](OrgV3SourcesTagsResponse) getKnowledgeSourcesTags(pageNumber, pageSize, tagName, sourceIds)
+
+Get tags across sources for the organization
+
+Wraps GET /api/v2/knowledge/sources/tags  
+
+Requires ALL permissions: 
+
+* knowledge:sourceTagList:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 100; // Integer | Number of items per page. Maximum is 200.
+String tagName = "tagName_example"; // String | Optional substring filter for tag names.
+String sourceIds = "sourceIds_example"; // String | Optional comma-separated source IDs to scope tags.
+try {
+    OrgV3SourcesTagsResponse result = apiInstance.getKnowledgeSourcesTags(pageNumber, pageSize, tagName, sourceIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSourcesTags");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Number of items per page. Maximum is 200. | [optional] [default to 100] 
+| **tagName** | **String**| Optional substring filter for tag names. | [optional] 
+| **sourceIds** | **String**| Optional comma-separated source IDs to scope tags. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrgV3SourcesTagsResponse**](OrgV3SourcesTagsResponse)
+
+
+# **getKnowledgeSourcesTagsGrouped**
+
+
+> [V3SourceTagsGroupedResponse](V3SourceTagsGroupedResponse) getKnowledgeSourcesTagsGrouped(pageNumber, pageSize, tagName)
+
+Get tags grouped by source for the organization
+
+Wraps GET /api/v2/knowledge/sources/tags/grouped  
+
+Requires ALL permissions: 
+
+* knowledge:sourceTagList:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+Integer pageNumber = 1; // Integer | Page number
+Integer pageSize = 100; // Integer | Number of items per page. Maximum is 200.
+String tagName = "tagName_example"; // String | Optional substring filter for tag names.
+try {
+    V3SourceTagsGroupedResponse result = apiInstance.getKnowledgeSourcesTagsGrouped(pageNumber, pageSize, tagName);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#getKnowledgeSourcesTagsGrouped");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **pageNumber** | **Integer**| Page number | [optional] [default to 1] 
+| **pageSize** | **Integer**| Number of items per page. Maximum is 200. | [optional] [default to 100] 
+| **tagName** | **String**| Optional substring filter for tag names. | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SourceTagsGroupedResponse**](V3SourceTagsGroupedResponse)
+
+
 # **patchKnowledgeConnection**
 
 
@@ -7788,6 +7919,65 @@ try {
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
+# **postKnowledgeSourcesFilesCounts**
+
+
+> [V3SourceFileCountsResponse](V3SourceFileCountsResponse) postKnowledgeSourcesFilesCounts(body)
+
+Get per-source file counts for the selected tag filter
+
+Wraps POST /api/v2/knowledge/sources/files/counts  
+
+Requires ALL permissions: 
+
+* knowledge:sourceFileCount:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.KnowledgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+KnowledgeApi apiInstance = new KnowledgeApi();
+V3SourceFileCountsRequest body = new V3SourceFileCountsRequest(); // V3SourceFileCountsRequest | 
+try {
+    V3SourceFileCountsResponse result = apiInstance.postKnowledgeSourcesFilesCounts(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling KnowledgeApi#postKnowledgeSourcesFilesCounts");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**V3SourceFileCountsRequest**](V3SourceFileCountsRequest)|  | [optional] 
+{: class="table-striped"}
+
+
+### Return type
+
+[**V3SourceFileCountsResponse**](V3SourceFileCountsResponse)
+
+
 # **putKnowledgeKnowledgebaseSourcesSalesforceSourceId**
 
 
@@ -7975,4 +8165,4 @@ try {
 [**V3SourceDetailedResponse**](V3SourceDetailedResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

@@ -12,9 +12,12 @@ import java.util.ArrayList;
 import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.mypurecloud.sdk.v2.model.CustomerIntentUsage;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import java.io.Serializable;
 /**
@@ -27,15 +30,18 @@ public class IntentsCategory  implements Serializable {
   private String name = null;
   private String description = null;
   private Date dateCreated = null;
+  private List<CustomerIntentUsage> usage = null;
   private String selfUri = null;
 
   public IntentsCategory() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
+      usage = new ArrayList<CustomerIntentUsage>();
     }
   }
 
   public IntentsCategory(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
+      usage = new ArrayList<CustomerIntentUsage>();
     }
   }
 
@@ -90,6 +96,13 @@ public class IntentsCategory  implements Serializable {
   }
 
 
+  @ApiModelProperty(example = "null", value = "Places where the category is used. Omitted when usage tracking is off or includeUsage is false or omitted. Otherwise, empty when unused or populated with usage entries.")
+  @JsonProperty("usage")
+  public List<CustomerIntentUsage> getUsage() {
+    return usage;
+  }
+
+
   @ApiModelProperty(example = "null", value = "The URI for this object")
   @JsonProperty("selfUri")
   public String getSelfUri() {
@@ -111,12 +124,13 @@ public class IntentsCategory  implements Serializable {
             Objects.equals(this.name, intentsCategory.name) &&
             Objects.equals(this.description, intentsCategory.description) &&
             Objects.equals(this.dateCreated, intentsCategory.dateCreated) &&
+            Objects.equals(this.usage, intentsCategory.usage) &&
             Objects.equals(this.selfUri, intentsCategory.selfUri);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, dateCreated, selfUri);
+    return Objects.hash(id, name, description, dateCreated, usage, selfUri);
   }
 
   @Override
@@ -128,6 +142,7 @@ public class IntentsCategory  implements Serializable {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
+    sb.append("    usage: ").append(toIndentedString(usage)).append("\n");
     sb.append("    selfUri: ").append(toIndentedString(selfUri)).append("\n");
     sb.append("}");
     return sb.toString();

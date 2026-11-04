@@ -52,6 +52,7 @@
 | EMAILROUTE | &quot;EMAILROUTE&quot; | 
 | EMAILSENDFLOW | &quot;EMAILSENDFLOW&quot; | 
 | EMERGENCYGROUP | &quot;EMERGENCYGROUP&quot; | 
+| EXTERNALMCPSERVERINTEGRATION | &quot;EXTERNALMCPSERVERINTEGRATION&quot; | 
 | FILE | &quot;FILE&quot; | 
 | FLOWACTION | &quot;FLOWACTION&quot; | 
 | FLOWDATATYPE | &quot;FLOWDATATYPE&quot; | 
@@ -94,6 +95,7 @@
 | SMSPHONENUMBER | &quot;SMSPHONENUMBER&quot; | 
 | STTENGINE | &quot;STTENGINE&quot; | 
 | SURVEYFORM | &quot;SURVEYFORM&quot; | 
+| SURVEYFORMCONTEXT | &quot;SURVEYFORMCONTEXT&quot; | 
 | SURVEYINVITEFLOW | &quot;SURVEYINVITEFLOW&quot; | 
 | SYSTEMPROMPT | &quot;SYSTEMPROMPT&quot; | 
 | TTSENGINE | &quot;TTSENGINE&quot; | 
@@ -113,4 +115,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

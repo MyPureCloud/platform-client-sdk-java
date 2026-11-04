@@ -305,6 +305,7 @@
 | OPEN | &quot;open&quot; |
 | INSTAGRAM | &quot;instagram&quot; |
 | APPLE | &quot;apple&quot; |
+| LINKEDIN | &quot;linkedin&quot; |
 
 
 ## Enum: FlowOutcomeValuesEnum
@@ -493,6 +494,7 @@
 | OPEN | &quot;Open&quot; |
 | INSTAGRAM | &quot;Instagram&quot; |
 | APPLE | &quot;Apple&quot; |
+| LINKEDIN | &quot;LinkedIn&quot; |
 | OTHER | &quot;Other&quot; |
 
 
@@ -705,6 +707,7 @@
 | OPEN | &quot;Open&quot; |
 | GOOGLEBUSINESSPROFILE | &quot;GoogleBusinessProfile&quot; |
 | LINKEDIN | &quot;LinkedIn&quot; |
+| YOUTUBE | &quot;YouTube&quot; |
 
 
 ## Enum: SocialSentimentCategoryEnum
@@ -1010,6 +1013,7 @@
 | TRANSMITTING | &quot;transmitting&quot; |
 | UNKNOWN | &quot;unknown&quot; |
 | UPLOADING | &quot;uploading&quot; |
+| VIDEO | &quot;video&quot; |
 | VOICEMAIL | &quot;voicemail&quot; |
 | WRAPUP | &quot;wrapup&quot; |
 
@@ -1127,4 +1131,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

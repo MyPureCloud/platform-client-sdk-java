@@ -444,6 +444,10 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
   private List<String> conversationExternalOrganizationIds = null;
   private String utilizationLabel = null;
   private String flowType = null;
+  private List<String> preferredAgentIds = null;
+  private String outboundCampaignId = null;
+  private String outboundContactListId = null;
+  private String outboundContactId = null;
 
   public AcdEndDetailEventTopicAcdEndEvent() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -454,6 +458,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
       requestedRoutingUserIds = new ArrayList<String>();
       conversationExternalContactIds = new ArrayList<String>();
       conversationExternalOrganizationIds = new ArrayList<String>();
+      preferredAgentIds = new ArrayList<String>();
     }
   }
 
@@ -466,6 +471,7 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
       requestedRoutingUserIds = new ArrayList<String>();
       conversationExternalContactIds = new ArrayList<String>();
       conversationExternalOrganizationIds = new ArrayList<String>();
+      preferredAgentIds = new ArrayList<String>();
     }
   }
 
@@ -1031,6 +1037,74 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
   }
 
 
+  /**
+   **/
+  public AcdEndDetailEventTopicAcdEndEvent preferredAgentIds(List<String> preferredAgentIds) {
+    this.preferredAgentIds = preferredAgentIds;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("preferredAgentIds")
+  public List<String> getPreferredAgentIds() {
+    return preferredAgentIds;
+  }
+  public void setPreferredAgentIds(List<String> preferredAgentIds) {
+    this.preferredAgentIds = preferredAgentIds;
+  }
+
+
+  /**
+   **/
+  public AcdEndDetailEventTopicAcdEndEvent outboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundCampaignId")
+  public String getOutboundCampaignId() {
+    return outboundCampaignId;
+  }
+  public void setOutboundCampaignId(String outboundCampaignId) {
+    this.outboundCampaignId = outboundCampaignId;
+  }
+
+
+  /**
+   **/
+  public AcdEndDetailEventTopicAcdEndEvent outboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactListId")
+  public String getOutboundContactListId() {
+    return outboundContactListId;
+  }
+  public void setOutboundContactListId(String outboundContactListId) {
+    this.outboundContactListId = outboundContactListId;
+  }
+
+
+  /**
+   **/
+  public AcdEndDetailEventTopicAcdEndEvent outboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("outboundContactId")
+  public String getOutboundContactId() {
+    return outboundContactId;
+  }
+  public void setOutboundContactId(String outboundContactId) {
+    this.outboundContactId = outboundContactId;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1073,12 +1147,16 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
             Objects.equals(this.conversationExternalContactIds, acdEndDetailEventTopicAcdEndEvent.conversationExternalContactIds) &&
             Objects.equals(this.conversationExternalOrganizationIds, acdEndDetailEventTopicAcdEndEvent.conversationExternalOrganizationIds) &&
             Objects.equals(this.utilizationLabel, acdEndDetailEventTopicAcdEndEvent.utilizationLabel) &&
-            Objects.equals(this.flowType, acdEndDetailEventTopicAcdEndEvent.flowType);
+            Objects.equals(this.flowType, acdEndDetailEventTopicAcdEndEvent.flowType) &&
+            Objects.equals(this.preferredAgentIds, acdEndDetailEventTopicAcdEndEvent.preferredAgentIds) &&
+            Objects.equals(this.outboundCampaignId, acdEndDetailEventTopicAcdEndEvent.outboundCampaignId) &&
+            Objects.equals(this.outboundContactListId, acdEndDetailEventTopicAcdEndEvent.outboundContactListId) &&
+            Objects.equals(this.outboundContactId, acdEndDetailEventTopicAcdEndEvent.outboundContactId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, acdOutcome, answeredUserId, requestedRoutings, usedRouting, requestedRoutingSkillIds, requestedSkillExpressionIds, requestedLanguageId, requestedRoutingUserIds, routingPriority, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, flowType);
+    return Objects.hash(eventTime, conversationId, participantId, sessionId, disconnectType, mediaType, provider, direction, ani, dnis, addressTo, addressFrom, callbackUserName, callbackNumbers, callbackScheduledTime, subject, messageType, queueId, divisionId, acdOutcome, answeredUserId, requestedRoutings, usedRouting, requestedRoutingSkillIds, requestedSkillExpressionIds, requestedLanguageId, requestedRoutingUserIds, routingPriority, connectedDurationMs, conversationExternalContactIds, conversationExternalOrganizationIds, utilizationLabel, flowType, preferredAgentIds, outboundCampaignId, outboundContactListId, outboundContactId);
   }
 
   @Override
@@ -1119,6 +1197,10 @@ public class AcdEndDetailEventTopicAcdEndEvent  implements Serializable {
     sb.append("    conversationExternalOrganizationIds: ").append(toIndentedString(conversationExternalOrganizationIds)).append("\n");
     sb.append("    utilizationLabel: ").append(toIndentedString(utilizationLabel)).append("\n");
     sb.append("    flowType: ").append(toIndentedString(flowType)).append("\n");
+    sb.append("    preferredAgentIds: ").append(toIndentedString(preferredAgentIds)).append("\n");
+    sb.append("    outboundCampaignId: ").append(toIndentedString(outboundCampaignId)).append("\n");
+    sb.append("    outboundContactListId: ").append(toIndentedString(outboundContactListId)).append("\n");
+    sb.append("    outboundContactId: ").append(toIndentedString(outboundContactId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

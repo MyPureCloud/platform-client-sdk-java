@@ -33,6 +33,7 @@ import com.mypurecloud.sdk.v2.model.CreateVerifierResponse;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
+import com.mypurecloud.sdk.v2.model.DeleteVerifierResponse;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
@@ -143,6 +144,7 @@ import com.mypurecloud.sdk.v2.api.request.GetUserStateRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserStationRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserSuperiorsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserTrustorsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetUserVerifierRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUserVerifiersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersChatsMeRequest;
@@ -1396,26 +1398,32 @@ public class UsersApi {
    * Delete a verifier
    * 
    * @param verifierId Verifier ID (required)
+   * @param replacementDefaultVerifierId The ID of an enabled verifier to make the default after deleting the current default (optional)
+   * @return DeleteVerifierResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteUsersMeVerifier(String verifierId) throws IOException, ApiException {
-     deleteUsersMeVerifier(createDeleteUsersMeVerifierRequest(verifierId));
+  public DeleteVerifierResponse deleteUsersMeVerifier(String verifierId, String replacementDefaultVerifierId) throws IOException, ApiException {
+    return  deleteUsersMeVerifier(createDeleteUsersMeVerifierRequest(verifierId, replacementDefaultVerifierId));
   }
 
   /**
    * Delete a verifier
    * 
    * @param verifierId Verifier ID (required)
+   * @param replacementDefaultVerifierId The ID of an enabled verifier to make the default after deleting the current default (optional)
+   * @return DeleteVerifierResponse
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUsersMeVerifierWithHttpInfo(String verifierId) throws IOException {
-    return deleteUsersMeVerifier(createDeleteUsersMeVerifierRequest(verifierId).withHttpInfo());
+  public ApiResponse<DeleteVerifierResponse> deleteUsersMeVerifierWithHttpInfo(String verifierId, String replacementDefaultVerifierId) throws IOException {
+    return deleteUsersMeVerifier(createDeleteUsersMeVerifierRequest(verifierId, replacementDefaultVerifierId).withHttpInfo());
   }
 
-  private DeleteUsersMeVerifierRequest createDeleteUsersMeVerifierRequest(String verifierId) {
+  private DeleteUsersMeVerifierRequest createDeleteUsersMeVerifierRequest(String verifierId, String replacementDefaultVerifierId) {
     return DeleteUsersMeVerifierRequest.builder()
             .withVerifierId(verifierId)
+
+            .withReplacementDefaultVerifierId(replacementDefaultVerifierId)
 
             .build();
   }
@@ -1424,17 +1432,18 @@ public class UsersApi {
    * Delete a verifier
    * 
    * @param request The request object
+   * @return DeleteVerifierResponse
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public void deleteUsersMeVerifier(DeleteUsersMeVerifierRequest request) throws IOException, ApiException {
+  public DeleteVerifierResponse deleteUsersMeVerifier(DeleteUsersMeVerifierRequest request) throws IOException, ApiException {
     try {
-      ApiResponse<Void> response = pcapiClient.invoke(request.withHttpInfo(), null);
-      
+      ApiResponse<DeleteVerifierResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<DeleteVerifierResponse>() {});
+      return response.getBody();
     }
     catch (ApiException | IOException exception) {
       if (pcapiClient.getShouldThrowErrors()) throw exception;
-      
+      return null;
     }
   }
 
@@ -1445,13 +1454,13 @@ public class UsersApi {
    * @return the response
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<Void> deleteUsersMeVerifier(ApiRequest<Void> request) throws IOException {
+  public ApiResponse<DeleteVerifierResponse> deleteUsersMeVerifier(ApiRequest<Void> request) throws IOException {
     try {
-      return pcapiClient.invoke(request, null);
+      return pcapiClient.invoke(request, new TypeReference<DeleteVerifierResponse>() {});
     }
     catch (ApiException exception) {
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)exception;
+      ApiResponse<DeleteVerifierResponse> response = (ApiResponse<DeleteVerifierResponse>)(ApiResponse<?>)exception;
       return response;
     }
     catch (Throwable exception) {
@@ -1462,7 +1471,7 @@ public class UsersApi {
         throw new RuntimeException(exception);
       }
       @SuppressWarnings("unchecked")
-      ApiResponse<Void> response = (ApiResponse<Void>)(ApiResponse<?>)(new ApiException(exception));
+      ApiResponse<DeleteVerifierResponse> response = (ApiResponse<DeleteVerifierResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }
@@ -4714,6 +4723,88 @@ public class UsersApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<TrustorEntityListing> response = (ApiResponse<TrustorEntityListing>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get a verifier
+   * 
+   * @param userId User ID (required)
+   * @param verifierId Verifier ID (required)
+   * @return Verifier
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Verifier getUserVerifier(String userId, String verifierId) throws IOException, ApiException {
+    return  getUserVerifier(createGetUserVerifierRequest(userId, verifierId));
+  }
+
+  /**
+   * Get a verifier
+   * 
+   * @param userId User ID (required)
+   * @param verifierId Verifier ID (required)
+   * @return Verifier
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Verifier> getUserVerifierWithHttpInfo(String userId, String verifierId) throws IOException {
+    return getUserVerifier(createGetUserVerifierRequest(userId, verifierId).withHttpInfo());
+  }
+
+  private GetUserVerifierRequest createGetUserVerifierRequest(String userId, String verifierId) {
+    return GetUserVerifierRequest.builder()
+            .withUserId(userId)
+
+            .withVerifierId(verifierId)
+
+            .build();
+  }
+
+  /**
+   * Get a verifier
+   * 
+   * @param request The request object
+   * @return Verifier
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public Verifier getUserVerifier(GetUserVerifierRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<Verifier> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<Verifier>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get a verifier
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<Verifier> getUserVerifier(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<Verifier>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<Verifier> response = (ApiResponse<Verifier>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<Verifier> response = (ApiResponse<Verifier>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

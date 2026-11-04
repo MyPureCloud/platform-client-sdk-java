@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.CaseQueryJobFilter;
+import com.mypurecloud.sdk.v2.model.CaseQueryJobFilterGroup;
 import com.mypurecloud.sdk.v2.model.CaseQueryJobSort;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -29,6 +30,7 @@ public class CaseQueryJobCreate  implements Serializable {
   private Integer pageSize = null;
   private Integer pageNumber = null;
   private List<CaseQueryJobFilter> filters = null;
+  private List<CaseQueryJobFilterGroup> filterGroups = null;
   private CaseQueryJobSort sort = null;
 
   private static class AttributesEnumDeserializer extends StdDeserializer<AttributesEnum> {
@@ -51,6 +53,7 @@ public class CaseQueryJobCreate  implements Serializable {
     OUTDATEDSDKVERSION("OutdatedSdkVersion"),
     ID("id"),
     REFERENCE("reference"),
+    EXTERNALID("externalId"),
     CASEPLANID("caseplanId"),
     CASEPLANVERSION("caseplanVersion"),
     OWNER("owner"),
@@ -66,6 +69,7 @@ public class CaseQueryJobCreate  implements Serializable {
     DATEMODIFIED("dateModified"),
     MODIFIEDBY("modifiedBy"),
     SUMMARY("summary"),
+    DESCRIPTION("description"),
     VERSION("version"),
     TTLSECONDS("ttlSeconds"),
     CREATIONSTATUS("creationStatus");
@@ -151,6 +155,7 @@ public class CaseQueryJobCreate  implements Serializable {
   public CaseQueryJobCreate() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       filters = new ArrayList<CaseQueryJobFilter>();
+      filterGroups = new ArrayList<CaseQueryJobFilterGroup>();
       attributes = new ArrayList<AttributesEnum>();
       expands = new ArrayList<ExpandsEnum>();
     }
@@ -159,6 +164,7 @@ public class CaseQueryJobCreate  implements Serializable {
   public CaseQueryJobCreate(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
       filters = new ArrayList<CaseQueryJobFilter>();
+      filterGroups = new ArrayList<CaseQueryJobFilterGroup>();
       attributes = new ArrayList<AttributesEnum>();
       expands = new ArrayList<ExpandsEnum>();
     }
@@ -219,6 +225,24 @@ public class CaseQueryJobCreate  implements Serializable {
   }
   public void setFilters(List<CaseQueryJobFilter> filters) {
     this.filters = filters;
+  }
+
+
+  /**
+   * List of filter groups to be used in the search. The filters within a group are combined using the group operator; groups are combined with each other and with the top-level filters using AND. 
+   **/
+  public CaseQueryJobCreate filterGroups(List<CaseQueryJobFilterGroup> filterGroups) {
+    this.filterGroups = filterGroups;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "List of filter groups to be used in the search. The filters within a group are combined using the group operator; groups are combined with each other and with the top-level filters using AND. ")
+  @JsonProperty("filterGroups")
+  public List<CaseQueryJobFilterGroup> getFilterGroups() {
+    return filterGroups;
+  }
+  public void setFilterGroups(List<CaseQueryJobFilterGroup> filterGroups) {
+    this.filterGroups = filterGroups;
   }
 
 
@@ -289,6 +313,7 @@ public class CaseQueryJobCreate  implements Serializable {
     return Objects.equals(this.pageSize, caseQueryJobCreate.pageSize) &&
             Objects.equals(this.pageNumber, caseQueryJobCreate.pageNumber) &&
             Objects.equals(this.filters, caseQueryJobCreate.filters) &&
+            Objects.equals(this.filterGroups, caseQueryJobCreate.filterGroups) &&
             Objects.equals(this.sort, caseQueryJobCreate.sort) &&
             Objects.equals(this.attributes, caseQueryJobCreate.attributes) &&
             Objects.equals(this.expands, caseQueryJobCreate.expands);
@@ -296,7 +321,7 @@ public class CaseQueryJobCreate  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(pageSize, pageNumber, filters, sort, attributes, expands);
+    return Objects.hash(pageSize, pageNumber, filters, filterGroups, sort, attributes, expands);
   }
 
   @Override
@@ -307,6 +332,7 @@ public class CaseQueryJobCreate  implements Serializable {
     sb.append("    pageSize: ").append(toIndentedString(pageSize)).append("\n");
     sb.append("    pageNumber: ").append(toIndentedString(pageNumber)).append("\n");
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
+    sb.append("    filterGroups: ").append(toIndentedString(filterGroups)).append("\n");
     sb.append("    sort: ").append(toIndentedString(sort)).append("\n");
     sb.append("    attributes: ").append(toIndentedString(attributes)).append("\n");
     sb.append("    expands: ").append(toIndentedString(expands)).append("\n");

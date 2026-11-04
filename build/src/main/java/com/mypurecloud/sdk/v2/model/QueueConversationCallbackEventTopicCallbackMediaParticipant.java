@@ -360,6 +360,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
   private Long timeoutSeconds = null;
   private Date callbackScheduledTime = null;
   private String automatedCallbackConfigId = null;
+  private String publicIpAddress = null;
 
   public QueueConversationCallbackEventTopicCallbackMediaParticipant() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -1209,6 +1210,23 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
   }
 
 
+  /**
+   **/
+  public QueueConversationCallbackEventTopicCallbackMediaParticipant publicIpAddress(String publicIpAddress) {
+    this.publicIpAddress = publicIpAddress;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "")
+  @JsonProperty("publicIpAddress")
+  public String getPublicIpAddress() {
+    return publicIpAddress;
+  }
+  public void setPublicIpAddress(String publicIpAddress) {
+    this.publicIpAddress = publicIpAddress;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -1267,12 +1285,13 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
             Objects.equals(this.externalCampaign, queueConversationCallbackEventTopicCallbackMediaParticipant.externalCampaign) &&
             Objects.equals(this.timeoutSeconds, queueConversationCallbackEventTopicCallbackMediaParticipant.timeoutSeconds) &&
             Objects.equals(this.callbackScheduledTime, queueConversationCallbackEventTopicCallbackMediaParticipant.callbackScheduledTime) &&
-            Objects.equals(this.automatedCallbackConfigId, queueConversationCallbackEventTopicCallbackMediaParticipant.automatedCallbackConfigId);
+            Objects.equals(this.automatedCallbackConfigId, queueConversationCallbackEventTopicCallbackMediaParticipant.automatedCallbackConfigId) &&
+            Objects.equals(this.publicIpAddress, queueConversationCallbackEventTopicCallbackMediaParticipant.publicIpAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId);
+    return Objects.hash(id, name, address, startTime, connectedTime, endTime, startHoldTime, purpose, state, initialState, direction, disconnectType, held, wrapupRequired, wrapupPrompt, user, queue, team, attributes, errorInfo, script, wrapupTimeoutMs, wrapupSkipped, alertingTimeoutMs, provider, externalContact, externalContactInitialDivisionId, externalOrganization, wrapup, conversationRoutingData, peer, screenRecordingState, flaggedReason, journeyContext, startAcwTime, endAcwTime, resumeTime, parkTime, mediaRoles, queueMediaSettings, outboundPreview, voicemail, callbackNumbers, callbackUserName, skipEnabled, externalCampaign, timeoutSeconds, callbackScheduledTime, automatedCallbackConfigId, publicIpAddress);
   }
 
   @Override
@@ -1329,6 +1348,7 @@ public class QueueConversationCallbackEventTopicCallbackMediaParticipant  implem
     sb.append("    timeoutSeconds: ").append(toIndentedString(timeoutSeconds)).append("\n");
     sb.append("    callbackScheduledTime: ").append(toIndentedString(callbackScheduledTime)).append("\n");
     sb.append("    automatedCallbackConfigId: ").append(toIndentedString(automatedCallbackConfigId)).append("\n");
+    sb.append("    publicIpAddress: ").append(toIndentedString(publicIpAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

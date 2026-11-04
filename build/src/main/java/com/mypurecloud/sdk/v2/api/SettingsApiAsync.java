@@ -14,12 +14,14 @@ import com.mypurecloud.sdk.v2.model.*;
 import com.mypurecloud.sdk.v2.Pair;
 
 import com.mypurecloud.sdk.v2.model.AutoAnswerSettings;
+import com.mypurecloud.sdk.v2.model.ContentSearchSetting;
 import com.mypurecloud.sdk.v2.model.EmailSettings;
 import com.mypurecloud.sdk.v2.model.EmailThreadingSettings;
 import com.mypurecloud.sdk.v2.model.ErrorBody;
 import com.mypurecloud.sdk.v2.model.ExecutionDataGlobalSettingsResponse;
 import com.mypurecloud.sdk.v2.model.ExecutionDataSettingsRequest;
 import com.mypurecloud.sdk.v2.model.ExternalContactsSettings;
+import com.mypurecloud.sdk.v2.model.OrgSettings;
 import com.mypurecloud.sdk.v2.model.UpdatedSettingsResponse;
 
 
@@ -29,10 +31,13 @@ import com.mypurecloud.sdk.v2.api.request.DeleteUsersAgentuiAgentsAutoanswerAgen
 import com.mypurecloud.sdk.v2.api.request.GetEmailsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetEmailsSettingsThreadingRequest;
 import com.mypurecloud.sdk.v2.api.request.GetExternalcontactsSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetSearchSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetSettingsExecutiondataRequest;
 import com.mypurecloud.sdk.v2.api.request.GetUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmailsSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchEmailsSettingsThreadingRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchSearchSettingsRequest;
+import com.mypurecloud.sdk.v2.api.request.PatchSearchSettingsContentsearchRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchSettingsExecutiondataRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutExternalcontactsSettingsRequest;
@@ -507,6 +512,83 @@ public class SettingsApiAsync {
   }
 
   /**
+   * Get the organization's search settings
+   * 
+   * getSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OrgSettings> getSearchSettingsAsync(GetSearchSettingsRequest request, final AsyncApiCallback<OrgSettings> callback) {
+    try {
+      final SettableFuture<OrgSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrgSettings>() {}, new AsyncApiCallback<ApiResponse<OrgSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Get the organization's search settings
+   * 
+   * getSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OrgSettings>> getSearchSettingsAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<OrgSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OrgSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OrgSettings>() {}, new AsyncApiCallback<ApiResponse<OrgSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgSettings> response = (ApiResponse<OrgSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgSettings> response = (ApiResponse<OrgSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
    * Get the execution history enabled setting.
    * Get the execution history enabled setting.
    * @param request the request object
@@ -795,6 +877,160 @@ public class SettingsApiAsync {
           else {
             @SuppressWarnings("unchecked")
             ApiResponse<EmailThreadingSettings> response = (ApiResponse<EmailThreadingSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch the organization's search settings
+   * 
+   * patchSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<OrgSettings> patchSearchSettingsAsync(PatchSearchSettingsRequest request, final AsyncApiCallback<OrgSettings> callback) {
+    try {
+      final SettableFuture<OrgSettings> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<OrgSettings>() {}, new AsyncApiCallback<ApiResponse<OrgSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgSettings> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch the organization's search settings
+   * 
+   * patchSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<OrgSettings>> patchSearchSettingsAsync(ApiRequest<OrgSettings> request, final AsyncApiCallback<ApiResponse<OrgSettings>> callback) {
+    try {
+      final SettableFuture<ApiResponse<OrgSettings>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<OrgSettings>() {}, new AsyncApiCallback<ApiResponse<OrgSettings>>() {
+        @Override
+        public void onCompleted(ApiResponse<OrgSettings> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgSettings> response = (ApiResponse<OrgSettings>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<OrgSettings> response = (ApiResponse<OrgSettings>)(ApiResponse<?>)(new ApiException(exception));
+            notifySuccess(future, callback, response);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch the organization's content search settings
+   * 
+   * patchSearchSettingsContentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ContentSearchSetting> patchSearchSettingsContentsearchAsync(PatchSearchSettingsContentsearchRequest request, final AsyncApiCallback<ContentSearchSetting> callback) {
+    try {
+      final SettableFuture<ContentSearchSetting> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request.withHttpInfo(), new TypeReference<ContentSearchSetting>() {}, new AsyncApiCallback<ApiResponse<ContentSearchSetting>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContentSearchSetting> response) {
+          notifySuccess(future, callback, response.getBody());
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            notifySuccess(future, callback, null);
+          }
+        }
+      });
+      return future;
+    }
+    catch (Throwable exception) {
+      return Futures.immediateFailedFuture(exception);
+    }
+  }
+
+  /**
+   * Patch the organization's content search settings
+   * 
+   * patchSearchSettingsContentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+   * @param request the request object
+   * @param callback the action to perform when the request is completed
+   * @return the future indication when the request has completed
+   */
+  public Future<ApiResponse<ContentSearchSetting>> patchSearchSettingsContentsearchAsync(ApiRequest<ContentSearchSetting> request, final AsyncApiCallback<ApiResponse<ContentSearchSetting>> callback) {
+    try {
+      final SettableFuture<ApiResponse<ContentSearchSetting>> future = SettableFuture.create();
+      final boolean shouldThrowErrors = pcapiClient.getShouldThrowErrors();
+      pcapiClient.invokeAsync(request, new TypeReference<ContentSearchSetting>() {}, new AsyncApiCallback<ApiResponse<ContentSearchSetting>>() {
+        @Override
+        public void onCompleted(ApiResponse<ContentSearchSetting> response) {
+          notifySuccess(future, callback, response);
+        }
+
+        @Override
+        public void onFailed(Throwable exception) {
+          if (exception instanceof ApiException) {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContentSearchSetting> response = (ApiResponse<ContentSearchSetting>)(ApiResponse<?>)exception;
+            notifySuccess(future, callback, response);
+          }
+          if (shouldThrowErrors) {
+            notifyFailure(future, callback, exception);
+          }
+          else {
+            @SuppressWarnings("unchecked")
+            ApiResponse<ContentSearchSetting> response = (ApiResponse<ContentSearchSetting>)(ApiResponse<?>)(new ApiException(exception));
             notifySuccess(future, callback, response);
           }
         }

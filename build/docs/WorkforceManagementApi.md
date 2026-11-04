@@ -52,8 +52,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementBusinessunitActivityplan**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplan) | Get an activity plan |
 | [**getWorkforcemanagementBusinessunitActivityplanDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanDeletionsJob) | Gets an activity plan deletion job |
 | [**getWorkforcemanagementBusinessunitActivityplanJobs**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanJobs) | Gets the latest job for an activity plan in the business unit |
+| [**getWorkforcemanagementBusinessunitActivityplanOccurrence**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrence) | Get a specific occurrence for the activity plan |
+| [**getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob) | Gets an occurrence deletion job |
 | [**getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob) | Gets a session users deletion job |
 | [**getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJob) | Gets an activity plan sessions deletion job |
+| [**getWorkforcemanagementBusinessunitActivityplanOccurrences**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrences) | Get all occurrences for an activity plan |
 | [**getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob) | Gets an occurrences deletion job |
 | [**getWorkforcemanagementBusinessunitActivityplanRunsJob**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanRunsJob) | Gets an activity plan run job |
 | [**getWorkforcemanagementBusinessunitActivityplans**](WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplans) | Get activity plans |
@@ -148,6 +151,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementManagementunitAgent**](WorkforceManagementApi#getWorkforcemanagementManagementunitAgent) | Get data for agent in the management unit |
 | [**getWorkforcemanagementManagementunitAgentShifttrades**](WorkforceManagementApi#getWorkforcemanagementManagementunitAgentShifttrades) | Gets all the shift trades for a given agent |
 | [**getWorkforcemanagementManagementunitDecisionmetrics**](WorkforceManagementApi#getWorkforcemanagementManagementunitDecisionmetrics) | Gets the decision metrics of all user in given management unit |
+| [**getWorkforcemanagementManagementunitSelfscheduleSettings**](WorkforceManagementApi#getWorkforcemanagementManagementunitSelfscheduleSettings) | Get admin self-scheduling settings for a management unit |
 | [**getWorkforcemanagementManagementunitShifttradesMatched**](WorkforceManagementApi#getWorkforcemanagementManagementunitShifttradesMatched) | Gets a summary of all shift trades in the matched state |
 | [**getWorkforcemanagementManagementunitShifttradesUsers**](WorkforceManagementApi#getWorkforcemanagementManagementunitShifttradesUsers) | Gets list of users available for whom you can send direct shift trade requests |
 | [**getWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi#getWorkforcemanagementManagementunitTimeofflimit) | Gets a time off limit object |
@@ -173,6 +177,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getWorkforcemanagementSchedulebids**](WorkforceManagementApi#getWorkforcemanagementSchedulebids) | Gets the list of schedule bids that belong to an agent. It will fetch an open bid or upcoming bid or a bid that is closed recently |
 | [**getWorkforcemanagementSchedulingjob**](WorkforceManagementApi#getWorkforcemanagementSchedulingjob) | Get status of the scheduling job |
 | [**getWorkforcemanagementSchedulingpreferencesSettings**](WorkforceManagementApi#getWorkforcemanagementSchedulingpreferencesSettings) | Get scheduling preferences settings for the agent's business unit |
+| [**getWorkforcemanagementSelfscheduleActivitymove**](WorkforceManagementApi#getWorkforcemanagementSelfscheduleActivitymove) | Lookup a single agent activity move based on its identifier |
+| [**getWorkforcemanagementSelfscheduleJob**](WorkforceManagementApi#getWorkforcemanagementSelfscheduleJob) | View result of create self-schedule activity move operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementSelfscheduleOffersJob**](WorkforceManagementApi#getWorkforcemanagementSelfscheduleOffersJob) | View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status |
+| [**getWorkforcemanagementSelfscheduleQuery**](WorkforceManagementApi#getWorkforcemanagementSelfscheduleQuery) | Query self-schedule activity moves for agent |
+| [**getWorkforcemanagementSelfscheduleSettings**](WorkforceManagementApi#getWorkforcemanagementSelfscheduleSettings) | Agent gets the self-schedule management unit settings. |
 | [**getWorkforcemanagementShifttrades**](WorkforceManagementApi#getWorkforcemanagementShifttrades) | Gets all of my shift trades |
 | [**getWorkforcemanagementShifttradingTradeJob**](WorkforceManagementApi#getWorkforcemanagementShifttradingTradeJob) | View result of update trade operation. Only the user who started the operation can query the status |
 | [**getWorkforcemanagementShifttradingTradeMatchJob**](WorkforceManagementApi#getWorkforcemanagementShifttradingTradeMatchJob) | View result of match shift trade operation. Only the receiving user who started the operation can query the status. |
@@ -225,6 +234,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**patchWorkforcemanagementManagementunit**](WorkforceManagementApi#patchWorkforcemanagementManagementunit) | Update the requested management unit |
 | [**patchWorkforcemanagementManagementunitAgents**](WorkforceManagementApi#patchWorkforcemanagementManagementunitAgents) | Update agent configurations |
 | [**patchWorkforcemanagementManagementunitAgentsWorkplansBulk**](WorkforceManagementApi#patchWorkforcemanagementManagementunitAgentsWorkplansBulk) | Updates agent work plan configuration |
+| [**patchWorkforcemanagementManagementunitSelfscheduleSettings**](WorkforceManagementApi#patchWorkforcemanagementManagementunitSelfscheduleSettings) | Update admin self-scheduling settings for a management unit |
 | [**patchWorkforcemanagementManagementunitTimeofflimit**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeofflimit) | Updates a time off limit object. |
 | [**patchWorkforcemanagementManagementunitTimeoffplan**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeoffplan) | Updates a time off plan. Deprecated: Use /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} instead |
 | [**patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus**](WorkforceManagementApi#patchWorkforcemanagementManagementunitTimeoffrequestUserIntegrationstatus) | Set integration status for a time off request. |
@@ -263,6 +273,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementAlternativeshiftsTrades**](WorkforceManagementApi#postWorkforcemanagementAlternativeshiftsTrades) | Create my alternative shift trade using an existing offer's jobId |
 | [**postWorkforcemanagementBusinessunitActivitycodes**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivitycodes) | Create a new activity code |
 | [**postWorkforcemanagementBusinessunitActivityplanDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanDeletionsJobs) | Delete an activity plan |
+| [**postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs) | Delete an occurrence for the activity plan |
 | [**postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJobs) | Triggers a job to delete users from a session in the activity plan occurrence |
 | [**postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceSessionsDeletionsJobs) | Triggers a job to delete sessions for the activity plan occurrence |
 | [**postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs**](WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJobs) | Delete occurrences for the activity plan |
@@ -282,6 +293,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplanningLongtermrequirementsAutomaticbestmethodWeekForecastForceregenerate) | Force regenerate the latest long term staffing requirements for a business unit |
 | [**postWorkforcemanagementBusinessunitCapacityplans**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplans) | Create a new capacity plan |
 | [**postWorkforcemanagementBusinessunitCapacityplansBulkRemove**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplansBulkRemove) | Delete capacity plans in a business unit |
+| [**postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls**](WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls) | Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan |
 | [**postWorkforcemanagementBusinessunitDecisionmetricsUpdate**](WorkforceManagementApi#postWorkforcemanagementBusinessunitDecisionmetricsUpdate) | Initiates the decision metrics update process |
 | [**postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl**](WorkforceManagementApi#postWorkforcemanagementBusinessunitDecisionmetricsUpdateUploadurl) | Creates a signed upload URL for updating decision metrics |
 | [**postWorkforcemanagementBusinessunitIntraday**](WorkforceManagementApi#postWorkforcemanagementBusinessunitIntraday) | Get intraday data for the given date for the requested planningGroupIds |
@@ -371,6 +383,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**postWorkforcemanagementNotificationsUpdate**](WorkforceManagementApi#postWorkforcemanagementNotificationsUpdate) | Mark a list of notifications as read or unread |
 | [**postWorkforcemanagementSchedules**](WorkforceManagementApi#postWorkforcemanagementSchedules) | Get published schedule for the current user |
 | [**postWorkforcemanagementSchedulingpreferencesQuery**](WorkforceManagementApi#postWorkforcemanagementSchedulingpreferencesQuery) | Get agent scheduling preferences |
+| [**postWorkforcemanagementSelfscheduleJobs**](WorkforceManagementApi#postWorkforcemanagementSelfscheduleJobs) | Agent starts an async job to edit a shift request by updating the start time of one or more activities. |
+| [**postWorkforcemanagementSelfscheduleOffersJobs**](WorkforceManagementApi#postWorkforcemanagementSelfscheduleOffersJobs) | Agent starts async job to search for best time for offers |
 | [**postWorkforcemanagementShifttradingTradeJobs**](WorkforceManagementApi#postWorkforcemanagementShifttradingTradeJobs) | Updates a shift trade. This route can only be called by the initiating user |
 | [**postWorkforcemanagementShifttradingTradeMatchJobs**](WorkforceManagementApi#postWorkforcemanagementShifttradingTradeMatchJobs) | Matches a shift trade. This route can only be called by the receiving user |
 | [**postWorkforcemanagementShifttradingTradeStateJobs**](WorkforceManagementApi#postWorkforcemanagementShifttradingTradeStateJobs) | Update trade state by a user |
@@ -2522,6 +2536,8 @@ Requires ANY permissions:
 * wfm:schedulingPreferencesQuery:view
 * wfm:schedulingPreferencesSettings:view
 * wfm:schedulingPreferencesSettings:edit
+* wfm:schedulingPreferencesSchedulesQuery:view
+* wfm:schedulingPreferencesSettingsQuery:view
 
 ### Example
 
@@ -3072,6 +3088,8 @@ Requires ANY permissions:
 * wfm:schedulingPreferencesQuery:view
 * wfm:schedulingPreferencesSettings:view
 * wfm:schedulingPreferencesSettings:edit
+* wfm:schedulingPreferencesSchedulesQuery:view
+* wfm:schedulingPreferencesSettingsQuery:view
 
 ### Example
 
@@ -3260,6 +3278,8 @@ Requires ANY permissions:
 * wfm:schedulingPreferencesQuery:view
 * wfm:schedulingPreferencesSettings:view
 * wfm:schedulingPreferencesSettings:edit
+* wfm:schedulingPreferencesSchedulesQuery:view
+* wfm:schedulingPreferencesSettingsQuery:view
 
 ### Example
 
@@ -3494,6 +3514,134 @@ try {
 [**ActivityPlanJobResponse**](ActivityPlanJobResponse)
 
 
+# **getWorkforcemanagementBusinessunitActivityplanOccurrence**
+
+
+> [ActivityPlanOccurrenceResponse](ActivityPlanOccurrenceResponse) getWorkforcemanagementBusinessunitActivityplanOccurrence(businessUnitId, activityPlanId, occurrenceId)
+
+Get a specific occurrence for the activity plan
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}  
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+String occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+try {
+    ActivityPlanOccurrenceResponse result = apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrence(businessUnitId, activityPlanId, occurrenceId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrence");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan | 
+| **occurrenceId** | **String**| The ID of the activity plan occurrence | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanOccurrenceResponse**](ActivityPlanOccurrenceResponse)
+
+
+# **getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob**
+
+
+> [ActivityPlanJobResponse](ActivityPlanJobResponse) getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob(businessUnitId, activityPlanId, occurrenceId, jobId)
+
+Gets an occurrence deletion job
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceDeletionJob:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+String occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+String jobId = "jobId_example"; // String | The ID of the activity plan occurrence deletion job
+try {
+    ActivityPlanJobResponse result = apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob(businessUnitId, activityPlanId, occurrenceId, jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan | 
+| **occurrenceId** | **String**| The ID of the activity plan occurrence | 
+| **jobId** | **String**| The ID of the activity plan occurrence deletion job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
 # **getWorkforcemanagementBusinessunitActivityplanOccurrenceSessionUsersDeletionsJob**
 
 
@@ -3624,6 +3772,67 @@ try {
 ### Return type
 
 [**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+# **getWorkforcemanagementBusinessunitActivityplanOccurrences**
+
+
+> [ActivityPlanOccurrenceListing](ActivityPlanOccurrenceListing) getWorkforcemanagementBusinessunitActivityplanOccurrences(businessUnitId, activityPlanId)
+
+Get all occurrences for an activity plan
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences  
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+try {
+    ActivityPlanOccurrenceListing result = apiInstance.getWorkforcemanagementBusinessunitActivityplanOccurrences(businessUnitId, activityPlanId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementBusinessunitActivityplanOccurrences");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanOccurrenceListing**](ActivityPlanOccurrenceListing)
 
 
 # **getWorkforcemanagementBusinessunitActivityplanOccurrencesDeletionsJob**
@@ -5396,7 +5605,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. | 
-| **feature** | **String**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics 
+| **feature** | **String**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentScheduleChangeConstraint, AgentShiftActivityRule, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentOpportunitySettings, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, ScheduleChangeConstraint, ScheduleChangeConstraintListing, ScheduleChangeConstraintWorkPlans, ShiftActivityRule, ShiftActivityRuleListing, ShiftActivityRuleWorkPlans, Opportunities, OpportunitySettings, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics 
 | **divisionId** | **String**| If specified, the list of management units belonging to the specified division will be returned | [optional] 
 {: class="table-striped"}
 
@@ -8559,7 +8768,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **feature** | **String**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics 
+| **feature** | **String**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentScheduleChangeConstraint, AgentShiftActivityRule, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentOpportunitySettings, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, ScheduleChangeConstraint, ScheduleChangeConstraintListing, ScheduleChangeConstraintWorkPlans, ShiftActivityRule, ShiftActivityRuleListing, ShiftActivityRuleWorkPlans, Opportunities, OpportunitySettings, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics 
 | **divisionId** | **String**| If specified, the list of business units belonging to the specified division will be returned | [optional] 
 {: class="table-striped"}
 
@@ -9153,6 +9362,8 @@ Requires ANY permissions:
 * wfm:schedulingPreferencesQuery:view
 * wfm:schedulingPreferencesSettings:view
 * wfm:schedulingPreferencesSettings:edit
+* wfm:schedulingPreferencesSchedulesQuery:view
+* wfm:schedulingPreferencesSettingsQuery:view
 
 ### Example
 
@@ -9263,6 +9474,8 @@ Requires ANY permissions:
 * wfm:schedulingPreferencesQuery:view
 * wfm:schedulingPreferencesSettings:view
 * wfm:schedulingPreferencesSettings:edit
+* wfm:schedulingPreferencesSchedulesQuery:view
+* wfm:schedulingPreferencesSettingsQuery:view
 
 ### Example
 
@@ -9560,6 +9773,65 @@ try {
 ### Return type
 
 [**DecisionMetricsResponse**](DecisionMetricsResponse)
+
+
+# **getWorkforcemanagementManagementunitSelfscheduleSettings**
+
+
+> [SelfScheduleManagementUnitSettings](SelfScheduleManagementUnitSettings) getWorkforcemanagementManagementunitSelfscheduleSettings(managementUnitId)
+
+Get admin self-scheduling settings for a management unit
+
+Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule/settings  
+
+Requires ANY permissions: 
+
+* wfm:selfScheduleSettings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
+try {
+    SelfScheduleManagementUnitSettings result = apiInstance.getWorkforcemanagementManagementunitSelfscheduleSettings(managementUnitId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitSelfscheduleSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SelfScheduleManagementUnitSettings**](SelfScheduleManagementUnitSettings)
 
 
 # **getWorkforcemanagementManagementunitShifttradesMatched**
@@ -10604,7 +10876,7 @@ try {
 # **getWorkforcemanagementManagementunitWorkplans**
 
 
-> [WorkPlanListResponse](WorkPlanListResponse) getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand, exclude)
+> [WorkPlanListResponse](WorkPlanListResponse) getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand, exclude, forceDownloadService)
 
 Get work plans
 
@@ -10645,8 +10917,9 @@ WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 List<String> expand = Arrays.asList(null); // List<String> | Include to access additional data on the work plans
 List<String> exclude = Arrays.asList(null); // List<String> | Exclude specific data on the work plans from the response
+Boolean forceDownloadService = true; // Boolean | Force the result of this operation to be sent via download service. For testing/app development purposes
 try {
-    WorkPlanListResponse result = apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand, exclude);
+    WorkPlanListResponse result = apiInstance.getWorkforcemanagementManagementunitWorkplans(managementUnitId, expand, exclude, forceDownloadService);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementManagementunitWorkplans");
@@ -10662,6 +10935,7 @@ try {
 | **managementUnitId** | **String**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. | 
 | **expand** | [**List&lt;String&gt;**](String)| Include to access additional data on the work plans | [optional]<br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details 
 | **exclude** | [**List&lt;String&gt;**](String)| Exclude specific data on the work plans from the response | [optional]<br />**Values**: shifts.activities 
+| **forceDownloadService** | **Boolean**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional] 
 {: class="table-striped"}
 
 
@@ -10726,7 +11000,7 @@ try {
 | **pageSize** | **Integer**| Deprecated, paging is not supported | [optional] 
 | **pageNumber** | **Integer**| Deprecated, paging is not supported | [optional] 
 | **expand** | **String**| Deprecated, expand settings on the single MU route | [optional]<br />**Values**: details 
-| **feature** | **String**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, Opportunities, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, DecisionMetrics 
+| **feature** | **String**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional]<br />**Values**: AgentHistoricalAdherence, AgentHistoricalAdherenceConformance, AgentSchedule, AgentAdherenceAdjustments, AgentTimeOffRequest, AgentWorkPlanBid, AgentScheduleBid, AgentScheduleChangeConstraint, AgentShiftActivityRule, AgentShiftTrade, AlternativeShift, Coaching, Learning, AgentUnavailableTimes, AgentSelfScheduleJob, AgentSelfScheduleOffers, AgentSelfScheduleQuery, AgentSelfScheduleActivityMove, SelfScheduleSettings, AgentSelfScheduleSettings, AgentOpportunitiesQuery, AgentOpportunitiesEnrollments, AgentOpportunitiesEnrollmentsStatuses, AgentOpportunitySettings, AgentSchedulingPreferencesQuery, AgentSchedulingPreferences, AgentSchedulingPreferencesSettings, ActivityCodes, ActivityPlans, AdherenceAdjustmentsSettings, AdherenceAdjustmentsReasonCodes, AdherenceAdjustments, UnavailableTimes, Agents, BuActivityCodes, BusinessUnits, CapacityPlan, CapacityPlanForecast, CapacityPlanForecastInputs, CapacityPlanPerformancePrediction, ContinuousForecast, MainForecastDiagnostics, PredictionsForecastingScenarioJobs, PredictionsForecastingScenarios, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, LongTermStaffing, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanBids, WorkPlanBidGroups, WorkPlanRotations, WorkPlans, ScheduleBid, ScheduleBidGroup, ScheduleChangeConstraint, ScheduleChangeConstraintListing, ScheduleChangeConstraintWorkPlans, ShiftActivityRule, ShiftActivityRuleListing, ShiftActivityRuleWorkPlans, Opportunities, OpportunitySettings, OpportunitiesQuery, OpportunitiesEnrollmentsQuery, OpportunitiesExternalActivitiesQuery, OpportunitiesStatuses, OpportunitiesEnrollmentsStatuses, SchedulingPreferencesQuery, SchedulingPreferencesSettings, SchedulingPreferencesSchedulesQuery, SchedulingPreferencesSettingsQuery, DecisionMetrics 
 | **divisionId** | **String**| If specified, the list of management units belonging to the specified division will be returned | [optional] 
 {: class="table-striped"}
 
@@ -11138,6 +11412,297 @@ This endpoint does not require any parameters.
 ### Return type
 
 [**BusinessUnitSchedulingPreferencesSettingsResponse**](BusinessUnitSchedulingPreferencesSettingsResponse)
+
+
+# **getWorkforcemanagementSelfscheduleActivitymove**
+
+
+> [SelfScheduleActivityMoveListItem](SelfScheduleActivityMoveListItem) getWorkforcemanagementSelfscheduleActivitymove(activityMoveId)
+
+Lookup a single agent activity move based on its identifier
+
+Wraps GET /api/v2/workforcemanagement/selfschedule/activitymoves/{activityMoveId}  
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleActivityMove:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String activityMoveId = "activityMoveId_example"; // String | The ID of the activity move
+try {
+    SelfScheduleActivityMoveListItem result = apiInstance.getWorkforcemanagementSelfscheduleActivitymove(activityMoveId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementSelfscheduleActivitymove");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **activityMoveId** | **String**| The ID of the activity move | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SelfScheduleActivityMoveListItem**](SelfScheduleActivityMoveListItem)
+
+
+# **getWorkforcemanagementSelfscheduleJob**
+
+
+> [SelfScheduleJob](SelfScheduleJob) getWorkforcemanagementSelfscheduleJob(jobId)
+
+View result of create self-schedule activity move operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/selfschedule/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the job
+try {
+    SelfScheduleJob result = apiInstance.getWorkforcemanagementSelfscheduleJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementSelfscheduleJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SelfScheduleJob**](SelfScheduleJob)
+
+
+# **getWorkforcemanagementSelfscheduleOffersJob**
+
+
+> [SelfScheduleOffersJob](SelfScheduleOffersJob) getWorkforcemanagementSelfscheduleOffersJob(jobId)
+
+View result of self-schedule search for best time for offer operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/selfschedule/offers/jobs/{jobId}  
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleOffers:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String jobId = "jobId_example"; // String | The ID of the offer job
+try {
+    SelfScheduleOffersJob result = apiInstance.getWorkforcemanagementSelfscheduleOffersJob(jobId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementSelfscheduleOffersJob");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **jobId** | **String**| The ID of the offer job | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SelfScheduleOffersJob**](SelfScheduleOffersJob)
+
+
+# **getWorkforcemanagementSelfscheduleQuery**
+
+
+> [SelfScheduleQuery](SelfScheduleQuery) getWorkforcemanagementSelfscheduleQuery()
+
+Query self-schedule activity moves for agent
+
+Wraps GET /api/v2/workforcemanagement/selfschedule/query  
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleQuery:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+try {
+    SelfScheduleQuery result = apiInstance.getWorkforcemanagementSelfscheduleQuery();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementSelfscheduleQuery");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**SelfScheduleQuery**](SelfScheduleQuery)
+
+
+# **getWorkforcemanagementSelfscheduleSettings**
+
+
+> [SelfScheduleAgentManagementUnitSettings](SelfScheduleAgentManagementUnitSettings) getWorkforcemanagementSelfscheduleSettings()
+
+Agent gets the self-schedule management unit settings.
+
+Wraps GET /api/v2/workforcemanagement/selfschedule/settings  
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleSettings:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+try {
+    SelfScheduleAgentManagementUnitSettings result = apiInstance.getWorkforcemanagementSelfscheduleSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#getWorkforcemanagementSelfscheduleSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**SelfScheduleAgentManagementUnitSettings**](SelfScheduleAgentManagementUnitSettings)
 
 
 # **getWorkforcemanagementShifttrades**
@@ -14336,6 +14901,67 @@ try {
 [**UpdateMuAgentWorkPlansBatchResponse**](UpdateMuAgentWorkPlansBatchResponse)
 
 
+# **patchWorkforcemanagementManagementunitSelfscheduleSettings**
+
+
+> [SelfScheduleManagementUnitSettings](SelfScheduleManagementUnitSettings) patchWorkforcemanagementManagementunitSelfscheduleSettings(managementUnitId, body)
+
+Update admin self-scheduling settings for a management unit
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/selfschedule/settings  
+
+Requires ANY permissions: 
+
+* wfm:selfScheduleSettings:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String managementUnitId = "managementUnitId_example"; // String | The ID of the management unit
+SelfScheduleManagementUnitSettingsRequest body = new SelfScheduleManagementUnitSettingsRequest(); // SelfScheduleManagementUnitSettingsRequest | body
+try {
+    SelfScheduleManagementUnitSettings result = apiInstance.patchWorkforcemanagementManagementunitSelfscheduleSettings(managementUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#patchWorkforcemanagementManagementunitSelfscheduleSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **managementUnitId** | **String**| The ID of the management unit | 
+| **body** | [**SelfScheduleManagementUnitSettingsRequest**](SelfScheduleManagementUnitSettingsRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SelfScheduleManagementUnitSettings**](SelfScheduleManagementUnitSettings)
+
+
 # **patchWorkforcemanagementManagementunitTimeofflimit**
 
 :::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
@@ -16337,7 +16963,7 @@ try {
 # **postWorkforcemanagementAgentschedulesMine**
 
 
-> [BuCurrentAgentScheduleSearchResponse](BuCurrentAgentScheduleSearchResponse) postWorkforcemanagementAgentschedulesMine(body)
+> [BuCurrentAgentScheduleSearchResponse](BuCurrentAgentScheduleSearchResponse) postWorkforcemanagementAgentschedulesMine(body, expand)
 
 Get published schedule for the current user
 
@@ -16370,8 +16996,9 @@ Configuration.setDefaultApiClient(apiClient);
 
 WorkforceManagementApi apiInstance = new WorkforceManagementApi();
 BuGetCurrentAgentScheduleRequest body = new BuGetCurrentAgentScheduleRequest(); // BuGetCurrentAgentScheduleRequest | body
+List<String> expand = Arrays.asList(null); // List<String> | Include to access additional data on the agent schedules
 try {
-    BuCurrentAgentScheduleSearchResponse result = apiInstance.postWorkforcemanagementAgentschedulesMine(body);
+    BuCurrentAgentScheduleSearchResponse result = apiInstance.postWorkforcemanagementAgentschedulesMine(body, expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementAgentschedulesMine");
@@ -16385,6 +17012,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | [**BuGetCurrentAgentScheduleRequest**](BuGetCurrentAgentScheduleRequest)| body | 
+| **expand** | [**List&lt;String&gt;**](String)| Include to access additional data on the agent schedules | [optional]<br />**Values**: agentSchedules.workPlansPerWeek 
 {: class="table-striped"}
 
 
@@ -16686,6 +17314,71 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **businessUnitId** | **String**| The ID of the business unit | 
 | **activityPlanId** | **String**| The ID of the activity plan to delete | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
+
+
+# **postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs**
+
+
+> [ActivityPlanJobResponse](ActivityPlanJobResponse) postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs(businessUnitId, activityPlanId, occurrenceId)
+
+Delete an occurrence for the activity plan
+
+Triggers a job to delete an occurrence of the activity plan. The activity plan cannot be updated until the job completes
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/occurrences/{occurrenceId}/deletions/jobs  
+
+Requires ANY permissions: 
+
+* wfm:activityPlanOccurrenceDeletionJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+String activityPlanId = "activityPlanId_example"; // String | The ID of the activity plan
+String occurrenceId = "occurrenceId_example"; // String | The ID of the activity plan occurrence
+try {
+    ActivityPlanJobResponse result = apiInstance.postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs(businessUnitId, activityPlanId, occurrenceId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitActivityplanOccurrenceDeletionsJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **activityPlanId** | **String**| The ID of the activity plan | 
+| **occurrenceId** | **String**| The ID of the activity plan occurrence | 
 {: class="table-striped"}
 
 
@@ -17891,6 +18584,69 @@ try {
 ### Return type
 
 null (empty response body)
+
+
+# **postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls**
+
+
+> [CapacityPlanForecastImportUploadResponse](CapacityPlanForecastImportUploadResponse) postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls(businessUnitId, body)
+
+Creates signed upload URLs for importing hourly and daily forecasts for a capacity plan
+
+Returns two upload URLs, one for the hourly forecast and one for the daily forecast. Once both uploads are complete, call POST /capacityplans (new capacity plan) or PATCH /capacityplans/{capacityPlanId} (existing capacity plan) or POST /capacityplans/{capacityPlanId}/copy (copy capacity plan) with both upload keys in importedForecast
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/capacityplans/forecast/uploadurls  
+
+Requires ANY permissions: 
+
+* wfm:capacityPlanForecast:upload
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+String businessUnitId = "businessUnitId_example"; // String | The ID of the business unit
+CapacityPlanForecastImportUploadRequest body = new CapacityPlanForecastImportUploadRequest(); // CapacityPlanForecastImportUploadRequest | body
+try {
+    CapacityPlanForecastImportUploadResponse result = apiInstance.postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls(businessUnitId, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementBusinessunitCapacityplansForecastUploadurls");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **businessUnitId** | **String**| The ID of the business unit | 
+| **body** | [**CapacityPlanForecastImportUploadRequest**](CapacityPlanForecastImportUploadRequest)| body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**CapacityPlanForecastImportUploadResponse**](CapacityPlanForecastImportUploadResponse)
 
 
 # **postWorkforcemanagementBusinessunitDecisionmetricsUpdate**
@@ -23535,6 +24291,124 @@ try {
 [**AgentSchedulingPreferenceListing**](AgentSchedulingPreferenceListing)
 
 
+# **postWorkforcemanagementSelfscheduleJobs**
+
+
+> [SelfScheduleJob](SelfScheduleJob) postWorkforcemanagementSelfscheduleJobs(body)
+
+Agent starts an async job to edit a shift request by updating the start time of one or more activities.
+
+Wraps POST /api/v2/workforcemanagement/selfschedule/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleJob:add
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+SelfScheduleJobRequest body = new SelfScheduleJobRequest(); // SelfScheduleJobRequest | The request body
+try {
+    SelfScheduleJob result = apiInstance.postWorkforcemanagementSelfscheduleJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementSelfscheduleJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SelfScheduleJobRequest**](SelfScheduleJobRequest)| The request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SelfScheduleJob**](SelfScheduleJob)
+
+
+# **postWorkforcemanagementSelfscheduleOffersJobs**
+
+
+> [SelfScheduleOffersJob](SelfScheduleOffersJob) postWorkforcemanagementSelfscheduleOffersJobs(body)
+
+Agent starts async job to search for best time for offers
+
+Wraps POST /api/v2/workforcemanagement/selfschedule/offers/jobs  
+
+Requires ANY permissions: 
+
+* wfm:agentSelfScheduleOffers:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.WorkforceManagementApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+WorkforceManagementApi apiInstance = new WorkforceManagementApi();
+SelfScheduleOffersJobRequest body = new SelfScheduleOffersJobRequest(); // SelfScheduleOffersJobRequest | The request body
+try {
+    SelfScheduleOffersJob result = apiInstance.postWorkforcemanagementSelfscheduleOffersJobs(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling WorkforceManagementApi#postWorkforcemanagementSelfscheduleOffersJobs");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**SelfScheduleOffersJobRequest**](SelfScheduleOffersJobRequest)| The request body | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**SelfScheduleOffersJob**](SelfScheduleOffersJob)
+
+
 # **postWorkforcemanagementShifttradingTradeJobs**
 
 
@@ -24703,4 +25577,4 @@ try {
 [**AgentScheduleBiddingPreferenceResponse**](AgentScheduleBiddingPreferenceResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

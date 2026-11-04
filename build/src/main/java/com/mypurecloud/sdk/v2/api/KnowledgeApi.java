@@ -99,6 +99,7 @@ import com.mypurecloud.sdk.v2.model.LabelUpdateRequest;
 import java.time.LocalDate;
 import com.mypurecloud.sdk.v2.model.OperationCreatorUserResponse;
 import com.mypurecloud.sdk.v2.model.OperationListing;
+import com.mypurecloud.sdk.v2.model.OrgV3SourcesTagsResponse;
 import com.mypurecloud.sdk.v2.model.SalesforceSourceRequest;
 import com.mypurecloud.sdk.v2.model.SalesforceSourceResponse;
 import com.mypurecloud.sdk.v2.model.SearchUpdateRequest;
@@ -118,6 +119,9 @@ import com.mypurecloud.sdk.v2.model.V3SourceCreateRequest;
 import com.mypurecloud.sdk.v2.model.V3SourceDetailedResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceExpandableListing;
 import com.mypurecloud.sdk.v2.model.V3SourceExpandableResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceFileCountsRequest;
+import com.mypurecloud.sdk.v2.model.V3SourceFileCountsResponse;
+import com.mypurecloud.sdk.v2.model.V3SourceTagsGroupedResponse;
 import com.mypurecloud.sdk.v2.model.V3SourceUpdateRequest;
 import com.mypurecloud.sdk.v2.model.V3StartManualSyncRequest;
 import com.mypurecloud.sdk.v2.model.V3Synchronization;
@@ -195,6 +199,8 @@ import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationUploa
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourceSynchronizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesRequest;
 import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesSynchronizationsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesTagsRequest;
+import com.mypurecloud.sdk.v2.api.request.GetKnowledgeSourcesTagsGroupedRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeConnectionRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeGuestSessionDocumentsSearchSearchIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PatchKnowledgeKnowledgebaseRequest;
@@ -256,6 +262,7 @@ import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationDele
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationUploadsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourceSynchronizationsRequest;
 import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourcesRequest;
+import com.mypurecloud.sdk.v2.api.request.PostKnowledgeSourcesFilesCountsRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesSalesforceSourceIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeKnowledgebaseSourcesServicenowSourceIdRequest;
 import com.mypurecloud.sdk.v2.api.request.PutKnowledgeSourceRequest;
@@ -5871,6 +5878,182 @@ public class KnowledgeApi {
   }
 
   /**
+   * Get tags across sources for the organization
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Number of items per page. Maximum is 200. (optional, default to 100)
+   * @param tagName Optional substring filter for tag names. (optional)
+   * @param sourceIds Optional comma-separated source IDs to scope tags. (optional)
+   * @return OrgV3SourcesTagsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgV3SourcesTagsResponse getKnowledgeSourcesTags(Integer pageNumber, Integer pageSize, String tagName, String sourceIds) throws IOException, ApiException {
+    return  getKnowledgeSourcesTags(createGetKnowledgeSourcesTagsRequest(pageNumber, pageSize, tagName, sourceIds));
+  }
+
+  /**
+   * Get tags across sources for the organization
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Number of items per page. Maximum is 200. (optional, default to 100)
+   * @param tagName Optional substring filter for tag names. (optional)
+   * @param sourceIds Optional comma-separated source IDs to scope tags. (optional)
+   * @return OrgV3SourcesTagsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgV3SourcesTagsResponse> getKnowledgeSourcesTagsWithHttpInfo(Integer pageNumber, Integer pageSize, String tagName, String sourceIds) throws IOException {
+    return getKnowledgeSourcesTags(createGetKnowledgeSourcesTagsRequest(pageNumber, pageSize, tagName, sourceIds).withHttpInfo());
+  }
+
+  private GetKnowledgeSourcesTagsRequest createGetKnowledgeSourcesTagsRequest(Integer pageNumber, Integer pageSize, String tagName, String sourceIds) {
+    return GetKnowledgeSourcesTagsRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withTagName(tagName)
+
+            .withSourceIds(sourceIds)
+
+            .build();
+  }
+
+  /**
+   * Get tags across sources for the organization
+   * 
+   * @param request The request object
+   * @return OrgV3SourcesTagsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public OrgV3SourcesTagsResponse getKnowledgeSourcesTags(GetKnowledgeSourcesTagsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<OrgV3SourcesTagsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<OrgV3SourcesTagsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get tags across sources for the organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<OrgV3SourcesTagsResponse> getKnowledgeSourcesTags(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<OrgV3SourcesTagsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgV3SourcesTagsResponse> response = (ApiResponse<OrgV3SourcesTagsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<OrgV3SourcesTagsResponse> response = (ApiResponse<OrgV3SourcesTagsResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get tags grouped by source for the organization
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Number of items per page. Maximum is 200. (optional, default to 100)
+   * @param tagName Optional substring filter for tag names. (optional)
+   * @return V3SourceTagsGroupedResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceTagsGroupedResponse getKnowledgeSourcesTagsGrouped(Integer pageNumber, Integer pageSize, String tagName) throws IOException, ApiException {
+    return  getKnowledgeSourcesTagsGrouped(createGetKnowledgeSourcesTagsGroupedRequest(pageNumber, pageSize, tagName));
+  }
+
+  /**
+   * Get tags grouped by source for the organization
+   * 
+   * @param pageNumber Page number (optional, default to 1)
+   * @param pageSize Number of items per page. Maximum is 200. (optional, default to 100)
+   * @param tagName Optional substring filter for tag names. (optional)
+   * @return V3SourceTagsGroupedResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceTagsGroupedResponse> getKnowledgeSourcesTagsGroupedWithHttpInfo(Integer pageNumber, Integer pageSize, String tagName) throws IOException {
+    return getKnowledgeSourcesTagsGrouped(createGetKnowledgeSourcesTagsGroupedRequest(pageNumber, pageSize, tagName).withHttpInfo());
+  }
+
+  private GetKnowledgeSourcesTagsGroupedRequest createGetKnowledgeSourcesTagsGroupedRequest(Integer pageNumber, Integer pageSize, String tagName) {
+    return GetKnowledgeSourcesTagsGroupedRequest.builder()
+            .withPageNumber(pageNumber)
+
+            .withPageSize(pageSize)
+
+            .withTagName(tagName)
+
+            .build();
+  }
+
+  /**
+   * Get tags grouped by source for the organization
+   * 
+   * @param request The request object
+   * @return V3SourceTagsGroupedResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceTagsGroupedResponse getKnowledgeSourcesTagsGrouped(GetKnowledgeSourcesTagsGroupedRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SourceTagsGroupedResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SourceTagsGroupedResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get tags grouped by source for the organization
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceTagsGroupedResponse> getKnowledgeSourcesTagsGrouped(ApiRequest<Void> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SourceTagsGroupedResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceTagsGroupedResponse> response = (ApiResponse<V3SourceTagsGroupedResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceTagsGroupedResponse> response = (ApiResponse<V3SourceTagsGroupedResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
    * Update connection
    * 
    * @param connectionId Connection ID (required)
@@ -10931,6 +11114,84 @@ public class KnowledgeApi {
       }
       @SuppressWarnings("unchecked")
       ApiResponse<V3SourceDetailedResponse> response = (ApiResponse<V3SourceDetailedResponse>)(ApiResponse<?>)(new ApiException(exception));
+      return response;
+    }
+  }
+
+  /**
+   * Get per-source file counts for the selected tag filter
+   * 
+   * @param body  (optional)
+   * @return V3SourceFileCountsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceFileCountsResponse postKnowledgeSourcesFilesCounts(V3SourceFileCountsRequest body) throws IOException, ApiException {
+    return  postKnowledgeSourcesFilesCounts(createPostKnowledgeSourcesFilesCountsRequest(body));
+  }
+
+  /**
+   * Get per-source file counts for the selected tag filter
+   * 
+   * @param body  (optional)
+   * @return V3SourceFileCountsResponse
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceFileCountsResponse> postKnowledgeSourcesFilesCountsWithHttpInfo(V3SourceFileCountsRequest body) throws IOException {
+    return postKnowledgeSourcesFilesCounts(createPostKnowledgeSourcesFilesCountsRequest(body).withHttpInfo());
+  }
+
+  private PostKnowledgeSourcesFilesCountsRequest createPostKnowledgeSourcesFilesCountsRequest(V3SourceFileCountsRequest body) {
+    return PostKnowledgeSourcesFilesCountsRequest.builder()
+            .withBody(body)
+
+            .build();
+  }
+
+  /**
+   * Get per-source file counts for the selected tag filter
+   * 
+   * @param request The request object
+   * @return V3SourceFileCountsResponse
+   * @throws ApiException if the request fails on the server
+   * @throws IOException if the request fails to be processed
+   */
+  public V3SourceFileCountsResponse postKnowledgeSourcesFilesCounts(PostKnowledgeSourcesFilesCountsRequest request) throws IOException, ApiException {
+    try {
+      ApiResponse<V3SourceFileCountsResponse> response = pcapiClient.invoke(request.withHttpInfo(), new TypeReference<V3SourceFileCountsResponse>() {});
+      return response.getBody();
+    }
+    catch (ApiException | IOException exception) {
+      if (pcapiClient.getShouldThrowErrors()) throw exception;
+      return null;
+    }
+  }
+
+  /**
+   * Get per-source file counts for the selected tag filter
+   * 
+   * @param request The request object
+   * @return the response
+   * @throws IOException if the request fails to be processed
+   */
+  public ApiResponse<V3SourceFileCountsResponse> postKnowledgeSourcesFilesCounts(ApiRequest<V3SourceFileCountsRequest> request) throws IOException {
+    try {
+      return pcapiClient.invoke(request, new TypeReference<V3SourceFileCountsResponse>() {});
+    }
+    catch (ApiException exception) {
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceFileCountsResponse> response = (ApiResponse<V3SourceFileCountsResponse>)(ApiResponse<?>)exception;
+      return response;
+    }
+    catch (Throwable exception) {
+      if (pcapiClient.getShouldThrowErrors()) {
+        if (exception instanceof IOException) {
+          throw (IOException)exception;
+        }
+        throw new RuntimeException(exception);
+      }
+      @SuppressWarnings("unchecked")
+      ApiResponse<V3SourceFileCountsResponse> response = (ApiResponse<V3SourceFileCountsResponse>)(ApiResponse<?>)(new ApiException(exception));
       return response;
     }
   }

@@ -1751,12 +1751,14 @@ public class SCIMApi {
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
    * @param body The information used to modify a group. (required)
    * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\". (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimV2Group patchScimGroup(String groupId, ScimV2PatchRequest body, String ifMatch) throws IOException, ApiException {
-    return  patchScimGroup(createPatchScimGroupRequest(groupId, body, ifMatch));
+  public ScimV2Group patchScimGroup(String groupId, ScimV2PatchRequest body, String ifMatch, List<String> attributes, List<String> excludedAttributes) throws IOException, ApiException {
+    return  patchScimGroup(createPatchScimGroupRequest(groupId, body, ifMatch, attributes, excludedAttributes));
   }
 
   /**
@@ -1765,20 +1767,26 @@ public class SCIMApi {
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/groups. (required)
    * @param body The information used to modify a group. (required)
    * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\". (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimV2Group> patchScimGroupWithHttpInfo(String groupId, ScimV2PatchRequest body, String ifMatch) throws IOException {
-    return patchScimGroup(createPatchScimGroupRequest(groupId, body, ifMatch).withHttpInfo());
+  public ApiResponse<ScimV2Group> patchScimGroupWithHttpInfo(String groupId, ScimV2PatchRequest body, String ifMatch, List<String> attributes, List<String> excludedAttributes) throws IOException {
+    return patchScimGroup(createPatchScimGroupRequest(groupId, body, ifMatch, attributes, excludedAttributes).withHttpInfo());
   }
 
-  private PatchScimGroupRequest createPatchScimGroupRequest(String groupId, ScimV2PatchRequest body, String ifMatch) {
+  private PatchScimGroupRequest createPatchScimGroupRequest(String groupId, ScimV2PatchRequest body, String ifMatch, List<String> attributes, List<String> excludedAttributes) {
     return PatchScimGroupRequest.builder()
             .withGroupId(groupId)
 
             .withBody(body)
 
             .withIfMatch(ifMatch)
+
+            .withAttributes(attributes)
+
+            .withExcludedAttributes(excludedAttributes)
 
             .build();
   }
@@ -1923,12 +1931,14 @@ public class SCIMApi {
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
    * @param body The information used to modify a group. (required)
    * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\". (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. (optional)
    * @return ScimV2Group
    * @throws ApiException if the request fails on the server
    * @throws IOException if the request fails to be processed
    */
-  public ScimV2Group patchScimV2Group(String groupId, ScimV2PatchRequest body, String ifMatch) throws IOException, ApiException {
-    return  patchScimV2Group(createPatchScimV2GroupRequest(groupId, body, ifMatch));
+  public ScimV2Group patchScimV2Group(String groupId, ScimV2PatchRequest body, String ifMatch, List<String> attributes, List<String> excludedAttributes) throws IOException, ApiException {
+    return  patchScimV2Group(createPatchScimV2GroupRequest(groupId, body, ifMatch, attributes, excludedAttributes));
   }
 
   /**
@@ -1937,20 +1947,26 @@ public class SCIMApi {
    * @param groupId The ID of a group. Returned with GET /api/v2/scim/v2/groups. (required)
    * @param body The information used to modify a group. (required)
    * @param ifMatch The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\". (optional)
+   * @param attributes Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes. (optional)
+   * @param excludedAttributes Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes. (optional)
    * @return ScimV2Group
    * @throws IOException if the request fails to be processed
    */
-  public ApiResponse<ScimV2Group> patchScimV2GroupWithHttpInfo(String groupId, ScimV2PatchRequest body, String ifMatch) throws IOException {
-    return patchScimV2Group(createPatchScimV2GroupRequest(groupId, body, ifMatch).withHttpInfo());
+  public ApiResponse<ScimV2Group> patchScimV2GroupWithHttpInfo(String groupId, ScimV2PatchRequest body, String ifMatch, List<String> attributes, List<String> excludedAttributes) throws IOException {
+    return patchScimV2Group(createPatchScimV2GroupRequest(groupId, body, ifMatch, attributes, excludedAttributes).withHttpInfo());
   }
 
-  private PatchScimV2GroupRequest createPatchScimV2GroupRequest(String groupId, ScimV2PatchRequest body, String ifMatch) {
+  private PatchScimV2GroupRequest createPatchScimV2GroupRequest(String groupId, ScimV2PatchRequest body, String ifMatch, List<String> attributes, List<String> excludedAttributes) {
     return PatchScimV2GroupRequest.builder()
             .withGroupId(groupId)
 
             .withBody(body)
 
             .withIfMatch(ifMatch)
+
+            .withAttributes(attributes)
+
+            .withExcludedAttributes(excludedAttributes)
 
             .build();
   }

@@ -13,11 +13,9 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AuthenticatorAttestationResponse;
+import com.mypurecloud.sdk.v2.model.ClientExtensionResults;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 import java.io.Serializable;
 /**
@@ -30,7 +28,7 @@ public class PublicKeyCredentialCreationResponse  implements Serializable {
   private String type = null;
   private String rawId = null;
   private String authenticatorAttachment = null;
-  private Map<String, Object> clientExtensionResults = null;
+  private ClientExtensionResults clientExtensionResults = null;
   private AuthenticatorAttestationResponse response = null;
 
   public PublicKeyCredentialCreationResponse() {
@@ -119,17 +117,17 @@ public class PublicKeyCredentialCreationResponse  implements Serializable {
   /**
    * Outputs from client-side WebAuthn extensions.
    **/
-  public PublicKeyCredentialCreationResponse clientExtensionResults(Map<String, Object> clientExtensionResults) {
+  public PublicKeyCredentialCreationResponse clientExtensionResults(ClientExtensionResults clientExtensionResults) {
     this.clientExtensionResults = clientExtensionResults;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "Outputs from client-side WebAuthn extensions.")
   @JsonProperty("clientExtensionResults")
-  public Map<String, Object> getClientExtensionResults() {
+  public ClientExtensionResults getClientExtensionResults() {
     return clientExtensionResults;
   }
-  public void setClientExtensionResults(Map<String, Object> clientExtensionResults) {
+  public void setClientExtensionResults(ClientExtensionResults clientExtensionResults) {
     this.clientExtensionResults = clientExtensionResults;
   }
 

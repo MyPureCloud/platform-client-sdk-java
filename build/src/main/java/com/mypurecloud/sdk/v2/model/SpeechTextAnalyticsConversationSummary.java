@@ -14,6 +14,7 @@ import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.mypurecloud.sdk.v2.model.ConversationInsight;
+import com.mypurecloud.sdk.v2.model.SpeechTextAnalyticsSummaryLabel;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -134,16 +135,20 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
   private Boolean generated = null;
   private Date dateCreated = null;
   private List<ConversationInsight> insights = null;
+  private String communicationId = null;
+  private List<SpeechTextAnalyticsSummaryLabel> labels = null;
 
   public SpeechTextAnalyticsConversationSummary() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
       insights = new ArrayList<ConversationInsight>();
+      labels = new ArrayList<SpeechTextAnalyticsSummaryLabel>();
     }
   }
 
   public SpeechTextAnalyticsConversationSummary(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
       insights = new ArrayList<ConversationInsight>();
+      labels = new ArrayList<SpeechTextAnalyticsSummaryLabel>();
     }
   }
 
@@ -328,6 +333,42 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
   }
 
 
+  /**
+   * The id of the communication associated with this summary
+   **/
+  public SpeechTextAnalyticsConversationSummary communicationId(String communicationId) {
+    this.communicationId = communicationId;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The id of the communication associated with this summary")
+  @JsonProperty("communicationId")
+  public String getCommunicationId() {
+    return communicationId;
+  }
+  public void setCommunicationId(String communicationId) {
+    this.communicationId = communicationId;
+  }
+
+
+  /**
+   * The summary labels
+   **/
+  public SpeechTextAnalyticsConversationSummary labels(List<SpeechTextAnalyticsSummaryLabel> labels) {
+    this.labels = labels;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The summary labels")
+  @JsonProperty("labels")
+  public List<SpeechTextAnalyticsSummaryLabel> getLabels() {
+    return labels;
+  }
+  public void setLabels(List<SpeechTextAnalyticsSummaryLabel> labels) {
+    this.labels = labels;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -347,12 +388,14 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
             Objects.equals(this.summary, speechTextAnalyticsConversationSummary.summary) &&
             Objects.equals(this.generated, speechTextAnalyticsConversationSummary.generated) &&
             Objects.equals(this.dateCreated, speechTextAnalyticsConversationSummary.dateCreated) &&
-            Objects.equals(this.insights, speechTextAnalyticsConversationSummary.insights);
+            Objects.equals(this.insights, speechTextAnalyticsConversationSummary.insights) &&
+            Objects.equals(this.communicationId, speechTextAnalyticsConversationSummary.communicationId) &&
+            Objects.equals(this.labels, speechTextAnalyticsConversationSummary.labels);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(summaryType, mediaType, language, summaryId, agentId, sourceId, summary, generated, dateCreated, insights);
+    return Objects.hash(summaryType, mediaType, language, summaryId, agentId, sourceId, summary, generated, dateCreated, insights, communicationId, labels);
   }
 
   @Override
@@ -370,6 +413,8 @@ public class SpeechTextAnalyticsConversationSummary  implements Serializable {
     sb.append("    generated: ").append(toIndentedString(generated)).append("\n");
     sb.append("    dateCreated: ").append(toIndentedString(dateCreated)).append("\n");
     sb.append("    insights: ").append(toIndentedString(insights)).append("\n");
+    sb.append("    communicationId: ").append(toIndentedString(communicationId)).append("\n");
+    sb.append("    labels: ").append(toIndentedString(labels)).append("\n");
     sb.append("}");
     return sb.toString();
   }

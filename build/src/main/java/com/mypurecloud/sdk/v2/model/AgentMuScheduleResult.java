@@ -13,6 +13,7 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.AgentMuScheduleItem;
+import com.mypurecloud.sdk.v2.model.ScheduleVisibilityRange;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class AgentMuScheduleResult  implements Serializable {
   
   private Date referenceStartDate = null;
   private List<AgentMuScheduleItem> agentSchedules = null;
+  private ScheduleVisibilityRange visibilityRange = null;
 
   public AgentMuScheduleResult() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
@@ -78,6 +80,24 @@ public class AgentMuScheduleResult  implements Serializable {
   }
 
 
+  /**
+   * The schedule visibility range
+   **/
+  public AgentMuScheduleResult visibilityRange(ScheduleVisibilityRange visibilityRange) {
+    this.visibilityRange = visibilityRange;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The schedule visibility range")
+  @JsonProperty("visibilityRange")
+  public ScheduleVisibilityRange getVisibilityRange() {
+    return visibilityRange;
+  }
+  public void setVisibilityRange(ScheduleVisibilityRange visibilityRange) {
+    this.visibilityRange = visibilityRange;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -89,12 +109,13 @@ public class AgentMuScheduleResult  implements Serializable {
     AgentMuScheduleResult agentMuScheduleResult = (AgentMuScheduleResult) o;
 
     return Objects.equals(this.referenceStartDate, agentMuScheduleResult.referenceStartDate) &&
-            Objects.equals(this.agentSchedules, agentMuScheduleResult.agentSchedules);
+            Objects.equals(this.agentSchedules, agentMuScheduleResult.agentSchedules) &&
+            Objects.equals(this.visibilityRange, agentMuScheduleResult.visibilityRange);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(referenceStartDate, agentSchedules);
+    return Objects.hash(referenceStartDate, agentSchedules, visibilityRange);
   }
 
   @Override
@@ -104,6 +125,7 @@ public class AgentMuScheduleResult  implements Serializable {
     
     sb.append("    referenceStartDate: ").append(toIndentedString(referenceStartDate)).append("\n");
     sb.append("    agentSchedules: ").append(toIndentedString(agentSchedules)).append("\n");
+    sb.append("    visibilityRange: ").append(toIndentedString(visibilityRange)).append("\n");
     sb.append("}");
     return sb.toString();
   }

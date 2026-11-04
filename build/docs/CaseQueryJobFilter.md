@@ -5,9 +5,10 @@
 
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **name** | **String** | Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference'. |  |
+| **name** | **String** | Attribute name. Valid filter names are: 'caseplanId', 'ownerId', 'status', 'priority', 'dateDue', 'externalContactId', 'customerIntentId', 'dateCreated', 'divisionId', 'reference', 'externalId'. |  |
 | **operator** | [**OperatorEnum**](#Enum--OperatorEnum) | Filter operator. |  |
 | **values** | **List&lt;String&gt;** | List of values to be used in the filter. |  |
+| **caseSensitive** | **Boolean** | Whether the filter matches letter case exactly. Only valid for 'reference' and 'externalId' filters. Defaults to true. |  [optional] |
 
 
 ## Enum: OperatorEnum
@@ -29,4 +30,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

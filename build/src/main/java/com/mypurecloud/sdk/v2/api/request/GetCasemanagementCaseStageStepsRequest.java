@@ -97,20 +97,6 @@ public class GetCasemanagementCaseStageStepsRequest {
 	    return this;
 	} 
 
-	private String before;
-	public String getBefore() {
-		return this.before;
-	}
-
-	public void setBefore(String before) {
-		this.before = before;
-	}
-
-	public GetCasemanagementCaseStageStepsRequest withBefore(String before) {
-	    this.setBefore(before);
-	    return this;
-	} 
-
 	private String after;
 	public String getAfter() {
 		return this.after;
@@ -125,16 +111,16 @@ public class GetCasemanagementCaseStageStepsRequest {
 	    return this;
 	} 
 
-	private String pageSize;
-	public String getPageSize() {
+	private Integer pageSize;
+	public Integer getPageSize() {
 		return this.pageSize;
 	}
 
-	public void setPageSize(String pageSize) {
+	public void setPageSize(Integer pageSize) {
 		this.pageSize = pageSize;
 	}
 
-	public GetCasemanagementCaseStageStepsRequest withPageSize(String pageSize) {
+	public GetCasemanagementCaseStageStepsRequest withPageSize(Integer pageSize) {
 	    this.setPageSize(pageSize);
 	    return this;
 	} 
@@ -175,9 +161,6 @@ public class GetCasemanagementCaseStageStepsRequest {
                 .withPathParameter("caseId", caseId)
         
                 .withPathParameter("stageId", stageId)
-        
-
-                .withQueryParameters("before", "", before)
         
 
                 .withQueryParameters("after", "", after)
@@ -221,17 +204,12 @@ public class GetCasemanagementCaseStageStepsRequest {
 			return this;
 		}
 
-		public Builder withBefore(String before) {
-			request.setBefore(before);
-			return this;
-		}
-
 		public Builder withAfter(String after) {
 			request.setAfter(after);
 			return this;
 		}
 
-		public Builder withPageSize(String pageSize) {
+		public Builder withPageSize(Integer pageSize) {
 			request.setPageSize(pageSize);
 			return this;
 		}

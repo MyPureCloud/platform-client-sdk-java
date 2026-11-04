@@ -43,6 +43,7 @@ import com.mypurecloud.sdk.v2.model.CreateVerifierResponse;
 import com.mypurecloud.sdk.v2.model.DataAvailabilityResponse;
 import com.mypurecloud.sdk.v2.model.DataSchema;
 import com.mypurecloud.sdk.v2.model.DataSchemaListing;
+import com.mypurecloud.sdk.v2.model.DeleteVerifierResponse;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivity;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateParam;
 import com.mypurecloud.sdk.v2.model.DevelopmentActivityAggregateResponse;
@@ -113,6 +114,20 @@ public class DeleteUsersMeVerifierRequest {
 	    return this;
 	} 
 
+	private String replacementDefaultVerifierId;
+	public String getReplacementDefaultVerifierId() {
+		return this.replacementDefaultVerifierId;
+	}
+
+	public void setReplacementDefaultVerifierId(String replacementDefaultVerifierId) {
+		this.replacementDefaultVerifierId = replacementDefaultVerifierId;
+	}
+
+	public DeleteUsersMeVerifierRequest withReplacementDefaultVerifierId(String replacementDefaultVerifierId) {
+	    this.setReplacementDefaultVerifierId(replacementDefaultVerifierId);
+	    return this;
+	} 
+
 	private final Map<String, String> customHeaders = new HashMap<>();
     public Map<String, String> getCustomHeaders() {
         return this.customHeaders;
@@ -143,6 +158,9 @@ public class DeleteUsersMeVerifierRequest {
         return ApiRequestBuilder.create("DELETE", "/api/v2/users/me/verifiers/{verifierId}")
                 .withPathParameter("verifierId", verifierId)
         
+
+                .withQueryParameters("replacementDefaultVerifierId", "", replacementDefaultVerifierId)
+        
 		.withCustomHeaders(customHeaders)
                 .withContentTypes("application/json")
                 .withAccepts("application/json")
@@ -171,6 +189,11 @@ public class DeleteUsersMeVerifierRequest {
 
 		public Builder withVerifierId(String verifierId) {
 			request.setVerifierId(verifierId);
+			return this;
+		}
+
+		public Builder withReplacementDefaultVerifierId(String replacementDefaultVerifierId) {
+			request.setReplacementDefaultVerifierId(replacementDefaultVerifierId);
 			return this;
 		}
 

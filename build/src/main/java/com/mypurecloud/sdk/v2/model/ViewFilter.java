@@ -249,7 +249,8 @@ public class ViewFilter  implements Serializable {
     WEBMESSAGING("webmessaging"),
     OPEN("open"),
     INSTAGRAM("instagram"),
-    APPLE("apple");
+    APPLE("apple"),
+    LINKEDIN("linkedin");
 
     private String value;
 
@@ -1003,6 +1004,7 @@ public class ViewFilter  implements Serializable {
     OPEN("Open"),
     INSTAGRAM("Instagram"),
     APPLE("Apple"),
+    LINKEDIN("LinkedIn"),
     OTHER("Other");
 
     private String value;
@@ -1914,7 +1916,8 @@ public class ViewFilter  implements Serializable {
     INSTAGRAM("Instagram"),
     OPEN("Open"),
     GOOGLEBUSINESSPROFILE("GoogleBusinessProfile"),
-    LINKEDIN("LinkedIn");
+    LINKEDIN("LinkedIn"),
+    YOUTUBE("YouTube");
 
     private String value;
 
@@ -2506,6 +2509,7 @@ public class ViewFilter  implements Serializable {
     TRANSMITTING("transmitting"),
     UNKNOWN("unknown"),
     UPLOADING("uploading"),
+    VIDEO("video"),
     VOICEMAIL("voicemail"),
     WRAPUP("wrapup");
 

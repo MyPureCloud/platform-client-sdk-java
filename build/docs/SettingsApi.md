@@ -10,10 +10,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getEmailsSettings**](SettingsApi#getEmailsSettings) | Get email Contact Center settings |
 | [**getEmailsSettingsThreading**](SettingsApi#getEmailsSettingsThreading) | Get email threading settings |
 | [**getExternalcontactsSettings**](SettingsApi#getExternalcontactsSettings) | Get settings |
+| [**getSearchSettings**](SettingsApi#getSearchSettings) | Get the organization's search settings |
 | [**getSettingsExecutiondata**](SettingsApi#getSettingsExecutiondata) | Get the execution history enabled setting. |
 | [**getUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#getUsersAgentuiAgentsAutoanswerAgentIdSettings) | Get agent auto answer settings |
 | [**patchEmailsSettings**](SettingsApi#patchEmailsSettings) | Patch email Contact Center settings |
 | [**patchEmailsSettingsThreading**](SettingsApi#patchEmailsSettingsThreading) | Patch email threading settings |
+| [**patchSearchSettings**](SettingsApi#patchSearchSettings) | Patch the organization's search settings |
+| [**patchSearchSettingsContentsearch**](SettingsApi#patchSearchSettingsContentsearch) | Patch the organization's content search settings |
 | [**patchSettingsExecutiondata**](SettingsApi#patchSettingsExecutiondata) | Edit the execution history on off setting. |
 | [**patchUsersAgentuiAgentsAutoanswerAgentIdSettings**](SettingsApi#patchUsersAgentuiAgentsAutoanswerAgentIdSettings) | Update agent auto answer settings |
 | [**putExternalcontactsSettings**](SettingsApi#putExternalcontactsSettings) | Set settings |
@@ -353,6 +356,64 @@ This endpoint does not require any parameters.
 [**ExternalContactsSettings**](ExternalContactsSettings)
 
 
+# **getSearchSettings**
+
+
+> [OrgSettings](OrgSettings) getSearchSettings()
+
+Get the organization's search settings
+
+getSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/search/settings  
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+* analytics:transcriptsearchsetting:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SettingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SettingsApi apiInstance = new SettingsApi();
+try {
+    OrgSettings result = apiInstance.getSearchSettings();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SettingsApi#getSearchSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+This endpoint does not require any parameters.
+
+
+
+### Return type
+
+[**OrgSettings**](OrgSettings)
+
+
 # **getSettingsExecutiondata**
 
 
@@ -585,6 +646,128 @@ try {
 ### Return type
 
 [**EmailThreadingSettings**](EmailThreadingSettings)
+
+
+# **patchSearchSettings**
+
+
+> [OrgSettings](OrgSettings) patchSearchSettings(body)
+
+Patch the organization's search settings
+
+patchSearchSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/search/settings  
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SettingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SettingsApi apiInstance = new SettingsApi();
+OrgSettings body = new OrgSettings(); // OrgSettings | Search Settings
+try {
+    OrgSettings result = apiInstance.patchSearchSettings(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SettingsApi#patchSearchSettings");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**OrgSettings**](OrgSettings)| Search Settings | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**OrgSettings**](OrgSettings)
+
+
+# **patchSearchSettingsContentsearch**
+
+
+> [ContentSearchSetting](ContentSearchSetting) patchSearchSettingsContentsearch(body)
+
+Patch the organization's content search settings
+
+patchSearchSettingsContentsearch is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/search/settings/contentsearch  
+
+Requires ANY permissions: 
+
+* analytics:transcriptsearchsetting:edit
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SettingsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SettingsApi apiInstance = new SettingsApi();
+ContentSearchSetting body = new ContentSearchSetting(); // ContentSearchSetting | Content search setting
+try {
+    ContentSearchSetting result = apiInstance.patchSearchSettingsContentsearch(body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SettingsApi#patchSearchSettingsContentsearch");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**ContentSearchSetting**](ContentSearchSetting)| Content search setting | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**ContentSearchSetting**](ContentSearchSetting)
 
 
 # **patchSettingsExecutiondata**
@@ -829,4 +1012,4 @@ try {
 [**AutoAnswerSettings**](AutoAnswerSettings)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

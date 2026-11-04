@@ -360,10 +360,11 @@ public class OAuthApiAsync {
 
   /**
    * Get the results of a usage query
-   * 
+   * Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiUsageQueryResult> getOauthClientUsageQueryResultAsync(GetOauthClientUsageQueryResultRequest request, final AsyncApiCallback<ApiUsageQueryResult> callback) {
     try {
@@ -394,10 +395,11 @@ public class OAuthApiAsync {
 
   /**
    * Get the results of a usage query
-   * 
+   * Deprecated - use GET /api/v2/usage/client/{clientId}/aggregates/query/jobs/{jobId} instead.
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<ApiUsageQueryResult>> getOauthClientUsageQueryResultAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<ApiUsageQueryResult>> callback) {
     try {
@@ -435,10 +437,11 @@ public class OAuthApiAsync {
 
   /**
    * Get a summary of OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<UsageExecutionResult> getOauthClientUsageSummaryAsync(GetOauthClientUsageSummaryRequest request, final AsyncApiCallback<UsageExecutionResult> callback) {
     try {
@@ -469,10 +472,11 @@ public class OAuthApiAsync {
 
   /**
    * Get a summary of OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<UsageExecutionResult>> getOauthClientUsageSummaryAsync(ApiRequest<Void> request, final AsyncApiCallback<ApiResponse<UsageExecutionResult>> callback) {
     try {
@@ -810,10 +814,11 @@ public class OAuthApiAsync {
 
   /**
    * Query for OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<UsageExecutionResult> postOauthClientUsageQueryAsync(PostOauthClientUsageQueryRequest request, final AsyncApiCallback<UsageExecutionResult> callback) {
     try {
@@ -844,10 +849,11 @@ public class OAuthApiAsync {
 
   /**
    * Query for OAuth client API usage
-   * After calling this method, you will then need to poll for the query results based on the returned execution Id
+   * Deprecated - use POST /api/v2/usage/client/{clientId}/aggregates/query/jobs instead. After calling this method, you will then need to poll for the query results based on the returned execution Id
    * @param request the request object
    * @param callback the action to perform when the request is completed
    * @return the future indication when the request has completed
+   * @deprecated
    */
   public Future<ApiResponse<UsageExecutionResult>> postOauthClientUsageQueryAsync(ApiRequest<ApiUsageClientQuery> request, final AsyncApiCallback<ApiResponse<UsageExecutionResult>> callback) {
     try {

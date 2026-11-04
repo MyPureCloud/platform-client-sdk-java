@@ -13,8 +13,9 @@ import java.io.IOException;
 import com.mypurecloud.sdk.v2.ApiClient;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.mypurecloud.sdk.v2.model.BuAgentSchedulePublishedScheduleReference;
-import com.mypurecloud.sdk.v2.model.BuAgentScheduleSearchResponse;
 import com.mypurecloud.sdk.v2.model.BuAgentScheduleUpdate;
+import com.mypurecloud.sdk.v2.model.BuScheduleSearchAgentScheduleResponse;
+import com.mypurecloud.sdk.v2.model.ScheduleVisibilityRange;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,16 +29,17 @@ import java.io.Serializable;
 
 public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
   
-  private List<BuAgentScheduleSearchResponse> agentSchedules = null;
+  private List<BuScheduleSearchAgentScheduleResponse> agentSchedules = null;
   private String businessUnitTimeZone = null;
   private List<BuAgentSchedulePublishedScheduleReference> publishedSchedules = null;
   private Date startDate = null;
   private Date endDate = null;
   private List<BuAgentScheduleUpdate> updates = null;
+  private ScheduleVisibilityRange visibilityRange = null;
 
   public BuCurrentAgentScheduleSearchResponse() {
     if (ApiClient.LEGACY_EMPTY_LIST == true) { 
-      agentSchedules = new ArrayList<BuAgentScheduleSearchResponse>();
+      agentSchedules = new ArrayList<BuScheduleSearchAgentScheduleResponse>();
       publishedSchedules = new ArrayList<BuAgentSchedulePublishedScheduleReference>();
       updates = new ArrayList<BuAgentScheduleUpdate>();
     }
@@ -45,7 +47,7 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
 
   public BuCurrentAgentScheduleSearchResponse(Boolean initWithEmptyList) {
     if (initWithEmptyList == true) { 
-      agentSchedules = new ArrayList<BuAgentScheduleSearchResponse>();
+      agentSchedules = new ArrayList<BuScheduleSearchAgentScheduleResponse>();
       publishedSchedules = new ArrayList<BuAgentSchedulePublishedScheduleReference>();
       updates = new ArrayList<BuAgentScheduleUpdate>();
     }
@@ -55,17 +57,17 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
   /**
    * The requested agent schedules
    **/
-  public BuCurrentAgentScheduleSearchResponse agentSchedules(List<BuAgentScheduleSearchResponse> agentSchedules) {
+  public BuCurrentAgentScheduleSearchResponse agentSchedules(List<BuScheduleSearchAgentScheduleResponse> agentSchedules) {
     this.agentSchedules = agentSchedules;
     return this;
   }
   
   @ApiModelProperty(example = "null", value = "The requested agent schedules")
   @JsonProperty("agentSchedules")
-  public List<BuAgentScheduleSearchResponse> getAgentSchedules() {
+  public List<BuScheduleSearchAgentScheduleResponse> getAgentSchedules() {
     return agentSchedules;
   }
-  public void setAgentSchedules(List<BuAgentScheduleSearchResponse> agentSchedules) {
+  public void setAgentSchedules(List<BuScheduleSearchAgentScheduleResponse> agentSchedules) {
     this.agentSchedules = agentSchedules;
   }
 
@@ -160,6 +162,24 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
   }
 
 
+  /**
+   * The schedule visibility range
+   **/
+  public BuCurrentAgentScheduleSearchResponse visibilityRange(ScheduleVisibilityRange visibilityRange) {
+    this.visibilityRange = visibilityRange;
+    return this;
+  }
+  
+  @ApiModelProperty(example = "null", value = "The schedule visibility range")
+  @JsonProperty("visibilityRange")
+  public ScheduleVisibilityRange getVisibilityRange() {
+    return visibilityRange;
+  }
+  public void setVisibilityRange(ScheduleVisibilityRange visibilityRange) {
+    this.visibilityRange = visibilityRange;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -175,12 +195,13 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
             Objects.equals(this.publishedSchedules, buCurrentAgentScheduleSearchResponse.publishedSchedules) &&
             Objects.equals(this.startDate, buCurrentAgentScheduleSearchResponse.startDate) &&
             Objects.equals(this.endDate, buCurrentAgentScheduleSearchResponse.endDate) &&
-            Objects.equals(this.updates, buCurrentAgentScheduleSearchResponse.updates);
+            Objects.equals(this.updates, buCurrentAgentScheduleSearchResponse.updates) &&
+            Objects.equals(this.visibilityRange, buCurrentAgentScheduleSearchResponse.visibilityRange);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(agentSchedules, businessUnitTimeZone, publishedSchedules, startDate, endDate, updates);
+    return Objects.hash(agentSchedules, businessUnitTimeZone, publishedSchedules, startDate, endDate, updates, visibilityRange);
   }
 
   @Override
@@ -194,6 +215,7 @@ public class BuCurrentAgentScheduleSearchResponse  implements Serializable {
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("    updates: ").append(toIndentedString(updates)).append("\n");
+    sb.append("    visibilityRange: ").append(toIndentedString(visibilityRange)).append("\n");
     sb.append("}");
     return sb.toString();
   }
