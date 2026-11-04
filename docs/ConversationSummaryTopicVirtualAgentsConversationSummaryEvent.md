@@ -22,6 +22,7 @@
 | **followupActions** | [**List&lt;ConversationSummaryTopicVirtualAgentsConversationFollowupAction&gt;**](ConversationSummaryTopicVirtualAgentsConversationFollowupAction) |  |  [optional] |
 | **extractedEntities** | [**List&lt;ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity&gt;**](ConversationSummaryTopicVirtualAgentsSummaryExtractedCustomEntity) |  |  [optional] |
 | **wrapUpCodes** | [**List&lt;ConversationSummaryTopicVirtualAgentsConversationWrapUpCode&gt;**](ConversationSummaryTopicVirtualAgentsConversationWrapUpCode) |  |  [optional] |
+| **wrapUpCodePredictionEnabled** | **Boolean** |  |  [optional] |
 | **triggerSource** | [**ConversationSummaryTopicVirtualAgentsTriggerSource**](ConversationSummaryTopicVirtualAgentsTriggerSource) |  |  [optional] |
 | **summarySourceType** | [**SummarySourceTypeEnum**](#Enum--SummarySourceTypeEnum) |  |  [optional] |
 | **triggerType** | [**TriggerTypeEnum**](#Enum--TriggerTypeEnum) |  |  [optional] |
@@ -89,8 +90,9 @@
 | CONVERSATION_TOO_LONG | &quot;CONVERSATION_TOO_LONG&quot; | 
 | CONVERSATION_TOO_SHORT | &quot;CONVERSATION_TOO_SHORT&quot; | 
 | RATE_LIMITED | &quot;RATE_LIMITED&quot; | 
+| EXTERNAL_SERVICE_TIMEOUT | &quot;EXTERNAL_SERVICE_TIMEOUT&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

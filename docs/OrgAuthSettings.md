@@ -13,6 +13,7 @@
 | **inactivityTimeoutExclusions** | **List&lt;String&gt;** | The list of exempt apis from inactivity timeout. |  [optional] |
 | **universalLogout** | **Boolean** | Indicates whether universal logout is enabled for the organization. |  [optional] |
 | **tokenStorageLocation** | [**TokenStorageLocationEnum**](#Enum--TokenStorageLocationEnum) | The browser storage location used for authentication tokens. |  [optional] |
+| **ssoLoginFirst** | **Boolean** | Indicates whether single sign-on is displayed before Genesys Cloud credentials on the login page. |  [optional] |
 
 
 ## Enum: TokenStorageLocationEnum
@@ -26,4 +27,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

@@ -8,9 +8,11 @@
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** |  |  [optional] |
 | **disabled** | **Boolean** |  |  [optional] |
+| **nativeLoginExceptionsEnabled** | **Boolean** |  |  [optional] |
+| **nativeLoginExceptionGroupIds** | **List&lt;String&gt;** |  |  [optional] |
 | **selfUri** | **String** | The URI for this object |  [optional] |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

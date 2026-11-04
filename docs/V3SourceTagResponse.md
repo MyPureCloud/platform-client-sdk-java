@@ -1,0 +1,13 @@
+# V3SourceTagResponse
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+| ------------ | ------------- | ------------- | ------------- |
+| **name** | **String** | Tag name. |  [optional] |
+
+
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

@@ -107,6 +107,7 @@
 | INSTAGRAM | &quot;instagram&quot; | 
 | KAKAO | &quot;kakao&quot; | 
 | LINE | &quot;line&quot; | 
+| LINKEDIN | &quot;linkedin&quot; | 
 | OPEN | &quot;open&quot; | 
 | SMS | &quot;sms&quot; | 
 | TELEGRAM | &quot;telegram&quot; | 
@@ -159,4 +160,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

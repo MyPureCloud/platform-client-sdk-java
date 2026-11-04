@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **status** | [**StatusEnum**](#Enum--StatusEnum) | The status of the operation |  [optional] |
 | **operationId** | **String** | The ID for the operation |  [optional] |
-| **result** | [**BuAgentSchedulesSearchResponse**](BuAgentSchedulesSearchResponse) | The result of the operation.  Null unless status == Complete |  [optional] |
+| **result** | [**BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse**](BuAgentSchedulesSearchResponseBuAgentScheduleSearchResponse) | The result of the operation.  Null unless status == Complete |  [optional] |
 | **progress** | **Integer** | Percent progress for the operation |  [optional] |
 | **downloadUrl** | **String** | The URL from which to download the result if it is too large to pass directly |  [optional] |
 
@@ -25,4 +25,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

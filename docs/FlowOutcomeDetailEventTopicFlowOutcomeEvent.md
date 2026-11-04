@@ -30,6 +30,9 @@
 | **conversationExternalContactIds** | **List&lt;String&gt;** |  |  [optional] |
 | **conversationExternalOrganizationIds** | **List&lt;String&gt;** |  |  [optional] |
 | **utilizationLabel** | **String** |  |  [optional] |
+| **outboundCampaignId** | **String** |  |  [optional] |
+| **outboundContactListId** | **String** |  |  [optional] |
+| **outboundContactId** | **String** |  |  [optional] |
 
 
 ## Enum: MediaTypeEnum
@@ -102,6 +105,7 @@
 | VOICEMAIL | &quot;VOICEMAIL&quot; | 
 | WORKITEM | &quot;WORKITEM&quot; | 
 | VOICESURVEY | &quot;VOICESURVEY&quot; | 
+| BUSINESSPROCESS | &quot;BUSINESSPROCESS&quot; | 
 
 
 ## Enum: FlowOutcomeValueEnum
@@ -116,4 +120,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

@@ -42,6 +42,7 @@
 | TRANSMITTING | &quot;transmitting&quot; | 
 | UNKNOWN | &quot;unknown&quot; | 
 | UPLOADING | &quot;uploading&quot; | 
+| VIDEO | &quot;video&quot; | 
 | VOICEMAIL | &quot;voicemail&quot; | 
 | WRAPUP | &quot;wrapup&quot; | 
 
@@ -75,4 +76,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

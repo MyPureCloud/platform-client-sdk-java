@@ -89,6 +89,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getTelephonyProvidersEdgesTrunks**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesTrunks) | Get the list of available trunks. |
 | [**getTelephonyProvidersEdgesTrunksMetrics**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesTrunksMetrics) | Get the metrics for a list of trunks. |
 | [**getTelephonyProvidersEdgesTrunkswithrecording**](TelephonyProvidersEdgeApi#getTelephonyProvidersEdgesTrunkswithrecording) | Get Counts of trunks that have recording disabled or enabled |
+| [**getTelephonyTrunkbasesettingMetrics**](TelephonyProvidersEdgeApi#getTelephonyTrunkbasesettingMetrics) | Get the trunkbase metrics. |
+| [**getTelephonyTrunkbasesettingsMetrics**](TelephonyProvidersEdgeApi#getTelephonyTrunkbasesettingsMetrics) | Get the trunkbase metrics for the specified ids. |
 | [**patchTelephonyProvidersEdgesSiteSiteconnections**](TelephonyProvidersEdgeApi#patchTelephonyProvidersEdgesSiteSiteconnections) | Disable site connections for a site. |
 | [**postTelephonyProvidersEdgeDiagnosticNslookup**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgeDiagnosticNslookup) | Nslookup request command to collect networking-related information from an Edge for a target IP or host. |
 | [**postTelephonyProvidersEdgeDiagnosticPing**](TelephonyProvidersEdgeApi#postTelephonyProvidersEdgeDiagnosticPing) | Ping Request command to collect networking-related information from an Edge for a target IP or host. |
@@ -5409,6 +5411,124 @@ try {
 [**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount)
 
 
+# **getTelephonyTrunkbasesettingMetrics**
+
+
+> [TrunkBaseMetrics](TrunkBaseMetrics) getTelephonyTrunkbasesettingMetrics(trunkBaseId)
+
+Get the trunkbase metrics.
+
+Wraps GET /api/v2/telephony/trunkbasesettings/{trunkBaseId}/metrics  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String trunkBaseId = "trunkBaseId_example"; // String | TrunkBase Id
+try {
+    TrunkBaseMetrics result = apiInstance.getTelephonyTrunkbasesettingMetrics(trunkBaseId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyTrunkbasesettingMetrics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **trunkBaseId** | **String**| TrunkBase Id | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TrunkBaseMetrics**](TrunkBaseMetrics)
+
+
+# **getTelephonyTrunkbasesettingsMetrics**
+
+
+> [TrunkBaseMetricsEntityListing](TrunkBaseMetricsEntityListing) getTelephonyTrunkbasesettingsMetrics(ids)
+
+Get the trunkbase metrics for the specified ids.
+
+Wraps GET /api/v2/telephony/trunkbasesettings/metrics  
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.TelephonyProvidersEdgeApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+TelephonyProvidersEdgeApi apiInstance = new TelephonyProvidersEdgeApi();
+String ids = "ids_example"; // String | TrunkBase Ids
+try {
+    TrunkBaseMetricsEntityListing result = apiInstance.getTelephonyTrunkbasesettingsMetrics(ids);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling TelephonyProvidersEdgeApi#getTelephonyTrunkbasesettingsMetrics");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **ids** | **String**| TrunkBase Ids | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TrunkBaseMetricsEntityListing**](TrunkBaseMetricsEntityListing)
+
+
 # **patchTelephonyProvidersEdgesSiteSiteconnections**
 
 
@@ -8066,4 +8186,4 @@ try {
 [**TrunkBase**](TrunkBase)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

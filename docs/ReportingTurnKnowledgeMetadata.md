@@ -39,6 +39,7 @@
 | NOTATTEMPTED | &quot;NotAttempted&quot; | 
 | NOANSWERGENERATED | &quot;NoAnswerGenerated&quot; | 
 | TIMEOUT | &quot;Timeout&quot; | 
+| DELEGATEDTOAGENTICVIRTUALAGENT | &quot;DelegatedToAgenticVirtualAgent&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
@@ -53,4 +54,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

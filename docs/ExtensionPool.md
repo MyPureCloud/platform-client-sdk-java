@@ -7,7 +7,7 @@
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** | The globally unique identifier for the object. |  [optional] |
 | **name** | **String** | The name of the entity. |  |
-| **division** | [**Division**](Division) | The division to which this entity belongs. |  [optional] |
+| **division** | [**WritableDivision**](WritableDivision) | The division to which this entity belongs. |  [optional] |
 | **description** | **String** | The resource's description. |  [optional] |
 | **version** | **Integer** | The current version of the resource. |  [optional] |
 | **dateCreated** | [**Date**](Date) | The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
@@ -34,4 +34,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

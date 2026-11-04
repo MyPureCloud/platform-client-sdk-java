@@ -59,6 +59,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getUserStation**](UsersApi#getUserStation) | Get station information for user |
 | [**getUserSuperiors**](UsersApi#getUserSuperiors) | Get superiors |
 | [**getUserTrustors**](UsersApi#getUserTrustors) | List the organizations that have authorized/trusted the user. |
+| [**getUserVerifier**](UsersApi#getUserVerifier) | Get a verifier |
 | [**getUserVerifiers**](UsersApi#getUserVerifiers) | Get a list of verifiers |
 | [**getUsers**](UsersApi#getUsers) | Get the list of available users. |
 | [**getUsersChatsMe**](UsersApi#getUsersChatsMe) | Get chats for a user |
@@ -1028,7 +1029,7 @@ null (empty response body)
 # **deleteUsersMeVerifier**
 
 
-> Void deleteUsersMeVerifier(verifierId)
+> [DeleteVerifierResponse](DeleteVerifierResponse) deleteUsersMeVerifier(verifierId, replacementDefaultVerifierId)
 
 Delete a verifier
 
@@ -1060,8 +1061,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 UsersApi apiInstance = new UsersApi();
 String verifierId = "verifierId_example"; // String | Verifier ID
+String replacementDefaultVerifierId = "replacementDefaultVerifierId_example"; // String | The ID of an enabled verifier to make the default after deleting the current default
 try {
-    apiInstance.deleteUsersMeVerifier(verifierId);
+    DeleteVerifierResponse result = apiInstance.deleteUsersMeVerifier(verifierId, replacementDefaultVerifierId);
+    System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling UsersApi#deleteUsersMeVerifier");
     e.printStackTrace();
@@ -1074,12 +1077,13 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **verifierId** | **String**| Verifier ID | 
+| **replacementDefaultVerifierId** | **String**| The ID of an enabled verifier to make the default after deleting the current default | [optional] 
 {: class="table-striped"}
 
 
 ### Return type
 
-null (empty response body)
+[**DeleteVerifierResponse**](DeleteVerifierResponse)
 
 
 # **deleteUsersStationsMeAssociatedstation**
@@ -3480,6 +3484,67 @@ try {
 [**TrustorEntityListing**](TrustorEntityListing)
 
 
+# **getUserVerifier**
+
+
+> [Verifier](Verifier) getUserVerifier(userId, verifierId)
+
+Get a verifier
+
+Wraps GET /api/v2/users/{userId}/verifiers/{verifierId}  
+
+Requires ANY permissions: 
+
+* mfa:verifier:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.UsersApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+UsersApi apiInstance = new UsersApi();
+String userId = "userId_example"; // String | User ID
+String verifierId = "verifierId_example"; // String | Verifier ID
+try {
+    Verifier result = apiInstance.getUserVerifier(userId, verifierId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling UsersApi#getUserVerifier");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **userId** | **String**| User ID | 
+| **verifierId** | **String**| Verifier ID | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**Verifier**](Verifier)
+
+
 # **getUserVerifiers**
 
 
@@ -5258,7 +5323,7 @@ Assign multiple routing skills to a user
 
 Wraps PATCH /api/v2/users/{userId}/routingskills/bulk  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:skill:assign
 
@@ -7557,7 +7622,7 @@ Assign multiple routing skills to a user, replacing any current assignments
 
 Wraps PUT /api/v2/users/{userId}/routingskills/bulk  
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:skill:assign
 
@@ -8093,4 +8158,4 @@ try {
 null (empty response body)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

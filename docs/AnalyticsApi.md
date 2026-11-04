@@ -5888,6 +5888,7 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
+* externalContacts:conversation:viewAll
 
 ### Example
 
@@ -5948,6 +5949,7 @@ Requires ANY permissions:
 
 * analytics:conversationDetail:view
 * analytics:agentConversationDetail:view
+* externalContacts:conversation:viewAll
 
 ### Example
 
@@ -8437,4 +8439,4 @@ try {
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

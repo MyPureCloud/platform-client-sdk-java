@@ -18,11 +18,22 @@
 | **entityToken** | **String** |  |  [optional] |
 | **phoneNumber** | **String** |  |  [optional] |
 | **externalContactId** | **String** |  |  [optional] |
+| **referenceId** | **String** |  |  [optional] |
+| **referenceType** | [**ReferenceTypeEnum**](#Enum--ReferenceTypeEnum) |  |  [optional] |
 | **entityModifiedDate** | [**Date**](Date) |  |  [optional] |
 | **entityModifiedBy** | **String** |  |  [optional] |
 | **timestamp** | **Long** |  |  [optional] |
 
 
+## Enum: ReferenceTypeEnum
+
+| Name | Value |
+| ---- | ----- |
+| OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; | 
+| UNKNOWN | &quot;UNKNOWN&quot; | 
+| SALESFORCE | &quot;SALESFORCE&quot; | 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+
+
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

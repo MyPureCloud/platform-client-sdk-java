@@ -8,6 +8,7 @@
 | **pageSize** | **Integer** | The total page size requested (default 25). |  [optional] |
 | **pageNumber** | **Integer** | The requested page number. |  [optional] |
 | **filters** | [**List&lt;CaseQueryJobFilter&gt;**](CaseQueryJobFilter) | List of filter objects to be used in the search. Use an empty list to run the query with no filters. |  |
+| **filterGroups** | [**List&lt;CaseQueryJobFilterGroup&gt;**](CaseQueryJobFilterGroup) | List of filter groups to be used in the search. The filters within a group are combined using the group operator; groups are combined with each other and with the top-level filters using AND.  |  [optional] |
 | **sort** | [**CaseQueryJobSort**](CaseQueryJobSort) | Sort order for results. |  [optional] |
 | **attributes** | [**List<AttributesEnum>**](#Enum--AttributesEnum) | List of entity attributes to be retrieved in the result. |  [optional] |
 | **expands** | [**List<ExpandsEnum>**](#Enum--ExpandsEnum) | Attributes to expand on each case in the job results. Expands are stored on the job and enriched by PubAPI when results are fetched. |  [optional] |
@@ -20,6 +21,7 @@
 | OUTDATEDSDKVERSION | &quot;OutdatedSdkVersion&quot; |
 | ID | &quot;id&quot; |
 | REFERENCE | &quot;reference&quot; |
+| EXTERNALID | &quot;externalId&quot; |
 | CASEPLANID | &quot;caseplanId&quot; |
 | CASEPLANVERSION | &quot;caseplanVersion&quot; |
 | OWNER | &quot;owner&quot; |
@@ -35,6 +37,7 @@
 | DATEMODIFIED | &quot;dateModified&quot; |
 | MODIFIEDBY | &quot;modifiedBy&quot; |
 | SUMMARY | &quot;summary&quot; |
+| DESCRIPTION | &quot;description&quot; |
 | VERSION | &quot;version&quot; |
 | TTLSECONDS | &quot;ttlSeconds&quot; |
 | CREATIONSTATUS | &quot;creationStatus&quot; |
@@ -54,4 +57,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

@@ -28,9 +28,10 @@
 | WEBMESSAGE | &quot;WebMessage&quot; | 
 | OPEN | &quot;Open&quot; | 
 | INSTAGRAM | &quot;Instagram&quot; | 
+| LINKEDIN | &quot;LinkedIn&quot; | 
 | UNKNOWN | &quot;Unknown&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

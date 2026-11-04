@@ -1921,8 +1921,6 @@ try {
 
 Returns a single cluster scan
 
-getExternalcontactsGraphsClusterscan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}  
 
 Requires ANY permissions: 
@@ -1984,8 +1982,6 @@ try {
 
 Returns a single cluster found by a scan
 
-getExternalcontactsGraphsClusterscanCluster is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}  
 
 Requires ANY permissions: 
@@ -2046,8 +2042,6 @@ try {
 > [ClusterList](ClusterList) getExternalcontactsGraphsClusterscanClusters(scanId, limit, cursor, divisionIds, mergeInfoStatus)
 
 Returns a list of clusters found by a scan
-
-getExternalcontactsGraphsClusterscanClusters is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters  
 
@@ -2116,8 +2110,6 @@ try {
 
 Returns the statistics about a single cluster scan
 
-getExternalcontactsGraphsClusterscanStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/{scanId}/statistics  
 
 Requires ANY permissions: 
@@ -2176,8 +2168,6 @@ try {
 > [ClusterScanList](ClusterScanList) getExternalcontactsGraphsClusterscans(limit, cursor, expand)
 
 Returns a list of cluster scans
-
-getExternalcontactsGraphsClusterscans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans  
 
@@ -2238,11 +2228,9 @@ try {
 # **getExternalcontactsGraphsClusterscansLatest**
 
 
-> [ClusterScan](ClusterScan) getExternalcontactsGraphsClusterscansLatest(expand)
+> [LatestClusterScan](LatestClusterScan) getExternalcontactsGraphsClusterscansLatest(expand)
 
 Returns the latest cluster scan
-
-getExternalcontactsGraphsClusterscansLatest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/latest  
 
@@ -2274,7 +2262,7 @@ Configuration.setDefaultApiClient(apiClient);
 ExternalContactsApi apiInstance = new ExternalContactsApi();
 List<String> expand = Arrays.asList(null); // List<String> | which fields, if any, to expand
 try {
-    ClusterScan result = apiInstance.getExternalcontactsGraphsClusterscansLatest(expand);
+    LatestClusterScan result = apiInstance.getExternalcontactsGraphsClusterscansLatest(expand);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExternalContactsApi#getExternalcontactsGraphsClusterscansLatest");
@@ -2287,13 +2275,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: statistics.aggregated 
+| **expand** | [**List&lt;String&gt;**](String)| which fields, if any, to expand | [optional]<br />**Values**: statistics.aggregated, settings 
 {: class="table-striped"}
 
 
 ### Return type
 
-[**ClusterScan**](ClusterScan)
+[**LatestClusterScan**](LatestClusterScan)
 
 
 # **getExternalcontactsGraphsClusterscansLatestStatistics**
@@ -2302,8 +2290,6 @@ try {
 > [ClusterScanStatistics](ClusterScanStatistics) getExternalcontactsGraphsClusterscansLatestStatistics()
 
 Returns the statistics about the latest cluster scan
-
-getExternalcontactsGraphsClusterscansLatestStatistics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/graphs/clusterscans/latest/statistics  
 
@@ -2359,8 +2345,6 @@ This endpoint does not require any parameters.
 > [GraphSettings](GraphSettings) getExternalcontactsGraphsSettings()
 
 Returns the org-wide settings for ExternalContact graph operations
-
-getExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/externalcontacts/graphs/settings  
 
@@ -8416,8 +8400,6 @@ try {
 
 Merge a single cluster found by a scan
 
-putExternalcontactsGraphsClusterscanClusterMerge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PUT /api/v2/externalcontacts/graphs/clusterscans/{scanId}/clusters/{clusterId}/merge  
 
 Requires ANY permissions: 
@@ -8478,8 +8460,6 @@ try {
 > [GraphSettings](GraphSettings) putExternalcontactsGraphsSettings(body)
 
 Updates the org-wide settings for ExternalContact graph operations
-
-putExternalcontactsGraphsSettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/externalcontacts/graphs/settings  
 
@@ -9026,4 +9006,4 @@ try {
 [**Relationship**](Relationship)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

@@ -51,6 +51,7 @@
 | **skipEnabled** | **Boolean** | If true, the callback can be skipped. |  [optional] |
 | **timeoutSeconds** | **Integer** | Duration in seconds before the callback will be auto-dialed. |  [optional] |
 | **automatedCallbackConfigId** | **String** | The id of the config for automatically placing the callback (and handling the disposition). If absent, the callback will not be placed automatically but routed to an agent as per normal. |  [optional] |
+| **clientIpAddress** | **String** | The reported client IP of the phone for the call. |  [optional] |
 | **callbackScheduledTime** | [**Date**](Date) | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z |  [optional] |
 
 
@@ -118,4 +119,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

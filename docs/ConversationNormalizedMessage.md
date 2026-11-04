@@ -46,6 +46,7 @@
 | FAILED | &quot;Failed&quot; | 
 | PUBLISHED | &quot;Published&quot; | 
 | REMOVED | &quot;Removed&quot; | 
+| MODIFIED | &quot;Modified&quot; | 
 
 
 ## Enum: OriginatingEntityEnum
@@ -68,4 +69,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

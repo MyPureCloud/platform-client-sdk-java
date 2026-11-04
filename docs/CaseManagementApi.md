@@ -306,8 +306,6 @@ try {
 
 Delete a Stageplan from a draft Caseplan.
 
-deleteCasemanagementCaseplanStageplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}  
 
 Requires ANY permissions: 
@@ -487,7 +485,7 @@ try {
 # **getCasemanagementCaseAssociations**
 
 
-> [CaseAssociationListing](CaseAssociationListing) getCasemanagementCaseAssociations(caseId, before, after, pageSize)
+> [CaseAssociationListing](CaseAssociationListing) getCasemanagementCaseAssociations(caseId, after, pageSize)
 
 Get a list of Case associations for the Case.
 
@@ -520,11 +518,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 CaseManagementApi apiInstance = new CaseManagementApi();
 String caseId = "caseId_example"; // String | Case identifier.
-String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
-String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String after = "after_example"; // String | Cursor that points to the end of the previously returned page.
+Integer pageSize = 56; // Integer | Number of entities to return. Maximum is 200.
 try {
-    CaseAssociationListing result = apiInstance.getCasemanagementCaseAssociations(caseId, before, after, pageSize);
+    CaseAssociationListing result = apiInstance.getCasemanagementCaseAssociations(caseId, after, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CaseManagementApi#getCasemanagementCaseAssociations");
@@ -538,9 +535,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **caseId** | **String**| Case identifier. | 
-| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
-| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **after** | **String**| Cursor that points to the end of the previously returned page. | [optional] 
+| **pageSize** | **Integer**| Number of entities to return. Maximum is 200. | [optional] 
 {: class="table-striped"}
 
 
@@ -802,7 +798,7 @@ try {
 # **getCasemanagementCaseStageSteps**
 
 
-> [StepListing](StepListing) getCasemanagementCaseStageSteps(caseId, stageId, before, after, pageSize)
+> [StepListing](StepListing) getCasemanagementCaseStageSteps(caseId, stageId, after, pageSize)
 
 Get a list of Steps.
 
@@ -836,11 +832,10 @@ Configuration.setDefaultApiClient(apiClient);
 CaseManagementApi apiInstance = new CaseManagementApi();
 String caseId = "caseId_example"; // String | Case identifier.
 String stageId = "stageId_example"; // String | Stage identifier.
-String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
-String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String after = "after_example"; // String | Cursor that points to the end of the previously returned page.
+Integer pageSize = 56; // Integer | Number of entities to return. Maximum is 200.
 try {
-    StepListing result = apiInstance.getCasemanagementCaseStageSteps(caseId, stageId, before, after, pageSize);
+    StepListing result = apiInstance.getCasemanagementCaseStageSteps(caseId, stageId, after, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CaseManagementApi#getCasemanagementCaseStageSteps");
@@ -855,9 +850,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **caseId** | **String**| Case identifier. | 
 | **stageId** | **String**| Stage identifier. | 
-| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
-| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **after** | **String**| Cursor that points to the end of the previously returned page. | [optional] 
+| **pageSize** | **Integer**| Number of entities to return. Maximum is 200. | [optional] 
 {: class="table-striped"}
 
 
@@ -869,7 +863,7 @@ try {
 # **getCasemanagementCaseStages**
 
 
-> [StageListing](StageListing) getCasemanagementCaseStages(caseId, before, after, pageSize)
+> [StageListing](StageListing) getCasemanagementCaseStages(caseId, after, pageSize)
 
 Get a list of Stages.
 
@@ -902,11 +896,10 @@ Configuration.setDefaultApiClient(apiClient);
 
 CaseManagementApi apiInstance = new CaseManagementApi();
 String caseId = "caseId_example"; // String | Case identifier.
-String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
-String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String after = "after_example"; // String | Cursor that points to the end of the previously returned page.
+Integer pageSize = 56; // Integer | Number of entities to return. Maximum is 200.
 try {
-    StageListing result = apiInstance.getCasemanagementCaseStages(caseId, before, after, pageSize);
+    StageListing result = apiInstance.getCasemanagementCaseStages(caseId, after, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CaseManagementApi#getCasemanagementCaseStages");
@@ -920,9 +913,8 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **caseId** | **String**| Case identifier. | 
-| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
-| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **after** | **String**| Cursor that points to the end of the previously returned page. | [optional] 
+| **pageSize** | **Integer**| Number of entities to return. Maximum is 200. | [optional] 
 {: class="table-striped"}
 
 
@@ -1369,7 +1361,7 @@ try {
 # **getCasemanagementCaseplanVersionStageplanStepplans**
 
 
-> [StepplanListing](StepplanListing) getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versionId, stageplanId, before, after, pageSize, expands)
+> [StepplanListing](StepplanListing) getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versionId, stageplanId, after, pageSize, expands)
 
 Get a list of Stepplans.
 
@@ -1404,12 +1396,11 @@ CaseManagementApi apiInstance = new CaseManagementApi();
 String caseplanId = "caseplanId_example"; // String | Caseplan identifier.
 String versionId = "versionId_example"; // String | Caseplan version identifier.
 String stageplanId = "stageplanId_example"; // String | Stageplan identifier.
-String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
-String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String after = "after_example"; // String | Cursor that points to the end of the previously returned page.
+Integer pageSize = 56; // Integer | Number of entities to return. Maximum is 200.
 List<String> expands = Arrays.asList(null); // List<String> | Fields to expand.
 try {
-    StepplanListing result = apiInstance.getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versionId, stageplanId, before, after, pageSize, expands);
+    StepplanListing result = apiInstance.getCasemanagementCaseplanVersionStageplanStepplans(caseplanId, versionId, stageplanId, after, pageSize, expands);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CaseManagementApi#getCasemanagementCaseplanVersionStageplanStepplans");
@@ -1425,9 +1416,8 @@ try {
 | **caseplanId** | **String**| Caseplan identifier. | 
 | **versionId** | **String**| Caseplan version identifier. | 
 | **stageplanId** | **String**| Stageplan identifier. | 
-| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
-| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **after** | **String**| Cursor that points to the end of the previously returned page. | [optional] 
+| **pageSize** | **Integer**| Number of entities to return. Maximum is 200. | [optional] 
 | **expands** | [**List&lt;String&gt;**](String)| Fields to expand. | [optional]<br />**Values**: caseplan, stageplan, worktype 
 {: class="table-striped"}
 
@@ -1440,7 +1430,7 @@ try {
 # **getCasemanagementCaseplanVersionStageplans**
 
 
-> [StageplanListing](StageplanListing) getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, before, after, pageSize, expands)
+> [StageplanListing](StageplanListing) getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, after, pageSize, expands)
 
 Get a list of Stageplans.
 
@@ -1474,12 +1464,11 @@ Configuration.setDefaultApiClient(apiClient);
 CaseManagementApi apiInstance = new CaseManagementApi();
 String caseplanId = "caseplanId_example"; // String | Caseplan identifier.
 String versionId = "versionId_example"; // String | Caseplan version identifier.
-String before = "before_example"; // String | The cursor that points to the start of the set of entities that has been returned.
-String after = "after_example"; // String | The cursor that points to the end of the set of entities that has been returned.
-String pageSize = "pageSize_example"; // String | Number of entities to return. Maximum of 200.
+String after = "after_example"; // String | Cursor that points to the end of the previously returned page.
+Integer pageSize = 56; // Integer | Number of entities to return. Maximum is 200.
 List<String> expands = Arrays.asList(null); // List<String> | Fields to expand.
 try {
-    StageplanListing result = apiInstance.getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, before, after, pageSize, expands);
+    StageplanListing result = apiInstance.getCasemanagementCaseplanVersionStageplans(caseplanId, versionId, after, pageSize, expands);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling CaseManagementApi#getCasemanagementCaseplanVersionStageplans");
@@ -1494,9 +1483,8 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **caseplanId** | **String**| Caseplan identifier. | 
 | **versionId** | **String**| Caseplan version identifier. | 
-| **before** | **String**| The cursor that points to the start of the set of entities that has been returned. | [optional] 
-| **after** | **String**| The cursor that points to the end of the set of entities that has been returned. | [optional] 
-| **pageSize** | **String**| Number of entities to return. Maximum of 200. | [optional] 
+| **after** | **String**| Cursor that points to the end of the previously returned page. | [optional] 
+| **pageSize** | **Integer**| Number of entities to return. Maximum is 200. | [optional] 
 | **expands** | [**List&lt;String&gt;**](String)| Fields to expand. | [optional]<br />**Values**: caseplan 
 {: class="table-striped"}
 
@@ -2684,8 +2672,6 @@ try {
 
 Reposition a Stageplan within a draft Caseplan.
 
-postCasemanagementCaseplanStageplanReposition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans/{stageplanId}/reposition  
 
 Requires ANY permissions: 
@@ -2748,8 +2734,6 @@ try {
 > [Stageplan](Stageplan) postCasemanagementCaseplanStageplans(caseplanId, body)
 
 Create a Stageplan on a draft Caseplan.
-
-postCasemanagementCaseplanStageplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/casemanagement/caseplans/{caseplanId}/stageplans  
 
@@ -3285,4 +3269,4 @@ try {
 [**IntakeSettingsListing**](IntakeSettingsListing)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

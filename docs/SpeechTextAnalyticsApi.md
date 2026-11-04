@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 | [**getSpeechandtextanalyticsCategory**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsCategory) | Get a Speech & Text Analytics Category by ID |
 | [**getSpeechandtextanalyticsConversation**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversation) | Get Speech and Text Analytics for a specific conversation |
 | [**getSpeechandtextanalyticsConversationCategories**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCategories) | Get the list of detected Speech and Text Analytics categories of conversation |
+| [**getSpeechandtextanalyticsConversationCommunicationTranscriptoutline**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCommunicationTranscriptoutline) | Get the transcript outline for a specific conversation and communication. |
 | [**getSpeechandtextanalyticsConversationCommunicationTranscripturl**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCommunicationTranscripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation |
 | [**getSpeechandtextanalyticsConversationCommunicationTranscripturls**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCommunicationTranscripturls) | Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation |
 | [**getSpeechandtextanalyticsConversationSentiments**](SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationSentiments) | Get sentiment data |
@@ -732,6 +733,67 @@ try {
 ### Return type
 
 [**ConversationCategoriesEntityListing**](ConversationCategoriesEntityListing)
+
+
+# **getSpeechandtextanalyticsConversationCommunicationTranscriptoutline**
+
+
+> [TranscriptOutlineResponse](TranscriptOutlineResponse) getSpeechandtextanalyticsConversationCommunicationTranscriptoutline(conversationId, communicationId)
+
+Get the transcript outline for a specific conversation and communication.
+
+Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcriptoutline  
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:aiOutline:view
+
+### Example
+
+```{"language":"java"}
+//Import classes:
+import com.mypurecloud.sdk.v2.ApiClient;
+import com.mypurecloud.sdk.v2.ApiException;
+import com.mypurecloud.sdk.v2.Configuration;
+import com.mypurecloud.sdk.v2.auth.*;
+import com.mypurecloud.sdk.v2.api.SpeechTextAnalyticsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Create ApiClient instance
+ApiClient apiClient = ApiClient.Builder.standard()
+		.withAccessToken(accessToken)
+		.withBasePath("https://api.mypurecloud.com")
+		.build();
+
+// Use the ApiClient instance
+Configuration.setDefaultApiClient(apiClient);
+
+SpeechTextAnalyticsApi apiInstance = new SpeechTextAnalyticsApi();
+String conversationId = "conversationId_example"; // String | The ID of the conversation
+String communicationId = "communicationId_example"; // String | The ID of the communication
+try {
+    TranscriptOutlineResponse result = apiInstance.getSpeechandtextanalyticsConversationCommunicationTranscriptoutline(conversationId, communicationId);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling SpeechTextAnalyticsApi#getSpeechandtextanalyticsConversationCommunicationTranscriptoutline");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **conversationId** | **String**| The ID of the conversation | 
+| **communicationId** | **String**| The ID of the communication | 
+{: class="table-striped"}
+
+
+### Return type
+
+[**TranscriptOutlineResponse**](TranscriptOutlineResponse)
 
 
 # **getSpeechandtextanalyticsConversationCommunicationTranscripturl**
@@ -3701,6 +3763,8 @@ Requires ANY permissions:
 * analytics:conversationDetail:view
 * recording:recording:view
 * recording:recordingSegment:view
+* analytics:transcriptcontent:search
+* speechAndTextAnalytics:data:view
 
 ### Example
 
@@ -4235,4 +4299,4 @@ try {
 [**Topic**](Topic)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

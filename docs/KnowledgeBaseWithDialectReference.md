@@ -55,8 +55,14 @@
 | MS_MY | &quot;ms-MY&quot; | 
 | HE_IL | &quot;he-IL&quot; | 
 | EL_GR | &quot;el-GR&quot; | 
+| CA_ES | &quot;ca-ES&quot; | 
+| EN_NZ | &quot;en-NZ&quot; | 
+| ZH_HK | &quot;zh-HK&quot; | 
+| ZH_TW | &quot;zh-TW&quot; | 
+| ZH_CN | &quot;zh-CN&quot; | 
+| AR_SA | &quot;ar-SA&quot; | 
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

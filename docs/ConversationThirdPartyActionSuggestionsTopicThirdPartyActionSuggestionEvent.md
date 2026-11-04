@@ -13,8 +13,11 @@
 | **engagementType** | [**EngagementTypeEnum**](#Enum--EngagementTypeEnum) |  |  [optional] |
 | **feedback** | [**ConversationThirdPartyActionSuggestionsTopicSuggestionFeedback**](ConversationThirdPartyActionSuggestionsTopicSuggestionFeedback) |  |  [optional] |
 | **activeIntent** | [**ConversationThirdPartyActionSuggestionsTopicSuggestedIntent**](ConversationThirdPartyActionSuggestionsTopicSuggestedIntent) |  |  [optional] |
+| **activeSentiment** | [**ConversationThirdPartyActionSuggestionsTopicActiveSentiment**](ConversationThirdPartyActionSuggestionsTopicActiveSentiment) |  |  [optional] |
 | **context** | [**ConversationThirdPartyActionSuggestionsTopicSuggestionContext**](ConversationThirdPartyActionSuggestionsTopicSuggestionContext) |  |  [optional] |
+| **conversationTurns** | [**List&lt;ConversationThirdPartyActionSuggestionsTopicConversationTurn&gt;**](ConversationThirdPartyActionSuggestionsTopicConversationTurn) |  |  [optional] |
 | **thirdPartySuggestion** | [**ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion**](ConversationThirdPartyActionSuggestionsTopicThirdPartySuggestion) |  |  [optional] |
+| **copilotContext** | [**List&lt;ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry&gt;**](ConversationThirdPartyActionSuggestionsTopicCopilotContextEntry) |  |  [optional] |
 
 
 ## Enum: StateEnum
@@ -59,4 +62,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

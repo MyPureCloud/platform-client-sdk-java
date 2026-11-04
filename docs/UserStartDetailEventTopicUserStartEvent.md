@@ -27,6 +27,9 @@
 | **conversationExternalContactIds** | **List&lt;String&gt;** |  |  [optional] |
 | **conversationExternalOrganizationIds** | **List&lt;String&gt;** |  |  [optional] |
 | **utilizationLabel** | **String** |  |  [optional] |
+| **outboundCampaignId** | **String** |  |  [optional] |
+| **outboundContactListId** | **String** |  |  [optional] |
+| **outboundContactId** | **String** |  |  [optional] |
 
 
 ## Enum: MediaTypeEnum
@@ -77,4 +80,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

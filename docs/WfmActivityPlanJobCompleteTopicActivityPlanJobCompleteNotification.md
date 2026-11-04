@@ -24,7 +24,7 @@
 | DELETEOCCURRENCES | &quot;DeleteOccurrences&quot; | 
 | DELETESESSIONS | &quot;DeleteSessions&quot; | 
 | DELETESESSIONUSERS | &quot;DeleteSessionUsers&quot; | 
-| MAXIMIZEOCCURRENCE | &quot;MaximizeOccurrence&quot; | 
+| RUNOCCURRENCE | &quot;RunOccurrence&quot; | 
 | CREATESESSION | &quot;CreateSession&quot; | 
 | EDITSESSION | &quot;EditSession&quot; | 
 
@@ -41,4 +41,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

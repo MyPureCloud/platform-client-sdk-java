@@ -6,6 +6,7 @@
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **id** | **String** |  |  [optional] |
+| **muId** | **String** |  |  [optional] |
 | **user** | [**WfmTimeOffRequestUpdateTopicUserReference**](WfmTimeOffRequestUpdateTopicUserReference) |  |  [optional] |
 | **isFullDayRequest** | **Boolean** |  |  [optional] |
 | **markedAsRead** | **Boolean** |  |  [optional] |
@@ -60,4 +61,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

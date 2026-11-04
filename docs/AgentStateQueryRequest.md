@@ -27,6 +27,11 @@
 | ROUTINGSTATUS | &quot;routingStatus&quot; | 
 | ORGANIZATIONPRESENCEID | &quot;organizationPresenceId&quot; | 
 | ADHERENCEDATE | &quot;adherenceDate&quot; | 
+| WORKITEMDATEDUE | &quot;workitemDateDue&quot; | 
+| WORKITEMDATEEXPIRES | &quot;workitemDateExpires&quot; | 
+| WORKITEMDATESTATUSCHANGED | &quot;workitemDateStatusChanged&quot; | 
+| WORKITEMDATEASSIGNMENTSTATECHANGED | &quot;workitemDateAssignmentStateChanged&quot; | 
+| WORKITEMDATECREATED | &quot;workitemDateCreated&quot; | 
 
 
 ## Enum: UserOrderEnum
@@ -58,4 +63,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

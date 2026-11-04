@@ -1262,7 +1262,7 @@ try {
 # **patchScimGroup**
 
 
-> [ScimV2Group](ScimV2Group) patchScimGroup(groupId, body, ifMatch)
+> [ScimV2Group](ScimV2Group) patchScimGroup(groupId, body, ifMatch, attributes, excludedAttributes)
 
 Modify a group
 
@@ -1297,8 +1297,10 @@ SCIMApi apiInstance = new SCIMApi();
 String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/groups.
 ScimV2PatchRequest body = new ScimV2PatchRequest(); // ScimV2PatchRequest | The information used to modify a group.
 String ifMatch = "ifMatch_example"; // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
+List<String> attributes = Arrays.asList(null); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+List<String> excludedAttributes = Arrays.asList(null); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
 try {
-    ScimV2Group result = apiInstance.patchScimGroup(groupId, body, ifMatch);
+    ScimV2Group result = apiInstance.patchScimGroup(groupId, body, ifMatch, attributes, excludedAttributes);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SCIMApi#patchScimGroup");
@@ -1314,6 +1316,8 @@ try {
 | **groupId** | **String**| The ID of a group. Returned with GET /api/v2/scim/groups. | 
 | **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest)| The information used to modify a group. | 
 | **ifMatch** | **String**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. | [optional] 
+| **attributes** | [**List&lt;String&gt;**](String)| Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. | [optional]<br />**Values**: id, displayName, members, externalId, meta, meta.version, meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:meta, urn:ietf:params:scim:schemas:core:2.0:Group:meta.version, urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId 
+| **excludedAttributes** | [**List&lt;String&gt;**](String)| Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Always returns \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. | [optional]<br />**Values**: id, displayName, members, externalId, meta, meta.version, meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:meta, urn:ietf:params:scim:schemas:core:2.0:Group:meta.version, urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId 
 {: class="table-striped"}
 
 
@@ -1394,7 +1398,7 @@ try {
 # **patchScimV2Group**
 
 
-> [ScimV2Group](ScimV2Group) patchScimV2Group(groupId, body, ifMatch)
+> [ScimV2Group](ScimV2Group) patchScimV2Group(groupId, body, ifMatch, attributes, excludedAttributes)
 
 Modify a group
 
@@ -1429,8 +1433,10 @@ SCIMApi apiInstance = new SCIMApi();
 String groupId = "groupId_example"; // String | The ID of a group. Returned with GET /api/v2/scim/v2/groups.
 ScimV2PatchRequest body = new ScimV2PatchRequest(); // ScimV2PatchRequest | The information used to modify a group.
 String ifMatch = "ifMatch_example"; // String | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\".
+List<String> attributes = Arrays.asList(null); // List<String> | Indicates which attributes to include. Returns these attributes and the \"id\", \"active\", and \"meta\" attributes. Use \"attributes\" to avoid expensive secondary calls for the default attributes.
+List<String> excludedAttributes = Arrays.asList(null); // List<String> | Indicates which attributes to exclude. Returns the default attributes minus \"excludedAttributes\". Always returns \"id\", \"active\", and \"meta\" attributes. Use \"excludedAttributes\" to avoid expensive secondary calls for the default attributes.
 try {
-    ScimV2Group result = apiInstance.patchScimV2Group(groupId, body, ifMatch);
+    ScimV2Group result = apiInstance.patchScimV2Group(groupId, body, ifMatch, attributes, excludedAttributes);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling SCIMApi#patchScimV2Group");
@@ -1446,6 +1452,8 @@ try {
 | **groupId** | **String**| The ID of a group. Returned with GET /api/v2/scim/v2/groups. | 
 | **body** | [**ScimV2PatchRequest**](ScimV2PatchRequest)| The information used to modify a group. | 
 | **ifMatch** | **String**| The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/groups/{groupId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. | [optional] 
+| **attributes** | [**List&lt;String&gt;**](String)| Indicates which attributes to include. Returns these attributes and the \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;attributes\&quot; to avoid expensive secondary calls for the default attributes. | [optional]<br />**Values**: id, displayName, members, externalId, meta, meta.version, meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:meta, urn:ietf:params:scim:schemas:core:2.0:Group:meta.version, urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId 
+| **excludedAttributes** | [**List&lt;String&gt;**](String)| Indicates which attributes to exclude. Returns the default attributes minus \&quot;excludedAttributes\&quot;. Always returns \&quot;id\&quot;, \&quot;active\&quot;, and \&quot;meta\&quot; attributes. Use \&quot;excludedAttributes\&quot; to avoid expensive secondary calls for the default attributes. | [optional]<br />**Values**: id, displayName, members, externalId, meta, meta.version, meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:id, urn:ietf:params:scim:schemas:core:2.0:Group:meta, urn:ietf:params:scim:schemas:core:2.0:Group:meta.version, urn:ietf:params:scim:schemas:core:2.0:Group:meta.lastModified, urn:ietf:params:scim:schemas:core:2.0:Group:displayName, urn:ietf:params:scim:schemas:core:2.0:Group:members, urn:ietf:params:scim:schemas:core:2.0:Group:externalId 
 {: class="table-striped"}
 
 
@@ -1915,4 +1923,4 @@ try {
 [**ScimV2User**](ScimV2User)
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

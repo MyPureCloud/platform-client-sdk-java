@@ -15,6 +15,7 @@
 | **feedback** | [**ConversationResponseSuggestionsTopicSuggestionFeedback**](ConversationResponseSuggestionsTopicSuggestionFeedback) |  |  [optional] |
 | **cannedResponse** | [**ConversationResponseSuggestionsTopicSuggestedCannedResponse**](ConversationResponseSuggestionsTopicSuggestedCannedResponse) |  |  [optional] |
 | **activeIntent** | [**ConversationResponseSuggestionsTopicSuggestedIntent**](ConversationResponseSuggestionsTopicSuggestedIntent) |  |  [optional] |
+| **activeSentiment** | [**ConversationResponseSuggestionsTopicActiveSentiment**](ConversationResponseSuggestionsTopicActiveSentiment) |  |  [optional] |
 
 
 ## Enum: StateEnum
@@ -59,4 +60,4 @@
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_

@@ -9,10 +9,10 @@
 | **type** | **String** | The credential type (must be 'public-key'). |  |
 | **rawId** | **String** | The raw credential identifier as a binary value (base64url-encoded). |  |
 | **authenticatorAttachment** | **String** | The authenticator attachment modality used ('platform' or 'cross-platform'). |  [optional] |
-| **clientExtensionResults** | **Map&lt;String, Object&gt;** | Outputs from client-side WebAuthn extensions. |  [optional] |
+| **clientExtensionResults** | [**ClientExtensionResults**](ClientExtensionResults) | Outputs from client-side WebAuthn extensions. |  [optional] |
 | **response** | [**AuthenticatorAttestationResponse**](AuthenticatorAttestationResponse) | The authenticator's attestation response. |  |
 
 
 
 
-_com.mypurecloud.sdk.v2:platform-client-v2:265.1.0_
+_com.mypurecloud.sdk.v2:platform-client-v2:267.0.0_
